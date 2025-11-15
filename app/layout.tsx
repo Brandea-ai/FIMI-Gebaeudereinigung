@@ -69,8 +69,8 @@ export default function RootLayout({
   return (
     <html lang="de" className={`${inter.variable} ${montserrat.variable}`}>
       <head>
-        <link rel="icon" href="/FIMI-LOGO/Fimi-Favicon.png" />
-        <link rel="apple-touch-icon" href="/FIMI-LOGO/Fimi-Favicon.png" />
+        <link rel="icon" href="/FIMI-LOGO/Fimi-Favicon_Transparent.png" />
+        <link rel="apple-touch-icon" href="/FIMI-LOGO/Fimi-Favicon_Transparent.png" />
       </head>
       <body className="font-sans">
         <Navigation />

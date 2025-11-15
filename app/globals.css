@@ -15,6 +15,7 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading font-bold text-fimi-navy;
+    line-height: 1.2;
   }
 
   h1 {
@@ -26,7 +27,7 @@
   }
 
   h3 {
-    @apply text-2xl md:text-3xl lg:text-4xl;
+    @apply text-2xl md:text-3xl;
   }
 
   h4 {
@@ -34,7 +35,7 @@
   }
 
   p {
-    @apply text-base md:text-lg leading-relaxed;
+    @apply text-base leading-relaxed;
   }
 }
 
@@ -43,69 +44,109 @@
     text-wrap: balance;
   }
 
+  /* Container */
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-6 md:px-8 lg:px-12;
   }
 
+  /* Spacing - Professional, generous whitespace */
   .section-padding {
-    @apply py-16 md:py-24 lg:py-32;
+    @apply py-20 md:py-28 lg:py-36;
   }
 
+  .section-padding-sm {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+
+  /* Buttons - Minimalistic, professional */
   .btn-primary {
-    @apply bg-fimi-turquoise hover:bg-fimi-turquoise-dark text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1;
+    @apply inline-flex items-center justify-center px-8 py-4 bg-fimi-navy text-white font-semibold rounded-sm transition-all duration-200 hover:bg-fimi-navy-dark;
   }
 
   .btn-secondary {
-    @apply bg-fimi-navy hover:bg-fimi-navy-light text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1;
+    @apply inline-flex items-center justify-center px-8 py-4 bg-white text-fimi-navy font-semibold rounded-sm border-2 border-fimi-navy transition-all duration-200 hover:bg-fimi-navy hover:text-white;
   }
 
   .btn-outline {
-    @apply border-2 border-fimi-navy text-fimi-navy hover:bg-fimi-navy hover:text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300;
+    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 text-gray-900 font-semibold rounded-sm transition-all duration-200 hover:border-fimi-navy hover:text-fimi-navy;
   }
 
-  .gradient-overlay {
-    @apply absolute inset-0 bg-gradient-to-br from-fimi-navy/90 to-fimi-turquoise/90;
+  .btn-text {
+    @apply inline-flex items-center font-semibold text-fimi-navy transition-colors duration-200 hover:text-fimi-turquoise;
+  }
+
+  /* Cards - Clean, minimal */
+  .card {
+    @apply bg-white border border-gray-200 rounded-sm;
   }
 
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-2xl hover:-translate-y-2;
+    @apply transition-all duration-300 hover:border-fimi-navy;
+  }
+
+  /* Overlays - Subtle, professional */
+  .overlay-dark {
+    @apply absolute inset-0 bg-fimi-navy/80;
+  }
+
+  .overlay-light {
+    @apply absolute inset-0 bg-white/95;
+  }
+
+  /* Typography utilities */
+  .text-subtitle {
+    @apply text-sm font-semibold tracking-wider uppercase text-fimi-turquoise;
+  }
+
+  .text-body {
+    @apply text-base md:text-lg text-gray-700 leading-relaxed;
+  }
+
+  .text-large {
+    @apply text-xl md:text-2xl text-gray-800 leading-relaxed;
   }
 }
 
-/* Smooth scrolling für Anker-Links */
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar - Minimal */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #f5f5f5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #109387;
-  border-radius: 5px;
+  background: #012956;
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0D7C71;
+  background: #001D3D;
 }
 
-/* Blog Content Styling */
+/* Selection */
+::selection {
+  background: #109387;
+  color: white;
+}
+
+/* Blog Content Styling - Professional */
 .blog-content {
-  @apply text-gray-700 leading-relaxed;
+  @apply text-gray-800 leading-relaxed;
 }
 
 .blog-content h2 {
-  @apply text-3xl font-bold text-fimi-navy mt-12 mb-6;
+  @apply text-3xl font-bold text-fimi-navy mt-16 mb-6;
 }
 
 .blog-content h3 {
-  @apply text-2xl font-bold text-fimi-navy mt-10 mb-4;
+  @apply text-2xl font-bold text-fimi-navy mt-12 mb-4;
 }
 
 .blog-content p {
@@ -114,7 +155,7 @@ html {
 
 .blog-content ul,
 .blog-content ol {
-  @apply mb-6 ml-6 space-y-2;
+  @apply mb-6 ml-6 space-y-3;
 }
 
 .blog-content ul li {
@@ -130,21 +171,26 @@ html {
 }
 
 .blog-content a {
-  @apply text-fimi-turquoise hover:text-fimi-turquoise-dark underline;
+  @apply text-fimi-navy underline hover:text-fimi-turquoise transition-colors;
 }
 
 .blog-content blockquote {
-  @apply border-l-4 border-fimi-turquoise pl-6 py-4 my-6 italic bg-gray-50 rounded-r-lg;
+  @apply border-l-4 border-fimi-turquoise pl-6 py-2 my-8 italic text-gray-700 bg-gray-50;
 }
 
 .blog-content code {
-  @apply bg-gray-100 px-2 py-1 rounded text-sm font-mono;
+  @apply bg-gray-100 px-2 py-1 rounded-sm text-sm font-mono text-gray-800;
 }
 
 .blog-content pre {
-  @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-6;
+  @apply bg-gray-900 text-gray-100 p-6 rounded-sm overflow-x-auto mb-6;
 }
 
 .blog-content img {
-  @apply rounded-lg shadow-lg my-8;
+  @apply my-12 w-full;
+}
+
+/* Remove all fancy animations and gradients */
+* {
+  @apply focus:outline-none focus:ring-2 focus:ring-fimi-turquoise focus:ring-offset-2;
 }
