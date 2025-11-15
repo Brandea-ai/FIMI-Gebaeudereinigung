@@ -1,4 +1,4 @@
-// Framer Motion animation variants for BGS-style animations
+// BGS-Style Framer Motion Animationen
 
 export const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -7,7 +7,7 @@ export const fadeInUp = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: [0.22, 1, 0.36, 1]
+      ease: [0.22, 1, 0.36, 1] // BGS Easing
     }
   }
 }
@@ -23,18 +23,6 @@ export const fadeIn = {
   }
 }
 
-export const scaleIn = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.5,
-      ease: [0.22, 1, 0.36, 1]
-    }
-  }
-}
-
 export const staggerContainer = {
   hidden: { opacity: 0 },
   visible: {
@@ -46,36 +34,13 @@ export const staggerContainer = {
   }
 }
 
-export const cardHover = {
-  rest: { scale: 1 },
-  hover: {
-    scale: 1.02,
-    transition: {
-      duration: 0.3,
-      ease: "easeOut"
-    }
-  }
-}
-
-export const slideInFromLeft = {
-  hidden: { opacity: 0, x: -50 },
+export const scaleIn = {
+  hidden: { opacity: 0, scale: 0.95 },
   visible: {
     opacity: 1,
-    x: 0,
+    scale: 1,
     transition: {
-      duration: 0.6,
-      ease: [0.22, 1, 0.36, 1]
-    }
-  }
-}
-
-export const slideInFromRight = {
-  hidden: { opacity: 0, x: 50 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 0.6,
+      duration: 0.5,
       ease: [0.22, 1, 0.36, 1]
     }
   }
