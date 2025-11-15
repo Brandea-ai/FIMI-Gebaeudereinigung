@@ -74,7 +74,7 @@ export default function Navigation() {
             <Image
               src={isScrolled
                 ? "/FIMI-LOGO/FIMI-Logo_Transparent_FUER-Webseite.png"
-                : "/FIMI-LOGO/FI-Logo_Transparent_FUER-Webseite-Weiß-Schrift.png"
+                : "/FIMI-LOGO/FIMI-LOGO_Weiße-Schrift_Transparent.png"
               }
               alt="FIMI Gebäudereinigung"
               width={180}

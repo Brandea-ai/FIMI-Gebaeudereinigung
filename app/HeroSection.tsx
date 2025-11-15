@@ -39,7 +39,7 @@ export default function HeroSection() {
           {/* GROSSES LOGO wie angefordert */}
           <motion.div variants={fadeInUp} className="mb-12">
             <Image
-              src="/FIMI-LOGO/FI-Logo_Transparent_FUER-Webseite-Weiß-Schrift.png"
+              src="/FIMI-LOGO/FIMI-LOGO_Weiße-Schrift_Transparent.png"
               alt="FIMI Gebäudereinigung"
               width={400}
               height={133}
