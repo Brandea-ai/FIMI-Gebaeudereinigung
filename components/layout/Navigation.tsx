@@ -62,19 +62,24 @@ export default function Navigation() {
   }
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-sm' : 'bg-white'
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+      isScrolled
+        ? 'bg-white/80 backdrop-blur-xl shadow-lg border-b border-gray-200/50'
+        : 'bg-transparent'
     }`}>
-      <div className="container-custom">
+      <div className="container">
         <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo - Größer */}
           <Link href="/" className="flex-shrink-0">
             <Image
-              src="/FIMI-LOGO/FIMI-Logo_Transparent_FUER-Webseite.png"
+              src={isScrolled
+                ? "/FIMI-LOGO/FIMI-Logo_Transparent_FUER-Webseite.png"
+                : "/FIMI-LOGO/FI-Logo_Transparent_FUER-Webseite-Weiß-Schrift.png"
+              }
               alt="FIMI Gebäudereinigung"
               width={180}
               height={60}
-              className="h-14 md:h-16 w-auto"
+              className="h-14 md:h-16 w-auto transition-all duration-500"
               priority
             />
           </Link>
@@ -87,7 +92,9 @@ export default function Navigation() {
               onMouseEnter={() => setOpenMegaMenu('leistungen')}
               onMouseLeave={() => setOpenMegaMenu(null)}
             >
-              <button className="flex items-center space-x-1 text-fimi-navy font-semibold hover:text-fimi-turquoise transition-colors py-2">
+              <button className={`flex items-center space-x-1 font-semibold hover:text-fimi-turquoise transition-colors py-2 ${
+                isScrolled ? 'text-fimi-navy' : 'text-white'
+              }`}>
                 <span>Leistungen</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
@@ -122,13 +129,17 @@ export default function Navigation() {
               )}
             </div>
 
-            <Link href="/blog" className="text-fimi-navy font-semibold hover:text-fimi-turquoise transition-colors">
+            <Link href="/blog" className={`font-semibold hover:text-fimi-turquoise transition-colors ${
+              isScrolled ? 'text-fimi-navy' : 'text-white'
+            }`}>
               Blog
             </Link>
 
             <button
               onClick={scrollToFooter}
-              className="text-fimi-navy font-semibold hover:text-fimi-turquoise transition-colors"
+              className={`font-semibold hover:text-fimi-turquoise transition-colors ${
+                isScrolled ? 'text-fimi-navy' : 'text-white'
+              }`}
             >
               Kontakt
             </button>
@@ -136,13 +147,18 @@ export default function Navigation() {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center space-x-4">
-            <a href="tel:01747225473" className="flex items-center space-x-2 text-fimi-navy hover:text-fimi-turquoise transition-colors">
+            <a href="tel:01747225473" className={`flex items-center space-x-2 hover:text-fimi-turquoise transition-colors ${
+              isScrolled ? 'text-fimi-navy' : 'text-white'
+            }`}>
               <Phone className="w-5 h-5" />
               <span className="font-semibold">01747225473</span>
             </a>
             <button
               onClick={scrollToFooter}
-              className="btn-primary"
+              className={isScrolled
+                ? "bg-fimi-turquoise text-white px-6 py-3 rounded-lg font-semibold hover:bg-fimi-turquoise/90 shadow-lg hover:shadow-xl transition-all duration-300"
+                : "bg-white text-fimi-navy px-6 py-3 rounded-lg font-semibold hover:bg-white/90 shadow-lg hover:shadow-xl transition-all duration-300"
+              }
             >
               Angebot anfordern
             </button>
@@ -151,7 +167,9 @@ export default function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-fimi-navy"
+            className={`lg:hidden p-2 transition-colors ${
+              isScrolled ? 'text-fimi-navy' : 'text-white'
+            }`}
             aria-label="Menu"
           >
             {isMobileMenuOpen ? (

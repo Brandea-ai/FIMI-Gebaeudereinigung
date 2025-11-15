@@ -1,113 +1,101 @@
-import { Shield, Award, Users, Clock, Leaf, TrendingUp } from 'lucide-react'
+'use client'
 
-const trustElements = [
+import { motion } from 'framer-motion'
+import { Award, Clock, Users, TrendingUp } from 'lucide-react'
+import { Card, CardContent } from '@/components/ui/card'
+import { fadeInUp, staggerContainer } from '@/utils/animations'
+
+const trustIndicators = [
   {
-    icon: Shield,
-    title: 'Zertifizierte Qualität',
-    description: 'ISO-zertifizierte Prozesse und regelmäßige Qualitätskontrollen garantieren höchste Standards.',
-    stats: '100% zertifiziert'
-  },
-  {
-    icon: Users,
-    title: 'Erfahrenes Team',
-    description: 'Speziell geschulte Fachkräfte mit langjähriger Erfahrung in der professionellen Gebäudereinigung.',
-    stats: '50+ Mitarbeiter'
+    icon: Award,
+    title: 'ISO-Zertifiziert',
+    description: 'Höchste Qualitätsstandards nach ISO-Norm für Ihre Sicherheit'
   },
   {
     icon: Clock,
-    title: '24/7 Verfügbarkeit',
-    description: 'Notfall-Hotline und flexible Einsatzzeiten - wir sind für Sie da, wann immer Sie uns brauchen.',
-    stats: 'Rund um die Uhr'
+    title: '24/7 Erreichbar',
+    description: 'Rund um die Uhr für Sie da - auch im Notfall'
   },
   {
-    icon: Leaf,
-    title: 'Nachhaltig',
-    description: 'Einsatz ökologischer Reinigungsmittel und ressourcenschonende Verfahren.',
-    stats: '100% bio-abbaubar'
-  },
-  {
-    icon: Award,
-    title: 'Ausgezeichneter Service',
-    description: 'Mehrfach ausgezeichnet für exzellente Servicequalität und Kundenzufriedenheit.',
-    stats: '98% Zufriedenheit'
+    icon: Users,
+    title: '500+ Kunden',
+    description: 'Über 500 zufriedene Unternehmen vertrauen uns'
   },
   {
     icon: TrendingUp,
-    title: 'Faire Preise',
-    description: 'Transparente Preisgestaltung ohne versteckte Kosten. Premium-Qualität zu fairen Konditionen.',
-    stats: 'Ab 25€/Std'
+    title: '15+ Jahre',
+    description: 'Langjährige Erfahrung in der Gebäudereinigung'
   }
 ]
 
 export default function TrustSection() {
   return (
-    <section className="section-padding bg-white">
-      <div className="container-custom">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-20">
-          <p className="text-subtitle mb-6">
-            Warum FIMI?
-          </p>
-          <h2 className="mb-6">
-            Ihr vertrauensvoller Partner<br />
-            für professionelle Sauberkeit
-          </h2>
-          <p className="text-body">
-            Seit über 15 Jahren setzen wir Maßstäbe in der Gebäudereinigung.
-            Vertrauen Sie auf Erfahrung, Qualität und Zuverlässigkeit.
-          </p>
-        </div>
+    <section className="section-padding bg-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-fimi-navy rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-fimi-turquoise rounded-full blur-3xl" />
+      </div>
 
-        {/* Trust Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-          {trustElements.map((element, index) => {
-            const Icon = element.icon
+      <div className="container relative z-10">
+        {/* Header */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
+          <motion.span
+            variants={fadeInUp}
+            className="text-fimi-turquoise font-semibold text-sm uppercase tracking-wider mb-4 block"
+          >
+            Vertrauen & Qualität
+          </motion.span>
+          <motion.h2
+            variants={fadeInUp}
+            className="text-4xl md:text-5xl font-bold text-fimi-navy mb-6"
+          >
+            Warum uns Unternehmen<br />
+            <span className="text-fimi-turquoise">vertrauen</span>
+          </motion.h2>
+        </motion.div>
+
+        {/* Trust Cards */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+          {trustIndicators.map((item, index) => {
+            const Icon = item.icon
             return (
-              <div
-                key={index}
-                className="border-l-4 border-fimi-turquoise pl-6"
-              >
-                {/* Icon */}
-                <div className="flex items-center mb-4">
-                  <Icon className="w-6 h-6 text-fimi-navy mr-3" />
-                  <span className="text-sm font-bold text-fimi-turquoise">
-                    {element.stats}
-                  </span>
-                </div>
+              <motion.div key={index} variants={fadeInUp}>
+                <Card className="h-full hover-lift border-2 hover:border-fimi-turquoise transition-all duration-300 bg-gradient-to-br from-white to-gray-50">
+                  <CardContent className="p-8 flex flex-col items-center text-center h-full">
+                    {/* Icon */}
+                    <div className="relative mb-6">
+                      <div className="w-20 h-20 bg-gradient-to-br from-fimi-navy to-fimi-turquoise rounded-2xl flex items-center justify-center transform hover:scale-110 transition-transform duration-300">
+                        <Icon className="w-10 h-10 text-white" />
+                      </div>
+                      <div className="absolute top-0 left-0 w-20 h-20 bg-fimi-turquoise rounded-2xl opacity-0 hover:opacity-20 blur-xl transition-opacity duration-300" />
+                    </div>
 
-                {/* Content */}
-                <h4 className="text-xl font-bold text-fimi-navy mb-3">
-                  {element.title}
-                </h4>
-                <p className="text-gray-600 leading-relaxed">
-                  {element.description}
-                </p>
-              </div>
+                    {/* Content */}
+                    <h3 className="text-2xl font-bold text-fimi-navy mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             )
           })}
-        </div>
-
-        {/* Stats Bar - Professional */}
-        <div className="bg-fimi-navy text-white py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <p className="text-5xl font-bold mb-2">15+</p>
-              <p className="text-gray-300">Jahre Erfahrung</p>
-            </div>
-            <div>
-              <p className="text-5xl font-bold mb-2">500+</p>
-              <p className="text-gray-300">Zufriedene Kunden</p>
-            </div>
-            <div>
-              <p className="text-5xl font-bold mb-2">50+</p>
-              <p className="text-gray-300">Fachkräfte im Team</p>
-            </div>
-            <div>
-              <p className="text-5xl font-bold mb-2">98%</p>
-              <p className="text-gray-300">Weiterempfehlung</p>
-            </div>
-          </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

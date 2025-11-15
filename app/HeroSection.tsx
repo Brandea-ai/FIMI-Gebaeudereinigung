@@ -1,83 +1,97 @@
-import Link from 'next/link'
+'use client'
+
+import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { ArrowRight, CheckCircle } from 'lucide-react'
+import { ArrowRight, Phone } from 'lucide-react'
+import { ParallaxBackground } from '@/components/PremiumParallax'
+import { fadeInUp, staggerContainer } from '@/utils/animations'
 
 export default function HeroSection() {
+  const scrollToContact = () => {
+    const footer = document.getElementById('kontakt-formular')
+    if (footer) {
+      footer.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
-    <section className="relative min-h-screen flex items-center bg-white mt-20 md:mt-24">
-      <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-16 items-center py-16 md:py-24">
-          {/* Left Content */}
-          <div>
-            <p className="text-subtitle mb-6">
-              Professionelle Gebäudereinigung
-            </p>
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      {/* Parallax Background */}
+      <ParallaxBackground className="absolute inset-0" speed={0.5}>
+        <Image
+          src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=2940&auto=format&fit=crop"
+          alt="Professionelle Gebäudereinigung FIMI"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-fimi-navy/95 via-fimi-navy/90 to-fimi-navy/80" />
+      </ParallaxBackground>
 
-            <h1 className="mb-6">
-              Exzellente Reinigungsdienstleistungen<br />
-              für Ihr Unternehmen
-            </h1>
-
-            <p className="text-large mb-10">
-              Seit über 15 Jahren Ihr vertrauensvoller Partner für professionelle Gebäudereinigung,
-              Industriereinigung und Facility Management in Landshut und Umgebung.
-            </p>
-
-            {/* USPs - Minimalistisch */}
-            <div className="space-y-4 mb-12">
-              {[
-                'ISO-zertifizierte Qualitätsstandards',
-                'Spezialisierte Fachkräfte mit langjähriger Erfahrung',
-                'Umweltfreundliche Reinigungsmethoden',
-                'Flexible Einsatzzeiten nach Ihren Bedürfnissen'
-              ].map((usp) => (
-                <div key={usp} className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-fimi-turquoise flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700">{usp}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* CTA */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/kontakt" className="btn-primary">
-                <span>Kostenlose Beratung</span>
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
-              <Link href="/leistungen/bueroreinigung" className="btn-secondary">
-                Leistungen ansehen
-              </Link>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 mt-16 pt-12 border-t border-gray-200">
-              <div>
-                <p className="text-4xl font-bold text-fimi-navy mb-2">500+</p>
-                <p className="text-sm text-gray-600">Zufriedene Kunden</p>
-              </div>
-              <div>
-                <p className="text-4xl font-bold text-fimi-navy mb-2">15+</p>
-                <p className="text-sm text-gray-600">Jahre Erfahrung</p>
-              </div>
-              <div>
-                <p className="text-4xl font-bold text-fimi-navy mb-2">98%</p>
-                <p className="text-sm text-gray-600">Weiterempfehlung</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Image */}
-          <div className="relative h-[600px] rounded-sm overflow-hidden">
+      {/* Content */}
+      <div className="container relative z-10 py-32 md:py-40">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+          className="max-w-4xl"
+        >
+          {/* GROSSES LOGO wie angefordert */}
+          <motion.div variants={fadeInUp} className="mb-12">
             <Image
-              src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=2940&auto=format&fit=crop"
-              alt="Professionelle Gebäudereinigung FIMI"
-              fill
-              className="object-cover"
+              src="/FIMI-LOGO/FI-Logo_Transparent_FUER-Webseite-Weiß-Schrift.png"
+              alt="FIMI Gebäudereinigung"
+              width={400}
+              height={133}
+              className="h-32 md:h-40 w-auto"
               priority
             />
-          </div>
-        </div>
+          </motion.div>
+
+          {/* Headline */}
+          <motion.h1
+            variants={fadeInUp}
+            className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
+          >
+            Exzellente Reinigung<br />
+            <span className="text-fimi-turquoise">für Ihr Unternehmen</span>
+          </motion.h1>
+
+          {/* Subtitle */}
+          <motion.p
+            variants={fadeInUp}
+            className="text-xl md:text-2xl text-gray-200 mb-12 max-w-2xl leading-relaxed"
+          >
+            Seit über 15 Jahren Ihr vertrauensvoller Partner für professionelle Gebäudereinigung,
+            Industriereinigung und Facility Management in Landshut und Umgebung.
+          </motion.p>
+
+          {/* CTA Buttons */}
+          <motion.div
+            variants={fadeInUp}
+            className="flex flex-col sm:flex-row gap-4"
+          >
+            <button
+              onClick={scrollToContact}
+              className="inline-flex items-center justify-center px-8 py-4 bg-fimi-turquoise text-white text-lg font-semibold rounded-lg hover:bg-fimi-turquoise/90 shadow-lg hover:shadow-xl transition-all duration-300 group"
+            >
+              <span>Kostenlose Beratung anfordern</span>
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            </button>
+
+            <a
+              href="tel:01747225473"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm border-2 border-white text-white text-lg font-semibold rounded-lg hover:bg-white hover:text-fimi-navy transition-all duration-300"
+            >
+              <Phone className="w-5 h-5 mr-2" />
+              <span>01747225473</span>
+            </a>
+          </motion.div>
+        </motion.div>
       </div>
+
+      {/* Bottom Gradient */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10" />
     </section>
   )
 }

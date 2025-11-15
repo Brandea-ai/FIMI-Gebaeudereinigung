@@ -245,9 +245,9 @@ export default function Footer() {
               <Image
                 src="/FIMI-LOGO/FIMI-LOGO_Weiße-Schrift_Transparent.png"
                 alt="FIMI Gebäudereinigung"
-                width={150}
-                height={50}
-                className="mb-6"
+                width={250}
+                height={83}
+                className="mb-6 h-20 w-auto"
               />
               <p className="text-gray-300 mb-4">
                 Professionelle Gebäudereinigung mit höchsten Qualitätsstandards. Ihr zuverlässiger Partner in Landshut und Umgebung.
