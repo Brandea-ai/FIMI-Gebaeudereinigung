@@ -94,3 +94,57 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #0D7C71;
 }
+
+/* Blog Content Styling */
+.blog-content {
+  @apply text-gray-700 leading-relaxed;
+}
+
+.blog-content h2 {
+  @apply text-3xl font-bold text-fimi-navy mt-12 mb-6;
+}
+
+.blog-content h3 {
+  @apply text-2xl font-bold text-fimi-navy mt-10 mb-4;
+}
+
+.blog-content p {
+  @apply mb-6 text-lg leading-relaxed;
+}
+
+.blog-content ul,
+.blog-content ol {
+  @apply mb-6 ml-6 space-y-2;
+}
+
+.blog-content ul li {
+  @apply list-disc text-lg;
+}
+
+.blog-content ol li {
+  @apply list-decimal text-lg;
+}
+
+.blog-content strong {
+  @apply font-semibold text-fimi-navy;
+}
+
+.blog-content a {
+  @apply text-fimi-turquoise hover:text-fimi-turquoise-dark underline;
+}
+
+.blog-content blockquote {
+  @apply border-l-4 border-fimi-turquoise pl-6 py-4 my-6 italic bg-gray-50 rounded-r-lg;
+}
+
+.blog-content code {
+  @apply bg-gray-100 px-2 py-1 rounded text-sm font-mono;
+}
+
+.blog-content pre {
+  @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto mb-6;
+}
+
+.blog-content img {
+  @apply rounded-lg shadow-lg my-8;
+}
