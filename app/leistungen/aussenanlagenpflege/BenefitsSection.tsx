@@ -1,18 +1,39 @@
-import { LucideIcon } from 'lucide-react'
+import { Shield, Clock, Sparkles, Award, Users, Leaf } from 'lucide-react'
 
-interface Benefit {
-  icon: LucideIcon
-  title: string
-  description: string
-}
+const benefits = [
+  {
+    icon: Shield,
+    title: 'Höchste Qualitätsstandards',
+    description: 'ISO-zertifizierte Reinigungsprozesse und regelmäßige Qualitätskontrollen garantieren stets perfekte Ergebnisse in Ihren Büroräumen.'
+  },
+  {
+    icon: Clock,
+    title: 'Flexible Einsatzzeiten',
+    description: 'Reinigung außerhalb Ihrer Geschäftszeiten - morgens, abends oder am Wochenende. Ihr Tagesgeschäft wird nicht gestört.'
+  },
+  {
+    icon: Sparkles,
+    title: 'Gründliche Reinigung',
+    description: 'Von Arbeitsflächen über Sanitäranlagen bis zu Gemeinschaftsräumen - wir sorgen für absolute Sauberkeit in jedem Bereich.'
+  },
+  {
+    icon: Award,
+    title: 'Erfahrenes Fachpersonal',
+    description: 'Geschulte und zuverlässige Reinigungskräfte mit langjähriger Erfahrung in der professionellen Büroreinigung.'
+  },
+  {
+    icon: Users,
+    title: 'Fester Ansprechpartner',
+    description: 'Ein dedizierter Ansprechpartner koordiniert alle Reinigungsarbeiten und steht Ihnen jederzeit zur Verfügung.'
+  },
+  {
+    icon: Leaf,
+    title: 'Ökologische Reinigungsmittel',
+    description: 'Umweltschonende und gesundheitsverträgliche Reinigungsmittel für ein gesundes Arbeitsklima.'
+  }
+]
 
-interface ServiceBenefitsProps {
-  title: string
-  subtitle: string
-  benefits: Benefit[]
-}
-
-export default function ServiceBenefits({ title, subtitle, benefits }: ServiceBenefitsProps) {
+export default function BenefitsSection() {
   return (
     <section className="section-padding bg-white">
       <div className="container-custom">
@@ -21,8 +42,10 @@ export default function ServiceBenefits({ title, subtitle, benefits }: ServiceBe
           <span className="text-fimi-turquoise font-semibold text-sm uppercase tracking-wider mb-4 block">
             Ihre Vorteile
           </span>
-          <h2 className="mb-6">{title}</h2>
-          <p className="text-xl text-gray-600">{subtitle}</p>
+          <h2 className="mb-6">Warum FIMI Büroreinigung?</h2>
+          <p className="text-xl text-gray-600">
+            Unsere Büroreinigung vereint Qualität, Flexibilität und Nachhaltigkeit für Ihr perfektes Arbeitsumfeld.
+          </p>
         </div>
 
         {/* Benefits Grid */}

@@ -4,15 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Phone } from 'lucide-react'
 
-interface ServiceHeroProps {
-  title: string
-  subtitle: string
-  description: string
-  image: string
-  category: string
-}
-
-export default function ServiceHero({ title, subtitle, description, image, category }: ServiceHeroProps) {
+export default function HeroSection() {
   const scrollToContact = () => {
     const footer = document.getElementById('kontakt-formular')
     if (footer) {
@@ -25,8 +17,8 @@ export default function ServiceHero({ title, subtitle, description, image, categ
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src={image}
-          alt={title}
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2940&auto=format&fit=crop"
+          alt="Professionelle Büroreinigung"
           fill
           className="object-cover"
           priority
@@ -43,23 +35,24 @@ export default function ServiceHero({ title, subtitle, description, image, categ
             <span>/</span>
             <Link href="/#leistungen" className="hover:text-white transition-colors">Leistungen</Link>
             <span>/</span>
-            <span className="text-fimi-turquoise">{category}</span>
+            <span className="text-fimi-turquoise">Gewerbliche Objektreinigung</span>
           </div>
 
           {/* Category Badge */}
           <div className="inline-flex items-center bg-fimi-turquoise/20 backdrop-blur-sm border border-fimi-turquoise/30 rounded-full px-6 py-2 mb-6">
-            <span className="text-sm font-semibold text-fimi-turquoise">{category}</span>
+            <span className="text-sm font-semibold text-fimi-turquoise">Gewerbliche Objektreinigung</span>
           </div>
 
           {/* Title */}
-          <h1 className="text-white mb-4">{title}</h1>
+          <h1 className="text-white mb-4">Büroreinigung in Landshut</h1>
           <p className="text-2xl md:text-3xl text-fimi-turquoise font-semibold mb-6">
-            {subtitle}
+            Saubere Büros für produktives Arbeiten
           </p>
 
           {/* Description */}
           <p className="text-xl text-gray-200 mb-10 leading-relaxed max-w-3xl">
-            {description}
+            Professionelle Büroreinigung, die Ihren Mitarbeitern ein angenehmes und gesundes Arbeitsumfeld schafft.
+            Verlassen Sie sich auf unsere Erfahrung und Zuverlässigkeit.
           </p>
 
           {/* CTA Buttons */}
