@@ -15,6 +15,7 @@ const categories = [
       { name: 'Hallenreinigung', slug: 'hallenreinigung', image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop' },
       { name: 'Parkplatzreinigung', slug: 'parkplatzreinigung', image: 'https://images.unsplash.com/photo-1590674899484-d5640e854abe?q=80&w=800&auto=format&fit=crop' },
       { name: 'Fensterreinigung', slug: 'fensterreinigung', image: 'https://images.unsplash.com/photo-1607400201515-c2c41c07d307?q=80&w=800&auto=format&fit=crop' },
+      { name: 'Glasreinigung', slug: 'glasreinigung', image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=800&auto=format&fit=crop' },
     ]
   },
   {
@@ -29,6 +30,7 @@ const categories = [
       { name: 'Tiefgaragenreinigung', slug: 'tiefgaragenreinigung', image: 'https://images.unsplash.com/photo-1590674899484-d5640e854abe?q=80&w=800&auto=format&fit=crop' },
       { name: 'Außenanlagenpflege', slug: 'aussenanlagenpflege', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop' },
       { name: 'Sonderleistungen', slug: 'sonderleistungen', image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop' },
+      { name: 'Sonderreinigung', slug: 'sonderreinigung', image: 'https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?q=80&w=800&auto=format&fit=crop' },
     ]
   },
   {

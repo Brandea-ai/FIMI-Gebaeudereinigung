@@ -13,6 +13,7 @@ const leistungen = {
     { name: 'Hallenreinigung', slug: 'hallenreinigung' },
     { name: 'Parkplatzreinigung', slug: 'parkplatzreinigung' },
     { name: 'Fensterreinigung', slug: 'fensterreinigung' },
+    { name: 'Glasreinigung', slug: 'glasreinigung' },
   ],
   'Industrielle & Spezialreinigung': [
     { name: 'Industriereinigung', slug: 'industriereinigung' },
@@ -21,6 +22,7 @@ const leistungen = {
     { name: 'Tiefgaragenreinigung', slug: 'tiefgaragenreinigung' },
     { name: 'Außenanlagenpflege', slug: 'aussenanlagenpflege' },
     { name: 'Sonderleistungen', slug: 'sonderleistungen' },
+    { name: 'Sonderreinigung', slug: 'sonderreinigung' },
   ],
   'Facility Management & Services': [
     { name: 'Facility Management', slug: 'facility-management' },
