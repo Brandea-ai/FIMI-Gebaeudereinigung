@@ -51,38 +51,36 @@ export default function HeroContainer() {
 
             {/* Main Headline - Fokus-Keyword */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.05] mb-4">
-              Gebäudereinigung in
-            </h1>
-
-            {/* Stadt - Gleiche Größe */}
-            <div className="mb-8">
+              Gebäudereinigung in{' '}
               <span
-                className={`text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-[#109387] inline-block transition-all duration-500 ${
+                className={`text-[#109387] inline-block transition-all duration-500 ${
                   isAnimating ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0'
                 }`}
               >
                 {städte[currentStadt]}
               </span>
-            </div>
+            </h1>
 
-            {/* Subheadline - Eine Zeile, fett */}
+            {/* Subheadline - Zwei Zeilen */}
             <p className="text-xl lg:text-2xl xl:text-3xl font-bold text-white mb-10 leading-relaxed">
-              Ihr Büro verdient mehr als sauber – <span className="text-[#109387]">es verdient Zuverlässigkeit.</span>
+              Ihr Büro verdient mehr als sauber –
+              <br />
+              <span className="text-[#109387]">es verdient Zuverlässigkeit.</span>
             </p>
 
             {/* Trust-Punkte - Fett für Kontrast */}
             <div className="flex flex-wrap gap-8 mb-12">
               <div className="flex items-center gap-3">
                 <CheckCircle size={24} className="text-[#109387]" />
-                <span className="text-white font-semibold text-lg">Über 15 Jahre Erfahrung</span>
+                <span className="text-white font-semibold text-lg">8 Jahre Erfahrung</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle size={24} className="text-[#109387]" />
-                <span className="text-white font-semibold text-lg">500+ zufriedene Kunden</span>
+                <span className="text-white font-semibold text-lg">85 zufriedene Kunden</span>
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle size={24} className="text-[#109387]" />
-                <span className="text-white font-semibold text-lg">Antwort in 24 Stunden</span>
+                <span className="text-white font-semibold text-lg">Antwort in 2 Stunden</span>
               </div>
             </div>
 
