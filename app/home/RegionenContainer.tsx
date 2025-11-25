@@ -270,15 +270,15 @@ export default function RegionenContainer() {
               className="w-full h-auto rounded-[6px]"
               priority
             />
-            {/* Overlay Link auf dem Bild */}
+            {/* Overlay Link auf dem Bild - Navy auffällig */}
             <Link
               href="/unternehmen"
-              className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm rounded-[6px] px-4 py-3 flex items-center justify-between group hover:bg-white transition-all"
+              className="absolute bottom-4 left-4 right-4 bg-[#012956] rounded-[6px] px-5 py-4 flex items-center justify-between group hover:bg-[#01203d] transition-all"
             >
-              <span className="text-sm text-gray-700 font-semibold">
+              <span className="text-white font-bold">
                 Mehr über FIMI erfahren
               </span>
-              <ArrowRight size={16} className="text-[#109387] group-hover:translate-x-1 transition-transform" />
+              <ArrowRight size={18} className="text-white group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 

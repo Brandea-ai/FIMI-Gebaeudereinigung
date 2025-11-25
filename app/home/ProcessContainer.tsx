@@ -90,34 +90,36 @@ export default function ProcessContainer() {
               })}
             </div>
 
-            {/* CTA */}
-            <a
-              href="#contact-form"
-              className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group w-full lg:w-auto"
-            >
-              Kostenfreie Besichtigung
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-
-            {/* Subtiler Referenzen-Link */}
-            <div className="mt-8 pt-6 border-t border-gray-200">
+            {/* CTAs */}
+            <div className="space-y-4">
+              <a
+                href="#contact-form"
+                className="flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group w-full"
+              >
+                Kostenfreie Besichtigung
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </a>
               <Link
                 href="/referenzen"
-                className="inline-flex items-center gap-2 text-gray-500 font-semibold hover:text-[#109387] transition-colors group"
+                className="flex items-center justify-center gap-3 border-2 border-[#109387] text-[#109387] font-bold text-lg px-8 py-4 rounded-[6px] hover:bg-[#109387] hover:text-white transition-all w-full"
               >
                 Was unsere Kunden sagen
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
               </Link>
             </div>
           </div>
 
           {/* Right: Full Height Image - Person mit Blickkontakt */}
-          <div className="relative h-[400px] lg:h-auto lg:min-h-[700px] order-1 lg:order-2">
+          <div className="relative aspect-[3/4] lg:aspect-auto lg:h-full lg:min-h-[700px] order-1 lg:order-2 overflow-hidden">
             <Image
               src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1200&auto=format&fit=crop"
               alt="Ihr Ansprechpartner bei FIMI Gebäudereinigung"
               fill
-              className="object-cover object-center"
+              className="object-cover object-top"
+              sizes="(max-width: 1024px) 100vw, 50vw"
               priority
             />
           </div>
