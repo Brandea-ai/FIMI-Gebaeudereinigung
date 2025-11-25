@@ -63,27 +63,32 @@ export default function ServicesContainer() {
               </p>
             </div>
 
-            {/* Single CTA - Keine verwirrenden Links */}
-            <a
-              href="#contact-form"
-              className="inline-flex items-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
-            >
-              Unverbindlich anfragen
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </a>
+            {/* CTAs */}
+            <div className="space-y-4">
+              <a
+                href="#contact-form"
+                className="flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group w-full"
+              >
+                Unverbindlich anfragen
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+              <Link
+                href="/leistungen"
+                className="flex items-center justify-center gap-3 border-2 border-[#109387] text-[#109387] font-bold text-lg px-8 py-4 rounded-[6px] hover:bg-[#109387] hover:text-white transition-all w-full"
+              >
+                Alle Leistungen ansehen
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </Link>
+            </div>
 
-            {/* Stats */}
-            <div className="mt-12 p-8 bg-[#012956] rounded-[6px]">
-              <div className="grid grid-cols-2 gap-8">
-                <div>
-                  <div className="text-4xl font-bold text-[#109387]">18+</div>
-                  <div className="text-white font-semibold mt-1">Leistungen</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-[#109387]">8</div>
-                  <div className="text-white font-semibold mt-1">Standorte</div>
-                </div>
-              </div>
+            {/* ISO Standards statt Stats */}
+            <div className="mt-12 p-6 bg-[#012956] rounded-[6px]">
+              <p className="text-white font-semibold text-center">
+                Wir arbeiten nach ISO 9001 & 14001 Standards
+              </p>
             </div>
           </aside>
 
@@ -137,20 +142,6 @@ export default function ServicesContainer() {
             })}
           </div>
 
-        </div>
-
-        {/* Bottom CTA - Einziger Link zu Leistungen */}
-        <div className="mt-16 text-center">
-          <p className="text-lg text-gray-700 font-semibold mb-6">
-            Sie möchten alle Leistungen im Detail sehen?
-          </p>
-          <Link
-            href="/leistungen"
-            className="inline-flex items-center gap-3 text-[#109387] font-bold text-lg hover:gap-4 transition-all border-2 border-[#109387] px-8 py-4 rounded-[6px] hover:bg-[#109387] hover:text-white"
-          >
-            Zur Leistungsübersicht
-            <ArrowRight size={20} />
-          </Link>
         </div>
 
       </div>
