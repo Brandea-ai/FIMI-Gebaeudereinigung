@@ -3,7 +3,6 @@ import HeroContainer from './home/HeroContainer'
 import TrustContainer from './home/TrustContainer'
 import ServicesContainer from './home/ServicesContainer'
 import RegionenContainer from './home/RegionenContainer'
-import ReferenzenContainer from './home/ReferenzenContainer'
 import ProcessContainer from './home/ProcessContainer'
 import FAQContainer from './home/FAQContainer'
 
@@ -55,7 +54,6 @@ export default function HomePage() {
       <TrustContainer />
       <ServicesContainer />
       <RegionenContainer />
-      <ReferenzenContainer />
       <ProcessContainer />
       <FAQContainer />
     </main>
