@@ -41,11 +41,11 @@ export default function ProcessContainer() {
     <section id="process-section" className="section bg-fimi-navy">
       <div className="container">
         {/* Header */}
-        <div className="max-w-3xl mb-16">
-          <h2 className="text-fimi-turquoise text-3xl md:text-4xl font-bold mb-4">
+        <div className="max-w-5xl mb-20">
+          <h2 className="text-fimi-turquoise text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
             In 4 Schritten zu Ihrem Reinigungskonzept
           </h2>
-          <p className="text-white/70 text-lg">
+          <p className="text-white/70 text-xl md:text-2xl font-bold">
             Einfach, transparent und unkompliziert. Von der ersten Anfrage bis zum sauberen Ergebnis.
           </p>
         </div>

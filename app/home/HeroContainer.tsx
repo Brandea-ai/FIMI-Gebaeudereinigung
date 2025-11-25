@@ -51,14 +51,14 @@ export default function HeroContainer() {
 
       {/* Content */}
       <div className="container relative z-10 py-24 lg:py-32">
-        <div className="max-w-3xl">
+        <div className="max-w-5xl">
           {/* Headline */}
           <h1 className="heading-hero mb-2">
             Ihre Gebäudereinigung
           </h1>
 
           {/* Animated City */}
-          <div className="mb-8">
+          <div className="mb-10">
             <span className="heading-hero">in </span>
             <span
               className={`heading-hero text-fimi-turquoise inline-block transition-all duration-400 ${
@@ -70,24 +70,24 @@ export default function HeroContainer() {
           </div>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-white/80 mb-10 max-w-2xl leading-relaxed">
+          <p className="text-xl md:text-2xl font-bold text-white/80 mb-12 max-w-4xl leading-relaxed">
             Professionelle Reinigung für Gewerbe und Industrie in Bayern.
             Zuverlässig, gründlich und individuell auf Ihre Anforderungen abgestimmt.
           </p>
 
           {/* Stats - Clean */}
-          <div className="flex flex-wrap gap-8 mb-10">
+          <div className="flex flex-wrap gap-12 mb-12">
             <div>
-              <span className="text-3xl md:text-4xl font-bold text-fimi-turquoise">15+</span>
-              <span className="text-white/70 ml-2">Jahre Erfahrung</span>
+              <span className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-fimi-turquoise">15+</span>
+              <span className="text-white/70 ml-3 text-xl font-bold">Jahre Erfahrung</span>
             </div>
             <div>
-              <span className="text-3xl md:text-4xl font-bold text-fimi-turquoise">500+</span>
-              <span className="text-white/70 ml-2">Kunden</span>
+              <span className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-fimi-turquoise">500+</span>
+              <span className="text-white/70 ml-3 text-xl font-bold">Kunden</span>
             </div>
             <div>
-              <span className="text-3xl md:text-4xl font-bold text-fimi-turquoise">8</span>
-              <span className="text-white/70 ml-2">Standorte</span>
+              <span className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-fimi-turquoise">8</span>
+              <span className="text-white/70 ml-3 text-xl font-bold">Standorte</span>
             </div>
           </div>
 

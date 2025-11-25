@@ -30,7 +30,7 @@ export default function TrustContainer() {
     <section id="trust-section" className="section bg-white">
       <div className="container">
         {/* Header */}
-        <div className="max-w-2xl mb-16">
+        <div className="max-w-4xl mb-16">
           <h2 className="heading-section">
             Warum FIMI?
           </h2>

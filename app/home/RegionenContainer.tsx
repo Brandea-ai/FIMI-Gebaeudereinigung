@@ -78,7 +78,7 @@ export default function RegionenContainer() {
     <section id="regionen-section" className="section bg-white">
       <div className="container">
         {/* Header */}
-        <div className="max-w-2xl mb-12">
+        <div className="max-w-5xl mb-16">
           <h2 className="heading-section">
             Gebäudereinigung in ganz Bayern
           </h2>

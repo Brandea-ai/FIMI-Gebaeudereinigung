@@ -55,7 +55,7 @@ export default function ServicesContainer() {
     <section id="services-section" className="section bg-gray-50">
       <div className="container">
         {/* Header */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-5xl mb-20">
           <h2 className="heading-section">
             Professionelle Reinigungslösungen für jeden Bedarf
           </h2>

@@ -45,7 +45,7 @@ export default function FAQContainer() {
     <section id="faq-section" className="section bg-gray-50">
       <div className="container">
         {/* Header */}
-        <div className="max-w-2xl mb-12">
+        <div className="max-w-5xl mb-16">
           <h2 className="heading-section">
             Häufig gestellte Fragen
           </h2>

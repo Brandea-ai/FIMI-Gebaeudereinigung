@@ -22,7 +22,7 @@
 
     /* Spacing */
     --section-padding: clamp(80px, 10vw, 140px);
-    --container-max: 1400px;
+    --container-max: 1920px;
     --radius: 6px;
   }
 
@@ -45,15 +45,15 @@
 }
 
 @layer components {
-  /* Container - Zentriert mit max-width */
+  /* Container - 4K mit schmalen Rändern */
   .container {
-    @apply mx-auto w-full px-6 md:px-8 lg:px-12;
+    @apply mx-auto w-full px-4 md:px-6 lg:px-8;
     max-width: var(--container-max);
   }
 
   .container-wide {
-    @apply mx-auto w-full px-6 md:px-8 lg:px-12;
-    max-width: 1600px;
+    @apply mx-auto w-full px-4 md:px-6 lg:px-8;
+    max-width: 2400px;
   }
 
   /* Section Spacing - Großzügig */
@@ -127,37 +127,39 @@
   }
 
   .heading-hero {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 700;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 800;
     line-height: 1.1;
     color: var(--white);
   }
 
   .heading-section {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 700;
-    line-height: 1.2;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.15;
     color: var(--fimi-turquoise);
     margin-bottom: 1.5rem;
   }
 
   .heading-card {
-    font-size: clamp(1.25rem, 2vw, 1.5rem);
-    font-weight: 600;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 700;
     color: var(--fimi-turquoise);
     margin-bottom: 0.75rem;
   }
 
   .text-lead {
-    font-size: clamp(1.125rem, 1.5vw, 1.25rem);
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
     line-height: 1.7;
     color: var(--gray-600);
+    font-weight: 600;
   }
 
   .text-body {
-    font-size: 1rem;
+    font-size: 1.125rem;
     line-height: 1.7;
     color: var(--gray-600);
+    font-weight: 600;
   }
 
   /* Cards - Minimal */
