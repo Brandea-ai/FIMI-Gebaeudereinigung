@@ -37,26 +37,31 @@ export default function TrustContainer() {
     <section className="py-20 lg:py-28 bg-white" aria-labelledby="trust-heading">
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
-        {/* Header - Sauber ausgerichtet */}
-        <header className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-12 mb-16 lg:mb-20">
+        {/* Header - Titel links, CTA-Block rechts */}
+        <header className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 lg:gap-12 mb-16 lg:mb-20">
 
           {/* Left: Headline */}
           <h2
             id="trust-heading"
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.15] max-w-2xl"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.15]"
           >
             Warum Unternehmen in Bayern{' '}
             <span className="text-[#109387]">auf FIMI vertrauen</span>
           </h2>
 
-          {/* Right: CTA */}
-          <a
-            href="#contact-form"
-            className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group whitespace-nowrap flex-shrink-0"
-          >
-            Kostenfreie Besichtigung
-            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-          </a>
+          {/* Right: CTA mit Ankündigung */}
+          <div className="flex-shrink-0">
+            <p className="text-gray-600 font-medium mb-3">
+              Jetzt unverbindlich anfragen
+            </p>
+            <a
+              href="#contact-form"
+              className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
+            >
+              Kostenfreie Besichtigung
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
         </header>
 
         {/* Trust Faktoren Grid - Einheitliche Höhen */}
