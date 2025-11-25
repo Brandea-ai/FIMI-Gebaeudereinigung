@@ -1,34 +1,42 @@
 # FIMI Gebäudereinigung
 
-Professionelle Website für Reinigungsdienstleistungen
+Professionelle Gebäudereinigung in Bayern - Landshut, München, Regensburg
 
-## 🚀 Quick Start
+## Website
 
-Dieses Projekt wird entwickelt mit **Claude Code** im vollautomatischen Workflow.
+**Live:** https://fimi-service.de
 
-### Für neue Sessions:
+## Tech Stack
 
-```
-"Lies alle MD-Dateien im Projekt und lass uns starten"
-```
-
-## 📖 Dokumentation
-
-- **[WORKFLOW.md](./WORKFLOW.md)** - Komplette Anleitung zur Zusammenarbeit mit Claude
-
-## 🛠️ Tech Stack
-
-- Next.js 14
+- Next.js 14 (App Router)
 - TypeScript
 - Tailwind CSS
-- Vercel Deployment
+- Vercel (Auto-Deploy)
 
-## 🔐 Setup
+## Design Standards
 
-1. `.env` Datei mit Tokens befüllen
-2. Projekt mit natürlicher Sprache beschreiben
-3. Claude kümmert sich um den Rest
+Alle CI, UX, UI und Content-Standards sind dokumentiert in:
+
+**[FIMI-STANDARDS.md](./FIMI-STANDARDS.md)**
+
+## CI-Farben
+
+| Farbe | Hex | Rolle |
+|-------|-----|-------|
+| Türkis | `#109387` | PRIMARY |
+| Navy | `#012956` | SECONDARY |
+
+## Development
+
+```bash
+npm install
+npm run dev
+```
+
+## Deployment
+
+Push zu `main` → Automatisches Deployment via Vercel
 
 ---
 
-**Entwickelt mit Claude Code** 🤖
+**Entwickelt mit Claude Code**
