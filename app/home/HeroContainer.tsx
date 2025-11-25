@@ -49,62 +49,62 @@ export default function HeroContainer() {
 
           <div className="max-w-4xl">
 
-            {/* Main Headline - Fokus-Keyword, GROSS */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-extrabold text-white leading-[1] mb-6">
+            {/* Main Headline - Fokus-Keyword */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.05] mb-5">
               Gebäudereinigung in{' '}
               <span
                 className={`text-[#109387] inline-block transition-all duration-500 ${
-                  isAnimating ? 'opacity-0 -translate-y-3' : 'opacity-100 translate-y-0'
+                  isAnimating ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0'
                 }`}
               >
                 {städte[currentStadt]}
               </span>
             </h1>
 
-            {/* Subheadline - Impulsiv, Groß */}
-            <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-12 leading-tight">
+            {/* Subheadline */}
+            <p className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-10 leading-snug">
               Ihr Büro verdient mehr als sauber –
               <br />
               <span className="text-[#109387]">es verdient Zuverlässigkeit.</span>
             </p>
 
-            {/* Trust-Punkte - Größer */}
-            <div className="flex flex-wrap gap-10 mb-14">
-              <div className="flex items-center gap-3">
-                <CheckCircle size={28} className="text-[#109387]" />
-                <span className="text-white font-bold text-xl">8 Jahre Erfahrung</span>
+            {/* Trust-Punkte */}
+            <div className="flex flex-wrap gap-8 mb-12">
+              <div className="flex items-center gap-2">
+                <CheckCircle size={22} className="text-[#109387]" />
+                <span className="text-white font-semibold text-lg">8 Jahre Erfahrung</span>
               </div>
-              <div className="flex items-center gap-3">
-                <CheckCircle size={28} className="text-[#109387]" />
-                <span className="text-white font-bold text-xl">85 zufriedene Kunden</span>
+              <div className="flex items-center gap-2">
+                <CheckCircle size={22} className="text-[#109387]" />
+                <span className="text-white font-semibold text-lg">85 zufriedene Kunden</span>
               </div>
-              <div className="flex items-center gap-3">
-                <CheckCircle size={28} className="text-[#109387]" />
-                <span className="text-white font-bold text-xl">Antwort in 2 Stunden</span>
+              <div className="flex items-center gap-2">
+                <CheckCircle size={22} className="text-[#109387]" />
+                <span className="text-white font-semibold text-lg">Antwort in 2 Stunden</span>
               </div>
             </div>
 
-            {/* CTAs - Größer */}
-            <div className="flex flex-col sm:flex-row gap-5 mb-14">
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <a
                 href="#contact-form"
-                className="inline-flex items-center justify-center gap-4 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-xl px-10 py-5 rounded-[6px] transition-all duration-300 group shadow-xl"
+                className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group shadow-lg"
               >
                 Kostenlose Besichtigung anfragen
-                <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a
                 href="tel:+4917472254773"
-                className="inline-flex items-center justify-center gap-4 bg-white hover:bg-gray-100 text-[#012956] font-bold text-xl px-10 py-5 rounded-[6px] transition-all duration-300"
+                className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-[#012956] font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"
               >
-                <Phone size={24} />
+                <Phone size={20} />
                 0174 722 54 773
               </a>
             </div>
 
             {/* City Selector */}
             <div className="flex items-center gap-4">
-              <span className="text-white/80 font-bold text-lg">Standorte:</span>
+              <span className="text-white/70 font-semibold">Standorte:</span>
               <div className="flex items-center gap-2">
                 {städte.map((stadt, index) => (
                   <button
@@ -126,16 +126,16 @@ export default function HeroContainer() {
         </div>
       </div>
 
-      {/* Floating Trust Badge - Größer, impulsiver */}
-      <div className="absolute bottom-10 right-10 lg:bottom-16 lg:right-16 hidden lg:block">
-        <div className="bg-white rounded-[6px] p-6 shadow-2xl">
-          <div className="flex items-center gap-5">
-            <MapPin size={36} className="text-[#109387]" />
+      {/* Floating Trust Badge */}
+      <div className="absolute bottom-8 right-8 lg:bottom-12 lg:right-12 hidden lg:block">
+        <div className="bg-white rounded-[6px] p-5 shadow-2xl">
+          <div className="flex items-center gap-4">
+            <MapPin size={28} className="text-[#109387]" />
             <div>
-              <div className="font-extrabold text-[#012956] text-xl">
+              <div className="font-bold text-[#012956] text-lg">
                 Kostenfreie Vor-Ort-Besichtigung
               </div>
-              <div className="text-gray-600 font-semibold text-lg">
+              <div className="text-gray-600">
                 Wir kommen zu Ihnen – unverbindlich.
               </div>
             </div>
