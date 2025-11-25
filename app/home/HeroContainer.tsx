@@ -90,7 +90,7 @@ export default function HeroContainer() {
                 href="#contact-form"
                 className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group shadow-lg"
               >
-                Kostenlose Besichtigung anfragen
+                Kostenfreie Besichtigung anfragen
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a
