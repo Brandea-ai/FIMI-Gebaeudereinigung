@@ -84,10 +84,13 @@ export default function ServicesContainer() {
               </Link>
             </div>
 
-            {/* ISO Standards statt Stats */}
-            <div className="mt-12 p-6 bg-[#012956] rounded-[6px]">
-              <p className="text-white font-semibold text-center">
-                Wir arbeiten nach ISO 9001 & 14001 Standards
+            {/* ISO Standards - dezent */}
+            <div className="mt-10 pt-8 border-t border-gray-200">
+              <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide">
+                Qualitätsstandards
+              </p>
+              <p className="text-lg text-gray-700 font-bold mt-2">
+                ISO 9001 & 14001
               </p>
             </div>
           </aside>
