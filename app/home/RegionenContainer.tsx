@@ -131,29 +131,61 @@ export default function RegionenContainer() {
   return (
     <section
       id="regionen"
-      className="py-20 lg:py-28 bg-white"
+      className="bg-white"
       aria-labelledby="regionen-heading"
     >
-      <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
+      {/* Sticky Header + Tabs */}
+      <div className="sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm">
+        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-6">
 
-        {/* Header */}
-        <header className="mb-12 lg:mb-16">
-          <h2
-            id="regionen-heading"
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-4"
-          >
-            Gebäudereinigung in ganz Bayern
-          </h2>
-          <p className="text-lg text-gray-700 font-semibold max-w-3xl">
-            Von Landshut aus betreuen wir Unternehmen in ganz Bayern.
-            Kurze Wege, schnelle Reaktionszeiten und lokale Teams vor Ort.
-          </p>
-        </header>
+          {/* Header */}
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-6">
+            <div>
+              <h2
+                id="regionen-heading"
+                className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#109387] leading-[1.1]"
+              >
+                Gebäudereinigung in ganz Bayern
+              </h2>
+              <p className="text-base text-gray-700 font-semibold mt-2 hidden lg:block">
+                Wählen Sie Ihre Stadt für lokale Informationen
+              </p>
+            </div>
 
-        {/* Main Content: Map + Tabs */}
-        <div className="grid lg:grid-cols-[1fr_500px] xl:grid-cols-[1fr_550px] gap-8 lg:gap-12">
+            {/* City Tabs - Horizontal scrollable */}
+            <div
+              className="flex gap-2 overflow-x-auto pb-2 -mb-2 scrollbar-hide"
+              role="tablist"
+              aria-label="Stadt auswählen"
+            >
+              {staedte.map((stadt) => (
+                <button
+                  key={stadt.id}
+                  onClick={() => setActiveStadt(stadt)}
+                  role="tab"
+                  aria-selected={activeStadt.id === stadt.id}
+                  aria-controls={`panel-${stadt.id}`}
+                  className={`px-4 py-2 rounded-[6px] border-2 font-bold text-sm whitespace-nowrap transition-all duration-300 flex-shrink-0
+                    ${activeStadt.id === stadt.id
+                      ? 'border-[#012956] bg-[#012956] text-white'
+                      : 'border-[#012956] bg-white text-[#109387] hover:bg-[#f8f9fa]'
+                    }`}
+                >
+                  {stadt.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
 
-          {/* Left: Map - Tall Image */}
+      {/* Content Area */}
+      <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-12 lg:py-16">
+
+        {/* Two Column Layout: 50/50 */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+
+          {/* Left: Map */}
           <div className="relative w-full">
             <Image
               src="/images/home/städte für fimi.avif"
@@ -165,104 +197,76 @@ export default function RegionenContainer() {
             />
           </div>
 
-          {/* Right: Sticky Tabs + Content */}
-          <div className="lg:sticky lg:top-28 h-fit">
-            {/* City Tabs - 2 Rows of 4 */}
-            <div
-              className="grid grid-cols-4 gap-2 mb-8"
-              role="tablist"
-              aria-label="Stadt auswählen"
-            >
-              {staedte.map((stadt) => (
-                <button
-                  key={stadt.id}
-                  onClick={() => setActiveStadt(stadt)}
-                  role="tab"
-                  aria-selected={activeStadt.id === stadt.id}
-                  aria-controls={`panel-${stadt.id}`}
-                  className={`px-3 py-3 lg:px-4 lg:py-4 rounded-[6px] border-2 font-bold text-sm lg:text-base transition-all duration-300
-                    ${activeStadt.id === stadt.id
-                      ? 'border-[#012956] bg-[#012956] text-white'
-                      : 'border-[#012956] bg-white text-[#109387] hover:bg-[#f8f9fa]'
-                    }`}
-                >
-                  {stadt.name}
-                </button>
-              ))}
+          {/* Right: Content Panel */}
+          <article
+            id={`panel-${activeStadt.id}`}
+            role="tabpanel"
+            aria-labelledby={`tab-${activeStadt.id}`}
+            className="bg-[#f8f9fa] rounded-[6px] p-6 lg:p-8 h-fit"
+          >
+            {/* SEO Headline */}
+            <h3 className="text-2xl lg:text-3xl font-bold text-[#109387] mb-2">
+              {activeStadt.headline}
+            </h3>
+            <p className="text-lg text-[#012956] font-bold mb-4">
+              {activeStadt.subline}
+            </p>
+
+            {/* SEO Description */}
+            <p className="text-gray-700 font-semibold leading-relaxed mb-6">
+              {activeStadt.beschreibung}
+            </p>
+
+            {/* Vorteile */}
+            <div className="mb-8">
+              <h4 className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3">
+                Ihre Vorteile in {activeStadt.name}
+              </h4>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                {activeStadt.vorteile.map((vorteil, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-2 text-gray-700 font-semibold"
+                  >
+                    <span className="text-[#109387] mt-0.5">✓</span>
+                    {vorteil}
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* Content Panel */}
-            <article
-              id={`panel-${activeStadt.id}`}
-              role="tabpanel"
-              aria-labelledby={`tab-${activeStadt.id}`}
-              className="bg-[#f8f9fa] rounded-[6px] p-6 lg:p-8"
-            >
-              {/* SEO Headline */}
-              <h3 className="text-2xl lg:text-3xl font-bold text-[#109387] mb-2">
-                {activeStadt.headline}
-              </h3>
-              <p className="text-lg text-[#012956] font-bold mb-4">
-                {activeStadt.subline}
-              </p>
-
-              {/* SEO Description */}
-              <p className="text-gray-700 font-semibold leading-relaxed mb-6">
-                {activeStadt.beschreibung}
-              </p>
-
-              {/* Vorteile */}
-              <div className="mb-8">
-                <h4 className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3">
-                  Ihre Vorteile in {activeStadt.name}
-                </h4>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                  {activeStadt.vorteile.map((vorteil, index) => (
-                    <li
-                      key={index}
-                      className="flex items-start gap-2 text-gray-700 font-semibold"
-                    >
-                      <span className="text-[#109387] mt-0.5">✓</span>
-                      {vorteil}
-                    </li>
-                  ))}
-                </ul>
+            {/* Service Links - 4 left, 4 right */}
+            <div className="border-t border-gray-200 pt-6">
+              <h4 className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-4">
+                Unsere Leistungen in {activeStadt.name}
+              </h4>
+              <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+                {services.map((service) => (
+                  <Link
+                    key={service.href}
+                    href={service.href}
+                    className="flex items-center gap-2 text-[#109387] font-semibold hover:text-[#012956] transition-colors group"
+                  >
+                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    {service.name}
+                  </Link>
+                ))}
               </div>
+            </div>
 
-              {/* Service Links - 4 left, 4 right */}
-              <div className="border-t border-gray-200 pt-6">
-                <h4 className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-4">
-                  Unsere Leistungen in {activeStadt.name}
-                </h4>
-                <div className="grid grid-cols-2 gap-x-6 gap-y-2">
-                  {services.map((service) => (
-                    <Link
-                      key={service.href}
-                      href={service.href}
-                      className="flex items-center gap-2 text-[#109387] font-semibold hover:text-[#012956] transition-colors group"
-                    >
-                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                      {service.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-
-              {/* CTA */}
-              <div className="mt-8">
-                <a
-                  href="#contact-form"
-                  className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group w-full md:w-auto"
-                >
-                  Kostenfreie Besichtigung in {activeStadt.name}
-                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                </a>
-              </div>
-            </article>
-          </div>
+            {/* CTA */}
+            <div className="mt-8">
+              <a
+                href="#contact-form"
+                className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group w-full"
+              >
+                Kostenfreie Besichtigung in {activeStadt.name}
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+          </article>
 
         </div>
-
       </div>
     </section>
   )
