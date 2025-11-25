@@ -273,7 +273,7 @@ export default function RegionenContainer() {
             {/* Overlay Link auf dem Bild - höher positioniert */}
             <Link
               href="/unternehmen"
-              className="absolute bottom-48 left-4 right-4 bg-[#012956] rounded-[6px] px-6 py-4 flex items-center justify-center gap-3 group hover:bg-[#01203d] transition-all"
+              className="absolute bottom-8 left-4 right-4 bg-[#012956] rounded-[6px] px-6 py-4 flex items-center justify-center gap-3 group hover:bg-[#01203d] transition-all"
             >
               <span className="text-white font-bold text-lg">
                 Mehr über FIMI erfahren
