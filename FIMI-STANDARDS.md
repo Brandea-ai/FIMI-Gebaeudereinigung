@@ -292,4 +292,4 @@ className={`grid md:grid-cols-2 ${index % 2 === 1 ? 'md:grid-flow-dense' : ''}`}
 
 ---
 
-**Letzte Aktualisierung:** November 2025
+**Letzte Aktualisierung:** November 2025.25
