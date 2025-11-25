@@ -153,22 +153,20 @@ export default function RegionenContainer() {
         {/* Main Content: Map + Tabs */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
 
-          {/* Left: Sticky Map */}
-          <div className="lg:sticky lg:top-32 lg:self-start">
-            <div className="relative w-full rounded-[6px] overflow-hidden">
-              <Image
-                src="/images/home/städte für fimi.avif"
-                alt="Bayern Karte - FIMI Gebäudereinigung Servicegebiete"
-                width={4800}
-                height={3584}
-                className="w-full h-auto"
-                priority
-              />
-            </div>
+          {/* Left: Map */}
+          <div className="relative w-full rounded-[6px] overflow-hidden">
+            <Image
+              src="/images/home/städte für fimi.avif"
+              alt="Bayern Karte - FIMI Gebäudereinigung Servicegebiete"
+              width={4800}
+              height={3584}
+              className="w-full h-auto"
+              priority
+            />
           </div>
 
-          {/* Right: Tabs + Content */}
-          <div>
+          {/* Right: Sticky Tabs + Content */}
+          <div className="lg:sticky lg:top-32 lg:self-start">
             {/* City Tabs - 2 Rows of 4 */}
             <div
               className="grid grid-cols-4 gap-2 mb-8"
