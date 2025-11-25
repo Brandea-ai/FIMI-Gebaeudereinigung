@@ -44,39 +44,39 @@ export default function FAQContainer() {
   return (
     <section id="faq-section" className="section bg-gray-50">
       <div className="container">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="badge mb-6">FAQ</span>
-          <h2 className="heading-2 mb-6">
+        {/* Header - Links */}
+        <div className="mb-16">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-fimi-navy mb-6">
             Haeufig gestellte Fragen
           </h2>
-          <p className="text-lead">
+          <p className="text-xl md:text-2xl font-bold text-gray-600 max-w-4xl">
             Hier finden Sie Antworten auf die wichtigsten Fragen zu unseren Dienstleistungen.
             Ihre Frage ist nicht dabei? Kontaktieren Sie uns!
           </p>
         </div>
 
-        {/* FAQ Grid */}
-        <div className="grid lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
+        {/* FAQ Grid - 6px Rundungen */}
+        <div className="grid lg:grid-cols-2 gap-6">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className={`bg-white border-2 rounded-xl overflow-hidden transition-all duration-300 ${
-                openIndex === index ? 'border-fimi-turquoise shadow-card' : 'border-gray-200'
+              className={`bg-white border-2 rounded-[6px] overflow-hidden transition-all ${
+                openIndex === index ? 'border-fimi-turquoise' : 'border-gray-200'
               }`}
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full px-6 py-5 flex items-start justify-between gap-4 text-left hover:bg-gray-50 transition-colors"
               >
-                <span className="font-semibold text-fimi-navy">
+                <span className="text-xl font-bold text-fimi-navy">
                   {faq.question}
                 </span>
                 <ChevronDown
                   className={`flex-shrink-0 text-fimi-turquoise transition-transform duration-300 ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
-                  size={20}
+                  size={28}
+                  strokeWidth={3}
                 />
               </button>
 
@@ -86,7 +86,7 @@ export default function FAQContainer() {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <div className="px-6 pb-5 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+                  <div className="px-6 pb-5 text-lg font-bold text-gray-600 border-t-2 border-gray-100 pt-4">
                     {faq.answer}
                   </div>
                 </div>
@@ -95,25 +95,25 @@ export default function FAQContainer() {
           ))}
         </div>
 
-        {/* CTA */}
+        {/* CTA - 6px Rundungen */}
         <div className="mt-16 text-center">
-          <div className="inline-block bg-white rounded-2xl p-8 shadow-card border border-gray-100">
-            <p className="text-lg text-gray-700 mb-6">
+          <div className="inline-block bg-white rounded-[6px] p-8 border-2 border-gray-200">
+            <p className="text-xl font-bold text-gray-700 mb-6">
               Haben Sie weitere Fragen? Wir beraten Sie gerne persoenlich.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="tel:01747225473"
-                className="btn-primary"
+                className="inline-flex items-center justify-center gap-3 bg-fimi-turquoise text-white text-lg font-bold px-8 py-4 rounded-[6px] hover:opacity-90 transition-all"
               >
-                <Phone size={18} />
+                <Phone size={24} strokeWidth={3} />
                 0174 722 5473
               </a>
               <a
                 href="mailto:info@fimi-service.de"
-                className="btn-outline"
+                className="inline-flex items-center justify-center gap-3 bg-white text-fimi-navy text-lg font-bold px-8 py-4 rounded-[6px] border-2 border-fimi-navy hover:bg-fimi-navy hover:text-white transition-all"
               >
-                <Mail size={18} />
+                <Mail size={24} strokeWidth={3} />
                 E-Mail schreiben
               </a>
             </div>
