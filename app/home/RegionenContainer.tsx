@@ -273,10 +273,10 @@ export default function RegionenContainer() {
                 priority
               />
             </div>
-            {/* Link unter dem Bild - auf gleicher Höhe wie CTA rechts */}
+            {/* Link unter dem Bild */}
             <Link
               href="/unternehmen"
-              className="mt-8 bg-[#012956] rounded-[6px] px-8 py-4 flex items-center justify-center gap-3 group hover:bg-[#01203d] transition-all"
+              className="mt-4 bg-[#012956] rounded-[6px] px-8 py-4 flex items-center justify-center gap-3 group hover:bg-[#01203d] transition-all"
             >
               <span className="text-white font-bold text-lg">
                 Mehr über FIMI erfahren
