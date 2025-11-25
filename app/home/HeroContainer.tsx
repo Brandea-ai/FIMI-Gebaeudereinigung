@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { ArrowRight, Phone, MapPin } from 'lucide-react'
+import { ArrowRight, Phone } from 'lucide-react'
 
 const städte = [
   'Landshut',
@@ -32,63 +32,62 @@ export default function HeroContainer() {
   return (
     <section className="relative min-h-screen">
 
-      {/* Background Image */}
+      {/* Background Image - Sauberes, modernes Büro */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=3840&auto=format&fit=crop"
-          alt="Modernes Bürogebäude"
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=3840&auto=format&fit=crop"
+          alt="Sauberes modernes Bürogebäude"
           className="w-full h-full object-cover"
         />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-fimi-navy via-fimi-navy/95 to-fimi-navy/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-fimi-navy via-fimi-navy/90 to-fimi-navy/60" />
       </div>
 
-      {/* Content Grid */}
+      {/* Content */}
       <div className="relative z-10 min-h-screen">
         <div className="max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 min-h-screen flex items-center">
 
           <div className="grid lg:grid-cols-2 gap-16 xl:gap-24 items-center w-full py-32">
 
-            {/* Left - Text Content */}
+            {/* Left - Main Content */}
             <div>
 
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-8">
-                <MapPin size={16} className="text-fimi-turquoise" />
-                <span className="text-white/80 text-sm font-medium">8 Standorte in Bayern</span>
-              </div>
-
-              {/* Headline */}
-              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] mb-6">
-                Professionelle
+              {/* Headline - Problem → Lösung */}
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] mb-8">
+                Endlich eine
                 <br />
-                <span className="text-fimi-turquoise">Gebäudereinigung</span>
+                <span className="text-fimi-turquoise">Reinigungsfirma,</span>
                 <br />
                 <span className="inline-flex items-center gap-3">
-                  <span className="text-white/60 font-normal">in</span>
-                  <span
-                    className={`transition-all duration-500 ${
-                      isAnimating ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0'
-                    }`}
-                  >
-                    {städte[currentStadt]}
-                  </span>
+                  <span className="text-white/60 font-normal">die</span>
+                  <span className="text-white">zuverlässig ist</span>
                 </span>
               </h1>
 
-              {/* Subline */}
-              <p className="text-lg lg:text-xl text-white/60 max-w-lg mb-10 leading-relaxed">
-                Ihr zuverlässiger Partner für Gewerbe- und Industriereinigung.
-                Maßgeschneiderte Lösungen seit über 15 Jahren.
+              {/* Subline - Kundensprache, SEO */}
+              <p className="text-xl lg:text-2xl text-white/70 max-w-xl mb-6 leading-relaxed">
+                Büroreinigung, Industriereinigung und Gebäudeservice in
+                <span
+                  className={`text-fimi-turquoise font-semibold ml-2 inline-block transition-all duration-500 ${
+                    isAnimating ? 'opacity-0 -translate-y-1' : 'opacity-100 translate-y-0'
+                  }`}
+                >
+                  {städte[currentStadt]}
+                </span>
+                <span className="ml-1">und Umgebung.</span>
+              </p>
+
+              <p className="text-lg text-white/50 max-w-lg mb-10">
+                Schluss mit unzuverlässigen Reinigungskräften, verschobenen Terminen
+                und mangelhafter Qualität. Wir übernehmen – Sie konzentrieren sich auf Ihr Geschäft.
               </p>
 
               {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <div className="flex flex-col sm:flex-row gap-4 mb-10">
                 <a
                   href="#contact-form"
                   className="inline-flex items-center justify-center gap-3 bg-fimi-turquoise hover:bg-[#0d7d72] text-white font-semibold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
                 >
-                  Kostenlos anfragen
+                  Angebot in 24h erhalten
                   <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a
@@ -100,7 +99,7 @@ export default function HeroContainer() {
                 </a>
               </div>
 
-              {/* City Dots */}
+              {/* City Selector */}
               <div className="flex items-center gap-2">
                 {städte.map((stadt, index) => (
                   <button
@@ -118,48 +117,52 @@ export default function HeroContainer() {
 
             </div>
 
-            {/* Right - Stats Card */}
+            {/* Right - Trust Card */}
             <div className="hidden lg:block">
               <div className="bg-white rounded-[6px] p-10 xl:p-12 shadow-2xl max-w-md ml-auto">
 
-                <h2 className="text-2xl font-bold text-fimi-navy mb-8">
-                  Warum FIMI?
+                <h2 className="text-2xl font-bold text-fimi-navy mb-2">
+                  Das sagen unsere Kunden
                 </h2>
+                <p className="text-gray-500 mb-8">
+                  Über 500 Unternehmen in Bayern vertrauen uns
+                </p>
 
-                <div className="space-y-8">
-                  <div className="flex items-start gap-5">
-                    <div className="text-4xl xl:text-5xl font-bold text-fimi-turquoise">15+</div>
+                <div className="space-y-6">
+
+                  {/* Testimonial Quote */}
+                  <blockquote className="text-gray-700 italic border-l-4 border-fimi-turquoise pl-4">
+                    „Seit 3 Jahren betreut FIMI unsere Büroräume. Pünktlich, gründlich,
+                    und wir müssen uns um nichts kümmern."
+                  </blockquote>
+                  <div className="text-sm text-gray-500">
+                    — Geschäftsführer, Maschinenbau-Unternehmen, Landshut
+                  </div>
+
+                  <div className="w-full h-px bg-gray-200 my-6" />
+
+                  {/* Stats Row */}
+                  <div className="grid grid-cols-3 gap-4 text-center">
                     <div>
-                      <div className="font-semibold text-fimi-navy">Jahre Erfahrung</div>
-                      <div className="text-gray-500 text-sm">in professioneller Gebäudereinigung</div>
+                      <div className="text-3xl font-bold text-fimi-turquoise">15+</div>
+                      <div className="text-xs text-gray-500 uppercase tracking-wide">Jahre</div>
+                    </div>
+                    <div>
+                      <div className="text-3xl font-bold text-fimi-turquoise">500+</div>
+                      <div className="text-xs text-gray-500 uppercase tracking-wide">Kunden</div>
+                    </div>
+                    <div>
+                      <div className="text-3xl font-bold text-fimi-turquoise">98%</div>
+                      <div className="text-xs text-gray-500 uppercase tracking-wide">Zufrieden</div>
                     </div>
                   </div>
 
-                  <div className="w-full h-px bg-gray-200" />
-
-                  <div className="flex items-start gap-5">
-                    <div className="text-4xl xl:text-5xl font-bold text-fimi-turquoise">500+</div>
-                    <div>
-                      <div className="font-semibold text-fimi-navy">Zufriedene Kunden</div>
-                      <div className="text-gray-500 text-sm">Unternehmen vertrauen auf uns</div>
-                    </div>
-                  </div>
-
-                  <div className="w-full h-px bg-gray-200" />
-
-                  <div className="flex items-start gap-5">
-                    <div className="text-4xl xl:text-5xl font-bold text-fimi-turquoise">98%</div>
-                    <div>
-                      <div className="font-semibold text-fimi-navy">Kundenzufriedenheit</div>
-                      <div className="text-gray-500 text-sm">durch höchste Qualitätsstandards</div>
-                    </div>
-                  </div>
                 </div>
 
-                <div className="mt-10 pt-8 border-t border-gray-200">
-                  <div className="flex items-center gap-3 text-sm text-gray-500">
+                <div className="mt-8 pt-6 border-t border-gray-200">
+                  <div className="flex items-center gap-3 text-sm text-gray-600">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                    24/7 Notfallservice verfügbar
+                    Kostenlose Beratung – Antwort in 24 Stunden
                   </div>
                 </div>
 
