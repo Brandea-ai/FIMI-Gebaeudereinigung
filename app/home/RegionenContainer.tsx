@@ -134,8 +134,8 @@ export default function RegionenContainer() {
       className="bg-white"
       aria-labelledby="regionen-heading"
     >
-      {/* Sticky Header + Tabs */}
-      <div className="sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm">
+      {/* Sticky Header + Tabs - unter der Navigation (top-20 = 80px) */}
+      <div className="sticky top-20 z-30 bg-white border-b border-gray-200 shadow-sm">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-6">
 
           {/* Header */}
@@ -197,74 +197,84 @@ export default function RegionenContainer() {
             />
           </div>
 
-          {/* Right: Content Panel */}
-          <article
-            id={`panel-${activeStadt.id}`}
-            role="tabpanel"
-            aria-labelledby={`tab-${activeStadt.id}`}
-            className="bg-[#f8f9fa] rounded-[6px] p-6 lg:p-8 h-fit"
-          >
-            {/* SEO Headline */}
-            <h3 className="text-2xl lg:text-3xl font-bold text-[#109387] mb-2">
-              {activeStadt.headline}
-            </h3>
-            <p className="text-lg text-[#012956] font-bold mb-4">
-              {activeStadt.subline}
-            </p>
-
-            {/* SEO Description */}
-            <p className="text-gray-700 font-semibold leading-relaxed mb-6">
-              {activeStadt.beschreibung}
-            </p>
-
-            {/* Vorteile */}
-            <div className="mb-8">
-              <h4 className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3">
-                Ihre Vorteile in {activeStadt.name}
-              </h4>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                {activeStadt.vorteile.map((vorteil, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start gap-2 text-gray-700 font-semibold"
-                  >
-                    <span className="text-[#109387] mt-0.5">✓</span>
-                    {vorteil}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Service Links - 4 left, 4 right */}
-            <div className="border-t border-gray-200 pt-6">
-              <h4 className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-4">
-                Unsere Leistungen in {activeStadt.name}
-              </h4>
-              <div className="grid grid-cols-2 gap-x-6 gap-y-2">
-                {services.map((service) => (
-                  <Link
-                    key={service.href}
-                    href={service.href}
-                    className="flex items-center gap-2 text-[#109387] font-semibold hover:text-[#012956] transition-colors group"
-                  >
-                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                    {service.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* CTA */}
-            <div className="mt-8">
-              <a
-                href="#contact-form"
-                className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group w-full"
+          {/* Right: Content Panels - ALLE für SEO, nur aktiver sichtbar */}
+          <div className="relative">
+            {staedte.map((stadt) => (
+              <article
+                key={stadt.id}
+                id={`panel-${stadt.id}`}
+                role="tabpanel"
+                aria-labelledby={`tab-${stadt.id}`}
+                aria-hidden={activeStadt.id !== stadt.id}
+                className={`bg-[#f8f9fa] rounded-[6px] p-6 lg:p-8 transition-opacity duration-300
+                  ${activeStadt.id === stadt.id
+                    ? 'opacity-100 relative'
+                    : 'opacity-0 absolute inset-0 pointer-events-none'
+                  }`}
               >
-                Kostenfreie Besichtigung in {activeStadt.name}
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-            </div>
-          </article>
+                {/* SEO Headline - h3 mit Keyword */}
+                <h3 className="text-2xl lg:text-3xl font-bold text-[#109387] mb-2">
+                  {stadt.headline}
+                </h3>
+                <p className="text-lg text-[#012956] font-bold mb-4">
+                  {stadt.subline}
+                </p>
+
+                {/* SEO Description */}
+                <p className="text-gray-700 font-semibold leading-relaxed mb-6">
+                  {stadt.beschreibung}
+                </p>
+
+                {/* Vorteile */}
+                <div className="mb-8">
+                  <h4 className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3">
+                    Ihre Vorteile in {stadt.name}
+                  </h4>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    {stadt.vorteile.map((vorteil, index) => (
+                      <li
+                        key={index}
+                        className="flex items-start gap-2 text-gray-700 font-semibold"
+                      >
+                        <span className="text-[#109387] mt-0.5">✓</span>
+                        {vorteil}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Service Links - 4 left, 4 right */}
+                <div className="border-t border-gray-200 pt-6">
+                  <h4 className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-4">
+                    Unsere Leistungen in {stadt.name}
+                  </h4>
+                  <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+                    {services.map((service) => (
+                      <Link
+                        key={service.href}
+                        href={service.href}
+                        className="flex items-center gap-2 text-[#109387] font-semibold hover:text-[#012956] transition-colors group"
+                      >
+                        <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                        {service.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+
+                {/* CTA */}
+                <div className="mt-8">
+                  <a
+                    href="#contact-form"
+                    className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group w-full"
+                  >
+                    Kostenfreie Besichtigung in {stadt.name}
+                    <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
 
         </div>
       </div>
