@@ -127,9 +127,22 @@ const services = [
 
 export default function RegionenContainer() {
   const [activeStadt, setActiveStadt] = useState(staedte[0])
+  const [expandedDescriptions, setExpandedDescriptions] = useState<Set<string>>(new Set())
   const tabsRef = useRef<HTMLDivElement>(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(true)
+
+  const toggleDescription = (stadtId: string) => {
+    setExpandedDescriptions(prev => {
+      const newSet = new Set(prev)
+      if (newSet.has(stadtId)) {
+        newSet.delete(stadtId)
+      } else {
+        newSet.add(stadtId)
+      }
+      return newSet
+    })
+  }
 
   // Check scroll position
   const checkScrollPosition = () => {
@@ -282,10 +295,28 @@ export default function RegionenContainer() {
                   {stadt.subline}
                 </p>
 
-                {/* SEO Description */}
-                <p className="text-gray-700 font-semibold leading-relaxed mb-6">
-                  {stadt.beschreibung}
-                </p>
+                {/* SEO Description - Mobile: truncated with "mehr anzeigen", Desktop: full */}
+                <div className="mb-6">
+                  {/* Desktop: Always full text */}
+                  <p className="hidden lg:block text-gray-700 font-semibold leading-relaxed">
+                    {stadt.beschreibung}
+                  </p>
+
+                  {/* Mobile: Truncated with expand button */}
+                  <div className="lg:hidden">
+                    <p className={`text-gray-700 font-semibold leading-relaxed ${
+                      expandedDescriptions.has(stadt.id) ? '' : 'line-clamp-3'
+                    }`}>
+                      {stadt.beschreibung}
+                    </p>
+                    <button
+                      onClick={() => toggleDescription(stadt.id)}
+                      className="mt-2 text-[#109387] font-bold text-sm hover:text-[#012956] transition-colors"
+                    >
+                      {expandedDescriptions.has(stadt.id) ? 'Weniger anzeigen' : 'Mehr anzeigen'}
+                    </button>
+                  </div>
+                </div>
 
                 {/* Vorteile */}
                 <div className="mb-8">
