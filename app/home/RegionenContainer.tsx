@@ -257,33 +257,36 @@ export default function RegionenContainer() {
       {/* Content Area */}
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-12 lg:py-16">
 
-        {/* Two Column Layout: 50/50 */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+        {/* Two Column Layout: 50/50 - gleiche Höhe */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
 
-          {/* Left: Map */}
-          <div className="relative w-full">
-            <Image
-              src="/images/home/städte für fimi.avif"
-              alt="Bayern Karte - FIMI Gebäudereinigung Servicegebiete"
-              width={4800}
-              height={3584}
-              className="w-full h-auto rounded-[6px]"
-              priority
-            />
-            {/* Overlay Link auf dem Bild - Navy auffällig */}
+          {/* Left: Map + Link */}
+          <div className="flex flex-col">
+            {/* Map */}
+            <div className="relative w-full flex-1">
+              <Image
+                src="/images/home/städte für fimi.avif"
+                alt="Bayern Karte - FIMI Gebäudereinigung Servicegebiete"
+                width={4800}
+                height={3584}
+                className="w-full h-auto rounded-[6px]"
+                priority
+              />
+            </div>
+            {/* Link unter dem Bild - auf gleicher Höhe wie CTA rechts */}
             <Link
               href="/unternehmen"
-              className="absolute bottom-4 left-4 right-4 bg-[#012956] rounded-[6px] px-5 py-4 flex items-center justify-between group hover:bg-[#01203d] transition-all"
+              className="mt-8 bg-[#012956] rounded-[6px] px-8 py-4 flex items-center justify-center gap-3 group hover:bg-[#01203d] transition-all"
             >
-              <span className="text-white font-bold">
+              <span className="text-white font-bold text-lg">
                 Mehr über FIMI erfahren
               </span>
-              <ArrowRight size={18} className="text-white group-hover:translate-x-1 transition-transform" />
+              <ArrowRight size={20} className="text-white group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 
           {/* Right: Content Panels - ALLE für SEO, nur aktiver sichtbar */}
-          <div className="relative">
+          <div className="relative flex flex-col">
             {staedte.map((stadt) => (
               <article
                 key={stadt.id}
@@ -291,9 +294,9 @@ export default function RegionenContainer() {
                 role="tabpanel"
                 aria-labelledby={`tab-${stadt.id}`}
                 aria-hidden={activeStadt.id !== stadt.id}
-                className={`bg-[#f8f9fa] rounded-[6px] p-6 lg:p-8 transition-opacity duration-300
+                className={`bg-[#f8f9fa] rounded-[6px] p-6 lg:p-8 transition-opacity duration-300 flex flex-col
                   ${activeStadt.id === stadt.id
-                    ? 'opacity-100 relative'
+                    ? 'opacity-100 relative flex-1'
                     : 'opacity-0 absolute inset-0 pointer-events-none'
                   }`}
               >
@@ -365,11 +368,11 @@ export default function RegionenContainer() {
                   </div>
                 </div>
 
-                {/* CTA */}
-                <div className="mt-8">
+                {/* CTA - mt-auto pushed to bottom */}
+                <div className="mt-auto pt-8">
                   <a
                     href="#contact-form"
-                    className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group w-full"
+                    className="flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group w-full"
                   >
                     Kostenfreie Besichtigung in {stadt.name}
                     <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
