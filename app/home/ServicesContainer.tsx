@@ -1,72 +1,79 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Building2, Factory, Wrench } from 'lucide-react'
+import { ArrowRight, Building2, Factory, Wrench, CheckCircle } from 'lucide-react'
 
 const serviceCategories = [
   {
     icon: Building2,
     title: 'Gewerbliche Objektreinigung',
-    description: 'Professionelle Reinigungslösungen für Büros, Hallen, Baustellen und mehr. Täglich, wöchentlich oder nach Ihrem individuellen Bedarf.',
+    subtitle: 'Professionelle Reinigung fuer Bueros und Gewerbe',
+    description: 'Von der taeglichen Unterhaltsreinigung bis zur gruendlichen Grundreinigung - wir sorgen fuer makellose Sauberkeit in Ihren Geschaeftsraeumen. Massgeschneiderte Konzepte fuer Buerogebaeude, Praxen und Verwaltungen.',
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=3540&auto=format&fit=crop',
     services: [
-      'Büroreinigung',
+      'Bueroreinigung',
       'Unterhaltsreinigung',
       'Baureinigung',
       'Hallenreinigung',
       'Parkplatzreinigung',
-      'Fensterreinigung'
+      'Fensterreinigung',
     ],
-    link: '/leistungen#gewerblich'
+    link: '/leistungen#gewerblich',
+    stats: { value: '200+', label: 'Bueros betreut' },
   },
   {
     icon: Factory,
-    title: 'Industrielle & Spezialreinigung',
-    description: 'Spezialisierte Reinigung für industrielle Anlagen, Maschinen und Fassaden mit modernster Technik und geschultem Personal.',
+    title: 'Industrielle Reinigung',
+    subtitle: 'Spezialisierte Loesungen fuer Industrie',
+    description: 'Industrieanlagen erfordern besondere Expertise. Unsere geschulten Teams reinigen Produktionshallen, Maschinen und Fassaden mit modernster Technik und unter Einhaltung aller Sicherheitsvorschriften.',
     image: 'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?q=80&w=3540&auto=format&fit=crop',
     services: [
       'Industriereinigung',
       'Maschinenreinigung',
       'Fassadenreinigung',
       'Tiefgaragenreinigung',
-      'Außenanlagenpflege',
-      'Sonderleistungen'
+      'Aussenanlagenpflege',
+      'Sonderreinigung',
     ],
-    link: '/leistungen#industrie'
+    link: '/leistungen#industrie',
+    stats: { value: '50+', label: 'Industriekunden' },
   },
   {
     icon: Wrench,
-    title: 'Facility Management & Services',
-    description: 'Umfassende Gebäudebetreuung aus einer Hand. Von Hausmeisterservice bis Winterdienst - wir kümmern uns um alles.',
+    title: 'Facility Management',
+    subtitle: 'Ganzheitliche Gebaeudebetreuung',
+    description: 'Alles aus einer Hand: Wir uebernehmen die komplette Betreuung Ihrer Immobilie - von der Reinigung ueber Hausmeisterservices bis zum Winterdienst. Ihr Single Point of Contact fuer alle Gebaeudedienstleistungen.',
     image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=3540&auto=format&fit=crop',
     services: [
       'Facility Management',
       'Hausmeisterservice',
       'Winterdienst',
-      'Beschaffungsmanagement'
+      'Beschaffungsmanagement',
     ],
-    link: '/leistungen#facility'
-  }
+    link: '/leistungen#facility',
+    stats: { value: '100+', label: 'Objekte verwaltet' },
+  },
 ]
 
 export default function ServicesContainer() {
   return (
-    <section className="py-24 md:py-32 bg-gray-50">
+    <section id="services-section" className="section bg-gray-50">
       <div className="container">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-block px-4 py-2 bg-fimi-turquoise/10 text-fimi-turquoise font-semibold mb-6" style={{ borderRadius: '4px' }}>
-            Unsere Leistungen
-          </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-fimi-navy mb-6">
-            Professionelle Lösungen für jeden Bedarf
+          <span className="badge mb-6">Unsere Leistungen</span>
+          <h2 className="heading-2 mb-6">
+            Professionelle Reinigungsloesungen fuer jeden Bedarf
           </h2>
-          <p className="text-xl text-gray-600">
-            Von der gewerblichen Reinigung bis zum kompletten Facility Management
+          <p className="text-lead">
+            18 spezialisierte Dienstleistungen in 3 Kategorien.
+            Von der Bueroreinigung bis zum kompletten Facility Management.
           </p>
         </div>
 
-        {/* Services Grid - Zick-Zack Layout */}
-        <div className="space-y-24">
+        {/* Services - Zick-Zack Layout */}
+        <div className="space-y-24 lg:space-y-32">
           {serviceCategories.map((category, index) => {
             const Icon = category.icon
             const isEven = index % 2 === 0
@@ -74,34 +81,54 @@ export default function ServicesContainer() {
             return (
               <div
                 key={category.title}
-                className={`grid lg:grid-cols-2 gap-12 items-center ${
-                  isEven ? '' : 'lg:flex-row-reverse'
-                }`}
+                className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center"
               >
                 {/* Image */}
                 <div className={`${isEven ? 'lg:order-1' : 'lg:order-2'}`}>
-                  <div className="relative h-[500px] group overflow-hidden" style={{ borderRadius: '4px' }}>
-                    <Image
-                      src={category.image}
-                      alt={category.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-fimi-navy/80 to-transparent" />
+                  <div className="relative group">
+                    {/* Main Image */}
+                    <div className="relative aspect-[4/3] rounded-2xl overflow-hidden img-zoom">
+                      <Image
+                        src={category.image}
+                        alt={category.title}
+                        fill
+                        className="object-cover"
+                      />
+                      {/* Overlay on hover */}
+                      <div className="absolute inset-0 bg-fimi-navy/0 group-hover:bg-fimi-navy/20 transition-colors duration-500" />
+                    </div>
+
+                    {/* Stats Badge */}
+                    <div className="absolute -bottom-6 -right-6 lg:-right-8 glass-card px-6 py-4 rounded-xl shadow-glass-lg">
+                      <div className="text-3xl font-bold text-fimi-turquoise">
+                        {category.stats.value}
+                      </div>
+                      <div className="text-sm text-gray-600 font-medium">
+                        {category.stats.label}
+                      </div>
+                    </div>
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className={`${isEven ? 'lg:order-2' : 'lg:order-1'}`}>
-                  <div className="bg-fimi-turquoise text-white w-16 h-16 flex items-center justify-center mb-6" style={{ borderRadius: '4px' }}>
-                    <Icon size={32} />
+                  {/* Icon */}
+                  <div className="w-16 h-16 bg-fimi-turquoise/10 rounded-xl flex items-center justify-center mb-6">
+                    <Icon size={32} className="text-fimi-turquoise" />
                   </div>
 
-                  <h3 className="text-3xl md:text-4xl font-bold text-fimi-navy mb-4">
+                  {/* Subtitle */}
+                  <span className="text-fimi-turquoise font-semibold text-sm uppercase tracking-wider">
+                    {category.subtitle}
+                  </span>
+
+                  {/* Title */}
+                  <h3 className="heading-3 mt-2 mb-4">
                     {category.title}
                   </h3>
 
-                  <p className="text-xl text-gray-600 mb-8">
+                  {/* Description */}
+                  <p className="text-gray-600 text-lg leading-relaxed mb-8">
                     {category.description}
                   </p>
 
@@ -112,8 +139,8 @@ export default function ServicesContainer() {
                         key={service}
                         className="flex items-center gap-2 text-fimi-navy"
                       >
-                        <div className="w-1.5 h-1.5 bg-fimi-turquoise" style={{ borderRadius: '2px' }} />
-                        <span className="font-semibold">{service}</span>
+                        <CheckCircle size={16} className="text-fimi-turquoise flex-shrink-0" />
+                        <span className="font-medium text-sm">{service}</span>
                       </div>
                     ))}
                   </div>
@@ -121,11 +148,10 @@ export default function ServicesContainer() {
                   {/* CTA */}
                   <Link
                     href={category.link}
-                    className="inline-flex items-center gap-2 px-8 py-4 bg-fimi-navy text-white font-bold hover:opacity-90 transition-opacity group"
-                    style={{ borderRadius: '4px' }}
+                    className="group inline-flex items-center gap-2 text-fimi-turquoise font-semibold hover:gap-3 transition-all"
                   >
                     Mehr erfahren
-                    <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
               </div>
@@ -133,22 +159,25 @@ export default function ServicesContainer() {
           })}
         </div>
 
-        {/* CTA Banner */}
-        <div className="mt-24 bg-white p-12 text-center border-2 border-fimi-turquoise" style={{ borderRadius: '4px' }}>
-          <h3 className="text-3xl md:text-4xl font-bold text-fimi-navy mb-4">
-            Maßgeschneiderte Lösungen für Ihr Unternehmen
-          </h3>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Jedes Unternehmen hat individuelle Anforderungen. Lassen Sie uns gemeinsam die perfekte Lösung für Sie finden.
-          </p>
-          <Link
-            href="/leistungen"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-fimi-turquoise text-white font-bold hover:opacity-90 transition-opacity"
-            style={{ borderRadius: '4px' }}
-          >
-            Alle Leistungen ansehen
-            <ArrowRight size={20} />
-          </Link>
+        {/* Bottom CTA */}
+        <div className="mt-24 text-center">
+          <div className="inline-block p-10 bg-white rounded-2xl shadow-card border border-gray-100">
+            <h3 className="heading-4 mb-4">
+              Sie wissen nicht, welche Leistung Sie benoetigen?
+            </h3>
+            <p className="text-gray-600 mb-6 max-w-lg mx-auto">
+              Kein Problem. Wir beraten Sie gerne und erstellen ein massgeschneidertes Konzept fuer Ihre Anforderungen.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/leistungen" className="btn-outline">
+                Alle 18 Leistungen ansehen
+              </Link>
+              <Link href="/kontakt" className="btn-primary">
+                Kostenlose Beratung
+                <ArrowRight size={18} />
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>

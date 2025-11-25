@@ -3,7 +3,35 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Mail, Phone, MapPin } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock, ArrowRight, Send, CheckCircle, Building2, Factory, Wrench } from 'lucide-react'
+
+const leistungenLinks = {
+  'Gewerbliche Reinigung': [
+    { name: 'Buroreinigung', href: '/leistungen/bueroreinigung' },
+    { name: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
+    { name: 'Baureinigung', href: '/leistungen/baureinigung' },
+    { name: 'Hallenreinigung', href: '/leistungen/hallenreinigung' },
+  ],
+  'Industriereinigung': [
+    { name: 'Industriereinigung', href: '/leistungen/industriereinigung' },
+    { name: 'Maschinenreinigung', href: '/leistungen/maschinenreinigung' },
+    { name: 'Fassadenreinigung', href: '/leistungen/fassadenreinigung' },
+    { name: 'Tiefgaragenreinigung', href: '/leistungen/tiefgaragenreinigung' },
+  ],
+  'Facility Services': [
+    { name: 'Facility Management', href: '/leistungen/facility-management' },
+    { name: 'Hausmeisterservice', href: '/leistungen/hausmeisterservice' },
+    { name: 'Winterdienst', href: '/leistungen/winterdienst' },
+    { name: 'Beschaffungsmanagement', href: '/leistungen/beschaffungsmanagement' },
+  ],
+}
+
+const rechtlicheLinks = [
+  { name: 'Impressum', href: '/impressum' },
+  { name: 'Datenschutz', href: '/datenschutz' },
+  { name: 'AGB', href: '/agb' },
+  { name: 'Sitemap', href: '/sitemap' },
+]
 
 export default function Footer() {
   const [formData, setFormData] = useState({
@@ -14,177 +42,257 @@ export default function Footer() {
     nachricht: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
+  const [error, setError] = useState('')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError('')
 
-    // TODO: Implement actual form submission
-    await new Promise(resolve => setTimeout(resolve, 1000))
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.telefon,
+          company: formData.unternehmen,
+          message: formData.nachricht,
+        }),
+      })
 
-    alert('Vielen Dank für Ihre Anfrage! Wir melden uns innerhalb von 24 Stunden bei Ihnen.')
-    setFormData({ name: '', email: '', telefon: '', unternehmen: '', nachricht: '' })
-    setIsSubmitting(false)
+      if (response.ok) {
+        setIsSuccess(true)
+        setFormData({ name: '', email: '', telefon: '', unternehmen: '', nachricht: '' })
+        setTimeout(() => setIsSuccess(false), 5000)
+      } else {
+        const data = await response.json()
+        setError(data.error || 'Ein Fehler ist aufgetreten.')
+      }
+    } catch {
+      setError('Verbindungsfehler. Bitte versuchen Sie es erneut.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
     <footer className="bg-fimi-navy text-white">
-      {/* Kontaktformular Section */}
-      <section className="py-20 border-b border-white/10">
+      {/* Contact Form Section */}
+      <section id="contact-form" className="section border-b border-white/10">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Left: Info */}
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Kontaktieren Sie uns
+              <span className="badge mb-6">Kontakt aufnehmen</span>
+              <h2 className="heading-2 text-white mb-6">
+                Lassen Sie uns Ihr Projekt besprechen
               </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Fordern Sie jetzt Ihr kostenloses und unverbindliches Angebot an. Wir melden uns innerhalb von 24 Stunden bei Ihnen.
+              <p className="text-lead text-gray-300 mb-10">
+                Fordern Sie jetzt Ihr kostenloses und unverbindliches Angebot an.
+                Wir melden uns innerhalb von 24 Stunden bei Ihnen.
               </p>
 
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="bg-fimi-turquoise p-3" style={{ borderRadius: '4px' }}>
-                    <Phone size={24} />
+              <div className="space-y-6 mb-10">
+                <a
+                  href="tel:01747225473"
+                  className="flex items-start gap-4 group"
+                >
+                  <div className="w-12 h-12 bg-fimi-turquoise/20 rounded-lg flex items-center justify-center group-hover:bg-fimi-turquoise transition-colors">
+                    <Phone size={20} className="text-fimi-turquoise group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-1">Telefon</h3>
-                    <a href="tel:01747225473" className="text-fimi-turquoise hover:underline text-lg">
-                      01747225473
-                    </a>
-                    <p className="text-gray-400 text-sm mt-1">24/7 Notfallservice verfügbar</p>
+                    <h3 className="font-semibold mb-1">Telefon</h3>
+                    <span className="text-fimi-turquoise text-lg font-medium group-hover:underline">
+                      0174 722 5473
+                    </span>
                   </div>
-                </div>
+                </a>
 
-                <div className="flex items-start gap-4">
-                  <div className="bg-fimi-turquoise p-3" style={{ borderRadius: '4px' }}>
-                    <Mail size={24} />
+                <a
+                  href="mailto:info@fimi-service.de"
+                  className="flex items-start gap-4 group"
+                >
+                  <div className="w-12 h-12 bg-fimi-turquoise/20 rounded-lg flex items-center justify-center group-hover:bg-fimi-turquoise transition-colors">
+                    <Mail size={20} className="text-fimi-turquoise group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-1">E-Mail</h3>
-                    <a href="mailto:info@fimi-service.de" className="text-fimi-turquoise hover:underline text-lg">
+                    <h3 className="font-semibold mb-1">E-Mail</h3>
+                    <span className="text-fimi-turquoise text-lg font-medium group-hover:underline">
                       info@fimi-service.de
-                    </a>
+                    </span>
                   </div>
-                </div>
+                </a>
 
                 <div className="flex items-start gap-4">
-                  <div className="bg-fimi-turquoise p-3" style={{ borderRadius: '4px' }}>
-                    <MapPin size={24} />
+                  <div className="w-12 h-12 bg-fimi-turquoise/20 rounded-lg flex items-center justify-center">
+                    <MapPin size={20} className="text-fimi-turquoise" />
                   </div>
                   <div>
-                    <h3 className="font-bold mb-1">Adresse</h3>
-                    <p className="text-gray-300">
-                      Gebäudereinigung Fimi-Service<br />
+                    <h3 className="font-semibold mb-1">Adresse</h3>
+                    <address className="text-gray-300 not-italic">
+                      Gebaeudereinigung Fimi-Service<br />
                       Kellerstr. 39<br />
                       84036 Landshut
+                    </address>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-fimi-turquoise/20 rounded-lg flex items-center justify-center">
+                    <Clock size={20} className="text-fimi-turquoise" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">Erreichbarkeit</h3>
+                    <p className="text-gray-300">
+                      Mo - Fr: 08:00 - 18:00 Uhr<br />
+                      <span className="text-fimi-turquoise font-medium">24/7 Notfallservice</span>
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-8 p-6 bg-white/5 backdrop-blur-sm" style={{ borderRadius: '4px' }}>
-                <p className="text-sm text-gray-300">
-                  <strong className="text-white">ISO 9001 & 14001 zertifiziert</strong><br />
-                  Höchste Qualitätsstandards und umweltfreundliche Reinigungsverfahren
-                </p>
+              {/* Trust Badges */}
+              <div className="flex flex-wrap gap-4">
+                <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-lg">
+                  <CheckCircle size={18} className="text-fimi-turquoise" />
+                  <span className="text-sm font-medium">15+ Jahre Erfahrung</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 bg-white/5 rounded-lg">
+                  <CheckCircle size={18} className="text-fimi-turquoise" />
+                  <span className="text-sm font-medium">500+ Kunden</span>
+                </div>
               </div>
             </div>
 
             {/* Right: Form */}
-            <div className="bg-white/5 backdrop-blur-sm p-8" style={{ borderRadius: '4px' }}>
-              <h3 className="text-2xl font-bold mb-6">Angebot anfordern</h3>
-
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div>
-                  <label htmlFor="footer-name" className="block font-semibold mb-2">
-                    Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="footer-name"
-                    required
-                    className="w-full px-4 py-3 bg-white text-fimi-navy border-2 border-transparent focus:border-fimi-turquoise focus:outline-none transition-colors"
-                    style={{ borderRadius: '4px' }}
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="footer-unternehmen" className="block font-semibold mb-2">
-                    Unternehmen
-                  </label>
-                  <input
-                    type="text"
-                    id="footer-unternehmen"
-                    className="w-full px-4 py-3 bg-white text-fimi-navy border-2 border-transparent focus:border-fimi-turquoise focus:outline-none transition-colors"
-                    style={{ borderRadius: '4px' }}
-                    value={formData.unternehmen}
-                    onChange={(e) => setFormData({...formData, unternehmen: e.target.value})}
-                  />
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="footer-email" className="block font-semibold mb-2">
-                      E-Mail *
-                    </label>
-                    <input
-                      type="email"
-                      id="footer-email"
-                      required
-                      className="w-full px-4 py-3 bg-white text-fimi-navy border-2 border-transparent focus:border-fimi-turquoise focus:outline-none transition-colors"
-                      style={{ borderRadius: '4px' }}
-                      value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    />
+            <div className="glass-card p-8 lg:p-10 rounded-lg">
+              {isSuccess ? (
+                <div className="text-center py-12">
+                  <div className="w-16 h-16 bg-fimi-turquoise/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle size={32} className="text-fimi-turquoise" />
                   </div>
-
-                  <div>
-                    <label htmlFor="footer-telefon" className="block font-semibold mb-2">
-                      Telefon
-                    </label>
-                    <input
-                      type="tel"
-                      id="footer-telefon"
-                      className="w-full px-4 py-3 bg-white text-fimi-navy border-2 border-transparent focus:border-fimi-turquoise focus:outline-none transition-colors"
-                      style={{ borderRadius: '4px' }}
-                      value={formData.telefon}
-                      onChange={(e) => setFormData({...formData, telefon: e.target.value})}
-                    />
-                  </div>
+                  <h3 className="heading-4 text-fimi-navy mb-4">Anfrage gesendet</h3>
+                  <p className="text-gray-600">
+                    Vielen Dank! Wir melden uns innerhalb von 24 Stunden bei Ihnen.
+                  </p>
                 </div>
+              ) : (
+                <>
+                  <h3 className="heading-4 text-fimi-navy mb-6">Angebot anfordern</h3>
 
-                <div>
-                  <label htmlFor="footer-nachricht" className="block font-semibold mb-2">
-                    Ihre Nachricht *
-                  </label>
-                  <textarea
-                    id="footer-nachricht"
-                    required
-                    rows={4}
-                    className="w-full px-4 py-3 bg-white text-fimi-navy border-2 border-transparent focus:border-fimi-turquoise focus:outline-none transition-colors resize-none"
-                    style={{ borderRadius: '4px' }}
-                    value={formData.nachricht}
-                    onChange={(e) => setFormData({...formData, nachricht: e.target.value})}
-                    placeholder="Beschreiben Sie kurz Ihren Bedarf..."
-                  />
-                </div>
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div className="grid md:grid-cols-2 gap-5">
+                      <div>
+                        <label htmlFor="footer-name" className="label">
+                          Name *
+                        </label>
+                        <input
+                          type="text"
+                          id="footer-name"
+                          required
+                          className="input"
+                          placeholder="Max Mustermann"
+                          value={formData.name}
+                          onChange={(e) => setFormData({...formData, name: e.target.value})}
+                        />
+                      </div>
 
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-fimi-turquoise text-white px-8 py-4 font-bold text-lg hover:opacity-90 transition-opacity disabled:opacity-50"
-                  style={{ borderRadius: '4px' }}
-                >
-                  {isSubmitting ? 'Wird gesendet...' : 'Kostenlos anfragen'}
-                </button>
+                      <div>
+                        <label htmlFor="footer-unternehmen" className="label">
+                          Unternehmen
+                        </label>
+                        <input
+                          type="text"
+                          id="footer-unternehmen"
+                          className="input"
+                          placeholder="Firma GmbH"
+                          value={formData.unternehmen}
+                          onChange={(e) => setFormData({...formData, unternehmen: e.target.value})}
+                        />
+                      </div>
+                    </div>
 
-                <p className="text-sm text-gray-400">
-                  * Pflichtfelder. Ihre Daten werden vertraulich behandelt.
-                </p>
-              </form>
+                    <div className="grid md:grid-cols-2 gap-5">
+                      <div>
+                        <label htmlFor="footer-email" className="label">
+                          E-Mail *
+                        </label>
+                        <input
+                          type="email"
+                          id="footer-email"
+                          required
+                          className="input"
+                          placeholder="max@firma.de"
+                          value={formData.email}
+                          onChange={(e) => setFormData({...formData, email: e.target.value})}
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="footer-telefon" className="label">
+                          Telefon *
+                        </label>
+                        <input
+                          type="tel"
+                          id="footer-telefon"
+                          required
+                          className="input"
+                          placeholder="0174 1234567"
+                          value={formData.telefon}
+                          onChange={(e) => setFormData({...formData, telefon: e.target.value})}
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label htmlFor="footer-nachricht" className="label">
+                        Ihre Anfrage *
+                      </label>
+                      <textarea
+                        id="footer-nachricht"
+                        required
+                        rows={4}
+                        className="input resize-none"
+                        placeholder="Beschreiben Sie kurz Ihren Bedarf..."
+                        value={formData.nachricht}
+                        onChange={(e) => setFormData({...formData, nachricht: e.target.value})}
+                      />
+                    </div>
+
+                    {error && (
+                      <p className="text-red-500 text-sm">{error}</p>
+                    )}
+
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? (
+                        <span className="flex items-center gap-2">
+                          <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                          </svg>
+                          Wird gesendet...
+                        </span>
+                      ) : (
+                        <span className="flex items-center gap-2">
+                          <Send size={18} />
+                          Kostenlos anfragen
+                        </span>
+                      )}
+                    </button>
+
+                    <p className="text-xs text-gray-500 text-center">
+                      * Pflichtfelder. Ihre Daten werden vertraulich behandelt.
+                    </p>
+                  </form>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -193,74 +301,66 @@ export default function Footer() {
       {/* Footer Links */}
       <section className="py-16">
         <div className="container">
-          <div className="grid md:grid-cols-5 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
             {/* Logo & Info */}
-            <div className="md:col-span-2">
+            <div className="lg:col-span-2">
               <Image
                 src="/FIMI-LOGO/FIMI-LOGO_Weiße-Schrift_Transparent.png"
-                alt="FIMI Gebäudereinigung"
-                width={300}
-                height={100}
-                className="h-20 w-auto mb-6"
+                alt="FIMI Gebaeudereinigung"
+                width={200}
+                height={67}
+                className="h-14 w-auto mb-6"
               />
-              <p className="text-gray-300 mb-4">
-                Professionelle Gebäudereinigung und Facility Management seit über 15 Jahren. ISO 9001 & 14001 zertifiziert.
+              <p className="text-gray-300 mb-6 max-w-sm">
+                Professionelle Gebaeudereinigung und Facility Management in Landshut und ganz Bayern.
+                Ihr zuverlaessiger Partner seit ueber 15 Jahren.
               </p>
-              <p className="text-sm text-gray-400">
-                <strong>UST-ID:</strong> DE347549925
-              </p>
+              <div className="space-y-2 text-sm text-gray-400">
+                <p><strong className="text-white">Inhaber:</strong> Ntonalnt Tzoutzis & Ergest Qiraj</p>
+                <p><strong className="text-white">UST-ID:</strong> DE347549925</p>
+              </div>
             </div>
 
-            {/* Gewerbliche Objektreinigung */}
-            <div>
-              <h3 className="text-sm font-bold mb-4 uppercase tracking-wide text-fimi-turquoise">
-                Gewerbliche Reinigung
-              </h3>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/leistungen/bueroreinigung" className="text-gray-300 hover:text-fimi-turquoise transition-colors">Büroreinigung</Link></li>
-                <li><Link href="/leistungen/unterhaltsreinigung" className="text-gray-300 hover:text-fimi-turquoise transition-colors">Unterhaltsreinigung</Link></li>
-                <li><Link href="/leistungen/baureinigung" className="text-gray-300 hover:text-fimi-turquoise transition-colors">Baureinigung</Link></li>
-                <li><Link href="/leistungen/hallenreinigung" className="text-gray-300 hover:text-fimi-turquoise transition-colors">Hallenreinigung</Link></li>
-              </ul>
-            </div>
-
-            {/* Industrielle Reinigung */}
-            <div>
-              <h3 className="text-sm font-bold mb-4 uppercase tracking-wide text-fimi-turquoise">
-                Industriereinigung
-              </h3>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/leistungen/industriereinigung" className="text-gray-300 hover:text-fimi-turquoise transition-colors">Industriereinigung</Link></li>
-                <li><Link href="/leistungen/maschinenreinigung" className="text-gray-300 hover:text-fimi-turquoise transition-colors">Maschinenreinigung</Link></li>
-                <li><Link href="/leistungen/fassadenreinigung" className="text-gray-300 hover:text-fimi-turquoise transition-colors">Fassadenreinigung</Link></li>
-                <li><Link href="/leistungen/tiefgaragenreinigung" className="text-gray-300 hover:text-fimi-turquoise transition-colors">Tiefgaragenreinigung</Link></li>
-              </ul>
-            </div>
-
-            {/* Unternehmen */}
-            <div>
-              <h3 className="text-sm font-bold mb-4 uppercase tracking-wide text-fimi-turquoise">
-                Unternehmen
-              </h3>
-              <ul className="space-y-2 text-sm">
-                <li><Link href="/ueber-uns" className="text-gray-300 hover:text-fimi-turquoise transition-colors">Über uns</Link></li>
-                <li><Link href="/referenzen" className="text-gray-300 hover:text-fimi-turquoise transition-colors">Referenzen</Link></li>
-                <li><Link href="/kontakt" className="text-gray-300 hover:text-fimi-turquoise transition-colors">Kontakt</Link></li>
-                <li><Link href="/impressum" className="text-gray-300 hover:text-fimi-turquoise transition-colors">Impressum</Link></li>
-                <li><Link href="/datenschutz" className="text-gray-300 hover:text-fimi-turquoise transition-colors">Datenschutz</Link></li>
-                <li><Link href="/agb" className="text-gray-300 hover:text-fimi-turquoise transition-colors">AGB</Link></li>
-              </ul>
-            </div>
+            {/* Leistungen Links */}
+            {Object.entries(leistungenLinks).map(([kategorie, links]) => (
+              <div key={kategorie}>
+                <h3 className="text-xs font-bold text-fimi-turquoise mb-4 uppercase tracking-wider">
+                  {kategorie}
+                </h3>
+                <ul className="space-y-2">
+                  {links.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="text-gray-300 hover:text-fimi-turquoise transition-colors text-sm"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
 
-          {/* Copyright */}
-          <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">
-              &copy; {new Date().getFullYear()} FIMI Gebäudereinigung. Alle Rechte vorbehalten.
-            </p>
-            <p className="text-gray-400 text-sm">
-              Ntonalnt Tzoutzis & Ergest Qiraj
-            </p>
+          {/* Bottom Bar */}
+          <div className="border-t border-white/10 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <p className="text-gray-400 text-sm">
+                &copy; {new Date().getFullYear()} FIMI Gebaeudereinigung. Alle Rechte vorbehalten.
+              </p>
+              <div className="flex items-center gap-6">
+                {rechtlicheLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-gray-400 hover:text-fimi-turquoise transition-colors text-sm"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
