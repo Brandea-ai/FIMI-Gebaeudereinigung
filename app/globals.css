@@ -3,24 +3,26 @@
 @tailwind utilities;
 
 /* ===========================================
-   FIMI Gebaeudereinigung - 4K Design System
-   Bold, Clean, Professional B2B
+   FIMI Gebäudereinigung - Clean Design System
+   Minimal, Steril, Professionell
    =========================================== */
 
 @layer base {
   :root {
-    /* CI Colors - Einheitlich, keine Mischungen */
+    /* CI Colors */
     --fimi-navy: #012956;
     --fimi-turquoise: #109387;
     --white: #ffffff;
-    --gray-100: #f8fafc;
-    --gray-200: #e2e8f0;
-    --gray-600: #475569;
-    --gray-800: #1e293b;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-400: #9ca3af;
+    --gray-600: #4b5563;
+    --gray-800: #1f2937;
 
-    /* 4K Optimiert */
-    --section-padding: clamp(60px, 8vw, 120px);
-    --container-padding: 32px;
+    /* Spacing */
+    --section-padding: clamp(80px, 10vw, 140px);
+    --container-max: 1400px;
     --radius: 6px;
   }
 
@@ -30,62 +32,56 @@
 
   body {
     font-family: 'Inter', system-ui, sans-serif;
-    color: var(--gray-800);
+    color: var(--gray-600);
     background: var(--white);
-    font-weight: 600;
-    line-height: 1.6;
+    line-height: 1.7;
+    font-weight: 400;
   }
 
-  /* Alles fett */
-  * {
-    font-weight: inherit;
-  }
-
-  p, span, li, a, label {
-    font-weight: 600;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: 800;
+  /* Smooth scrolling for parallax */
+  html {
+    scroll-behavior: smooth;
   }
 }
 
 @layer components {
-  /* 4K Container - Volle Breite mit schmalen Raendern */
+  /* Container - Zentriert mit max-width */
   .container {
-    @apply mx-auto w-full;
-    max-width: 100%;
-    padding-left: var(--container-padding);
-    padding-right: var(--container-padding);
+    @apply mx-auto w-full px-6 md:px-8 lg:px-12;
+    max-width: var(--container-max);
   }
 
-  @media (min-width: 1920px) {
-    .container {
-      padding-left: 48px;
-      padding-right: 48px;
-    }
+  .container-wide {
+    @apply mx-auto w-full px-6 md:px-8 lg:px-12;
+    max-width: 1600px;
   }
 
-  @media (min-width: 2560px) {
-    .container {
-      padding-left: 64px;
-      padding-right: 64px;
-    }
-  }
-
-  /* Section Spacing */
+  /* Section Spacing - Großzügig */
   .section {
     padding-top: var(--section-padding);
     padding-bottom: var(--section-padding);
   }
 
-  /* Buttons - 6px Rundungen */
+  /* Parallax Container */
+  .parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @media (max-width: 768px) {
+    .parallax {
+      background-attachment: scroll;
+    }
+  }
+
+  /* Buttons - Clean */
   .btn {
-    @apply inline-flex items-center justify-center gap-3 transition-all duration-300;
-    padding: 16px 36px;
+    @apply inline-flex items-center justify-center gap-2 font-semibold transition-all duration-300;
+    padding: 14px 32px;
     border-radius: var(--radius);
-    font-weight: 700;
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 
   .btn-primary {
@@ -95,26 +91,16 @@
   }
 
   .btn-primary:hover {
-    opacity: 0.9;
+    background: #0d7d72;
     transform: translateY(-2px);
-  }
-
-  .btn-secondary {
-    @apply btn;
-    background: var(--fimi-navy);
-    color: var(--white);
-  }
-
-  .btn-secondary:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(16, 147, 135, 0.3);
   }
 
   .btn-outline {
     @apply btn;
     background: transparent;
     color: var(--fimi-navy);
-    border: 3px solid var(--fimi-navy);
+    border: 2px solid var(--fimi-navy);
   }
 
   .btn-outline:hover {
@@ -122,91 +108,97 @@
     color: var(--white);
   }
 
-  /* Cards - 6px Rundungen */
+  .btn-white {
+    @apply btn;
+    background: var(--white);
+    color: var(--fimi-navy);
+  }
+
+  .btn-white:hover {
+    background: var(--gray-100);
+    transform: translateY(-2px);
+  }
+
+  /* Typography - Alle Überschriften in Turquoise */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--fimi-turquoise);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .heading-hero {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--white);
+  }
+
+  .heading-section {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--fimi-turquoise);
+    margin-bottom: 1.5rem;
+  }
+
+  .heading-card {
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    font-weight: 600;
+    color: var(--fimi-turquoise);
+    margin-bottom: 0.75rem;
+  }
+
+  .text-lead {
+    font-size: clamp(1.125rem, 1.5vw, 1.25rem);
+    line-height: 1.7;
+    color: var(--gray-600);
+  }
+
+  .text-body {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--gray-600);
+  }
+
+  /* Cards - Minimal */
   .card {
     background: var(--white);
     border-radius: var(--radius);
-    border: 2px solid var(--gray-200);
+    border: 1px solid var(--gray-200);
+    padding: 2rem;
     transition: all 0.3s ease;
   }
 
   .card:hover {
     border-color: var(--fimi-turquoise);
+    box-shadow: 0 10px 40px rgba(1, 41, 86, 0.08);
   }
 
-  /* Shadow Card */
-  .shadow-card {
-    box-shadow: 0 4px 20px rgba(1, 41, 86, 0.08);
-  }
-
-  /* Typography - Gross und Fett */
-  .heading-display {
-    font-size: clamp(3.5rem, 10vw, 7rem);
-    font-weight: 800;
-    line-height: 1.05;
-    color: var(--fimi-navy);
-  }
-
-  .heading-1 {
-    font-size: clamp(3rem, 7vw, 5.5rem);
-    font-weight: 800;
-    line-height: 1.1;
-    color: var(--fimi-navy);
-  }
-
-  .heading-2 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 800;
-    line-height: 1.15;
-    color: var(--fimi-navy);
-  }
-
-  .heading-3 {
-    font-size: clamp(1.75rem, 3vw, 2.5rem);
-    font-weight: 700;
-    line-height: 1.2;
-    color: var(--fimi-navy);
-  }
-
-  .heading-4 {
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
-    font-weight: 700;
-    line-height: 1.3;
-    color: var(--fimi-navy);
-  }
-
-  .text-lead {
-    font-size: clamp(1.25rem, 2vw, 1.625rem);
-    font-weight: 600;
-    line-height: 1.5;
-    color: var(--gray-600);
-  }
-
-  .text-body {
-    font-size: clamp(1.125rem, 1.5vw, 1.375rem);
-    font-weight: 600;
-    line-height: 1.6;
-    color: var(--gray-600);
-  }
-
-  /* Form Elements - 6px Rundungen */
+  /* Form Elements */
   .input {
-    @apply w-full px-5 py-4 bg-white border-2 border-gray-200 transition-all duration-300;
+    @apply w-full px-4 py-3 bg-white border border-gray-200 transition-all duration-300;
     border-radius: var(--radius);
-    font-size: 1.125rem;
-    font-weight: 600;
+    font-size: 1rem;
   }
 
   .input:focus {
     @apply outline-none;
     border-color: var(--fimi-turquoise);
+    box-shadow: 0 0 0 3px rgba(16, 147, 135, 0.1);
   }
 
   .label {
-    @apply block mb-3;
+    @apply block mb-2 font-medium;
     color: var(--fimi-navy);
-    font-size: 1.125rem;
-    font-weight: 700;
+    font-size: 0.9375rem;
+  }
+
+  /* Divider */
+  .divider {
+    width: 60px;
+    height: 3px;
+    background: var(--fimi-turquoise);
+    border-radius: 2px;
   }
 
   /* Sticky Navigation */
@@ -221,37 +213,27 @@
 
   .sticky-nav.scrolled {
     background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 2px 20px rgba(1, 41, 86, 0.1);
-  }
-
-  /* Icon Style - Ohne Hintergrund, nur Icon */
-  .icon-clean {
-    color: var(--fimi-turquoise);
-  }
-
-  .icon-navy {
-    color: var(--fimi-navy);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 20px rgba(1, 41, 86, 0.08);
   }
 }
 
 @layer utilities {
-  /* 6px Rundungen fuer alles */
+  /* Rounded */
   .rounded-box {
     border-radius: var(--radius);
   }
 
-  /* Hover Effects */
-  @media (min-width: 1024px) {
-    .hover-lift {
-      transition: transform 0.3s ease;
-    }
-
-    .hover-lift:hover {
-      transform: translateY(-4px);
-    }
+  /* Text Colors */
+  .text-turquoise {
+    color: var(--fimi-turquoise);
   }
 
-  /* Backgrounds - Einheitlich */
+  .text-navy {
+    color: var(--fimi-navy);
+  }
+
+  /* Backgrounds */
   .bg-navy {
     background: var(--fimi-navy);
   }
@@ -261,16 +243,19 @@
   }
 
   .bg-light {
-    background: var(--gray-100);
+    background: var(--gray-50);
   }
 
-  /* Text Colors */
-  .text-navy {
-    color: var(--fimi-navy);
-  }
+  /* Hover */
+  @media (min-width: 1024px) {
+    .hover-lift {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-  .text-turquoise {
-    color: var(--fimi-turquoise);
+    .hover-lift:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(1, 41, 86, 0.1);
+    }
   }
 
   /* Reduced Motion */

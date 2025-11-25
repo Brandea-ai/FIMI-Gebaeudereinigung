@@ -6,35 +6,35 @@ import { ChevronDown, Phone, Mail } from 'lucide-react'
 const faqs = [
   {
     question: 'Welche Leistungen bieten Sie an?',
-    answer: 'Wir bieten ein umfassendes Spektrum an Reinigungsdienstleistungen: von Buero- und Unterhaltsreinigung ueber Industriereinigung bis hin zu kompletten Facility Management Loesungen. Dazu gehoeren auch Spezialleistungen wie Fassadenreinigung, Winterdienst und Hausmeisterservice.'
+    answer: 'Wir bieten ein umfassendes Spektrum an Reinigungsdienstleistungen: von Büro- und Unterhaltsreinigung über Industriereinigung bis hin zu kompletten Facility Management Lösungen. Dazu gehören auch Spezialleistungen wie Fassadenreinigung, Winterdienst und Hausmeisterservice.'
   },
   {
-    question: 'In welchen Regionen sind Sie taetig?',
-    answer: 'Unser Hauptsitz ist in Landshut. Von dort aus bedienen wir 8 Regionen in Bayern: Landshut, Muenchen, Regensburg, Straubing, Dingolfing, Moosburg, Freising und Ingolstadt. Kurze Anfahrtswege garantieren schnellen Service.'
+    question: 'In welchen Regionen sind Sie tätig?',
+    answer: 'Unser Hauptsitz ist in Landshut. Von dort aus bedienen wir 8 Regionen in Bayern: Landshut, München, Regensburg, Straubing, Dingolfing, Moosburg, Freising und Ingolstadt. Kurze Anfahrtswege garantieren schnellen Service.'
   },
   {
     question: 'Wie flexibel sind Ihre Reinigungszeiten?',
-    answer: 'Sehr flexibel! Wir passen uns Ihren Geschaeftszeiten an. Ob morgens vor Arbeitsbeginn, abends nach Feierabend, am Wochenende oder nachts - wir reinigen dann, wenn es fuer Ihren Betrieb am besten passt.'
+    answer: 'Sehr flexibel! Wir passen uns Ihren Geschäftszeiten an. Ob morgens vor Arbeitsbeginn, abends nach Feierabend, am Wochenende oder nachts – wir reinigen dann, wenn es für Ihren Betrieb am besten passt.'
   },
   {
     question: 'Bieten Sie auch Notfallreinigungen an?',
-    answer: 'Ja, unser 24/7 Notfallservice steht Ihnen jederzeit zur Verfuegung. Bei unvorhergesehenen Ereignissen wie Wasserschaeden oder nach Events sind wir schnell vor Ort.'
+    answer: 'Ja, unser 24/7 Notfallservice steht Ihnen jederzeit zur Verfügung. Bei unvorhergesehenen Ereignissen wie Wasserschäden oder nach Events sind wir schnell vor Ort.'
   },
   {
-    question: 'Wie wird die Qualitaet sichergestellt?',
-    answer: 'Durch regelmaessige Schulungen unseres festangestellten Personals, Qualitaetskontrollen vor Ort und modernste Reinigungstechnik. Zudem haben Sie einen persoenlichen Ansprechpartner fuer direktes Feedback.'
+    question: 'Wie wird die Qualität sichergestellt?',
+    answer: 'Durch regelmäßige Schulungen unseres festangestellten Personals, Qualitätskontrollen vor Ort und modernste Reinigungstechnik. Zudem haben Sie einen persönlichen Ansprechpartner für direktes Feedback.'
   },
   {
     question: 'Welche Reinigungsmittel verwenden Sie?',
-    answer: 'Wir setzen auf umweltfreundliche, professionelle Reinigungsmittel. Auf Wunsch bieten wir auch komplett oekologische Reinigungsloesungen an - fragen Sie uns nach unseren nachhaltigen Optionen.'
+    answer: 'Wir setzen auf umweltfreundliche, professionelle Reinigungsmittel. Auf Wunsch bieten wir auch komplett ökologische Reinigungslösungen an – fragen Sie uns nach unseren nachhaltigen Optionen.'
   },
   {
     question: 'Wie erfolgt die Abrechnung?',
-    answer: 'Wir bieten transparente Festpreise basierend auf Ihrem individuellen Bedarf. Je nach Vertrag erfolgt die Abrechnung monatlich. Keine versteckten Kosten - Sie wissen immer, was Sie bezahlen.'
+    answer: 'Wir bieten transparente Festpreise basierend auf Ihrem individuellen Bedarf. Je nach Vertrag erfolgt die Abrechnung monatlich. Keine versteckten Kosten – Sie wissen immer, was Sie bezahlen.'
   },
   {
-    question: 'Wie schnell koennen Sie starten?',
-    answer: 'Nach einer kostenlosen Bedarfsanalyse vor Ort und Angebotsannahme koennen wir in der Regel innerhalb einer Woche mit der Reinigung beginnen. Bei dringendem Bedarf auch schneller - sprechen Sie uns an.'
+    question: 'Wie schnell können Sie starten?',
+    answer: 'Nach einer kostenlosen Bedarfsanalyse vor Ort und Angebotsannahme können wir in der Regel innerhalb einer Woche mit der Reinigung beginnen. Bei dringendem Bedarf auch schneller – sprechen Sie uns an.'
   }
 ]
 
@@ -44,39 +44,37 @@ export default function FAQContainer() {
   return (
     <section id="faq-section" className="section bg-gray-50">
       <div className="container">
-        {/* Header - Links */}
-        <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-fimi-navy mb-6">
-            Haeufig gestellte Fragen
+        {/* Header */}
+        <div className="max-w-2xl mb-12">
+          <h2 className="heading-section">
+            Häufig gestellte Fragen
           </h2>
-          <p className="text-xl md:text-2xl font-bold text-gray-600 max-w-4xl">
+          <p className="text-lead">
             Hier finden Sie Antworten auf die wichtigsten Fragen zu unseren Dienstleistungen.
-            Ihre Frage ist nicht dabei? Kontaktieren Sie uns!
           </p>
         </div>
 
-        {/* FAQ Grid - 6px Rundungen */}
-        <div className="grid lg:grid-cols-2 gap-6">
+        {/* FAQ Grid */}
+        <div className="grid lg:grid-cols-2 gap-4">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className={`bg-white border-2 rounded-[6px] overflow-hidden transition-all ${
+              className={`bg-white border rounded-[6px] overflow-hidden transition-all ${
                 openIndex === index ? 'border-fimi-turquoise' : 'border-gray-200'
               }`}
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-5 flex items-start justify-between gap-4 text-left hover:bg-gray-50 transition-colors"
+                className="w-full px-5 py-4 flex items-start justify-between gap-3 text-left hover:bg-gray-50 transition-colors"
               >
-                <span className="text-xl font-bold text-fimi-navy">
+                <span className="text-fimi-turquoise font-semibold">
                   {faq.question}
                 </span>
                 <ChevronDown
                   className={`flex-shrink-0 text-fimi-turquoise transition-transform duration-300 ${
                     openIndex === index ? 'rotate-180' : ''
                   }`}
-                  size={28}
-                  strokeWidth={3}
+                  size={20}
                 />
               </button>
 
@@ -86,7 +84,7 @@ export default function FAQContainer() {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <div className="px-6 pb-5 text-lg font-bold text-gray-600 border-t-2 border-gray-100 pt-4">
+                  <div className="px-5 pb-4 text-body border-t border-gray-100 pt-3">
                     {faq.answer}
                   </div>
                 </div>
@@ -95,25 +93,25 @@ export default function FAQContainer() {
           ))}
         </div>
 
-        {/* CTA - 6px Rundungen */}
-        <div className="mt-16 text-center">
-          <div className="inline-block bg-white rounded-[6px] p-8 border-2 border-gray-200">
-            <p className="text-xl font-bold text-gray-700 mb-6">
-              Haben Sie weitere Fragen? Wir beraten Sie gerne persoenlich.
+        {/* CTA */}
+        <div className="mt-12 text-center">
+          <div className="inline-block bg-white rounded-[6px] p-6 border border-gray-200">
+            <p className="text-gray-700 mb-4">
+              Haben Sie weitere Fragen? Wir beraten Sie gerne persönlich.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
-                href="tel:01747225473"
-                className="inline-flex items-center justify-center gap-3 bg-fimi-turquoise text-white text-lg font-bold px-8 py-4 rounded-[6px] hover:opacity-90 transition-all"
+                href="tel:+4917472254773"
+                className="btn-primary"
               >
-                <Phone size={24} strokeWidth={3} />
-                0174 722 5473
+                <Phone size={18} />
+                0174 722 54 773
               </a>
               <a
                 href="mailto:info@fimi-service.de"
-                className="inline-flex items-center justify-center gap-3 bg-white text-fimi-navy text-lg font-bold px-8 py-4 rounded-[6px] border-2 border-fimi-navy hover:bg-fimi-navy hover:text-white transition-all"
+                className="btn-outline"
               >
-                <Mail size={24} strokeWidth={3} />
+                <Mail size={18} />
                 E-Mail schreiben
               </a>
             </div>
