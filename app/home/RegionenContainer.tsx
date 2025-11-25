@@ -270,6 +270,16 @@ export default function RegionenContainer() {
               className="w-full h-auto rounded-[6px]"
               priority
             />
+            {/* Overlay Link auf dem Bild */}
+            <Link
+              href="/unternehmen"
+              className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm rounded-[6px] px-4 py-3 flex items-center justify-between group hover:bg-white transition-all"
+            >
+              <span className="text-sm text-gray-700 font-semibold">
+                Mehr über FIMI erfahren
+              </span>
+              <ArrowRight size={16} className="text-[#109387] group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
 
           {/* Right: Content Panels - ALLE für SEO, nur aktiver sichtbar */}
@@ -369,20 +379,6 @@ export default function RegionenContainer() {
             ))}
           </div>
 
-        </div>
-
-        {/* Subtle Company Link */}
-        <div className="mt-12 pt-8 border-t border-gray-200 text-center">
-          <p className="text-gray-500 font-semibold mb-3">
-            Erfahren Sie mehr über uns
-          </p>
-          <Link
-            href="/unternehmen"
-            className="inline-flex items-center gap-2 text-[#109387] font-bold hover:text-[#012956] transition-colors group"
-          >
-            Über FIMI Gebäudereinigung
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-          </Link>
         </div>
       </div>
     </section>
