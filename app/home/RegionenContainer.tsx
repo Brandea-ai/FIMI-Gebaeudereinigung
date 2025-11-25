@@ -261,22 +261,19 @@ export default function RegionenContainer() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
 
           {/* Left: Map + Link */}
-          <div className="flex flex-col">
-            {/* Map */}
-            <div className="relative w-full flex-1">
-              <Image
-                src="/images/home/städte für fimi.avif"
-                alt="Bayern Karte - FIMI Gebäudereinigung Servicegebiete"
-                width={4800}
-                height={3584}
-                className="w-full h-auto rounded-[6px]"
-                priority
-              />
-            </div>
-            {/* Link unter dem Bild */}
+          <div className="relative w-full">
+            <Image
+              src="/images/home/städte für fimi.avif"
+              alt="Bayern Karte - FIMI Gebäudereinigung Servicegebiete"
+              width={4800}
+              height={3584}
+              className="w-full h-auto rounded-[6px]"
+              priority
+            />
+            {/* Overlay Link auf dem Bild - höher positioniert */}
             <Link
               href="/unternehmen"
-              className="mt-4 bg-[#012956] rounded-[6px] px-8 py-4 flex items-center justify-center gap-3 group hover:bg-[#01203d] transition-all"
+              className="absolute bottom-32 left-4 right-4 bg-[#012956] rounded-[6px] px-6 py-4 flex items-center justify-center gap-3 group hover:bg-[#01203d] transition-all"
             >
               <span className="text-white font-bold text-lg">
                 Mehr über FIMI erfahren
@@ -369,7 +366,7 @@ export default function RegionenContainer() {
                 </div>
 
                 {/* CTA */}
-                <div className="mt-auto pt-40">
+                <div className="mt-auto pt-8">
                   <a
                     href="#contact-form"
                     className="flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group w-full"
