@@ -8,11 +8,11 @@ import FAQContainer from './home/FAQContainer'
 
 export const metadata: Metadata = {
   title: 'Gebaeudereinigung Bayern | FIMI - Professionelle Reinigung fuer Unternehmen',
-  description: 'Professionelle Gebaeudereinigung in Landshut, Muenchen, Regensburg und ganz Bayern. Bueroreinigung, Industriereinigung, Facility Management. 15+ Jahre Erfahrung. 24/7 Service.',
+  description: 'Professionelle Gebaeudereinigung in Landshut, Muenchen, Regensburg und ganz Bayern. Bueroreinigung, Industriereinigung, Facility Management. 8+ Jahre Erfahrung. 24/7 Service.',
   keywords: 'Gebaeudereinigung, Bueroreinigung, Industriereinigung, Facility Management, Landshut, Muenchen, Regensburg, Bayern, Unterhaltsreinigung, gewerbliche Reinigung',
   openGraph: {
     title: 'Gebaeudereinigung Bayern | FIMI - Ihr Partner fuer professionelle Reinigung',
-    description: 'Professionelle Gebaeudereinigung in Landshut und ganz Bayern. 15+ Jahre Erfahrung. 500+ zufriedene Kunden. 24/7 Notfallservice.',
+    description: 'Professionelle Gebaeudereinigung in Landshut und ganz Bayern. 8+ Jahre Erfahrung. 85 zufriedene Unternehmen. 24/7 Notfallservice.',
     type: 'website',
     locale: 'de_DE',
     url: 'https://fimi-service.de',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Gebaeudereinigung Bayern | FIMI',
-    description: 'Professionelle Gebaeudereinigung in Landshut und ganz Bayern. 15+ Jahre Erfahrung.',
+    description: 'Professionelle Gebaeudereinigung in Landshut und ganz Bayern. 8+ Jahre Erfahrung.',
   },
   alternates: {
     canonical: 'https://fimi-service.de',
