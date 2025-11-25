@@ -63,7 +63,7 @@ export default function HeroContainer() {
 
             {/* Subheadline */}
             <p className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-10 leading-snug">
-              Ihr Büro verdient mehr als sauber –
+              Ihr Gebäude verdient mehr als sauber –
               <br />
               <span className="text-[#109387]">es verdient Zuverlässigkeit.</span>
             </p>
