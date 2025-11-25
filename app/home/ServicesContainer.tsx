@@ -87,12 +87,12 @@ export default function ServicesContainer() {
               </Link>
             </div>
 
-            {/* ISO Standards - dezent */}
-            <div className="mt-10 pt-8 border-t border-gray-200">
-              <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide">
+            {/* ISO Standards - prominent in Navy */}
+            <div className="mt-10 bg-[#012956] rounded-[6px] p-6">
+              <p className="text-sm text-white/70 font-semibold uppercase tracking-wide mb-1">
                 Qualitätsstandards
               </p>
-              <p className="text-lg text-gray-700 font-bold mt-2">
+              <p className="text-2xl text-white font-bold">
                 ISO 9001 & 14001
               </p>
             </div>
@@ -141,13 +141,13 @@ export default function ServicesContainer() {
                         {kategorie.loesung}
                       </p>
 
-                      {/* Subtiler Link */}
+                      {/* Link - prominent */}
                       <Link
                         href={kategorie.link.href}
-                        className="inline-flex items-center gap-2 text-[#109387] font-semibold text-sm hover:underline"
+                        className="inline-flex items-center gap-2 bg-[#012956] hover:bg-[#01203d] text-white font-bold px-6 py-3 rounded-[6px] transition-all duration-300 group/link"
                       >
                         {kategorie.link.text}
-                        <ArrowRight size={16} />
+                        <ArrowRight size={18} className="group-hover/link:translate-x-1 transition-transform" />
                       </Link>
 
                     </div>
