@@ -3,134 +3,126 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { MapPin, ArrowRight, Building2, Factory, Sparkles, Wrench } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
-// Städte mit Koordinaten für Marker-Position (prozentual auf dem Bild)
+// Städte mit SEO-optimierten Inhalten (Keyword: "Gebäudereinigung in [Stadt]")
 const staedte = [
   {
     id: 'landshut',
     name: 'Landshut',
-    position: { x: 62, y: 52 }, // Position auf der Karte
-    headline: 'Gebäudereinigung Landshut',
-    subline: 'Ihr lokaler Partner seit 8+ Jahren',
-    beschreibung: 'Als Landshuter Unternehmen kennen wir die Anforderungen der regionalen Wirtschaft. Von der Altstadt bis zum Industriegebiet Ergolding betreuen wir Unternehmen jeder Größe mit maßgeschneiderten Reinigungskonzepten.',
+    headline: 'Gebäudereinigung in Landshut',
+    subline: 'Ihr lokaler Partner für saubere Geschäftsräume',
+    beschreibung: 'Sie suchen eine zuverlässige Gebäudereinigung in Landshut? Als Landshuter Unternehmen kennen wir die Anforderungen der regionalen Wirtschaft. Ob Büroreinigung in der Altstadt, Industriereinigung im Gewerbegebiet Ergolding oder Unterhaltsreinigung für Ihr Unternehmen - wir sind schnell vor Ort und liefern konstante Qualität.',
     vorteile: [
-      'Kurze Anfahrtswege in Landshut und Umgebung',
-      'Persönliche Betreuung durch lokale Teams',
-      'Flexible Einsatzzeiten für Ihre Bedürfnisse',
-      'Notfallservice innerhalb von 2 Stunden',
+      'Anfahrt innerhalb von 30 Minuten',
+      'Lokale Teams die Ihre Räume kennen',
+      'Flexible Reinigungszeiten',
+      'Notfallservice in 2 Stunden',
     ],
   },
   {
     id: 'muenchen',
     name: 'München',
-    position: { x: 48, y: 62 },
-    headline: 'Gebäudereinigung München',
-    subline: 'Professionelle Reinigung in der Landeshauptstadt',
-    beschreibung: 'München stellt höchste Ansprüche an Sauberkeit und Professionalität. Wir bedienen Bürokomplexe im Werksviertel, Praxen in Schwabing und Produktionsstätten im Münchner Norden mit dem gleichen Qualitätsanspruch.',
+    headline: 'Gebäudereinigung in München',
+    subline: 'Professionelle Reinigung für die Landeshauptstadt',
+    beschreibung: 'Professionelle Gebäudereinigung in München mit höchsten Ansprüchen. Wir reinigen Bürokomplexe im Werksviertel, Arztpraxen in Schwabing, Produktionshallen im Münchner Norden und Geschäftsräume in der Innenstadt. Unsere Teams arbeiten diskret außerhalb Ihrer Geschäftszeiten.',
     vorteile: [
       'Erfahrung mit Münchner Großprojekten',
-      'Teams in allen Stadtteilen verfügbar',
-      'Reinigung auch am Wochenende möglich',
-      'Spezialisten für Büro- und Praxisreinigung',
+      'Teams in allen Stadtteilen',
+      'Wochenend-Reinigung möglich',
+      'Praxis- und Bürospezialisierung',
     ],
   },
   {
     id: 'regensburg',
     name: 'Regensburg',
-    position: { x: 72, y: 38 },
-    headline: 'Gebäudereinigung Regensburg',
+    headline: 'Gebäudereinigung in Regensburg',
     subline: 'Von der Altstadt bis zum Gewerbepark',
-    beschreibung: 'Regensburg verbindet UNESCO-Welterbe mit moderner Industrie. Unsere Teams reinigen sowohl historische Gebäude in der Altstadt als auch High-Tech-Produktionsstätten im Gewerbepark Regensburg.',
+    beschreibung: 'Ihre Gebäudereinigung in Regensburg - für UNESCO-Welterbe und moderne Industrie. Wir pflegen historische Gebäude in der Altstadt genauso sorgfältig wie High-Tech-Produktionsstätten im Gewerbepark. Regelmäßige Qualitätskontrollen sichern gleichbleibend hohe Standards.',
     vorteile: [
-      'Erfahrung mit denkmalgeschützten Gebäuden',
-      'Industriereinigung für den Gewerbepark',
-      'Schnelle Erreichbarkeit über die A3',
-      'Regelmäßige Qualitätskontrollen vor Ort',
+      'Erfahrung mit Denkmalschutz',
+      'Industriereinigung Gewerbepark',
+      'Schnell erreichbar über A3',
+      'Qualitätskontrollen vor Ort',
     ],
   },
   {
     id: 'ingolstadt',
     name: 'Ingolstadt',
-    position: { x: 55, y: 45 },
-    headline: 'Gebäudereinigung Ingolstadt',
-    subline: 'Industriestandort mit höchsten Standards',
-    beschreibung: 'Ingolstadt als Automobilstandort verlangt Präzision und Zuverlässigkeit. Wir arbeiten für Zulieferer, Bürokomplexe und Einzelhandel mit den gleichen hohen Standards, die die Industrie hier gewohnt ist.',
+    headline: 'Gebäudereinigung in Ingolstadt',
+    subline: 'Industriestandard für den Automobilstandort',
+    beschreibung: 'Gebäudereinigung in Ingolstadt auf Industrieniveau. Der Automobilstandort verlangt Präzision und Zuverlässigkeit - genau das liefern wir. Für Zulieferer, Bürokomplexe und den Einzelhandel arbeiten wir nach den hohen Standards, die hier selbstverständlich sind.',
     vorteile: [
-      'Erfahrung mit Automotive-Zulieferern',
-      'Reinraumreinigung nach Industriestandard',
-      'Flexible Schichtmodelle möglich',
-      'Zertifizierte Reinigungsprozesse',
+      'Automotive-Zulieferer Erfahrung',
+      'Reinraum nach Industriestandard',
+      'Flexible Schichtmodelle',
+      'Prozesse nach ISO-Standards',
     ],
   },
   {
     id: 'freising',
     name: 'Freising',
-    position: { x: 52, y: 55 },
-    headline: 'Gebäudereinigung Freising',
-    subline: 'Zwischen Flughafen und Wissenschaft',
-    beschreibung: 'Freising mit dem Flughafen München und der TU München stellt besondere Anforderungen. Wir reinigen Büros, Forschungseinrichtungen und gewerbliche Objekte im gesamten Landkreis.',
+    headline: 'Gebäudereinigung in Freising',
+    subline: 'Zwischen Flughafen München und TU Weihenstephan',
+    beschreibung: 'Zuverlässige Gebäudereinigung in Freising und Umgebung. Die Nähe zum Flughafen München und zur TU München stellt besondere Anforderungen an Sauberkeit und Flexibilität. Wir reinigen Büros, Forschungseinrichtungen und Gewerbeobjekte im gesamten Landkreis.',
     vorteile: [
       'Nähe zum Flughafen München',
-      'Erfahrung mit Forschungseinrichtungen',
-      'Schnelle Reaktionszeiten garantiert',
-      'Umweltschonende Reinigungsmittel',
+      'Forschungseinrichtungen',
+      'Garantierte Reaktionszeit',
+      'Umweltschonende Mittel',
     ],
   },
   {
     id: 'erding',
     name: 'Erding',
-    position: { x: 58, y: 58 },
-    headline: 'Gebäudereinigung Erding',
-    subline: 'Vom Fliegerhorst bis zur Therme',
-    beschreibung: 'Erding wächst und mit ihm die Nachfrage nach professioneller Gebäudereinigung. Wir betreuen Gewerbebetriebe, Hotels und öffentliche Einrichtungen im gesamten Landkreis Erding.',
+    headline: 'Gebäudereinigung in Erding',
+    subline: 'Professionelle Reinigung im wachsenden Landkreis',
+    beschreibung: 'Ihre Gebäudereinigung in Erding - für den boomenden Landkreis. Erding wächst und mit ihm die Nachfrage nach professioneller Gebäudepflege. Wir betreuen Gewerbebetriebe, Hotels nahe der Therme und öffentliche Einrichtungen mit gleichbleibender Qualität.',
     vorteile: [
-      'Lokale Präsenz im Landkreis Erding',
-      'Erfahrung mit Hotellerie und Gastronomie',
-      'Winterdienst für Gewerbeflächen',
+      'Lokale Präsenz Landkreis Erding',
+      'Hotel- und Gastronomie-Erfahrung',
+      'Winterdienst für Gewerbe',
       'Langfristige Partnerschaften',
     ],
   },
   {
     id: 'straubing',
     name: 'Straubing',
-    position: { x: 78, y: 45 },
-    headline: 'Gebäudereinigung Straubing',
+    headline: 'Gebäudereinigung in Straubing',
     subline: 'Gäuboden-Metropole professionell betreut',
-    beschreibung: 'Straubing als Zentrum des Gäubodens vereint Tradition und Moderne. Unsere Reinigungsteams kennen die regionalen Besonderheiten und arbeiten für Industrie, Handel und öffentliche Auftraggeber.',
+    beschreibung: 'Professionelle Gebäudereinigung in Straubing und dem Gäuboden. Als Zentrum Niederbayerns vereint Straubing Tradition und Moderne. Unsere Teams kennen die Region und arbeiten für Industrie am Hafen, Handel in der Innenstadt und öffentliche Auftraggeber.',
     vorteile: [
-      'Regionale Verwurzelung in Niederbayern',
-      'Industriereinigung für den Hafen Straubing',
-      'Messevorbereitung für das Gäubodenvolksfest',
-      'Ganzjähriger Gebäudeservice',
+      'Verwurzelt in Niederbayern',
+      'Industriereinigung Hafen',
+      'Messe-Vorbereitung',
+      'Ganzjähriger Service',
     ],
   },
   {
     id: 'passau',
     name: 'Passau',
-    position: { x: 90, y: 55 },
-    headline: 'Gebäudereinigung Passau',
-    subline: 'Dreiflüssestadt mit Qualitätsanspruch',
-    beschreibung: 'Passau an der Grenze zu Österreich ist unser östlichster Standort in Bayern. Wir reinigen Büros, Hotels und Gewerbeobjekte in der gesamten Region Passau bis zur Landesgrenze.',
+    headline: 'Gebäudereinigung in Passau',
+    subline: 'Qualitätsreinigung in der Dreiflüssestadt',
+    beschreibung: 'Gebäudereinigung in Passau bis zur österreichischen Grenze. Die Dreiflüssestadt ist unser östlichster Standort in Bayern. Wir reinigen Büros, Hotels und Gewerbeobjekte in der gesamten Region - mit Teams, die auch mehrsprachig kommunizieren können.',
     vorteile: [
-      'Abdeckung bis zur österreichischen Grenze',
-      'Erfahrung mit Hotellerie und Tourismus',
-      'Hochwassersichere Notfallplanung',
-      'Mehrsprachige Teams verfügbar',
+      'Bis zur Grenze Österreich',
+      'Hotellerie und Tourismus',
+      'Hochwasser-Notfallplanung',
+      'Mehrsprachige Teams',
     ],
   },
 ]
 
 // Services für die Links
 const services = [
-  { name: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung', icon: Building2 },
-  { name: 'Büroreinigung', href: '/leistungen/bueroreinigung', icon: Building2 },
-  { name: 'Industriereinigung', href: '/leistungen/industriereinigung', icon: Factory },
-  { name: 'Fensterreinigung', href: '/leistungen/fensterreinigung', icon: Sparkles },
-  { name: 'Facility Management', href: '/leistungen/facility-management', icon: Wrench },
-  { name: 'Winterdienst', href: '/leistungen/winterdienst', icon: Sparkles },
-  { name: 'Hausmeisterservice', href: '/leistungen/hausmeisterservice', icon: Wrench },
-  { name: 'Baureinigung', href: '/leistungen/baureinigung', icon: Factory },
+  { name: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
+  { name: 'Büroreinigung', href: '/leistungen/bueroreinigung' },
+  { name: 'Industriereinigung', href: '/leistungen/industriereinigung' },
+  { name: 'Fensterreinigung', href: '/leistungen/fensterreinigung' },
+  { name: 'Facility Management', href: '/leistungen/facility-management' },
+  { name: 'Winterdienst', href: '/leistungen/winterdienst' },
+  { name: 'Hausmeisterservice', href: '/leistungen/hausmeisterservice' },
+  { name: 'Baureinigung', href: '/leistungen/baureinigung' },
 ]
 
 export default function RegionenContainer() {
@@ -161,62 +153,27 @@ export default function RegionenContainer() {
         {/* Main Content: Map + Tabs */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
 
-          {/* Left: Map with Markers */}
-          <div className="relative">
-            <div className="relative aspect-[4/5] lg:aspect-[3/4] rounded-[6px] overflow-hidden bg-[#f8f9fa]">
+          {/* Left: Sticky Map */}
+          <div className="lg:sticky lg:top-32 lg:self-start">
+            <div className="relative w-full rounded-[6px] overflow-hidden">
               <Image
                 src="/images/home/städte für fimi.avif"
-                alt="Bayern Karte mit FIMI Servicegebieten"
-                fill
-                className="object-contain"
+                alt="Bayern Karte - FIMI Gebäudereinigung Servicegebiete"
+                width={4800}
+                height={3584}
+                className="w-full h-auto"
                 priority
               />
-
-              {/* Animated Markers */}
-              {staedte.map((stadt) => (
-                <button
-                  key={stadt.id}
-                  onClick={() => setActiveStadt(stadt)}
-                  className={`absolute transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 group z-10
-                    ${activeStadt.id === stadt.id ? 'scale-125' : 'scale-100 hover:scale-110'}`}
-                  style={{ left: `${stadt.position.x}%`, top: `${stadt.position.y}%` }}
-                  aria-label={`${stadt.name} auswählen`}
-                >
-                  {/* Pulse Animation for Active */}
-                  {activeStadt.id === stadt.id && (
-                    <span className="absolute inset-0 rounded-full bg-[#109387] animate-ping opacity-30" />
-                  )}
-
-                  {/* Marker */}
-                  <span
-                    className={`relative flex items-center justify-center w-8 h-8 lg:w-10 lg:h-10 rounded-full border-2 transition-all duration-300
-                      ${activeStadt.id === stadt.id
-                        ? 'bg-[#109387] border-[#109387] text-white shadow-lg'
-                        : 'bg-white border-[#012956] text-[#012956] hover:bg-[#012956] hover:text-white'
-                      }`}
-                  >
-                    <MapPin size={16} className="lg:w-5 lg:h-5" />
-                  </span>
-
-                  {/* City Label */}
-                  <span
-                    className={`absolute top-full left-1/2 -translate-x-1/2 mt-1 text-xs lg:text-sm font-bold whitespace-nowrap transition-all duration-300
-                      ${activeStadt.id === stadt.id ? 'text-[#109387]' : 'text-[#012956]'}`}
-                  >
-                    {stadt.name}
-                  </span>
-                </button>
-              ))}
             </div>
           </div>
 
           {/* Right: Tabs + Content */}
           <div>
-            {/* City Tabs */}
+            {/* City Tabs - 2 Rows of 4 */}
             <div
               className="grid grid-cols-4 gap-2 mb-8"
               role="tablist"
-              aria-label="Städte auswählen"
+              aria-label="Stadt auswählen"
             >
               {staedte.map((stadt) => (
                 <button
@@ -243,7 +200,7 @@ export default function RegionenContainer() {
               aria-labelledby={`tab-${activeStadt.id}`}
               className="bg-[#f8f9fa] rounded-[6px] p-6 lg:p-8"
             >
-              {/* Headline */}
+              {/* SEO Headline */}
               <h3 className="text-2xl lg:text-3xl font-bold text-[#109387] mb-2">
                 {activeStadt.headline}
               </h3>
@@ -251,7 +208,7 @@ export default function RegionenContainer() {
                 {activeStadt.subline}
               </p>
 
-              {/* Description - SEO Content */}
+              {/* SEO Description */}
               <p className="text-gray-700 font-semibold leading-relaxed mb-6">
                 {activeStadt.beschreibung}
               </p>
@@ -267,7 +224,7 @@ export default function RegionenContainer() {
                       key={index}
                       className="flex items-start gap-2 text-gray-700 font-semibold"
                     >
-                      <span className="text-[#109387] mt-1">✓</span>
+                      <span className="text-[#109387] mt-0.5">✓</span>
                       {vorteil}
                     </li>
                   ))}
@@ -304,16 +261,6 @@ export default function RegionenContainer() {
                 </a>
               </div>
             </article>
-
-            {/* Trust Badge */}
-            <div className="mt-6 flex items-center gap-4 text-gray-500 font-semibold">
-              <div className="flex items-center gap-2">
-                <MapPin size={18} className="text-[#109387]" />
-                <span>8 Standorte in Bayern</span>
-              </div>
-              <span className="text-gray-300">|</span>
-              <span>2h Reaktionszeit garantiert</span>
-            </div>
           </div>
 
         </div>
