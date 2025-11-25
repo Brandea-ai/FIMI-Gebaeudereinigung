@@ -339,6 +339,20 @@ export default function RegionenContainer() {
           </div>
 
         </div>
+
+        {/* Subtle Company Link */}
+        <div className="mt-12 pt-8 border-t border-gray-200 text-center">
+          <p className="text-gray-500 font-semibold mb-3">
+            Erfahren Sie mehr über uns
+          </p>
+          <Link
+            href="/unternehmen"
+            className="inline-flex items-center gap-2 text-[#109387] font-bold hover:text-[#012956] transition-colors group"
+          >
+            Über FIMI Gebäudereinigung
+            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
       </div>
     </section>
   )
