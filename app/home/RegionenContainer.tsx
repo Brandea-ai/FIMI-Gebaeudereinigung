@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
 
 // Städte mit SEO-optimierten Inhalten (Keyword: "Gebäudereinigung in [Stadt]")
 const staedte = [
@@ -127,6 +127,35 @@ const services = [
 
 export default function RegionenContainer() {
   const [activeStadt, setActiveStadt] = useState(staedte[0])
+  const tabsRef = useRef<HTMLDivElement>(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(true)
+
+  // Check scroll position
+  const checkScrollPosition = () => {
+    if (tabsRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = tabsRef.current
+      setCanScrollLeft(scrollLeft > 0)
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10)
+    }
+  }
+
+  useEffect(() => {
+    checkScrollPosition()
+    window.addEventListener('resize', checkScrollPosition)
+    return () => window.removeEventListener('resize', checkScrollPosition)
+  }, [])
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (tabsRef.current) {
+      const scrollAmount = 200
+      tabsRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      })
+      setTimeout(checkScrollPosition, 300)
+    }
+  }
 
   return (
     <section
@@ -152,28 +181,61 @@ export default function RegionenContainer() {
               </p>
             </div>
 
-            {/* City Tabs - Horizontal scrollable */}
-            <div
-              className="flex gap-2 overflow-x-auto pb-2 -mb-2 scrollbar-hide"
-              role="tablist"
-              aria-label="Stadt auswählen"
-            >
-              {staedte.map((stadt) => (
-                <button
-                  key={stadt.id}
-                  onClick={() => setActiveStadt(stadt)}
-                  role="tab"
-                  aria-selected={activeStadt.id === stadt.id}
-                  aria-controls={`panel-${stadt.id}`}
-                  className={`px-4 py-2 rounded-[6px] border-2 font-bold text-sm whitespace-nowrap transition-all duration-300 flex-shrink-0
-                    ${activeStadt.id === stadt.id
-                      ? 'border-[#012956] bg-[#012956] text-white'
-                      : 'border-[#012956] bg-white text-[#109387] hover:bg-[#f8f9fa]'
-                    }`}
-                >
-                  {stadt.name}
-                </button>
-              ))}
+            {/* City Tabs - Horizontal scrollable with navigation */}
+            <div className="flex items-center gap-2">
+              {/* Left Arrow */}
+              <button
+                onClick={() => scroll('left')}
+                className={`flex-shrink-0 w-10 h-10 rounded-full border-2 border-[#012956] flex items-center justify-center transition-all duration-300
+                  ${canScrollLeft
+                    ? 'bg-white text-[#012956] hover:bg-[#012956] hover:text-white cursor-pointer'
+                    : 'bg-gray-100 text-gray-300 border-gray-200 cursor-not-allowed'
+                  }`}
+                disabled={!canScrollLeft}
+                aria-label="Vorherige Städte"
+              >
+                <ChevronLeft size={20} strokeWidth={2.5} />
+              </button>
+
+              {/* Tabs Container */}
+              <div
+                ref={tabsRef}
+                onScroll={checkScrollPosition}
+                className="flex gap-2 overflow-x-auto pb-2 -mb-2 scrollbar-hide"
+                role="tablist"
+                aria-label="Stadt auswählen"
+              >
+                {staedte.map((stadt) => (
+                  <button
+                    key={stadt.id}
+                    onClick={() => setActiveStadt(stadt)}
+                    role="tab"
+                    aria-selected={activeStadt.id === stadt.id}
+                    aria-controls={`panel-${stadt.id}`}
+                    className={`px-4 py-2 rounded-[6px] border-2 font-bold text-sm whitespace-nowrap transition-all duration-300 flex-shrink-0
+                      ${activeStadt.id === stadt.id
+                        ? 'border-[#012956] bg-[#012956] text-white'
+                        : 'border-[#012956] bg-white text-[#109387] hover:bg-[#f8f9fa]'
+                      }`}
+                  >
+                    {stadt.name}
+                  </button>
+                ))}
+              </div>
+
+              {/* Right Arrow */}
+              <button
+                onClick={() => scroll('right')}
+                className={`flex-shrink-0 w-10 h-10 rounded-full border-2 border-[#012956] flex items-center justify-center transition-all duration-300
+                  ${canScrollRight
+                    ? 'bg-white text-[#012956] hover:bg-[#012956] hover:text-white cursor-pointer'
+                    : 'bg-gray-100 text-gray-300 border-gray-200 cursor-not-allowed'
+                  }`}
+                disabled={!canScrollRight}
+                aria-label="Weitere Städte"
+              >
+                <ChevronRight size={20} strokeWidth={2.5} />
+              </button>
             </div>
           </div>
         </div>
