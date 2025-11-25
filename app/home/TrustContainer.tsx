@@ -27,7 +27,7 @@ const trustFaktoren = [
 
 const stats = [
   { zahl: '8+', label: 'Jahre Erfahrung', sublabel: 'in der Region' },
-  { zahl: '85', label: 'Unternehmen', sublabel: 'vertrauen uns' },
+  { zahl: 'ISO', label: '9001 & 14001', sublabel: 'zertifiziert' },
   { zahl: '2h', label: 'Reaktionszeit', sublabel: 'garantiert' },
   { zahl: '100%', label: 'Zufriedenheit', sublabel: 'oder wir kommen nochmal' },
 ]
@@ -45,8 +45,8 @@ export default function TrustContainer() {
             id="trust-heading"
             className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.15] max-w-2xl"
           >
-            Unzufrieden mit Ihrer{' '}
-            <span className="text-[#109387]">aktuellen Reinigung?</span>
+            Warum Unternehmen in Bayern{' '}
+            <span className="text-[#109387]">auf FIMI vertrauen</span>
           </h2>
 
           {/* Right: CTA */}
