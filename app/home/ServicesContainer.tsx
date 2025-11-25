@@ -9,7 +9,7 @@ const serviceKategorien = [
     id: 'gewerblich',
     icon: Building2,
     titel: 'Gewerbliche Reinigung',
-    beschreibung: 'Saubere Büros, Praxen und Geschäftsräume - damit Ihre Mitarbeiter und Kunden sich wohlfühlen.',
+    beschreibung: 'Für Büros, Praxen und Geschäftsräume die immer einladend aussehen sollen.',
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop',
     leistungen: [
       { name: 'Büroreinigung', href: '/leistungen/bueroreinigung' },
@@ -22,7 +22,7 @@ const serviceKategorien = [
     id: 'industrie',
     icon: Factory,
     titel: 'Industriereinigung',
-    beschreibung: 'Produktionshallen, Maschinen und Anlagen - wir reinigen auch unter schwierigen Bedingungen.',
+    beschreibung: 'Für Produktionshallen und Anlagen die auch unter schwierigen Bedingungen sauber sein müssen.',
     image: 'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?q=80&w=1200&auto=format&fit=crop',
     leistungen: [
       { name: 'Industriereinigung', href: '/leistungen/industriereinigung' },
@@ -35,7 +35,7 @@ const serviceKategorien = [
     id: 'facility',
     icon: Wrench,
     titel: 'Facility Management',
-    beschreibung: 'Alles aus einer Hand - von der Außenanlage bis zum Winterdienst.',
+    beschreibung: 'Für alle die einen Partner suchen der sich um alles kümmert.',
     image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1200&auto=format&fit=crop',
     leistungen: [
       { name: 'Facility Management', href: '/leistungen/facility-management' },
@@ -51,55 +51,60 @@ export default function ServicesContainer() {
     <section id="leistungen" className="py-20 lg:py-28 bg-[#f8f9fa]" aria-labelledby="services-heading">
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
-        <div className="grid lg:grid-cols-[380px_1fr] xl:grid-cols-[420px_1fr] gap-12 lg:gap-16">
+        <div className="grid lg:grid-cols-[400px_1fr] xl:grid-cols-[450px_1fr] gap-12 lg:gap-20">
 
           {/* Sticky Sidebar - SEO Text */}
           <aside className="lg:sticky lg:top-32 lg:self-start">
             <h2
               id="services-heading"
-              className="text-3xl md:text-4xl font-bold text-[#012956] leading-[1.15] mb-6"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-8"
             >
-              Professionelle Gebäudereinigung{' '}
-              <span className="text-[#109387]">für jeden Bedarf</span>
+              Reinigung die funktioniert
             </h2>
 
-            <div className="text-gray-600 space-y-4 mb-8">
-              <p>
-                Sie suchen eine <strong>zuverlässige Reinigungsfirma in Bayern</strong>?
-                FIMI bietet Ihnen das komplette Spektrum der Gebäudereinigung - von der
-                täglichen Büroreinigung bis zur spezialisierten Industriereinigung.
+            <div className="space-y-5 mb-10">
+              <p className="text-lg text-gray-700 font-semibold leading-relaxed">
+                Das Büro sieht nicht mehr einladend aus. Die Reinigungsfirma
+                kommt unregelmäßig. Beschwerden von Mitarbeitern häufen sich.
               </p>
-              <p>
-                Ob <Link href="/leistungen/bueroreinigung" className="text-[#109387] hover:underline">Büroreinigung in Landshut</Link>,
-                {' '}<Link href="/leistungen/industriereinigung" className="text-[#109387] hover:underline">Industriereinigung in München</Link> oder
-                {' '}<Link href="/leistungen/facility-management" className="text-[#109387] hover:underline">Facility Management in Regensburg</Link> -
-                wir sind Ihr Partner für saubere Gebäude in ganz Bayern.
+              <p className="text-lg text-gray-700 font-semibold leading-relaxed">
+                Kommt Ihnen das bekannt vor? Dann sind Sie hier richtig.
               </p>
-              <p>
-                Unsere <strong>geschulten Teams</strong> arbeiten nach ISO 9001 und 14001 Standards.
-                Das bedeutet für Sie: gleichbleibend hohe Qualität, nachhaltige Reinigungsmittel
-                und ein fester Ansprechpartner für alle Ihre Anliegen.
+              <p className="text-lg text-gray-700 font-semibold leading-relaxed">
+                Egal ob Sie eine{' '}
+                <Link href="/leistungen/bueroreinigung" className="text-[#109387] underline underline-offset-2">
+                  Büroreinigung
+                </Link>
+                {' '}brauchen, Ihre{' '}
+                <Link href="/leistungen/industriereinigung" className="text-[#109387] underline underline-offset-2">
+                  Produktionshalle
+                </Link>
+                {' '}gereinigt werden muss oder Sie einen Partner für das komplette{' '}
+                <Link href="/leistungen/facility-management" className="text-[#109387] underline underline-offset-2">
+                  Gebäudemanagement
+                </Link>
+                {' '}suchen.
               </p>
             </div>
 
             <Link
               href="/leistungen"
-              className="inline-flex items-center gap-2 text-[#109387] font-semibold hover:gap-3 transition-all"
+              className="inline-flex items-center gap-3 text-[#109387] font-bold text-lg hover:gap-4 transition-all"
             >
-              Alle 18 Leistungen ansehen
-              <ArrowRight size={18} />
+              Alle Leistungen ansehen
+              <ArrowRight size={20} />
             </Link>
 
-            {/* Quick Stats */}
-            <div className="mt-10 pt-8 border-t border-gray-200">
-              <div className="grid grid-cols-2 gap-6">
+            {/* Stats - Größer und prominenter */}
+            <div className="mt-12 p-8 bg-[#012956] rounded-[6px]">
+              <div className="grid grid-cols-2 gap-8">
                 <div>
-                  <div className="text-2xl font-bold text-[#012956]">18+</div>
-                  <div className="text-sm text-gray-500">Leistungen</div>
+                  <div className="text-4xl font-bold text-[#109387]">18+</div>
+                  <div className="text-white font-semibold mt-1">Leistungen</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-[#012956]">8</div>
-                  <div className="text-sm text-gray-500">Standorte in Bayern</div>
+                  <div className="text-4xl font-bold text-[#109387]">8</div>
+                  <div className="text-white font-semibold mt-1">Standorte</div>
                 </div>
               </div>
             </div>
@@ -117,35 +122,37 @@ export default function ServicesContainer() {
                   <div className={`grid md:grid-cols-2 ${index % 2 === 1 ? 'md:grid-flow-dense' : ''}`}>
 
                     {/* Image */}
-                    <div className={`relative h-64 md:h-auto md:min-h-[320px] ${index % 2 === 1 ? 'md:col-start-2' : ''}`}>
+                    <div className={`relative h-72 md:h-auto md:min-h-[360px] ${index % 2 === 1 ? 'md:col-start-2' : ''}`}>
                       <Image
                         src={kategorie.image}
                         alt={kategorie.titel}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-700"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent md:bg-gradient-to-r md:from-transparent md:to-black/20" />
                     </div>
 
                     {/* Content */}
                     <div className={`p-8 lg:p-10 flex flex-col justify-center ${index % 2 === 1 ? 'md:col-start-1 md:row-start-1' : ''}`}>
-                      <Icon size={32} className="text-[#109387] mb-4" strokeWidth={1.5} />
 
-                      <h3 className="text-2xl font-bold text-[#012956] mb-3">
-                        {kategorie.titel}
-                      </h3>
+                      {/* Icon + Titel - Beide grün */}
+                      <div className="flex items-center gap-4 mb-4">
+                        <Icon size={32} className="text-[#109387]" strokeWidth={1.5} />
+                        <h3 className="text-2xl lg:text-3xl font-bold text-[#109387]">
+                          {kategorie.titel}
+                        </h3>
+                      </div>
 
-                      <p className="text-gray-600 mb-6">
+                      <p className="text-lg text-gray-700 font-semibold mb-8 leading-relaxed">
                         {kategorie.beschreibung}
                       </p>
 
-                      {/* Leistungen Links */}
-                      <div className="flex flex-wrap gap-2 mb-6">
+                      {/* Leistungen Links - Einheitlich */}
+                      <div className="flex flex-wrap gap-3 mb-8">
                         {kategorie.leistungen.map((leistung) => (
                           <Link
                             key={leistung.href}
                             href={leistung.href}
-                            className="text-sm px-3 py-1.5 bg-gray-100 text-gray-700 rounded-[4px] hover:bg-[#109387] hover:text-white transition-colors"
+                            className="px-4 py-2 bg-[#f8f9fa] text-gray-700 font-semibold rounded-[4px] hover:bg-[#109387] hover:text-white transition-colors"
                           >
                             {leistung.name}
                           </Link>
@@ -154,10 +161,10 @@ export default function ServicesContainer() {
 
                       <Link
                         href="/leistungen"
-                        className="inline-flex items-center gap-2 text-[#109387] font-semibold group-hover:gap-3 transition-all"
+                        className="inline-flex items-center gap-3 text-[#109387] font-bold text-lg hover:gap-4 transition-all"
                       >
                         Mehr erfahren
-                        <ArrowRight size={18} />
+                        <ArrowRight size={20} />
                       </Link>
                     </div>
                   </div>

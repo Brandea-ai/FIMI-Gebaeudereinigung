@@ -6,30 +6,30 @@ const trustFaktoren = [
   {
     icon: Clock,
     titel: 'Schluss mit Warten',
-    beschreibung: 'Ihre Anfrage landet nicht im Nirgendwo. Wir antworten innerhalb von 2 Stunden und sind am selben Tag vor Ort, wenn es brennt.',
+    beschreibung: 'Ihre Anfrage landet nicht im Nirgendwo. Antwort innerhalb von 2 Stunden. Am selben Tag vor Ort wenn es brennt.',
   },
   {
     icon: Users,
     titel: 'Immer dieselben Gesichter',
-    beschreibung: 'Kein Durcheinander mit wechselndem Personal. Sie kennen Ihr Reinigungsteam - und Ihr Team kennt Ihre Räume.',
+    beschreibung: 'Kein Durcheinander mit wechselndem Personal. Sie kennen Ihr Reinigungsteam und Ihr Team kennt Ihre Räume.',
   },
   {
     icon: Shield,
     titel: 'Kein Risiko für Sie',
-    beschreibung: 'Vollversichert, geschult, zuverlässig. Unsere Mitarbeiter arbeiten seit Jahren bei uns - keine Fremden in Ihrem Gebäude.',
+    beschreibung: 'Vollversichert, geschult, zuverlässig. Unsere Mitarbeiter arbeiten seit Jahren bei uns. Keine Fremden in Ihrem Gebäude.',
   },
   {
     icon: Award,
     titel: 'Preis ohne Überraschungen',
-    beschreibung: 'Was wir anbieten, gilt. Keine versteckten Kosten, keine plötzlichen Aufschläge. Sie wissen vorher, was Sie zahlen.',
+    beschreibung: 'Was wir anbieten gilt. Keine versteckten Kosten. Keine plötzlichen Aufschläge. Sie wissen vorher was Sie zahlen.',
   },
 ]
 
 const stats = [
-  { zahl: '8+', label: 'Jahre Erfahrung', sublabel: 'in der Region' },
+  { zahl: '8+', label: 'Jahre', sublabel: 'Erfahrung' },
   { zahl: 'ISO', label: '9001 & 14001', sublabel: 'Standards' },
   { zahl: '2h', label: 'Reaktionszeit', sublabel: 'garantiert' },
-  { zahl: '100%', label: 'Zufriedenheit', sublabel: 'oder wir kommen nochmal' },
+  { zahl: '100%', label: 'Zufriedenheit', sublabel: 'oder nochmal' },
 ]
 
 export default function TrustContainer() {
@@ -37,21 +37,20 @@ export default function TrustContainer() {
     <section className="py-20 lg:py-28 bg-white" aria-labelledby="trust-heading">
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
-        {/* Header - Titel links, CTA-Block rechts */}
+        {/* Header */}
         <header className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 lg:gap-12 mb-16 lg:mb-20">
 
-          {/* Left: Headline */}
+          {/* Headline - Grün als Primärfarbe */}
           <h2
             id="trust-heading"
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.15]"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1]"
           >
-            Warum Unternehmen in Bayern{' '}
-            <span className="text-[#109387]">auf FIMI vertrauen</span>
+            Warum Unternehmen in Bayern auf FIMI vertrauen
           </h2>
 
-          {/* Right: CTA mit Ankündigung */}
+          {/* CTA Block */}
           <div className="flex-shrink-0">
-            <p className="text-gray-600 font-medium mb-3">
+            <p className="text-gray-700 font-semibold mb-3">
               Jetzt unverbindlich anfragen
             </p>
             <a
@@ -64,7 +63,7 @@ export default function TrustContainer() {
           </div>
         </header>
 
-        {/* Trust Faktoren Grid - Einheitliche Höhen */}
+        {/* Trust Faktoren Grid */}
         <div
           className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 lg:mb-20"
           role="list"
@@ -73,43 +72,45 @@ export default function TrustContainer() {
           {trustFaktoren.map((faktor) => (
             <article
               key={faktor.titel}
-              className="group flex flex-col p-8 border border-gray-200 rounded-[6px] hover:border-[#109387] transition-colors duration-300 h-full"
+              className="group flex flex-col p-8 bg-[#f8f9fa] rounded-[6px] hover:bg-[#012956] transition-colors duration-300 h-full"
               role="listitem"
             >
-              <faktor.icon
-                size={28}
-                className="text-[#109387] mb-4"
-                strokeWidth={1.5}
-                aria-hidden="true"
-              />
+              {/* Icon + Titel - Beide grün, bei Hover weiß */}
+              <div className="flex items-center gap-3 mb-4">
+                <faktor.icon
+                  size={28}
+                  className="text-[#109387] group-hover:text-white transition-colors"
+                  strokeWidth={1.5}
+                  aria-hidden="true"
+                />
+                <h3 className="text-lg font-bold text-[#109387] group-hover:text-white transition-colors">
+                  {faktor.titel}
+                </h3>
+              </div>
 
-              <h3 className="text-lg font-bold text-[#012956] mb-2">
-                {faktor.titel}
-              </h3>
-
-              <p className="text-gray-600 leading-relaxed text-[15px]">
+              <p className="text-gray-700 font-semibold leading-relaxed group-hover:text-white/90 transition-colors">
                 {faktor.beschreibung}
               </p>
             </article>
           ))}
         </div>
 
-        {/* Stats Bar */}
+        {/* Stats Bar - Größer und prominenter */}
         <div
-          className="bg-[#012956] rounded-[6px] py-10 px-8 lg:py-12 lg:px-16"
+          className="bg-[#012956] rounded-[6px] py-12 px-8 lg:py-16 lg:px-16"
           role="region"
           aria-label="FIMI in Zahlen"
         >
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-[#109387] mb-1">
+                <div className="text-5xl lg:text-6xl font-bold text-[#109387] mb-2">
                   {stat.zahl}
                 </div>
-                <div className="text-white font-semibold">
+                <div className="text-white font-bold text-lg">
                   {stat.label}
                 </div>
-                <div className="text-white/50 text-sm">
+                <div className="text-white/60 font-semibold">
                   {stat.sublabel}
                 </div>
               </div>
