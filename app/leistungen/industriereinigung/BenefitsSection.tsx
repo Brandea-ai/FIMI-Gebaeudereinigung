@@ -42,9 +42,9 @@ export default function BenefitsSection() {
           <span className="text-fimi-turquoise font-semibold text-sm uppercase tracking-wider mb-4 block">
             Ihre Vorteile
           </span>
-          <h2 className="mb-6">Warum FIMI Büroreinigung?</h2>
+          <h2 className="mb-6">Warum FIMI Industriereinigung?</h2>
           <p className="text-xl text-gray-600">
-            Unsere Büroreinigung vereint Qualität, Flexibilität und Nachhaltigkeit für Ihr perfektes Arbeitsumfeld.
+            Unsere Industriereinigung vereint Qualität, Flexibilität und Fachkompetenz für Ihre Produktionsumgebung.
           </p>
         </div>
 

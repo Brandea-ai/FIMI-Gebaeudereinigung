@@ -4,7 +4,7 @@ const benefits = [
   {
     icon: Shield,
     title: 'Höchste Qualitätsstandards',
-    description: 'ISO-zertifizierte Reinigungsprozesse und regelmäßige Qualitätskontrollen garantieren stets perfekte Ergebnisse in Ihren Büroräumen.'
+    description: 'Wir arbeiten nach ISO-Standards und führen regelmäßige Qualitätskontrollen durch für perfekte Ergebnisse.'
   },
   {
     icon: Clock,
@@ -42,9 +42,9 @@ export default function BenefitsSection() {
           <span className="text-fimi-turquoise font-semibold text-sm uppercase tracking-wider mb-4 block">
             Ihre Vorteile
           </span>
-          <h2 className="mb-6">Warum FIMI Büroreinigung?</h2>
+          <h2 className="mb-6">Warum FIMI Hausmeisterservice?</h2>
           <p className="text-xl text-gray-600">
-            Unsere Büroreinigung vereint Qualität, Flexibilität und Nachhaltigkeit für Ihr perfektes Arbeitsumfeld.
+            Unser Hausmeisterservice vereint Zuverlässigkeit, handwerkliches Geschick und schnelle Verfügbarkeit.
           </p>
         </div>
 
