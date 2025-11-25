@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Referenzen - FIMI Gebäudereinigung',
-  description: 'Über 500 zufriedene Kunden vertrauen auf FIMI Gebäudereinigung. Sehen Sie unsere Referenzen.',
+  description: '85 zufriedene Unternehmen vertrauen auf FIMI Gebäudereinigung. Sehen Sie unsere Referenzen.',
 }
 
 export default function ReferenzenPage() {
@@ -15,7 +15,7 @@ export default function ReferenzenPage() {
             Referenzen
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
-            Über 500 zufriedene Kunden vertrauen auf unsere Expertise
+            85 zufriedene Unternehmen vertrauen auf unsere Expertise
           </p>
         </div>
       </section>
@@ -26,7 +26,7 @@ export default function ReferenzenPage() {
           <div className="prose prose-lg max-w-none">
             <h2 className="text-3xl font-bold text-fimi-navy mb-6">Vertrauen durch Qualität</h2>
             <p className="text-gray-600 text-lg mb-12">
-              Seit über 15 Jahren vertrauen Unternehmen verschiedenster Branchen auf unsere professionellen Reinigungsdienstleistungen. Von kleinen Büros bis zu großen Industrieanlagen - wir bieten maßgeschneiderte Lösungen für jeden Bedarf.
+              Seit über 8 Jahren vertrauen Unternehmen verschiedenster Branchen auf unsere professionellen Reinigungsdienstleistungen. Von kleinen Büros bis zu großen Industrieanlagen - wir bieten maßgeschneiderte Lösungen für jeden Bedarf.
             </p>
 
             <h3 className="text-2xl font-bold text-fimi-navy mb-6">Unsere Kunden</h3>
@@ -70,9 +70,9 @@ export default function ReferenzenPage() {
             </div>
 
             <div className="bg-gray-50 p-8 mt-8" style={{ borderRadius: '4px' }}>
-              <h3 className="text-2xl font-bold text-fimi-navy mb-4">ISO-zertifizierte Qualität</h3>
+              <h3 className="text-2xl font-bold text-fimi-navy mb-4">ISO-Standards</h3>
               <p className="text-gray-600">
-                Unsere ISO 9001 und 14001 Zertifizierungen garantieren gleichbleibend hohe Qualität und umweltfreundliche Reinigungsverfahren.
+                Wir arbeiten nach ISO 9001 und 14001 Standards für gleichbleibend hohe Qualität und umweltfreundliche Reinigungsverfahren.
               </p>
             </div>
           </div>

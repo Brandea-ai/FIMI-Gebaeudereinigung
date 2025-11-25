@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Über uns - FIMI Gebäudereinigung',
-  description: '15+ Jahre Erfahrung in professioneller Gebäudereinigung. ISO 9001 & 14001 zertifiziert. Über 500 zufriedene Kunden.',
+  description: '8+ Jahre Erfahrung in professioneller Gebäudereinigung. Wir arbeiten nach ISO 9001 & 14001 Standards.',
 }
 
 export default function UeberUnsPage() {
@@ -15,7 +15,7 @@ export default function UeberUnsPage() {
             Über uns
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
-            15+ Jahre Erfahrung in professioneller Gebäudereinigung
+            8+ Jahre Erfahrung in professioneller Gebäudereinigung
           </p>
         </div>
       </section>
@@ -26,7 +26,7 @@ export default function UeberUnsPage() {
           <div className="prose prose-lg max-w-none">
             <h2 className="text-3xl font-bold text-fimi-navy mb-6">Ihr Partner für Sauberkeit</h2>
             <p className="text-gray-600 text-lg mb-6">
-              Seit über 15 Jahren steht FIMI Gebäudereinigung für höchste Qualität in der Gebäudereinigung und im Facility Management. Mit Sitz in Landshut betreuen wir Kunden in der gesamten Region und darüber hinaus.
+              Seit über 8 Jahren steht FIMI Gebäudereinigung für höchste Qualität in der Gebäudereinigung und im Facility Management. Mit Sitz in Landshut betreuen wir Kunden in der gesamten Region und darüber hinaus.
             </p>
 
             <h3 className="text-2xl font-bold text-fimi-navy mb-4 mt-12">Unsere Werte</h3>
@@ -34,13 +34,13 @@ export default function UeberUnsPage() {
               <div className="bg-gray-50 p-6" style={{ borderRadius: '4px' }}>
                 <h4 className="font-bold text-fimi-navy mb-2">Qualität</h4>
                 <p className="text-gray-600">
-                  ISO 9001 zertifizierte Qualitätsstandards für gleichbleibend exzellente Ergebnisse.
+                  Wir arbeiten nach ISO 9001 Standards für gleichbleibend exzellente Ergebnisse.
                 </p>
               </div>
               <div className="bg-gray-50 p-6" style={{ borderRadius: '4px' }}>
                 <h4 className="font-bold text-fimi-navy mb-2">Umweltschutz</h4>
                 <p className="text-gray-600">
-                  ISO 14001 zertifiziertes Umweltmanagement mit nachhaltigen Reinigungsverfahren.
+                  Wir arbeiten nach ISO 14001 Standards mit nachhaltigen Reinigungsverfahren.
                 </p>
               </div>
               <div className="bg-gray-50 p-6" style={{ borderRadius: '4px' }}>
@@ -52,12 +52,12 @@ export default function UeberUnsPage() {
               <div className="bg-gray-50 p-6" style={{ borderRadius: '4px' }}>
                 <h4 className="font-bold text-fimi-navy mb-2">Erfahrung</h4>
                 <p className="text-gray-600">
-                  Über 500 zufriedene Kunden vertrauen auf unsere langjährige Expertise.
+                  85 zufriedene Unternehmen vertrauen auf unsere Expertise.
                 </p>
               </div>
             </div>
 
-            <h3 className="text-2xl font-bold text-fimi-navy mb-4 mt-12">ISO-Zertifizierungen</h3>
+            <h3 className="text-2xl font-bold text-fimi-navy mb-4 mt-12">ISO-Standards</h3>
             <p className="text-gray-600 text-lg mb-6">
               Wir arbeiten nach den höchsten Standards:
             </p>

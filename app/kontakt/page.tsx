@@ -70,7 +70,7 @@ export default function KontaktPage() {
               </div>
 
               <div className="bg-gray-50 p-6" style={{ borderRadius: '4px' }}>
-                <h3 className="font-bold text-fimi-navy mb-2">ISO-Zertifiziert</h3>
+                <h3 className="font-bold text-fimi-navy mb-2">ISO-Standards</h3>
                 <p className="text-gray-600">
                   Wir arbeiten nach ISO 9001 & 14001 Standards für höchste Qualität und Umweltschutz.
                 </p>

@@ -3,9 +3,9 @@ import { Shield, Award, Users, Clock, Leaf, TrendingUp } from 'lucide-react'
 const trustElements = [
   {
     icon: Shield,
-    title: 'Zertifizierte Qualität',
-    description: 'ISO-zertifizierte Prozesse und regelmäßige Qualitätskontrollen garantieren höchste Standards.',
-    stats: '100% zertifiziert'
+    title: 'Höchste Qualität',
+    description: 'Wir arbeiten nach ISO-Standards und führen regelmäßige Qualitätskontrollen durch.',
+    stats: 'ISO-Standards'
   },
   {
     icon: Users,
@@ -53,7 +53,7 @@ export default function TrustContainer() {
             <span className="text-fimi-turquoise">professionelle Sauberkeit</span>
           </h2>
           <p className="text-xl text-gray-600">
-            Seit über 15 Jahren setzen wir Maßstäbe in der Gebäudereinigung.
+            Seit über 8 Jahren setzen wir Maßstäbe in der Gebäudereinigung.
             Vertrauen Sie auf Erfahrung, Qualität und Zuverlässigkeit.
           </p>
         </div>
@@ -98,20 +98,20 @@ export default function TrustContainer() {
         {/* Bottom Stats Section */}
         <div className="mt-20 grid md:grid-cols-4 gap-8 p-12 bg-gradient-to-br from-fimi-navy to-fimi-turquoise rounded-2xl text-white text-center">
           <div>
-            <p className="text-5xl font-bold mb-2">15+</p>
+            <p className="text-5xl font-bold mb-2">8+</p>
             <p className="text-gray-200">Jahre Erfahrung</p>
           </div>
           <div>
-            <p className="text-5xl font-bold mb-2">500+</p>
-            <p className="text-gray-200">Zufriedene Kunden</p>
+            <p className="text-5xl font-bold mb-2">85</p>
+            <p className="text-gray-200">Zufriedene Unternehmen</p>
           </div>
           <div>
-            <p className="text-5xl font-bold mb-2">50+</p>
-            <p className="text-gray-200">Fachkräfte im Team</p>
+            <p className="text-5xl font-bold mb-2">ISO</p>
+            <p className="text-gray-200">9001 & 14001 Standards</p>
           </div>
           <div>
-            <p className="text-5xl font-bold mb-2">98%</p>
-            <p className="text-gray-200">Weiterempfehlungsrate</p>
+            <p className="text-5xl font-bold mb-2">2h</p>
+            <p className="text-gray-200">Reaktionszeit</p>
           </div>
         </div>
       </div>

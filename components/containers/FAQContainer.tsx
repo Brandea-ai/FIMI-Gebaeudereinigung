@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: 'Wie stellen Sie die Qualität Ihrer Arbeit sicher?',
-    answer: 'Wir arbeiten nach ISO-zertifizierten Qualitätsstandards und führen regelmäßige Kontrollen durch. Zudem haben Sie einen festen Ansprechpartner und können jederzeit Feedback geben. Ihre Zufriedenheit ist unser oberstes Ziel.'
+    answer: 'Wir arbeiten nach ISO 9001 und 14001 Standards und führen regelmäßige Kontrollen durch. Zudem haben Sie einen festen Ansprechpartner und können jederzeit Feedback geben. Ihre Zufriedenheit ist unser oberstes Ziel.'
   },
   {
     question: 'Kann ich einen Probereinigung vereinbaren?',

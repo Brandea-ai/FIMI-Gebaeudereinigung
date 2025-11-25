@@ -4,7 +4,7 @@ const benefits = [
   {
     icon: Shield,
     title: 'Höchste Qualitätsstandards',
-    description: 'ISO-zertifizierte Reinigungsprozesse und regelmäßige Qualitätskontrollen garantieren stets perfekte Ergebnisse in Ihren Büroräumen.'
+    description: 'Wir arbeiten nach ISO-Standards und führen regelmäßige Qualitätskontrollen durch für perfekte Ergebnisse.'
   },
   {
     icon: Clock,

@@ -6,7 +6,7 @@ import { CheckCircle2, Factory, Shield, Clock } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Professionelle Industriereinigung Landshut | FIMI',
-  description: 'Spezialisierte Industriereinigung für Produktionsstätten und Fertigungsanlagen. ISO-zertifiziert. Auch im laufenden Betrieb. Jetzt anfragen!',
+  description: 'Spezialisierte Industriereinigung für Produktionsstätten und Fertigungsanlagen. Wir arbeiten nach ISO-Standards. Auch im laufenden Betrieb. Jetzt anfragen!',
   keywords: 'Industriereinigung, Produktionsreinigung, Fertigungsreinigung, Betriebsreinigung, Landshut',
 }
 

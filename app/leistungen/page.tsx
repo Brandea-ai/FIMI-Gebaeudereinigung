@@ -5,7 +5,7 @@ import LeistungenCTAContainer from './LeistungenCTAContainer'
 
 export const metadata: Metadata = {
   title: 'Unsere Leistungen - Professionelle Gebäudereinigung | FIMI Landshut',
-  description: 'Komplettes Leistungsspektrum: Büroreinigung, Industriereinigung, Facility Management und mehr. ISO 9001 & 14001 zertifiziert. 15+ Jahre Erfahrung in Landshut.',
+  description: 'Komplettes Leistungsspektrum: Büroreinigung, Industriereinigung, Facility Management und mehr. Wir arbeiten nach ISO 9001 & 14001 Standards. 8+ Jahre Erfahrung in Landshut.',
   keywords: 'Gebäudereinigung Leistungen, Büroreinigung, Industriereinigung, Facility Management, Unterhaltsreinigung, Baureinigung, Landshut',
 }
 

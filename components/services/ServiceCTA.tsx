@@ -34,7 +34,7 @@ export default function ServiceCTA() {
           </a>
         </div>
         <p className="text-sm mt-6 text-white/70">
-          ✓ ISO 9001 & 14001 zertifiziert · ✓ Kostenlose Beratung · ✓ Transparente Preise
+          Wir arbeiten nach ISO 9001 & 14001 Standards
         </p>
       </div>
     </section>
