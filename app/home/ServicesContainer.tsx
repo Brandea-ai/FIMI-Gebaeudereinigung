@@ -12,6 +12,7 @@ const serviceKategorien = [
     problem: 'Das Büro macht keinen guten Eindruck mehr',
     loesung: 'Saubere Räume in denen sich Mitarbeiter und Kunden wohlfühlen. Regelmäßig, zuverlässig, ohne dass Sie sich darum kümmern müssen.',
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop',
+    link: { text: 'Mehr zur Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
   },
   {
     id: 'industrie',
@@ -20,6 +21,7 @@ const serviceKategorien = [
     problem: 'Produktionshallen und Maschinen brauchen Spezialwissen',
     loesung: 'Fachgerechte Reinigung auch unter schwierigen Bedingungen. Im laufenden Betrieb oder außerhalb der Produktionszeiten.',
     image: 'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?q=80&w=1200&auto=format&fit=crop',
+    link: { text: 'Mehr zur Industriereinigung', href: '/leistungen/industriereinigung' },
   },
   {
     id: 'facility',
@@ -28,6 +30,7 @@ const serviceKategorien = [
     problem: 'Zu viele Ansprechpartner für zu viele Aufgaben',
     loesung: 'Ein Partner der sich um alles kümmert. Reinigung, Hausmeister, Winterdienst, Außenanlagen. Alles aus einer Hand.',
     image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1200&auto=format&fit=crop',
+    link: { text: 'Mehr zum Facility Management', href: '/leistungen/facility-management' },
   },
 ]
 
@@ -134,9 +137,18 @@ export default function ServicesContainer() {
                       </p>
 
                       {/* Lösung */}
-                      <p className="text-lg text-gray-700 font-semibold leading-relaxed">
+                      <p className="text-lg text-gray-700 font-semibold leading-relaxed mb-6">
                         {kategorie.loesung}
                       </p>
+
+                      {/* Subtiler Link */}
+                      <Link
+                        href={kategorie.link.href}
+                        className="inline-flex items-center gap-2 text-[#109387] font-semibold text-sm hover:underline"
+                      >
+                        {kategorie.link.text}
+                        <ArrowRight size={16} />
+                      </Link>
 
                     </div>
                   </div>
