@@ -1,114 +1,113 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Menu, X, ChevronDown, Phone, Mail, MapPin, ArrowRight } from 'lucide-react'
-
-const leistungen = {
-  'Gewerbliche Objektreinigung': [
-    { name: 'Buroreinigung', slug: 'bueroreinigung', desc: 'Professionelle Reinigung fur Burogebaude' },
-    { name: 'Unterhaltsreinigung', slug: 'unterhaltsreinigung', desc: 'Regelmaessige Gebaeudereinigung' },
-    { name: 'Baureinigung', slug: 'baureinigung', desc: 'Reinigung nach Bauarbeiten' },
-    { name: 'Hallenreinigung', slug: 'hallenreinigung', desc: 'Reinigung von Produktionshallen' },
-    { name: 'Parkplatzreinigung', slug: 'parkplatzreinigung', desc: 'Aussenflaechen und Parkplaetze' },
-    { name: 'Fensterreinigung', slug: 'fensterreinigung', desc: 'Glas- und Fensterreinigung' },
-  ],
-  'Industrielle Reinigung': [
-    { name: 'Industriereinigung', slug: 'industriereinigung', desc: 'Spezialreinigung fuer Industrie' },
-    { name: 'Maschinenreinigung', slug: 'maschinenreinigung', desc: 'Reinigung von Maschinen' },
-    { name: 'Fassadenreinigung', slug: 'fassadenreinigung', desc: 'Professionelle Fassadenpflege' },
-    { name: 'Tiefgaragenreinigung', slug: 'tiefgaragenreinigung', desc: 'Reinigung von Tiefgaragen' },
-    { name: 'Aussenanlagenpflege', slug: 'aussenanlagenpflege', desc: 'Pflege von Aussenanlagen' },
-    { name: 'Sonderreinigung', slug: 'sonderreinigung', desc: 'Spezielle Reinigungsaufgaben' },
-  ],
-  'Facility Management': [
-    { name: 'Facility Management', slug: 'facility-management', desc: 'Ganzheitliche Gebaeudebewirtschaftung' },
-    { name: 'Hausmeisterservice', slug: 'hausmeisterservice', desc: 'Technische Betreuung' },
-    { name: 'Winterdienst', slug: 'winterdienst', desc: 'Schneeraeumung und Streuservice' },
-    { name: 'Beschaffungsmanagement', slug: 'beschaffungsmanagement', desc: 'Materialversorgung' },
-  ],
-}
-
-const branchen = [
-  'Buro & Verwaltung',
-  'Gesundheitswesen',
-  'Hotellerie & Gastronomie',
-  'Bildungseinrichtungen',
-  'Handel & Einkaufszentren',
-  'Industrie & Produktion',
-  'Logistik & Automotive',
-  'Immobilienverwaltung',
-  'Oeffentliche Hand',
-]
+import { ArrowRight, Phone, ChevronDown } from 'lucide-react'
 
 export default function Navigation() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [showMegaMenu, setShowMegaMenu] = useState(false)
-  const [showBranchen, setShowBranchen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isNavVisible, setIsNavVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
+  const [showNavToggle, setShowNavToggle] = useState(false)
+  const [showMobileMenuButton, setShowMobileMenuButton] = useState(true)
+  const [mobileMenuHalfHidden, setMobileMenuHalfHidden] = useState(false)
+  const lastScrollTime = useRef<number>(Date.now())
+  const autoHideIntervalRef = useRef<NodeJS.Timeout | null>(null)
+
+  // Auto-Hide Interval: Prüft alle 200ms ob seit 1,5s nicht mehr gescrollt wurde
+  useEffect(() => {
+    autoHideIntervalRef.current = setInterval(() => {
+      const timeSinceLastScroll = Date.now() - lastScrollTime.current
+
+      if (timeSinceLastScroll >= 1500) {
+        const currentScrollY = window.scrollY
+
+        if (currentScrollY > 100) {
+          setShowNavToggle(false)
+          setMobileMenuHalfHidden(true)
+        }
+      }
+    }, 200)
+
+    return () => {
+      if (autoHideIntervalRef.current) {
+        clearInterval(autoHideIntervalRef.current)
+      }
+    }
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
-    }
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+      const currentScrollY = window.scrollY
+      setIsScrolled(currentScrollY > 20)
 
-  const scrollToFooter = useCallback((e: React.MouseEvent) => {
+      lastScrollTime.current = Date.now()
+
+      if (currentScrollY < 100) {
+        setIsNavVisible(true)
+        setShowNavToggle(false)
+        setShowMobileMenuButton(true)
+        setMobileMenuHalfHidden(false)
+      } else {
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          setIsNavVisible(false)
+          setShowNavToggle(false)
+          setShowMobileMenuButton(false)
+          setMobileMenuHalfHidden(false)
+        } else if (currentScrollY < lastScrollY) {
+          setShowNavToggle(true)
+          setShowMobileMenuButton(true)
+          setMobileMenuHalfHidden(false)
+        }
+      }
+
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [lastScrollY])
+
+  const handleShowNav = () => {
+    setIsNavVisible(true)
+    setShowNavToggle(false)
+  }
+
+  const scrollToContact = useCallback((e: React.MouseEvent) => {
     e.preventDefault()
-    setIsOpen(false)
+    setIsMobileMenuOpen(false)
     const footer = document.getElementById('contact-form')
     if (footer) {
       footer.scrollIntoView({ behavior: 'smooth' })
     }
   }, [])
 
-  const closeMobileMenu = useCallback(() => {
-    setIsOpen(false)
-  }, [])
+  const navLinks = [
+    { label: 'Leistungen', href: '/leistungen' },
+    { label: 'Über FIMI', href: '/ueber-uns' },
+    { label: 'Referenzen', href: '/referenzen' },
+    { label: 'Kontakt', href: '/kontakt' },
+  ]
 
   return (
     <>
-      {/* Top Bar */}
-      <div className="hidden lg:block bg-fimi-navy text-white py-2">
-        <div className="container">
-          <div className="flex items-center justify-between text-sm">
-            <div className="flex items-center gap-6">
-              <a href="tel:01747225473" className="flex items-center gap-2 hover:text-fimi-turquoise transition-colors">
-                <Phone size={14} />
-                <span>0174 722 5473</span>
-              </a>
-              <a href="mailto:info@fimi-service.de" className="flex items-center gap-2 hover:text-fimi-turquoise transition-colors">
-                <Mail size={14} />
-                <span>info@fimi-service.de</span>
-              </a>
-              <span className="flex items-center gap-2 text-gray-300">
-                <MapPin size={14} />
-                <span>Landshut und Umgebung</span>
-              </span>
-            </div>
-            <div className="flex items-center gap-4">
-              <Link href="/sitemap" className="hover:text-fimi-turquoise transition-colors">
-                Sitemap
-              </Link>
-              <span className="text-gray-500">|</span>
-              <span className="text-fimi-turquoise font-medium">24/7 Notfallservice</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Main Navigation */}
-      <nav className={`sticky-nav ${isScrolled ? 'scrolled' : 'bg-white'}`}>
-        <div className="container">
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          isScrolled ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-white'
+        } ${isNavVisible ? 'translate-y-0' : '-translate-y-full'}`}
+      >
+        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="flex items-center justify-between h-24 lg:h-32">
             {/* Logo */}
             <Link href="/" className="relative z-10 flex-shrink-0">
               <Image
                 src="/FIMI-LOGO/FIMI-Logo_Transparent_FUER-Webseite.png"
-                alt="FIMI Gebaeudereinigung"
+                alt="FIMI Gebäudereinigung"
                 width={320}
                 height={107}
                 className="h-20 lg:h-28 w-auto"
@@ -117,228 +116,144 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-1">
-              <Link
-                href="/"
-                className="px-4 py-2 text-fimi-navy font-medium hover:text-fimi-turquoise transition-colors"
-              >
-                Home
-              </Link>
-
-              {/* Leistungen Mega Menu */}
-              <div
-                className="relative"
-                onMouseEnter={() => setShowMegaMenu(true)}
-                onMouseLeave={() => setShowMegaMenu(false)}
-              >
-                <button className="flex items-center gap-1 px-4 py-2 text-fimi-navy font-medium hover:text-fimi-turquoise transition-colors">
-                  Leistungen
-                  <ChevronDown size={16} className={`transition-transform duration-300 ${showMegaMenu ? 'rotate-180' : ''}`} />
-                </button>
-
-                {/* Mega Menu */}
-                <div className={`absolute top-full left-1/2 -translate-x-1/2 pt-4 transition-all duration-300 ${
-                  showMegaMenu ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'
-                }`}>
-                  <div className="bg-white shadow-glass-lg border border-gray-100 rounded-lg p-8 w-[900px]">
-                    <div className="grid grid-cols-3 gap-8">
-                      {Object.entries(leistungen).map(([kategorie, services]) => (
-                        <div key={kategorie}>
-                          <h3 className="text-xs font-bold text-fimi-turquoise mb-4 uppercase tracking-wider">
-                            {kategorie}
-                          </h3>
-                          <ul className="space-y-1">
-                            {services.map((service) => (
-                              <li key={service.slug}>
-                                <Link
-                                  href={`/leistungen/${service.slug}`}
-                                  className="group flex items-start gap-2 p-2 rounded-md hover:bg-gray-50 transition-colors"
-                                >
-                                  <ArrowRight size={14} className="mt-1 text-fimi-turquoise opacity-0 group-hover:opacity-100 transition-opacity" />
-                                  <div>
-                                    <span className="block text-fimi-navy font-medium group-hover:text-fimi-turquoise transition-colors">
-                                      {service.name}
-                                    </span>
-                                    <span className="text-xs text-gray-500">{service.desc}</span>
-                                  </div>
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="mt-6 pt-6 border-t border-gray-100 flex items-center justify-between">
-                      <span className="text-sm text-gray-500">18 Dienstleistungen in 3 Kategorien</span>
-                      <Link
-                        href="/leistungen"
-                        className="flex items-center gap-2 text-fimi-turquoise font-medium hover:gap-3 transition-all"
-                      >
-                        Alle Leistungen ansehen
-                        <ArrowRight size={16} />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Branchen Dropdown */}
-              <div
-                className="relative"
-                onMouseEnter={() => setShowBranchen(true)}
-                onMouseLeave={() => setShowBranchen(false)}
-              >
-                <button className="flex items-center gap-1 px-4 py-2 text-fimi-navy font-medium hover:text-fimi-turquoise transition-colors">
-                  Branchen
-                  <ChevronDown size={16} className={`transition-transform duration-300 ${showBranchen ? 'rotate-180' : ''}`} />
-                </button>
-
-                <div className={`absolute top-full left-0 pt-4 transition-all duration-300 ${
-                  showBranchen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'
-                }`}>
-                  <div className="bg-white shadow-glass-lg border border-gray-100 rounded-lg py-2 w-64">
-                    {branchen.map((branche) => (
-                      <Link
-                        key={branche}
-                        href={`/branchen/${branche.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
-                        className="block px-4 py-2 text-gray-700 hover:bg-gray-50 hover:text-fimi-turquoise transition-colors"
-                      >
-                        {branche}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <Link
-                href="/ueber-uns"
-                className="px-4 py-2 text-fimi-navy font-medium hover:text-fimi-turquoise transition-colors"
-              >
-                Unternehmen
-              </Link>
-
-              <Link
-                href="/referenzen"
-                className="px-4 py-2 text-fimi-navy font-medium hover:text-fimi-turquoise transition-colors"
-              >
-                Referenzen
-              </Link>
-
-              <Link
-                href="/kontakt"
-                className="px-4 py-2 text-fimi-navy font-medium hover:text-fimi-turquoise transition-colors"
-              >
-                Kontakt
-              </Link>
+            <div className="hidden lg:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-[#012956] hover:text-[#109387] transition-colors text-sm font-semibold"
+                >
+                  {link.label}
+                </Link>
+              ))}
             </div>
 
             {/* CTA Buttons */}
-            <div className="hidden lg:flex items-center gap-3">
+            <div className="hidden lg:flex items-center gap-4">
               <a
-                href="tel:01747225473"
-                className="btn-outline text-sm"
+                href="tel:+4987143033460"
+                className="flex items-center gap-2 text-[#012956] hover:text-[#109387] transition-colors font-semibold text-sm"
               >
-                <Phone size={16} />
-                Anrufen
+                <Phone size={18} />
+                <span>0871 430 334 60</span>
               </a>
               <button
-                onClick={scrollToFooter}
-                className="btn-primary text-sm"
+                onClick={scrollToContact}
+                className="flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm px-6 py-3 rounded-[6px] transition-all"
               >
-                Angebot anfordern
+                <span>Kostenfreie Besichtigung</span>
+                <ArrowRight size={16} />
               </button>
             </div>
 
             {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 text-fimi-navy focus-ring rounded-md"
-              aria-label="Menu"
+            <div
+              className={`lg:hidden transition-all duration-500 ease-out ${
+                !showMobileMenuButton
+                  ? 'opacity-0 pointer-events-none'
+                  : mobileMenuHalfHidden
+                    ? 'translate-y-1/2 opacity-70'
+                    : 'translate-y-0 opacity-100'
+              }`}
             >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        <div className={`lg:hidden fixed inset-0 top-24 bg-white z-50 transform transition-transform duration-300 ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}>
-          <div className="h-full overflow-y-auto py-6 px-4">
-            <div className="space-y-1">
-              <Link
-                href="/"
-                onClick={closeMobileMenu}
-                className="block py-3 px-4 text-fimi-navy font-medium hover:bg-gray-50 rounded-lg"
-              >
-                Home
-              </Link>
-
-              <Link
-                href="/leistungen"
-                onClick={closeMobileMenu}
-                className="block py-3 px-4 text-fimi-navy font-medium hover:bg-gray-50 rounded-lg"
-              >
-                Leistungen
-              </Link>
-
-              <Link
-                href="/ueber-uns"
-                onClick={closeMobileMenu}
-                className="block py-3 px-4 text-fimi-navy font-medium hover:bg-gray-50 rounded-lg"
-              >
-                Unternehmen
-              </Link>
-
-              <Link
-                href="/referenzen"
-                onClick={closeMobileMenu}
-                className="block py-3 px-4 text-fimi-navy font-medium hover:bg-gray-50 rounded-lg"
-              >
-                Referenzen
-              </Link>
-
-              <Link
-                href="/kontakt"
-                onClick={closeMobileMenu}
-                className="block py-3 px-4 text-fimi-navy font-medium hover:bg-gray-50 rounded-lg"
-              >
-                Kontakt
-              </Link>
-            </div>
-
-            <div className="mt-8 pt-8 border-t border-gray-200 space-y-4">
-              <a
-                href="tel:01747225473"
-                className="flex items-center justify-center gap-2 w-full btn-outline"
-              >
-                <Phone size={18} />
-                0174 722 5473
-              </a>
               <button
-                onClick={scrollToFooter}
-                className="w-full btn-primary"
+                onClick={() => {
+                  if (mobileMenuHalfHidden) {
+                    setMobileMenuHalfHidden(false)
+                    lastScrollTime.current = Date.now()
+                  }
+                  setIsMobileMenuOpen(!isMobileMenuOpen)
+                }}
+                className="p-2 text-[#012956]"
+                aria-label="Toggle menu"
               >
-                Angebot anfordern
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                  {isMobileMenuOpen ? (
+                    <path
+                      d="M18 6L6 18M6 6l12 12"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  ) : (
+                    <path
+                      d="M3 12h18M3 6h18M3 18h18"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  )}
+                </svg>
               </button>
             </div>
+          </div>
 
-            <div className="mt-8 pt-8 border-t border-gray-200">
-              <p className="text-sm text-gray-500 mb-4">Kontakt</p>
-              <div className="space-y-3 text-sm">
-                <a href="mailto:info@fimi-service.de" className="flex items-center gap-2 text-fimi-navy">
-                  <Mail size={16} className="text-fimi-turquoise" />
-                  info@fimi-service.de
+          {/* Mobile Menu */}
+          <div
+            className={`lg:hidden overflow-hidden transition-all duration-300 ${
+              isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+            }`}
+          >
+            <div className="py-6 border-t border-gray-100">
+              <div className="flex flex-col gap-4">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-[#012956] hover:text-[#109387] transition-colors py-2 font-semibold"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <a
+                  href="tel:+4987143033460"
+                  className="flex items-center gap-2 text-[#012956] py-2 font-semibold"
+                >
+                  <Phone size={18} />
+                  <span>0871 430 334 60</span>
                 </a>
-                <div className="flex items-start gap-2 text-gray-600">
-                  <MapPin size={16} className="text-fimi-turquoise mt-0.5" />
-                  <span>Kellerstr. 39, 84036 Landshut</span>
-                </div>
+                <button
+                  onClick={scrollToContact}
+                  className="flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-6 py-4 rounded-[6px] transition-all mt-2"
+                >
+                  <span>Kostenfreie Besichtigung</span>
+                  <ArrowRight size={16} />
+                </button>
               </div>
             </div>
           </div>
         </div>
       </nav>
+
+      {/* Floating Nav Toggle Button (zentriert oben) */}
+      <div
+        className={`fixed top-4 left-1/2 -translate-x-1/2 z-40 transition-opacity duration-300 ${
+          showNavToggle ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        <button
+          onClick={handleShowNav}
+          className="group"
+          aria-label="Navigation anzeigen"
+        >
+          <div
+            className="bg-[#109387]/95 backdrop-blur-md px-6 py-3 rounded-[6px]
+              shadow-[0_4px_20px_rgba(16,147,135,0.3)]
+              transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]
+              hover:bg-[#109387] hover:shadow-[0_6px_25px_rgba(16,147,135,0.4)]
+              flex items-center gap-3"
+          >
+            <ChevronDown size={18} className="text-white/90" />
+            <span className="text-white/90 text-sm font-semibold">Menü</span>
+          </div>
+        </button>
+      </div>
+
+      {/* Spacer für fixed Navigation */}
+      <div className="h-24 lg:h-32" />
     </>
   )
 }
