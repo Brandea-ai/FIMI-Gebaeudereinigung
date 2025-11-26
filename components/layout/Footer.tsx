@@ -2,20 +2,8 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { MapPin, Phone, Mail, Clock, ArrowUpRight } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 import ContactForm from '../ContactForm'
-
-const leistungen = [
-  'Unterhaltsreinigung', 'Büroreinigung', 'Industriereinigung', 'Fensterreinigung',
-  'Glasreinigung', 'Fassadenreinigung', 'Hallenreinigung', 'Maschinenreinigung',
-  'Facility Management', 'Winterdienst', 'Hausmeisterservice', 'Außenanlagenpflege',
-  'Baureinigung', 'Sonderreinigung', 'Tiefgaragenreinigung', 'Parkplatzreinigung',
-]
-
-const regionen = [
-  'Landshut', 'München', 'Regensburg', 'Ingolstadt', 'Freising', 'Erding',
-  'Straubing', 'Dingolfing', 'Moosburg', 'Deggendorf', 'Passau', 'Rosenheim',
-]
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -123,118 +111,88 @@ export default function Footer() {
         </div>
       </section>
 
-      {/* Kompakter Premium Footer */}
-      <div className="bg-[#012956]">
+      {/* Clean Footer */}
+      <div className="bg-[#012956] py-16">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
-          {/* Hauptbereich */}
-          <div className="py-12 lg:py-16 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 lg:gap-16">
 
-            {/* Links: Logo + Beschreibung */}
-            <div className="lg:max-w-sm">
+            {/* Logo & Info */}
+            <div className="col-span-2 md:col-span-4 lg:col-span-1">
               <Image
                 src="/FIMI-LOGO/FIMI-LOGO_Weiße-Schrift_Transparent.png"
                 alt="FIMI Gebäudereinigung"
-                width={180}
-                height={60}
-                className="mb-5"
+                width={160}
+                height={53}
+                className="mb-6"
               />
-              <p className="text-white/60 font-semibold text-sm leading-relaxed">
-                Professionelle Gebäudereinigung in Bayern. Ihr zuverlässiger Partner für saubere Geschäftsräume.
+              <p className="text-white/50 font-semibold text-sm leading-relaxed">
+                Professionelle Gebäudereinigung in Bayern seit über 8 Jahren.
               </p>
             </div>
 
-            {/* Mitte: Quick Links */}
-            <div className="flex flex-wrap gap-x-12 gap-y-6">
-              <div>
-                <h4 className="text-[#109387] font-bold text-xs uppercase tracking-wider mb-3">Unternehmen</h4>
-                <ul className="space-y-2">
-                  <li><Link href="/unternehmen" className="text-white/60 font-semibold text-sm hover:text-white transition-colors">Über FIMI</Link></li>
-                  <li><Link href="/referenzen" className="text-white/60 font-semibold text-sm hover:text-white transition-colors">Referenzen</Link></li>
-                  <li><Link href="/karriere" className="text-white/60 font-semibold text-sm hover:text-white transition-colors">Karriere</Link></li>
-                  <li><Link href="/kontakt" className="text-white/60 font-semibold text-sm hover:text-white transition-colors">Kontakt</Link></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="text-[#109387] font-bold text-xs uppercase tracking-wider mb-3">Rechtliches</h4>
-                <ul className="space-y-2">
-                  <li><Link href="/impressum" className="text-white/60 font-semibold text-sm hover:text-white transition-colors">Impressum</Link></li>
-                  <li><Link href="/datenschutz" className="text-white/60 font-semibold text-sm hover:text-white transition-colors">Datenschutz</Link></li>
-                  <li><Link href="/agb" className="text-white/60 font-semibold text-sm hover:text-white transition-colors">AGB</Link></li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Rechts: CTA */}
-            <div className="lg:text-right">
-              <p className="text-white/40 text-xs uppercase tracking-wider mb-2">Jetzt anfragen</p>
-              <a href="tel:+4987143033460" className="text-2xl lg:text-3xl font-bold text-white hover:text-[#109387] transition-colors">
-                0871 430 334 60
-              </a>
-            </div>
-
-          </div>
-
-          {/* Trennlinie */}
-          <div className="border-t border-white/10" />
-
-          {/* Leistungen & Regionen - kompakt als Tags */}
-          <div className="py-8 space-y-6">
-
             {/* Leistungen */}
             <div>
-              <div className="flex items-center gap-3 mb-3">
-                <span className="text-[#109387] font-bold text-xs uppercase tracking-wider">Leistungen</span>
-                <Link href="/leistungen" className="text-white/40 hover:text-[#109387] transition-colors">
-                  <ArrowUpRight size={14} />
-                </Link>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {leistungen.map(item => (
-                  <Link
-                    key={item}
-                    href={`/leistungen/${item.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/ /g, '-')}`}
-                    className="text-white/50 text-xs font-semibold hover:text-[#109387] transition-colors"
-                  >
-                    {item}
-                    <span className="text-white/20 ml-2">•</span>
-                  </Link>
-                ))}
-              </div>
+              <h4 className="text-white font-bold text-sm mb-5">Leistungen</h4>
+              <ul className="space-y-3">
+                <li><Link href="/leistungen/unterhaltsreinigung" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Unterhaltsreinigung</Link></li>
+                <li><Link href="/leistungen/bueroreinigung" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Büroreinigung</Link></li>
+                <li><Link href="/leistungen/industriereinigung" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Industriereinigung</Link></li>
+                <li><Link href="/leistungen/facility-management" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Facility Management</Link></li>
+                <li><Link href="/leistungen" className="text-[#109387] font-semibold text-sm hover:text-white transition-colors">Alle Leistungen →</Link></li>
+              </ul>
             </div>
 
             {/* Regionen */}
             <div>
-              <div className="flex items-center gap-3 mb-3">
-                <span className="text-[#109387] font-bold text-xs uppercase tracking-wider">Regionen</span>
-              </div>
-              <div className="flex flex-wrap gap-x-4 gap-y-1">
-                {regionen.map(item => (
-                  <Link
-                    key={item}
-                    href={`/regionen/${item.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue')}`}
-                    className="text-white/50 text-xs font-semibold hover:text-[#109387] transition-colors"
-                  >
-                    {item}
-                  </Link>
-                ))}
-              </div>
+              <h4 className="text-white font-bold text-sm mb-5">Regionen</h4>
+              <ul className="space-y-3">
+                <li><Link href="/regionen/landshut" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Landshut</Link></li>
+                <li><Link href="/regionen/muenchen" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">München</Link></li>
+                <li><Link href="/regionen/regensburg" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Regensburg</Link></li>
+                <li><Link href="/regionen/ingolstadt" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Ingolstadt</Link></li>
+                <li><Link href="/regionen/freising" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Freising</Link></li>
+              </ul>
+            </div>
+
+            {/* Unternehmen */}
+            <div>
+              <h4 className="text-white font-bold text-sm mb-5">Unternehmen</h4>
+              <ul className="space-y-3">
+                <li><Link href="/unternehmen" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Über FIMI</Link></li>
+                <li><Link href="/referenzen" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Referenzen</Link></li>
+                <li><Link href="/karriere" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Karriere</Link></li>
+                <li><Link href="/kontakt" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Kontakt</Link></li>
+              </ul>
+            </div>
+
+            {/* Rechtliches */}
+            <div>
+              <h4 className="text-white font-bold text-sm mb-5">Rechtliches</h4>
+              <ul className="space-y-3">
+                <li><Link href="/impressum" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Impressum</Link></li>
+                <li><Link href="/datenschutz" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Datenschutz</Link></li>
+                <li><Link href="/agb" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">AGB</Link></li>
+              </ul>
             </div>
 
           </div>
 
         </div>
+      </div>
 
-        {/* Copyright Bar */}
-        <div className="bg-[#01203d] py-4">
-          <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-2 text-white/40 text-xs font-semibold">
-              <p>© {currentYear} FIMI Gebäudereinigung. Alle Rechte vorbehalten.</p>
-              <p>Landshut • München • Regensburg • Bayern</p>
-            </div>
+      {/* Copyright Bar */}
+      <div className="bg-[#01203d] py-5">
+        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-3">
+            <p className="text-white/40 text-sm font-semibold">
+              © {currentYear} FIMI Gebäudereinigung
+            </p>
+            <p className="text-white/40 text-sm font-semibold">
+              Gebäudereinigung in Landshut, München, Regensburg und ganz Bayern
+            </p>
           </div>
         </div>
-
       </div>
     </footer>
   )
