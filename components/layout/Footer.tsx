@@ -123,8 +123,8 @@ export default function Footer() {
               <Image
                 src="/FIMI-LOGO/FIMI-LOGO_Weiße-Schrift_Transparent.png"
                 alt="FIMI Gebäudereinigung"
-                width={140}
-                height={47}
+                width={280}
+                height={94}
                 className="mb-6"
               />
               <p className="text-white/50 font-semibold text-sm leading-relaxed">
