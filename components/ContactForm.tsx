@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, FormEvent, ChangeEvent } from 'react'
+import { useState, useEffect, FormEvent, ChangeEvent } from 'react'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle } from 'lucide-react'
 
@@ -10,6 +10,7 @@ interface FormData {
   phone: string
   company: string
   service: string
+  branche: string
   message: string
   privacy: boolean
 }
@@ -23,10 +24,32 @@ const SERVICES = [
   'Büroreinigung',
   'Industriereinigung',
   'Fensterreinigung',
+  'Glasreinigung',
+  'Fassadenreinigung',
+  'Hallenreinigung',
+  'Maschinenreinigung',
   'Facility Management',
   'Winterdienst',
   'Hausmeisterservice',
+  'Außenanlagenpflege',
   'Baureinigung',
+  'Sonderreinigung',
+  'Tiefgaragenreinigung',
+  'Parkplatzreinigung',
+  'Sonstiges'
+]
+
+const BRANCHEN = [
+  'Büro / Verwaltung',
+  'Industrie / Produktion',
+  'Einzelhandel / Geschäfte',
+  'Arztpraxis / Gesundheitswesen',
+  'Hotel / Gastronomie',
+  'Logistik / Lager',
+  'Bildung / Schule',
+  'Öffentliche Einrichtung',
+  'Automobilbranche',
+  'IT / Technologie',
   'Sonstiges'
 ]
 
@@ -37,6 +60,7 @@ export default function ContactForm() {
     phone: '',
     company: '',
     service: '',
+    branche: '',
     message: '',
     privacy: false
   })
@@ -45,6 +69,18 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showModal, setShowModal] = useState(false)
   const [userName, setUserName] = useState('')
+  const [requestId, setRequestId] = useState('')
+  const [phase2Visible, setPhase2Visible] = useState(false)
+  const [formTime] = useState(Math.floor(Date.now() / 1000))
+
+  // Phase 1 → Phase 2 Übergang (wächst bei Eingabe)
+  useEffect(() => {
+    if (!phase2Visible) {
+      if (formData.name.trim().length > 0 && formData.email.trim().length > 0 && formData.phone.trim().length > 0) {
+        setTimeout(() => setPhase2Visible(true), 150)
+      }
+    }
+  }, [formData.name, formData.email, formData.phone, phase2Visible])
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target
@@ -64,50 +100,52 @@ export default function ContactForm() {
     }
   }
 
-  const validateForm = (): boolean => {
-    const newErrors: FormErrors = {}
-
-    if (!formData.name.trim()) newErrors.name = 'Bitte geben Sie Ihren Namen ein'
-    if (!formData.email.trim()) newErrors.email = 'Bitte geben Sie Ihre E-Mail ein'
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = 'Bitte geben Sie eine gültige E-Mail ein'
-    if (!formData.phone.trim()) newErrors.phone = 'Bitte geben Sie Ihre Telefonnummer ein'
-    if (!formData.privacy) newErrors.privacy = 'Bitte akzeptieren Sie die Datenschutzbestimmungen'
-
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
-  }
-
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-
-    if (!validateForm()) return
-
+    setErrors({})
     setIsSubmitting(true)
 
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          ...formData,
+          form_time: formTime.toString(),
+          js_active: 'yes',
+          // Honeypots (leer)
+          website_hp: '',
+          fax_hp: ''
+        })
       })
 
+      const data = await response.json()
+
       if (response.ok) {
-        setUserName(formData.name)
+        setUserName(data.name || formData.name)
+        setRequestId(data.request_id || '')
         setShowModal(true)
+
+        // Reset Form
         setFormData({
           name: '',
           email: '',
           phone: '',
           company: '',
           service: '',
+          branche: '',
           message: '',
           privacy: false
         })
+        setPhase2Visible(false)
       } else {
-        alert('Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.')
+        if (data.errors) {
+          setErrors(data.errors)
+        }
+        alert(data.message || 'Fehler aufgetreten. Bitte versuchen Sie es erneut.')
       }
     } catch {
-      alert('Technischer Fehler. Bitte kontaktieren Sie uns telefonisch.')
+      alert('Technischer Fehler. Bitte kontaktieren Sie uns telefonisch: 0871 430 334 60')
     } finally {
       setIsSubmitting(false)
     }
@@ -115,9 +153,10 @@ export default function ContactForm() {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-        {/* Name & Firma */}
-        <div className="grid md:grid-cols-2 gap-4">
+      <form onSubmit={handleSubmit} noValidate>
+        {/* Phase 1: Basis-Felder */}
+        <div className="grid md:grid-cols-3 gap-4 mb-4">
+          {/* Name */}
           <div>
             <label htmlFor="cf-name" className="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">
               Ihr Name <span className="text-[#109387]">*</span>
@@ -129,6 +168,9 @@ export default function ContactForm() {
               value={formData.name}
               onChange={handleChange}
               placeholder="Max Mustermann"
+              maxLength={100}
+              required
+              autoComplete="name"
               className={`w-full px-4 py-3 border-2 rounded-[6px] text-gray-900 font-semibold transition-all focus:outline-none focus:border-[#109387] focus:ring-2 focus:ring-[#109387]/20 ${
                 errors.name ? 'border-red-500 bg-red-50' : 'border-gray-200'
               }`}
@@ -136,24 +178,7 @@ export default function ContactForm() {
             {errors.name && <p className="mt-1 text-sm text-red-600 font-semibold">{errors.name}</p>}
           </div>
 
-          <div>
-            <label htmlFor="cf-company" className="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">
-              Unternehmen <span className="text-gray-400">(optional)</span>
-            </label>
-            <input
-              type="text"
-              id="cf-company"
-              name="company"
-              value={formData.company}
-              onChange={handleChange}
-              placeholder="Ihre Firma GmbH"
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-[6px] text-gray-900 font-semibold transition-all focus:outline-none focus:border-[#109387] focus:ring-2 focus:ring-[#109387]/20"
-            />
-          </div>
-        </div>
-
-        {/* E-Mail & Telefon */}
-        <div className="grid md:grid-cols-2 gap-4">
+          {/* E-Mail */}
           <div>
             <label htmlFor="cf-email" className="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">
               E-Mail <span className="text-[#109387]">*</span>
@@ -165,6 +190,8 @@ export default function ContactForm() {
               value={formData.email}
               onChange={handleChange}
               placeholder="max@beispiel.de"
+              required
+              autoComplete="email"
               className={`w-full px-4 py-3 border-2 rounded-[6px] text-gray-900 font-semibold transition-all focus:outline-none focus:border-[#109387] focus:ring-2 focus:ring-[#109387]/20 ${
                 errors.email ? 'border-red-500 bg-red-50' : 'border-gray-200'
               }`}
@@ -172,6 +199,7 @@ export default function ContactForm() {
             {errors.email && <p className="mt-1 text-sm text-red-600 font-semibold">{errors.email}</p>}
           </div>
 
+          {/* Telefon */}
           <div>
             <label htmlFor="cf-phone" className="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">
               Telefon <span className="text-[#109387]">*</span>
@@ -183,6 +211,9 @@ export default function ContactForm() {
               value={formData.phone}
               onChange={handleChange}
               placeholder="+49 123 456789"
+              maxLength={20}
+              required
+              autoComplete="tel"
               className={`w-full px-4 py-3 border-2 rounded-[6px] text-gray-900 font-semibold transition-all focus:outline-none focus:border-[#109387] focus:ring-2 focus:ring-[#109387]/20 ${
                 errors.phone ? 'border-red-500 bg-red-50' : 'border-gray-200'
               }`}
@@ -191,44 +222,89 @@ export default function ContactForm() {
           </div>
         </div>
 
-        {/* Leistung */}
-        <div>
-          <label htmlFor="cf-service" className="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">
-            Gewünschte Leistung <span className="text-gray-400">(optional)</span>
-          </label>
-          <select
-            id="cf-service"
-            name="service"
-            value={formData.service}
-            onChange={handleChange}
-            className="w-full px-4 py-3 border-2 border-gray-200 rounded-[6px] text-gray-900 font-semibold transition-all focus:outline-none focus:border-[#109387] focus:ring-2 focus:ring-[#109387]/20 bg-white"
-          >
-            <option value="">Bitte wählen...</option>
-            {SERVICES.map(service => (
-              <option key={service} value={service}>{service}</option>
-            ))}
-          </select>
-        </div>
+        {/* Phase 2: Erweiterte Felder (erscheinen nach Eingabe) */}
+        {phase2Visible && (
+          <div className="space-y-4 animate-fadeIn">
+            <div className="grid md:grid-cols-2 gap-4">
+              {/* Unternehmen */}
+              <div>
+                <label htmlFor="cf-company" className="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">
+                  Unternehmen <span className="text-gray-400 normal-case">(optional)</span>
+                </label>
+                <input
+                  type="text"
+                  id="cf-company"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  placeholder="Ihre Firma GmbH"
+                  maxLength={100}
+                  autoComplete="organization"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-[6px] text-gray-900 font-semibold transition-all focus:outline-none focus:border-[#109387] focus:ring-2 focus:ring-[#109387]/20"
+                />
+              </div>
 
-        {/* Nachricht */}
-        <div>
-          <label htmlFor="cf-message" className="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">
-            Ihre Nachricht <span className="text-gray-400">(optional)</span>
-          </label>
-          <textarea
-            id="cf-message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            rows={4}
-            placeholder="Beschreiben Sie kurz Ihr Anliegen oder Ihre Anforderungen..."
-            className="w-full px-4 py-3 border-2 border-gray-200 rounded-[6px] text-gray-900 font-semibold transition-all focus:outline-none focus:border-[#109387] focus:ring-2 focus:ring-[#109387]/20 resize-none"
-          />
-        </div>
+              {/* Branche */}
+              <div>
+                <label htmlFor="cf-branche" className="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">
+                  Branche <span className="text-gray-400 normal-case">(optional)</span>
+                </label>
+                <select
+                  id="cf-branche"
+                  name="branche"
+                  value={formData.branche}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-[6px] text-gray-900 font-semibold transition-all focus:outline-none focus:border-[#109387] focus:ring-2 focus:ring-[#109387]/20 bg-white"
+                >
+                  <option value="">Bitte wählen...</option>
+                  {BRANCHEN.map(branche => (
+                    <option key={branche} value={branche}>{branche}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            {/* Gewünschte Leistung - volle Breite */}
+            <div>
+              <label htmlFor="cf-service" className="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">
+                Gewünschte Leistung <span className="text-gray-400 normal-case">(optional)</span>
+              </label>
+              <select
+                id="cf-service"
+                name="service"
+                value={formData.service}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-[6px] text-gray-900 font-semibold transition-all focus:outline-none focus:border-[#109387] focus:ring-2 focus:ring-[#109387]/20 bg-white"
+              >
+                <option value="">Bitte wählen...</option>
+                {SERVICES.map(service => (
+                  <option key={service} value={service}>{service}</option>
+                ))}
+              </select>
+            </div>
+
+            {/* Nachricht */}
+            <div>
+              <label htmlFor="cf-message" className="block text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">
+                Ihre Nachricht <span className="text-gray-400 normal-case">(optional)</span>
+              </label>
+              <textarea
+                id="cf-message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows={4}
+                placeholder="Beschreiben Sie kurz Ihr Anliegen oder Ihre Anforderungen..."
+                maxLength={2000}
+                className="w-full px-4 py-3 border-2 border-gray-200 rounded-[6px] text-gray-900 font-semibold transition-all focus:outline-none focus:border-[#109387] focus:ring-2 focus:ring-[#109387]/20 resize-none"
+              />
+            </div>
+          </div>
+        )}
 
         {/* Datenschutz Checkbox */}
-        <div className={`p-4 rounded-[6px] border-2 transition-all ${
-          errors.privacy ? 'border-red-500 bg-red-50' : 'border-gray-200 bg-gray-50'
+        <div className={`mt-6 p-4 rounded-[6px] border-2 transition-all ${
+          errors.privacy ? 'border-red-500 bg-red-50' : 'border-gray-200 bg-gray-50 hover:border-[#109387]'
         }`}>
           <label className="flex items-start gap-3 cursor-pointer">
             <input
@@ -236,12 +312,17 @@ export default function ContactForm() {
               name="privacy"
               checked={formData.privacy}
               onChange={handleChange}
-              className="mt-1 w-5 h-5 rounded border-gray-300 text-[#109387] focus:ring-[#109387] cursor-pointer"
+              required
+              className="mt-1 w-5 h-5 rounded border-gray-300 text-[#109387] focus:ring-[#109387] cursor-pointer accent-[#109387]"
             />
             <span className="text-sm text-gray-700 font-semibold leading-relaxed">
               Ich habe die{' '}
               <Link href="/datenschutz" target="_blank" className="text-[#109387] font-bold hover:underline">
                 Datenschutzerklärung
+              </Link>{' '}
+              und{' '}
+              <Link href="/agb" target="_blank" className="text-[#109387] font-bold hover:underline">
+                AGB
               </Link>{' '}
               gelesen und stimme der Verarbeitung meiner Daten zu.{' '}
               <span className="text-[#109387]">*</span>
@@ -250,11 +331,17 @@ export default function ContactForm() {
           {errors.privacy && <p className="mt-2 text-sm text-red-600 font-semibold">{errors.privacy}</p>}
         </div>
 
+        {/* Honeypots (versteckt) */}
+        <div className="absolute -left-[9999px] w-px h-px overflow-hidden" aria-hidden="true">
+          <input type="text" name="website_hp" tabIndex={-1} autoComplete="off" />
+          <input type="text" name="fax_hp" tabIndex={-1} autoComplete="off" />
+        </div>
+
         {/* Submit Button */}
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`w-full flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group ${
+          className={`mt-6 w-full flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group shadow-lg hover:shadow-xl ${
             isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
           }`}
         >
@@ -271,7 +358,7 @@ export default function ContactForm() {
           )}
         </button>
 
-        <p className="text-center text-sm text-gray-500 font-semibold">
+        <p className="mt-4 text-center text-sm text-gray-500 font-semibold">
           Wir melden uns innerhalb von 24 Stunden bei Ihnen.
         </p>
       </form>
@@ -283,27 +370,43 @@ export default function ContactForm() {
           onClick={() => setShowModal(false)}
         >
           <div
-            className="bg-white rounded-[6px] p-8 max-w-md w-full text-center shadow-2xl"
+            className="bg-white rounded-[6px] p-8 md:p-12 max-w-lg w-full text-center shadow-2xl animate-fadeIn"
             onClick={e => e.stopPropagation()}
           >
-            <div className="w-20 h-20 bg-[#109387] rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircle size={40} className="text-white" />
+            <div className="w-24 h-24 bg-[#109387] rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <CheckCircle size={48} className="text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-[#012956] mb-4">
+            <h3 className="text-3xl font-bold text-[#012956] mb-4">
               Vielen Dank{userName ? `, ${userName}` : ''}!
             </h3>
-            <p className="text-gray-700 font-semibold mb-6">
+            <p className="text-gray-700 font-semibold mb-4 text-lg">
               Ihre Anfrage wurde erfolgreich versendet. Wir melden uns schnellstmöglich bei Ihnen.
             </p>
+            {requestId && (
+              <div className="bg-[#f8f9fa] border-2 border-[#109387] rounded-[6px] px-6 py-3 mb-6 inline-block">
+                <p className="text-xs text-gray-500 font-semibold uppercase tracking-wide mb-1">Referenznummer</p>
+                <p className="text-lg font-bold text-[#012956] font-mono tracking-wider">{requestId}</p>
+              </div>
+            )}
             <button
               onClick={() => setShowModal(false)}
-              className="bg-[#012956] hover:bg-[#01203d] text-white font-bold px-8 py-3 rounded-[6px] transition-all"
+              className="bg-[#012956] hover:bg-[#01203d] text-white font-bold px-10 py-4 rounded-[6px] transition-all text-lg"
             >
               Schließen
             </button>
           </div>
         </div>
       )}
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.4s ease forwards;
+        }
+      `}</style>
     </>
   )
 }

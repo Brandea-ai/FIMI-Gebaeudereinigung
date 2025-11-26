@@ -11,10 +11,18 @@ const footerLinks = {
     { label: 'Büroreinigung', href: '/leistungen/bueroreinigung' },
     { label: 'Industriereinigung', href: '/leistungen/industriereinigung' },
     { label: 'Fensterreinigung', href: '/leistungen/fensterreinigung' },
+    { label: 'Glasreinigung', href: '/leistungen/glasreinigung' },
+    { label: 'Fassadenreinigung', href: '/leistungen/fassadenreinigung' },
+    { label: 'Hallenreinigung', href: '/leistungen/hallenreinigung' },
+    { label: 'Maschinenreinigung', href: '/leistungen/maschinenreinigung' },
     { label: 'Facility Management', href: '/leistungen/facility-management' },
     { label: 'Winterdienst', href: '/leistungen/winterdienst' },
     { label: 'Hausmeisterservice', href: '/leistungen/hausmeisterservice' },
+    { label: 'Außenanlagenpflege', href: '/leistungen/aussenanlagenpflege' },
     { label: 'Baureinigung', href: '/leistungen/baureinigung' },
+    { label: 'Sonderreinigung', href: '/leistungen/sonderreinigung' },
+    { label: 'Tiefgaragenreinigung', href: '/leistungen/tiefgaragenreinigung' },
+    { label: 'Parkplatzreinigung', href: '/leistungen/parkplatzreinigung' },
   ],
   regionen: [
     { label: 'Landshut', href: '/regionen/landshut' },
@@ -23,6 +31,12 @@ const footerLinks = {
     { label: 'Ingolstadt', href: '/regionen/ingolstadt' },
     { label: 'Freising', href: '/regionen/freising' },
     { label: 'Erding', href: '/regionen/erding' },
+    { label: 'Straubing', href: '/regionen/straubing' },
+    { label: 'Dingolfing', href: '/regionen/dingolfing' },
+    { label: 'Moosburg', href: '/regionen/moosburg' },
+    { label: 'Deggendorf', href: '/regionen/deggendorf' },
+    { label: 'Passau', href: '/regionen/passau' },
+    { label: 'Rosenheim', href: '/regionen/rosenheim' },
   ],
   unternehmen: [
     { label: 'Über FIMI', href: '/unternehmen' },
@@ -146,35 +160,28 @@ export default function Footer() {
       {/* Footer Navigation - Sitemap */}
       <div className="bg-[#012956] py-16 lg:py-20">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-8 lg:gap-8">
 
-            {/* Logo & Beschreibung */}
-            <div className="col-span-2 md:col-span-3 lg:col-span-2">
+            {/* Logo & Beschreibung - 3 Spalten */}
+            <div className="col-span-2 md:col-span-3 lg:col-span-3">
               <Image
                 src="/FIMI-LOGO/FIMI-LOGO_Weiße-Schrift_Transparent.png"
                 alt="FIMI Gebäudereinigung"
-                width={160}
-                height={53}
+                width={240}
+                height={80}
                 className="mb-6"
               />
-              <p className="text-white/70 font-semibold leading-relaxed mb-6 max-w-sm">
-                Professionelle Gebäudereinigung in Bayern. Ihr zuverlässiger Partner für saubere Geschäftsräume seit über 8 Jahren.
+              <p className="text-white/70 font-semibold leading-relaxed max-w-sm">
+                Professionelle Gebäudereinigung in Bayern.<br />
+                Ihr zuverlässiger Partner für saubere Geschäftsräume seit über 8 Jahren.
               </p>
-              <div className="space-y-2">
-                <p className="text-white/50 text-sm font-semibold">
-                  <span className="text-white/70">USt-IdNr:</span> DE347549925
-                </p>
-                <p className="text-white/50 text-sm font-semibold">
-                  <span className="text-white/70">Geschäftsführer:</span> Ntonalnt Tzoutzis, Ergest Qiraj
-                </p>
-              </div>
             </div>
 
-            {/* Leistungen */}
-            <div>
+            {/* Leistungen Spalte 1 - 2 Spalten */}
+            <div className="lg:col-span-2">
               <h4 className="text-white font-bold mb-4">Leistungen</h4>
               <ul className="space-y-2">
-                {footerLinks.leistungen.slice(0, 6).map(link => (
+                {footerLinks.leistungen.slice(0, 8).map(link => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
@@ -187,8 +194,25 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Regionen */}
-            <div>
+            {/* Leistungen Spalte 2 - 2 Spalten */}
+            <div className="lg:col-span-2">
+              <h4 className="text-white font-bold mb-4 lg:opacity-0">Leistungen</h4>
+              <ul className="space-y-2">
+                {footerLinks.leistungen.slice(8, 16).map(link => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-white/60 font-semibold text-sm hover:text-[#109387] transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Regionen - 2 Spalten */}
+            <div className="lg:col-span-2">
               <h4 className="text-white font-bold mb-4">Regionen</h4>
               <ul className="space-y-2">
                 {footerLinks.regionen.map(link => (
@@ -204,38 +228,43 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Unternehmen */}
-            <div>
-              <h4 className="text-white font-bold mb-4">Unternehmen</h4>
-              <ul className="space-y-2">
-                {footerLinks.unternehmen.map(link => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-white/60 font-semibold text-sm hover:text-[#109387] transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {/* Unternehmen & Rechtliches - 3 Spalten */}
+            <div className="lg:col-span-3">
+              <div className="grid grid-cols-2 gap-8">
+                {/* Unternehmen */}
+                <div>
+                  <h4 className="text-white font-bold mb-4">Unternehmen</h4>
+                  <ul className="space-y-2">
+                    {footerLinks.unternehmen.map(link => (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          className="text-white/60 font-semibold text-sm hover:text-[#109387] transition-colors"
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-            {/* Rechtliches */}
-            <div>
-              <h4 className="text-white font-bold mb-4">Rechtliches</h4>
-              <ul className="space-y-2">
-                {footerLinks.rechtliches.map(link => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-white/60 font-semibold text-sm hover:text-[#109387] transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+                {/* Rechtliches */}
+                <div>
+                  <h4 className="text-white font-bold mb-4">Rechtliches</h4>
+                  <ul className="space-y-2">
+                    {footerLinks.rechtliches.map(link => (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          className="text-white/60 font-semibold text-sm hover:text-[#109387] transition-colors"
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
 
           </div>
