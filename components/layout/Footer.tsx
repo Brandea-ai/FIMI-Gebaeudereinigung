@@ -2,54 +2,20 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { MapPin, Phone, Mail, Clock } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock, ArrowUpRight } from 'lucide-react'
 import ContactForm from '../ContactForm'
 
-const footerLinks = {
-  leistungen: [
-    { label: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
-    { label: 'Büroreinigung', href: '/leistungen/bueroreinigung' },
-    { label: 'Industriereinigung', href: '/leistungen/industriereinigung' },
-    { label: 'Fensterreinigung', href: '/leistungen/fensterreinigung' },
-    { label: 'Glasreinigung', href: '/leistungen/glasreinigung' },
-    { label: 'Fassadenreinigung', href: '/leistungen/fassadenreinigung' },
-    { label: 'Hallenreinigung', href: '/leistungen/hallenreinigung' },
-    { label: 'Maschinenreinigung', href: '/leistungen/maschinenreinigung' },
-    { label: 'Facility Management', href: '/leistungen/facility-management' },
-    { label: 'Winterdienst', href: '/leistungen/winterdienst' },
-    { label: 'Hausmeisterservice', href: '/leistungen/hausmeisterservice' },
-    { label: 'Außenanlagenpflege', href: '/leistungen/aussenanlagenpflege' },
-    { label: 'Baureinigung', href: '/leistungen/baureinigung' },
-    { label: 'Sonderreinigung', href: '/leistungen/sonderreinigung' },
-    { label: 'Tiefgaragenreinigung', href: '/leistungen/tiefgaragenreinigung' },
-    { label: 'Parkplatzreinigung', href: '/leistungen/parkplatzreinigung' },
-  ],
-  regionen: [
-    { label: 'Landshut', href: '/regionen/landshut' },
-    { label: 'München', href: '/regionen/muenchen' },
-    { label: 'Regensburg', href: '/regionen/regensburg' },
-    { label: 'Ingolstadt', href: '/regionen/ingolstadt' },
-    { label: 'Freising', href: '/regionen/freising' },
-    { label: 'Erding', href: '/regionen/erding' },
-    { label: 'Straubing', href: '/regionen/straubing' },
-    { label: 'Dingolfing', href: '/regionen/dingolfing' },
-    { label: 'Moosburg', href: '/regionen/moosburg' },
-    { label: 'Deggendorf', href: '/regionen/deggendorf' },
-    { label: 'Passau', href: '/regionen/passau' },
-    { label: 'Rosenheim', href: '/regionen/rosenheim' },
-  ],
-  unternehmen: [
-    { label: 'Über FIMI', href: '/unternehmen' },
-    { label: 'Referenzen', href: '/referenzen' },
-    { label: 'Karriere', href: '/karriere' },
-    { label: 'Kontakt', href: '/kontakt' },
-  ],
-  rechtliches: [
-    { label: 'Impressum', href: '/impressum' },
-    { label: 'Datenschutz', href: '/datenschutz' },
-    { label: 'AGB', href: '/agb' },
-  ],
-}
+const leistungen = [
+  'Unterhaltsreinigung', 'Büroreinigung', 'Industriereinigung', 'Fensterreinigung',
+  'Glasreinigung', 'Fassadenreinigung', 'Hallenreinigung', 'Maschinenreinigung',
+  'Facility Management', 'Winterdienst', 'Hausmeisterservice', 'Außenanlagenpflege',
+  'Baureinigung', 'Sonderreinigung', 'Tiefgaragenreinigung', 'Parkplatzreinigung',
+]
+
+const regionen = [
+  'Landshut', 'München', 'Regensburg', 'Ingolstadt', 'Freising', 'Erding',
+  'Straubing', 'Dingolfing', 'Moosburg', 'Deggendorf', 'Passau', 'Rosenheim',
+]
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -157,78 +123,81 @@ export default function Footer() {
         </div>
       </section>
 
-      {/* Footer Navigation - Sitemap */}
-      <div className="bg-[#012956] py-16 lg:py-20">
+      {/* Kompakter Premium Footer */}
+      <div className="bg-[#012956]">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
-          {/* Logo & Beschreibung */}
-          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-16 pb-12 mb-12 border-b border-white/10">
-            <div className="lg:max-w-md">
+          {/* Hauptbereich */}
+          <div className="py-12 lg:py-16 flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10">
+
+            {/* Links: Logo + Beschreibung */}
+            <div className="lg:max-w-sm">
               <Image
                 src="/FIMI-LOGO/FIMI-LOGO_Weiße-Schrift_Transparent.png"
                 alt="FIMI Gebäudereinigung"
-                width={200}
-                height={67}
-                className="mb-6"
+                width={180}
+                height={60}
+                className="mb-5"
               />
-              <p className="text-white/70 font-semibold leading-relaxed">
-                Professionelle Gebäudereinigung in Bayern.
-                <br />
-                Ihr zuverlässiger Partner für saubere Geschäftsräume seit über 8 Jahren.
+              <p className="text-white/60 font-semibold text-sm leading-relaxed">
+                Professionelle Gebäudereinigung in Bayern. Ihr zuverlässiger Partner für saubere Geschäftsräume.
               </p>
             </div>
 
-            {/* Unternehmen & Rechtliches - oben rechts */}
-            <div className="flex gap-16">
+            {/* Mitte: Quick Links */}
+            <div className="flex flex-wrap gap-x-12 gap-y-6">
               <div>
-                <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4">Unternehmen</h4>
-                <ul className="space-y-3">
-                  {footerLinks.unternehmen.map(link => (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        className="text-white/60 font-semibold hover:text-[#109387] transition-colors"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
+                <h4 className="text-[#109387] font-bold text-xs uppercase tracking-wider mb-3">Unternehmen</h4>
+                <ul className="space-y-2">
+                  <li><Link href="/unternehmen" className="text-white/60 font-semibold text-sm hover:text-white transition-colors">Über FIMI</Link></li>
+                  <li><Link href="/referenzen" className="text-white/60 font-semibold text-sm hover:text-white transition-colors">Referenzen</Link></li>
+                  <li><Link href="/karriere" className="text-white/60 font-semibold text-sm hover:text-white transition-colors">Karriere</Link></li>
+                  <li><Link href="/kontakt" className="text-white/60 font-semibold text-sm hover:text-white transition-colors">Kontakt</Link></li>
                 </ul>
               </div>
               <div>
-                <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4">Rechtliches</h4>
-                <ul className="space-y-3">
-                  {footerLinks.rechtliches.map(link => (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        className="text-white/60 font-semibold hover:text-[#109387] transition-colors"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
+                <h4 className="text-[#109387] font-bold text-xs uppercase tracking-wider mb-3">Rechtliches</h4>
+                <ul className="space-y-2">
+                  <li><Link href="/impressum" className="text-white/60 font-semibold text-sm hover:text-white transition-colors">Impressum</Link></li>
+                  <li><Link href="/datenschutz" className="text-white/60 font-semibold text-sm hover:text-white transition-colors">Datenschutz</Link></li>
+                  <li><Link href="/agb" className="text-white/60 font-semibold text-sm hover:text-white transition-colors">AGB</Link></li>
                 </ul>
               </div>
             </div>
+
+            {/* Rechts: CTA */}
+            <div className="lg:text-right">
+              <p className="text-white/40 text-xs uppercase tracking-wider mb-2">Jetzt anfragen</p>
+              <a href="tel:+4987143033460" className="text-2xl lg:text-3xl font-bold text-white hover:text-[#109387] transition-colors">
+                0871 430 334 60
+              </a>
+            </div>
+
           </div>
 
-          {/* Leistungen & Regionen */}
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+          {/* Trennlinie */}
+          <div className="border-t border-white/10" />
+
+          {/* Leistungen & Regionen - kompakt als Tags */}
+          <div className="py-8 space-y-6">
 
             {/* Leistungen */}
             <div>
-              <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-6">
-                Unsere Leistungen
-              </h4>
-              <div className="grid grid-cols-2 gap-x-8 gap-y-2">
-                {footerLinks.leistungen.map(link => (
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-[#109387] font-bold text-xs uppercase tracking-wider">Leistungen</span>
+                <Link href="/leistungen" className="text-white/40 hover:text-[#109387] transition-colors">
+                  <ArrowUpRight size={14} />
+                </Link>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {leistungen.map(item => (
                   <Link
-                    key={link.href}
-                    href={link.href}
-                    className="text-white/60 font-semibold text-sm hover:text-[#109387] transition-colors py-1"
+                    key={item}
+                    href={`/leistungen/${item.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/ /g, '-')}`}
+                    className="text-white/50 text-xs font-semibold hover:text-[#109387] transition-colors"
                   >
-                    {link.label}
+                    {item}
+                    <span className="text-white/20 ml-2">•</span>
                   </Link>
                 ))}
               </div>
@@ -236,17 +205,17 @@ export default function Footer() {
 
             {/* Regionen */}
             <div>
-              <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-6">
-                Regionen in Bayern
-              </h4>
-              <div className="grid grid-cols-3 sm:grid-cols-4 gap-x-6 gap-y-2">
-                {footerLinks.regionen.map(link => (
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-[#109387] font-bold text-xs uppercase tracking-wider">Regionen</span>
+              </div>
+              <div className="flex flex-wrap gap-x-4 gap-y-1">
+                {regionen.map(item => (
                   <Link
-                    key={link.href}
-                    href={link.href}
-                    className="text-white/60 font-semibold text-sm hover:text-[#109387] transition-colors py-1"
+                    key={item}
+                    href={`/regionen/${item.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue')}`}
+                    className="text-white/50 text-xs font-semibold hover:text-[#109387] transition-colors"
                   >
-                    {link.label}
+                    {item}
                   </Link>
                 ))}
               </div>
@@ -255,20 +224,17 @@ export default function Footer() {
           </div>
 
         </div>
-      </div>
 
-      {/* Copyright Bar */}
-      <div className="bg-[#01203d] py-6">
-        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/50 text-sm font-semibold">
-              © {currentYear} FIMI Gebäudereinigung. Alle Rechte vorbehalten.
-            </p>
-            <p className="text-white/50 text-sm font-semibold">
-              Gebäudereinigung Bayern | Landshut • München • Regensburg
-            </p>
+        {/* Copyright Bar */}
+        <div className="bg-[#01203d] py-4">
+          <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-2 text-white/40 text-xs font-semibold">
+              <p>© {currentYear} FIMI Gebäudereinigung. Alle Rechte vorbehalten.</p>
+              <p>Landshut • München • Regensburg • Bayern</p>
+            </div>
           </div>
         </div>
+
       </div>
     </footer>
   )

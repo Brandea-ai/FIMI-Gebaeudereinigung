@@ -103,15 +103,15 @@ export default function Navigation() {
       {/* Main Navigation */}
       <nav className={`sticky-nav ${isScrolled ? 'scrolled' : 'bg-white'}`}>
         <div className="container">
-          <div className="flex items-center justify-between h-20 lg:h-24">
+          <div className="flex items-center justify-between h-24 lg:h-32">
             {/* Logo */}
             <Link href="/" className="relative z-10 flex-shrink-0">
               <Image
                 src="/FIMI-LOGO/FIMI-Logo_Transparent_FUER-Webseite.png"
                 alt="FIMI Gebaeudereinigung"
-                width={280}
-                height={93}
-                className="h-16 lg:h-20 w-auto"
+                width={320}
+                height={107}
+                className="h-20 lg:h-28 w-auto"
                 priority
               />
             </Link>
@@ -261,7 +261,7 @@ export default function Navigation() {
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`lg:hidden fixed inset-0 top-20 bg-white z-50 transform transition-transform duration-300 ${
+        <div className={`lg:hidden fixed inset-0 top-24 bg-white z-50 transform transition-transform duration-300 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}>
           <div className="h-full overflow-y-auto py-6 px-4">
