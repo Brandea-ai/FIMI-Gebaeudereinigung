@@ -176,8 +176,8 @@ export default function RegionenContainer() {
       className="bg-white"
       aria-labelledby="regionen-heading"
     >
-      {/* Sticky Header + Tabs - unter der Navigation (top-20 = 80px) */}
-      <div className="sticky top-20 z-30 bg-white border-b border-gray-200 shadow-sm">
+      {/* Sticky Header + Tabs - top-0 da Navigation beim Scrollen verschwindet */}
+      <div className="sticky top-0 z-30 bg-white border-b border-gray-200 shadow-sm">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-6">
 
           {/* Header */}
