@@ -178,10 +178,10 @@ export default function RegionenContainer() {
     >
       {/* Sticky Header + Tabs - top-0 da Navigation beim Scrollen verschwindet */}
       <div className="sticky top-0 z-30 bg-white border-b border-gray-200 shadow-sm">
-        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-6">
+        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-3">
 
           {/* Header */}
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-6">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-3">
             <div>
               <h2
                 id="regionen-heading"
