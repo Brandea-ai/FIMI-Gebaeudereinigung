@@ -109,9 +109,9 @@ export default function Navigation() {
               <Image
                 src="/FIMI-LOGO/FIMI-Logo_Transparent_FUER-Webseite.png"
                 alt="FIMI Gebaeudereinigung"
-                width={180}
-                height={60}
-                className="h-12 lg:h-14 w-auto"
+                width={280}
+                height={93}
+                className="h-16 lg:h-20 w-auto"
                 priority
               />
             </Link>

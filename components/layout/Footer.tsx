@@ -160,114 +160,100 @@ export default function Footer() {
       {/* Footer Navigation - Sitemap */}
       <div className="bg-[#012956] py-16 lg:py-20">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-8 lg:gap-8">
 
-            {/* Logo & Beschreibung - 3 Spalten */}
-            <div className="col-span-2 md:col-span-3 lg:col-span-3">
+          {/* Logo & Beschreibung */}
+          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-16 pb-12 mb-12 border-b border-white/10">
+            <div className="lg:max-w-md">
               <Image
                 src="/FIMI-LOGO/FIMI-LOGO_Weiße-Schrift_Transparent.png"
                 alt="FIMI Gebäudereinigung"
-                width={240}
-                height={80}
+                width={200}
+                height={67}
                 className="mb-6"
               />
-              <p className="text-white/70 font-semibold leading-relaxed max-w-sm">
-                Professionelle Gebäudereinigung in Bayern.<br />
+              <p className="text-white/70 font-semibold leading-relaxed">
+                Professionelle Gebäudereinigung in Bayern.
+                <br />
                 Ihr zuverlässiger Partner für saubere Geschäftsräume seit über 8 Jahren.
               </p>
             </div>
 
-            {/* Leistungen Spalte 1 - 2 Spalten */}
-            <div className="lg:col-span-2">
-              <h4 className="text-white font-bold mb-4">Leistungen</h4>
-              <ul className="space-y-2">
-                {footerLinks.leistungen.slice(0, 8).map(link => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-white/60 font-semibold text-sm hover:text-[#109387] transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
+            {/* Unternehmen & Rechtliches - oben rechts */}
+            <div className="flex gap-16">
+              <div>
+                <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4">Unternehmen</h4>
+                <ul className="space-y-3">
+                  {footerLinks.unternehmen.map(link => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="text-white/60 font-semibold hover:text-[#109387] transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4">Rechtliches</h4>
+                <ul className="space-y-3">
+                  {footerLinks.rechtliches.map(link => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="text-white/60 font-semibold hover:text-[#109387] transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Leistungen & Regionen */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+
+            {/* Leistungen */}
+            <div>
+              <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-6">
+                Unsere Leistungen
+              </h4>
+              <div className="grid grid-cols-2 gap-x-8 gap-y-2">
+                {footerLinks.leistungen.map(link => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-white/60 font-semibold text-sm hover:text-[#109387] transition-colors py-1"
+                  >
+                    {link.label}
+                  </Link>
                 ))}
-              </ul>
+              </div>
             </div>
 
-            {/* Leistungen Spalte 2 - 2 Spalten */}
-            <div className="lg:col-span-2">
-              <h4 className="text-white font-bold mb-4 lg:opacity-0">Leistungen</h4>
-              <ul className="space-y-2">
-                {footerLinks.leistungen.slice(8, 16).map(link => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-white/60 font-semibold text-sm hover:text-[#109387] transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Regionen - 2 Spalten */}
-            <div className="lg:col-span-2">
-              <h4 className="text-white font-bold mb-4">Regionen</h4>
-              <ul className="space-y-2">
+            {/* Regionen */}
+            <div>
+              <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-6">
+                Regionen in Bayern
+              </h4>
+              <div className="grid grid-cols-3 sm:grid-cols-4 gap-x-6 gap-y-2">
                 {footerLinks.regionen.map(link => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-white/60 font-semibold text-sm hover:text-[#109387] transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-white/60 font-semibold text-sm hover:text-[#109387] transition-colors py-1"
+                  >
+                    {link.label}
+                  </Link>
                 ))}
-              </ul>
-            </div>
-
-            {/* Unternehmen & Rechtliches - 3 Spalten */}
-            <div className="lg:col-span-3">
-              <div className="grid grid-cols-2 gap-8">
-                {/* Unternehmen */}
-                <div>
-                  <h4 className="text-white font-bold mb-4">Unternehmen</h4>
-                  <ul className="space-y-2">
-                    {footerLinks.unternehmen.map(link => (
-                      <li key={link.href}>
-                        <Link
-                          href={link.href}
-                          className="text-white/60 font-semibold text-sm hover:text-[#109387] transition-colors"
-                        >
-                          {link.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Rechtliches */}
-                <div>
-                  <h4 className="text-white font-bold mb-4">Rechtliches</h4>
-                  <ul className="space-y-2">
-                    {footerLinks.rechtliches.map(link => (
-                      <li key={link.href}>
-                        <Link
-                          href={link.href}
-                          className="text-white/60 font-semibold text-sm hover:text-[#109387] transition-colors"
-                        >
-                          {link.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </div>
             </div>
 
           </div>
+
         </div>
       </div>
 
