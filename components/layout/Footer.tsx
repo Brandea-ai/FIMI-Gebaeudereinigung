@@ -113,7 +113,7 @@ export default function Footer() {
 
       {/* Premium Footer */}
       <div className="bg-[#012956] py-16">
-        <div className="w-full max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
           {/* Main Grid - symmetrisch */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-16">

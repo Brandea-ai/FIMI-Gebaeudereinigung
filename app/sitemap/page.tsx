@@ -44,7 +44,7 @@ export default function SitemapPage() {
     <main className="min-h-screen bg-white">
       {/* Header */}
       <section className="bg-[#012956] py-20 lg:py-24">
-        <div className="w-full max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <p className="text-[#109387] font-semibold text-sm uppercase tracking-wider mb-4">
             Navigation
           </p>
@@ -59,7 +59,7 @@ export default function SitemapPage() {
 
       {/* Sitemap Content */}
       <section className="py-20 lg:py-24">
-        <div className="w-full max-w-[1400px] mx-auto px-6 lg:px-12">
+        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
           <div className="grid md:grid-cols-3 gap-16">
 
