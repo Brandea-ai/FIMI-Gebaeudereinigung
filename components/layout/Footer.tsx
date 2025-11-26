@@ -115,10 +115,10 @@ export default function Footer() {
       <div className="bg-[#012956] py-16">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 lg:gap-16">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 lg:gap-12">
 
             {/* Logo & Info */}
-            <div className="col-span-2 md:col-span-4 lg:col-span-1">
+            <div className="col-span-2 md:col-span-3 lg:col-span-1">
               <Image
                 src="/FIMI-LOGO/FIMI-LOGO_Weiße-Schrift_Transparent.png"
                 alt="FIMI Gebäudereinigung"
@@ -143,16 +143,23 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Regionen */}
-            <div>
+            {/* Regionen - 2 Spalten */}
+            <div className="col-span-2 md:col-span-1">
               <h4 className="text-white font-bold text-sm mb-5">Regionen</h4>
-              <ul className="space-y-3">
-                <li><Link href="/regionen/landshut" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Landshut</Link></li>
-                <li><Link href="/regionen/muenchen" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">München</Link></li>
-                <li><Link href="/regionen/regensburg" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Regensburg</Link></li>
-                <li><Link href="/regionen/ingolstadt" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Ingolstadt</Link></li>
-                <li><Link href="/regionen/freising" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Freising</Link></li>
-              </ul>
+              <div className="grid grid-cols-2 gap-x-6 gap-y-3">
+                <Link href="/regionen/landshut" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Landshut</Link>
+                <Link href="/regionen/straubing" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Straubing</Link>
+                <Link href="/regionen/muenchen" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">München</Link>
+                <Link href="/regionen/dingolfing" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Dingolfing</Link>
+                <Link href="/regionen/regensburg" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Regensburg</Link>
+                <Link href="/regionen/moosburg" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Moosburg</Link>
+                <Link href="/regionen/ingolstadt" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Ingolstadt</Link>
+                <Link href="/regionen/deggendorf" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Deggendorf</Link>
+                <Link href="/regionen/freising" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Freising</Link>
+                <Link href="/regionen/passau" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Passau</Link>
+                <Link href="/regionen/erding" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Erding</Link>
+                <Link href="/regionen/rosenheim" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Rosenheim</Link>
+              </div>
             </div>
 
             {/* Unternehmen */}
@@ -173,6 +180,7 @@ export default function Footer() {
                 <li><Link href="/impressum" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Impressum</Link></li>
                 <li><Link href="/datenschutz" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Datenschutz</Link></li>
                 <li><Link href="/agb" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">AGB</Link></li>
+                <li><Link href="/sitemap" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Sitemap</Link></li>
               </ul>
             </div>
 
