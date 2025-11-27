@@ -85,10 +85,10 @@ export default function LeistungenPage() {
                       setActiveFilter(cat.id)
                       document.getElementById('leistungen-grid')?.scrollIntoView({ behavior: 'smooth' })
                     }}
-                    className="group p-6 bg-white/5 hover:bg-white/10 rounded-[6px] text-left transition-all border border-white/10 hover:border-[#109387]/50"
+                    className="group p-6 bg-white/5 hover:bg-white/10 rounded-[6px] text-left transition-all border border-white/10 hover:border-[#109387]/50 overflow-hidden"
                   >
                     <IconComponent size={28} strokeWidth={1.5} className="text-[#109387] mb-3" />
-                    <h3 className="text-white font-bold text-base mb-1">{cat.label}</h3>
+                    <h3 className="text-white font-bold text-sm xl:text-base mb-1 truncate">{cat.label}</h3>
                     <p className="text-white/50 text-sm mb-2">{count} Leistungen</p>
                     <span className="inline-flex items-center gap-1 text-[#109387] text-sm font-semibold group-hover:gap-2 transition-all">
                       Anzeigen <ArrowRight size={14} />
@@ -111,11 +111,11 @@ export default function LeistungenPage() {
                     setActiveFilter(cat.id)
                     document.getElementById('leistungen-grid')?.scrollIntoView({ behavior: 'smooth' })
                   }}
-                  className="flex items-center gap-3 p-3 bg-white/5 rounded-[6px] text-left border border-white/10 active:bg-white/10"
+                  className="flex items-center gap-3 p-3 bg-white/5 rounded-[6px] text-left border border-white/10 active:bg-white/10 overflow-hidden"
                 >
                   <IconComponent size={20} strokeWidth={1.5} className="text-[#109387] flex-shrink-0" />
-                  <div>
-                    <p className="text-white font-semibold text-sm">{cat.label}</p>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-white font-semibold text-xs sm:text-sm truncate">{cat.label}</p>
                     <p className="text-white/40 text-xs">{count} Services</p>
                   </div>
                 </button>

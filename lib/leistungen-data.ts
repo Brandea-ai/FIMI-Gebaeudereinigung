@@ -94,7 +94,7 @@ export const leistungen: Leistung[] = [
     category: 'gewerblich',
     description: 'Streifenfreie Glasflächen für einen brillanten ersten Eindruck.',
     longDescription: 'Saubere Glasflächen sind die Visitenkarte Ihres Unternehmens. Unsere professionelle Glasreinigung sorgt für streifenfreie Fenster, Glasfassaden und Innenverglasungen. Mit modernster Ausrüstung und erfahrenen Fachkräften reinigen wir auch schwer zugängliche Bereiche sicher und effizient.',
-    image: 'https://images.unsplash.com/photo-1596263373298-725a1c7f9c16?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=800&auto=format&fit=crop',
     icon: 'Droplets',
     benefits: [
       'Streifenfreie Ergebnisse',
