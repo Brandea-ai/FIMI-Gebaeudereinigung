@@ -1,10 +1,10 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { Phone, Mail, MapPin, Clock, ArrowRight, Building2, Award, Users } from 'lucide-react'
+import { ArrowRight, CheckCircle, MessageSquare, Calendar, FileText, Handshake, Clock, Shield, Sparkles } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Kontakt',
-  description: 'Kontaktieren Sie FIMI Gebäudereinigung - Ihr Partner für professionelle Reinigung in Bayern. Telefon, E-Mail oder Kontaktformular.',
+  description: 'Kontaktieren Sie FIMI Gebäudereinigung - Ihr Partner für professionelle Reinigung in Bayern. Kostenfreie Besichtigung anfragen.',
 }
 
 export default function KontaktPage() {
@@ -17,146 +17,155 @@ export default function KontaktPage() {
             Kontakt
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6">
-            Sprechen Sie mit uns
+            Lassen Sie uns sprechen
           </h1>
           <p className="text-white/70 font-semibold text-lg max-w-2xl">
-            Wir sind für Sie da - persönlich, schnell und kompetent.
-            Vereinbaren Sie jetzt Ihre kostenfreie Besichtigung.
+            In nur 4 Schritten zu Ihrer maßgeschneiderten Reinigungslösung.
+            Unverbindlich und kostenfrei.
           </p>
         </div>
       </section>
 
-      {/* Contact Options */}
+      {/* Main Content */}
       <section className="py-20 lg:py-28">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
 
-            {/* Left: Contact Info */}
+            {/* Left: Der Weg zu Ihrem Angebot */}
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-[#109387] mb-8">
-                So erreichen Sie uns
+              <h2 className="text-2xl md:text-3xl font-bold text-[#109387] mb-4">
+                So funktioniert's
               </h2>
+              <p className="text-gray-600 font-semibold mb-10">
+                Von der ersten Anfrage bis zum sauberen Ergebnis - transparent und unkompliziert.
+              </p>
 
+              {/* Process Steps */}
               <div className="space-y-8">
-                {/* Phone */}
-                <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 bg-[#012956] rounded-[6px] flex items-center justify-center flex-shrink-0">
-                    <Phone size={24} className="text-white" />
+                {/* Step 1 */}
+                <div className="flex gap-5">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#109387] rounded-full flex items-center justify-center text-white font-bold">
+                      1
+                    </div>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-1">Telefon</p>
-                    <a
-                      href="tel:+4987143033460"
-                      className="text-2xl font-bold text-[#012956] hover:text-[#109387] transition-colors"
-                    >
-                      0871 430 334 60
-                    </a>
-                    <p className="text-gray-600 font-medium mt-1">
-                      Sofortige Beratung durch unsere Experten
+                    <div className="flex items-center gap-2 mb-2">
+                      <MessageSquare size={18} className="text-[#109387]" />
+                      <h3 className="font-bold text-[#012956]">Anfrage senden</h3>
+                    </div>
+                    <p className="text-gray-600 font-medium text-sm">
+                      Nutzen Sie unser Kontaktformular oder rufen Sie uns an.
+                      Schildern Sie kurz Ihren Bedarf - wir melden uns innerhalb von 24 Stunden.
                     </p>
                   </div>
                 </div>
 
-                {/* Email */}
-                <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 bg-[#012956] rounded-[6px] flex items-center justify-center flex-shrink-0">
-                    <Mail size={24} className="text-white" />
+                {/* Step 2 */}
+                <div className="flex gap-5">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#109387] rounded-full flex items-center justify-center text-white font-bold">
+                      2
+                    </div>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-1">E-Mail</p>
-                    <a
-                      href="mailto:info@fimi-service.de"
-                      className="text-2xl font-bold text-[#012956] hover:text-[#109387] transition-colors"
-                    >
-                      info@fimi-service.de
-                    </a>
-                    <p className="text-gray-600 font-medium mt-1">
-                      Antwort innerhalb von 24 Stunden
+                    <div className="flex items-center gap-2 mb-2">
+                      <Calendar size={18} className="text-[#109387]" />
+                      <h3 className="font-bold text-[#012956]">Kostenfreie Besichtigung</h3>
+                    </div>
+                    <p className="text-gray-600 font-medium text-sm">
+                      Wir vereinbaren einen Termin und besichtigen Ihre Räumlichkeiten vor Ort.
+                      So können wir den Aufwand realistisch einschätzen.
                     </p>
                   </div>
                 </div>
 
-                {/* Address */}
-                <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 bg-[#012956] rounded-[6px] flex items-center justify-center flex-shrink-0">
-                    <MapPin size={24} className="text-white" />
+                {/* Step 3 */}
+                <div className="flex gap-5">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#109387] rounded-full flex items-center justify-center text-white font-bold">
+                      3
+                    </div>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-1">Adresse</p>
-                    <p className="text-xl font-bold text-[#012956]">
-                      Kellerstr. 39
-                    </p>
-                    <p className="text-xl font-bold text-[#012956]">
-                      84036 Landshut
+                    <div className="flex items-center gap-2 mb-2">
+                      <FileText size={18} className="text-[#109387]" />
+                      <h3 className="font-bold text-[#012956]">Individuelles Angebot</h3>
+                    </div>
+                    <p className="text-gray-600 font-medium text-sm">
+                      Sie erhalten ein detailliertes Angebot mit transparenten Preisen.
+                      Keine versteckten Kosten, keine bösen Überraschungen.
                     </p>
                   </div>
                 </div>
 
-                {/* Opening Hours */}
-                <div className="flex items-start gap-5">
-                  <div className="w-14 h-14 bg-[#012956] rounded-[6px] flex items-center justify-center flex-shrink-0">
-                    <Clock size={24} className="text-white" />
+                {/* Step 4 */}
+                <div className="flex gap-5">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-[#109387] rounded-full flex items-center justify-center text-white font-bold">
+                      4
+                    </div>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-1">Erreichbarkeit</p>
-                    <p className="text-lg font-bold text-[#012956]">
-                      Mo - Fr: 08:00 - 18:00 Uhr
-                    </p>
-                    <p className="text-[#109387] font-bold mt-1">
-                      Notfall: 2h Reaktionszeit
+                    <div className="flex items-center gap-2 mb-2">
+                      <Handshake size={18} className="text-[#109387]" />
+                      <h3 className="font-bold text-[#012956]">Start der Zusammenarbeit</h3>
+                    </div>
+                    <p className="text-gray-600 font-medium text-sm">
+                      Nach Ihrer Zusage starten wir zeitnah. Sie erhalten einen festen
+                      Ansprechpartner, der Ihre Reinigung koordiniert.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Trust Badges */}
-              <div className="mt-12 grid grid-cols-3 gap-4">
-                <div className="bg-[#f8f9fa] rounded-[6px] p-4 text-center">
-                  <Building2 size={24} className="text-[#109387] mx-auto mb-2" />
-                  <p className="text-2xl font-bold text-[#012956]">8+</p>
-                  <p className="text-xs text-gray-500 font-semibold">Jahre Erfahrung</p>
-                </div>
-                <div className="bg-[#f8f9fa] rounded-[6px] p-4 text-center">
-                  <Users size={24} className="text-[#109387] mx-auto mb-2" />
-                  <p className="text-2xl font-bold text-[#012956]">85+</p>
-                  <p className="text-xs text-gray-500 font-semibold">Kunden</p>
-                </div>
-                <div className="bg-[#f8f9fa] rounded-[6px] p-4 text-center">
-                  <Award size={24} className="text-[#109387] mx-auto mb-2" />
-                  <p className="text-2xl font-bold text-[#012956]">ISO</p>
-                  <p className="text-xs text-gray-500 font-semibold">Zertifiziert</p>
+              {/* Guarantees */}
+              <div className="mt-12 p-6 bg-[#f8f9fa] rounded-[6px]">
+                <h3 className="font-bold text-[#012956] mb-4">Unsere Garantien</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div className="flex items-center gap-2">
+                    <Clock size={18} className="text-[#109387]" />
+                    <span className="text-sm font-semibold text-gray-700">24h Rückmeldung</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Shield size={18} className="text-[#109387]" />
+                    <span className="text-sm font-semibold text-gray-700">Festpreisgarantie</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Sparkles size={18} className="text-[#109387]" />
+                    <span className="text-sm font-semibold text-gray-700">Qualitätsversprechen</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Right: CTA to Contact Form */}
-            <div className="bg-[#f8f9fa] rounded-[6px] p-8 lg:p-12 flex flex-col justify-center">
-              <h3 className="text-2xl md:text-3xl font-bold text-[#012956] mb-4">
-                Kostenfreie Besichtigung anfragen
+            <div className="bg-[#012956] rounded-[6px] p-8 lg:p-12 flex flex-col justify-center">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                Jetzt Anfrage starten
               </h3>
-              <p className="text-gray-700 font-semibold leading-relaxed mb-8">
-                Sie möchten ein individuelles Angebot? Nutzen Sie unser Kontaktformular
-                und wir melden uns innerhalb von 24 Stunden bei Ihnen. Die Besichtigung
-                Ihrer Räumlichkeiten ist selbstverständlich kostenfrei und unverbindlich.
+              <p className="text-white/70 font-semibold leading-relaxed mb-8">
+                Füllen Sie unser Kontaktformular aus und erhalten Sie
+                innerhalb von 24 Stunden eine persönliche Rückmeldung von uns.
               </p>
 
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-3">
-                  <span className="text-[#109387] font-bold">✓</span>
-                  <span className="text-gray-700 font-semibold">Kostenfreie Vor-Ort-Besichtigung</span>
+                  <CheckCircle size={20} className="text-[#109387]" />
+                  <span className="text-white font-semibold">100% kostenfrei & unverbindlich</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-[#109387] font-bold">✓</span>
-                  <span className="text-gray-700 font-semibold">Individuelles Angebot innerhalb 48h</span>
+                  <CheckCircle size={20} className="text-[#109387]" />
+                  <span className="text-white font-semibold">Persönliche Beratung garantiert</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-[#109387] font-bold">✓</span>
-                  <span className="text-gray-700 font-semibold">Keine versteckten Kosten</span>
+                  <CheckCircle size={20} className="text-[#109387]" />
+                  <span className="text-white font-semibold">Angebot innerhalb von 48 Stunden</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-[#109387] font-bold">✓</span>
-                  <span className="text-gray-700 font-semibold">Persönlicher Ansprechpartner</span>
+                  <CheckCircle size={20} className="text-[#109387]" />
+                  <span className="text-white font-semibold">Keine Vertragsbindung</span>
                 </div>
               </div>
 
@@ -167,8 +176,65 @@ export default function KontaktPage() {
                 <span>Zum Kontaktformular</span>
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </a>
+
+              <p className="text-white/50 text-sm text-center mt-6">
+                Oder rufen Sie uns direkt an: <a href="tel:+4987143033460" className="text-[#109387] font-bold hover:underline">0871 430 334 60</a>
+              </p>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 lg:py-20 bg-[#f8f9fa]">
+        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#012956] mb-10 text-center">
+            Häufige Fragen
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="bg-white p-6 rounded-[6px]">
+              <h3 className="font-bold text-[#012956] mb-2">Wie schnell können Sie starten?</h3>
+              <p className="text-gray-600 font-medium text-sm">
+                Nach Auftragserteilung können wir in der Regel innerhalb von 1-2 Wochen starten,
+                bei dringendem Bedarf auch schneller.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-[6px]">
+              <h3 className="font-bold text-[#012956] mb-2">Gibt es eine Mindestvertragslaufzeit?</h3>
+              <p className="text-gray-600 font-medium text-sm">
+                Nein, wir bieten flexible Verträge ohne lange Bindung.
+                Sie können monatlich kündigen.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-[6px]">
+              <h3 className="font-bold text-[#012956] mb-2">Sind Ihre Mitarbeiter versichert?</h3>
+              <p className="text-gray-600 font-medium text-sm">
+                Ja, alle Mitarbeiter sind über unsere Betriebshaftpflicht versichert.
+                Sie tragen kein Risiko.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-[6px]">
+              <h3 className="font-bold text-[#012956] mb-2">Wann wird gereinigt?</h3>
+              <p className="text-gray-600 font-medium text-sm">
+                Die Reinigungszeiten stimmen wir individuell mit Ihnen ab -
+                vor, während oder nach Ihren Geschäftszeiten.
+              </p>
+            </div>
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href="/leistungen"
+              className="inline-flex items-center gap-2 text-[#109387] font-bold hover:gap-3 transition-all"
+            >
+              Mehr über unsere Leistungen erfahren
+              <ArrowRight size={18} />
+            </Link>
           </div>
         </div>
       </section>
