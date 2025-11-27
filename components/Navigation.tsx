@@ -558,7 +558,7 @@ export default function Navigation() {
 
       {/* Floating Nav Toggle Button */}
       <div
-        className={`fixed top-4 left-1/2 -translate-x-1/2 z-40 transition-opacity duration-300 ${
+        className={`fixed top-16 left-1/2 -translate-x-1/2 z-40 transition-opacity duration-300 ${
           showNavToggle ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
       >
