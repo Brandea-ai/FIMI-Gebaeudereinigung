@@ -40,9 +40,9 @@ export default function LeistungenPage() {
                 Unsere Leistungen
               </p>
 
-              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-[1.1] mb-4 md:mb-6">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-[1.2] mb-4 md:mb-6">
                 18 professionelle
-                <span className="block text-[#109387]">Reinigungsservices</span>
+                <span className="block text-[#109387] mt-1">Reinigungsservices</span>
               </h1>
 
               <p className="text-white/70 font-medium text-base md:text-lg lg:text-xl leading-relaxed mb-6 md:mb-8 max-w-lg mx-auto lg:mx-0">
@@ -74,7 +74,7 @@ export default function LeistungenPage() {
             </div>
 
             {/* Category Cards - Desktop only */}
-            <div className="hidden lg:grid grid-cols-2 gap-4">
+            <div className="hidden lg:grid grid-cols-2 gap-3">
               {allCategories.map((cat) => {
                 const IconComponent = categoryIcons[cat.id as keyof typeof categoryIcons]
                 const count = leistungen.filter(l => l.category === cat.id).length
@@ -85,13 +85,13 @@ export default function LeistungenPage() {
                       setActiveFilter(cat.id)
                       document.getElementById('leistungen-grid')?.scrollIntoView({ behavior: 'smooth' })
                     }}
-                    className="group p-6 bg-white/5 hover:bg-white/10 rounded-[6px] text-left transition-all border border-white/10 hover:border-[#109387]/50 overflow-hidden"
+                    className="group p-4 xl:p-5 bg-white/5 hover:bg-white/10 rounded-[6px] text-left transition-all border border-white/10 hover:border-[#109387]/50 overflow-hidden"
                   >
-                    <IconComponent size={28} strokeWidth={1.5} className="text-[#109387] mb-3" />
-                    <h3 className="text-white font-bold text-sm xl:text-base mb-1 truncate">{cat.label}</h3>
-                    <p className="text-white/50 text-sm mb-2">{count} Leistungen</p>
-                    <span className="inline-flex items-center gap-1 text-[#109387] text-sm font-semibold group-hover:gap-2 transition-all">
-                      Anzeigen <ArrowRight size={14} />
+                    <IconComponent size={24} strokeWidth={1.5} className="text-[#109387] mb-2" />
+                    <h3 className="text-white font-bold text-xs xl:text-sm mb-1 truncate">{cat.label}</h3>
+                    <p className="text-white/50 text-xs mb-2">{count} Leistungen</p>
+                    <span className="inline-flex items-center gap-1 text-[#109387] text-xs font-semibold group-hover:gap-2 transition-all">
+                      Anzeigen <ArrowRight size={12} />
                     </span>
                   </button>
                 )
