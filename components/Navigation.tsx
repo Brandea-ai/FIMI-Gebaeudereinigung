@@ -174,6 +174,7 @@ export default function Navigation() {
     { label: 'Über FIMI', href: '/ueber-uns' },
     { label: 'Referenzen', href: '/referenzen' },
     { label: 'Neuigkeiten', href: '/neuigkeiten' },
+    { label: 'Kontakt', href: '/kontakt' },
   ]
 
   return (
