@@ -99,8 +99,8 @@ export default function KontaktPage() {
                   <p className="text-white/70 text-xs font-semibold">Kunden</p>
                 </div>
                 <div className="bg-[#012956] rounded-[6px] p-4 text-center">
-                  <p className="text-2xl font-bold text-[#109387]">24h</p>
-                  <p className="text-white/70 text-xs font-semibold">Rückmeldung</p>
+                  <p className="text-2xl font-bold text-[#109387]">ISO</p>
+                  <p className="text-white/70 text-xs font-semibold">Zertifiziert</p>
                 </div>
               </div>
             </div>
