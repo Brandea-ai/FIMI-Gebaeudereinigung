@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Phone, ChevronDown, Building2, Factory, Wrench, Sparkles, Users, Stethoscope, ShoppingBag, GraduationCap, UtensilsCrossed, Newspaper } from 'lucide-react'
+import { ArrowRight, Phone, ChevronDown, Building2, Factory, Wrench, Sparkles, Users, Stethoscope, ShoppingBag, GraduationCap, UtensilsCrossed, Dumbbell, Warehouse, Home, Landmark, Banknote, Car } from 'lucide-react'
 
 // Mega Menu - Leistungen (ALLE 18 Services)
 const leistungenCategories = [
@@ -59,7 +59,7 @@ const leistungenCategories = [
   },
 ]
 
-// Mega Menu - Branchen
+// Mega Menu - Branchen (12 Branchen)
 const branchenData = [
   { name: 'Büro & Verwaltung', href: '/branchen/buero-verwaltung', icon: Building2 },
   { name: 'Industrie & Produktion', href: '/branchen/industrie-produktion', icon: Factory },
@@ -67,6 +67,12 @@ const branchenData = [
   { name: 'Einzelhandel', href: '/branchen/einzelhandel', icon: ShoppingBag },
   { name: 'Gastronomie & Hotellerie', href: '/branchen/gastronomie-hotel', icon: UtensilsCrossed },
   { name: 'Bildung & Schulen', href: '/branchen/bildung-schulen', icon: GraduationCap },
+  { name: 'Fitness & Sport', href: '/branchen/fitness-sport', icon: Dumbbell },
+  { name: 'Logistik & Lager', href: '/branchen/logistik-lager', icon: Warehouse },
+  { name: 'Wohnungswirtschaft', href: '/branchen/wohnungswirtschaft', icon: Home },
+  { name: 'Öffentliche Einrichtungen', href: '/branchen/oeffentliche-einrichtungen', icon: Landmark },
+  { name: 'Banken & Versicherungen', href: '/branchen/banken-versicherungen', icon: Banknote },
+  { name: 'Automotive', href: '/branchen/automotive', icon: Car },
 ]
 
 export default function Navigation() {
@@ -383,7 +389,7 @@ export default function Navigation() {
 
                   <div
                     className={`overflow-hidden transition-all duration-300 ${
-                      mobileBranchenOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
+                      mobileBranchenOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
                     <div className="pl-4 pb-4 space-y-1">
@@ -535,7 +541,7 @@ export default function Navigation() {
             <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between">
               <div>
                 <p className="text-[#012956] font-bold">Branchenspezifische Lösungen</p>
-                <p className="text-gray-500 text-sm">Maßgeschneiderte Reinigungskonzepte für Ihre Branche</p>
+                <p className="text-gray-500 text-sm">12 spezialisierte Reinigungskonzepte für Ihre Branche</p>
               </div>
               <Link
                 href="/branchen"
