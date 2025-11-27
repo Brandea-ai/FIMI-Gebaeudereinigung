@@ -136,16 +136,17 @@ export default function KontaktPage() {
 
             <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-4">
               {['Landshut', 'München', 'Regensburg', 'Ingolstadt', 'Freising', 'Erding', 'Straubing', 'Passau'].map((city, i) => (
-                <div
+                <a
                   key={city}
-                  className={`px-6 py-4 rounded-[6px] text-center font-bold transition-all ${
+                  href="#contact-form"
+                  className={`px-6 py-4 rounded-[6px] text-center font-bold transition-all cursor-pointer ${
                     i === 0
-                      ? 'bg-[#109387] text-white'
+                      ? 'bg-[#109387] text-white hover:bg-[#0d7d72]'
                       : 'bg-white/10 text-white hover:bg-white/20'
                   }`}
                 >
                   {city}
-                </div>
+                </a>
               ))}
             </div>
           </div>
