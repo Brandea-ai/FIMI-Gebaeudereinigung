@@ -210,8 +210,8 @@ export default function Navigation() {
               />
             </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center gap-8">
+            {/* Desktop Navigation - Premium Spacing */}
+            <div className="hidden lg:flex items-center gap-2">
               {/* Leistungen Dropdown */}
               <div
                 className="relative"
@@ -219,13 +219,16 @@ export default function Navigation() {
                 onMouseLeave={handleDropdownLeave}
               >
                 <button
-                  className={`flex items-center gap-1.5 text-sm font-semibold transition-colors ${
-                    activeDropdown === 'leistungen' ? 'text-[#109387]' : 'text-[#012956] hover:text-[#109387]'
+                  className={`flex items-center gap-2 px-5 py-3 rounded-[6px] text-[15px] font-bold transition-all duration-200 ${
+                    activeDropdown === 'leistungen'
+                      ? 'text-[#109387] bg-[#109387]/5'
+                      : 'text-[#012956] hover:text-[#109387] hover:bg-[#f8f9fa]'
                   }`}
                 >
                   <span>Leistungen</span>
                   <ChevronDown
                     size={16}
+                    strokeWidth={2.5}
                     className={`transition-transform duration-300 ${activeDropdown === 'leistungen' ? 'rotate-180' : ''}`}
                   />
                 </button>
@@ -238,13 +241,16 @@ export default function Navigation() {
                 onMouseLeave={handleDropdownLeave}
               >
                 <button
-                  className={`flex items-center gap-1.5 text-sm font-semibold transition-colors ${
-                    activeDropdown === 'branchen' ? 'text-[#109387]' : 'text-[#012956] hover:text-[#109387]'
+                  className={`flex items-center gap-2 px-5 py-3 rounded-[6px] text-[15px] font-bold transition-all duration-200 ${
+                    activeDropdown === 'branchen'
+                      ? 'text-[#109387] bg-[#109387]/5'
+                      : 'text-[#012956] hover:text-[#109387] hover:bg-[#f8f9fa]'
                   }`}
                 >
                   <span>Branchen</span>
                   <ChevronDown
                     size={16}
+                    strokeWidth={2.5}
                     className={`transition-transform duration-300 ${activeDropdown === 'branchen' ? 'rotate-180' : ''}`}
                   />
                 </button>
@@ -257,34 +263,37 @@ export default function Navigation() {
                 onMouseLeave={handleDropdownLeave}
               >
                 <button
-                  className={`flex items-center gap-1.5 text-sm font-semibold transition-colors ${
-                    activeDropdown === 'ueberfimi' ? 'text-[#109387]' : 'text-[#012956] hover:text-[#109387]'
+                  className={`flex items-center gap-2 px-5 py-3 rounded-[6px] text-[15px] font-bold transition-all duration-200 ${
+                    activeDropdown === 'ueberfimi'
+                      ? 'text-[#109387] bg-[#109387]/5'
+                      : 'text-[#012956] hover:text-[#109387] hover:bg-[#f8f9fa]'
                   }`}
                 >
                   <span>Über FIMI</span>
                   <ChevronDown
                     size={16}
+                    strokeWidth={2.5}
                     className={`transition-transform duration-300 ${activeDropdown === 'ueberfimi' ? 'rotate-180' : ''}`}
                   />
                 </button>
 
-                {/* Über FIMI Dropdown Menu */}
+                {/* Über FIMI Dropdown Menu - Premium */}
                 <div
-                  className={`absolute top-full left-0 mt-2 bg-white rounded-[6px] shadow-xl border border-gray-100 overflow-hidden transition-all duration-200 ${
+                  className={`absolute top-full left-0 mt-3 bg-white rounded-[8px] shadow-2xl border border-gray-100 overflow-hidden transition-all duration-300 ${
                     activeDropdown === 'ueberfimi'
                       ? 'opacity-100 visible translate-y-0'
                       : 'opacity-0 invisible -translate-y-2'
                   }`}
                 >
-                  <div className="py-2 min-w-[180px]">
+                  <div className="py-3 min-w-[220px]">
                     {ueberFimiLinks.map((link) => (
                       <Link
                         key={link.href}
                         href={link.href}
-                        className="flex items-center gap-2 px-4 py-2.5 text-gray-600 hover:bg-[#f8f9fa] hover:text-[#109387] transition-colors text-sm font-medium"
+                        className="flex items-center gap-3 px-5 py-4 text-gray-600 hover:bg-[#f8f9fa] hover:text-[#109387] transition-all text-[15px] font-semibold group"
                         onClick={() => setActiveDropdown(null)}
                       >
-                        <ArrowRight size={12} className="text-gray-300" />
+                        <ArrowRight size={14} strokeWidth={2.5} className="text-gray-300 group-hover:text-[#109387] group-hover:translate-x-1 transition-all" />
                         {link.label}
                       </Link>
                     ))}
@@ -296,7 +305,7 @@ export default function Navigation() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-[#012956] hover:text-[#109387] transition-colors text-sm font-semibold"
+                  className="px-5 py-3 rounded-[6px] text-[#012956] hover:text-[#109387] hover:bg-[#f8f9fa] transition-all duration-200 text-[15px] font-bold"
                 >
                   {link.label}
                 </Link>
@@ -365,42 +374,46 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* Mobile Menu */}
+          {/* Mobile Menu - Premium */}
           <div
             className={`lg:hidden overflow-hidden transition-all duration-300 ${
-              isMobileMenuOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
+              isMobileMenuOpen ? 'max-h-[1200px] opacity-100' : 'max-h-0 opacity-0'
             }`}
           >
             <div className="py-6 border-t border-gray-100">
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-1">
                 {/* Mobile Leistungen Accordion */}
                 <div>
                   <button
                     onClick={() => setMobileLeistungenOpen(!mobileLeistungenOpen)}
-                    className="flex items-center justify-between w-full text-[#012956] py-3 font-semibold"
+                    className="flex items-center justify-between w-full text-[#012956] py-4 px-2 -mx-2 rounded-[6px] font-bold text-[16px] hover:bg-[#f8f9fa] transition-all"
                   >
                     <span>Leistungen</span>
                     <ChevronDown
-                      size={20}
+                      size={22}
+                      strokeWidth={2.5}
                       className={`transition-transform duration-300 ${mobileLeistungenOpen ? 'rotate-180' : ''}`}
                     />
                   </button>
 
                   <div
                     className={`overflow-hidden transition-all duration-300 ${
-                      mobileLeistungenOpen ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
+                      mobileLeistungenOpen ? 'max-h-[900px] opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
-                    <div className="pl-4 pb-4 space-y-4">
+                    <div className="pl-3 pb-4 space-y-5 mt-2">
                       {leistungenCategories.map((category) => (
                         <div key={category.id}>
-                          <p className="text-[#109387] font-bold text-sm mb-2">{category.title}</p>
+                          <p className="text-[#109387] font-bold text-[15px] mb-3 flex items-center gap-2">
+                            <category.icon size={16} strokeWidth={2} />
+                            {category.title}
+                          </p>
                           <div className="space-y-1">
                             {category.services.map((service) => (
                               <Link
                                 key={service.href}
                                 href={service.href}
-                                className="block text-gray-600 hover:text-[#109387] text-sm py-1 transition-colors"
+                                className="block text-gray-600 hover:text-[#109387] text-[15px] py-3 px-3 -mx-3 rounded-[6px] hover:bg-[#f8f9fa] transition-all font-medium"
                                 onClick={() => setIsMobileMenuOpen(false)}
                               >
                                 {service.name}
@@ -411,11 +424,11 @@ export default function Navigation() {
                       ))}
                       <Link
                         href="/leistungen"
-                        className="inline-flex items-center gap-2 text-[#012956] font-bold text-sm mt-2"
+                        className="inline-flex items-center gap-2 text-[#012956] font-bold text-[15px] mt-3 py-3 px-4 bg-[#f8f9fa] rounded-[6px]"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         Alle Leistungen
-                        <ArrowRight size={14} />
+                        <ArrowRight size={16} strokeWidth={2.5} />
                       </Link>
                     </div>
                   </div>
@@ -425,26 +438,27 @@ export default function Navigation() {
                 <div>
                   <button
                     onClick={() => setMobileBranchenOpen(!mobileBranchenOpen)}
-                    className="flex items-center justify-between w-full text-[#012956] py-3 font-semibold"
+                    className="flex items-center justify-between w-full text-[#012956] py-4 px-2 -mx-2 rounded-[6px] font-bold text-[16px] hover:bg-[#f8f9fa] transition-all"
                   >
                     <span>Branchen</span>
                     <ChevronDown
-                      size={20}
+                      size={22}
+                      strokeWidth={2.5}
                       className={`transition-transform duration-300 ${mobileBranchenOpen ? 'rotate-180' : ''}`}
                     />
                   </button>
 
                   <div
                     className={`overflow-hidden transition-all duration-300 ${
-                      mobileBranchenOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+                      mobileBranchenOpen ? 'max-h-[700px] opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
-                    <div className="pl-4 pb-4 space-y-1">
+                    <div className="pl-3 pb-4 space-y-1 mt-2">
                       {branchenData.map((branche) => (
                         <Link
                           key={branche.href}
                           href={branche.href}
-                          className="block text-gray-600 hover:text-[#109387] text-sm py-1.5 transition-colors"
+                          className="block text-gray-600 hover:text-[#109387] text-[15px] py-3 px-3 -mx-3 rounded-[6px] hover:bg-[#f8f9fa] transition-all font-medium"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {branche.name}
@@ -458,11 +472,12 @@ export default function Navigation() {
                 <div>
                   <button
                     onClick={() => setMobileUeberFimiOpen(!mobileUeberFimiOpen)}
-                    className="flex items-center justify-between w-full text-[#012956] py-3 font-semibold"
+                    className="flex items-center justify-between w-full text-[#012956] py-4 px-2 -mx-2 rounded-[6px] font-bold text-[16px] hover:bg-[#f8f9fa] transition-all"
                   >
                     <span>Über FIMI</span>
                     <ChevronDown
-                      size={20}
+                      size={22}
+                      strokeWidth={2.5}
                       className={`transition-transform duration-300 ${mobileUeberFimiOpen ? 'rotate-180' : ''}`}
                     />
                   </button>
@@ -472,12 +487,12 @@ export default function Navigation() {
                       mobileUeberFimiOpen ? 'max-h-[200px] opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
-                    <div className="pl-4 pb-4 space-y-1">
+                    <div className="pl-3 pb-4 space-y-1 mt-2">
                       {ueberFimiLinks.map((link) => (
                         <Link
                           key={link.href}
                           href={link.href}
-                          className="block text-gray-600 hover:text-[#109387] text-sm py-1.5 transition-colors"
+                          className="block text-gray-600 hover:text-[#109387] text-[15px] py-3 px-3 -mx-3 rounded-[6px] hover:bg-[#f8f9fa] transition-all font-medium"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {link.label}
@@ -487,36 +502,43 @@ export default function Navigation() {
                   </div>
                 </div>
 
+                {/* Divider */}
+                <div className="h-px bg-gray-100 my-2" />
+
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-[#012956] hover:text-[#109387] transition-colors py-3 font-semibold"
+                    className="text-[#012956] hover:text-[#109387] transition-all py-4 px-2 -mx-2 rounded-[6px] font-bold text-[16px] hover:bg-[#f8f9fa]"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.label}
                   </Link>
                 ))}
+
+                {/* Divider */}
+                <div className="h-px bg-gray-100 my-2" />
+
                 <a
                   href="tel:+4987143033460"
-                  className="flex items-center gap-2 text-[#012956] py-3 font-semibold"
+                  className="flex items-center gap-3 text-[#012956] py-4 px-2 -mx-2 rounded-[6px] font-bold text-[16px] hover:bg-[#f8f9fa] transition-all"
                 >
-                  <Phone size={18} />
+                  <Phone size={20} strokeWidth={2} />
                   <span>0871 430 334 60</span>
                 </a>
                 <button
                   onClick={scrollToContact}
-                  className="flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-6 py-4 rounded-[6px] transition-all mt-2"
+                  className="flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-[16px] px-6 py-5 rounded-[8px] transition-all mt-3"
                 >
                   <span>Kostenfreie Besichtigung</span>
-                  <ArrowRight size={16} />
+                  <ArrowRight size={18} strokeWidth={2.5} />
                 </button>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Leistungen Mega Menu */}
+        {/* Leistungen Mega Menu - Premium */}
         <div
           className={`absolute left-0 right-0 bg-white shadow-2xl border-t border-gray-100 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
             activeDropdown === 'leistungen'
@@ -526,37 +548,42 @@ export default function Navigation() {
           onMouseEnter={() => handleDropdownEnter('leistungen')}
           onMouseLeave={handleDropdownLeave}
         >
-          <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-10">
-            <div className="grid grid-cols-4 gap-8">
+          <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-12">
+            <div className="grid grid-cols-4 gap-12">
               {leistungenCategories.map((category) => {
                 const IconComponent = category.icon
                 return (
                   <div key={category.id} className="group">
-                    <div className="relative h-32 mb-4 rounded-[6px] overflow-hidden">
+                    {/* Category Header Card */}
+                    <div className="relative h-36 mb-6 rounded-[8px] overflow-hidden">
                       <Image
                         src={category.image}
                         alt={category.title}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#012956]/80 to-transparent" />
-                      <div className="absolute bottom-3 left-3 flex items-center gap-2">
-                        <IconComponent size={18} className="text-white" />
-                        <span className="text-white font-bold text-sm">{category.title}</span>
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#012956]/90 via-[#012956]/40 to-transparent" />
+                      <div className="absolute bottom-4 left-4 flex items-center gap-3">
+                        <div className="w-10 h-10 bg-[#109387] rounded-[6px] flex items-center justify-center">
+                          <IconComponent size={20} strokeWidth={2} className="text-white" />
+                        </div>
+                        <span className="text-white font-bold text-base">{category.title}</span>
                       </div>
                     </div>
 
-                    <ul className="space-y-2">
+                    {/* Service Links - Premium Spacing */}
+                    <ul className="space-y-1">
                       {category.services.map((service) => (
                         <li key={service.href}>
                           <Link
                             href={service.href}
-                            className="flex items-center gap-2 text-gray-600 hover:text-[#109387] transition-colors text-sm font-medium group/link"
+                            className="flex items-center gap-3 px-4 py-3.5 -mx-4 rounded-[6px] text-gray-600 hover:text-[#109387] hover:bg-[#f8f9fa] transition-all text-[15px] font-semibold group/link"
                             onClick={() => setActiveDropdown(null)}
                           >
                             <ArrowRight
-                              size={12}
-                              className="text-gray-300 group-hover/link:text-[#109387] group-hover/link:translate-x-0.5 transition-all"
+                              size={14}
+                              strokeWidth={2.5}
+                              className="text-gray-300 group-hover/link:text-[#109387] group-hover/link:translate-x-1 transition-all"
                             />
                             {service.name}
                           </Link>
@@ -568,24 +595,25 @@ export default function Navigation() {
               })}
             </div>
 
+            {/* Footer CTA */}
             <Link
               href="/leistungen"
               onClick={() => setActiveDropdown(null)}
-              className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between group cursor-pointer hover:bg-[#f8f9fa] -mx-4 px-4 py-3 rounded-[6px] transition-all"
+              className="mt-10 pt-8 border-t border-gray-100 flex items-center justify-between group cursor-pointer hover:bg-[#f8f9fa] -mx-6 px-6 py-5 rounded-[8px] transition-all"
             >
               <div>
-                <p className="text-[#012956] font-bold group-hover:text-[#109387] transition-colors">Alle Leistungen entdecken</p>
-                <p className="text-gray-500 text-sm">18 professionelle Reinigungsservices</p>
+                <p className="text-[#012956] font-bold text-lg group-hover:text-[#109387] transition-colors">Alle Leistungen entdecken</p>
+                <p className="text-gray-500 text-[15px] mt-1">18 professionelle Reinigungsservices im Überblick</p>
               </div>
-              <div className="flex items-center gap-2 bg-[#012956] group-hover:bg-[#109387] text-white font-bold text-sm px-6 py-3 rounded-[6px] transition-all">
+              <div className="flex items-center gap-3 bg-[#012956] group-hover:bg-[#109387] text-white font-bold text-[15px] px-8 py-4 rounded-[6px] transition-all">
                 <span>Zur Übersicht</span>
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={18} strokeWidth={2.5} className="group-hover:translate-x-1 transition-transform" />
               </div>
             </Link>
           </div>
         </div>
 
-        {/* Branchen Mega Menu */}
+        {/* Branchen Mega Menu - Premium */}
         <div
           className={`absolute left-0 right-0 bg-white shadow-2xl border-t border-gray-100 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
             activeDropdown === 'branchen'
@@ -595,22 +623,25 @@ export default function Navigation() {
           onMouseEnter={() => handleDropdownEnter('branchen')}
           onMouseLeave={handleDropdownLeave}
         >
-          <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-10">
-            <div className="grid grid-cols-6 gap-6">
+          <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-12">
+            <div className="grid grid-cols-4 xl:grid-cols-6 gap-5">
               {branchenData.map((branche) => {
                 const IconComponent = branche.icon
                 return (
                   <Link
                     key={branche.href}
                     href={branche.href}
-                    className="group p-6 bg-[#f8f9fa] rounded-[6px] hover:bg-[#012956] transition-all duration-300 text-center"
+                    className="group p-6 bg-[#f8f9fa] rounded-[8px] hover:bg-[#012956] transition-all duration-300 text-center min-h-[120px] flex flex-col items-center justify-center"
                     onClick={() => setActiveDropdown(null)}
                   >
-                    <IconComponent
-                      size={32}
-                      className="text-[#109387] group-hover:text-white transition-colors mx-auto mb-3"
-                    />
-                    <p className="text-[#012956] group-hover:text-white font-bold text-sm transition-colors">
+                    <div className="w-12 h-12 bg-white rounded-[6px] flex items-center justify-center mb-4 group-hover:bg-[#109387] transition-all shadow-sm">
+                      <IconComponent
+                        size={24}
+                        strokeWidth={1.5}
+                        className="text-[#109387] group-hover:text-white transition-colors"
+                      />
+                    </div>
+                    <p className="text-[#012956] group-hover:text-white font-bold text-[14px] transition-colors leading-tight">
                       {branche.name}
                     </p>
                   </Link>
@@ -618,18 +649,19 @@ export default function Navigation() {
               })}
             </div>
 
+            {/* Footer CTA */}
             <Link
               href="/branchen"
               onClick={() => setActiveDropdown(null)}
-              className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between group cursor-pointer hover:bg-[#f8f9fa] -mx-4 px-4 py-3 rounded-[6px] transition-all"
+              className="mt-10 pt-8 border-t border-gray-100 flex items-center justify-between group cursor-pointer hover:bg-[#f8f9fa] -mx-6 px-6 py-5 rounded-[8px] transition-all"
             >
               <div>
-                <p className="text-[#012956] font-bold group-hover:text-[#109387] transition-colors">Branchenspezifische Lösungen</p>
-                <p className="text-gray-500 text-sm">12 spezialisierte Reinigungskonzepte für Ihre Branche</p>
+                <p className="text-[#012956] font-bold text-lg group-hover:text-[#109387] transition-colors">Branchenspezifische Lösungen</p>
+                <p className="text-gray-500 text-[15px] mt-1">12 spezialisierte Reinigungskonzepte für Ihre Branche</p>
               </div>
-              <div className="flex items-center gap-2 bg-[#109387] group-hover:bg-[#0d7d72] text-white font-bold text-sm px-6 py-3 rounded-[6px] transition-all">
+              <div className="flex items-center gap-3 bg-[#109387] group-hover:bg-[#0d7d72] text-white font-bold text-[15px] px-8 py-4 rounded-[6px] transition-all">
                 <span>Alle Branchen</span>
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={18} strokeWidth={2.5} className="group-hover:translate-x-1 transition-transform" />
               </div>
             </Link>
           </div>
