@@ -12,8 +12,8 @@ export default function KontaktPage() {
     <main className="min-h-screen bg-white">
       {/* Hero Section - Full Width Premium */}
       <section className="relative bg-[#012956] overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
+        {/* Background Pattern - pointer-events-none to not block clicks */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/10 to-transparent" />
         </div>
 
@@ -76,7 +76,6 @@ export default function KontaktPage() {
 
             {/* Right Image - Premium Full Height */}
             <div className="relative hidden lg:block">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#012956] via-[#012956]/50 to-transparent z-10 w-32" />
               <Image
                 src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1200&auto=format&fit=crop"
                 alt="FIMI Gebäudereinigung - Professionelle Beratung"
@@ -84,9 +83,9 @@ export default function KontaktPage() {
                 className="object-cover object-center"
                 priority
               />
-              {/* Premium Quote Overlay */}
-              <div className="absolute bottom-0 right-0 left-0 z-20 p-8 bg-gradient-to-t from-[#012956] via-[#012956]/90 to-transparent">
-                <div className="max-w-md ml-auto">
+              {/* Clean bottom-to-top gradient only */}
+              <div className="absolute bottom-0 right-0 left-0 z-10 p-8 bg-gradient-to-t from-[#012956] via-[#012956]/80 to-transparent h-1/2 flex items-end justify-end">
+                <div className="max-w-md">
                   <p className="text-white text-xl lg:text-2xl font-bold leading-snug mb-3">
                     „Persönliche Betreuung und Qualität stehen bei uns an erster Stelle."
                   </p>
