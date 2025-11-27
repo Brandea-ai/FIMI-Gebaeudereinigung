@@ -3,9 +3,9 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Phone, ChevronDown, Building2, Factory, Wrench, Sparkles } from 'lucide-react'
+import { ArrowRight, Phone, ChevronDown, Building2, Factory, Wrench, Sparkles, Users, Stethoscope, ShoppingBag, GraduationCap, UtensilsCrossed, Newspaper } from 'lucide-react'
 
-// Mega Menu Data
+// Mega Menu - Leistungen (ALLE 18 Services)
 const leistungenCategories = [
   {
     id: 'gewerblich',
@@ -17,6 +17,7 @@ const leistungenCategories = [
       { name: 'Büroreinigung', href: '/leistungen/bueroreinigung' },
       { name: 'Glasreinigung', href: '/leistungen/glasreinigung' },
       { name: 'Fensterreinigung', href: '/leistungen/fensterreinigung' },
+      { name: 'Fassadenreinigung', href: '/leistungen/fassadenreinigung' },
     ],
   },
   {
@@ -29,6 +30,7 @@ const leistungenCategories = [
       { name: 'Hallenreinigung', href: '/leistungen/hallenreinigung' },
       { name: 'Maschinenreinigung', href: '/leistungen/maschinenreinigung' },
       { name: 'Tiefgaragenreinigung', href: '/leistungen/tiefgaragenreinigung' },
+      { name: 'Parkplatzreinigung', href: '/leistungen/parkplatzreinigung' },
     ],
   },
   {
@@ -49,12 +51,22 @@ const leistungenCategories = [
     icon: Sparkles,
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=400&auto=format&fit=crop',
     services: [
-      { name: 'Fassadenreinigung', href: '/leistungen/fassadenreinigung' },
       { name: 'Baureinigung', href: '/leistungen/baureinigung' },
       { name: 'Sonderreinigung', href: '/leistungen/sonderreinigung' },
-      { name: 'Parkplatzreinigung', href: '/leistungen/parkplatzreinigung' },
+      { name: 'Sonderleistungen', href: '/leistungen/sonderleistungen' },
+      { name: 'Beschaffungsmanagement', href: '/leistungen/beschaffungsmanagement' },
     ],
   },
+]
+
+// Mega Menu - Branchen
+const branchenData = [
+  { name: 'Büro & Verwaltung', href: '/branchen/buero-verwaltung', icon: Building2 },
+  { name: 'Industrie & Produktion', href: '/branchen/industrie-produktion', icon: Factory },
+  { name: 'Gesundheitswesen', href: '/branchen/gesundheitswesen', icon: Stethoscope },
+  { name: 'Einzelhandel', href: '/branchen/einzelhandel', icon: ShoppingBag },
+  { name: 'Gastronomie & Hotellerie', href: '/branchen/gastronomie-hotel', icon: UtensilsCrossed },
+  { name: 'Bildung & Schulen', href: '/branchen/bildung-schulen', icon: GraduationCap },
 ]
 
 export default function Navigation() {
@@ -65,11 +77,12 @@ export default function Navigation() {
   const [showNavToggle, setShowNavToggle] = useState(false)
   const [showMobileMenuButton, setShowMobileMenuButton] = useState(true)
   const [mobileMenuHalfHidden, setMobileMenuHalfHidden] = useState(false)
-  const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [mobileLeistungenOpen, setMobileLeistungenOpen] = useState(false)
+  const [mobileBranchenOpen, setMobileBranchenOpen] = useState(false)
   const lastScrollTime = useRef<number>(Date.now())
   const autoHideIntervalRef = useRef<NodeJS.Timeout | null>(null)
-  const megaMenuTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   // Auto-Hide Interval
   useEffect(() => {
@@ -111,7 +124,7 @@ export default function Navigation() {
           setShowNavToggle(false)
           setShowMobileMenuButton(false)
           setMobileMenuHalfHidden(false)
-          setIsMegaMenuOpen(false)
+          setActiveDropdown(null)
         } else if (currentScrollY < lastScrollY) {
           setShowNavToggle(true)
           setShowMobileMenuButton(true)
@@ -136,31 +149,31 @@ export default function Navigation() {
   const scrollToContact = useCallback((e: React.MouseEvent) => {
     e.preventDefault()
     setIsMobileMenuOpen(false)
-    setIsMegaMenuOpen(false)
+    setActiveDropdown(null)
     const footer = document.getElementById('contact-form')
     if (footer) {
       footer.scrollIntoView({ behavior: 'smooth' })
     }
   }, [])
 
-  // Mega Menu Handlers
-  const handleMegaMenuEnter = () => {
-    if (megaMenuTimeoutRef.current) {
-      clearTimeout(megaMenuTimeoutRef.current)
+  // Dropdown Handlers
+  const handleDropdownEnter = (dropdown: string) => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current)
     }
-    setIsMegaMenuOpen(true)
+    setActiveDropdown(dropdown)
   }
 
-  const handleMegaMenuLeave = () => {
-    megaMenuTimeoutRef.current = setTimeout(() => {
-      setIsMegaMenuOpen(false)
+  const handleDropdownLeave = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setActiveDropdown(null)
     }, 150)
   }
 
   const navLinks = [
     { label: 'Über FIMI', href: '/ueber-uns' },
     { label: 'Referenzen', href: '/referenzen' },
-    { label: 'Kontakt', href: '/kontakt' },
+    { label: 'Neuigkeiten', href: '/neuigkeiten' },
   ]
 
   return (
@@ -187,21 +200,40 @@ export default function Navigation() {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-8">
-              {/* Leistungen with Mega Menu */}
+              {/* Leistungen Dropdown */}
               <div
                 className="relative"
-                onMouseEnter={handleMegaMenuEnter}
-                onMouseLeave={handleMegaMenuLeave}
+                onMouseEnter={() => handleDropdownEnter('leistungen')}
+                onMouseLeave={handleDropdownLeave}
               >
                 <button
                   className={`flex items-center gap-1.5 text-sm font-semibold transition-colors ${
-                    isMegaMenuOpen ? 'text-[#109387]' : 'text-[#012956] hover:text-[#109387]'
+                    activeDropdown === 'leistungen' ? 'text-[#109387]' : 'text-[#012956] hover:text-[#109387]'
                   }`}
                 >
                   <span>Leistungen</span>
                   <ChevronDown
                     size={16}
-                    className={`transition-transform duration-300 ${isMegaMenuOpen ? 'rotate-180' : ''}`}
+                    className={`transition-transform duration-300 ${activeDropdown === 'leistungen' ? 'rotate-180' : ''}`}
+                  />
+                </button>
+              </div>
+
+              {/* Branchen Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => handleDropdownEnter('branchen')}
+                onMouseLeave={handleDropdownLeave}
+              >
+                <button
+                  className={`flex items-center gap-1.5 text-sm font-semibold transition-colors ${
+                    activeDropdown === 'branchen' ? 'text-[#109387]' : 'text-[#012956] hover:text-[#109387]'
+                  }`}
+                >
+                  <span>Branchen</span>
+                  <ChevronDown
+                    size={16}
+                    className={`transition-transform duration-300 ${activeDropdown === 'branchen' ? 'rotate-180' : ''}`}
                   />
                 </button>
               </div>
@@ -282,7 +314,7 @@ export default function Navigation() {
           {/* Mobile Menu */}
           <div
             className={`lg:hidden overflow-hidden transition-all duration-300 ${
-              isMobileMenuOpen ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
+              isMobileMenuOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
             }`}
           >
             <div className="py-6 border-t border-gray-100">
@@ -300,10 +332,9 @@ export default function Navigation() {
                     />
                   </button>
 
-                  {/* Mobile Leistungen Content */}
                   <div
                     className={`overflow-hidden transition-all duration-300 ${
-                      mobileLeistungenOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
+                      mobileLeistungenOpen ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
                     <div className="pl-4 pb-4 space-y-4">
@@ -332,6 +363,39 @@ export default function Navigation() {
                         Alle Leistungen
                         <ArrowRight size={14} />
                       </Link>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Mobile Branchen Accordion */}
+                <div>
+                  <button
+                    onClick={() => setMobileBranchenOpen(!mobileBranchenOpen)}
+                    className="flex items-center justify-between w-full text-[#012956] py-3 font-semibold"
+                  >
+                    <span>Branchen</span>
+                    <ChevronDown
+                      size={20}
+                      className={`transition-transform duration-300 ${mobileBranchenOpen ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${
+                      mobileBranchenOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="pl-4 pb-4 space-y-1">
+                      {branchenData.map((branche) => (
+                        <Link
+                          key={branche.href}
+                          href={branche.href}
+                          className="block text-gray-600 hover:text-[#109387] text-sm py-1.5 transition-colors"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          {branche.name}
+                        </Link>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -365,24 +429,22 @@ export default function Navigation() {
           </div>
         </div>
 
-        {/* Mega Menu Dropdown */}
+        {/* Leistungen Mega Menu */}
         <div
           className={`absolute left-0 right-0 bg-white shadow-2xl border-t border-gray-100 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-            isMegaMenuOpen
+            activeDropdown === 'leistungen'
               ? 'opacity-100 visible translate-y-0'
               : 'opacity-0 invisible -translate-y-4'
           }`}
-          onMouseEnter={handleMegaMenuEnter}
-          onMouseLeave={handleMegaMenuLeave}
+          onMouseEnter={() => handleDropdownEnter('leistungen')}
+          onMouseLeave={handleDropdownLeave}
         >
           <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-10">
-            {/* Category Grid */}
             <div className="grid grid-cols-4 gap-8">
               {leistungenCategories.map((category) => {
                 const IconComponent = category.icon
                 return (
                   <div key={category.id} className="group">
-                    {/* Category Image */}
                     <div className="relative h-32 mb-4 rounded-[6px] overflow-hidden">
                       <Image
                         src={category.image}
@@ -397,14 +459,13 @@ export default function Navigation() {
                       </div>
                     </div>
 
-                    {/* Services List */}
                     <ul className="space-y-2">
                       {category.services.map((service) => (
                         <li key={service.href}>
                           <Link
                             href={service.href}
                             className="flex items-center gap-2 text-gray-600 hover:text-[#109387] transition-colors text-sm font-medium group/link"
-                            onClick={() => setIsMegaMenuOpen(false)}
+                            onClick={() => setActiveDropdown(null)}
                           >
                             <ArrowRight
                               size={12}
@@ -420,18 +481,67 @@ export default function Navigation() {
               })}
             </div>
 
-            {/* Bottom CTA */}
             <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between">
               <div>
                 <p className="text-[#012956] font-bold">Alle Leistungen entdecken</p>
-                <p className="text-gray-500 text-sm">16+ professionelle Reinigungsservices</p>
+                <p className="text-gray-500 text-sm">18 professionelle Reinigungsservices</p>
               </div>
               <Link
                 href="/leistungen"
                 className="flex items-center gap-2 bg-[#012956] hover:bg-[#01203d] text-white font-bold text-sm px-6 py-3 rounded-[6px] transition-all group"
-                onClick={() => setIsMegaMenuOpen(false)}
+                onClick={() => setActiveDropdown(null)}
               >
                 <span>Zur Übersicht</span>
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Branchen Mega Menu */}
+        <div
+          className={`absolute left-0 right-0 bg-white shadow-2xl border-t border-gray-100 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            activeDropdown === 'branchen'
+              ? 'opacity-100 visible translate-y-0'
+              : 'opacity-0 invisible -translate-y-4'
+          }`}
+          onMouseEnter={() => handleDropdownEnter('branchen')}
+          onMouseLeave={handleDropdownLeave}
+        >
+          <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-10">
+            <div className="grid grid-cols-6 gap-6">
+              {branchenData.map((branche) => {
+                const IconComponent = branche.icon
+                return (
+                  <Link
+                    key={branche.href}
+                    href={branche.href}
+                    className="group p-6 bg-[#f8f9fa] rounded-[6px] hover:bg-[#012956] transition-all duration-300 text-center"
+                    onClick={() => setActiveDropdown(null)}
+                  >
+                    <IconComponent
+                      size={32}
+                      className="text-[#109387] group-hover:text-white transition-colors mx-auto mb-3"
+                    />
+                    <p className="text-[#012956] group-hover:text-white font-bold text-sm transition-colors">
+                      {branche.name}
+                    </p>
+                  </Link>
+                )
+              })}
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between">
+              <div>
+                <p className="text-[#012956] font-bold">Branchenspezifische Lösungen</p>
+                <p className="text-gray-500 text-sm">Maßgeschneiderte Reinigungskonzepte für Ihre Branche</p>
+              </div>
+              <Link
+                href="/branchen"
+                className="flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm px-6 py-3 rounded-[6px] transition-all group"
+                onClick={() => setActiveDropdown(null)}
+              >
+                <span>Alle Branchen</span>
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
