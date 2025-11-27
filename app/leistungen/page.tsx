@@ -102,8 +102,8 @@ export default function LeistungenPage() {
         </div>
       </section>
 
-      {/* Filter Section */}
-      <section className="bg-white border-b border-gray-200">
+      {/* Filter Section - sticky top-0, z-20 (unter Navigation z-50) */}
+      <section className="sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="flex items-center gap-2 py-4 overflow-x-auto scrollbar-hide">
             <button
