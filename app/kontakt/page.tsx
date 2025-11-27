@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 export default function KontaktPage() {
   return (
     <main className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="bg-[#012956] py-20 lg:py-28">
+      {/* Hero with Process Steps */}
+      <section className="bg-[#012956] py-20 lg:py-24">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <p className="text-[#109387] font-semibold text-sm uppercase tracking-wider mb-4">
             Kontakt
@@ -19,9 +19,52 @@ export default function KontaktPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6">
             Lassen Sie uns sprechen
           </h1>
-          <p className="text-white/70 font-semibold text-lg max-w-2xl">
+          <p className="text-white/70 font-semibold text-lg max-w-2xl mb-12">
             In nur 4 Schritten zu Ihrer maßgeschneiderten Reinigungslösung.
           </p>
+
+          {/* Process Steps - Horizontal */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10">
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 bg-[#109387] rounded-[6px] flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                1
+              </div>
+              <div>
+                <h3 className="font-bold text-white text-sm lg:text-base">Anfrage</h3>
+                <p className="text-white/50 text-xs lg:text-sm">Formular oder Anruf</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 bg-[#109387] rounded-[6px] flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                2
+              </div>
+              <div>
+                <h3 className="font-bold text-white text-sm lg:text-base">Besichtigung</h3>
+                <p className="text-white/50 text-xs lg:text-sm">Kostenfrei vor Ort</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 bg-[#109387] rounded-[6px] flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                3
+              </div>
+              <div>
+                <h3 className="font-bold text-white text-sm lg:text-base">Angebot</h3>
+                <p className="text-white/50 text-xs lg:text-sm">Innerhalb 48h</p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 bg-[#109387] rounded-[6px] flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
+                4
+              </div>
+              <div>
+                <h3 className="font-bold text-white text-sm lg:text-base">Start</h3>
+                <p className="text-white/50 text-xs lg:text-sm">Ihr Ansprechpartner</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -73,17 +116,19 @@ export default function KontaktPage() {
               </p>
             </div>
 
-            {/* Right: Trust Image */}
-            <div className="relative h-[400px] lg:h-[500px] rounded-[6px] overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop"
-                alt="FIMI Gebäudereinigung - Ihr vertrauensvoller Partner"
-                fill
-                className="object-cover object-center"
-              />
+            {/* Right: Trust Image - Always fully visible */}
+            <div className="relative bg-[#f8f9fa] rounded-[6px] overflow-hidden">
+              <div className="aspect-[4/5] relative">
+                <Image
+                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop"
+                  alt="FIMI Gebäudereinigung - Ihr vertrauensvoller Partner"
+                  fill
+                  className="object-contain"
+                />
+              </div>
               {/* Overlay with trust message */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#012956] to-transparent p-6">
-                <p className="text-white font-bold text-lg">
+              <div className="absolute bottom-0 left-0 right-0 bg-[#012956] p-5">
+                <p className="text-white font-bold">
                   „Persönliche Betreuung ist uns wichtig"
                 </p>
                 <p className="text-white/70 text-sm font-medium">
@@ -92,45 +137,6 @@ export default function KontaktPage() {
               </div>
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* So funktioniert's - Compact */}
-      <section className="py-16 bg-[#f8f9fa]">
-        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <h2 className="text-2xl font-bold text-[#012956] mb-8 text-center">
-            So funktioniert's
-          </h2>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="w-12 h-12 bg-[#109387] rounded-[6px] flex items-center justify-center text-white font-bold text-lg mx-auto mb-3">
-                1
-              </div>
-              <h3 className="font-bold text-[#012956] text-sm">Anfrage senden</h3>
-            </div>
-
-            <div className="text-center">
-              <div className="w-12 h-12 bg-[#109387] rounded-[6px] flex items-center justify-center text-white font-bold text-lg mx-auto mb-3">
-                2
-              </div>
-              <h3 className="font-bold text-[#012956] text-sm">Besichtigung</h3>
-            </div>
-
-            <div className="text-center">
-              <div className="w-12 h-12 bg-[#109387] rounded-[6px] flex items-center justify-center text-white font-bold text-lg mx-auto mb-3">
-                3
-              </div>
-              <h3 className="font-bold text-[#012956] text-sm">Angebot</h3>
-            </div>
-
-            <div className="text-center">
-              <div className="w-12 h-12 bg-[#109387] rounded-[6px] flex items-center justify-center text-white font-bold text-lg mx-auto mb-3">
-                4
-              </div>
-              <h3 className="font-bold text-[#012956] text-sm">Start</h3>
-            </div>
           </div>
         </div>
       </section>
