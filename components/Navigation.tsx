@@ -86,6 +86,7 @@ export default function Navigation() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [mobileLeistungenOpen, setMobileLeistungenOpen] = useState(false)
   const [mobileBranchenOpen, setMobileBranchenOpen] = useState(false)
+  const [mobileUeberFimiOpen, setMobileUeberFimiOpen] = useState(false)
   const lastScrollTime = useRef<number>(Date.now())
   const autoHideIntervalRef = useRef<NodeJS.Timeout | null>(null)
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null)
@@ -176,9 +177,13 @@ export default function Navigation() {
     }, 150)
   }
 
-  const navLinks = [
-    { label: 'Über FIMI', href: '/ueber-uns' },
+  // Über FIMI Dropdown Links
+  const ueberFimiLinks = [
+    { label: 'Über uns', href: '/ueber-uns' },
     { label: 'Referenzen', href: '/referenzen' },
+  ]
+
+  const navLinks = [
     { label: 'Neuigkeiten', href: '/neuigkeiten' },
     { label: 'Kontakt', href: '/kontakt' },
   ]
@@ -243,6 +248,48 @@ export default function Navigation() {
                     className={`transition-transform duration-300 ${activeDropdown === 'branchen' ? 'rotate-180' : ''}`}
                   />
                 </button>
+              </div>
+
+              {/* Über FIMI Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => handleDropdownEnter('ueberfimi')}
+                onMouseLeave={handleDropdownLeave}
+              >
+                <button
+                  className={`flex items-center gap-1.5 text-sm font-semibold transition-colors ${
+                    activeDropdown === 'ueberfimi' ? 'text-[#109387]' : 'text-[#012956] hover:text-[#109387]'
+                  }`}
+                >
+                  <span>Über FIMI</span>
+                  <ChevronDown
+                    size={16}
+                    className={`transition-transform duration-300 ${activeDropdown === 'ueberfimi' ? 'rotate-180' : ''}`}
+                  />
+                </button>
+
+                {/* Über FIMI Dropdown Menu */}
+                <div
+                  className={`absolute top-full left-0 mt-2 bg-white rounded-[6px] shadow-xl border border-gray-100 overflow-hidden transition-all duration-200 ${
+                    activeDropdown === 'ueberfimi'
+                      ? 'opacity-100 visible translate-y-0'
+                      : 'opacity-0 invisible -translate-y-2'
+                  }`}
+                >
+                  <div className="py-2 min-w-[180px]">
+                    {ueberFimiLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className="flex items-center gap-2 px-4 py-2.5 text-gray-600 hover:bg-[#f8f9fa] hover:text-[#109387] transition-colors text-sm font-medium"
+                        onClick={() => setActiveDropdown(null)}
+                      >
+                        <ArrowRight size={12} className="text-gray-300" />
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
               </div>
 
               {navLinks.map((link) => (
@@ -401,6 +448,39 @@ export default function Navigation() {
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {branche.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Mobile Über FIMI Accordion */}
+                <div>
+                  <button
+                    onClick={() => setMobileUeberFimiOpen(!mobileUeberFimiOpen)}
+                    className="flex items-center justify-between w-full text-[#012956] py-3 font-semibold"
+                  >
+                    <span>Über FIMI</span>
+                    <ChevronDown
+                      size={20}
+                      className={`transition-transform duration-300 ${mobileUeberFimiOpen ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${
+                      mobileUeberFimiOpen ? 'max-h-[200px] opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="pl-4 pb-4 space-y-1">
+                      {ueberFimiLinks.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className="block text-gray-600 hover:text-[#109387] text-sm py-1.5 transition-colors"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          {link.label}
                         </Link>
                       ))}
                     </div>
