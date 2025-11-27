@@ -103,7 +103,7 @@ export default function LeistungenPage() {
       </section>
 
       {/* Filter Section */}
-      <section className="sticky top-24 lg:top-32 z-30 bg-white border-b border-gray-200 shadow-sm">
+      <section className="bg-white border-b border-gray-200">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="flex items-center gap-2 py-4 overflow-x-auto scrollbar-hide">
             <button
