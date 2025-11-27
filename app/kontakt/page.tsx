@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
-import { ArrowRight, Phone, Mail, MapPin, Clock } from 'lucide-react'
+import { ArrowRight, Phone } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Kontakt',
@@ -108,62 +108,6 @@ export default function KontaktPage() {
             className="object-cover object-top"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#012956] to-transparent" />
-        </div>
-      </section>
-
-      {/* Contact Methods - Premium Cards */}
-      <section className="py-20 lg:py-28 bg-[#f8f9fa]">
-        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] mb-4">
-              So erreichen Sie uns
-            </h2>
-            <p className="text-gray-500 font-medium text-lg max-w-2xl mx-auto">
-              Wählen Sie Ihren bevorzugten Kontaktweg - wir sind für Sie da.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Phone */}
-            <a href="tel:+4987143033460" className="group bg-white p-8 rounded-[6px] shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-[#109387]">
-              <div className="w-14 h-14 bg-[#109387]/10 rounded-[6px] flex items-center justify-center mb-6 group-hover:bg-[#109387] transition-colors">
-                <Phone size={24} className="text-[#109387] group-hover:text-white transition-colors" />
-              </div>
-              <h3 className="font-bold text-[#012956] text-xl mb-2">Telefon</h3>
-              <p className="text-[#109387] font-bold text-lg">0871 430 334 60</p>
-              <p className="text-gray-400 text-sm mt-2">Mo-Fr: 8:00 - 17:00 Uhr</p>
-            </a>
-
-            {/* Email */}
-            <a href="mailto:info@fimi-service.de" className="group bg-white p-8 rounded-[6px] shadow-sm hover:shadow-xl transition-all border border-gray-100 hover:border-[#109387]">
-              <div className="w-14 h-14 bg-[#109387]/10 rounded-[6px] flex items-center justify-center mb-6 group-hover:bg-[#109387] transition-colors">
-                <Mail size={24} className="text-[#109387] group-hover:text-white transition-colors" />
-              </div>
-              <h3 className="font-bold text-[#012956] text-xl mb-2">E-Mail</h3>
-              <p className="text-[#109387] font-bold text-lg">info@fimi-service.de</p>
-              <p className="text-gray-400 text-sm mt-2">Antwort innerhalb 24h</p>
-            </a>
-
-            {/* Location */}
-            <div className="group bg-white p-8 rounded-[6px] shadow-sm border border-gray-100">
-              <div className="w-14 h-14 bg-[#012956]/10 rounded-[6px] flex items-center justify-center mb-6">
-                <MapPin size={24} className="text-[#012956]" />
-              </div>
-              <h3 className="font-bold text-[#012956] text-xl mb-2">Standort</h3>
-              <p className="text-gray-600 font-medium">Landshut, Bayern</p>
-              <p className="text-gray-400 text-sm mt-2">Einsatzgebiet: ganz Bayern</p>
-            </div>
-
-            {/* Hours */}
-            <div className="group bg-white p-8 rounded-[6px] shadow-sm border border-gray-100">
-              <div className="w-14 h-14 bg-[#012956]/10 rounded-[6px] flex items-center justify-center mb-6">
-                <Clock size={24} className="text-[#012956]" />
-              </div>
-              <h3 className="font-bold text-[#012956] text-xl mb-2">Erreichbarkeit</h3>
-              <p className="text-gray-600 font-medium">Mo - Fr: 8:00 - 17:00</p>
-              <p className="text-gray-400 text-sm mt-2">24/7 Notdienst verfügbar</p>
-            </div>
-          </div>
         </div>
       </section>
 
