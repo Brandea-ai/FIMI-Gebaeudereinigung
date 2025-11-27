@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight, CheckCircle, MessageSquare, Calendar, FileText, Handshake, Clock, Shield, Sparkles } from 'lucide-react'
+import { ArrowRight, CheckCircle } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Kontakt',
@@ -21,7 +21,6 @@ export default function KontaktPage() {
           </h1>
           <p className="text-white/70 font-semibold text-lg max-w-2xl">
             In nur 4 Schritten zu Ihrer maßgeschneiderten Reinigungslösung.
-            Unverbindlich und kostenfrei.
           </p>
         </div>
       </section>
@@ -32,110 +31,76 @@ export default function KontaktPage() {
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
 
-            {/* Left: Der Weg zu Ihrem Angebot */}
+            {/* Left: Simplified Process */}
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-[#109387] mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#109387] mb-10">
                 So funktioniert's
               </h2>
-              <p className="text-gray-600 font-semibold mb-10">
-                Von der ersten Anfrage bis zum sauberen Ergebnis - transparent und unkompliziert.
-              </p>
 
-              {/* Process Steps */}
-              <div className="space-y-8">
-                {/* Step 1 */}
-                <div className="flex gap-5">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-[#109387] rounded-full flex items-center justify-center text-white font-bold">
-                      1
-                    </div>
+              {/* Process Steps - Clean */}
+              <div className="space-y-6">
+                <div className="flex gap-4 items-start">
+                  <div className="w-10 h-10 bg-[#109387] rounded-[6px] flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                    1
                   </div>
-                  <div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <MessageSquare size={18} className="text-[#109387]" />
-                      <h3 className="font-bold text-[#012956]">Anfrage senden</h3>
-                    </div>
+                  <div className="pt-1.5">
+                    <h3 className="font-bold text-[#012956] mb-1">Anfrage senden</h3>
                     <p className="text-gray-600 font-medium text-sm">
-                      Nutzen Sie unser Kontaktformular oder rufen Sie uns an.
-                      Schildern Sie kurz Ihren Bedarf - wir melden uns innerhalb von 24 Stunden.
+                      Formular ausfüllen oder anrufen - Rückmeldung in 24h.
                     </p>
                   </div>
                 </div>
 
-                {/* Step 2 */}
-                <div className="flex gap-5">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-[#109387] rounded-full flex items-center justify-center text-white font-bold">
-                      2
-                    </div>
+                <div className="flex gap-4 items-start">
+                  <div className="w-10 h-10 bg-[#109387] rounded-[6px] flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                    2
                   </div>
-                  <div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <Calendar size={18} className="text-[#109387]" />
-                      <h3 className="font-bold text-[#012956]">Kostenfreie Besichtigung</h3>
-                    </div>
+                  <div className="pt-1.5">
+                    <h3 className="font-bold text-[#012956] mb-1">Kostenfreie Besichtigung</h3>
                     <p className="text-gray-600 font-medium text-sm">
-                      Wir vereinbaren einen Termin und besichtigen Ihre Räumlichkeiten vor Ort.
-                      So können wir den Aufwand realistisch einschätzen.
+                      Wir schauen uns Ihre Räume vor Ort an.
                     </p>
                   </div>
                 </div>
 
-                {/* Step 3 */}
-                <div className="flex gap-5">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-[#109387] rounded-full flex items-center justify-center text-white font-bold">
-                      3
-                    </div>
+                <div className="flex gap-4 items-start">
+                  <div className="w-10 h-10 bg-[#109387] rounded-[6px] flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                    3
                   </div>
-                  <div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <FileText size={18} className="text-[#109387]" />
-                      <h3 className="font-bold text-[#012956]">Individuelles Angebot</h3>
-                    </div>
+                  <div className="pt-1.5">
+                    <h3 className="font-bold text-[#012956] mb-1">Individuelles Angebot</h3>
                     <p className="text-gray-600 font-medium text-sm">
-                      Sie erhalten ein detailliertes Angebot mit transparenten Preisen.
-                      Keine versteckten Kosten, keine bösen Überraschungen.
+                      Transparente Preise ohne versteckte Kosten.
                     </p>
                   </div>
                 </div>
 
-                {/* Step 4 */}
-                <div className="flex gap-5">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-[#109387] rounded-full flex items-center justify-center text-white font-bold">
-                      4
-                    </div>
+                <div className="flex gap-4 items-start">
+                  <div className="w-10 h-10 bg-[#109387] rounded-[6px] flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                    4
                   </div>
-                  <div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <Handshake size={18} className="text-[#109387]" />
-                      <h3 className="font-bold text-[#012956]">Start der Zusammenarbeit</h3>
-                    </div>
+                  <div className="pt-1.5">
+                    <h3 className="font-bold text-[#012956] mb-1">Start</h3>
                     <p className="text-gray-600 font-medium text-sm">
-                      Nach Ihrer Zusage starten wir zeitnah. Sie erhalten einen festen
-                      Ansprechpartner, der Ihre Reinigung koordiniert.
+                      Persönlicher Ansprechpartner für Ihre Reinigung.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Guarantees */}
-              <div className="mt-12 p-6 bg-[#f8f9fa] rounded-[6px]">
-                <h3 className="font-bold text-[#012956] mb-4">Unsere Garantien</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div className="flex items-center gap-2">
-                    <Clock size={18} className="text-[#109387]" />
-                    <span className="text-sm font-semibold text-gray-700">24h Rückmeldung</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Shield size={18} className="text-[#109387]" />
-                    <span className="text-sm font-semibold text-gray-700">Festpreisgarantie</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Sparkles size={18} className="text-[#109387]" />
-                    <span className="text-sm font-semibold text-gray-700">Qualitätsversprechen</span>
-                  </div>
+              {/* Trust Stats */}
+              <div className="mt-12 grid grid-cols-3 gap-4">
+                <div className="bg-[#012956] rounded-[6px] p-4 text-center">
+                  <p className="text-2xl font-bold text-[#109387]">8+</p>
+                  <p className="text-white/70 text-xs font-semibold">Jahre Erfahrung</p>
+                </div>
+                <div className="bg-[#012956] rounded-[6px] p-4 text-center">
+                  <p className="text-2xl font-bold text-[#109387]">85+</p>
+                  <p className="text-white/70 text-xs font-semibold">Kunden</p>
+                </div>
+                <div className="bg-[#012956] rounded-[6px] p-4 text-center">
+                  <p className="text-2xl font-bold text-[#109387]">24h</p>
+                  <p className="text-white/70 text-xs font-semibold">Rückmeldung</p>
                 </div>
               </div>
             </div>
@@ -147,7 +112,7 @@ export default function KontaktPage() {
               </h3>
               <p className="text-white/70 font-semibold leading-relaxed mb-8">
                 Füllen Sie unser Kontaktformular aus und erhalten Sie
-                innerhalb von 24 Stunden eine persönliche Rückmeldung von uns.
+                innerhalb von 24 Stunden eine persönliche Rückmeldung.
               </p>
 
               <div className="space-y-4 mb-8">
@@ -157,15 +122,15 @@ export default function KontaktPage() {
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle size={20} className="text-[#109387]" />
-                  <span className="text-white font-semibold">Persönliche Beratung garantiert</span>
+                  <span className="text-white font-semibold">Persönliche Beratung</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle size={20} className="text-[#109387]" />
-                  <span className="text-white font-semibold">Angebot innerhalb von 48 Stunden</span>
+                  <span className="text-white font-semibold">Angebot innerhalb von 48h</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle size={20} className="text-[#109387]" />
-                  <span className="text-white font-semibold">Keine Vertragsbindung</span>
+                  <span className="text-white font-semibold">Flexible Verträge</span>
                 </div>
               </div>
 
@@ -178,75 +143,22 @@ export default function KontaktPage() {
               </a>
 
               <p className="text-white/50 text-sm text-center mt-6">
-                Oder rufen Sie uns direkt an: <a href="tel:+4987143033460" className="text-[#109387] font-bold hover:underline">0871 430 334 60</a>
+                Oder direkt anrufen: <a href="tel:+4987143033460" className="text-[#109387] font-bold hover:underline">0871 430 334 60</a>
               </p>
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-16 lg:py-20 bg-[#f8f9fa]">
-        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#012956] mb-10 text-center">
-            Häufige Fragen
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white p-6 rounded-[6px]">
-              <h3 className="font-bold text-[#012956] mb-2">Wie schnell können Sie starten?</h3>
-              <p className="text-gray-600 font-medium text-sm">
-                Nach Auftragserteilung können wir in der Regel innerhalb von 1-2 Wochen starten,
-                bei dringendem Bedarf auch schneller.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-[6px]">
-              <h3 className="font-bold text-[#012956] mb-2">Gibt es eine Mindestvertragslaufzeit?</h3>
-              <p className="text-gray-600 font-medium text-sm">
-                Nein, wir bieten flexible Verträge ohne lange Bindung.
-                Sie können monatlich kündigen.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-[6px]">
-              <h3 className="font-bold text-[#012956] mb-2">Sind Ihre Mitarbeiter versichert?</h3>
-              <p className="text-gray-600 font-medium text-sm">
-                Ja, alle Mitarbeiter sind über unsere Betriebshaftpflicht versichert.
-                Sie tragen kein Risiko.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-[6px]">
-              <h3 className="font-bold text-[#012956] mb-2">Wann wird gereinigt?</h3>
-              <p className="text-gray-600 font-medium text-sm">
-                Die Reinigungszeiten stimmen wir individuell mit Ihnen ab -
-                vor, während oder nach Ihren Geschäftszeiten.
-              </p>
-            </div>
-          </div>
-
-          <div className="text-center mt-10">
-            <Link
-              href="/leistungen"
-              className="inline-flex items-center gap-2 text-[#109387] font-bold hover:gap-3 transition-all"
-            >
-              Mehr über unsere Leistungen erfahren
-              <ArrowRight size={18} />
-            </Link>
           </div>
         </div>
       </section>
 
       {/* Service Areas */}
-      <section className="py-16 bg-[#012956]">
+      <section className="py-16 bg-[#f8f9fa]">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+            <h2 className="text-2xl md:text-3xl font-bold text-[#012956] mb-2">
               Unser Einzugsgebiet
             </h2>
-            <p className="text-white/60 font-semibold">
+            <p className="text-gray-500 font-semibold">
               Professionelle Gebäudereinigung in ganz Bayern
             </p>
           </div>
@@ -254,7 +166,7 @@ export default function KontaktPage() {
             {['Landshut', 'München', 'Regensburg', 'Ingolstadt', 'Freising', 'Erding', 'Straubing', 'Passau'].map((city) => (
               <span
                 key={city}
-                className="px-5 py-2 bg-white/10 rounded-[6px] text-white font-semibold text-sm"
+                className="px-5 py-2 bg-[#012956] rounded-[6px] text-white font-semibold text-sm"
               >
                 {city}
               </span>
