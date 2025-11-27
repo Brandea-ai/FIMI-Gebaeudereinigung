@@ -488,20 +488,20 @@ export default function Navigation() {
               })}
             </div>
 
-            <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between">
+            <Link
+              href="/leistungen"
+              onClick={() => setActiveDropdown(null)}
+              className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between group cursor-pointer hover:bg-[#f8f9fa] -mx-4 px-4 py-3 rounded-[6px] transition-all"
+            >
               <div>
-                <p className="text-[#012956] font-bold">Alle Leistungen entdecken</p>
+                <p className="text-[#012956] font-bold group-hover:text-[#109387] transition-colors">Alle Leistungen entdecken</p>
                 <p className="text-gray-500 text-sm">18 professionelle Reinigungsservices</p>
               </div>
-              <Link
-                href="/leistungen"
-                className="flex items-center gap-2 bg-[#012956] hover:bg-[#01203d] text-white font-bold text-sm px-6 py-3 rounded-[6px] transition-all group"
-                onClick={() => setActiveDropdown(null)}
-              >
+              <div className="flex items-center gap-2 bg-[#012956] group-hover:bg-[#109387] text-white font-bold text-sm px-6 py-3 rounded-[6px] transition-all">
                 <span>Zur Übersicht</span>
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
+              </div>
+            </Link>
           </div>
         </div>
 
@@ -538,20 +538,20 @@ export default function Navigation() {
               })}
             </div>
 
-            <div className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between">
+            <Link
+              href="/branchen"
+              onClick={() => setActiveDropdown(null)}
+              className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between group cursor-pointer hover:bg-[#f8f9fa] -mx-4 px-4 py-3 rounded-[6px] transition-all"
+            >
               <div>
-                <p className="text-[#012956] font-bold">Branchenspezifische Lösungen</p>
+                <p className="text-[#012956] font-bold group-hover:text-[#109387] transition-colors">Branchenspezifische Lösungen</p>
                 <p className="text-gray-500 text-sm">12 spezialisierte Reinigungskonzepte für Ihre Branche</p>
               </div>
-              <Link
-                href="/branchen"
-                className="flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm px-6 py-3 rounded-[6px] transition-all group"
-                onClick={() => setActiveDropdown(null)}
-              >
+              <div className="flex items-center gap-2 bg-[#109387] group-hover:bg-[#0d7d72] text-white font-bold text-sm px-6 py-3 rounded-[6px] transition-all">
                 <span>Alle Branchen</span>
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
+              </div>
+            </Link>
           </div>
         </div>
       </nav>
