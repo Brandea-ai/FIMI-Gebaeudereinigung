@@ -219,9 +219,9 @@ export default function GlossarPage() {
       </section>
 
       {/* Alphabet Navigation */}
-      <section className="bg-[#f8f9fa] py-6 sticky top-24 lg:top-32 z-20">
+      <section className="sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 py-4">
             {letters.map((letter) => (
               <a
                 key={letter}

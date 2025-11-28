@@ -5,18 +5,17 @@ interface BrancheSEOContentProps {
   branche: Branche
 }
 
-// Premium Markdown Parser - KEINE Doppelpunkte in Headlines, Mobile-First
+// Premium Markdown Parser - KEINE Doppelpunkte, Mobile-First
 function parseMarkdown(text: string): string {
   return text
-    // H2 Headers - Doppelpunkte entfernen, alles grün
+    // H2 Headers - Doppelpunkte komplett entfernen
     .replace(/^## (.*$)/gm, (match, content) => {
-      // Doppelpunkte entfernen
-      const cleanContent = content.replace(/:/g, ' –')
+      const cleanContent = content.replace(/:\s*/g, ' ').trim()
       return `<h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#109387] mt-10 sm:mt-12 md:mt-16 mb-4 sm:mb-6 leading-tight">${cleanContent}</h2>`
     })
-    // H3 Headers - Doppelpunkte entfernen, alles grün
+    // H3 Headers - Doppelpunkte komplett entfernen
     .replace(/^### (.*$)/gm, (match, content) => {
-      const cleanContent = content.replace(/:/g, ' –')
+      const cleanContent = content.replace(/:\s*/g, ' ').trim()
       return `<h3 class="text-lg sm:text-xl md:text-2xl font-bold text-[#109387] mt-8 sm:mt-10 mb-3 sm:mb-4 leading-tight">${cleanContent}</h3>`
     })
     // Bold Text
