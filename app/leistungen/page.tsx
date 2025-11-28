@@ -214,7 +214,7 @@ export default function LeistungenPage() {
             </div>
 
             {/* Category Cards - Desktop only - Premium Design */}
-            <div className="hidden lg:grid grid-cols-2 gap-6">
+            <div className="hidden lg:grid grid-cols-2 gap-5 xl:gap-6">
               {allCategories.map((cat) => {
                 const IconComponent = categoryIcons[cat.id as keyof typeof categoryIcons]
                 const count = leistungen.filter(l => l.category === cat.id).length
@@ -222,13 +222,16 @@ export default function LeistungenPage() {
                   <button
                     key={cat.id}
                     onClick={() => handleCategoryClick(cat.id)}
-                    className="group p-8 bg-white/5 hover:bg-white/10 rounded-[6px] text-left transition-all duration-300 border border-white/10 hover:border-[#109387]/50"
+                    className="group p-8 xl:p-10 bg-white/5 hover:bg-white/10 rounded-[6px] text-left transition-all duration-300 border border-white/10 hover:border-[#109387]/50 hover:scale-[1.02]"
                   >
-                    <IconComponent size={36} strokeWidth={1.5} className="text-[#109387] mb-4" />
-                    <h3 className="text-white font-bold text-xl mb-2">{categoryShortLabels[cat.id]}</h3>
-                    <p className="text-white/60 font-semibold mb-4">{count} Leistungen</p>
-                    <span className="inline-flex items-center gap-2 text-[#109387] font-bold group-hover:gap-3 transition-all">
-                      Anzeigen <ArrowRight size={18} />
+                    <div className="w-16 h-16 xl:w-20 xl:h-20 bg-[#109387]/10 rounded-[6px] flex items-center justify-center mb-5 group-hover:bg-[#109387]/20 transition-colors">
+                      <IconComponent size={32} className="xl:hidden text-[#109387]" strokeWidth={1.5} />
+                      <IconComponent size={40} className="hidden xl:block text-[#109387]" strokeWidth={1.5} />
+                    </div>
+                    <h3 className="text-white font-bold text-xl xl:text-2xl mb-2">{categoryShortLabels[cat.id]}</h3>
+                    <p className="text-white/60 font-semibold text-lg mb-5">{count} Leistungen</p>
+                    <span className="inline-flex items-center gap-2 text-[#109387] font-bold text-lg group-hover:gap-3 transition-all">
+                      Anzeigen <ArrowRight size={20} />
                     </span>
                   </button>
                 )
