@@ -2,7 +2,8 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ArrowLeft, ArrowRight, Calendar, Clock, User, Share2 } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Calendar, Clock, User } from 'lucide-react'
+import ShareButton from './ShareButton'
 import { blogPosts, blogCategories, getPostBySlug, getRecentPosts, formatDate } from '@/lib/blog-data'
 
 interface PageProps {
@@ -129,9 +130,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               <div className="mt-12 pt-8 border-t border-gray-200">
                 <div className="flex items-center gap-4">
                   <span className="text-gray-500 font-semibold text-sm">Teilen:</span>
-                  <button className="p-2 bg-[#f8f9fa] hover:bg-[#012956] hover:text-white rounded-[6px] transition-colors">
-                    <Share2 size={18} />
-                  </button>
+                  <ShareButton title={post.title} text={post.excerpt} />
                 </div>
               </div>
             </div>
