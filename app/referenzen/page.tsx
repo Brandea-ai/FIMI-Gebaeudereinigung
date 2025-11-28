@@ -109,7 +109,7 @@ export default function ReferenzenPage() {
               </p>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.15] mb-6">
-                {stats.projekte}+ erfolgreiche
+                Unsere erfolgreichen
                 <span className="block text-[#109387] mt-2">Projekte seit 2016</span>
               </h1>
 
@@ -565,46 +565,62 @@ export default function ReferenzenPage() {
         )}
       </AnimatePresence>
 
-      {/* CTA Section - Einfarbig */}
-      <section className="py-20 lg:py-28 bg-[#012956]">
-        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
-            {/* Content - Links */}
-            <div className="mb-10 lg:mb-0">
-              <p className="text-sm text-[#109387] font-semibold uppercase tracking-wide mb-3">
-                Jetzt starten
-              </p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] mb-6">
-                Werden Sie Teil unserer
-                <span className="block text-[#109387] mt-2">Erfolgsgeschichte</span>
-              </h2>
-              <p className="text-lg text-white/80 font-semibold leading-relaxed max-w-xl">
-                Vertrauen Sie auf unsere Erfahrung aus über {stats.projekte} Projekten seit 2016.
-                Wir freuen uns auf Ihre Anfrage.
-              </p>
+      {/* Premium CTA Section */}
+      <section className="py-20 lg:py-28 bg-[#012956] relative overflow-hidden">
+        {/* Background Accents */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-[#109387]/5 to-transparent" />
+          <div className="absolute bottom-0 right-0 w-1/3 h-2/3 bg-gradient-to-tl from-[#109387]/10 to-transparent" />
+        </div>
+
+        <div className="relative w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Icon */}
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-[#109387]/20 rounded-[6px] mb-8">
+              <Award size={40} className="text-[#109387]" />
             </div>
 
-            {/* Buttons - Rechts */}
-            <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4 lg:justify-end">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] mb-6">
+              Ihr nächstes Projekt
+              <span className="block text-[#109387] mt-2">verdient Qualität</span>
+            </h2>
+
+            <p className="text-xl text-white/80 font-semibold leading-relaxed mb-10 max-w-2xl mx-auto">
+              Lassen Sie sich unverbindlich beraten. Wir analysieren Ihren Bedarf vor Ort
+              und erstellen ein maßgeschneidertes Angebot – kostenfrei.
+            </p>
+
+            {/* Trust Points */}
+            <div className="flex flex-wrap justify-center gap-8 mb-12">
+              <div className="flex items-center gap-2">
+                <CheckCircle size={22} className="text-[#109387]" />
+                <span className="text-white font-semibold">Vor-Ort-Besichtigung</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle size={22} className="text-[#109387]" />
+                <span className="text-white font-semibold">Individuelles Angebot</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle size={22} className="text-[#109387]" />
+                <span className="text-white font-semibold">Antwort in 2 Stunden</span>
+              </div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/kontakt"
-                className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
+                className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-10 py-5 rounded-[6px] transition-all duration-300 group shadow-lg shadow-[#109387]/20"
               >
-                Kostenfreie Besichtigung
+                Jetzt Besichtigung anfragen
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link
-                href="/leistungen"
-                className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-[#012956] font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"
+              <a
+                href="tel:+4987143033460"
+                className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-[#012956] font-bold text-lg px-10 py-5 rounded-[6px] transition-all duration-300"
               >
-                Alle Leistungen
-              </Link>
-              <Link
-                href="/branchen"
-                className="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 border border-white/20"
-              >
-                Alle Branchen
-              </Link>
+                0871 430 334 60
+              </a>
             </div>
           </div>
         </div>
