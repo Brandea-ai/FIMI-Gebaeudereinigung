@@ -82,6 +82,19 @@ export const metadata: Metadata = {
     google: 'verification_token', // TODO: Add actual token
   },
   category: 'business',
+  icons: {
+    icon: [
+      {
+        url: '/FIMI-LOGO/Fimi-Favicon_Transparent.png',
+        media: '(prefers-color-scheme: light)',
+      },
+      {
+        url: '/FIMI-LOGO/FIMI-FAVICON_Transparenten-Hintergrund_Weiße-Schrift.png',
+        media: '(prefers-color-scheme: dark)',
+      },
+    ],
+    apple: '/FIMI-LOGO/Fimi-Favicon.png',
+  },
 }
 
 // JSON-LD Structured Data
@@ -144,13 +157,6 @@ export default function RootLayout({
   return (
     <html lang="de" className={inter.variable}>
       <head>
-        {/* Favicon für Light Mode (blaues Icon auf transparent) */}
-        <link rel="icon" href="/FIMI-LOGO/Fimi-Favicon_Transparent.png" media="(prefers-color-scheme: light)" />
-        {/* Favicon für Dark Mode (weißes Icon auf transparent) */}
-        <link rel="icon" href="/FIMI-LOGO/FIMI-FAVICON_Transparenten-Hintergrund_Weiße-Schrift.png" media="(prefers-color-scheme: dark)" />
-        {/* Fallback */}
-        <link rel="icon" href="/FIMI-LOGO/Fimi-Favicon_Transparent.png" />
-        <link rel="apple-touch-icon" href="/FIMI-LOGO/Fimi-Favicon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
