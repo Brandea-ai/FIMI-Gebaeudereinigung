@@ -323,15 +323,14 @@ export default function ImpressumContent() {
 
                   {/* Map iframe */}
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2637.5!2d12.152!3d48.537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDMyJzEzLjIiTiAxMsKwMDknMDcuMiJF!5e0!3m2!1sde!2sde!4v1"
+                    src="https://maps.google.com/maps?q=Kellerstra%C3%9Fe+39,+84036+Landshut,+Germany&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     width="100%"
                     height="350"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    title="FIMI Gebäudereinigung Standort"
-                    className="grayscale hover:grayscale-0 transition-all duration-500"
+                    title="FIMI Gebäudereinigung Standort - Kellerstr. 39, 84036 Landshut"
                   />
                 </div>
               </section>
