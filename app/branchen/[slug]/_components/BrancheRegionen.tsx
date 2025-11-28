@@ -153,8 +153,8 @@ export function BrancheRegionen({ branche }: BrancheRegionenProps) {
             </div>
           </div>
 
-          {/* Right: Content (2 Spalten) */}
-          <div className="lg:col-span-2 space-y-6">
+          {/* Right: Content (2 Spalten) - STICKY */}
+          <div className="lg:col-span-2 space-y-6 lg:sticky lg:top-28 lg:self-start">
 
             {/* Problem-Ansprache Box */}
             <div className="bg-white rounded-[6px] p-5 sm:p-6 shadow-lg border border-gray-100">
