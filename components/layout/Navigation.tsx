@@ -210,17 +210,18 @@ export default function Navigation() {
                         Karriere
                       </Link>
                     </li>
+                    <li>
+                      <Link
+                        href="/referenzen"
+                        className="block text-gray-700 hover:text-fimi-turquoise font-medium py-2 transition-colors"
+                      >
+                        Referenzen
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
-
-            <Link
-              href="/referenzen"
-              className="text-fimi-navy hover:text-fimi-turquoise font-medium transition-colors"
-            >
-              Referenzen
-            </Link>
 
             <Link
               href="/blog"
@@ -356,17 +357,16 @@ export default function Navigation() {
                     >
                       Karriere
                     </Link>
+                    <Link
+                      href="/referenzen"
+                      className="block text-gray-700 hover:text-fimi-turquoise py-1"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Referenzen
+                    </Link>
                   </div>
                 )}
               </div>
-
-              <Link
-                href="/referenzen"
-                className="block text-fimi-navy hover:text-fimi-turquoise font-medium py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Referenzen
-              </Link>
 
               <Link
                 href="/blog"
