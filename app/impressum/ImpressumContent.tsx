@@ -302,11 +302,11 @@ export default function ImpressumContent() {
                     {/* Favicon + Firmenname */}
                     <div className="flex items-center gap-3 mb-3">
                       <Image
-                        src="/FIMI-LOGO/Fimi-Favicon_Transparent.png"
+                        src="/FIMI-LOGO/Fimi-Favicon.png"
                         alt="FIMI"
                         width={40}
                         height={40}
-                        className="flex-shrink-0"
+                        className="flex-shrink-0 rounded-[6px]"
                       />
                       <h3 className="font-extrabold text-[#012956] text-lg leading-tight">FIMI Gebäudereinigung GmbH</h3>
                     </div>
@@ -336,12 +336,13 @@ export default function ImpressumContent() {
                   {/* Custom Favicon Map Pin */}
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full z-10 pointer-events-none">
                     <div className="relative">
-                      <div className="w-12 h-12 bg-[#012956] rounded-full flex items-center justify-center shadow-lg border-2 border-white">
+                      <div className="w-12 h-12 rounded-full flex items-center justify-center shadow-lg border-2 border-white overflow-hidden">
                         <Image
-                          src="/FIMI-LOGO/Fimi-Favicon_Transparent.png"
+                          src="/FIMI-LOGO/Fimi-Favicon.png"
                           alt="FIMI Standort"
-                          width={32}
-                          height={32}
+                          width={48}
+                          height={48}
+                          className="object-cover"
                         />
                       </div>
                       {/* Pin Spitze */}
