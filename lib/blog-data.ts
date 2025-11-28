@@ -146,15 +146,121 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: '2',
-    slug: 'artikel-2',
-    title: 'Artikel 2 - Platzhalter',
-    excerpt: 'Kurzbeschreibung folgt.',
-    content: '<p>Inhalt folgt.</p>',
-    image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=800&auto=format&fit=crop',
+    slug: 'eu-oekodesign-verordnung-espr-reinigung',
+    title: 'Nachhaltigkeit wird Pflicht: Die neue EU-Ökodesign-Verordnung (ESPR) und ihre Folgen',
+    excerpt: 'Im Rahmen des European Green Deal trat im Juli 2024 die neue Ökodesign-Verordnung (ESPR) in Kraft. Sie zielt darauf ab, nachhaltige Produkte zur Norm zu machen und hat weitreichende Folgen für die Gebäudereinigungsbranche, da auch Reinigungsmittel zu den priorisierten Produktgruppen gehören.',
+    content: `
+      <!-- Key Facts Box -->
+      <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 24px 28px; margin-bottom: 32px;">
+        <p style="color: #109387; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px;">Das Wichtigste auf einen Blick</p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">ESPR</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Neue EU-Verordnung</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">Juli 2024</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">In Kraft getreten</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">50 %</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Zertifizierte Produkte (EU Ecolabel)</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Die Europäische Union verschärft ihr Tempo auf dem Weg zur Klimaneutralität. Ein zentraler Baustein des <strong style="font-weight: 800; color: #012956;">"EU Green Deal"</strong> ist die neue Verordnung für das Ökodesign nachhaltiger Produkte (Ecodesign for Sustainable Products Regulation, ESPR), die am <strong style="font-weight: 800; color: #012956;">18. Juli 2024</strong> in Kraft getreten ist. Sie ersetzt die bisherige Ökodesign-Richtlinie und erweitert deren Anwendungsbereich massiv – mit direkten Auswirkungen auf die professionelle Gebäudereinigung.</p>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">ESPR: Nachhaltigkeit als Mindestanforderung</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Das Ziel der ESPR ist klar definiert: Produkte auf dem EU-Binnenmarkt sollen langlebiger, energie- und ressourceneffizienter sowie leichter recycelbar sein. Anders als bisher sind nicht mehr nur energieverbrauchende Produkte betroffen, sondern nahezu alle physischen Waren.</p>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8; margin-top: 16px;">Für die Reinigungsbranche besonders relevant: <strong style="font-weight: 800; color: #012956;">Reinigungsmittel und Chemikalien</strong> gehören zu den ersten Produktgruppen, für die die EU-Kommission nun spezifische ökologische Mindestanforderungen festlegen wird.</p>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Was bedeutet das für die Branche?</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Die neuen Regelungen werden den Markt für Reinigungschemikalien verändern. Produkte, die hohe Umweltstandards nicht erfüllen, könnten langfristig durch nachhaltigere Alternativen ersetzt werden müssen.</p>
+
+      <!-- Auswirkungen Cards -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0;">
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Anpassung</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Umstellung auf ESPR-konforme Produkte</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Transparenz</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Digitaler Produktpass mit Nachhaltigkeitsdaten</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Effizienz</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Dosiersysteme & wassersparende Methoden</p>
+        </div>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Die Rolle von EU Ecolabel und Umweltmanagement</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Bereits etablierte Umweltzeichen wie das <strong style="font-weight: 800; color: #012956;">EU Ecolabel</strong> bieten eine gute Orientierung. Das EU Ecolabel für Reinigungsdienste fordert beispielsweise, dass mindestens <strong style="font-weight: 800; color: #012956;">50% der verwendeten Produkte</strong> umweltzertifiziert sein müssen. Es setzt strenge Limits für gefährliche Inhaltsstoffe und fördert die korrekte Dosierung durch geschultes Personal.</p>
+
+      <!-- Zertifizierungen Vergleich -->
+      <div style="background: #f8f9fa; border-radius: 6px; padding: 20px; margin: 20px 0;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="border-bottom: 2px solid #e5e7eb;">
+              <th style="text-align: left; padding: 10px 14px; color: #012956; font-weight: 800; font-size: 14px;">Zertifizierung</th>
+              <th style="text-align: center; padding: 10px 14px; color: #012956; font-weight: 800; font-size: 14px;">Fokus</th>
+              <th style="text-align: center; padding: 10px 14px; color: #012956; font-weight: 800; font-size: 14px;">Anforderungen</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 10px 14px; font-weight: 700; font-size: 14px; color: #374151;">EU Ecolabel</td>
+              <td style="text-align: center; padding: 10px 14px; color: #6b7280; font-weight: 600; font-size: 14px;">Produkte & Dienste</td>
+              <td style="text-align: center; padding: 10px 14px; color: #109387; font-weight: 700; font-size: 14px;">50% zertifizierte Produkte</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 10px 14px; font-weight: 700; font-size: 14px; color: #374151;">ISO 14001</td>
+              <td style="text-align: center; padding: 10px 14px; color: #6b7280; font-weight: 600; font-size: 14px;">Umweltmanagement</td>
+              <td style="text-align: center; padding: 10px 14px; color: #109387; font-weight: 700; font-size: 14px;">Systematische Verbesserung</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px; font-weight: 700; font-size: 14px; color: #374151;">EMAS</td>
+              <td style="text-align: center; padding: 10px 14px; color: #6b7280; font-weight: 600; font-size: 14px;">Umweltmanagement+</td>
+              <td style="text-align: center; padding: 10px 14px; color: #109387; font-weight: 700; font-size: 14px;">Strengste Anforderungen</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Zusätzlich setzen professionelle Dienstleister auf Umweltmanagementsysteme wie <strong style="font-weight: 800; color: #012956;">ISO 14001</strong> oder das noch strengere <strong style="font-weight: 800; color: #012956;">EMAS</strong> (Eco-Management and Audit Scheme). Diese Systeme helfen, die Umweltleistung systematisch zu verbessern und die Einhaltung rechtlicher Vorgaben sicherzustellen.</p>
+
+      <!-- FIMI Highlight Box -->
+      <div style="background: linear-gradient(135deg, #109387 0%, #0d7d72 100%); border-radius: 6px; padding: 24px 28px; margin: 28px 0;">
+        <p style="color: white; font-size: 17px; font-weight: 800; margin-bottom: 10px;">FIMI setzt auf Nachhaltigkeit</p>
+        <p style="color: rgba(255,255,255,0.95); font-size: 14px; font-weight: 600; line-height: 1.8;">Die ESPR ist ein klares Signal: Nachhaltigkeit wird zur regulatorischen Anforderung. FIMI Gebäudereinigung setzt bereits heute auf umweltfreundliche Verfahren und zertifizierte Produkte, um unseren Kunden in <a href="/kontakt" style="color: white; font-weight: 800; text-decoration: underline;">München, Landshut und Regensburg</a> eine zukunftssichere Dienstleistung zu bieten.</p>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Weiterführende Informationen</h3>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
+          <a href="https://environment.ec.europa.eu/topics/circular-economy/ecodesign-sustainable-products-regulation_en" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">EU-Kommission – Ökodesign-Verordnung (ESPR) →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Offizielle Seite der EU zur neuen Verordnung</p>
+        </li>
+        <li style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
+          <a href="https://environment.ec.europa.eu/topics/circular-economy/eu-ecolabel-home/product-groups-and-criteria/services/cleaning-services_en" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">EU Ecolabel für Reinigungsdienste →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Kriterien und Vorteile des EU-Umweltzeichens</p>
+        </li>
+        <li style="padding: 12px 0;">
+          <a href="https://www.izu.bayern.de/praxis/detail_praxis.php?pid=0203010100206" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">IZU Bayern – ISO 14001 vs. EMAS →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Vergleich der Umweltmanagementsysteme</p>
+        </li>
+      </ul>
+    `,
+    image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=800&auto=format&fit=crop',
     category: 'news',
     author: 'FIMI Team',
-    date: '2024-09-20',
-    readTime: 3,
+    date: '2024-10-15',
+    readTime: 5,
+    sources: [
+      'https://environment.ec.europa.eu/topics/circular-economy/ecodesign-sustainable-products-regulation_en',
+      'https://www.hza-seminare.de/zoll-news/689/green-deal-eu-gruendet-sachverstaendigengruppe-fuer-oekodesign',
+      'https://www.izu.bayern.de/praxis/detail_praxis.php?pid=0203010100206'
+    ]
   },
   {
     id: '3',
