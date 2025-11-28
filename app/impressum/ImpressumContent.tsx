@@ -90,16 +90,16 @@ export default function ImpressumContent() {
 
                 {/* Navigation */}
                 <nav className="bg-[#f8f9fa] rounded-[6px] p-4">
-                  <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-3">Navigation</p>
+                  <p className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-3">Navigation</p>
                   <div className="space-y-1">
                     {navItems.map((item) => (
                       <a
                         key={item.id}
                         href={`#${item.id}`}
-                        className={`block px-3 py-2 rounded-[6px] font-semibold text-sm transition-all ${
+                        className={`block px-3 py-2.5 rounded-[6px] font-bold transition-all ${
                           activeSection === item.id
                             ? 'bg-[#109387] text-white'
-                            : 'text-[#012956]/70 hover:bg-white hover:text-[#109387]'
+                            : 'text-[#012956] hover:bg-white hover:text-[#109387]'
                         }`}
                       >
                         {item.label}
@@ -111,32 +111,32 @@ export default function ImpressumContent() {
                 {/* Support Badge */}
                 <div className="bg-[#012956] rounded-[6px] p-4">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-white/60 font-semibold text-xs uppercase tracking-wider">Support</span>
-                    <span className={`flex items-center gap-1.5 text-xs font-semibold ${isOnline ? 'text-green-400' : 'text-gray-400'}`}>
+                    <span className="text-white/60 font-bold text-sm uppercase tracking-wider">Support</span>
+                    <span className={`flex items-center gap-1.5 text-sm font-bold ${isOnline ? 'text-green-400' : 'text-gray-400'}`}>
                       <span className={`w-2 h-2 rounded-full ${isOnline ? 'bg-green-400 animate-pulse' : 'bg-gray-400'}`} />
                       {isOnline ? 'Online' : 'Offline'}
                     </span>
                   </div>
-                  <a href="mailto:info@fimi-service.de" className="text-white font-bold hover:text-[#109387] transition-colors">
+                  <a href="mailto:info@fimi-service.de" className="text-white font-extrabold text-lg hover:text-[#109387] transition-colors">
                     info@fimi-service.de
                   </a>
-                  <p className="text-white/50 text-sm font-semibold mt-1">Mo-Fr: 08:00-18:00</p>
+                  <p className="text-white/50 font-bold mt-1">Mo-Fr: 08:00-18:00</p>
                 </div>
 
                 {/* Quick Links */}
                 <div className="bg-[#f8f9fa] rounded-[6px] p-4">
-                  <p className="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-3">Schnellzugriffe</p>
+                  <p className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-3">Schnellzugriffe</p>
                   <div className="space-y-2">
-                    <Link href="/datenschutz" className="flex items-center gap-2 text-[#012956]/70 hover:text-[#109387] font-semibold text-sm transition-colors">
-                      <Shield size={16} />
+                    <Link href="/datenschutz" className="flex items-center gap-2 text-[#012956] hover:text-[#109387] font-bold transition-colors">
+                      <Shield size={18} />
                       Datenschutz
                     </Link>
-                    <Link href="/kontakt" className="flex items-center gap-2 text-[#012956]/70 hover:text-[#109387] font-semibold text-sm transition-colors">
-                      <MessageSquare size={16} />
+                    <Link href="/kontakt" className="flex items-center gap-2 text-[#012956] hover:text-[#109387] font-bold transition-colors">
+                      <MessageSquare size={18} />
                       Kontakt
                     </Link>
-                    <Link href="/agb" className="flex items-center gap-2 text-[#012956]/70 hover:text-[#109387] font-semibold text-sm transition-colors">
-                      <FileText size={16} />
+                    <Link href="/agb" className="flex items-center gap-2 text-[#012956] hover:text-[#109387] font-bold transition-colors">
+                      <FileText size={18} />
                       AGB
                     </Link>
                   </div>
@@ -156,19 +156,19 @@ export default function ImpressumContent() {
 
                 <div className="space-y-4">
                   <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
-                    <div className="text-gray-500 font-semibold text-sm w-40 flex-shrink-0">Firma</div>
-                    <div className="text-[#012956] font-semibold">FIMI Gebäudereinigung GmbH</div>
+                    <div className="text-gray-500 font-bold w-40 flex-shrink-0">Firma</div>
+                    <div className="text-[#012956] font-extrabold text-lg">FIMI Gebäudereinigung GmbH</div>
                   </div>
 
                   <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
-                    <div className="text-gray-500 font-semibold text-sm w-40 flex-shrink-0">Webseite</div>
-                    <div className="text-[#109387] font-semibold">www.fimi-gebaeudereinigung.de</div>
+                    <div className="text-gray-500 font-bold w-40 flex-shrink-0">Webseite</div>
+                    <div className="text-[#109387] font-bold">www.fimi-gebaeudereinigung.de</div>
                   </div>
 
                   <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
-                    <div className="text-gray-500 font-semibold text-sm w-40 flex-shrink-0">Adresse</div>
+                    <div className="text-gray-500 font-bold w-40 flex-shrink-0">Adresse</div>
                     <div className="flex items-start gap-3 flex-1">
-                      <div className="text-[#012956] font-semibold">
+                      <div className="text-[#012956] font-bold">
                         Kellerstr. 39<br />
                         84036 Landshut<br />
                         Deutschland
@@ -184,10 +184,10 @@ export default function ImpressumContent() {
                   </div>
 
                   <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
-                    <div className="text-gray-500 font-semibold text-sm w-40 flex-shrink-0">Geschäftsführung</div>
+                    <div className="text-gray-500 font-bold w-40 flex-shrink-0">Geschäftsführung</div>
                     <div>
-                      <div className="text-[#012956] font-semibold">Ntonalnt Tzoutzis & Ergest Qiraj</div>
-                      <p className="text-gray-500 text-sm mt-1">Vertretungsberechtigte Gesellschafter und inhaltlich verantwortlich gemäß § 18 Abs. 2 MStV</p>
+                      <div className="text-[#012956] font-extrabold">Ntonalnt Tzoutzis & Ergest Qiraj</div>
+                      <p className="text-gray-600 font-semibold text-sm mt-1">Vertretungsberechtigte Gesellschafter und inhaltlich verantwortlich gemäß § 18 Abs. 2 MStV</p>
                     </div>
                   </div>
                 </div>
@@ -201,22 +201,19 @@ export default function ImpressumContent() {
 
                 <div className="space-y-4">
                   <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
-                    <div className="text-gray-500 font-semibold text-sm w-40 flex-shrink-0">Registergericht</div>
-                    <div className="text-[#012956] font-semibold">Amtsgericht Landshut</div>
+                    <div className="text-gray-500 font-bold w-40 flex-shrink-0">Registergericht</div>
+                    <div className="text-[#012956] font-bold">Amtsgericht Landshut</div>
                   </div>
 
                   <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
-                    <div className="text-gray-500 font-semibold text-sm w-40 flex-shrink-0">Handelsregister</div>
-                    <div>
-                      <div className="text-[#012956] font-semibold">In Bearbeitung</div>
-                      <p className="text-amber-600 text-sm mt-1 bg-amber-50 px-2 py-1 rounded inline-block">Eintragung wird aktuell bearbeitet</p>
-                    </div>
+                    <div className="text-gray-500 font-bold w-40 flex-shrink-0">Handelsregister</div>
+                    <div className="text-[#012956] font-bold">In Bearbeitung</div>
                   </div>
 
                   <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
-                    <div className="text-gray-500 font-semibold text-sm w-40 flex-shrink-0">Umsatzsteuer-ID</div>
+                    <div className="text-gray-500 font-bold w-40 flex-shrink-0">Umsatzsteuer-ID</div>
                     <div className="flex items-center gap-3">
-                      <div className="text-[#012956] font-semibold font-mono">DE347549925</div>
+                      <div className="text-[#012956] font-extrabold font-mono text-lg">DE347549925</div>
                       <button
                         onClick={() => copyToClipboard('DE347549925', 'ust')}
                         className="p-2 rounded-[6px] bg-[#f8f9fa] hover:bg-[#109387] hover:text-white text-gray-500 transition-all"
@@ -237,9 +234,9 @@ export default function ImpressumContent() {
 
                 <div className="space-y-4">
                   <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
-                    <div className="text-gray-500 font-semibold text-sm w-40 flex-shrink-0">Telefon</div>
+                    <div className="text-gray-500 font-bold w-40 flex-shrink-0">Telefon</div>
                     <div className="flex items-center gap-3">
-                      <a href="tel:+4917472254730" className="text-[#109387] font-bold hover:text-[#012956] transition-colors">
+                      <a href="tel:+4917472254730" className="text-[#109387] font-extrabold text-lg hover:text-[#012956] transition-colors">
                         0174 722 5473
                       </a>
                       <button
@@ -253,9 +250,9 @@ export default function ImpressumContent() {
                   </div>
 
                   <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
-                    <div className="text-gray-500 font-semibold text-sm w-40 flex-shrink-0">E-Mail</div>
+                    <div className="text-gray-500 font-bold w-40 flex-shrink-0">E-Mail</div>
                     <div className="flex items-center gap-3">
-                      <a href="mailto:info@fimi-service.de" className="text-[#109387] font-bold hover:text-[#012956] transition-colors">
+                      <a href="mailto:info@fimi-service.de" className="text-[#109387] font-extrabold text-lg hover:text-[#012956] transition-colors">
                         info@fimi-service.de
                       </a>
                       <button
@@ -269,8 +266,8 @@ export default function ImpressumContent() {
                   </div>
 
                   <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
-                    <div className="text-gray-500 font-semibold text-sm w-40 flex-shrink-0">Antwortzeit</div>
-                    <div className="text-[#012956] font-semibold">Innerhalb von 24 Stunden</div>
+                    <div className="text-gray-500 font-bold w-40 flex-shrink-0">Antwortzeit</div>
+                    <div className="text-[#012956] font-bold">Innerhalb von 24 Stunden</div>
                   </div>
                 </div>
               </section>
@@ -281,9 +278,20 @@ export default function ImpressumContent() {
                   Standort
                 </h2>
 
-                <p className="text-gray-700 font-medium mb-6">
+                <p className="text-gray-700 font-bold mb-6">
                   Unser Firmensitz befindet sich in Landshut, Niederbayern. Persönliche Termine sind nach vorheriger Vereinbarung jederzeit möglich.
                 </p>
+
+                {/* 8 Einsatzgebiete Badge */}
+                <div className="bg-[#012956] rounded-[6px] p-4 mb-6 flex items-center gap-4">
+                  <div className="w-12 h-12 bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0">
+                    <MapPin size={24} className="text-white" />
+                  </div>
+                  <div>
+                    <p className="text-white font-extrabold text-lg">8 Einsatzgebiete in Bayern</p>
+                    <p className="text-white/70 font-bold text-sm">Landshut · München · Regensburg · Ingolstadt · Freising · Erding · Straubing · Passau</p>
+                  </div>
+                </div>
 
                 {/* Map Card */}
                 <div className="relative rounded-[6px] overflow-hidden bg-[#012956]">
