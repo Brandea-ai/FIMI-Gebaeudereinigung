@@ -1,9 +1,9 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
-import Image from 'next/image'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import './impressum.css'
+import Image from 'next/image'
+import { Phone, Mail, MapPin, Clock, Copy, Check, Shield, FileText, MessageSquare, ExternalLink } from 'lucide-react'
 
 export default function ImpressumContent() {
   const [isOnline, setIsOnline] = useState(false)
@@ -66,85 +66,79 @@ export default function ImpressumContent() {
   return (
     <>
       {/* Hero Section */}
-      <section className="impressum-hero">
-        <div className="impressum-hero-bg">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=2940&auto=format&fit=crop"
-            alt="Professionelle Gebaeudereinigung"
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-          />
-          <div className="impressum-hero-overlay" />
-        </div>
-        <div className="impressum-hero-content">
-          <p className="impressum-hero-label">Rechtliches</p>
-          <h1 className="impressum-hero-title">Impressum</h1>
-          <p className="impressum-hero-subtitle">
-            Rechtliche Informationen zur FIMI Gebaeudereinigung GmbH
+      <section className="bg-[#012956] py-20 lg:py-24">
+        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
+          <p className="text-[#109387] font-semibold text-sm uppercase tracking-wider mb-4">
+            Rechtliches
+          </p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
+            Impressum
+          </h1>
+          <p className="mt-6 text-white/60 font-semibold text-lg max-w-2xl">
+            Rechtliche Informationen zur FIMI Gebäudereinigung GmbH
           </p>
         </div>
       </section>
 
       {/* Main Content */}
-      <main className="impressum-main">
-        <div className="impressum-container">
-          <div className="impressum-layout">
+      <section className="py-16 lg:py-24">
+        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
+          <div className="flex gap-12 lg:gap-20">
 
             {/* Sticky Sidebar */}
-            <aside className="impressum-sidebar">
-              <div className="sidebar-inner">
+            <aside className="hidden lg:block w-72 flex-shrink-0">
+              <div className="sticky top-32 space-y-6">
 
                 {/* Navigation */}
-                <nav className="sidebar-nav">
-                  <p className="sidebar-nav-title">Navigation</p>
-                  {navItems.map((item) => (
-                    <a
-                      key={item.id}
-                      href={`#${item.id}`}
-                      className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
-                    >
-                      {item.label}
-                    </a>
-                  ))}
+                <nav className="bg-[#f8f9fa] rounded-[6px] p-4">
+                  <p className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-3">Navigation</p>
+                  <div className="space-y-1">
+                    {navItems.map((item) => (
+                      <a
+                        key={item.id}
+                        href={`#${item.id}`}
+                        className={`block px-3 py-2.5 rounded-[6px] font-bold transition-all ${
+                          activeSection === item.id
+                            ? 'bg-[#109387] text-white'
+                            : 'text-[#012956] hover:bg-white hover:text-[#109387]'
+                        }`}
+                      >
+                        {item.label}
+                      </a>
+                    ))}
+                  </div>
                 </nav>
 
                 {/* Support Badge */}
-                <div className="support-badge">
-                  <div className="support-header">
-                    <span className="support-label">Support</span>
-                    <span className={`status-indicator ${isOnline ? 'online' : 'offline'}`}>
-                      <span className="status-dot" />
+                <div className="bg-[#012956] rounded-[6px] p-4">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-white/60 font-bold text-sm uppercase tracking-wider">Support</span>
+                    <span className={`flex items-center gap-1.5 text-sm font-bold ${isOnline ? 'text-green-400' : 'text-gray-400'}`}>
+                      <span className={`w-2 h-2 rounded-full ${isOnline ? 'bg-green-400 animate-pulse' : 'bg-gray-400'}`} />
                       {isOnline ? 'Online' : 'Offline'}
                     </span>
                   </div>
-                  <a href="mailto:info@fimi-service.de" className="support-email">
+                  <a href="mailto:info@fimi-service.de" className="text-white font-extrabold text-lg hover:text-[#109387] transition-colors">
                     info@fimi-service.de
                   </a>
-                  <p className="support-hours">Mo-Fr: 08:00-18:00</p>
-                  <p className="support-emergency">Notfall: 2h Reaktionszeit</p>
+                  <p className="text-white/50 font-bold mt-2">Mo-Fr: 08:00-18:00</p>
+                  <p className="text-[#109387] font-bold text-sm">Notfall: 2h Reaktionszeit</p>
                 </div>
 
                 {/* Quick Links */}
-                <div className="quick-links">
-                  <h3 className="quick-links-title">Schnellzugriffe</h3>
-                  <div className="quick-links-list">
-                    <Link href="/datenschutz" className="quick-link">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                      </svg>
+                <div className="bg-[#f8f9fa] rounded-[6px] p-4">
+                  <p className="text-sm text-gray-500 font-bold uppercase tracking-wider mb-3">Schnellzugriffe</p>
+                  <div className="space-y-2">
+                    <Link href="/datenschutz" className="flex items-center gap-2 text-[#012956] hover:text-[#109387] font-bold transition-colors">
+                      <Shield size={18} />
                       Datenschutz
                     </Link>
-                    <Link href="/kontakt" className="quick-link">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                      </svg>
+                    <Link href="/kontakt" className="flex items-center gap-2 text-[#012956] hover:text-[#109387] font-bold transition-colors">
+                      <MessageSquare size={18} />
                       Kontakt
                     </Link>
-                    <Link href="/agb" className="quick-link">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                        <polyline points="14 2 14 8 20 8"/>
-                      </svg>
+                    <Link href="/agb" className="flex items-center gap-2 text-[#012956] hover:text-[#109387] font-bold transition-colors">
+                      <FileText size={18} />
                       AGB
                     </Link>
                   </div>
@@ -154,103 +148,80 @@ export default function ImpressumContent() {
             </aside>
 
             {/* Main Content */}
-            <div className="impressum-content">
+            <div className="flex-1 min-w-0 space-y-12">
 
               {/* Anbieterinformation */}
-              <section id="anbieter" className="content-block">
-                <h2 className="block-title">Anbieterinformation</h2>
+              <section id="anbieter" className="scroll-mt-8">
+                <h2 className="text-2xl font-bold text-[#012956] mb-6 pb-3 border-b-2 border-[#109387]">
+                  Anbieterinformation
+                </h2>
 
-                <div className="info-row">
-                  <div className="info-label">Firma</div>
-                  <div className="info-value">FIMI Gebaeudereinigung GmbH</div>
-                </div>
-
-                <div className="info-row">
-                  <div className="info-label">Webseite</div>
-                  <div className="info-value">
-                    <a href="https://fimi-service.de" className="info-link-inline">www.fimi-service.de</a>
+                <div className="space-y-4">
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
+                    <div className="text-gray-500 font-bold w-40 flex-shrink-0">Firma</div>
+                    <div className="text-[#012956] font-extrabold text-lg">FIMI Gebäudereinigung GmbH</div>
                   </div>
-                </div>
 
-                <div className="info-row">
-                  <div className="info-label">Adresse</div>
-                  <div className="info-value">
-                    <div className="info-value-with-copy">
-                      <div>
-                        Kellerstr. 39<br/>
-                        84036 Landshut<br/>
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
+                    <div className="text-gray-500 font-bold w-40 flex-shrink-0">Webseite</div>
+                    <div className="text-[#109387] font-bold">www.fimi-gebaeudereinigung.de</div>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
+                    <div className="text-gray-500 font-bold w-40 flex-shrink-0">Adresse</div>
+                    <div className="flex items-start gap-3 flex-1">
+                      <div className="text-[#012956] font-bold">
+                        Kellerstr. 39<br />
+                        84036 Landshut<br />
                         Deutschland
                       </div>
                       <button
                         onClick={() => copyToClipboard('Kellerstr. 39, 84036 Landshut, Deutschland', 'adresse')}
-                        className={`copy-btn ${copiedItem === 'adresse' ? 'copied' : ''}`}
+                        className="p-2 rounded-[6px] bg-[#f8f9fa] hover:bg-[#109387] hover:text-white text-gray-500 transition-all"
                         title="Adresse kopieren"
                       >
-                        {copiedItem === 'adresse' ? (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                          </svg>
-                        ) : (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                          </svg>
-                        )}
+                        {copiedItem === 'adresse' ? <Check size={16} /> : <Copy size={16} />}
                       </button>
                     </div>
                   </div>
-                </div>
 
-                <div className="info-row">
-                  <div className="info-label">Geschaeftsfuehrung</div>
-                  <div className="info-value">
-                    Ntonalnt Tzoutzis & Ergest Qiraj
-                    <span className="info-note">
-                      Vertretungsberechtigte Gesellschafter und inhaltlich verantwortlich gemaess Par. 18 Abs. 2 MStV
-                    </span>
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
+                    <div className="text-gray-500 font-bold w-40 flex-shrink-0">Geschäftsführung</div>
+                    <div>
+                      <div className="text-[#012956] font-extrabold">Ntonalnt Tzoutzis & Ergest Qiraj</div>
+                      <p className="text-gray-600 font-semibold text-sm mt-1">Vertretungsberechtigte Gesellschafter und inhaltlich verantwortlich gemäß § 18 Abs. 2 MStV</p>
+                    </div>
                   </div>
                 </div>
               </section>
 
               {/* Registerdaten */}
-              <section id="register" className="content-block">
-                <h2 className="block-title">Registerdaten</h2>
+              <section id="register" className="scroll-mt-8">
+                <h2 className="text-2xl font-bold text-[#012956] mb-6 pb-3 border-b-2 border-[#109387]">
+                  Registerdaten
+                </h2>
 
-                <div className="info-row">
-                  <div className="info-label">Registergericht</div>
-                  <div className="info-value">Amtsgericht Landshut</div>
-                </div>
-
-                <div className="info-row">
-                  <div className="info-label">Handelsregister</div>
-                  <div className="info-value">
-                    In Bearbeitung
-                    <span className="info-note info-note-placeholder">
-                      GmbH-Eintragung voraussichtlich Januar 2026
-                    </span>
+                <div className="space-y-4">
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
+                    <div className="text-gray-500 font-bold w-40 flex-shrink-0">Registergericht</div>
+                    <div className="text-[#012956] font-bold">Amtsgericht Landshut</div>
                   </div>
-                </div>
 
-                <div className="info-row">
-                  <div className="info-label">Umsatzsteuer-ID</div>
-                  <div className="info-value">
-                    <div className="info-value-with-copy">
-                      <div>DE347549925</div>
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
+                    <div className="text-gray-500 font-bold w-40 flex-shrink-0">Handelsregister</div>
+                    <div className="text-[#012956] font-bold">In Bearbeitung</div>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
+                    <div className="text-gray-500 font-bold w-40 flex-shrink-0">Umsatzsteuer-ID</div>
+                    <div className="flex items-center gap-3">
+                      <div className="text-[#012956] font-extrabold font-mono text-lg">DE347549925</div>
                       <button
                         onClick={() => copyToClipboard('DE347549925', 'ust')}
-                        className={`copy-btn ${copiedItem === 'ust' ? 'copied' : ''}`}
+                        className="p-2 rounded-[6px] bg-[#f8f9fa] hover:bg-[#109387] hover:text-white text-gray-500 transition-all"
                         title="UST-ID kopieren"
                       >
-                        {copiedItem === 'ust' ? (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                          </svg>
-                        ) : (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                          </svg>
-                        )}
+                        {copiedItem === 'ust' ? <Check size={16} /> : <Copy size={16} />}
                       </button>
                     </div>
                   </div>
@@ -258,161 +229,166 @@ export default function ImpressumContent() {
               </section>
 
               {/* Kontakt */}
-              <section id="kontakt" className="content-block">
-                <h2 className="block-title">Kontakt</h2>
+              <section id="kontakt" className="scroll-mt-8">
+                <h2 className="text-2xl font-bold text-[#012956] mb-6 pb-3 border-b-2 border-[#109387]">
+                  Kontakt
+                </h2>
 
-                <div className="info-row">
-                  <div className="info-label">Telefon</div>
-                  <div className="info-value">
-                    <div className="info-value-with-copy">
-                      <div>
-                        <a href="tel:+4987143033460" className="info-link-inline">0871 430 334 60</a>
-                      </div>
+                <div className="space-y-4">
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
+                    <div className="text-gray-500 font-bold w-40 flex-shrink-0">Telefon</div>
+                    <div className="flex items-center gap-3">
+                      <a href="tel:+4917472254730" className="text-[#109387] font-extrabold text-lg hover:text-[#012956] transition-colors">
+                        0174 722 5473
+                      </a>
                       <button
-                        onClick={() => copyToClipboard('+49 871 430 334 60', 'phone')}
-                        className={`copy-btn ${copiedItem === 'phone' ? 'copied' : ''}`}
+                        onClick={() => copyToClipboard('+49 174 722 5473', 'phone')}
+                        className="p-2 rounded-[6px] bg-[#f8f9fa] hover:bg-[#109387] hover:text-white text-gray-500 transition-all"
                         title="Telefonnummer kopieren"
                       >
-                        {copiedItem === 'phone' ? (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                          </svg>
-                        ) : (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                          </svg>
-                        )}
+                        {copiedItem === 'phone' ? <Check size={16} /> : <Copy size={16} />}
                       </button>
                     </div>
                   </div>
-                </div>
 
-                <div className="info-row">
-                  <div className="info-label">E-Mail</div>
-                  <div className="info-value">
-                    <div className="info-value-with-copy">
-                      <div>
-                        <a href="mailto:info@fimi-service.de" className="info-link-inline">info@fimi-service.de</a>
-                      </div>
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
+                    <div className="text-gray-500 font-bold w-40 flex-shrink-0">E-Mail</div>
+                    <div className="flex items-center gap-3">
+                      <a href="mailto:info@fimi-service.de" className="text-[#109387] font-extrabold text-lg hover:text-[#012956] transition-colors">
+                        info@fimi-service.de
+                      </a>
                       <button
                         onClick={() => copyToClipboard('info@fimi-service.de', 'email')}
-                        className={`copy-btn ${copiedItem === 'email' ? 'copied' : ''}`}
+                        className="p-2 rounded-[6px] bg-[#f8f9fa] hover:bg-[#109387] hover:text-white text-gray-500 transition-all"
                         title="E-Mail kopieren"
                       >
-                        {copiedItem === 'email' ? (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <polyline points="20 6 9 17 4 12"/>
-                          </svg>
-                        ) : (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
-                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
-                          </svg>
-                        )}
+                        {copiedItem === 'email' ? <Check size={16} /> : <Copy size={16} />}
                       </button>
                     </div>
                   </div>
-                </div>
 
-                <div className="info-row">
-                  <div className="info-label">Antwortzeit</div>
-                  <div className="info-value">Innerhalb von 24 Stunden</div>
+                  <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
+                    <div className="text-gray-500 font-bold w-40 flex-shrink-0">Antwortzeit</div>
+                    <div className="text-[#012956] font-bold">Innerhalb von 24 Stunden</div>
+                  </div>
                 </div>
               </section>
 
               {/* Standort */}
-              <section id="standort" className="content-block">
-                <h2 className="block-title">Standort</h2>
+              <section id="standort" className="scroll-mt-8">
+                <h2 className="text-2xl font-bold text-[#012956] mb-6 pb-3 border-b-2 border-[#109387]">
+                  Standort
+                </h2>
 
-                <p className="block-description">
-                  Unser Firmensitz befindet sich in Landshut, Niederbayern. Persoenliche Termine sind nach vorheriger Vereinbarung jederzeit moeglich.
+                <p className="text-gray-700 font-bold mb-6">
+                  Unser Firmensitz befindet sich in Landshut, Niederbayern. Persönliche Termine sind nach vorheriger Vereinbarung jederzeit möglich.
                 </p>
 
-                {/* Einsatzgebiete Badge */}
-                <div className="einsatzgebiete-badge">
-                  <div className="einsatzgebiete-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                      <circle cx="12" cy="10" r="3"/>
-                    </svg>
+                {/* 8 Einsatzgebiete Badge */}
+                <div className="bg-[#012956] rounded-[6px] p-4 mb-6 flex items-center gap-4">
+                  <div className="w-12 h-12 bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0">
+                    <MapPin size={24} className="text-white" />
                   </div>
-                  <div className="einsatzgebiete-content">
-                    <h3>8 Einsatzgebiete in Bayern</h3>
-                    <p>Landshut - Muenchen - Regensburg - Ingolstadt - Freising - Erding - Straubing - Passau</p>
+                  <div>
+                    <p className="text-white font-extrabold text-lg">8 Einsatzgebiete in Bayern</p>
+                    <p className="text-white/70 font-bold text-sm">Landshut · München · Regensburg · Ingolstadt · Freising · Erding · Straubing · Passau</p>
                   </div>
                 </div>
 
-                {/* Map */}
-                <div className="map-wrapper">
-                  <div className="map-overlay">
-                    <div className="map-overlay-logo">
+                {/* Map Card */}
+                <div className="relative rounded-[6px] overflow-hidden bg-[#012956]">
+                  {/* Map Overlay Info - breiter um Google-Text zu verdecken */}
+                  <div className="absolute top-4 left-4 z-10 bg-white rounded-[6px] p-5 shadow-lg w-80">
+                    {/* Favicon + Firmenname */}
+                    <div className="flex items-center gap-3 mb-3">
                       <Image
                         src="/FIMI-LOGO/Fimi-Favicon.png"
                         alt="FIMI"
-                        width={44}
-                        height={44}
+                        width={40}
+                        height={40}
+                        className="flex-shrink-0 rounded-[6px]"
                       />
-                      <h3 className="map-overlay-title">FIMI Gebaeudereinigung</h3>
+                      <h3 className="font-extrabold text-[#012956] text-lg leading-tight">FIMI Gebäudereinigung GmbH</h3>
                     </div>
-                    <p className="map-overlay-address">
-                      Kellerstr. 39<br/>
+                    <p className="text-gray-600 font-semibold mb-4">
+                      Kellerstr. 39<br />
                       84036 Landshut, Bayern
                     </p>
-                    <div className="map-overlay-actions">
+                    <div className="flex gap-2">
                       <a
                         href="https://www.google.com/maps/dir/?api=1&destination=Kellerstr.+39,+84036+Landshut"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="map-btn map-btn-primary"
+                        className="flex items-center gap-1 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm px-4 py-2.5 rounded-[6px] transition-colors"
                       >
                         Route planen
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
+                        <ExternalLink size={14} />
                       </a>
-                      <a href="tel:+4987143033460" className="map-btn map-btn-secondary">
+                      <a
+                        href="tel:+4917472254730"
+                        className="flex items-center gap-1 bg-[#012956] hover:bg-[#01203d] text-white font-bold text-sm px-4 py-2.5 rounded-[6px] transition-colors"
+                      >
                         Anrufen
                       </a>
                     </div>
                   </div>
-                  <div className="map-container">
-                    <iframe
-                      src="https://maps.google.com/maps?q=Kellerstra%C3%9Fe+39,+84036+Landshut,+Germany&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="FIMI Gebaeudereinigung Standort"
-                    />
+
+                  {/* Custom Favicon Map Pin */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full z-10 pointer-events-none">
+                    <div className="relative">
+                      <div className="w-12 h-12 rounded-full flex items-center justify-center shadow-lg border-2 border-white overflow-hidden">
+                        <Image
+                          src="/FIMI-LOGO/Fimi-Favicon.png"
+                          alt="FIMI Standort"
+                          width={48}
+                          height={48}
+                          className="object-cover"
+                        />
+                      </div>
+                      {/* Pin Spitze */}
+                      <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[8px] border-r-[8px] border-t-[12px] border-l-transparent border-r-transparent border-t-[#012956]" />
+                    </div>
                   </div>
+
+                  {/* Map iframe */}
+                  <iframe
+                    src="https://maps.google.com/maps?q=Kellerstra%C3%9Fe+39,+84036+Landshut,+Germany&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="350"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="FIMI Gebäudereinigung Standort - Kellerstr. 39, 84036 Landshut"
+                  />
                 </div>
               </section>
 
               {/* Streitbeilegung */}
-              <section id="streit" className="content-block streit-section">
-                <h2 className="block-title">Streitbeilegung</h2>
+              <section id="streit" className="scroll-mt-8">
+                <h2 className="text-2xl font-bold text-[#012956] mb-6 pb-3 border-b-2 border-[#109387]">
+                  Streitbeilegung
+                </h2>
 
-                <div className="streit-box">
-                  <div className="streit-item">
-                    <h3>EU-Streitschlichtung</h3>
-                    <p>
-                      Die Europaeische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{' '}
+                <div className="bg-[#f8f9fa] rounded-[6px] p-6 space-y-4">
+                  <div>
+                    <h3 className="font-bold text-[#012956] mb-2">EU-Streitschlichtung</h3>
+                    <p className="text-gray-700 font-medium">
+                      Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{' '}
                       <a
                         href="https://ec.europa.eu/consumers/odr"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="streit-link"
+                        className="text-[#109387] hover:text-[#012956] font-semibold transition-colors"
                       >
                         ec.europa.eu/consumers/odr
                       </a>
                     </p>
                   </div>
-                  <div className="streit-item">
-                    <h3>Verbraucherstreitbeilegung</h3>
-                    <p>
+
+                  <div>
+                    <h3 className="font-bold text-[#012956] mb-2">Verbraucherstreitbeilegung</h3>
+                    <p className="text-gray-700 font-medium">
                       Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
                     </p>
                   </div>
@@ -423,7 +399,7 @@ export default function ImpressumContent() {
 
           </div>
         </div>
-      </main>
+      </section>
     </>
   )
 }
