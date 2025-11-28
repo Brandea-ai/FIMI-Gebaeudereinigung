@@ -53,6 +53,7 @@ const sitemapData = {
     { name: 'Impressum', href: '/impressum' },
     { name: 'Datenschutz', href: '/datenschutz' },
     { name: 'AGB', href: '/agb' },
+    { name: 'Glossar', href: '/glossar' },
   ],
 }
 

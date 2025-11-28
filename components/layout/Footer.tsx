@@ -176,6 +176,7 @@ export default function Footer() {
                 <li><Link href="/datenschutz" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Datenschutz</Link></li>
                 <li><Link href="/agb" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">AGB</Link></li>
                 <li><Link href="/sitemap" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Sitemap</Link></li>
+                <li><Link href="/glossar" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Glossar</Link></li>
               </ul>
             </div>
 
