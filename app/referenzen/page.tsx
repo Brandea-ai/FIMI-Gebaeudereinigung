@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Award, Building2, MapPin, Users, Maximize2, ChevronLeft, ChevronRight, X, Calendar, Tag, Briefcase, ArrowRight, CheckCircle } from 'lucide-react'
+import { Award, Building2, MapPin, Maximize2, ChevronLeft, ChevronRight, X, Calendar, Tag, ArrowRight, CheckCircle } from 'lucide-react'
 import { referenzen, getAllJahre, getReferenzStatistiken, type Referenz } from '@/lib/referenzen-data'
 import { leistungen } from '@/lib/leistungen-data'
 import { branchen } from '@/lib/branchen-data'
@@ -332,17 +332,7 @@ export default function ReferenzenPage() {
                         <Maximize2 className="w-4 h-4" />
                       </div>
 
-                      {/* Logo */}
-                      <div className="absolute bottom-4 left-4 bg-white rounded-[6px] p-2 shadow-lg">
-                        <Image
-                          src={referenz.logo}
-                          alt={referenz.firma}
-                          width={80}
-                          height={30}
-                          className="h-6 w-auto"
-                        />
-                      </div>
-                    </div>
+                                          </div>
 
                     {/* Content */}
                     <div className="p-6">
@@ -468,17 +458,6 @@ export default function ReferenzenPage() {
                     <X className="w-5 h-5" />
                   </button>
 
-                  {/* Logo */}
-                  <div className="mb-6">
-                    <Image
-                      src={selectedReferenz.logo}
-                      alt={selectedReferenz.firma}
-                      width={120}
-                      height={40}
-                      className="h-10 w-auto"
-                    />
-                  </div>
-
                   {/* Header */}
                   <div className="mb-6">
                     <div className="flex items-center gap-3 mb-3">
@@ -524,16 +503,7 @@ export default function ReferenzenPage() {
                       </div>
                     )}
 
-                    {selectedReferenz.mitarbeiter && (
-                      <div className="bg-[#f8f9fa] rounded-[6px] p-4">
-                        <div className="flex items-center gap-2 text-gray-500 text-sm font-semibold mb-1">
-                          <Users className="w-4 h-4" />
-                          Mitarbeiter
-                        </div>
-                        <div className="font-bold text-[#012956]">{selectedReferenz.mitarbeiter} Personen</div>
-                      </div>
-                    )}
-                  </div>
+                                      </div>
 
                   {/* Leistungen */}
                   <div className="mb-8">
@@ -583,13 +553,13 @@ export default function ReferenzenPage() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/kontakt"
+                <a
+                  href="#contact-form"
                   className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
                 >
                   Jetzt Besichtigung anfragen
                   <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                </Link>
+                </a>
                 <a
                   href="tel:+4987143033460"
                   className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-[#012956] font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"
