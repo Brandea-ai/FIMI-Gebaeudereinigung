@@ -144,8 +144,13 @@ export default function RootLayout({
   return (
     <html lang="de" className={inter.variable}>
       <head>
-        <link rel="icon" href="/FIMI-LOGO/Fimi-Favicon_Transparent.png" />
-        <link rel="apple-touch-icon" href="/FIMI-LOGO/Fimi-Favicon_Transparent.png" />
+        {/* Favicon für Light Mode (blauer Hintergrund) */}
+        <link rel="icon" href="/FIMI-LOGO/Fimi-Favicon.png" media="(prefers-color-scheme: light)" />
+        {/* Favicon für Dark Mode (weißes Icon) */}
+        <link rel="icon" href="/FIMI-LOGO/FIMI-FAVICON_weiße-Schrift.png" media="(prefers-color-scheme: dark)" />
+        {/* Fallback */}
+        <link rel="icon" href="/FIMI-LOGO/Fimi-Favicon.png" />
+        <link rel="apple-touch-icon" href="/FIMI-LOGO/Fimi-Favicon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
