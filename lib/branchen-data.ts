@@ -1031,7 +1031,7 @@ Logistikzentren und Lagerhallen haben eine Gemeinsamkeit: Sie sind groß. Sehr g
         loesung: 'Unsere Mitarbeiter sind eingewiesen und tragen Warnwesten. Wir koordinieren uns mit Ihrer Logistik.'
       }
     ],
-    services: ['Hallenreinigung', 'Bodenreinigung', 'Hochregalreinigung', 'Außenflächenreinigung', 'Rampenieinigung', 'Grundreinigung'],
+    services: ['Hallenreinigung', 'Bodenreinigung', 'Hochregalreinigung', 'Außenflächenreinigung', 'Rampenreinigung', 'Grundreinigung'],
     benefits: [
       'Leistungsstarke Maschinen für große Flächen',
       'Nachtschicht und Wochenende möglich',

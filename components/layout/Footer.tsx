@@ -115,11 +115,11 @@ export default function Footer() {
       <div className="bg-[#012956] py-16">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
-          {/* Main Grid - symmetrisch */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 lg:gap-16">
+          {/* Main Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 lg:gap-10">
 
             {/* Logo & Slogan */}
-            <div className="col-span-2 md:col-span-1">
+            <div className="col-span-2 md:col-span-3 lg:col-span-1">
               <Image
                 src="/FIMI-LOGO/FIMI-LOGO_Weiße-Schrift_Transparent.png"
                 alt="FIMI Gebäudereinigung"
@@ -144,12 +144,26 @@ export default function Footer() {
               </ul>
             </div>
 
+            {/* Branchen */}
+            <div>
+              <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-6">Branchen</h4>
+              <ul className="space-y-3">
+                <li><Link href="/branchen/buero-verwaltung" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Büro & Verwaltung</Link></li>
+                <li><Link href="/branchen/industrie-produktion" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Industrie & Produktion</Link></li>
+                <li><Link href="/branchen/gesundheitswesen" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Gesundheitswesen</Link></li>
+                <li><Link href="/branchen/gastronomie-hotel" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Gastronomie & Hotel</Link></li>
+                <li><Link href="/branchen" className="text-[#109387] font-semibold text-sm hover:text-white transition-colors">Alle Branchen →</Link></li>
+              </ul>
+            </div>
+
             {/* Unternehmen */}
             <div>
               <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-6">Unternehmen</h4>
               <ul className="space-y-3">
                 <li><Link href="/ueber-uns" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Über FIMI</Link></li>
+                <li><Link href="/karriere" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Karriere</Link></li>
                 <li><Link href="/referenzen" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Referenzen</Link></li>
+                <li><Link href="/neuigkeiten" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Neuigkeiten</Link></li>
                 <li><Link href="/kontakt" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Kontakt</Link></li>
               </ul>
             </div>

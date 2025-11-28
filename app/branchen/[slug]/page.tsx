@@ -8,6 +8,7 @@ import { BrancheGallery } from './_components/BrancheGallery'
 import { BrancheChallenges } from './_components/BrancheChallenges'
 import { BrancheServices } from './_components/BrancheServices'
 import { BrancheSEOContent } from './_components/BrancheSEOContent'
+import { BrancheRegionen } from './_components/BrancheRegionen'
 import { BrancheProcess } from './_components/BrancheProcess'
 import { BrancheFAQ } from './_components/BrancheFAQ'
 import { BrancheCTA } from './_components/BrancheCTA'
@@ -61,6 +62,9 @@ export default async function BranchePage({ params }: PageProps) {
 
       {/* SEO Content (500+ Wörter) */}
       <BrancheSEOContent branche={branche} />
+
+      {/* Geo-SEO: 8 Einsatzorte in Bayern */}
+      <BrancheRegionen branche={branche} />
 
       {/* Prozess-Schritte */}
       <BrancheProcess branche={branche} />

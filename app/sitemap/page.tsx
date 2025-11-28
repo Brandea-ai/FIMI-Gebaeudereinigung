@@ -10,7 +10,9 @@ const sitemapData = {
   hauptseiten: [
     { name: 'Startseite', href: '/' },
     { name: 'Über FIMI', href: '/ueber-uns' },
+    { name: 'Karriere', href: '/karriere' },
     { name: 'Referenzen', href: '/referenzen' },
+    { name: 'Neuigkeiten', href: '/neuigkeiten' },
     { name: 'Kontakt', href: '/kontakt' },
   ],
   leistungen: [
@@ -31,6 +33,21 @@ const sitemapData = {
     { name: 'Sonderreinigung', href: '/leistungen/sonderreinigung' },
     { name: 'Tiefgaragenreinigung', href: '/leistungen/tiefgaragenreinigung' },
     { name: 'Parkplatzreinigung', href: '/leistungen/parkplatzreinigung' },
+  ],
+  branchen: [
+    { name: 'Alle Branchen', href: '/branchen', isMain: true },
+    { name: 'Büro & Verwaltung', href: '/branchen/buero-verwaltung' },
+    { name: 'Industrie & Produktion', href: '/branchen/industrie-produktion' },
+    { name: 'Gesundheitswesen', href: '/branchen/gesundheitswesen' },
+    { name: 'Einzelhandel', href: '/branchen/einzelhandel' },
+    { name: 'Gastronomie & Hotellerie', href: '/branchen/gastronomie-hotel' },
+    { name: 'Bildung & Schulen', href: '/branchen/bildung-schulen' },
+    { name: 'Fitness & Sport', href: '/branchen/fitness-sport' },
+    { name: 'Logistik & Lager', href: '/branchen/logistik-lager' },
+    { name: 'Wohnungswirtschaft', href: '/branchen/wohnungswirtschaft' },
+    { name: 'Öffentliche Einrichtungen', href: '/branchen/oeffentliche-einrichtungen' },
+    { name: 'Banken & Versicherungen', href: '/branchen/banken-versicherungen' },
+    { name: 'Automotive', href: '/branchen/automotive' },
   ],
   rechtliches: [
     { name: 'Impressum', href: '/impressum' },

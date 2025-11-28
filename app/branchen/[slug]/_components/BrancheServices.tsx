@@ -6,8 +6,9 @@ interface BrancheServicesProps {
   branche: Branche
 }
 
-// Nur echte Leistungs-Seiten verlinken, KEINE /leistungen Übersicht
+// ALLE Services auf passende Leistungs-Seiten mappen
 const serviceToUrl: Record<string, string> = {
+  // Hauptleistungen
   'Unterhaltsreinigung': '/leistungen/unterhaltsreinigung',
   'Büroreinigung': '/leistungen/bueroreinigung',
   'Glasreinigung': '/leistungen/glasreinigung',
@@ -24,16 +25,69 @@ const serviceToUrl: Record<string, string> = {
   'Facility Management': '/leistungen/facility-management',
   'Hausmeisterservice': '/leistungen/hausmeisterservice',
   'Parkplatzreinigung': '/leistungen/parkplatzreinigung',
-  // Mapping für ähnliche Services auf passende Seiten
-  'Hochregalreinigung': '/leistungen/hallenreinigung',
-  'Bodenreinigung': '/leistungen/unterhaltsreinigung',
-  'Grundreinigung': '/leistungen/sonderreinigung',
-  'Desinfektion': '/leistungen/sonderreinigung',
+
+  // Büro & Verwaltung
   'Sanitärreinigung': '/leistungen/unterhaltsreinigung',
   'Teppichreinigung': '/leistungen/sonderreinigung',
   'Küchenreinigung': '/leistungen/unterhaltsreinigung',
   'Treppenhausreinigung': '/leistungen/unterhaltsreinigung',
+  'Bodenreinigung': '/leistungen/unterhaltsreinigung',
+
+  // Industrie & Produktion
+  'Hochregalreinigung': '/leistungen/hallenreinigung',
+  'Grundreinigung': '/leistungen/sonderreinigung',
+
+  // Gesundheitswesen
+  'Praxisreinigung': '/leistungen/unterhaltsreinigung',
+  'Flächendesinfektion': '/leistungen/sonderreinigung',
+  'Wartezimmerreinigung': '/leistungen/unterhaltsreinigung',
+  'Laborreinigung': '/leistungen/sonderreinigung',
+  'Desinfektion': '/leistungen/sonderreinigung',
+
+  // Einzelhandel
+  'Schaufensterreinigung': '/leistungen/glasreinigung',
+  'Tagesreinigung': '/leistungen/unterhaltsreinigung',
+  'Kassenbereichsreinigung': '/leistungen/unterhaltsreinigung',
+  'Lagerreinigung': '/leistungen/hallenreinigung',
+
+  // Gastronomie & Hotel
+  'Zimmerreinigung': '/leistungen/unterhaltsreinigung',
+  'Gastraumreinigung': '/leistungen/unterhaltsreinigung',
+  'Lobbyreinigung': '/leistungen/unterhaltsreinigung',
+  'Wellnessreinigung': '/leistungen/sonderreinigung',
+  'Veranstaltungsreinigung': '/leistungen/sonderreinigung',
+
+  // Bildung
+  'Klassenraumreinigung': '/leistungen/unterhaltsreinigung',
+  'Turnhallenreinigung': '/leistungen/hallenreinigung',
+  'Mensareinigung': '/leistungen/unterhaltsreinigung',
+  'Ferienreinigung': '/leistungen/sonderreinigung',
+
+  // Fitness
+  'Gerätedesinfektion': '/leistungen/sonderreinigung',
+  'Umkleidenreinigung': '/leistungen/unterhaltsreinigung',
+  'Duschbereichsreinigung': '/leistungen/unterhaltsreinigung',
+  'Kursraumreinigung': '/leistungen/unterhaltsreinigung',
+  'Saunareinigung': '/leistungen/sonderreinigung',
+
+  // Logistik
+  'Außenflächenreinigung': '/leistungen/aussenanlagenpflege',
+  'Rampenreinigung': '/leistungen/unterhaltsreinigung',
+
+  // Immobilien
   'Grünflächenpflege': '/leistungen/aussenanlagenpflege',
+
+  // Öffentliche Einrichtungen
+  'Ratssaalreinigung': '/leistungen/unterhaltsreinigung',
+
+  // Banken
+  'Schalterraumreinigung': '/leistungen/unterhaltsreinigung',
+  'SB-Bereichsreinigung': '/leistungen/unterhaltsreinigung',
+
+  // Autohäuser
+  'Showroom-Reinigung': '/leistungen/unterhaltsreinigung',
+  'Werkstattreinigung': '/leistungen/industriereinigung',
+  'Empfangsbereichsreinigung': '/leistungen/unterhaltsreinigung',
 }
 
 export function BrancheServices({ branche }: BrancheServicesProps) {
