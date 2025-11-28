@@ -85,12 +85,12 @@ export default function Footer() {
               <div className="bg-[#012956] rounded-[6px] p-6">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center">
-                    <p className="text-3xl font-bold text-[#109387]">8+</p>
-                    <p className="text-white/70 text-sm font-semibold">Jahre Erfahrung</p>
+                    <p className="text-3xl font-bold text-[#109387]">120+</p>
+                    <p className="text-white/70 text-sm font-semibold">Kundenprojekte</p>
                   </div>
                   <div className="text-center">
-                    <p className="text-3xl font-bold text-[#109387]">ISO</p>
-                    <p className="text-white/70 text-sm font-semibold">9001 & 14001</p>
+                    <p className="text-3xl font-bold text-[#109387]">8</p>
+                    <p className="text-white/70 text-sm font-semibold">Einsatzorte</p>
                   </div>
                 </div>
               </div>
@@ -102,7 +102,7 @@ export default function Footer() {
                 Anfrage senden
               </h3>
               <p className="text-gray-500 font-semibold mb-8">
-                Füllen Sie das Formular aus - wir melden uns innerhalb von 24 Stunden.
+                Füllen Sie das Formular aus - wir melden uns innerhalb von 2 Stunden.
               </p>
               <ContactForm />
             </div>

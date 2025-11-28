@@ -341,7 +341,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`mt-6 w-full flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group shadow-lg hover:shadow-xl ${
+          className={`mt-6 w-full flex items-center justify-center gap-3 bg-[#012956] hover:bg-[#01203d] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group shadow-lg hover:shadow-xl ${
             isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
           }`}
         >
@@ -359,7 +359,7 @@ export default function ContactForm() {
         </button>
 
         <p className="mt-4 text-center text-sm text-gray-500 font-semibold">
-          Wir melden uns innerhalb von 24 Stunden bei Ihnen.
+          Wir melden uns innerhalb von 2 Stunden bei Ihnen.
         </p>
       </form>
 
