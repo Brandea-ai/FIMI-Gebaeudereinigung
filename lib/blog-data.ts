@@ -37,7 +37,7 @@ export const blogPosts: BlogPost[] = [
       <p>Der Kernpunkt der Einigung ist die Anpassung des Branchenmindestlohns. Zum 1. Januar 2025 steigt der Lohn in der Einstiegs-Lohngruppe (LG 1), die für die klassische <a href="/leistungen/unterhaltsreinigung">Unterhaltsreinigung</a> maßgeblich ist, von 13,50 Euro auf <strong>14,25 Euro</strong> pro Stunde.</p>
       <p>Auch für qualifizierte Fachkräfte gibt es eine signifikante Erhöhung. In der Lohngruppe 6 (z.B. <a href="/leistungen/glasreinigung">Glas-</a> und <a href="/leistungen/fassadenreinigung">Fassadenreinigung</a>) steigt der Stundenlohn von 16,70 Euro auf <strong>17,65 Euro</strong>.</p>
 
-      <img src="/blog/artikel-1/content.jpg" alt="Professionelle Reinigungskraft bei der Arbeit" class="my-8 rounded-lg w-full" />
+      <img src="/blog/artikel-1/content.avif" alt="Professionelle Reinigungskraft bei der Arbeit" class="my-8 rounded-lg w-full" />
 
       <h3>Ausblick auf 2026</h3>
       <p>Der Tarifvertrag sieht eine weitere Stufe der Erhöhung zum 1. Januar 2026 vor:</p>
@@ -61,7 +61,7 @@ export const blogPosts: BlogPost[] = [
         <li><a href="https://igbau.de/Gebaeudereinigung.html" target="_blank" rel="noopener noreferrer">IG BAU Informationen zur Gebäudereinigung</a> – Perspektive der Gewerkschaft auf Arbeitsbedingungen und Tarife</li>
       </ul>
     `,
-    image: '/blog/artikel-1/hero.jpg',
+    image: '/blog/artikel-1/hero.avif',
     category: 'news',
     author: 'FIMI Team',
     date: '2025-01-15',
