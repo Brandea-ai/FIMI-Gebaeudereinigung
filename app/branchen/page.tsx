@@ -265,10 +265,13 @@ function matchesSearch(brancheSlug: string, searchQuery: string): boolean {
     branche.name.toLowerCase(),
     branche.shortName.toLowerCase(),
     branche.description.toLowerCase(),
-    branche.longDescription.toLowerCase(),
+    branche.headline.toLowerCase(),
+    branche.subheadline.toLowerCase(),
+    branche.seoContent.toLowerCase(),
     ...branche.keywords.map(k => k.toLowerCase()),
     ...branche.services.map(s => s.toLowerCase()),
-    ...branche.challenges.map(c => c.toLowerCase()),
+    ...branche.benefits.map(b => b.toLowerCase()),
+    ...branche.detailedChallenges.map(c => c.titel.toLowerCase() + ' ' + c.beschreibung.toLowerCase()),
     ...terms
   ].join(' ')
 
@@ -470,7 +473,7 @@ export default function BranchenPage() {
                     {/* Image */}
                     <div className="relative h-44 md:h-52 overflow-hidden">
                       <Image
-                        src={branche.image}
+                        src={branche.heroImage}
                         alt={branche.name}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-110"

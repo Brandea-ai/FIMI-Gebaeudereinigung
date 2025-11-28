@@ -1,35 +1,23 @@
-'use client'
-
-import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, ArrowLeft, Building2, Factory, Stethoscope, ShoppingBag, UtensilsCrossed, GraduationCap, Dumbbell, Warehouse, Home, Landmark, Banknote, Car, Check } from 'lucide-react'
+import { ArrowRight, ArrowLeft, Check, Building2 } from 'lucide-react'
 import { Branche } from '@/lib/branchen-data'
-
-const branchenIcons: Record<string, any> = {
-  Building2, Factory, Stethoscope, ShoppingBag, UtensilsCrossed, GraduationCap,
-  Dumbbell, Warehouse, Home, Landmark, Banknote, Car
-}
 
 interface BrancheHeroProps {
   branche: Branche
 }
 
 export function BrancheHero({ branche }: BrancheHeroProps) {
-  const IconComponent = branchenIcons[branche.icon] || Building2
-
   return (
-    <section className="relative bg-[#012956] pt-8 pb-12 md:pt-12 md:pb-20 lg:pt-16 lg:pb-28 overflow-hidden">
-      {/* Hintergrundbild mit Overlay */}
-      <div className="absolute inset-0">
-        <Image
-          src={branche.heroImage}
-          alt={branche.name}
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#012956] via-[#012956]/95 to-[#012956]/70" />
-      </div>
+    <section
+      className="relative bg-[#012956] pt-8 pb-12 md:pt-12 md:pb-20 lg:pt-16 lg:pb-28 overflow-hidden"
+      style={{
+        backgroundImage: `url(${branche.heroImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
+    >
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#012956] via-[#012956]/95 to-[#012956]/70" />
 
       <div className="relative w-full max-w-[1800px] mx-auto px-4 md:px-6 lg:px-12 xl:px-20">
         {/* Back Link */}
@@ -46,7 +34,7 @@ export function BrancheHero({ branche }: BrancheHeroProps) {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-[6px] bg-[#109387]/20 flex items-center justify-center">
-                <IconComponent size={24} strokeWidth={1.5} className="text-[#109387]" />
+                <Building2 size={24} strokeWidth={1.5} className="text-[#109387]" />
               </div>
               <span className="text-[#109387] font-bold text-xs md:text-sm uppercase tracking-[0.2em]">
                 {branche.shortName}
@@ -66,16 +54,18 @@ export function BrancheHero({ branche }: BrancheHeroProps) {
             </p>
 
             {/* Benefits Quick List */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3 mb-6 md:mb-8">
-              {branche.benefits.slice(0, 4).map((benefit, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <div className="w-5 h-5 rounded-full bg-[#109387]/20 flex items-center justify-center flex-shrink-0">
-                    <Check size={12} className="text-[#109387]" />
+            {branche.benefits && branche.benefits.length > 0 && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3 mb-6 md:mb-8">
+                {branche.benefits.slice(0, 4).map((benefit, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <div className="w-5 h-5 rounded-full bg-[#109387]/20 flex items-center justify-center flex-shrink-0">
+                      <Check size={12} className="text-[#109387]" />
+                    </div>
+                    <span className="text-white/80 text-sm">{benefit}</span>
                   </div>
-                  <span className="text-white/80 text-sm">{benefit}</span>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
@@ -95,25 +85,15 @@ export function BrancheHero({ branche }: BrancheHeroProps) {
             </div>
           </div>
 
-          {/* Rechte Seite - Keywords/Stats */}
+          {/* Rechte Seite - Stats */}
           <div className="hidden lg:block">
             <div className="bg-white/5 backdrop-blur-sm rounded-[12px] p-6 xl:p-8 border border-white/10">
               <p className="text-[#109387] font-bold text-xs uppercase tracking-[0.2em] mb-4">
-                Relevante Suchbegriffe
+                Unsere Expertise
               </p>
-              <div className="flex flex-wrap gap-2">
-                {branche.keywords.map((keyword, i) => (
-                  <span
-                    key={i}
-                    className="bg-white/10 text-white/80 text-xs font-medium px-3 py-1.5 rounded-full"
-                  >
-                    {keyword}
-                  </span>
-                ))}
-              </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-white/10">
+              <div className="grid grid-cols-3 gap-4">
                 <div className="text-center">
                   <p className="text-2xl xl:text-3xl font-bold text-white">8+</p>
                   <p className="text-white/60 text-xs mt-1">Jahre Erfahrung</p>
@@ -127,6 +107,23 @@ export function BrancheHero({ branche }: BrancheHeroProps) {
                   <p className="text-white/60 text-xs mt-1">Reaktionszeit</p>
                 </div>
               </div>
+
+              {/* Services Preview */}
+              {branche.services && branche.services.length > 0 && (
+                <div className="mt-6 pt-6 border-t border-white/10">
+                  <p className="text-white/60 text-xs mb-3">Unsere Leistungen:</p>
+                  <div className="flex flex-wrap gap-2">
+                    {branche.services.slice(0, 6).map((service, i) => (
+                      <span
+                        key={i}
+                        className="bg-white/10 text-white/80 text-xs font-medium px-3 py-1.5 rounded-full"
+                      >
+                        {service}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

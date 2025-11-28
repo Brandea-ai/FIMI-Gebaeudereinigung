@@ -1,46 +1,70 @@
-import Image from 'next/image'
-import { Check } from 'lucide-react'
 import { Branche } from '@/lib/branchen-data'
+import { Check, ArrowRight } from 'lucide-react'
 
 interface BrancheChallengesProps {
   branche: Branche
 }
 
 export function BrancheChallenges({ branche }: BrancheChallengesProps) {
+  if (!branche.detailedChallenges || branche.detailedChallenges.length === 0) return null
+
   return (
     <section className="py-12 md:py-20 bg-white">
       <div className="w-full max-w-[1800px] mx-auto px-4 md:px-6 lg:px-12 xl:px-20">
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center">
-          <div>
-            <p className="text-[#109387] font-bold text-xs md:text-sm uppercase tracking-[0.2em] mb-3">
-              Ihre Herausforderungen
-            </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#012956] leading-[1.1] mb-4 md:mb-6">
-              Wir kennen die Anforderungen
-              <span className="text-[#109387]"> Ihrer Branche</span>
-            </h2>
-            <p className="text-gray-600 font-medium text-sm md:text-lg leading-relaxed mb-6">
-              {branche.description}
-            </p>
+        <div className="text-center mb-8 md:mb-12">
+          <p className="text-[#109387] font-bold text-xs md:text-sm uppercase tracking-[0.2em] mb-3">
+            Ihre Herausforderungen
+          </p>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#012956] mb-3">
+            Wir kennen die Anforderungen
+          </h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Jede Branche hat spezielle Bedürfnisse. Hier zeigen wir, wie wir Ihre typischen Herausforderungen lösen.
+          </p>
+        </div>
 
-            <div className="space-y-3">
-              {branche.challenges.map((challenge, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <Check size={18} strokeWidth={2} className="text-[#109387] flex-shrink-0" />
-                  <span className="text-[#012956] font-medium text-sm md:text-base">{challenge}</span>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {branche.detailedChallenges.map((challenge, i) => (
+            <div
+              key={i}
+              className="group bg-[#f8f9fa] rounded-[12px] p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+            >
+              {/* Problem */}
+              <div className="mb-4">
+                <p className="text-[#012956]/60 text-xs uppercase tracking-wider font-bold mb-2">
+                  Herausforderung
+                </p>
+                <h3 className="text-[#012956] font-bold text-lg mb-2">
+                  {challenge.titel}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {challenge.beschreibung}
+                </p>
+              </div>
+
+              {/* Divider */}
+              <div className="flex items-center gap-2 my-4">
+                <div className="flex-1 h-px bg-[#109387]/20" />
+                <ArrowRight size={16} className="text-[#109387]" />
+                <div className="flex-1 h-px bg-[#109387]/20" />
+              </div>
+
+              {/* Lösung */}
+              <div>
+                <p className="text-[#109387] text-xs uppercase tracking-wider font-bold mb-2">
+                  Unsere Lösung
+                </p>
+                <div className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-[#109387]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check size={12} className="text-[#109387]" />
+                  </div>
+                  <p className="text-gray-700 text-sm leading-relaxed">
+                    {challenge.loesung}
+                  </p>
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
-
-          <div className="relative h-64 md:h-80 lg:h-[400px] rounded-[6px] overflow-hidden">
-            <Image
-              src={branche.image}
-              alt={branche.name}
-              fill
-              className="object-cover"
-            />
-          </div>
+          ))}
         </div>
       </div>
     </section>
