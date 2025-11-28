@@ -932,6 +932,14 @@ In Fitnessstudios wird geschwitzt – das ist der Sinn der Sache. Aber genau des
       {
         frage: 'Was machen Sie gegen Geruch in Umkleiden?',
         antwort: 'Gute Reinigung ist die Basis. Zusätzlich können wir Geruchsneutralisierer einsetzen und Lüftungsintervalle empfehlen.'
+      },
+      {
+        frage: 'Reinigen Sie auch Sportgeräte?',
+        antwort: 'Ja, die hygienische Reinigung von Fitnessgeräten gehört dazu. Wir desinfizieren Griffe, Polster und Kontaktflächen regelmäßig.'
+      },
+      {
+        frage: 'Können Sie mehrmals täglich reinigen?',
+        antwort: 'Ja, bei hoher Frequenz bieten wir auch mehrfache tägliche Reinigungsdurchgänge an, besonders für Sanitärbereiche und Umkleiden.'
       }
     ]
   },
@@ -1054,6 +1062,14 @@ Logistikzentren und Lagerhallen haben eine Gemeinsamkeit: Sie sind groß. Sehr g
       {
         frage: 'Was passiert bei Auslauf von Flüssigkeiten?',
         antwort: 'Wir reagieren schnell mit Absauggeräten und Bindemitteln. Bei gefährlichen Stoffen ziehen wir Spezialisten hinzu.'
+      },
+      {
+        frage: 'Reinigen Sie auch Kühlhäuser?',
+        antwort: 'Ja, wir reinigen auch temperaturgeführte Bereiche. Unsere Teams sind entsprechend ausgerüstet und arbeiten effizient trotz niedriger Temperaturen.'
+      },
+      {
+        frage: 'Wie gehen Sie mit 24/7-Betrieben um?',
+        antwort: 'Wir passen uns Ihren Schichtzeiten an und reinigen in Arbeitspausen, Schichtwechseln oder weniger frequentierten Zeiten.'
       }
     ]
   },
@@ -1175,6 +1191,14 @@ Das Treppenhaus ist die Visitenkarte einer Wohnanlage. Wenn Mieter oder Besucher
       {
         frage: 'Was passiert bei Beschwerden?',
         antwort: 'Wir nehmen jede Beschwerde ernst und reagieren schnell. In der Regel innerhalb von 24 Stunden gelöst.'
+      },
+      {
+        frage: 'Bieten Sie auch Winterdienst an?',
+        antwort: 'Ja, Winterdienst inklusive Räum- und Streupflicht gehört zu unserem Angebot für Wohnanlagen. Wir sorgen für sichere Gehwege.'
+      },
+      {
+        frage: 'Kümmern Sie sich auch um die Müllentsorgung?',
+        antwort: 'Ja, wir können die Bereitstellung der Mülltonnen und die Reinigung der Müllstandplätze übernehmen.'
       }
     ]
   },
@@ -1295,6 +1319,14 @@ Wir kennen die Anforderungen:
       {
         frage: 'Können Sie kurzfristig für Veranstaltungen einspringen?',
         antwort: 'Ja, bei Wahlen, Bürgerversammlungen oder Events unterstützen wir mit zusätzlichen Teams.'
+      },
+      {
+        frage: 'Erfüllen Sie die Anforderungen öffentlicher Ausschreibungen?',
+        antwort: 'Ja, wir sind erfahren mit öffentlichen Auftraggebern und erfüllen alle formalen Anforderungen für Vergabeverfahren.'
+      },
+      {
+        frage: 'Können Sie auch Veranstaltungsräume reinigen?',
+        antwort: 'Ja, wir reinigen Veranstaltungsräume vor und nach Events. Auch kurzfristige Einsätze sind möglich.'
       }
     ]
   },
@@ -1414,6 +1446,14 @@ Für Banken und Versicherungen wählen wir unser Personal besonders sorgfältig 
       {
         frage: 'Können Sie außerhalb der Öffnungszeiten arbeiten?',
         antwort: 'Ja, für Banken arbeiten wir standardmäßig vor Öffnung oder nach Schließung. Schlüsselübergabe oder Alarmcode nach Absprache.'
+      },
+      {
+        frage: 'Wie gewährleisten Sie die Sicherheit?',
+        antwort: 'Unsere Mitarbeiter sind sicherheitsüberprüft und unterschreiben Vertraulichkeitserklärungen. Zutrittskontrollen werden strikt eingehalten.'
+      },
+      {
+        frage: 'Reinigen Sie auch Schließfachbereiche?',
+        antwort: 'Auf Wunsch ja, unter Einhaltung aller Sicherheitsprotokolle und in Begleitung Ihres Personals.'
       }
     ]
   },
@@ -1534,6 +1574,14 @@ Im Autohaus entscheidet der erste Eindruck. Wenn ein Kunde den Showroom betritt,
       {
         frage: 'Reinigen Sie auch die Ausstellungsfahrzeuge?',
         antwort: 'Nein, Fahrzeuge reinigen wir nicht – das überlassen wir Ihren Aufbereitern. Aber wir sorgen dafür, dass die Umgebung glänzt.'
+      },
+      {
+        frage: 'Reinigen Sie auch Werkstattbereiche?',
+        antwort: 'Ja, Werkstattreinigung inklusive Ölfleckenentfernung und Bodenreinigung gehört zu unserem Angebot für Autohäuser.'
+      },
+      {
+        frage: 'Können Sie auch Fahrzeugaufbereitung übernehmen?',
+        antwort: 'Wir konzentrieren uns auf die Gebäudereinigung. Für Fahrzeugaufbereitung empfehlen wir spezialisierte Partner.'
       }
     ]
   }
