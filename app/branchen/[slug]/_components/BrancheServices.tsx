@@ -44,13 +44,13 @@ export function BrancheServices({ branche }: BrancheServicesProps) {
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
         {/* Section Header */}
-        <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight mb-12 md:mb-16">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight mb-8 sm:mb-12 md:mb-16">
           Professionelle Reinigung{' '}
           <span className="text-[#109387]">für {branche.name}</span>
         </h2>
 
-        {/* Services Grid - Einheitliche Icons (Check) */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 lg:gap-6">
+        {/* Services Grid - Mobile 2 Spalten mit kleinerem Padding */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4 lg:gap-6">
           {branche.services.map((service, i) => {
             const url = serviceToUrl[service]
             // Nur verlinken wenn echte Leistungs-Seite existiert
@@ -61,13 +61,13 @@ export function BrancheServices({ branche }: BrancheServicesProps) {
                 <Link
                   key={i}
                   href={url}
-                  className="group relative bg-white/5 hover:bg-white rounded-[6px] p-6 border border-white/10 hover:border-[#109387] transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
+                  className="group relative bg-white/5 hover:bg-white rounded-[6px] p-4 sm:p-5 md:p-6 border border-white/10 hover:border-[#109387] transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
                 >
                   {/* Einheitliches Icon */}
-                  <div className="w-12 h-12 rounded-[6px] bg-[#109387]/20 group-hover:bg-[#109387] flex items-center justify-center mb-4 transition-colors">
-                    <Check size={24} strokeWidth={2} className="text-[#109387] group-hover:text-white transition-colors" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-[6px] bg-[#109387]/20 group-hover:bg-[#109387] flex items-center justify-center mb-3 sm:mb-4 transition-colors">
+                    <Check size={20} strokeWidth={2} className="text-[#109387] group-hover:text-white transition-colors sm:w-6 sm:h-6" />
                   </div>
-                  <p className="text-white group-hover:text-[#012956] font-bold text-base leading-tight transition-colors">
+                  <p className="text-white group-hover:text-[#012956] font-bold text-sm sm:text-base leading-tight transition-colors">
                     {service}
                   </p>
                 </Link>
@@ -77,12 +77,12 @@ export function BrancheServices({ branche }: BrancheServicesProps) {
               return (
                 <div
                   key={i}
-                  className="bg-white/5 rounded-[6px] p-6 border border-white/10"
+                  className="bg-white/5 rounded-[6px] p-4 sm:p-5 md:p-6 border border-white/10"
                 >
-                  <div className="w-12 h-12 rounded-[6px] bg-[#109387]/20 flex items-center justify-center mb-4">
-                    <Check size={24} strokeWidth={2} className="text-[#109387]" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-[6px] bg-[#109387]/20 flex items-center justify-center mb-3 sm:mb-4">
+                    <Check size={20} strokeWidth={2} className="text-[#109387] sm:w-6 sm:h-6" />
                   </div>
-                  <p className="text-white font-bold text-base leading-tight">
+                  <p className="text-white font-bold text-sm sm:text-base leading-tight">
                     {service}
                   </p>
                 </div>
@@ -92,13 +92,13 @@ export function BrancheServices({ branche }: BrancheServicesProps) {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12 md:mt-16">
+        <div className="text-center mt-8 sm:mt-12 md:mt-16">
           <Link
             href="/leistungen"
-            className="inline-flex items-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group shadow-lg"
+            className="inline-flex items-center gap-2 sm:gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-base sm:text-lg px-6 sm:px-8 py-3.5 sm:py-4 rounded-[6px] transition-all duration-300 group shadow-lg"
           >
             Alle Leistungen entdecken
-            <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform sm:w-5 sm:h-5" />
           </Link>
         </div>
 
