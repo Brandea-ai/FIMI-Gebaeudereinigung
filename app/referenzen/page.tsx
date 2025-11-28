@@ -312,8 +312,8 @@ export default function ReferenzenPage() {
                     className="group bg-white rounded-[6px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
                     onClick={() => openModal(referenz)}
                   >
-                    {/* Image - Instagram/Pinterest Style */}
-                    <div className="relative aspect-[4/5] sm:aspect-[4/3] overflow-hidden">
+                    {/* Image */}
+                    <div className="relative aspect-square sm:aspect-[4/3] overflow-hidden">
                       <Image
                         src={referenz.bilder[0]}
                         alt={referenz.projektName}
@@ -321,8 +321,6 @@ export default function ReferenzenPage() {
                         unoptimized
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      {/* Gradient Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
                       {/* Year Badge */}
                       <div className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-[#109387] text-white text-xs sm:text-sm font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-[4px] sm:rounded-[6px]">
@@ -333,35 +331,27 @@ export default function ReferenzenPage() {
                       <div className="absolute top-4 right-4 bg-white text-[#012956] p-2 rounded-[6px] opacity-0 group-hover:opacity-100 transition-opacity hidden sm:block">
                         <Maximize2 className="w-4 h-4" />
                       </div>
-
-                      {/* Mobile: Title Overlay auf dem Bild */}
-                      <div className="absolute bottom-0 left-0 right-0 p-3 sm:hidden">
-                        <p className="text-[#109387] text-xs font-bold mb-1">
-                          {getBrancheName(referenz.branche)}
-                        </p>
-                        <h3 className="text-white font-bold text-sm leading-tight line-clamp-2">
-                          {referenz.projektName}
-                        </h3>
-                      </div>
                     </div>
 
-                    {/* Content - Nur auf Desktop sichtbar */}
-                    <div className="hidden sm:block p-4 lg:p-6">
-                      <div className="flex items-center gap-2 text-[#109387] text-sm font-semibold mb-2">
-                        <Tag className="w-4 h-4" />
+                    {/* Content - Immer sichtbar, kompakt auf Mobile */}
+                    <div className="p-2.5 sm:p-4 lg:p-6">
+                      {/* Branche */}
+                      <p className="text-[#109387] text-[10px] sm:text-sm font-bold mb-0.5 sm:mb-2 truncate">
                         {getBrancheName(referenz.branche)}
-                      </div>
+                      </p>
 
-                      <h3 className="text-lg lg:text-xl font-bold text-[#012956] mb-2 group-hover:text-[#109387] transition-colors line-clamp-2">
+                      {/* Titel */}
+                      <h3 className="text-xs sm:text-lg lg:text-xl font-bold text-[#012956] group-hover:text-[#109387] transition-colors line-clamp-2 sm:line-clamp-2 leading-tight sm:leading-normal sm:mb-2">
                         {referenz.projektName}
                       </h3>
 
-                      <p className="text-gray-600 font-semibold mb-4 line-clamp-2 text-sm lg:text-base">
+                      {/* Beschreibung - nur Desktop */}
+                      <p className="hidden sm:block text-gray-600 font-semibold mb-4 line-clamp-2 text-sm lg:text-base">
                         {referenz.kurzbeschreibung}
                       </p>
 
-                      {/* Meta Info */}
-                      <div className="flex items-center gap-4 text-sm text-gray-500 font-semibold">
+                      {/* Meta Info - nur Desktop */}
+                      <div className="hidden sm:flex items-center gap-4 text-sm text-gray-500 font-semibold">
                         <div className="flex items-center gap-1">
                           <MapPin className="w-4 h-4" />
                           <span className="truncate">{referenz.standort}</span>
