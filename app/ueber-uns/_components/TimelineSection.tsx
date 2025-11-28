@@ -47,8 +47,8 @@ const timeline = [
   {
     year: '2025',
     title: 'Heute',
-    subtitle: '90+ Mitarbeiter, 85+ Kunden',
-    description: 'Mit über 90 Mitarbeitern und mehr als 85 zufriedenen Geschäftskunden sind wir einer der führenden Gebäudereiniger in Niederbayern und Oberbayern.',
+    subtitle: '90+ Mitarbeiter, 120+ Kunden',
+    description: 'Mit über 90 Mitarbeitern und mehr als 120 zufriedenen Geschäftskunden sind wir einer der führenden Gebäudereiniger in Niederbayern und Oberbayern.',
     image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop',
     highlight: true,
   },

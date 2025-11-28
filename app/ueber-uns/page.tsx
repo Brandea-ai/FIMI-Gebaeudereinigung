@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   keywords: 'Gebäudereinigung, Über uns, FIMI, Landshut, Bayern, Team, Geschäftsführung, ISO 9001, ISO 14001',
   openGraph: {
     title: 'Über FIMI Gebäudereinigung - Ihr Partner für professionelle Sauberkeit',
-    description: 'Seit 2016: 90+ Mitarbeiter, 85+ zufriedene Kunden, 8 Standorte in Bayern. Keine Lösung zu haben ist keine Option.',
+    description: 'Seit 2016: 90+ Mitarbeiter, 120+ zufriedene Kunden, 8 Standorte in Bayern. Keine Lösung zu haben ist keine Option.',
     type: 'website',
     locale: 'de_DE',
   },

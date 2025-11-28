@@ -102,7 +102,7 @@ export default function TrustContainer() {
             <p className="text-gray-200">Jahre Erfahrung</p>
           </div>
           <div>
-            <p className="text-5xl font-bold mb-2">85</p>
+            <p className="text-5xl font-bold mb-2">120+</p>
             <p className="text-gray-200">Zufriedene Unternehmen</p>
           </div>
           <div>

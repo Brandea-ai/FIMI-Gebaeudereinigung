@@ -76,7 +76,7 @@ export default function HeroContainer() {
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle size={22} className="text-[#109387]" />
-                <span className="text-white font-semibold text-lg">85 zufriedene Kunden</span>
+                <span className="text-white font-semibold text-lg">120+ zufriedene Kunden</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle size={22} className="text-[#109387]" />

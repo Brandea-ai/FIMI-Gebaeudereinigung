@@ -103,7 +103,7 @@ export default function HeroSection() {
                 <p className="text-white/60 font-semibold text-sm">Als GbR in Landshut</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[6px] p-6">
-                <p className="text-5xl font-bold text-[#109387] mb-2">85+</p>
+                <p className="text-5xl font-bold text-[#109387] mb-2">120+</p>
                 <p className="text-white font-bold text-lg">Kunden</p>
                 <p className="text-white/60 font-semibold text-sm">Vertrauen uns</p>
               </div>
