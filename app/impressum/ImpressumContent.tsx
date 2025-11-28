@@ -299,15 +299,17 @@ export default function ImpressumContent() {
                 <div className="relative rounded-[6px] overflow-hidden bg-[#012956]">
                   {/* Map Overlay Info - breiter um Google-Text zu verdecken */}
                   <div className="absolute top-4 left-4 z-10 bg-white rounded-[6px] p-5 shadow-lg w-80">
-                    {/* Logo */}
-                    <Image
-                      src="/FIMI-LOGO/FIMI-Logo_FUER-Webseite.png"
-                      alt="FIMI Logo"
-                      width={140}
-                      height={47}
-                      className="mb-4"
-                    />
-                    <h3 className="font-extrabold text-[#012956] text-lg mb-1">FIMI Gebäudereinigung GmbH</h3>
+                    {/* Favicon + Firmenname */}
+                    <div className="flex items-center gap-3 mb-3">
+                      <Image
+                        src="/FIMI-LOGO/Fimi-Favicon_Transparent.png"
+                        alt="FIMI"
+                        width={40}
+                        height={40}
+                        className="flex-shrink-0"
+                      />
+                      <h3 className="font-extrabold text-[#012956] text-lg leading-tight">FIMI Gebäudereinigung GmbH</h3>
+                    </div>
                     <p className="text-gray-600 font-semibold mb-4">
                       Kellerstr. 39<br />
                       84036 Landshut, Bayern
@@ -328,6 +330,22 @@ export default function ImpressumContent() {
                       >
                         Anrufen
                       </a>
+                    </div>
+                  </div>
+
+                  {/* Custom Favicon Map Pin */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-full z-10 pointer-events-none">
+                    <div className="relative">
+                      <div className="w-12 h-12 bg-[#012956] rounded-full flex items-center justify-center shadow-lg border-2 border-white">
+                        <Image
+                          src="/FIMI-LOGO/Fimi-Favicon_Transparent.png"
+                          alt="FIMI Standort"
+                          width={32}
+                          height={32}
+                        />
+                      </div>
+                      {/* Pin Spitze */}
+                      <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[8px] border-r-[8px] border-t-[12px] border-l-transparent border-r-transparent border-t-[#012956]" />
                     </div>
                   </div>
 
