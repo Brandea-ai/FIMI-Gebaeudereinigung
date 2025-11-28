@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 import ContactForm from '../ContactForm'
+import { CookieSettingsButton } from '../CookieBanner'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -194,9 +195,13 @@ export default function Footer() {
             <p className="text-white/40 text-sm font-semibold">
               © {currentYear} FIMI Gebäudereinigung. Alle Rechte vorbehalten.
             </p>
-            <p className="text-white/40 text-sm font-semibold">
-              Landshut · München · Regensburg · Bayern
-            </p>
+            <div className="flex items-center gap-4">
+              <CookieSettingsButton />
+              <span className="text-white/20">|</span>
+              <p className="text-white/40 text-sm font-semibold">
+                Landshut · München · Regensburg · Bayern
+              </p>
+            </div>
           </div>
 
         </div>

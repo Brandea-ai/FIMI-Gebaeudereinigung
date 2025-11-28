@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Phone, Mail, MapPin, Clock, Copy, Check, Shield, FileText, MessageSquare, ExternalLink } from 'lucide-react'
+import GoogleMapsWrapper from '@/components/GoogleMapsWrapper'
 
 export default function ImpressumContent() {
   const [isOnline, setIsOnline] = useState(false)
@@ -350,16 +351,11 @@ export default function ImpressumContent() {
                     </div>
                   </div>
 
-                  {/* Map iframe */}
-                  <iframe
+                  {/* Map with Cookie Consent */}
+                  <GoogleMapsWrapper
                     src="https://maps.google.com/maps?q=Kellerstra%C3%9Fe+39,+84036+Landshut,+Germany&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                    width="100%"
-                    height="350"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="FIMI Gebäudereinigung Standort - Kellerstr. 39, 84036 Landshut"
+                    height={350}
+                    title="FIMI Gebaeudereinigung Standort - Kellerstr. 39, 84036 Landshut"
                   />
                 </div>
               </section>

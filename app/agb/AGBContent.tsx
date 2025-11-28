@@ -39,7 +39,10 @@ export default function AGBContent() {
     { id: 'haftung-inhalte', label: 'Haftung fuer Inhalte' },
     { id: 'haftung-links', label: 'Haftung fuer Links' },
     { id: 'urheberrecht', label: 'Urheberrecht' },
-    { id: 'streitbeilegung', label: 'Streitbeilegung' }
+    { id: 'streitbeilegung', label: 'Streitbeilegung' },
+    { id: 'unternehmenshinweise', label: 'Unternehmenshinweise', main: true },
+    { id: 'handelsregister', label: 'Handelsregister' },
+    { id: 'qualitaetsstandards', label: 'Qualitaet & ISO' }
   ]
 
   useEffect(() => {
@@ -547,8 +550,63 @@ export default function AGBContent() {
                 </article>
               </section>
 
+              <section id="unternehmenshinweise" className="section-tracked content-block">
+                <h2 className="section-title">Teil C: Unternehmenshinweise</h2>
+
+                <article id="handelsregister" className="section-tracked">
+                  <h3 className="subsection-title">Handelsregistereintragung</h3>
+                  <p className="text-body">
+                    Die FIMI Gebaeudereinigung GmbH befindet sich derzeit im Gruendungsprozess. Die Eintragung in das Handelsregister beim Amtsgericht Landshut ist fuer <strong>Januar 2026</strong> vorgesehen.
+                  </p>
+
+                  <div className="info-box">
+                    <p className="text-body"><strong>Aktueller Status:</strong></p>
+                    <ul className="standard-list">
+                      <li><strong>Rechtsform:</strong> GmbH in Gruendung (i.Gr.)</li>
+                      <li><strong>Zustaendiges Amtsgericht:</strong> Landshut</li>
+                      <li><strong>Geplante Eintragung:</strong> Januar 2026</li>
+                      <li><strong>HRB-Nummer:</strong> Wird nach erfolgreicher Eintragung hier veroeffentlicht</li>
+                    </ul>
+                  </div>
+
+                  <p className="text-body">
+                    Bis zur Eintragung handeln wir als Einzelunternehmen unter dem Namen FIMI Gebaeudereinigung. Mit der Eintragung im Handelsregister wird diese Seite entsprechend aktualisiert.
+                  </p>
+                </article>
+
+                <article id="qualitaetsstandards" className="section-tracked">
+                  <h3 className="subsection-title">Qualitaetsstandards & Zertifizierungen</h3>
+                  <p className="text-body">
+                    FIMI Gebaeudereinigung arbeitet nach hoechsten Qualitaetsstandards. Wir streben kontinuierlich nach Verbesserung unserer Prozesse und Dienstleistungen.
+                  </p>
+
+                  <div className="info-box">
+                    <p className="text-body"><strong>Geplante Zertifizierungen:</strong></p>
+                    <ul className="standard-list">
+                      <li><strong>ISO 9001:2015</strong> Qualitaetsmanagementsystem - Ziel: 2026</li>
+                      <li><strong>ISO 14001:2015</strong> Umweltmanagementsystem - Ziel: 2026</li>
+                    </ul>
+                  </div>
+
+                  <p className="text-body">
+                    Unsere Mitarbeiter werden regelmaessig geschult und arbeiten nach standardisierten Reinigungsverfahren. Wir dokumentieren alle Leistungen transparent und stehen fuer Qualitaetsprüfungen jederzeit zur Verfuegung.
+                  </p>
+
+                  <p className="text-body">
+                    <strong>Unsere Qualitaetsgrundsaetze:</strong>
+                  </p>
+                  <ul className="standard-list">
+                    <li>Verwendung umweltfreundlicher Reinigungsmittel</li>
+                    <li>Regelmaessige Qualitaetskontrollen</li>
+                    <li>Kontinuierliche Mitarbeiterschulungen</li>
+                    <li>Transparente Dokumentation aller Leistungen</li>
+                    <li>Schnelle Reaktion auf Kundenfeedback</li>
+                  </ul>
+                </article>
+              </section>
+
               <div className="version-info">
-                <p className="text-body"><strong>Stand der AGB & Rechtlichen Hinweise:</strong> November 2025 | <strong>Version:</strong> 1.0</p>
+                <p className="text-body"><strong>Stand der AGB & Rechtlichen Hinweise:</strong> November 2025 | <strong>Version:</strong> 1.1</p>
               </div>
             </div>
           </div>

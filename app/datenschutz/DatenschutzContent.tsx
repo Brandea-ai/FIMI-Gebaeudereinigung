@@ -501,17 +501,79 @@ Mit freundlichen Gruessen
 
               {/* 5. Cookies */}
               <section id="cookies" className="section-tracked content-block">
-                <h2 className="section-title">5. Cookies</h2>
+                <h2 className="section-title">5. Cookies und Cookie-Einstellungen</h2>
                 <p className="text-body">
                   Unsere Internetseiten verwenden so genannte „Cookies". Cookies sind kleine Datenpakete und richten auf Ihrem Endgeraet keinen Schaden an. Sie werden entweder voruebergehend fuer die Dauer einer Sitzung (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem Endgeraet gespeichert. Session-Cookies werden nach Ende Ihres Besuchs automatisch geloescht. Permanente Cookies bleiben auf Ihrem Endgeraet gespeichert, bis Sie diese selbst loeschen oder eine automatische Loeschung durch Ihren Webbrowser erfolgt.
                 </p>
 
-                <h3 className="subsection-title">Arten von Cookies</h3>
-                <ul className="standard-list">
-                  <li><strong>Technisch notwendige Cookies:</strong> Diese Cookies sind erforderlich, damit unsere Website funktioniert.</li>
-                  <li><strong>Analyse-Cookies:</strong> Diese Cookies helfen uns zu verstehen, wie Besucher mit unserer Website interagieren.</li>
-                  <li><strong>Marketing-Cookies:</strong> Diese Cookies werden verwendet, um Besuchern relevante Werbung anzuzeigen.</li>
-                </ul>
+                <h3 className="subsection-title">Cookie-Banner und Ihre Einwilligung</h3>
+                <p className="text-body">
+                  Beim ersten Besuch unserer Website wird Ihnen ein Cookie-Banner angezeigt, ueber den Sie Ihre Einwilligung zu verschiedenen Cookie-Kategorien erteilen oder verweigern koennen. Ihre Auswahl wird in Ihrem Browser gespeichert (localStorage) und bei jedem weiteren Besuch beruecksichtigt.
+                </p>
+
+                <div className="info-box" style={{ background: 'rgba(16, 147, 135, 0.05)' }}>
+                  <strong>Cookie-Einstellungen aendern:</strong> Sie koennen Ihre Cookie-Einstellungen jederzeit ueber den Link &quot;Cookie-Einstellungen&quot; im Footer unserer Website aendern oder widerrufen.
+                </div>
+
+                <h3 className="subsection-title">Arten von Cookies auf unserer Website</h3>
+                <div className="info-box">
+                  <table className="data-table">
+                    <thead>
+                      <tr>
+                        <th>Kategorie</th>
+                        <th>Beschreibung</th>
+                        <th>Erforderlich</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td data-label="Kategorie"><strong>Technisch notwendig</strong></td>
+                        <td data-label="Beschreibung">Speichern Ihrer Cookie-Einstellungen</td>
+                        <td data-label="Erforderlich">Ja</td>
+                      </tr>
+                      <tr>
+                        <td data-label="Kategorie"><strong>Funktional</strong></td>
+                        <td data-label="Beschreibung">Speichern Ihrer Praeferenzen und Einstellungen</td>
+                        <td data-label="Erforderlich">Nein</td>
+                      </tr>
+                      <tr>
+                        <td data-label="Kategorie"><strong>Externe Dienste</strong></td>
+                        <td data-label="Beschreibung">Google Maps zur Standortanzeige im Impressum</td>
+                        <td data-label="Erforderlich">Nein</td>
+                      </tr>
+                      <tr>
+                        <td data-label="Kategorie"><strong>Analyse</strong></td>
+                        <td data-label="Beschreibung">Derzeit nicht aktiv</td>
+                        <td data-label="Erforderlich">Nein</td>
+                      </tr>
+                      <tr>
+                        <td data-label="Kategorie"><strong>Marketing</strong></td>
+                        <td data-label="Beschreibung">Derzeit nicht aktiv</td>
+                        <td data-label="Erforderlich">Nein</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <h3 className="subsection-title">Speicherung der Cookie-Einstellungen</h3>
+                <div className="info-box">
+                  <table className="info-table">
+                    <tbody>
+                      <tr>
+                        <td className="info-table-label">Speicherort:</td>
+                        <td className="info-table-value">localStorage (Browser)</td>
+                      </tr>
+                      <tr>
+                        <td className="info-table-label">Speicherschluessel:</td>
+                        <td className="info-table-value">fimi_cookie_consent</td>
+                      </tr>
+                      <tr>
+                        <td className="info-table-label">Speicherdauer:</td>
+                        <td className="info-table-value">Bis zur manuellen Loeschung oder Browserbereinigung</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
 
                 <p className="text-body">
                   Sie koennen Ihren Browser so einstellen, dass Sie ueber das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies fuer bestimmte Faelle oder generell ausschliessen sowie das automatische Loeschen der Cookies beim Schliessen des Browsers aktivieren.
