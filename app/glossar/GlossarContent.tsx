@@ -275,10 +275,10 @@ export default function GlossarContent() {
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="flex gap-12 lg:gap-16">
 
-            {/* Sticky Sidebar - Alphabet Navigation (iPhone Picker Style) */}
+            {/* Sticky Sidebar - Alphabet Navigation */}
             <aside className="hidden lg:block w-14 flex-shrink-0">
               <div className="sticky top-32">
-                <nav className="relative flex flex-col items-center bg-[#f8f9fa] rounded-full py-3 px-2">
+                <nav className="flex flex-col items-center gap-1 bg-[#f8f9fa] rounded-[6px] p-2">
                   {letters.map((letter) => {
                     const active = isActive(letter)
 
@@ -286,16 +286,13 @@ export default function GlossarContent() {
                       <a
                         key={letter}
                         href={`#${letter}`}
-                        className={`relative w-10 h-10 flex items-center justify-center font-bold text-sm rounded-full transition-all duration-300 ${
+                        className={`w-10 h-10 flex items-center justify-center font-bold text-sm rounded-[6px] transition-all duration-300 ${
                           active
-                            ? 'bg-[#109387] text-white shadow-lg'
+                            ? 'bg-[#109387] text-white'
                             : 'text-[#012956]/60 hover:text-[#109387] hover:bg-white'
                         }`}
                       >
                         {letter}
-                        {active && (
-                          <span className="absolute -right-1 w-1.5 h-1.5 bg-[#109387] rounded-full" />
-                        )}
                       </a>
                     )
                   })}
