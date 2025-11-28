@@ -7,126 +7,183 @@ export const metadata: Metadata = {
   keywords: 'Glossar, Lexikon, Gebäudereinigung, Fachbegriffe, Reinigung, Facility Management, Bayern',
 }
 
-const glossarData = [
+interface GlossarItem {
+  begriff: string
+  definition: string
+  link: string
+  ctaLabel?: string
+  highlights?: string[]
+}
+
+const glossarData: GlossarItem[] = [
   {
     begriff: 'Außenanlagenpflege',
     definition: 'Professionelle Pflege und Instandhaltung von Außenbereichen wie Grünflächen, Wegen, Parkplätzen und Eingangsbereichen. Umfasst Rasenpflege, Laubbeseitigung und allgemeine Sauberkeit.',
     link: '/leistungen/aussenanlagenpflege',
+    ctaLabel: 'Mehr zur Außenanlagenpflege',
   },
   {
     begriff: 'Baureinigung',
     definition: 'Spezielle Reinigung nach Bau- oder Renovierungsarbeiten. Entfernt Baustaub, Mörtelreste, Farbspritzer und andere baubedingte Verschmutzungen für eine bezugsfertige Übergabe.',
     link: '/leistungen/baureinigung',
+    ctaLabel: 'Mehr zur Baureinigung',
   },
   {
     begriff: 'Büroreinigung',
     definition: 'Regelmäßige professionelle Reinigung von Büroflächen, Arbeitsplätzen, Konferenzräumen und Gemeinschaftsbereichen. Sorgt für ein hygienisches und produktives Arbeitsumfeld.',
     link: '/leistungen/bueroreinigung',
+    ctaLabel: 'Mehr zur Büroreinigung',
   },
   {
     begriff: 'Desinfektionsreinigung',
     definition: 'Reinigungsverfahren mit desinfizierenden Mitteln zur Abtötung von Keimen, Bakterien und Viren. Besonders wichtig in Gesundheitseinrichtungen und bei erhöhten Hygieneanforderungen.',
     link: '/branchen/gesundheitswesen',
+    ctaLabel: 'Mehr zum Gesundheitswesen',
   },
   {
     begriff: 'Facility Management',
-    definition: 'Ganzheitliches Management von Gebäuden und Liegenschaften. Umfasst technische, infrastrukturelle und kaufmännische Dienstleistungen für einen effizienten Gebäudebetrieb.',
+    definition: 'Ganzheitliches Management von Gebäuden und Liegenschaften, das alle technischen, infrastrukturellen und kaufmännischen Dienstleistungen für einen effizienten Gebäudebetrieb vereint. Gewerbliche Kunden profitieren von einem zentralen Ansprechpartner für alle gebäudebezogenen Services – von der Reinigung über Wartung bis zur Grünflächenpflege.',
     link: '/leistungen/facility-management',
+    ctaLabel: 'Mehr zum Facility Management',
+    highlights: [
+      'Zentraler Ansprechpartner für alle Gebäudeservices',
+      'Kostenoptimierung durch gebündelte Dienstleistungen',
+      'Professionelle Koordination von Wartung, Reinigung und Pflege',
+    ],
   },
   {
     begriff: 'Fassadenreinigung',
     definition: 'Professionelle Reinigung von Gebäudefassaden verschiedener Materialien wie Glas, Stein, Metall oder Putz. Erhält das Erscheinungsbild und den Wert der Immobilie.',
     link: '/leistungen/fassadenreinigung',
+    ctaLabel: 'Mehr zur Fassadenreinigung',
   },
   {
     begriff: 'Fensterreinigung',
     definition: 'Streifenfreie Reinigung von Fenstern, Glasflächen und Rahmen. Wird mit speziellen Werkzeugen und Techniken durchgeführt, auch in großen Höhen.',
     link: '/leistungen/fensterreinigung',
+    ctaLabel: 'Mehr zur Fensterreinigung',
   },
   {
     begriff: 'Gebäudereinigung',
-    definition: 'Oberbegriff für alle professionellen Reinigungsdienstleistungen in und an Gebäuden. Umfasst Unterhaltsreinigung, Glasreinigung, Sonderreinigung und viele weitere Leistungen.',
+    definition: 'Oberbegriff für alle professionellen Reinigungsdienstleistungen in und an Gebäuden. Für Unternehmen bedeutet professionelle Gebäudereinigung weniger Eigenaufwand, hygienische Arbeitsbedingungen und den Werterhalt ihrer Immobilie. Von der täglichen Unterhaltsreinigung über Glasreinigung bis zur industriellen Sonderreinigung – gewerbliche Kunden erhalten maßgeschneiderte Lösungen.',
     link: '/leistungen',
+    ctaLabel: 'Alle Reinigungsleistungen entdecken',
+    highlights: [
+      'Unterhaltsreinigung, Glasreinigung, Sonderreinigung u.v.m.',
+      'Maßgeschneiderte Konzepte für jede Branche',
+      'ISO-konforme Prozesse für gleichbleibende Qualität',
+    ],
   },
   {
     begriff: 'Glasreinigung',
     definition: 'Professionelle Reinigung aller Glasflächen wie Fenster, Glasfassaden, Schaufenster und Glastrennwände. Für optimale Transparenz und Lichtdurchlässigkeit.',
     link: '/leistungen/glasreinigung',
+    ctaLabel: 'Mehr zur Glasreinigung',
   },
   {
     begriff: 'Grundreinigung',
     definition: 'Intensive Tiefenreinigung von Böden und Oberflächen. Entfernt hartnäckige Verschmutzungen und alte Pflegeschichten. Bildet die Basis für nachfolgende Unterhaltsreinigung.',
     link: '/leistungen/sonderreinigung',
+    ctaLabel: 'Mehr zur Sonderreinigung',
   },
   {
     begriff: 'Hallenreinigung',
     definition: 'Reinigung großer Hallen in Industrie, Logistik und Produktion. Erfordert spezielle Maschinen und Techniken für große Flächen und industrielle Verschmutzungen.',
     link: '/leistungen/hallenreinigung',
+    ctaLabel: 'Mehr zur Hallenreinigung',
   },
   {
     begriff: 'Hausmeisterservice',
     definition: 'Umfassende Betreuung von Immobilien durch geschultes Personal. Beinhaltet kleinere Reparaturen, Kontrollgänge, Müllentsorgung und Ansprechpartner für Mieter.',
     link: '/leistungen/hausmeisterservice',
+    ctaLabel: 'Mehr zum Hausmeisterservice',
   },
   {
-    begriff: 'Hygienereininung',
+    begriff: 'Hygienereinigung',
     definition: 'Reinigung mit besonderem Fokus auf Hygiene und Keimfreiheit. Wichtig in sensiblen Bereichen wie Sanitäranlagen, Küchen und medizinischen Einrichtungen.',
     link: '/branchen/gesundheitswesen',
+    ctaLabel: 'Mehr zum Gesundheitswesen',
   },
   {
     begriff: 'Industriereinigung',
-    definition: 'Spezialisierte Reinigung in Produktions- und Industriebetrieben. Berücksichtigt besondere Anforderungen wie Maschinenreinigung, Entfettung und Arbeitssicherheit.',
+    definition: 'Spezialisierte Reinigung in Produktions- und Industriebetrieben mit besonderen Anforderungen an Maschinenreinigung, Entfettung und Arbeitssicherheit. Für produzierende Unternehmen ist professionelle Industriereinigung essenziell: Sie gewährleistet Arbeitssicherheit, verlängert die Lebensdauer von Maschinen und erfüllt branchenspezifische Hygienevorschriften.',
     link: '/leistungen/industriereinigung',
+    ctaLabel: 'Mehr zur Industriereinigung',
+    highlights: [
+      'Maschinenreinigung und Entfettung nach Vorschrift',
+      'Einhaltung von Arbeitsschutz- und Hygienestandards',
+      'Minimierung von Produktionsausfällen durch geplante Reinigung',
+    ],
   },
   {
     begriff: 'ISO 9001',
-    definition: 'Internationaler Standard für Qualitätsmanagementsysteme. Zertifizierte Unternehmen erfüllen definierte Qualitätsstandards und kontinuierliche Verbesserungsprozesse.',
+    definition: 'Internationaler Standard für Qualitätsmanagementsysteme. Unternehmen, die nach ISO 9001 arbeiten, erfüllen definierte Qualitätsstandards und setzen auf kontinuierliche Verbesserungsprozesse.',
     link: '/ueber-uns',
+    ctaLabel: 'Mehr zu unseren Qualitätsstandards',
   },
   {
     begriff: 'ISO 14001',
-    definition: 'Internationaler Standard für Umweltmanagementsysteme. Zertifizierte Unternehmen arbeiten nach umweltschonenden Prinzipien und reduzieren ihre Umweltauswirkungen.',
+    definition: 'Internationaler Standard für Umweltmanagementsysteme. Unternehmen, die nach ISO 14001 arbeiten, setzen auf umweltschonende Prinzipien und reduzieren systematisch ihre Umweltauswirkungen.',
     link: '/ueber-uns',
+    ctaLabel: 'Mehr zu unseren Umweltstandards',
   },
   {
     begriff: 'Maschinenreinigung',
     definition: 'Fachgerechte Reinigung von Produktionsmaschinen und Anlagen. Wichtig für Wartung, Hygiene und Arbeitssicherheit in der Industrie.',
     link: '/leistungen/maschinenreinigung',
+    ctaLabel: 'Mehr zur Maschinenreinigung',
   },
   {
     begriff: 'Objektleiter',
     definition: 'Verantwortliche Ansprechperson für ein Reinigungsobjekt. Koordiniert das Reinigungsteam, überwacht die Qualität und ist Schnittstelle zum Kunden.',
     link: '/karriere',
+    ctaLabel: 'Karriere bei FIMI',
   },
   {
     begriff: 'Parkplatzreinigung',
     definition: 'Reinigung und Pflege von Parkflächen, Parkhäusern und Tiefgaragen. Umfasst Kehren, Nassreinigung und Entfernung von Öl- und Reifenspuren.',
     link: '/leistungen/parkplatzreinigung',
+    ctaLabel: 'Mehr zur Parkplatzreinigung',
   },
   {
     begriff: 'Reinigungsfachkraft',
     definition: 'Ausgebildetes Personal für professionelle Gebäudereinigung. Beherrscht verschiedene Reinigungstechniken, Materialkunde und den sicheren Umgang mit Reinigungsmitteln.',
     link: '/karriere',
+    ctaLabel: 'Karriere bei FIMI',
   },
   {
     begriff: 'Sonderreinigung',
     definition: 'Spezielle Reinigungsleistungen außerhalb der regulären Unterhaltsreinigung. Umfasst Grundreinigungen, Teppichreinigung, Polsterreinigung und Spezialanwendungen.',
     link: '/leistungen/sonderreinigung',
+    ctaLabel: 'Mehr zur Sonderreinigung',
   },
   {
     begriff: 'Tiefgaragenreinigung',
     definition: 'Professionelle Reinigung von Tiefgaragen und Parkhäusern. Entfernt Staub, Reifenabrieb, Ölflecken und sorgt für Sicherheit und Sauberkeit.',
     link: '/leistungen/tiefgaragenreinigung',
+    ctaLabel: 'Mehr zur Tiefgaragenreinigung',
   },
   {
     begriff: 'Unterhaltsreinigung',
-    definition: 'Regelmäßig wiederkehrende Reinigung von Gebäuden in vereinbarten Intervallen (täglich, wöchentlich, monatlich). Sichert dauerhaft saubere und hygienische Räumlichkeiten.',
+    definition: 'Regelmäßig wiederkehrende Reinigung von Gebäuden in vereinbarten Intervallen – täglich, wöchentlich oder monatlich. Für Unternehmen ist die Unterhaltsreinigung das Fundament sauberer Geschäftsräume: Sie sorgt für ein gepflegtes Erscheinungsbild, hygienische Arbeitsbedingungen und trägt zum Werterhalt der Immobilie bei.',
     link: '/leistungen/unterhaltsreinigung',
+    ctaLabel: 'Mehr zur Unterhaltsreinigung',
+    highlights: [
+      'Flexible Intervalle: täglich, wöchentlich oder monatlich',
+      'Feste Reinigungsteams für gleichbleibende Qualität',
+      'Dokumentierte Prozesse nach ISO-Standards',
+    ],
   },
   {
     begriff: 'Winterdienst',
-    definition: 'Räum- und Streudienst bei Schnee und Eis. Umfasst Schneeräumung, Streuen von Gehwegen und Parkplätzen sowie die Einhaltung der Verkehrssicherungspflicht.',
+    definition: 'Professioneller Räum- und Streudienst bei Schnee und Eis zur Erfüllung der Verkehrssicherungspflicht. Für Unternehmen und Hausverwaltungen übernimmt der Winterdienst die gesetzlich vorgeschriebene Räum- und Streupflicht – das minimiert Haftungsrisiken und gewährleistet sichere Zugänge für Mitarbeiter und Kunden.',
     link: '/leistungen/winterdienst',
+    ctaLabel: 'Mehr zum Winterdienst',
+    highlights: [
+      'Erfüllung der Verkehrssicherungspflicht',
+      'Schnelle Reaktionszeiten bei Schneefall',
+      'Dokumentierte Einsätze für Ihre Rechtssicherheit',
+    ],
   },
 ]
 
@@ -138,7 +195,7 @@ const groupedGlossar = glossarData.reduce((acc, item) => {
   }
   acc[letter].push(item)
   return acc
-}, {} as Record<string, typeof glossarData>)
+}, {} as Record<string, GlossarItem[]>)
 
 const letters = Object.keys(groupedGlossar).sort()
 
@@ -197,7 +254,9 @@ export default function GlossarPage() {
                   {groupedGlossar[letter].map((item) => (
                     <div
                       key={item.begriff}
-                      className="bg-[#f8f9fa] rounded-[6px] p-6 hover:shadow-lg transition-shadow"
+                      className={`bg-[#f8f9fa] rounded-[6px] p-6 hover:shadow-lg transition-shadow ${
+                        item.highlights ? 'md:col-span-2 lg:col-span-1' : ''
+                      }`}
                     >
                       <h2 className="text-xl font-bold text-[#012956] mb-3">
                         {item.begriff}
@@ -205,11 +264,24 @@ export default function GlossarPage() {
                       <p className="text-gray-700 font-medium leading-relaxed mb-4">
                         {item.definition}
                       </p>
+
+                      {/* Optional Highlights für Schlüsselbegriffe */}
+                      {item.highlights && (
+                        <ul className="mb-4 space-y-2">
+                          {item.highlights.map((highlight, index) => (
+                            <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
+                              <span className="text-[#109387] mt-0.5">✓</span>
+                              <span>{highlight}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+
                       <Link
                         href={item.link}
                         className="inline-flex items-center gap-2 text-[#109387] hover:text-[#012956] font-semibold text-sm transition-colors"
                       >
-                        Mehr erfahren →
+                        {item.ctaLabel || 'Mehr erfahren'} →
                       </Link>
                     </div>
                   ))}

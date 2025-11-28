@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { MapPin, ArrowRight, CheckCircle, Phone, Clock, Users, Zap } from 'lucide-react'
+import { ArrowRight, CheckCircle, Phone, Clock, Users, Zap } from 'lucide-react'
 import { Branche } from '@/lib/branchen-data'
 
 interface BrancheRegionenProps {
@@ -111,25 +111,27 @@ export function BrancheRegionen({ branche }: BrancheRegionenProps) {
     <section className="py-12 sm:py-16 md:py-24 lg:py-32 bg-gray-50">
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
-        {/* Header - natürliche SEO-Headline */}
-        <div className="max-w-4xl mb-8 sm:mb-12 md:mb-16">
-          <p className="text-[#109387] font-bold text-xs sm:text-sm uppercase tracking-[0.2em] mb-3">
-            Ihre Region, unser Service
-          </p>
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#012956] leading-tight mb-4">
-            {seo.keyword} in Landshut, München und ganz Bayern
-          </h2>
-          <p className="text-base sm:text-lg text-gray-600">
-            {seo.frage} Wir sind mit 8 Standorten in Bayern für Sie da – schnell vor Ort, persönlich betreut.
-          </p>
-        </div>
-
-        {/* Two Column Layout */}
+        {/* GESAMTES Layout als Grid - Sidebar sticky über alles */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-12">
 
-          {/* Left: Karte (3 Spalten) */}
+          {/* ===== LINKE SPALTE: Header + Karte + SEO-Text ===== */}
           <div className="lg:col-span-3">
-            <div className="relative">
+
+            {/* Header */}
+            <div className="mb-8 sm:mb-12">
+              <p className="text-[#109387] font-bold text-xs sm:text-sm uppercase tracking-[0.2em] mb-3">
+                Ihre Region, unser Service
+              </p>
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#012956] leading-tight mb-4">
+                {seo.keyword} in Landshut, München und ganz Bayern
+              </h2>
+              <p className="text-base sm:text-lg text-gray-600">
+                {seo.frage} Wir sind mit 8 Standorten in Bayern für Sie da – schnell vor Ort, persönlich betreut.
+              </p>
+            </div>
+
+            {/* Bayern Karte */}
+            <div className="relative mb-4 sm:mb-6">
               <Image
                 src="/images/home/staedte-fimi.avif"
                 alt={`${seo.keyword} Bayern - FIMI Gebäudereinigung Standorte`}
@@ -139,8 +141,8 @@ export function BrancheRegionen({ branche }: BrancheRegionenProps) {
               />
             </div>
 
-            {/* Städte Grid unter dem Bild */}
-            <div className="grid grid-cols-4 gap-2 sm:gap-3 mt-4 sm:mt-6">
+            {/* Städte Grid */}
+            <div className="grid grid-cols-4 gap-2 sm:gap-3 mb-10 sm:mb-14">
               {staedte.map((stadt) => (
                 <div
                   key={stadt.name}
@@ -151,10 +153,28 @@ export function BrancheRegionen({ branche }: BrancheRegionenProps) {
                 </div>
               ))}
             </div>
+
+            {/* SEO Footer Text */}
+            <div className="bg-white rounded-[6px] p-5 sm:p-6 md:p-8 border border-gray-100">
+              <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#012956] mb-4">
+                {seo.keywordMitIn} Bayern – regional verwurzelt, professionell aufgestellt
+              </h3>
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4">
+                Seit über 8 Jahren bieten wir <strong>{seo.keyword.toLowerCase()}</strong> in Bayern an.
+                Ob Sie <strong>{seo.keyword.toLowerCase()} in Landshut</strong>, <strong>{seo.keyword.toLowerCase()} in München</strong> oder
+                an einem anderen Standort benötigen – unsere Teams sind schnell bei Ihnen.
+              </p>
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                Von unserem Hauptsitz in Landshut aus betreuen wir Kunden in Regensburg, Ingolstadt, Freising,
+                Erding, Straubing und Passau. Kurze Anfahrtswege bedeuten für Sie: schnellere Reaktionszeiten
+                und persönliche Betreuung durch lokale Ansprechpartner.
+              </p>
+            </div>
+
           </div>
 
-          {/* Right: Content (2 Spalten) - STICKY */}
-          <div className="lg:col-span-2 space-y-6 lg:sticky lg:top-28 lg:self-start">
+          {/* ===== RECHTE SPALTE: Sticky Sidebar über ALLES ===== */}
+          <div className="lg:col-span-2 lg:sticky lg:top-28 lg:self-start space-y-6">
 
             {/* Problem-Ansprache Box */}
             <div className="bg-white rounded-[6px] p-5 sm:p-6 shadow-lg border border-gray-100">
@@ -227,23 +247,7 @@ export function BrancheRegionen({ branche }: BrancheRegionenProps) {
             </div>
 
           </div>
-        </div>
 
-        {/* SEO Footer - natürlicher Fließtext mit Keywords */}
-        <div className="mt-10 sm:mt-14 max-w-4xl">
-          <h3 className="text-base sm:text-lg font-bold text-[#012956] mb-3">
-            {seo.keywordMitIn} Bayern – regional verwurzelt, professionell aufgestellt
-          </h3>
-          <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-4">
-            Seit über 8 Jahren bieten wir <strong>{seo.keyword.toLowerCase()}</strong> in Bayern an.
-            Ob Sie <strong>{seo.keyword.toLowerCase()} in Landshut</strong>, <strong>{seo.keyword.toLowerCase()} in München</strong> oder
-            an einem anderen Standort benötigen – unsere Teams sind schnell bei Ihnen.
-          </p>
-          <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-            Von unserem Hauptsitz in Landshut aus betreuen wir Kunden in Regensburg, Ingolstadt, Freising,
-            Erding, Straubing und Passau. Kurze Anfahrtswege bedeuten für Sie: schnellere Reaktionszeiten
-            und persönliche Betreuung durch lokale Ansprechpartner.
-          </p>
         </div>
 
       </div>
