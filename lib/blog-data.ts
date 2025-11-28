@@ -32,105 +32,113 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Nach intensiven Verhandlungen haben sich die Tarifparteien auf einen neuen Lohntarifvertrag für die rund 700.000 Beschäftigten in der Gebäudereinigung geeinigt. Die Vereinbarung sieht eine stufenweise Erhöhung der Löhne in den Jahren 2025 und 2026 vor, was die Attraktivität der Branche stärkt, aber auch Auswirkungen auf die Dienstleistungspreise haben wird.',
     content: `
       <!-- Key Facts Box -->
-      <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 12px; padding: 28px 32px; margin-bottom: 40px;">
-        <p style="color: #109387; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Das Wichtigste auf einen Blick</p>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+      <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 24px 28px; margin-bottom: 32px;">
+        <p style="color: #109387; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px;">Das Wichtigste auf einen Blick</p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
           <div style="text-align: center;">
-            <p style="color: white; font-size: 32px; font-weight: 800; margin-bottom: 4px;">14,25 €</p>
-            <p style="color: rgba(255,255,255,0.6); font-size: 13px; font-weight: 600;">Mindestlohn LG 1 (2025)</p>
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">14,25 €</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Mindestlohn LG 1 (2025)</p>
           </div>
           <div style="text-align: center;">
-            <p style="color: white; font-size: 32px; font-weight: 800; margin-bottom: 4px;">+11 %</p>
-            <p style="color: rgba(255,255,255,0.6); font-size: 13px; font-weight: 600;">Steigerung bis 2026</p>
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">+11 %</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Steigerung bis 2026</p>
           </div>
           <div style="text-align: center;">
-            <p style="color: white; font-size: 32px; font-weight: 800; margin-bottom: 4px;">700.000</p>
-            <p style="color: rgba(255,255,255,0.6); font-size: 13px; font-weight: 600;">Beschäftigte profitieren</p>
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">700.000</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Beschäftigte profitieren</p>
           </div>
         </div>
       </div>
 
-      <p>Die Gebäudereinigung, Deutschlands beschäftigungsstärkstes Handwerk, startet mit neuen finanziellen Rahmenbedingungen ins Jahr 2025. Der Ende 2024 zwischen dem <strong>Bundesinnungsverband des Gebäudereiniger-Handwerks (BIV)</strong> und der <strong>Industriegewerkschaft Bauen-Agrar-Umwelt (IG BAU)</strong> ausgehandelte Lohntarifvertrag ist in Kraft getreten und für allgemeinverbindlich erklärt worden.</p>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Die Gebäudereinigung, Deutschlands beschäftigungsstärkstes Handwerk, startet mit neuen finanziellen Rahmenbedingungen ins Jahr 2025. Der Ende 2024 zwischen dem <strong style="font-weight: 800; color: #012956;">Bundesinnungsverband des Gebäudereiniger-Handwerks (BIV)</strong> und der <strong style="font-weight: 800; color: #012956;">Industriegewerkschaft Bauen-Agrar-Umwelt (IG BAU)</strong> ausgehandelte Lohntarifvertrag ist in Kraft getreten und für allgemeinverbindlich erklärt worden.</p>
 
-      <h3>Die neuen Tarife ab Januar 2025</h3>
-      <p>Der Kernpunkt der Einigung ist die Anpassung des Branchenmindestlohns. Zum 1. Januar 2025 steigt der Lohn in der Einstiegs-Lohngruppe (LG 1), die für die klassische <a href="/leistungen/unterhaltsreinigung">Unterhaltsreinigung</a> maßgeblich ist, von 13,50 Euro auf <strong>14,25 Euro</strong> pro Stunde.</p>
-      <p>Auch für qualifizierte Fachkräfte gibt es eine signifikante Erhöhung. In der Lohngruppe 6 (z.B. <a href="/leistungen/glasreinigung">Glas-</a> und <a href="/leistungen/fassadenreinigung">Fassadenreinigung</a>) steigt der Stundenlohn von 16,70 Euro auf <strong>17,65 Euro</strong>.</p>
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Die neuen Tarife ab Januar 2025</h3>
 
-      <!-- Bild mit Caption -->
-      <figure style="margin: 40px 0;">
-        <img src="/blog/artikel-1/content.avif" alt="Professionelle Reinigungskraft bei der Arbeit mit modernen Geräten" style="width: 100%; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);" />
-        <figcaption style="text-align: center; color: #6b7280; font-size: 14px; font-weight: 500; margin-top: 12px;">Professionelle Reinigung erfordert qualifiziertes Personal – faire Löhne sichern die Qualität.</figcaption>
-      </figure>
+      <!-- Content mit floatendem Bild -->
+      <div style="overflow: hidden;">
+        <figure style="float: right; width: 45%; margin: 0 0 20px 24px;">
+          <img src="/blog/artikel-1/content.avif" alt="Professionelle Reinigungskraft bei der Arbeit" style="width: 100%; border-radius: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
+          <figcaption style="color: #6b7280; font-size: 12px; font-weight: 600; margin-top: 8px; line-height: 1.5;">Faire Löhne sichern qualifiziertes Personal und höchste Reinigungsqualität.</figcaption>
+        </figure>
+        <p style="font-weight: 600; color: #374151; line-height: 1.8;">Der Kernpunkt der Einigung ist die Anpassung des Branchenmindestlohns. Zum 1. Januar 2025 steigt der Lohn in der Einstiegs-Lohngruppe (LG 1), die für die klassische <a href="/leistungen/unterhaltsreinigung" style="color: #109387; font-weight: 700;">Unterhaltsreinigung</a> maßgeblich ist, von 13,50 Euro auf <strong style="font-weight: 800; color: #012956;">14,25 Euro</strong> pro Stunde.</p>
+        <p style="font-weight: 600; color: #374151; line-height: 1.8; margin-top: 16px;">Auch für qualifizierte Fachkräfte gibt es eine signifikante Erhöhung. In der Lohngruppe 6 (z.B. <a href="/leistungen/glasreinigung" style="color: #109387; font-weight: 700;">Glas-</a> und <a href="/leistungen/fassadenreinigung" style="color: #109387; font-weight: 700;">Fassadenreinigung</a>) steigt der Stundenlohn von 16,70 Euro auf <strong style="font-weight: 800; color: #012956;">17,65 Euro</strong>.</p>
+      </div>
 
-      <h3>Ausblick auf 2026</h3>
-      <p>Der Tarifvertrag sieht eine weitere Stufe der Erhöhung zum 1. Januar 2026 vor:</p>
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Ausblick auf 2026</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Der Tarifvertrag sieht eine weitere Stufe der Erhöhung zum 1. Januar 2026 vor:</p>
 
       <!-- Tarif-Tabelle -->
-      <div style="background: #f8f9fa; border-radius: 12px; padding: 24px; margin: 24px 0;">
+      <div style="background: #f8f9fa; border-radius: 6px; padding: 20px; margin: 20px 0;">
         <table style="width: 100%; border-collapse: collapse;">
           <thead>
             <tr style="border-bottom: 2px solid #e5e7eb;">
-              <th style="text-align: left; padding: 12px 16px; color: #012956; font-weight: 700;">Lohngruppe</th>
-              <th style="text-align: center; padding: 12px 16px; color: #012956; font-weight: 700;">2024</th>
-              <th style="text-align: center; padding: 12px 16px; color: #012956; font-weight: 700;">2025</th>
-              <th style="text-align: center; padding: 12px 16px; color: #012956; font-weight: 700;">2026</th>
+              <th style="text-align: left; padding: 10px 14px; color: #012956; font-weight: 800; font-size: 14px;">Lohngruppe</th>
+              <th style="text-align: center; padding: 10px 14px; color: #012956; font-weight: 800; font-size: 14px;">2024</th>
+              <th style="text-align: center; padding: 10px 14px; color: #012956; font-weight: 800; font-size: 14px;">2025</th>
+              <th style="text-align: center; padding: 10px 14px; color: #012956; font-weight: 800; font-size: 14px;">2026</th>
             </tr>
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid #e5e7eb;">
-              <td style="padding: 12px 16px; font-weight: 600;">LG 1 (Unterhaltsreinigung)</td>
-              <td style="text-align: center; padding: 12px 16px; color: #6b7280;">13,50 €</td>
-              <td style="text-align: center; padding: 12px 16px; color: #109387; font-weight: 700;">14,25 €</td>
-              <td style="text-align: center; padding: 12px 16px; color: #109387; font-weight: 700;">15,00 €</td>
+              <td style="padding: 10px 14px; font-weight: 700; font-size: 14px; color: #374151;">LG 1 (Unterhaltsreinigung)</td>
+              <td style="text-align: center; padding: 10px 14px; color: #6b7280; font-weight: 600; font-size: 14px;">13,50 €</td>
+              <td style="text-align: center; padding: 10px 14px; color: #109387; font-weight: 800; font-size: 14px;">14,25 €</td>
+              <td style="text-align: center; padding: 10px 14px; color: #109387; font-weight: 800; font-size: 14px;">15,00 €</td>
             </tr>
             <tr>
-              <td style="padding: 12px 16px; font-weight: 600;">LG 6 (Glas-/Fassadenreinigung)</td>
-              <td style="text-align: center; padding: 12px 16px; color: #6b7280;">16,70 €</td>
-              <td style="text-align: center; padding: 12px 16px; color: #109387; font-weight: 700;">17,65 €</td>
-              <td style="text-align: center; padding: 12px 16px; color: #109387; font-weight: 700;">18,40 €</td>
+              <td style="padding: 10px 14px; font-weight: 700; font-size: 14px; color: #374151;">LG 6 (Glas-/Fassadenreinigung)</td>
+              <td style="text-align: center; padding: 10px 14px; color: #6b7280; font-weight: 600; font-size: 14px;">16,70 €</td>
+              <td style="text-align: center; padding: 10px 14px; color: #109387; font-weight: 800; font-size: 14px;">17,65 €</td>
+              <td style="text-align: center; padding: 10px 14px; color: #109387; font-weight: 800; font-size: 14px;">18,40 €</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <p>Über die gesamte Laufzeit bedeutet dies eine <strong>Lohnsteigerung von über 11 Prozent</strong> für Einstiegskräfte.</p>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Über die gesamte Laufzeit bedeutet dies eine <strong style="font-weight: 800; color: #012956;">Lohnsteigerung von über 11 Prozent</strong> für Einstiegskräfte.</p>
 
-      <h3>Stärkung der Ausbildung</h3>
-      <p>Um dem Fachkräftemangel entgegenzuwirken, wurden auch die Ausbildungsvergütungen ab Januar 2025 deutlich angehoben:</p>
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Stärkung der Ausbildung</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Um dem Fachkräftemangel entgegenzuwirken, wurden auch die Ausbildungsvergütungen ab Januar 2025 deutlich angehoben:</p>
 
       <!-- Ausbildungsvergütung -->
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0;">
-        <div style="background: #f8f9fa; border-radius: 12px; padding: 20px; text-align: center; border-left: 4px solid #109387;">
-          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-bottom: 8px;">1. Lehrjahr</p>
-          <p style="color: #012956; font-size: 24px; font-weight: 800;">1.000 €</p>
-          <p style="color: #109387; font-size: 12px; font-weight: 600;">+100 € vs. 2024</p>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 20px 0;">
+        <div style="background: #f8f9fa; border-radius: 6px; padding: 16px; text-align: center; border-left: 3px solid #109387;">
+          <p style="color: #6b7280; font-size: 12px; font-weight: 700; margin-bottom: 6px;">1. Lehrjahr</p>
+          <p style="color: #012956; font-size: 22px; font-weight: 800;">1.000 €</p>
+          <p style="color: #109387; font-size: 11px; font-weight: 700;">+100 € vs. 2024</p>
         </div>
-        <div style="background: #f8f9fa; border-radius: 12px; padding: 20px; text-align: center; border-left: 4px solid #109387;">
-          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-bottom: 8px;">2. Lehrjahr</p>
-          <p style="color: #012956; font-size: 24px; font-weight: 800;">1.150 €</p>
-          <p style="color: #109387; font-size: 12px; font-weight: 600;">+100 € vs. 2024</p>
+        <div style="background: #f8f9fa; border-radius: 6px; padding: 16px; text-align: center; border-left: 3px solid #109387;">
+          <p style="color: #6b7280; font-size: 12px; font-weight: 700; margin-bottom: 6px;">2. Lehrjahr</p>
+          <p style="color: #012956; font-size: 22px; font-weight: 800;">1.150 €</p>
+          <p style="color: #109387; font-size: 11px; font-weight: 700;">+100 € vs. 2024</p>
         </div>
-        <div style="background: #f8f9fa; border-radius: 12px; padding: 20px; text-align: center; border-left: 4px solid #109387;">
-          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-bottom: 8px;">3. Lehrjahr</p>
-          <p style="color: #012956; font-size: 24px; font-weight: 800;">1.300 €</p>
-          <p style="color: #109387; font-size: 12px; font-weight: 600;">+100 € vs. 2024</p>
+        <div style="background: #f8f9fa; border-radius: 6px; padding: 16px; text-align: center; border-left: 3px solid #109387;">
+          <p style="color: #6b7280; font-size: 12px; font-weight: 700; margin-bottom: 6px;">3. Lehrjahr</p>
+          <p style="color: #012956; font-size: 22px; font-weight: 800;">1.300 €</p>
+          <p style="color: #109387; font-size: 11px; font-weight: 700;">+100 € vs. 2024</p>
         </div>
       </div>
 
-      <h3>Auswirkungen für Auftraggeber in Bayern</h3>
-      <p>Für Unternehmen in Bayern, die Reinigungsdienstleistungen beauftragen, sind diese Entwicklungen relevant. Da die Gebäudereinigung sehr personalintensiv ist, werden sich die Tariferhöhungen in den Preisen der Dienstleister widerspiegeln.</p>
-      <p>Gleichzeitig ist die Tarifeinigung ein wichtiges Signal für Qualität. Höhere Löhne steigern die Wertschätzung für die systemrelevante Arbeit und tragen dazu bei, qualifiziertes Personal zu halten. Dies sichert die Qualität der Reinigungsleistung für die Kunden.</p>
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Auswirkungen für Auftraggeber in Bayern</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Für Unternehmen in Bayern, die Reinigungsdienstleistungen beauftragen, sind diese Entwicklungen relevant. Da die Gebäudereinigung sehr personalintensiv ist, werden sich die Tariferhöhungen in den Preisen der Dienstleister widerspiegeln.</p>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8; margin-top: 16px;">Gleichzeitig ist die Tarifeinigung ein wichtiges Signal für Qualität. Höhere Löhne steigern die Wertschätzung für die systemrelevante Arbeit und tragen dazu bei, qualifiziertes Personal zu halten. Dies sichert die Qualität der Reinigungsleistung für die Kunden.</p>
 
       <!-- FIMI Highlight Box -->
-      <div style="background: linear-gradient(135deg, #109387 0%, #0d7d72 100%); border-radius: 12px; padding: 28px 32px; margin: 32px 0;">
-        <p style="color: white; font-size: 18px; font-weight: 700; margin-bottom: 12px;">FIMI Gebäudereinigung begrüßt diese Entwicklung</p>
-        <p style="color: rgba(255,255,255,0.9); font-size: 15px; line-height: 1.7;">Als verantwortungsvoller Arbeitgeber setzen wir auf tarifkonforme Bezahlung und gut geschultes Personal, um unseren Kunden in <a href="/kontakt" style="color: white; font-weight: 700; text-decoration: underline;">Landshut, München, Regensburg und Umgebung</a> stets höchste Qualität zu bieten. Wir stehen bereit, um mit Ihnen transparent über die notwendigen Anpassungen zu sprechen und die optimale Reinigungsstrategie für Ihr Objekt sicherzustellen.</p>
+      <div style="background: linear-gradient(135deg, #109387 0%, #0d7d72 100%); border-radius: 6px; padding: 24px 28px; margin: 28px 0;">
+        <p style="color: white; font-size: 17px; font-weight: 800; margin-bottom: 10px;">FIMI Gebäudereinigung begrüßt diese Entwicklung</p>
+        <p style="color: rgba(255,255,255,0.95); font-size: 14px; font-weight: 600; line-height: 1.8;">Als verantwortungsvoller Arbeitgeber setzen wir auf tarifkonforme Bezahlung und gut geschultes Personal, um unseren Kunden in <a href="/kontakt" style="color: white; font-weight: 800; text-decoration: underline;">Landshut, München, Regensburg und Umgebung</a> stets höchste Qualität zu bieten. Wir stehen bereit, um mit Ihnen transparent über die notwendigen Anpassungen zu sprechen und die optimale Reinigungsstrategie für Ihr Objekt sicherzustellen.</p>
       </div>
 
-      <h3>Weiterführende Informationen</h3>
-      <ul>
-        <li><a href="https://www.die-gebaeudedienstleister.de/tarifpolitik" target="_blank" rel="noopener noreferrer">BIV – Tarifpolitik und Tarifverträge</a> – Offizielle Informationen des Bundesinnungsverbandes zu den aktuellen Löhnen</li>
-        <li><a href="https://igbau.de/Gebaeudereinigung.html" target="_blank" rel="noopener noreferrer">IG BAU Informationen zur Gebäudereinigung</a> – Perspektive der Gewerkschaft auf Arbeitsbedingungen und Tarife</li>
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Weiterführende Informationen</h3>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
+          <a href="https://www.die-gebaeudedienstleister.de/tarifpolitik" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">BIV – Tarifpolitik und Tarifverträge →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Offizielle Informationen des Bundesinnungsverbandes zu den aktuellen Löhnen</p>
+        </li>
+        <li style="padding: 12px 0;">
+          <a href="https://igbau.de/Gebaeudereinigung.html" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">IG BAU Informationen zur Gebäudereinigung →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Perspektive der Gewerkschaft auf Arbeitsbedingungen und Tarife</p>
+        </li>
       </ul>
     `,
     image: '/blog/artikel-1/hero.avif',
