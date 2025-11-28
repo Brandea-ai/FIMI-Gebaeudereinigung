@@ -73,9 +73,9 @@ export default function Footer() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-1">Erreichbarkeit</p>
-                    <p className="text-gray-700 font-semibold">
-                      Mo - Fr: 08:00 - 18:00 Uhr<br />
-                      <span className="text-[#109387]">Notfall: 2h Reaktionszeit</span>
+                    <p className="text-gray-700 font-bold">
+                      Mo-Fr: 08:00-18:00<br />
+                      <span className="text-[#109387] font-bold">Notfall: 2h Reaktionszeit</span>
                     </p>
                   </div>
                 </div>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Phone, Mail, MapPin, Clock, Copy, Check, Shield, FileText, MessageSquare, ExternalLink } from 'lucide-react'
 
 export default function ImpressumContent() {
@@ -120,7 +121,8 @@ export default function ImpressumContent() {
                   <a href="mailto:info@fimi-service.de" className="text-white font-extrabold text-lg hover:text-[#109387] transition-colors">
                     info@fimi-service.de
                   </a>
-                  <p className="text-white/50 font-bold mt-1">Mo-Fr: 08:00-18:00</p>
+                  <p className="text-white/50 font-bold mt-2">Mo-Fr: 08:00-18:00</p>
+                  <p className="text-[#109387] font-bold text-sm">Notfall: 2h Reaktionszeit</p>
                 </div>
 
                 {/* Quick Links */}
@@ -295,10 +297,18 @@ export default function ImpressumContent() {
 
                 {/* Map Card */}
                 <div className="relative rounded-[6px] overflow-hidden bg-[#012956]">
-                  {/* Map Overlay Info */}
-                  <div className="absolute top-4 left-4 z-10 bg-white rounded-[6px] p-4 shadow-lg max-w-xs">
-                    <h3 className="font-bold text-[#012956] mb-1">FIMI Gebäudereinigung GmbH</h3>
-                    <p className="text-gray-600 text-sm mb-4">
+                  {/* Map Overlay Info - breiter um Google-Text zu verdecken */}
+                  <div className="absolute top-4 left-4 z-10 bg-white rounded-[6px] p-5 shadow-lg w-80">
+                    {/* Logo */}
+                    <Image
+                      src="/FIMI-LOGO/FIMI-Logo_FUER-Webseite.png"
+                      alt="FIMI Logo"
+                      width={140}
+                      height={47}
+                      className="mb-4"
+                    />
+                    <h3 className="font-extrabold text-[#012956] text-lg mb-1">FIMI Gebäudereinigung GmbH</h3>
+                    <p className="text-gray-600 font-semibold mb-4">
                       Kellerstr. 39<br />
                       84036 Landshut, Bayern
                     </p>
@@ -307,14 +317,14 @@ export default function ImpressumContent() {
                         href="https://www.google.com/maps/dir/?api=1&destination=Kellerstr.+39,+84036+Landshut"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1 bg-[#109387] hover:bg-[#0d7d72] text-white font-semibold text-sm px-3 py-2 rounded-[6px] transition-colors"
+                        className="flex items-center gap-1 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm px-4 py-2.5 rounded-[6px] transition-colors"
                       >
                         Route planen
                         <ExternalLink size={14} />
                       </a>
                       <a
                         href="tel:+4917472254730"
-                        className="flex items-center gap-1 bg-[#012956] hover:bg-[#01203d] text-white font-semibold text-sm px-3 py-2 rounded-[6px] transition-colors"
+                        className="flex items-center gap-1 bg-[#012956] hover:bg-[#01203d] text-white font-bold text-sm px-4 py-2.5 rounded-[6px] transition-colors"
                       >
                         Anrufen
                       </a>
