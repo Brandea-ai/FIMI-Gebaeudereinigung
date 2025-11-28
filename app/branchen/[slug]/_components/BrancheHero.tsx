@@ -65,13 +65,13 @@ export function BrancheHero({ branche }: BrancheHeroProps) {
               </span>
             </div>
 
-            {/* Main Headline - Mobile umbrechen, Desktop einzeilig */}
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight md:leading-[1.15] mb-6 lg:whitespace-nowrap lg:overflow-hidden lg:text-ellipsis">
+            {/* Main Headline - VOLLSTÄNDIG sichtbar, keine Abschneidung */}
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[2.75rem] font-bold text-white leading-tight mb-6">
               {branche.headline}
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white/90 mb-8 md:mb-10 leading-snug max-w-4xl">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white/90 mb-8 md:mb-10 leading-snug max-w-4xl">
               {branche.subheadline}
             </p>
 
