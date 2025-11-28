@@ -130,7 +130,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               <div className="mt-12 pt-8 border-t border-gray-200">
                 <div className="flex items-center gap-4">
                   <span className="text-gray-500 font-semibold text-sm">Teilen:</span>
-                  <ShareButton title={post.title} text={post.excerpt} />
+                  <ShareButton title={post.title} />
                 </div>
               </div>
             </div>
