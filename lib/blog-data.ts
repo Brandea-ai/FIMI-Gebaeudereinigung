@@ -27,16 +27,50 @@ export const blogPosts: BlogPost[] = [
   // NEWS (3)
   {
     id: '1',
-    slug: 'artikel-1',
-    title: 'Artikel 1 - Platzhalter',
-    excerpt: 'Kurzbeschreibung folgt.',
-    content: '<p>Inhalt folgt.</p>',
-    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
+    slug: 'tariflohn-gebaeudereinigung-2025-2026',
+    title: 'Tarifabschluss 2025/2026: Deutliche Lohnsteigerungen in der Gebäudereinigung',
+    excerpt: 'Nach intensiven Verhandlungen haben sich die Tarifparteien auf einen neuen Lohntarifvertrag für die rund 700.000 Beschäftigten in der Gebäudereinigung geeinigt. Die Vereinbarung sieht eine stufenweise Erhöhung der Löhne in den Jahren 2025 und 2026 vor, was die Attraktivität der Branche stärkt, aber auch Auswirkungen auf die Dienstleistungspreise haben wird.',
+    content: `
+      <p>Die Gebäudereinigung, Deutschlands beschäftigungsstärkstes Handwerk, startet mit neuen finanziellen Rahmenbedingungen ins Jahr 2025. Der Ende 2024 zwischen dem <strong>Bundesinnungsverband des Gebäudereiniger-Handwerks (BIV)</strong> und der <strong>Industriegewerkschaft Bauen-Agrar-Umwelt (IG BAU)</strong> ausgehandelte Lohntarifvertrag ist in Kraft getreten und für allgemeinverbindlich erklärt worden.</p>
+
+      <h3>Die neuen Tarife ab Januar 2025</h3>
+      <p>Der Kernpunkt der Einigung ist die Anpassung des Branchenmindestlohns. Zum 1. Januar 2025 steigt der Lohn in der Einstiegs-Lohngruppe (LG 1), die für die klassische <a href="/leistungen/unterhaltsreinigung">Unterhaltsreinigung</a> maßgeblich ist, von 13,50 Euro auf <strong>14,25 Euro</strong> pro Stunde.</p>
+      <p>Auch für qualifizierte Fachkräfte gibt es eine signifikante Erhöhung. In der Lohngruppe 6 (z.B. <a href="/leistungen/glasreinigung">Glas-</a> und <a href="/leistungen/fassadenreinigung">Fassadenreinigung</a>) steigt der Stundenlohn von 16,70 Euro auf <strong>17,65 Euro</strong>.</p>
+
+      <img src="/blog/artikel-1/content.jpg" alt="Professionelle Reinigungskraft bei der Arbeit" class="my-8 rounded-lg w-full" />
+
+      <h3>Ausblick auf 2026</h3>
+      <p>Der Tarifvertrag sieht eine weitere Stufe der Erhöhung zum 1. Januar 2026 vor:</p>
+      <ul>
+        <li><strong>LG 1 (Einstiegslohn):</strong> Steigt auf 15,00 Euro pro Stunde</li>
+        <li><strong>LG 6 (Fachkräfte):</strong> Steigt auf 18,40 Euro pro Stunde</li>
+      </ul>
+      <p>Über die gesamte Laufzeit bedeutet dies eine <strong>Lohnsteigerung von über 11 Prozent</strong> für Einstiegskräfte.</p>
+
+      <h3>Stärkung der Ausbildung</h3>
+      <p>Um dem Fachkräftemangel entgegenzuwirken, wurden auch die Ausbildungsvergütungen ab Januar 2025 deutlich angehoben: Auszubildende erhalten im ersten Lehrjahr nun <strong>1.000 Euro</strong> (vorher 900 Euro), im zweiten <strong>1.150 Euro</strong> und im dritten <strong>1.300 Euro</strong>.</p>
+
+      <h3>Auswirkungen für Auftraggeber in Bayern</h3>
+      <p>Für Unternehmen in Bayern, die Reinigungsdienstleistungen beauftragen, sind diese Entwicklungen relevant. Da die Gebäudereinigung sehr personalintensiv ist, werden sich die Tariferhöhungen in den Preisen der Dienstleister widerspiegeln.</p>
+      <p>Gleichzeitig ist die Tarifeinigung ein wichtiges Signal für Qualität. Höhere Löhne steigern die Wertschätzung für die systemrelevante Arbeit und tragen dazu bei, qualifiziertes Personal zu halten. Dies sichert die Qualität der Reinigungsleistung für die Kunden.</p>
+      <p><strong>FIMI Gebäudereinigung</strong> begrüßt diese Entwicklung. Als verantwortungsvoller Arbeitgeber setzen wir auf tarifkonforme Bezahlung und gut geschultes Personal, um unseren Kunden in <a href="/kontakt">Landshut, München, Regensburg und Umgebung</a> stets höchste Qualität zu bieten. Wir stehen bereit, um mit Ihnen transparent über die notwendigen Anpassungen zu sprechen und die optimale Reinigungsstrategie für Ihr Objekt sicherzustellen.</p>
+
+      <h3>Weiterführende Informationen</h3>
+      <ul>
+        <li><a href="https://www.die-gebaeudedienstleister.de/tarifpolitik" target="_blank" rel="noopener noreferrer">BIV – Tarifpolitik und Tarifverträge</a> – Offizielle Informationen des Bundesinnungsverbandes zu den aktuellen Löhnen</li>
+        <li><a href="https://igbau.de/Gebaeudereinigung.html" target="_blank" rel="noopener noreferrer">IG BAU Informationen zur Gebäudereinigung</a> – Perspektive der Gewerkschaft auf Arbeitsbedingungen und Tarife</li>
+      </ul>
+    `,
+    image: '/blog/artikel-1/hero.jpg',
     category: 'news',
     author: 'FIMI Team',
     date: '2025-01-15',
-    readTime: 3,
+    readTime: 4,
     featured: true,
+    sources: [
+      'https://www.die-gebaeudedienstleister.de/tarifpolitik',
+      'https://zvoove.de/wissen/blog/neuer-tarif-in-der-gebaeudereinigung'
+    ]
   },
   {
     id: '2',
