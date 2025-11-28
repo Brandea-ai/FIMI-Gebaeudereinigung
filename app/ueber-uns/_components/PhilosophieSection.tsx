@@ -7,12 +7,12 @@ const werte = [
   {
     icon: Shield,
     titel: 'Qualität ohne Kompromisse',
-    beschreibung: 'ISO 9001 zertifiziert. Jeder Reinigungsauftrag wird nach standardisierten Prozessen durchgeführt und regelmäßig kontrolliert. Gleichbleibende Qualität ist unser Versprechen.',
+    beschreibung: 'Wir arbeiten nach ISO 9001 Standards. Jeder Reinigungsauftrag wird nach standardisierten Prozessen durchgeführt und regelmäßig kontrolliert. Gleichbleibende Qualität ist unser Versprechen.',
   },
   {
     icon: Leaf,
     titel: 'Nachhaltigkeit',
-    beschreibung: 'ISO 14001 zertifiziert. Wir setzen auf umweltschonende Reinigungsmittel, ressourcensparende Verfahren und recycelbare Materialien. Sauberkeit muss nicht auf Kosten der Umwelt gehen.',
+    beschreibung: 'Wir arbeiten nach ISO 14001 Standards. Wir setzen auf umweltschonende Reinigungsmittel, ressourcensparende Verfahren und recycelbare Materialien. Sauberkeit muss nicht auf Kosten der Umwelt gehen.',
   },
   {
     icon: Users,
@@ -38,7 +38,7 @@ const werte = [
 
 export default function PhilosophieSection() {
   return (
-    <section className="py-20 lg:py-32 bg-white">
+    <section className="py-20 lg:py-32 bg-[#109387]/5">
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
         {/* Header */}
@@ -77,8 +77,8 @@ export default function PhilosophieSection() {
                 className="group bg-[#f8f9fa] rounded-[6px] p-8 hover:bg-[#012956] transition-all duration-500"
               >
                 {/* Icon */}
-                <div className="w-14 h-14 bg-[#109387]/10 group-hover:bg-[#109387] rounded-[6px] flex items-center justify-center mb-6 transition-colors duration-500">
-                  <IconComponent size={28} className="text-[#109387] group-hover:text-white transition-colors duration-500" />
+                <div className="w-14 h-14 border-2 border-[#109387] group-hover:bg-[#109387] rounded-[6px] flex items-center justify-center mb-6 transition-colors duration-500">
+                  <IconComponent size={28} className="text-[#109387] group-hover:text-white transition-colors duration-500" strokeWidth={1.5} />
                 </div>
 
                 <h3 className="text-xl font-bold text-[#012956] group-hover:text-white mb-4 transition-colors duration-500">

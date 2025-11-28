@@ -163,19 +163,21 @@ export default function TeamSection() {
                 ))}
 
                 {/* Placeholder für weitere Mitarbeiter */}
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  className="relative aspect-[4/5] rounded-[6px] overflow-hidden bg-white/5 border-2 border-dashed border-white/20 flex items-center justify-center"
-                >
-                  <div className="text-center p-4">
-                    <p className="text-white/40 font-bold text-4xl mb-2">+</p>
-                    <p className="text-white/60 font-semibold text-sm">
-                      Weitere Kollegen
-                    </p>
-                  </div>
-                </motion.div>
+                <Link href="/karriere">
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="relative aspect-[4/5] rounded-[6px] overflow-hidden bg-white/5 border-2 border-dashed border-white/20 hover:border-[#109387] hover:bg-[#109387]/10 flex items-center justify-center cursor-pointer transition-all duration-300 group"
+                  >
+                    <div className="text-center p-4">
+                      <p className="text-white/40 group-hover:text-[#109387] font-bold text-4xl mb-2 transition-colors duration-300">+</p>
+                      <p className="text-white/60 group-hover:text-white font-semibold text-sm transition-colors duration-300">
+                        Komm ins Team!
+                      </p>
+                    </div>
+                  </motion.div>
+                </Link>
               </div>
             </motion.div>
           ))}

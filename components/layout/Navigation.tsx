@@ -43,6 +43,7 @@ export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
+  const [isAboutOpen, setIsAboutOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -172,12 +173,47 @@ export default function Navigation() {
               </div>
             </div>
 
-            <Link
-              href="/ueber-uns"
-              className="text-fimi-navy hover:text-fimi-turquoise font-medium transition-colors"
+            {/* Über FIMI Dropdown */}
+            <div
+              className="relative group"
+              onMouseEnter={() => setIsAboutOpen(true)}
+              onMouseLeave={() => setIsAboutOpen(false)}
             >
-              Über Uns
-            </Link>
+              <button className="flex items-center space-x-1 text-fimi-navy hover:text-fimi-turquoise font-medium transition-colors">
+                <span>Über FIMI</span>
+                <ChevronDown className="w-4 h-4" />
+              </button>
+
+              {/* About Dropdown */}
+              <div
+                className={`absolute top-full left-0 mt-2 w-48 transition-all duration-300 ${
+                  isAboutOpen
+                    ? 'opacity-100 visible translate-y-0'
+                    : 'opacity-0 invisible -translate-y-2'
+                }`}
+              >
+                <div className="bg-white rounded-lg shadow-xl p-4 border border-gray-100">
+                  <ul className="space-y-2">
+                    <li>
+                      <Link
+                        href="/ueber-uns"
+                        className="block text-gray-700 hover:text-fimi-turquoise font-medium py-2 transition-colors"
+                      >
+                        Über uns
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/karriere"
+                        className="block text-gray-700 hover:text-fimi-turquoise font-medium py-2 transition-colors"
+                      >
+                        Karriere
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
 
             <Link
               href="/referenzen"
@@ -294,13 +330,35 @@ export default function Navigation() {
                 )}
               </div>
 
-              <Link
-                href="/ueber-uns"
-                className="block text-fimi-navy hover:text-fimi-turquoise font-medium py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Über Uns
-              </Link>
+              {/* Mobile Über FIMI Accordion */}
+              <div>
+                <button
+                  onClick={() => setIsAboutOpen(!isAboutOpen)}
+                  className="flex items-center justify-between w-full text-fimi-navy hover:text-fimi-turquoise font-medium py-2"
+                >
+                  <span>Über FIMI</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isAboutOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                {isAboutOpen && (
+                  <div className="pl-4 mt-2 space-y-1">
+                    <Link
+                      href="/ueber-uns"
+                      className="block text-gray-700 hover:text-fimi-turquoise py-1"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Über uns
+                    </Link>
+                    <Link
+                      href="/karriere"
+                      className="block text-gray-700 hover:text-fimi-turquoise py-1"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Karriere
+                    </Link>
+                  </div>
+                )}
+              </div>
 
               <Link
                 href="/referenzen"

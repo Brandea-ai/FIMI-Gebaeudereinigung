@@ -36,8 +36,11 @@ export default function PartnerSection() {
             Ausgestattet mit den
             <span className="text-[#109387]"> Besten</span>
           </h2>
+          <p className="text-lg text-gray-700 font-semibold max-w-2xl mx-auto mb-2">
+            Wir arbeiten nur mit führenden Herstellern zusammen.
+          </p>
           <p className="text-lg text-gray-700 font-semibold max-w-2xl mx-auto">
-            Wir arbeiten nur mit führenden Herstellern zusammen. Professionelle Ausrüstung ist die Grundlage für professionelle Ergebnisse.
+            Professionelle Ausrüstung ist die Grundlage für professionelle Ergebnisse.
           </p>
         </motion.div>
 
@@ -116,8 +119,8 @@ export default function PartnerSection() {
           </div>
           <div className="w-px bg-gray-300 hidden sm:block" />
           <div>
-            <p className="text-3xl font-bold text-[#109387]">24h</p>
-            <p className="text-gray-600 font-semibold">Ersatzteil-Service</p>
+            <p className="text-3xl font-bold text-[#109387]">72h</p>
+            <p className="text-gray-600 font-semibold">Zulieferung</p>
           </div>
         </div>
       </div>

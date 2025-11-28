@@ -35,7 +35,7 @@ export default function HeroSection() {
                 Über FIMI Gebäudereinigung
               </p>
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.05] mb-8">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-[1.05] mb-8">
                 Seit 2016 Ihr Partner für
                 <span className="block text-[#109387] mt-2">professionelle Sauberkeit</span>
               </h1>
@@ -68,7 +68,7 @@ export default function HeroSection() {
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle size={22} className="text-[#109387]" />
-                  <span className="text-white font-semibold">8 Standorte</span>
+                  <span className="text-white font-semibold">8 Einsatzgebiete</span>
                 </div>
               </div>
 
@@ -109,7 +109,7 @@ export default function HeroSection() {
               </div>
               <div className="bg-[#109387] rounded-[6px] p-6">
                 <p className="text-5xl font-bold text-white mb-2">ISO</p>
-                <p className="text-white font-bold text-lg">Zertifiziert</p>
+                <p className="text-white font-bold text-lg">Standards</p>
                 <p className="text-white/80 font-semibold text-sm">9001 & 14001</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[6px] p-6">

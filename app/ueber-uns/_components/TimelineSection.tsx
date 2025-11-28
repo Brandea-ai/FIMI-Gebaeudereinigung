@@ -29,14 +29,6 @@ const timeline = [
     highlight: false,
   },
   {
-    year: '2019',
-    title: 'ISO-Zertifizierung',
-    subtitle: 'Qualität dokumentiert',
-    description: 'Wir erreichten die ISO 9001 und ISO 14001 Zertifizierung - ein Meilenstein für unser Qualitäts- und Umweltmanagement.',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop',
-    highlight: true,
-  },
-  {
     year: '2020',
     title: 'Pandemie-Herausforderung',
     subtitle: 'Stärker durch die Krise',
@@ -47,18 +39,26 @@ const timeline = [
   {
     year: '2022',
     title: 'Regionale Expansion',
-    subtitle: '8 Standorte in Bayern',
+    subtitle: '8 Einsatzgebiete in Bayern',
     description: 'Von Landshut aus expandierten wir nach München, Regensburg, Ingolstadt, Freising, Erding, Straubing und Passau.',
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop',
     highlight: true,
   },
   {
-    year: '2024',
+    year: '2025',
     title: 'Heute',
     subtitle: '90+ Mitarbeiter, 85+ Kunden',
     description: 'Mit über 90 Mitarbeitern und mehr als 85 zufriedenen Geschäftskunden sind wir einer der führenden Gebäudereiniger in Niederbayern und Oberbayern.',
     image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop',
     highlight: true,
+  },
+  {
+    year: '2026',
+    title: 'ISO-Zertifizierung',
+    subtitle: 'Coming Soon',
+    description: 'Wir arbeiten bereits nach ISO 9001 und ISO 14001 Standards. Die offizielle Zertifizierung ist unser nächstes Ziel für höchste Qualitäts- und Umweltstandards.',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop',
+    highlight: false,
   },
 ]
 

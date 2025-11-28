@@ -47,7 +47,7 @@ export default function RegionenSection() {
                 </div>
                 <div>
                   <p className="text-white font-bold text-lg">
-                    8 Standorte in Bayern
+                    8 Einsatzgebiete in Bayern
                   </p>
                   <p className="text-white/70 font-semibold text-sm">
                     Immer in Ihrer Nähe
@@ -80,34 +80,35 @@ export default function RegionenSection() {
             {/* Standorte Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
               {standorte.map((stadt, index) => (
-                <motion.div
+                <motion.a
                   key={stadt}
+                  href="#contact-form"
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: index * 0.05 }}
-                  className="bg-[#f8f9fa] rounded-[6px] px-4 py-3 text-center"
+                  className="bg-[#f8f9fa] hover:bg-[#109387] rounded-[6px] px-4 py-3 text-center cursor-pointer transition-all duration-300 group"
                 >
-                  <span className="font-bold text-[#012956]">{stadt}</span>
-                </motion.div>
+                  <span className="font-bold text-[#012956] group-hover:text-white transition-colors duration-300">{stadt}</span>
+                </motion.a>
               ))}
             </div>
 
             {/* CTA */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/referenzen"
-                className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
-              >
-                Referenzen ansehen
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
               <a
                 href="#contact-form"
-                className="inline-flex items-center justify-center gap-3 bg-[#012956] hover:bg-[#01203d] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"
+                className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
               >
                 Kontakt aufnehmen
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </a>
+              <Link
+                href="/referenzen"
+                className="inline-flex items-center justify-center gap-3 bg-[#012956] hover:bg-[#01203d] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"
+              >
+                Referenzen ansehen
+              </Link>
             </div>
           </motion.div>
 
