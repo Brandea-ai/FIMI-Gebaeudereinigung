@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, CheckCircle, Users, MapPin, Phone, Cpu, BarChart3, Smartphone, Shield } from 'lucide-react'
+import { ArrowRight, CheckCircle, Users, MapPin, Phone, Cpu, BarChart3, Smartphone, Shield, Briefcase } from 'lucide-react'
 
 // 8 Einsatzgebiete (Städte)
 const einsatzgebiete = [
@@ -19,132 +19,131 @@ const stats = [
   { zahl: '8', label: 'Standorte', sublabel: 'in Bayern' },
 ]
 
-// Timeline Meilensteine
+// Timeline Meilensteine - mit Bildern und mehr Details
 const meilensteine = [
   {
     jahr: '2016',
     titel: 'Der Anfang',
-    beschreibung: 'Gründung als kleine GbR in Landshut. Spezialisiert auf Glas- und Fassadenreinigung. Zwei Gründer mit einer Vision: Gebäudereinigung anders machen.',
+    beschreibung: 'Gründung als kleine GbR in Landshut. Spezialisiert auf Glas- und Fassadenreinigung. Zwei Gründer mit einer Vision: Gebäudereinigung anders machen – persönlicher, zuverlässiger, moderner.',
+    details: 'Mit nur einem Transporter und der Überzeugung, dass Qualität und Service den Unterschied machen, starteten wir unsere Reise. Jeder Kunde wurde persönlich betreut, jeder Auftrag mit vollem Einsatz erledigt.',
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600&auto=format&fit=crop',
   },
   {
     jahr: '2018',
     titel: 'Erste Großkunden',
-    beschreibung: 'Das Vertrauen wächst. Wir gewinnen erste namhafte Kunden in der Region und bauen unser Team kontinuierlich aus. Erweiterung auf Unterhaltsreinigung.',
+    beschreibung: 'Das Vertrauen wächst. Wir gewinnen erste namhafte Kunden in der Region und bauen unser Team kontinuierlich aus. Erweiterung auf Unterhaltsreinigung und Büroreinigung.',
+    details: 'Mundpropaganda war unser bestes Marketing. Zufriedene Kunden empfahlen uns weiter, und plötzlich klopften auch größere Unternehmen an. Zeit für das erste feste Team.',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=600&auto=format&fit=crop',
   },
   {
     jahr: '2020',
-    titel: 'Expansion',
-    beschreibung: 'Trotz Pandemie: Wir wachsen. Neue Standorte in München und Regensburg. Das Team verdoppelt sich. Erste eigene Software-Lösungen für Qualitätskontrolle.',
+    titel: 'Expansion trotz Krise',
+    beschreibung: 'Während andere pausieren, wachsen wir. Neue Standorte in München und Regensburg. Das Team verdoppelt sich. Erste eigene Software-Lösungen für Qualitätskontrolle.',
+    details: 'Die Pandemie brachte neue Herausforderungen – und neue Chancen. Hygiene wurde wichtiger denn je. Wir investierten in Schulungen, Ausrüstung und digitale Prozesse.',
+    image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=600&auto=format&fit=crop',
   },
   {
     jahr: '2022',
-    titel: 'Facility Management',
-    beschreibung: 'Vom Reinigungsunternehmen zum Full-Service-Partner. Facility Management, Hausmeisterservice, Winterdienst. Alles aus einer Hand.',
+    titel: 'Full-Service Partner',
+    beschreibung: 'Vom Reinigungsunternehmen zum umfassenden Facility-Partner. Facility Management, Hausmeisterservice, Winterdienst, Außenanlagenpflege – alles aus einer Hand.',
+    details: 'Unsere Kunden fragten immer öfter: „Könnt ihr nicht auch...?" Also erweiterten wir unser Portfolio. Ein Ansprechpartner für alle Gebäudedienstleistungen.',
+    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=600&auto=format&fit=crop',
   },
   {
     jahr: '2024',
     titel: 'Digitale Innovation',
-    beschreibung: '90+ Mitarbeiter. 8 Standorte in Bayern. Eigenes Kunden-Dashboard und KI-gestützte Qualitätskontrolle. ISO-Zertifizierung in Vorbereitung (Ziel: 2026).',
+    beschreibung: '90+ Mitarbeiter. 8 Standorte in Bayern. Eigenes Kunden-Dashboard, KI-gestützte Qualitätskontrolle und ISO-Zertifizierung in Vorbereitung (Ziel: Ende 2026).',
+    details: 'Technologie macht uns besser. Unser selbst entwickeltes Dashboard gibt Kunden Echtzeit-Einblicke. KI hilft uns, Prozesse zu optimieren. Die Zukunft der Gebäudereinigung beginnt jetzt.',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop',
   },
 ]
 
-// Wofür wir stehen - mit Bildern
+// Wofür wir stehen - mit ausführlichen Texten
 const werte = [
   {
     titel: 'Zuverlässigkeit',
-    beschreibung: 'Was wir zusagen, halten wir. Keine Ausreden, keine Verzögerungen. Ihre Räume sind sauber wenn Sie es erwarten.',
+    kurz: 'Was wir zusagen, halten wir.',
+    beschreibung: 'In der Gebäudereinigung zählt jeder Tag. Wenn wir sagen, dass Ihre Räume um 7 Uhr morgens sauber sind, dann sind sie das. Keine Ausreden, keine Verzögerungen, keine bösen Überraschungen. Unsere Kunden können sich auf uns verlassen – und das seit über 8 Jahren.',
+    details: 'Wir wissen: Ihr Geschäft hängt davon ab, dass alles funktioniert. Deshalb haben wir Backup-Systeme, Vertretungsregelungen und Notfallpläne. Falls doch einmal etwas schiefgeht, erfahren Sie es als Erster – nicht als Letzter.',
     image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=800&auto=format&fit=crop',
   },
   {
     titel: 'Menschlichkeit',
-    beschreibung: 'Unsere Mitarbeiter sind keine Nummern. Faire Löhne, gute Arbeitsbedingungen und echte Wertschätzung sorgen für motivierte Teams.',
+    kurz: 'Unsere Mitarbeiter sind keine Nummern.',
+    beschreibung: 'Die Reinigungsbranche hat einen Ruf: Niedriglöhne, hohe Fluktuation, wenig Wertschätzung. Wir machen es anders. Faire Bezahlung über Tarif, geregelte Arbeitszeiten, echte Entwicklungsmöglichkeiten. Das Ergebnis: Motivierte Teams, die seit Jahren bei uns sind.',
+    details: 'Zufriedene Mitarbeiter bedeuten zufriedene Kunden. Wer gerne zur Arbeit kommt, macht bessere Arbeit. So einfach ist das. Deshalb investieren wir in Schulungen, moderne Ausrüstung und ein respektvolles Miteinander.',
     image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop',
   },
   {
     titel: 'Lösungsorientierung',
-    beschreibung: 'Wir suchen keine Probleme, wir finden Lösungen. Für uns ist jede Herausforderung eine Chance, besser zu werden.',
+    kurz: 'Wir finden Wege, keine Ausreden.',
+    beschreibung: 'Jedes Gebäude ist anders. Jeder Kunde hat spezielle Anforderungen. Standardlösungen von der Stange? Nicht mit uns. Wir hören zu, analysieren und entwickeln individuelle Konzepte. Denn Reinigung ist kein Produkt – es ist eine Dienstleistung.',
+    details: 'Sie haben ein Problem, das noch keiner lösen konnte? Fordern Sie uns heraus. Ob schwierige Böden, empfindliche Oberflächen oder komplexe Zeitpläne – wir finden einen Weg. Denn keine Lösung zu haben ist für uns schlicht keine Option.',
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop',
   },
   {
     titel: 'Leidenschaft',
-    beschreibung: 'Reinigung ist unser Handwerk. Wir lieben was wir tun und das sieht man an jedem Ergebnis.',
+    kurz: 'Reinigung ist unser Handwerk.',
+    beschreibung: 'Man kann einen Job machen – oder man kann ihn lieben. Wir haben uns bewusst für die Gebäudereinigung entschieden. Nicht weil es einfach ist, sondern weil es uns erfüllt. Saubere Räume schaffen Wohlbefinden. Das motiviert uns jeden Tag aufs Neue.',
+    details: 'Diese Leidenschaft sieht man an den Details: An der perfekten Kante, am glänzenden Boden, am frischen Duft beim Betreten. Wir sind stolz auf das, was wir tun – und das spüren auch unsere Kunden.',
     image: 'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=800&auto=format&fit=crop',
   },
 ]
 
-// Technologie & Innovation
+// Technologie & Innovation - string-based icon mapping to avoid SSG issues
 const technologie = [
   {
-    icon: Smartphone,
+    iconId: 'smartphone' as const,
     titel: 'Kunden-Dashboard',
     beschreibung: 'Ihr persönliches Portal für Aufträge, Feedback und Kommunikation. Alles transparent und in Echtzeit.',
   },
   {
-    icon: Cpu,
+    iconId: 'cpu' as const,
     titel: 'KI-Qualitätskontrolle',
     beschreibung: 'Wir nutzen künstliche Intelligenz zur Optimierung unserer Reinigungsprozesse und Qualitätssicherung.',
   },
   {
-    icon: BarChart3,
+    iconId: 'barchart3' as const,
     titel: 'Eigene Software',
     beschreibung: 'Selbst entwickelte Tools für Einsatzplanung, Zeiterfassung und Reporting. Keine Standard-Software von der Stange.',
   },
   {
-    icon: Shield,
+    iconId: 'shield' as const,
     titel: 'ISO in Vorbereitung',
     beschreibung: 'Zertifizierung nach ISO 9001 & 14001 in Arbeit. Geplanter Abschluss bis Ende 2026.',
   },
 ]
 
-// Partner & Lieferanten
-const partnerKategorien = [
-  {
-    id: 'maschinen',
-    titel: 'Reinigungsmaschinen',
-    partner: [
-      { name: 'Kärcher', info: 'Weltmarktführer, dichtestes Servicenetz' },
-      { name: 'Nilfisk', info: 'Professionelle Reinigungstechnik seit 1906' },
-      { name: 'Hako', info: 'Großmaschinen & Aufsitz-Scheuersaugmaschinen' },
-      { name: 'Tennant', info: 'US-Premium für Industrie & Logistik' },
-      { name: 'Comac / Fimap', info: 'Italienische Qualität' },
-    ],
-  },
-  {
-    id: 'chemie',
-    titel: 'Reinigungschemie',
-    partner: [
-      { name: 'Dreiturm GmbH', info: 'Unser Hauptlieferant für Reinigungsmittel' },
-      { name: 'Kiehl', info: 'Traditionsmarke für Bodenpflege' },
-      { name: 'Ecolab', info: 'Systemlösungen für Großkunden' },
-    ],
-  },
-  {
-    id: 'hygiene',
-    titel: 'Hygienepapier & Einweg',
-    partner: [
-      { name: 'Tork (Essity)', info: 'Spendersysteme, Marktführer' },
-      { name: 'Wepa', info: 'Deutscher Hersteller, Nachhaltigkeit' },
-      { name: 'Fripa', info: 'Mittelstand, flexible Mengen' },
-      { name: 'igefa', info: '1.000+ Produkte, Top Preis-Leistung' },
-    ],
-  },
-  {
-    id: 'arbeitsschutz',
-    titel: 'Arbeitsschutz & Berufsbekleidung',
-    partner: [
-      { name: 'CWS', info: 'Mietservice für Berufsbekleidung' },
-      { name: 'Mewa', info: 'Textilservice & Putztücher' },
-      { name: 'Engelbert Strauss', info: 'Workwear, schnelle Lieferung' },
-      { name: 'uvex', info: 'PSA Premium (Handschuhe, Brillen)' },
-    ],
-  },
-  {
-    id: 'garten',
-    titel: 'Garten- & Außenpflege',
-    partner: [
-      { name: 'Stihl', info: 'Premium-Geräte für Garten und Pflege' },
-    ],
-  },
+// Icon render helper for technologie
+function TechIcon({ iconId }: { iconId: 'smartphone' | 'cpu' | 'barchart3' | 'shield' }) {
+  const iconProps = { size: 28, className: "text-[#109387] mb-3", strokeWidth: 1.5 }
+  switch (iconId) {
+    case 'smartphone': return <Smartphone {...iconProps} />
+    case 'cpu': return <Cpu {...iconProps} />
+    case 'barchart3': return <BarChart3 {...iconProps} />
+    case 'shield': return <Shield {...iconProps} />
+    default: return null
+  }
+}
+
+// Alle Partner als Liste für Slider
+const allePartner = [
+  { name: 'Kärcher', kategorie: 'Maschinen' },
+  { name: 'Nilfisk', kategorie: 'Maschinen' },
+  { name: 'Hako', kategorie: 'Maschinen' },
+  { name: 'Tennant', kategorie: 'Maschinen' },
+  { name: 'Comac', kategorie: 'Maschinen' },
+  { name: 'Dreiturm', kategorie: 'Chemie' },
+  { name: 'Kiehl', kategorie: 'Chemie' },
+  { name: 'Ecolab', kategorie: 'Chemie' },
+  { name: 'Tork', kategorie: 'Hygiene' },
+  { name: 'Wepa', kategorie: 'Hygiene' },
+  { name: 'igefa', kategorie: 'Hygiene' },
+  { name: 'CWS', kategorie: 'Arbeitsschutz' },
+  { name: 'Mewa', kategorie: 'Arbeitsschutz' },
+  { name: 'Engelbert Strauss', kategorie: 'Arbeitsschutz' },
+  { name: 'uvex', kategorie: 'Arbeitsschutz' },
+  { name: 'Stihl', kategorie: 'Garten' },
 ]
 
 // Team
@@ -190,17 +189,18 @@ const geschaeftsfuehrung = [
     position: 'Geschäftsführer',
     bereich: 'Vertrieb & Strategie',
     zitat: 'Für uns gibt es keine halben Sachen. Entweder wir machen es richtig, oder wir lassen es.',
+    bio: 'Seit der Gründung 2016 verantwortet Christian den Vertrieb und die strategische Ausrichtung von FIMI. Sein Fokus: Langfristige Partnerschaften statt kurzfristiger Gewinne.',
   },
   {
     name: 'Michael Wagner',
     position: 'Geschäftsführer',
     bereich: 'Operatives & Personal',
     zitat: 'Unsere Mitarbeiter sind das Herzstück von FIMI. Ihr Erfolg ist unser Erfolg.',
+    bio: 'Michael kümmert sich um das operative Geschäft und die über 90 Mitarbeiter. Sein Credo: Nur wer seine Leute gut behandelt, bekommt auch gute Arbeit.',
   },
 ]
 
 export default function UeberUnsPage() {
-  const [activePartnerTab, setActivePartnerTab] = useState('maschinen')
   const [visibleMeilensteine, setVisibleMeilensteine] = useState<Set<number>>(new Set())
   const meilensteinRefs = useRef<(HTMLDivElement | null)[]>([])
 
@@ -216,7 +216,7 @@ export default function UeberUnsPage() {
             }
           })
         },
-        { threshold: 0.3 }
+        { threshold: 0.2 }
       )
       observer.observe(ref)
       return observer
@@ -230,7 +230,7 @@ export default function UeberUnsPage() {
   return (
     <main className="min-h-screen bg-white">
 
-      {/* Hero Section - Premium */}
+      {/* Hero Section - Premium mit hervorgehobenem Slogan */}
       <section className="relative min-h-[90vh] flex items-center">
         {/* Background */}
         <div className="absolute inset-0">
@@ -241,32 +241,38 @@ export default function UeberUnsPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#012956]/95 via-[#012956]/80 to-[#012956]/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#012956]/95 via-[#012956]/85 to-[#012956]/60" />
         </div>
 
         {/* Content */}
         <div className="relative z-10 w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-32">
-          <div className="max-w-3xl">
+          <div className="max-w-4xl">
             {/* Tagline */}
-            <p className="text-[#109387] font-bold text-sm uppercase tracking-[0.2em] mb-4">
+            <p className="text-[#109387] font-bold text-sm uppercase tracking-[0.2em] mb-6">
               Über FIMI Gebäudereinigung
             </p>
 
-            {/* Headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.05] mb-6">
-              Wir finden Lösungen.
-              <span className="block text-[#109387]">Immer.</span>
-            </h1>
+            {/* Slogan - Hervorgehoben als große Quote */}
+            <div className="relative mb-8">
+              <div className="absolute -left-4 top-0 bottom-0 w-1 bg-[#109387]" />
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.05] pl-6">
+                „Keine Lösung zu haben
+                <span className="block text-[#109387]">ist keine Option."</span>
+              </h1>
+            </div>
 
-            {/* Subline */}
-            <p className="text-xl md:text-2xl font-bold text-white/90 mb-4 leading-snug">
-              Denn keine Lösung zu haben ist für uns keine Option.
-            </p>
-
-            <p className="text-lg text-white/70 font-semibold leading-relaxed mb-8 max-w-2xl">
-              Seit 2016 setzen wir auf moderne Ansätze, effiziente Prozesse und echte Partnerschaften.
-              Von der kleinen GbR zum Full-Service-Partner für Gebäudereinigung in ganz Bayern.
-            </p>
+            {/* SEO-optimierter Beschreibungstext */}
+            <div className="space-y-4 mb-10 max-w-3xl">
+              <p className="text-xl md:text-2xl font-bold text-white/90 leading-snug">
+                Seit 2016 sind wir Ihr Partner für professionelle Gebäudereinigung in Bayern.
+              </p>
+              <p className="text-lg text-white/70 font-semibold leading-relaxed">
+                Von der kleinen GbR mit Fokus auf Glas- und Fassadenreinigung zum Full-Service-Partner für über 120 Unternehmen in Landshut, München, Regensburg und ganz Bayern. Wir setzen auf moderne Technologie, faire Arbeitsbedingungen und echte Partnerschaften – denn Gebäudereinigung ist Vertrauenssache.
+              </p>
+              <p className="text-lg text-white/70 font-semibold leading-relaxed">
+                Unser 90-köpfiges Team betreut Bürogebäude, Produktionshallen, Arztpraxen und öffentliche Einrichtungen. Mit eigenem Kunden-Dashboard, KI-gestützter Qualitätskontrolle und ISO-Zertifizierung in Vorbereitung setzen wir neue Standards in der Branche.
+              </p>
+            </div>
 
             {/* Trust Points */}
             <div className="flex flex-wrap gap-6 mb-10">
@@ -301,19 +307,6 @@ export default function UeberUnsPage() {
             </div>
           </div>
         </div>
-
-        {/* Einsatzgebiete Badge */}
-        <div className="absolute bottom-8 right-8 lg:bottom-12 lg:right-12 hidden lg:block">
-          <div className="bg-white rounded-[6px] p-5 shadow-2xl">
-            <div className="flex items-center gap-4">
-              <MapPin size={28} className="text-[#109387]" />
-              <div>
-                <p className="font-bold text-[#012956] text-lg">8 Einsatzgebiete</p>
-                <p className="text-gray-600 text-sm">{einsatzgebiete.join(' · ')}</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* Stats Bar */}
@@ -333,10 +326,10 @@ export default function UeberUnsPage() {
         </div>
       </section>
 
-      {/* Wofür wir stehen - Zick-Zack Layout mit Bildern */}
+      {/* Wofür wir stehen - Ausführliche Texte */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          {/* Header - Left aligned */}
+          {/* Header */}
           <div className="mb-16 lg:mb-20">
             <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3">
               Unsere Werte
@@ -344,14 +337,14 @@ export default function UeberUnsPage() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-6">
               Wofür wir stehen
             </h2>
-            <p className="text-lg text-gray-700 font-semibold leading-relaxed max-w-2xl">
-              Moderne Ansätze, effiziente Wege und echte Partnerschaften.
-              Das sind keine leeren Worte – das leben wir jeden Tag.
+            <p className="text-lg text-gray-700 font-semibold leading-relaxed max-w-3xl">
+              Moderne Ansätze, effiziente Wege und echte Partnerschaften. Das sind keine Marketing-Floskeln –
+              das ist unsere DNA. Vier Werte, die jeden Tag bei FIMI gelebt werden.
             </p>
           </div>
 
-          {/* Werte Cards - Zick-Zack */}
-          <div className="space-y-12 lg:space-y-20">
+          {/* Werte Cards - Zick-Zack mit mehr Text */}
+          <div className="space-y-16 lg:space-y-28">
             {werte.map((wert, index) => (
               <div
                 key={wert.titel}
@@ -360,7 +353,7 @@ export default function UeberUnsPage() {
                 }`}
               >
                 {/* Image */}
-                <div className={`relative h-72 md:h-96 lg:h-[450px] rounded-[6px] overflow-hidden ${
+                <div className={`relative h-80 md:h-[450px] lg:h-[500px] rounded-[6px] overflow-hidden ${
                   index % 2 === 1 ? 'lg:col-start-2' : ''
                 }`}>
                   <Image
@@ -371,13 +364,22 @@ export default function UeberUnsPage() {
                   />
                 </div>
 
-                {/* Content - Left aligned */}
-                <div className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
-                  <h3 className="text-2xl lg:text-3xl font-bold text-[#012956] mb-4">
+                {/* Content - Ausführlich */}
+                <div className={`${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                  <p className="text-[#109387] font-bold text-sm uppercase tracking-wide mb-2">
+                    Unser Wert #{index + 1}
+                  </p>
+                  <h3 className="text-2xl lg:text-4xl font-bold text-[#012956] mb-3">
                     {wert.titel}
                   </h3>
-                  <p className="text-lg text-gray-700 font-semibold leading-relaxed">
+                  <p className="text-xl text-[#109387] font-bold mb-4">
+                    {wert.kurz}
+                  </p>
+                  <p className="text-lg text-gray-700 font-semibold leading-relaxed mb-4">
                     {wert.beschreibung}
+                  </p>
+                  <p className="text-gray-600 font-semibold leading-relaxed">
+                    {wert.details}
                   </p>
                 </div>
               </div>
@@ -386,7 +388,7 @@ export default function UeberUnsPage() {
         </div>
       </section>
 
-      {/* Timeline Section - Mit Scroll-Animationen */}
+      {/* Timeline Section - Mit Bildern und 6px Ecken */}
       <section className="py-20 lg:py-28 bg-[#f8f9fa]">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           {/* Header */}
@@ -397,52 +399,61 @@ export default function UeberUnsPage() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-6">
               Von der GbR zum Full-Service-Partner
             </h2>
-            <p className="text-lg text-gray-700 font-semibold leading-relaxed max-w-2xl">
-              8 Jahre kontinuierliches Wachstum. Vom Zwei-Mann-Betrieb zum führenden
-              Reinigungsunternehmen in Niederbayern und Oberbayern.
+            <p className="text-lg text-gray-700 font-semibold leading-relaxed max-w-3xl">
+              8 Jahre kontinuierliches Wachstum, geprägt von Mut, harter Arbeit und dem unbedingten Willen,
+              die beste Gebäudereinigung in Bayern zu werden.
             </p>
           </div>
 
-          {/* Timeline */}
-          <div className="relative">
-            {/* Vertical Line */}
-            <div className="absolute left-4 lg:left-1/2 top-0 bottom-0 w-0.5 bg-[#109387]/30 transform lg:-translate-x-1/2" />
-
-            <div className="space-y-12 lg:space-y-16">
-              {meilensteine.map((meilenstein, index) => (
-                <div
-                  key={meilenstein.jahr}
-                  ref={(el) => { meilensteinRefs.current[index] = el }}
-                  className={`relative grid lg:grid-cols-2 gap-6 lg:gap-16 transition-all duration-700 ${
-                    visibleMeilensteine.has(index)
-                      ? 'opacity-100 translate-y-0'
-                      : 'opacity-0 translate-y-8'
-                  }`}
-                >
-                  {/* Jahr Badge */}
-                  <div className="absolute left-0 lg:left-1/2 transform lg:-translate-x-1/2 w-8 h-8 lg:w-12 lg:h-12 bg-[#109387] rounded-full flex items-center justify-center z-10">
-                    <span className="text-white font-bold text-xs lg:text-sm">{meilenstein.jahr}</span>
+          {/* Timeline mit Cards */}
+          <div className="space-y-8 lg:space-y-12">
+            {meilensteine.map((meilenstein, index) => (
+              <div
+                key={meilenstein.jahr}
+                ref={(el) => { meilensteinRefs.current[index] = el }}
+                className={`transition-all duration-700 ${
+                  visibleMeilensteine.has(index)
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 translate-y-12'
+                }`}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <div className={`grid lg:grid-cols-[1fr_2fr] gap-6 lg:gap-10 bg-white rounded-[6px] overflow-hidden shadow-lg ${
+                  index % 2 === 1 ? 'lg:grid-flow-dense' : ''
+                }`}>
+                  {/* Image */}
+                  <div className={`relative h-64 lg:h-auto lg:min-h-[300px] ${
+                    index % 2 === 1 ? 'lg:col-start-2' : ''
+                  }`}>
+                    <Image
+                      src={meilenstein.image}
+                      alt={meilenstein.titel}
+                      fill
+                      className="object-cover"
+                    />
+                    {/* Jahr Badge - 6px rounded statt circle */}
+                    <div className="absolute top-4 left-4 bg-[#109387] rounded-[6px] px-4 py-2">
+                      <span className="text-white font-bold text-lg">{meilenstein.jahr}</span>
+                    </div>
                   </div>
 
-                  {/* Content - Alternating sides */}
-                  <div className={`pl-14 lg:pl-0 ${
-                    index % 2 === 0
-                      ? 'lg:pr-16 lg:text-right'
-                      : 'lg:col-start-2 lg:pl-16'
+                  {/* Content */}
+                  <div className={`p-6 lg:p-10 flex flex-col justify-center ${
+                    index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''
                   }`}>
-                    <h3 className="text-xl lg:text-2xl font-bold text-[#012956] mb-2">
+                    <h3 className="text-xl lg:text-2xl font-bold text-[#012956] mb-3">
                       {meilenstein.titel}
                     </h3>
-                    <p className="text-gray-700 font-semibold leading-relaxed">
+                    <p className="text-lg text-gray-700 font-semibold leading-relaxed mb-4">
                       {meilenstein.beschreibung}
                     </p>
+                    <p className="text-gray-600 font-semibold leading-relaxed">
+                      {meilenstein.details}
+                    </p>
                   </div>
-
-                  {/* Empty space for alternating layout */}
-                  {index % 2 === 0 && <div className="hidden lg:block" />}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -460,14 +471,15 @@ export default function UeberUnsPage() {
                 Moderne Technologie für bessere Ergebnisse
               </h2>
               <p className="text-lg text-white/70 font-semibold leading-relaxed mb-8">
-                Wir setzen nicht auf veraltete Methoden. Eigene Software-Lösungen,
-                KI-gestützte Prozesse und ein Kunden-Dashboard, das Transparenz schafft.
+                Während andere noch mit Stift und Papier arbeiten, setzen wir auf digitale Prozesse.
+                Eigene Software-Lösungen, KI-gestützte Qualitätskontrolle und ein Kunden-Dashboard,
+                das Transparenz schafft. So sieht moderne Gebäudereinigung aus.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-6">
                 {technologie.map((tech) => (
                   <div key={tech.titel} className="bg-white/5 rounded-[6px] p-6">
-                    <tech.icon size={28} className="text-[#109387] mb-3" strokeWidth={1.5} />
+                    <TechIcon iconId={tech.iconId} />
                     <h3 className="text-white font-bold text-lg mb-2">{tech.titel}</h3>
                     <p className="text-white/70 font-semibold text-sm leading-relaxed">
                       {tech.beschreibung}
@@ -490,70 +502,34 @@ export default function UeberUnsPage() {
         </div>
       </section>
 
-      {/* Partner & Lieferanten - Mit Tabs */}
-      <section className="py-20 lg:py-28 bg-white">
+      {/* Partner Logos - Alle auf einmal als Slider */}
+      <section className="py-16 lg:py-20 bg-white overflow-hidden">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="grid lg:grid-cols-[400px_1fr] xl:grid-cols-[450px_1fr] gap-12 lg:gap-20">
-            {/* Left: Sticky Sidebar */}
-            <div className="lg:sticky lg:top-32 lg:self-start">
-              <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3">
-                Unsere Partner
-              </p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-6">
-                Nur die besten Marken
-              </h2>
-              <p className="text-lg text-gray-700 font-semibold leading-relaxed mb-8">
-                Wir arbeiten ausschließlich mit renommierten Herstellern und Lieferanten.
-                Das garantiert Ihnen höchste Qualität bei jeder Reinigung.
-              </p>
+          <div className="text-center mb-10">
+            <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3">
+              Unsere Partner
+            </p>
+            <h2 className="text-2xl md:text-3xl font-bold text-[#109387]">
+              Nur die besten Marken
+            </h2>
+          </div>
 
-              {/* Tab Buttons */}
-              <div className="flex flex-wrap gap-2">
-                {partnerKategorien.map((kategorie) => (
-                  <button
-                    key={kategorie.id}
-                    onClick={() => setActivePartnerTab(kategorie.id)}
-                    className={`px-4 py-2 rounded-[6px] font-bold text-sm transition-all duration-300 ${
-                      activePartnerTab === kategorie.id
-                        ? 'bg-[#012956] text-white'
-                        : 'bg-[#f8f9fa] text-[#012956] hover:bg-gray-200'
-                    }`}
-                  >
-                    {kategorie.titel}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Right: Partner Content */}
-            <div className="bg-[#f8f9fa] rounded-[6px] p-8 lg:p-12">
-              {partnerKategorien.map((kategorie) => (
-                <div
-                  key={kategorie.id}
-                  className={`transition-all duration-300 ${
-                    activePartnerTab === kategorie.id ? 'block' : 'hidden'
-                  }`}
-                >
-                  <h3 className="text-2xl font-bold text-[#012956] mb-6">
-                    {kategorie.titel}
-                  </h3>
-                  <div className="space-y-4">
-                    {kategorie.partner.map((partner) => (
-                      <div
-                        key={partner.name}
-                        className="bg-white rounded-[6px] p-5 flex items-center gap-4"
-                      >
-                        <div className="w-3 h-3 bg-[#109387] rounded-full flex-shrink-0" />
-                        <div>
-                          <p className="font-bold text-[#012956]">{partner.name}</p>
-                          <p className="text-gray-600 font-semibold text-sm">{partner.info}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+          {/* Logo Grid - Alle auf einmal */}
+          <div className="grid grid-cols-4 md:grid-cols-8 gap-4">
+            {allePartner.map((partner, index) => (
+              <div
+                key={partner.name}
+                className="aspect-square bg-[#f8f9fa] rounded-[6px] flex flex-col items-center justify-center p-3 hover:bg-[#012956] group transition-colors cursor-pointer"
+              >
+                {/* Logo Placeholder */}
+                <div className="w-full aspect-square bg-gray-200 rounded-[6px] group-hover:bg-white/20 flex items-center justify-center mb-2">
+                  <span className="text-gray-400 group-hover:text-white font-bold text-[10px]">LOGO</span>
                 </div>
-              ))}
-            </div>
+                <span className="text-[#012956] group-hover:text-white font-bold text-[10px] sm:text-xs text-center leading-tight">
+                  {partner.name}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -569,13 +545,13 @@ export default function UeberUnsPage() {
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-6">
               Die Menschen hinter FIMI
             </h2>
-            <p className="text-lg text-gray-700 font-semibold leading-relaxed max-w-2xl">
-              90+ Mitarbeiter, davon über 70 Reinigungskräfte im täglichen Einsatz.
-              Hier lernen Sie das Team kennen, das alles koordiniert.
+            <p className="text-lg text-gray-700 font-semibold leading-relaxed max-w-3xl">
+              90+ Mitarbeiter, davon über 70 Reinigungskräfte im täglichen Einsatz in ganz Bayern.
+              Hier lernen Sie das Team kennen, das im Hintergrund alles koordiniert.
             </p>
           </div>
 
-          {/* Team Grid by Category */}
+          {/* Team Grid by Category - Größere Bilder (aspect 3:4) */}
           <div className="space-y-12">
             {teamKategorien.map((kategorie) => (
               <div key={kategorie.id}>
@@ -586,7 +562,8 @@ export default function UeberUnsPage() {
                       key={mitglied.name}
                       className="bg-white rounded-[6px] overflow-hidden group"
                     >
-                      <div className="relative h-48 bg-gray-200">
+                      {/* Bild mit 3:4 Aspect Ratio */}
+                      <div className="relative aspect-[3/4] bg-gray-200">
                         <Image
                           src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop"
                           alt={mitglied.name}
@@ -604,35 +581,38 @@ export default function UeberUnsPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Reinigungskräfte Counter */}
-          <div className="mt-16 bg-[#012956] rounded-[6px] p-8 lg:p-12">
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+      {/* Karriere CTA */}
+      <section className="py-16 lg:py-20 bg-[#109387]">
+        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+            <div className="flex items-start gap-5">
+              <div className="w-16 h-16 bg-white/20 rounded-[6px] flex items-center justify-center flex-shrink-0">
+                <Briefcase size={32} className="text-white" strokeWidth={1.5} />
+              </div>
               <div>
-                <div className="flex items-center gap-4 mb-3">
-                  <Users size={32} className="text-[#109387]" strokeWidth={1.5} />
-                  <span className="text-4xl lg:text-5xl font-bold text-[#109387]">70+</span>
-                </div>
-                <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">
-                  Reinigungskräfte im täglichen Einsatz
+                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-2">
+                  Karriere bei FIMI
                 </h3>
-                <p className="text-white/70 font-semibold">
-                  Motivierte Teams, die Ihre Räume jeden Tag zum Strahlen bringen.
+                <p className="text-white/80 font-semibold text-lg">
+                  Werden Sie Teil unseres 90-köpfigen Teams. Faire Bezahlung, gute Arbeitsbedingungen und echte Entwicklungsmöglichkeiten.
                 </p>
               </div>
-              <Link
-                href="/karriere"
-                className="inline-flex items-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
-              >
-                Karriere bei FIMI
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
             </div>
+            <Link
+              href="/karriere"
+              className="inline-flex items-center gap-3 bg-white hover:bg-gray-100 text-[#012956] font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group flex-shrink-0"
+            >
+              Offene Stellen
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Geschäftsführung */}
+      {/* Geschäftsführung - Größere Bilder */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           {/* Header */}
@@ -645,35 +625,42 @@ export default function UeberUnsPage() {
             </h2>
           </div>
 
-          {/* GF Cards */}
+          {/* GF Cards - Größere Bilder mit 2:3 Aspect */}
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
             {geschaeftsfuehrung.map((gf) => (
               <div
                 key={gf.name}
-                className="grid md:grid-cols-[200px_1fr] gap-6 bg-[#f8f9fa] rounded-[6px] p-6 lg:p-8"
+                className="bg-[#f8f9fa] rounded-[6px] overflow-hidden"
               >
-                {/* Photo */}
-                <div className="relative h-48 md:h-full rounded-[6px] overflow-hidden">
-                  <Image
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop"
-                    alt={gf.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+                <div className="grid md:grid-cols-[280px_1fr] lg:grid-cols-[320px_1fr]">
+                  {/* Photo mit 2:3 Aspect */}
+                  <div className="relative aspect-[2/3] md:aspect-auto md:h-full bg-gray-200">
+                    <Image
+                      src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop"
+                      alt={gf.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
 
-                {/* Content */}
-                <div className="flex flex-col justify-center">
-                  <p className="text-[#109387] font-bold text-sm uppercase tracking-wide mb-1">
-                    {gf.bereich}
-                  </p>
-                  <h3 className="text-xl lg:text-2xl font-bold text-[#012956] mb-1">
-                    {gf.name}
-                  </h3>
-                  <p className="text-gray-600 font-semibold mb-4">{gf.position}</p>
-                  <blockquote className="text-gray-700 font-semibold italic leading-relaxed border-l-4 border-[#109387] pl-4">
-                    „{gf.zitat}"
-                  </blockquote>
+                  {/* Content */}
+                  <div className="p-6 lg:p-8 flex flex-col justify-center">
+                    <p className="text-[#109387] font-bold text-sm uppercase tracking-wide mb-1">
+                      {gf.bereich}
+                    </p>
+                    <h3 className="text-xl lg:text-2xl font-bold text-[#012956] mb-1">
+                      {gf.name}
+                    </h3>
+                    <p className="text-gray-600 font-semibold mb-4">{gf.position}</p>
+
+                    <p className="text-gray-700 font-semibold leading-relaxed mb-4">
+                      {gf.bio}
+                    </p>
+
+                    <blockquote className="text-gray-700 font-semibold italic leading-relaxed border-l-4 border-[#109387] pl-4">
+                      „{gf.zitat}"
+                    </blockquote>
+                  </div>
                 </div>
               </div>
             ))}
@@ -681,13 +668,62 @@ export default function UeberUnsPage() {
         </div>
       </section>
 
+      {/* Einsatzgebiete mit Karte */}
+      <section className="py-20 lg:py-28 bg-[#f8f9fa]">
+        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Left: Karte */}
+            <div className="relative">
+              <Image
+                src="/images/home/städte für fimi.avif"
+                alt="Bayern Karte - FIMI Gebäudereinigung Servicegebiete"
+                width={4800}
+                height={3584}
+                className="w-full h-auto rounded-[6px]"
+              />
+            </div>
+
+            {/* Right: Content */}
+            <div>
+              <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3">
+                Unsere Einsatzgebiete
+              </p>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-6">
+                Gebäudereinigung in ganz Bayern
+              </h2>
+              <p className="text-lg text-gray-700 font-semibold leading-relaxed mb-8">
+                Von unserem Hauptsitz in Landshut aus betreuen wir Kunden in ganz Niederbayern,
+                Oberbayern und der Oberpfalz. Kurze Wege, schnelle Reaktionszeiten, persönlicher Service.
+              </p>
+
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+                {einsatzgebiete.map((stadt) => (
+                  <div key={stadt} className="bg-white rounded-[6px] p-4 text-center">
+                    <MapPin size={20} className="text-[#109387] mx-auto mb-2" />
+                    <span className="text-[#012956] font-bold">{stadt}</span>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href="#contact-form"
+                className="inline-flex items-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
+              >
+                Kostenfreie Besichtigung in Ihrer Stadt
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Interne Verlinkungen */}
-      <section className="py-16 lg:py-20 bg-[#f8f9fa]">
+      <section className="py-16 lg:py-20 bg-white">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="grid md:grid-cols-3 gap-6">
             <Link
               href="/leistungen"
-              className="group bg-white rounded-[6px] p-8 hover:shadow-xl transition-all duration-300"
+              className="group bg-[#f8f9fa] rounded-[6px] p-8 hover:shadow-xl transition-all duration-300"
             >
               <p className="text-[#109387] font-bold text-sm uppercase tracking-wide mb-2">
                 Entdecken Sie
@@ -706,7 +742,7 @@ export default function UeberUnsPage() {
 
             <Link
               href="/branchen"
-              className="group bg-white rounded-[6px] p-8 hover:shadow-xl transition-all duration-300"
+              className="group bg-[#f8f9fa] rounded-[6px] p-8 hover:shadow-xl transition-all duration-300"
             >
               <p className="text-[#109387] font-bold text-sm uppercase tracking-wide mb-2">
                 Spezialisiert auf
@@ -725,7 +761,7 @@ export default function UeberUnsPage() {
 
             <Link
               href="/neuigkeiten"
-              className="group bg-white rounded-[6px] p-8 hover:shadow-xl transition-all duration-300"
+              className="group bg-[#f8f9fa] rounded-[6px] p-8 hover:shadow-xl transition-all duration-300"
             >
               <p className="text-[#109387] font-bold text-sm uppercase tracking-wide mb-2">
                 Aktuelles von
@@ -747,56 +783,33 @@ export default function UeberUnsPage() {
 
       {/* CTA Section */}
       <section className="py-20 lg:py-28 bg-[#012956]">
-        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Left: Content */}
-            <div>
-              <p className="text-[#109387] font-bold text-sm uppercase tracking-[0.2em] mb-4">
-                Jetzt starten
-              </p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.1] mb-6">
-                Überzeugen Sie sich selbst
-              </h2>
-              <p className="text-lg text-white/70 font-semibold leading-relaxed mb-8">
-                Vereinbaren Sie eine kostenfreie und unverbindliche Besichtigung.
-                Wir schauen uns Ihre Räume an und erstellen Ihnen ein transparentes Angebot.
-              </p>
+        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 text-center">
+          <p className="text-[#109387] font-bold text-sm uppercase tracking-[0.2em] mb-4">
+            Jetzt starten
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.1] mb-6">
+            Überzeugen Sie sich selbst
+          </h2>
+          <p className="text-lg text-white/70 font-semibold leading-relaxed mb-8 max-w-2xl mx-auto">
+            Vereinbaren Sie eine kostenfreie und unverbindliche Besichtigung.
+            Wir schauen uns Ihre Räume an und erstellen Ihnen ein transparentes Angebot.
+          </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="#contact-form"
-                  className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
-                >
-                  Kostenfreie Besichtigung
-                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                </a>
-                <a
-                  href="tel:+4917472254773"
-                  className="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"
-                >
-                  <Phone size={20} />
-                  0174 722 54 773
-                </a>
-              </div>
-            </div>
-
-            {/* Right: Einsatzgebiete */}
-            <div className="bg-white/5 rounded-[6px] p-8 lg:p-10">
-              <p className="text-[#109387] font-bold text-sm uppercase tracking-wide mb-4">
-                Wir sind vor Ort in
-              </p>
-              <div className="grid grid-cols-2 gap-3">
-                {einsatzgebiete.map((stadt) => (
-                  <div key={stadt} className="flex items-center gap-2">
-                    <MapPin size={16} className="text-[#109387]" />
-                    <span className="text-white font-semibold">{stadt}</span>
-                  </div>
-                ))}
-              </div>
-              <p className="text-white/60 font-semibold text-sm mt-6">
-                Und überall in Niederbayern, Oberbayern und der Oberpfalz.
-              </p>
-            </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#contact-form"
+              className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
+            >
+              Kostenfreie Besichtigung
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a
+              href="tel:+4917472254773"
+              className="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"
+            >
+              <Phone size={20} />
+              0174 722 54 773
+            </a>
           </div>
         </div>
       </section>
