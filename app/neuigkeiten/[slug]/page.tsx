@@ -138,6 +138,22 @@ export default async function BlogPostPage({ params }: PageProps) {
 
             {/* Sidebar */}
             <aside className="lg:sticky lg:top-40 lg:self-start">
+              {/* Content Image in Sidebar */}
+              {post.image && (
+                <div className="mb-6">
+                  <Image
+                    src={post.image.replace('hero', 'content')}
+                    alt={`${post.title} - Detailbild`}
+                    width={350}
+                    height={280}
+                    className="w-full rounded-[6px] object-cover"
+                  />
+                  <p className="text-gray-500 text-xs font-semibold mt-2 text-center">
+                    Professionelle Reinigung für höchste Ansprüche
+                  </p>
+                </div>
+              )}
+
               {/* CTA Box */}
               <div className="bg-[#012956] rounded-[6px] p-6 mb-8">
                 <h3 className="text-white font-bold text-lg mb-3">

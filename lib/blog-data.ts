@@ -53,16 +53,8 @@ export const blogPosts: BlogPost[] = [
       <p style="font-weight: 600; color: #374151; line-height: 1.8;">Die Gebäudereinigung, Deutschlands beschäftigungsstärkstes Handwerk, startet mit neuen finanziellen Rahmenbedingungen ins Jahr 2025. Der Ende 2024 zwischen dem <strong style="font-weight: 800; color: #012956;">Bundesinnungsverband des Gebäudereiniger-Handwerks (BIV)</strong> und der <strong style="font-weight: 800; color: #012956;">Industriegewerkschaft Bauen-Agrar-Umwelt (IG BAU)</strong> ausgehandelte Lohntarifvertrag ist in Kraft getreten und für allgemeinverbindlich erklärt worden.</p>
 
       <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Die neuen Tarife ab Januar 2025</h3>
-
-      <!-- Content mit floatendem Bild -->
-      <div style="overflow: hidden;">
-        <figure style="float: right; width: 45%; margin: 0 0 20px 24px;">
-          <img src="/blog/artikel-1/content.avif" alt="Professionelle Reinigungskraft bei der Arbeit" style="width: 100%; border-radius: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);" />
-          <figcaption style="color: #6b7280; font-size: 12px; font-weight: 600; margin-top: 8px; line-height: 1.5;">Faire Löhne sichern qualifiziertes Personal und höchste Reinigungsqualität.</figcaption>
-        </figure>
-        <p style="font-weight: 600; color: #374151; line-height: 1.8;">Der Kernpunkt der Einigung ist die Anpassung des Branchenmindestlohns. Zum 1. Januar 2025 steigt der Lohn in der Einstiegs-Lohngruppe (LG 1), die für die klassische <a href="/leistungen/unterhaltsreinigung" style="color: #109387; font-weight: 700;">Unterhaltsreinigung</a> maßgeblich ist, von 13,50 Euro auf <strong style="font-weight: 800; color: #012956;">14,25 Euro</strong> pro Stunde.</p>
-        <p style="font-weight: 600; color: #374151; line-height: 1.8; margin-top: 16px;">Auch für qualifizierte Fachkräfte gibt es eine signifikante Erhöhung. In der Lohngruppe 6 (z.B. <a href="/leistungen/glasreinigung" style="color: #109387; font-weight: 700;">Glas-</a> und <a href="/leistungen/fassadenreinigung" style="color: #109387; font-weight: 700;">Fassadenreinigung</a>) steigt der Stundenlohn von 16,70 Euro auf <strong style="font-weight: 800; color: #012956;">17,65 Euro</strong>.</p>
-      </div>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Der Kernpunkt der Einigung ist die Anpassung des Branchenmindestlohns. Zum 1. Januar 2025 steigt der Lohn in der Einstiegs-Lohngruppe (LG 1), die für die klassische <a href="/leistungen/unterhaltsreinigung" style="color: #109387; font-weight: 700;">Unterhaltsreinigung</a> maßgeblich ist, von 13,50 Euro auf <strong style="font-weight: 800; color: #012956;">14,25 Euro</strong> pro Stunde.</p>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8; margin-top: 16px;">Auch für qualifizierte Fachkräfte gibt es eine signifikante Erhöhung. In der Lohngruppe 6 (z.B. <a href="/leistungen/glasreinigung" style="color: #109387; font-weight: 700;">Glas-</a> und <a href="/leistungen/fassadenreinigung" style="color: #109387; font-weight: 700;">Fassadenreinigung</a>) steigt der Stundenlohn von 16,70 Euro auf <strong style="font-weight: 800; color: #012956;">17,65 Euro</strong>.</p>
 
       <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Ausblick auf 2026</h3>
       <p style="font-weight: 600; color: #374151; line-height: 1.8;">Der Tarifvertrag sieht eine weitere Stufe der Erhöhung zum 1. Januar 2026 vor:</p>
@@ -102,20 +94,20 @@ export const blogPosts: BlogPost[] = [
 
       <!-- Ausbildungsvergütung -->
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 20px 0;">
-        <div style="background: #f8f9fa; border-radius: 6px; padding: 16px; text-align: center; border-left: 3px solid #109387;">
-          <p style="color: #6b7280; font-size: 12px; font-weight: 700; margin-bottom: 6px;">1. Lehrjahr</p>
-          <p style="color: #012956; font-size: 22px; font-weight: 800;">1.000 €</p>
-          <p style="color: #109387; font-size: 11px; font-weight: 700;">+100 € vs. 2024</p>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #6b7280; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">1. Lehrjahr</p>
+          <p style="color: #012956; font-size: 24px; font-weight: 800; margin-bottom: 4px;">1.000 €</p>
+          <p style="color: #109387; font-size: 12px; font-weight: 700;">+100 €</p>
         </div>
-        <div style="background: #f8f9fa; border-radius: 6px; padding: 16px; text-align: center; border-left: 3px solid #109387;">
-          <p style="color: #6b7280; font-size: 12px; font-weight: 700; margin-bottom: 6px;">2. Lehrjahr</p>
-          <p style="color: #012956; font-size: 22px; font-weight: 800;">1.150 €</p>
-          <p style="color: #109387; font-size: 11px; font-weight: 700;">+100 € vs. 2024</p>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #6b7280; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">2. Lehrjahr</p>
+          <p style="color: #012956; font-size: 24px; font-weight: 800; margin-bottom: 4px;">1.150 €</p>
+          <p style="color: #109387; font-size: 12px; font-weight: 700;">+100 €</p>
         </div>
-        <div style="background: #f8f9fa; border-radius: 6px; padding: 16px; text-align: center; border-left: 3px solid #109387;">
-          <p style="color: #6b7280; font-size: 12px; font-weight: 700; margin-bottom: 6px;">3. Lehrjahr</p>
-          <p style="color: #012956; font-size: 22px; font-weight: 800;">1.300 €</p>
-          <p style="color: #109387; font-size: 11px; font-weight: 700;">+100 € vs. 2024</p>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #6b7280; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">3. Lehrjahr</p>
+          <p style="color: #012956; font-size: 24px; font-weight: 800; margin-bottom: 4px;">1.300 €</p>
+          <p style="color: #109387; font-size: 12px; font-weight: 700;">+100 €</p>
         </div>
       </div>
 
