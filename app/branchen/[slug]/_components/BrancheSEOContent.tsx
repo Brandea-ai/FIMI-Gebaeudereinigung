@@ -81,14 +81,30 @@ export function BrancheSEOContent({ branche }: BrancheSEOContentProps) {
                 </div>
                 <div className="h-px bg-gray-200" />
                 <div>
-                  <p className="text-4xl font-bold text-[#012956]">85k</p>
-                  <p className="text-gray-600">m² monatliche Reinigungsfläche</p>
+                  <p className="text-4xl font-bold text-[#012956]">120+</p>
+                  <p className="text-gray-600">Kundenprojekte</p>
                 </div>
                 <div className="h-px bg-gray-200" />
                 <div>
                   <p className="text-4xl font-bold text-[#012956]">2h</p>
                   <p className="text-gray-600">Durchschnittliche Reaktionszeit</p>
                 </div>
+              </div>
+
+              {/* CTA Buttons */}
+              <div className="mt-8 space-y-3">
+                <a
+                  href="#contact-form"
+                  className="block w-full text-center bg-[#109387] hover:bg-[#0d7d72] text-white font-bold py-3 rounded-[6px] transition-colors"
+                >
+                  Kostenfreie Besichtigung
+                </a>
+                <a
+                  href="tel:+4987143033460"
+                  className="block w-full text-center text-[#012956] font-bold py-3 rounded-[6px] border-2 border-[#012956] hover:bg-[#012956] hover:text-white transition-colors"
+                >
+                  0871 430 334 60
+                </a>
               </div>
             </div>
 

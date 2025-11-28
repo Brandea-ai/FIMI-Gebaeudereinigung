@@ -45,8 +45,8 @@ export function BrancheServices({ branche }: BrancheServicesProps) {
 
         {/* Section Header */}
         <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight mb-12 md:mb-16">
-          Unsere Services{' '}
-          <span className="text-[#109387]">für {branche.shortName}</span>
+          Professionelle Reinigung{' '}
+          <span className="text-[#109387]">für {branche.name}</span>
         </h2>
 
         {/* Services Grid - Einheitliche Icons (Check) */}

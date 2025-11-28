@@ -180,6 +180,7 @@ export default function Navigation() {
   // Über FIMI Dropdown Links
   const ueberFimiLinks = [
     { label: 'Über uns', href: '/ueber-uns' },
+    { label: 'Karriere', href: '/karriere' },
     { label: 'Referenzen', href: '/referenzen' },
   ]
 
