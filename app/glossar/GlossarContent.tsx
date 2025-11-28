@@ -250,18 +250,6 @@ export default function GlossarContent() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Berechne den "Dock-Effekt" Skalierungsfaktor
-  const getScale = (letter: string) => {
-    const activeIndex = letters.indexOf(activeLetter)
-    const currentIndex = letters.indexOf(letter)
-    const distance = Math.abs(activeIndex - currentIndex)
-
-    if (distance === 0) return 1.3 // Aktiv: am größten
-    if (distance === 1) return 1.15 // Direkt daneben: etwas größer
-    if (distance === 2) return 1.05 // Zwei entfernt: leicht größer
-    return 1 // Normal
-  }
-
   const isActive = (letter: string) => letter === activeLetter
 
   return (
@@ -287,30 +275,27 @@ export default function GlossarContent() {
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="flex gap-12 lg:gap-16">
 
-            {/* Sticky Sidebar - Alphabet Navigation mit Dock-Effekt */}
-            <aside className="hidden lg:block w-20 flex-shrink-0">
+            {/* Sticky Sidebar - Alphabet Navigation (iPhone Picker Style) */}
+            <aside className="hidden lg:block w-14 flex-shrink-0">
               <div className="sticky top-32">
-                <nav className="flex flex-col items-center gap-1">
+                <nav className="relative flex flex-col items-center bg-[#f8f9fa] rounded-full py-3 px-2">
                   {letters.map((letter) => {
-                    const scale = getScale(letter)
                     const active = isActive(letter)
 
                     return (
                       <a
                         key={letter}
                         href={`#${letter}`}
-                        className="flex items-center justify-center font-bold rounded-[6px] transition-all duration-300 ease-out"
-                        style={{
-                          width: `${48 * scale}px`,
-                          height: `${48 * scale}px`,
-                          fontSize: `${16 * scale}px`,
-                          backgroundColor: active ? '#109387' : '#f8f9fa',
-                          color: active ? '#ffffff' : '#012956',
-                          boxShadow: active ? '0 4px 12px rgba(16, 147, 135, 0.4)' : 'none',
-                          transform: `scale(${scale})`,
-                        }}
+                        className={`relative w-10 h-10 flex items-center justify-center font-bold text-sm rounded-full transition-all duration-300 ${
+                          active
+                            ? 'bg-[#109387] text-white shadow-lg'
+                            : 'text-[#012956]/60 hover:text-[#109387] hover:bg-white'
+                        }`}
                       >
                         {letter}
+                        {active && (
+                          <span className="absolute -right-1 w-1.5 h-1.5 bg-[#109387] rounded-full" />
+                        )}
                       </a>
                     )
                   })}
