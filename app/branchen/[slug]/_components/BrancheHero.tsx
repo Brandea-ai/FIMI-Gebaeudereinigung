@@ -6,7 +6,6 @@ interface BrancheHeroProps {
   branche: Branche
 }
 
-// Icon Mapping - direkt im Component für Server-Side Rendering
 function getIcon(iconName: string, className: string) {
   const props = { size: 28, strokeWidth: 1.5, className }
   switch (iconName) {
@@ -37,7 +36,6 @@ export function BrancheHero({ branche }: BrancheHeroProps) {
           alt={branche.name}
           className="w-full h-full object-cover"
         />
-        {/* Overlay für besseren Kontrast - wie Homepage */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#012956]/95 via-[#012956]/85 to-[#012956]/60" />
       </div>
 
@@ -54,11 +52,12 @@ export function BrancheHero({ branche }: BrancheHeroProps) {
             Alle Branchen
           </Link>
 
-          <div className="max-w-4xl">
+          {/* Full Width Content - nicht zentriert */}
+          <div className="max-w-5xl">
 
             {/* Branche Badge */}
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-14 h-14 rounded-[8px] bg-[#109387]/20 flex items-center justify-center">
+              <div className="w-14 h-14 rounded-[6px] bg-[#109387]/20 flex items-center justify-center">
                 {getIcon(branche.icon, 'text-[#109387]')}
               </div>
               <span className="text-[#109387] font-bold text-sm uppercase tracking-[0.2em]">
@@ -66,22 +65,17 @@ export function BrancheHero({ branche }: BrancheHeroProps) {
               </span>
             </div>
 
-            {/* Main Headline - Groß wie Homepage */}
+            {/* Main Headline */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-[1.08] mb-6">
               {branche.headline}
             </h1>
 
-            {/* Subheadline - Fett und groß */}
-            <p className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-4 leading-snug">
+            {/* Subheadline */}
+            <p className="text-xl md:text-2xl lg:text-3xl font-bold text-white/90 mb-10 leading-snug max-w-4xl">
               {branche.subheadline}
             </p>
 
-            {/* Description */}
-            <p className="text-lg md:text-xl text-white/80 font-medium leading-relaxed mb-10 max-w-3xl">
-              {branche.description}
-            </p>
-
-            {/* Trust-Punkte - wie Homepage mit CheckCircle */}
+            {/* Trust-Punkte - in einer Reihe */}
             {branche.benefits && branche.benefits.length > 0 && (
               <div className="flex flex-wrap gap-x-8 gap-y-3 mb-12">
                 {branche.benefits.slice(0, 4).map((benefit, i) => (
@@ -93,7 +87,7 @@ export function BrancheHero({ branche }: BrancheHeroProps) {
               </div>
             )}
 
-            {/* CTAs - Premium Styling wie Homepage */}
+            {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#contact-form"
@@ -116,7 +110,7 @@ export function BrancheHero({ branche }: BrancheHeroProps) {
         </div>
       </div>
 
-      {/* Floating Trust Badge - wie Homepage */}
+      {/* Floating Trust Badge unten rechts */}
       <div className="absolute bottom-8 right-8 lg:bottom-12 lg:right-12 hidden lg:block">
         <div className="bg-white rounded-[6px] p-5 shadow-2xl">
           <div className="flex items-center gap-4">
@@ -128,29 +122,6 @@ export function BrancheHero({ branche }: BrancheHeroProps) {
               <div className="text-gray-600">
                 Wir kommen zu Ihnen – unverbindlich.
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Stats Badge - Rechts oben auf Desktop */}
-      <div className="absolute top-32 right-8 lg:top-40 lg:right-12 hidden xl:block">
-        <div className="bg-white/10 backdrop-blur-sm rounded-[8px] p-6 border border-white/20">
-          <p className="text-[#109387] font-bold text-xs uppercase tracking-[0.2em] mb-4">
-            Unsere Expertise
-          </p>
-          <div className="grid grid-cols-3 gap-6">
-            <div className="text-center">
-              <p className="text-3xl font-bold text-white">8+</p>
-              <p className="text-white/70 text-xs mt-1">Jahre Erfahrung</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl font-bold text-white">85k</p>
-              <p className="text-white/70 text-xs mt-1">m² monatlich</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl font-bold text-white">2h</p>
-              <p className="text-white/70 text-xs mt-1">Reaktionszeit</p>
             </div>
           </div>
         </div>

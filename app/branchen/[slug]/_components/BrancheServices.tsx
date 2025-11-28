@@ -1,33 +1,38 @@
-import { Check, Sparkles, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import { ArrowRight, Brush, Sparkles, Wind, Building, Factory, Truck, Snowflake, Wrench, TreePine, Construction, Car, Layers, Droplets, Shield, Home, Warehouse as WarehouseIcon } from 'lucide-react'
 import { Branche } from '@/lib/branchen-data'
 
 interface BrancheServicesProps {
   branche: Branche
 }
 
-// Map service names to leistungen URLs
-const serviceToUrl: Record<string, string> = {
-  'Unterhaltsreinigung': '/leistungen/unterhaltsreinigung',
-  'Büroreinigung': '/leistungen/bueroreinigung',
-  'Glasreinigung': '/leistungen/glasreinigung',
-  'Fensterreinigung': '/leistungen/fensterreinigung',
-  'Sanitärreinigung': '/leistungen/unterhaltsreinigung',
-  'Teppichreinigung': '/leistungen/sonderreinigung',
-  'Küchenreinigung': '/leistungen/unterhaltsreinigung',
-  'Industriereinigung': '/leistungen/industriereinigung',
-  'Maschinenreinigung': '/leistungen/maschinenreinigung',
-  'Hallenreinigung': '/leistungen/hallenreinigung',
-  'Bodenreinigung': '/leistungen/unterhaltsreinigung',
-  'Sonderreinigung': '/leistungen/sonderreinigung',
-  'Desinfektion': '/leistungen/sonderreinigung',
-  'Grundreinigung': '/leistungen/sonderreinigung',
-  'Fassadenreinigung': '/leistungen/fassadenreinigung',
-  'Außenanlagenpflege': '/leistungen/aussenanlagenpflege',
-  'Winterdienst': '/leistungen/winterdienst',
-  'Tiefgaragenreinigung': '/leistungen/tiefgaragenreinigung',
-  'Baureinigung': '/leistungen/baureinigung',
-  'Facility Management': '/leistungen/facility-management',
+// Individuelle Icons pro Leistung
+const serviceConfig: Record<string, { icon: React.ReactNode; url: string }> = {
+  'Unterhaltsreinigung': { icon: <Brush size={24} strokeWidth={1.5} />, url: '/leistungen/unterhaltsreinigung' },
+  'Büroreinigung': { icon: <Building size={24} strokeWidth={1.5} />, url: '/leistungen/bueroreinigung' },
+  'Glasreinigung': { icon: <Sparkles size={24} strokeWidth={1.5} />, url: '/leistungen/glasreinigung' },
+  'Fensterreinigung': { icon: <Wind size={24} strokeWidth={1.5} />, url: '/leistungen/fensterreinigung' },
+  'Industriereinigung': { icon: <Factory size={24} strokeWidth={1.5} />, url: '/leistungen/industriereinigung' },
+  'Maschinenreinigung': { icon: <Wrench size={24} strokeWidth={1.5} />, url: '/leistungen/maschinenreinigung' },
+  'Hallenreinigung': { icon: <WarehouseIcon size={24} strokeWidth={1.5} />, url: '/leistungen/hallenreinigung' },
+  'Hochregalreinigung': { icon: <Layers size={24} strokeWidth={1.5} />, url: '/leistungen/hallenreinigung' },
+  'Bodenreinigung': { icon: <Droplets size={24} strokeWidth={1.5} />, url: '/leistungen/unterhaltsreinigung' },
+  'Sonderreinigung': { icon: <Shield size={24} strokeWidth={1.5} />, url: '/leistungen/sonderreinigung' },
+  'Grundreinigung': { icon: <Sparkles size={24} strokeWidth={1.5} />, url: '/leistungen/sonderreinigung' },
+  'Desinfektion': { icon: <Shield size={24} strokeWidth={1.5} />, url: '/leistungen/sonderreinigung' },
+  'Fassadenreinigung': { icon: <Building size={24} strokeWidth={1.5} />, url: '/leistungen/fassadenreinigung' },
+  'Außenanlagenpflege': { icon: <TreePine size={24} strokeWidth={1.5} />, url: '/leistungen/aussenanlagenpflege' },
+  'Winterdienst': { icon: <Snowflake size={24} strokeWidth={1.5} />, url: '/leistungen/winterdienst' },
+  'Tiefgaragenreinigung': { icon: <Car size={24} strokeWidth={1.5} />, url: '/leistungen/tiefgaragenreinigung' },
+  'Baureinigung': { icon: <Construction size={24} strokeWidth={1.5} />, url: '/leistungen/baureinigung' },
+  'Facility Management': { icon: <Home size={24} strokeWidth={1.5} />, url: '/leistungen/facility-management' },
+  'Hausmeisterservice': { icon: <Wrench size={24} strokeWidth={1.5} />, url: '/leistungen/hausmeisterservice' },
+  'Sanitärreinigung': { icon: <Droplets size={24} strokeWidth={1.5} />, url: '/leistungen/unterhaltsreinigung' },
+  'Teppichreinigung': { icon: <Brush size={24} strokeWidth={1.5} />, url: '/leistungen/sonderreinigung' },
+  'Küchenreinigung': { icon: <Sparkles size={24} strokeWidth={1.5} />, url: '/leistungen/unterhaltsreinigung' },
+  'Treppenhausreinigung': { icon: <Building size={24} strokeWidth={1.5} />, url: '/leistungen/unterhaltsreinigung' },
+  'Parkplatzreinigung': { icon: <Car size={24} strokeWidth={1.5} />, url: '/leistungen/parkplatzreinigung' },
+  'Grünflächenpflege': { icon: <TreePine size={24} strokeWidth={1.5} />, url: '/leistungen/aussenanlagenpflege' },
 }
 
 export function BrancheServices({ branche }: BrancheServicesProps) {
@@ -37,54 +42,30 @@ export function BrancheServices({ branche }: BrancheServicesProps) {
     <section className="py-16 md:py-24 lg:py-32 bg-[#012956]">
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
-        {/* Section Header */}
-        <div className="flex items-center gap-4 mb-4">
-          <div className="w-12 h-12 rounded-[8px] bg-[#109387]/20 flex items-center justify-center">
-            <Sparkles size={24} strokeWidth={1.5} className="text-[#109387]" />
-          </div>
-          <span className="text-[#109387] font-bold text-sm uppercase tracking-[0.2em]">
-            Passende Leistungen
-          </span>
-        </div>
+        {/* Section Header - Kein Icon, kein Eyebrow, kein Einzeiler rechts */}
+        <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight mb-12 md:mb-16">
+          Unsere Services{' '}
+          <span className="text-[#109387]">für {branche.shortName}</span>
+        </h2>
 
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight">
-            Unsere Services<br className="hidden sm:block" />
-            <span className="text-[#109387]">für {branche.shortName}</span>
-          </h2>
-          <p className="text-lg text-white/70 max-w-xl">
-            Professionelle Reinigungslösungen, speziell abgestimmt auf die Anforderungen Ihrer Branche.
-          </p>
-        </div>
-
-        {/* Services Grid - Premium Cards */}
+        {/* Services Grid - Individuelle Icons */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 lg:gap-6">
           {branche.services.map((service, i) => {
-            const url = serviceToUrl[service] || '/leistungen'
+            const config = serviceConfig[service] || { icon: <Brush size={24} strokeWidth={1.5} />, url: '/leistungen' }
             return (
               <Link
                 key={i}
-                href={url}
-                className="group relative bg-white/5 backdrop-blur-sm hover:bg-white rounded-[12px] p-6 border border-white/10 hover:border-[#109387] transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
+                href={config.url}
+                className="group relative bg-white/5 hover:bg-white rounded-[6px] p-6 border border-white/10 hover:border-[#109387] transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
               >
-                {/* Number Badge */}
-                <div className="absolute -top-3 -right-3 w-8 h-8 bg-[#109387] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <ArrowRight size={14} className="text-white" />
-                </div>
-
-                {/* Check Icon */}
-                <div className="w-12 h-12 rounded-full bg-[#109387]/20 group-hover:bg-[#109387] flex items-center justify-center mb-4 transition-colors">
-                  <Check size={24} strokeWidth={2} className="text-[#109387] group-hover:text-white transition-colors" />
+                {/* Individuelles Icon */}
+                <div className="w-12 h-12 rounded-[6px] bg-[#109387]/20 group-hover:bg-[#109387] flex items-center justify-center mb-4 transition-colors text-[#109387] group-hover:text-white">
+                  {config.icon}
                 </div>
 
                 {/* Service Name */}
                 <p className="text-white group-hover:text-[#012956] font-bold text-base leading-tight transition-colors">
                   {service}
-                </p>
-
-                {/* Hover Hint */}
-                <p className="text-white/50 group-hover:text-[#109387] text-xs mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  Mehr erfahren
                 </p>
               </Link>
             )

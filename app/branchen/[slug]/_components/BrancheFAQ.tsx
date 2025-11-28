@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { ChevronDown, HelpCircle, MessageCircle } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 import { Branche } from '@/lib/branchen-data'
 
 interface BrancheFAQProps {
@@ -22,39 +22,29 @@ export function BrancheFAQ({ branche }: BrancheFAQProps) {
           {/* Left Column - Header */}
           <div className="lg:col-span-2">
             <div className="lg:sticky lg:top-32">
-              {/* Section Header */}
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-[8px] bg-[#109387]/10 flex items-center justify-center">
-                  <HelpCircle size={24} strokeWidth={1.5} className="text-[#109387]" />
-                </div>
-                <span className="text-[#109387] font-bold text-sm uppercase tracking-[0.2em]">
-                  Häufige Fragen
-                </span>
-              </div>
 
               <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#012956] leading-tight mb-6">
-                FAQ zur<br />
+                FAQ zur{' '}
                 <span className="text-[#109387]">{branche.shortName} Reinigung</span>
               </h2>
 
               <p className="text-lg text-gray-600 mb-8">
-                Hier finden Sie Antworten auf die wichtigsten Fragen. Haben Sie weitere Fragen? Kontaktieren Sie uns!
+                Hier finden Sie Antworten auf die wichtigsten Fragen.
               </p>
 
-              {/* Contact Box */}
-              <div className="bg-gradient-to-br from-[#012956] to-[#012956]/90 rounded-[16px] p-6">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-[#109387] flex items-center justify-center">
-                    <MessageCircle size={20} className="text-white" />
-                  </div>
-                  <div>
-                    <p className="text-white font-bold">Noch Fragen?</p>
-                    <p className="text-white/70 text-sm">Wir helfen gerne weiter</p>
-                  </div>
-                </div>
+              {/* Contact Box - Kontaktformular Button grün mit weißer Schrift */}
+              <div className="bg-gray-50 rounded-[6px] p-6 border border-gray-100">
+                <p className="text-[#012956] font-bold mb-4">Noch Fragen?</p>
+                <p className="text-gray-600 text-sm mb-4">Wir helfen gerne weiter</p>
+                <a
+                  href="#contact-form"
+                  className="block w-full text-center bg-[#109387] hover:bg-[#0d7d72] text-white font-bold py-3 rounded-[6px] transition-colors"
+                >
+                  Kontaktformular
+                </a>
                 <a
                   href="tel:+4987143033460"
-                  className="block w-full text-center bg-white text-[#012956] font-bold py-3 rounded-[6px] hover:bg-gray-100 transition-colors"
+                  className="block w-full text-center text-[#012956] font-bold py-3 mt-2 hover:text-[#109387] transition-colors"
                 >
                   0871 430 334 60
                 </a>
@@ -67,7 +57,7 @@ export function BrancheFAQ({ branche }: BrancheFAQProps) {
             {branche.faqs.map((faq, i) => (
               <div
                 key={i}
-                className={`bg-gray-50 rounded-[12px] overflow-hidden border-2 transition-all duration-300 ${
+                className={`bg-gray-50 rounded-[6px] overflow-hidden border-2 transition-all duration-300 ${
                   openIndex === i ? 'border-[#109387] shadow-lg' : 'border-transparent hover:border-gray-200'
                 }`}
               >
@@ -76,11 +66,12 @@ export function BrancheFAQ({ branche }: BrancheFAQProps) {
                   className="w-full flex items-center justify-between gap-4 p-6 text-left"
                 >
                   <div className="flex items-center gap-4">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${
-                      openIndex === i ? 'bg-[#109387] text-white' : 'bg-[#109387]/10 text-[#109387]'
+                    {/* Nummer steril ohne Kreis */}
+                    <span className={`font-bold text-lg min-w-[24px] transition-colors ${
+                      openIndex === i ? 'text-[#109387]' : 'text-gray-400'
                     }`}>
-                      <span className="font-bold">{i + 1}</span>
-                    </div>
+                      {i + 1}.
+                    </span>
                     <span className="font-bold text-[#012956] text-lg">
                       {faq.frage}
                     </span>
@@ -97,7 +88,7 @@ export function BrancheFAQ({ branche }: BrancheFAQProps) {
                     openIndex === i ? 'max-h-96' : 'max-h-0'
                   }`}
                 >
-                  <div className="px-6 pb-6 pl-20">
+                  <div className="px-6 pb-6 pl-16">
                     <p className="text-gray-600 text-lg leading-relaxed">
                       {faq.antwort}
                     </p>

@@ -1,5 +1,5 @@
 import { Branche } from '@/lib/branchen-data'
-import { ArrowRight, ClipboardList } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 
 interface BrancheProcessProps {
   branche: Branche
@@ -13,42 +13,28 @@ export function BrancheProcess({ branche }: BrancheProcessProps) {
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
         {/* Section Header */}
-        <div className="flex items-center gap-4 mb-4">
-          <div className="w-12 h-12 rounded-[8px] bg-[#109387]/10 flex items-center justify-center">
-            <ClipboardList size={24} strokeWidth={1.5} className="text-[#109387]" />
-          </div>
-          <span className="text-[#109387] font-bold text-sm uppercase tracking-[0.2em]">
-            So funktioniert&apos;s
-          </span>
-        </div>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#012956] leading-tight mb-12 md:mb-16">
+          In 4 Schritten zu Ihrer{' '}
+          <span className="text-[#109387]">{branche.shortName} Reinigung</span>
+        </h2>
 
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-12 md:mb-16">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#012956] leading-tight">
-            In 4 Schritten zu Ihrer<br className="hidden sm:block" />
-            <span className="text-[#109387]">{branche.shortName} Reinigung</span>
-          </h2>
-          <p className="text-lg text-gray-600 max-w-xl">
-            Transparenter Ablauf von der ersten Anfrage bis zur regelmäßigen Betreuung.
-          </p>
-        </div>
-
-        {/* Process Steps */}
+        {/* Process Steps - alle 6px */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {branche.processSteps.map((step, i) => (
             <div key={i} className="relative group">
 
-              {/* Connector Arrow (Desktop) */}
+              {/* Connector Arrow (Desktop) - 6px */}
               {i < branche.processSteps.length - 1 && (
-                <div className="hidden lg:flex absolute top-10 -right-4 z-10 w-8 h-8 bg-white rounded-full items-center justify-center shadow-lg">
+                <div className="hidden lg:flex absolute top-10 -right-4 z-10 w-8 h-8 bg-white rounded-[6px] items-center justify-center shadow-lg">
                   <ArrowRight size={16} className="text-[#109387]" />
                 </div>
               )}
 
-              {/* Card */}
-              <div className="h-full bg-white rounded-[16px] p-8 border border-gray-100 hover:border-[#109387]/30 hover:shadow-xl transition-all duration-500 group-hover:-translate-y-2">
+              {/* Card - 6px */}
+              <div className="h-full bg-white rounded-[6px] p-8 border border-gray-100 hover:border-[#109387]/30 hover:shadow-xl transition-all duration-500 group-hover:-translate-y-1">
 
-                {/* Step Number - Prominent */}
-                <div className="w-16 h-16 rounded-[12px] bg-gradient-to-br from-[#109387] to-[#0d7d72] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                {/* Step Number - 6px */}
+                <div className="w-14 h-14 rounded-[6px] bg-[#109387] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
                   <span className="text-white font-bold text-2xl">{step.schritt}</span>
                 </div>
 
