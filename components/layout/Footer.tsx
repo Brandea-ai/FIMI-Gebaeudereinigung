@@ -83,7 +83,11 @@ export default function Footer() {
 
               {/* Trust Badges */}
               <div className="bg-[#012956] rounded-[6px] p-6">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="text-center">
+                    <p className="text-3xl font-bold text-[#109387]">8+</p>
+                    <p className="text-white/70 text-sm font-semibold">Jahre Erfahrung</p>
+                  </div>
                   <div className="text-center">
                     <p className="text-3xl font-bold text-[#109387]">120+</p>
                     <p className="text-white/70 text-sm font-semibold">Kundenprojekte</p>
