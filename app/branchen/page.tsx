@@ -21,16 +21,16 @@ export default function BranchenPage() {
 
         <div className="relative w-full max-w-[1800px] mx-auto px-4 md:px-6 lg:px-12 xl:px-20">
           <div className="text-center lg:text-left max-w-3xl">
-            <p className="text-[#109387] font-bold text-xs md:text-sm uppercase tracking-[0.2em] mb-4">
+            <p className="text-[#109387] font-extrabold text-xs md:text-sm uppercase tracking-[0.2em] mb-4">
               Unsere Branchen
             </p>
 
-            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-[1.1] mb-4 md:mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-[1.1] mb-4 md:mb-6">
               Branchenspezifische
               <span className="block text-[#109387]">Reinigungslösungen</span>
             </h1>
 
-            <p className="text-white/70 font-medium text-base md:text-lg lg:text-xl leading-relaxed mb-6 md:mb-8">
+            <p className="text-white/80 font-bold text-base md:text-lg lg:text-xl leading-relaxed mb-6 md:mb-8">
               Jede Branche hat ihre eigenen Anforderungen an Sauberkeit und Hygiene.
               Wir kennen die Besonderheiten und bieten maßgeschneiderte Konzepte.
             </p>
@@ -38,25 +38,25 @@ export default function BranchenPage() {
             {/* Stats */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-6 md:gap-8 mb-6 md:mb-8">
               <div className="text-center">
-                <div className="text-[#109387] font-bold text-2xl md:text-3xl">12</div>
-                <div className="text-white/50 text-xs md:text-sm">Branchen</div>
+                <div className="text-[#109387] font-black text-2xl md:text-3xl">12</div>
+                <div className="text-white/60 font-bold text-xs md:text-sm">Branchen</div>
               </div>
               <div className="text-center">
-                <div className="text-[#109387] font-bold text-2xl md:text-3xl">8+</div>
-                <div className="text-white/50 text-xs md:text-sm">Jahre Erfahrung</div>
+                <div className="text-[#109387] font-black text-2xl md:text-3xl">8+</div>
+                <div className="text-white/60 font-bold text-xs md:text-sm">Jahre Erfahrung</div>
               </div>
               <div className="text-center">
-                <div className="text-[#109387] font-bold text-2xl md:text-3xl">100%</div>
-                <div className="text-white/50 text-xs md:text-sm">Branchenkenntnis</div>
+                <div className="text-[#109387] font-black text-2xl md:text-3xl">100%</div>
+                <div className="text-white/60 font-bold text-xs md:text-sm">Branchenkenntnis</div>
               </div>
             </div>
 
             <a
               href="#contact-form"
-              className="inline-flex items-center gap-2 md:gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm md:text-lg px-6 md:px-8 py-3 md:py-4 rounded-[6px] transition-all group"
+              className="inline-flex items-center gap-2 md:gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-extrabold text-sm md:text-lg px-6 md:px-8 py-3 md:py-4 rounded-[6px] transition-all group"
             >
               <span>Branche anfragen</span>
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              <ArrowRight size={18} strokeWidth={2.5} className="group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </div>
@@ -66,10 +66,10 @@ export default function BranchenPage() {
       <section className="py-10 md:py-16 lg:py-24 bg-[#f8f9fa]">
         <div className="w-full max-w-[1800px] mx-auto px-4 md:px-6 lg:px-12 xl:px-20">
           <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#012956] mb-3 md:mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#012956] mb-3 md:mb-4">
               Alle Branchen im Überblick
             </h2>
-            <p className="text-gray-500 font-medium text-sm md:text-lg max-w-2xl mx-auto">
+            <p className="text-gray-600 font-bold text-sm md:text-lg max-w-2xl mx-auto">
               Finden Sie die passende Reinigungslösung für Ihre Branche.
             </p>
           </div>
@@ -82,45 +82,56 @@ export default function BranchenPage() {
                 <Link
                   key={branche.id}
                   href={`/branchen/${branche.slug}`}
-                  className="group bg-white rounded-[6px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 active:scale-[0.98]"
+                  className="group bg-white rounded-[8px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 active:scale-[0.98]"
                 >
                   {/* Image */}
-                  <div className="relative h-36 md:h-44 overflow-hidden">
+                  <div className="relative h-40 md:h-48 overflow-hidden">
                     <Image
                       src={branche.image}
                       alt={branche.name}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#012956]/80 via-[#012956]/20 to-transparent" />
+                    {/* Default dark gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#012956]/90 via-[#012956]/30 to-transparent transition-opacity duration-500 group-hover:opacity-0" />
 
-                    {/* Icon & Title */}
-                    <div className="absolute bottom-3 left-3 right-3">
-                      <div className="flex items-center gap-2 mb-1">
-                        <IconComponent size={18} strokeWidth={1.5} className="text-[#109387]" />
-                        <span className="text-white/70 text-xs">{branche.shortName}</span>
+                    {/* Hover: White overlay from bottom */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/95 to-white/70 opacity-0 group-hover:opacity-100 transition-all duration-500" />
+
+                    {/* Icon & Title Container */}
+                    <div className="absolute bottom-0 left-0 right-0 p-4 md:p-5">
+                      {/* Icon Box */}
+                      <div className="w-12 h-12 md:w-14 md:h-14 bg-[#109387] rounded-[8px] flex items-center justify-center mb-3 shadow-lg transition-all duration-500 group-hover:bg-[#012956]">
+                        <IconComponent size={24} strokeWidth={1.5} className="text-white" />
                       </div>
-                      <h3 className="text-white font-bold text-base md:text-lg">
+
+                      {/* Short Name */}
+                      <span className="text-white/80 font-bold text-xs md:text-sm uppercase tracking-wider transition-colors duration-500 group-hover:text-[#109387]">
+                        {branche.shortName}
+                      </span>
+
+                      {/* Main Title */}
+                      <h3 className="text-white font-black text-lg md:text-xl mt-1 transition-colors duration-500 group-hover:text-[#012956]">
                         {branche.name}
                       </h3>
                     </div>
                   </div>
 
                   {/* Content */}
-                  <div className="p-4">
-                    <p className="text-gray-600 font-medium text-xs md:text-sm leading-relaxed mb-3 line-clamp-2">
+                  <div className="p-4 md:p-5">
+                    <p className="text-gray-700 font-semibold text-sm md:text-[15px] leading-relaxed mb-4 line-clamp-2">
                       {branche.description}
                     </p>
 
                     {/* CTA */}
-                    <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-                      <span className="text-[#109387] font-bold text-xs md:text-sm">
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <span className="text-[#109387] font-extrabold text-sm md:text-[15px]">
                         Mehr erfahren
                       </span>
                       <ArrowRight
-                        size={14}
-                        strokeWidth={2}
-                        className="text-[#109387] group-hover:translate-x-1 transition-transform"
+                        size={16}
+                        strokeWidth={2.5}
+                        className="text-[#109387] group-hover:translate-x-2 transition-transform duration-300"
                       />
                     </div>
                   </div>
@@ -135,28 +146,28 @@ export default function BranchenPage() {
       <section className="py-12 md:py-20 lg:py-28 bg-[#012956]">
         <div className="w-full max-w-[1800px] mx-auto px-4 md:px-6 lg:px-12 xl:px-20">
           <div className="text-center max-w-3xl mx-auto">
-            <p className="text-[#109387] font-bold text-xs md:text-sm uppercase tracking-[0.2em] mb-3 md:mb-4">
+            <p className="text-[#109387] font-extrabold text-xs md:text-sm uppercase tracking-[0.2em] mb-3 md:mb-4">
               Ihre Branche nicht dabei?
             </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-[1.1] mb-4 md:mb-6">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white leading-[1.1] mb-4 md:mb-6">
               Wir finden die passende
               <span className="block text-[#109387]">Lösung für Sie</span>
             </h2>
-            <p className="text-white/70 font-medium text-sm md:text-lg mb-6 md:mb-8">
+            <p className="text-white/80 font-bold text-sm md:text-lg mb-6 md:mb-8">
               Kontaktieren Sie uns für ein individuelles Reinigungskonzept.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
               <a
                 href="#contact-form"
-                className="inline-flex items-center justify-center gap-2 md:gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm md:text-lg px-6 md:px-8 py-3 md:py-4 rounded-[6px] transition-all group"
+                className="inline-flex items-center justify-center gap-2 md:gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-extrabold text-sm md:text-lg px-6 md:px-8 py-3 md:py-4 rounded-[6px] transition-all group"
               >
                 <span>Kostenfreie Beratung</span>
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={18} strokeWidth={2.5} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a
                 href="tel:+4987143033460"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold text-sm md:text-lg px-6 md:px-8 py-3 md:py-4 rounded-[6px] transition-all"
+                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-extrabold text-sm md:text-lg px-6 md:px-8 py-3 md:py-4 rounded-[6px] transition-all"
               >
                 <span>0871 430 334 60</span>
               </a>
