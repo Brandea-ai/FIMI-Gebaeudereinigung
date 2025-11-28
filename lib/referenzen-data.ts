@@ -65,7 +65,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1497366412874-3415097a27e7?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1568992687947-868a62a9f521?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Regensburg',
     flaeche: '850 m²',
   },
   {
@@ -82,7 +82,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Straubing',
+    standort: 'Ingolstadt',
     flaeche: '2.100 m²',
   },
 
@@ -101,7 +101,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Dingolfing',
+    standort: 'Freising',
     flaeche: '25.000 m²',
   },
   {
@@ -118,7 +118,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1717386255773-1e3037c81788?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1533417479674-32d5f8e6b1bf?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Ergolding',
+    standort: 'Erding',
     flaeche: '3.500 m²',
   },
   {
@@ -135,7 +135,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Straubing',
     flaeche: '1.800 m²',
   },
   {
@@ -152,7 +152,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1588508065123-287b28e013da?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'München',
+    standort: 'Passau',
     flaeche: '2.200 m²',
   },
 
@@ -188,7 +188,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'München',
     flaeche: '450 m²',
   },
   {
@@ -205,7 +205,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1598970434795-0c54fe7c0648?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Regensburg',
     flaeche: '680 m²',
   },
   {
@@ -222,7 +222,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Vilsbiburg',
+    standort: 'Ingolstadt',
     flaeche: '3.800 m²',
   },
 
@@ -241,7 +241,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1567449303078-57ad995bd329?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Freising',
     flaeche: '12.000 m²',
   },
   {
@@ -258,7 +258,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Erding',
     flaeche: '8.500 m²',
   },
   {
@@ -275,7 +275,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1578916171728-46686eac8d58?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut / Ergolding / Vilsbiburg',
+    standort: 'Straubing',
     flaeche: '4.200 m²',
   },
 
@@ -294,7 +294,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Passau',
     flaeche: '5.500 m²',
   },
   {
@@ -328,7 +328,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'München',
     flaeche: '6.200 m²',
   },
 
@@ -347,7 +347,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Regensburg',
     flaeche: '7.500 m²',
   },
   {
@@ -364,7 +364,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1576495199011-eb94736d05d6?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Ingolstadt',
     flaeche: '680 m²',
   },
   {
@@ -381,7 +381,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Freising',
     flaeche: '15.000 m²',
   },
 
@@ -400,7 +400,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Erding',
     flaeche: '2.800 m²',
   },
   {
@@ -417,7 +417,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Straubing',
     flaeche: '4.500 m²',
   },
   {
@@ -434,7 +434,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Passau',
     flaeche: '3.200 m²',
   },
 
@@ -453,7 +453,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1565891741441-64926e441838?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Ergolding',
+    standort: 'Landshut',
     flaeche: '35.000 m²',
   },
   {
@@ -470,7 +470,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'München',
     flaeche: '18.000 m²',
   },
   {
@@ -487,7 +487,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1570216043748-eb07a8c0e9b4?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Ergolding',
+    standort: 'Regensburg',
     flaeche: '8.500 m²',
   },
 
@@ -506,7 +506,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Ingolstadt',
     flaeche: '8.400 m²',
   },
   {
@@ -523,7 +523,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Freising',
     flaeche: '2.800 m²',
   },
   {
@@ -540,7 +540,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut / Umgebung',
+    standort: 'Erding',
     flaeche: '15.000 m²',
   },
 
@@ -559,7 +559,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1577415124269-fc1140815c63?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1541873676-a18131494184?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Straubing',
     flaeche: '4.200 m²',
   },
   {
@@ -576,7 +576,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1568667256549-094345857637?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Passau',
     flaeche: '1.800 m²',
   },
   {
@@ -612,7 +612,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1556742400-b5b7c512f396?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'München',
     flaeche: '6.500 m²',
   },
   {
@@ -629,7 +629,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1568992688065-536aad8a12f6?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Regensburg',
     flaeche: '380 m²',
   },
   {
@@ -646,7 +646,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut / Ergolding',
+    standort: 'Ingolstadt',
     flaeche: '2.100 m²',
   },
 
@@ -665,7 +665,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Freising',
     flaeche: '4.200 m²',
   },
   {
@@ -682,7 +682,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1632823471406-4c5c7e4c6f24?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Ergolding',
+    standort: 'Erding',
     flaeche: '1.200 m²',
   },
   {
@@ -699,7 +699,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1542362567-b07e54358753?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Straubing',
     flaeche: '5.800 m²',
   },
 
@@ -718,7 +718,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Passau',
     flaeche: '4.800 m²',
   },
   {
@@ -752,7 +752,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1470224114660-3f6686c562eb?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'München',
     flaeche: '12.000 m²',
   },
   {
@@ -769,7 +769,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1491002052546-bf38f186af56?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1477601263568-180e2c6d046e?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Regensburg',
     flaeche: '45.000 m²',
   },
   {
@@ -786,7 +786,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Ingolstadt',
     flaeche: '5.600 m²',
   },
   {
@@ -803,7 +803,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Freising',
     flaeche: '800 m²',
   },
 
@@ -822,7 +822,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Vilsbiburg',
+    standort: 'Erding',
     flaeche: '4.500 m²',
   },
   {
@@ -839,7 +839,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Straubing',
     flaeche: '320 m²',
   },
   {
@@ -856,7 +856,7 @@ export const referenzen: Referenz[] = [
       'https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=800&auto=format&fit=crop',
     ],
-    standort: 'Landshut',
+    standort: 'Passau',
     flaeche: '1.800 m²',
   },
   {

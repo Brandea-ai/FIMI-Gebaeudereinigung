@@ -7,11 +7,11 @@ const städte = [
   'Landshut',
   'München',
   'Regensburg',
-  'Straubing',
-  'Dingolfing',
-  'Moosburg',
-  'Freising',
   'Ingolstadt',
+  'Freising',
+  'Erding',
+  'Straubing',
+  'Passau',
 ]
 
 export default function HeroContainer() {

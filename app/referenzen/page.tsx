@@ -126,7 +126,7 @@ export default function ReferenzenPage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle size={22} className="text-[#109387]" />
-                  <span className="text-white font-semibold text-lg">{stats.branchen} Branchen</span>
+                  <span className="text-white font-semibold text-lg">8 Einsatzorte</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle size={22} className="text-[#109387]" />

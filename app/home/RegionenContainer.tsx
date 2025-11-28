@@ -263,7 +263,7 @@ export default function RegionenContainer() {
           {/* Left: Map + Link */}
           <div className="relative w-full">
             <Image
-              src="/images/home/städte für fimi.avif"
+              src="/images/home/staedte-fimi.avif"
               alt="Bayern Karte - FIMI Gebäudereinigung Servicegebiete"
               width={4800}
               height={3584}
