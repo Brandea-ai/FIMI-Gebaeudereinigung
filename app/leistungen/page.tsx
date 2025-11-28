@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Check, Building2, Factory, Wrench, Sparkles } from 'lucide-react'
+import { ArrowRight, Check, Building2, Factory, Wrench, Sparkles, Search, X } from 'lucide-react'
 import { leistungen, categories, getAllCategories } from '@/lib/leistungen-data'
 
 const categoryIcons = {
@@ -21,14 +21,146 @@ const categoryShortLabels: Record<string, string> = {
   spezial: 'Spezial',
 }
 
+// Suchbegriffe/Synonyme für jede Leistung - sehr umfangreich für beste Trefferquote
+const searchTermsMap: Record<string, string[]> = {
+  'unterhaltsreinigung': [
+    'unterhalt', 'unterhalts', 'regelmäßig', 'regelmaessig', 'täglich', 'taeglich', 'wöchentlich', 'woechentlich',
+    'daily', 'cleaning', 'gebäude', 'gebaeude', 'objekt', 'reinigung', 'sauber', 'putzen', 'putzfrau', 'putzmann',
+    'raumpflege', 'raumpfleger', 'grundreinigung', 'intervall', 'dauerhaft', 'laufend', 'kontinuierlich'
+  ],
+  'bueroreinigung': [
+    'büro', 'buero', 'office', 'arbeitsplatz', 'schreibtisch', 'arbeiten', 'firma', 'unternehmen', 'betrieb',
+    'geschäft', 'geschaeft', 'praxis', 'kanzlei', 'agentur', 'verwaltung', 'administration', 'empfang',
+    'konferenz', 'meeting', 'besprechung', 'arbeitsraum', 'workspace', 'coworking'
+  ],
+  'glasreinigung': [
+    'glas', 'fenster', 'scheibe', 'scheiben', 'window', 'durchsicht', 'transparent', 'spiegel',
+    'glasfläche', 'glasflaeche', 'verglasung', 'streifenfrei', 'klar', 'putzen', 'polieren'
+  ],
+  'fensterreinigung': [
+    'fenster', 'window', 'rahmen', 'fensterbank', 'fensterbrett', 'scheibe', 'glas', 'außen', 'aussen',
+    'innen', 'höhe', 'hoehe', 'jalousie', 'rollladen', 'rollo', 'sonnenschutz', 'licht', 'tageslicht'
+  ],
+  'fassadenreinigung': [
+    'fassade', 'außen', 'aussen', 'wand', 'mauer', 'hauswand', 'gebäudehülle', 'gebaeudehulle',
+    'algen', 'moos', 'grünbelag', 'gruenbelag', 'verschmutzung', 'hochdruck', 'kärcher', 'kaercher',
+    'außenwand', 'aussenwand', 'verkleidung', 'putz', 'klinker', 'stein'
+  ],
+  'industriereinigung': [
+    'industrie', 'produktion', 'fertigung', 'fabrik', 'werk', 'industrial', 'manufacturing',
+    'maschine', 'anlage', 'technik', 'technisch', 'schwer', 'öl', 'oel', 'fett', 'späne', 'spaene',
+    'metall', 'staub', 'produktionshalle', 'werkhalle'
+  ],
+  'hallenreinigung': [
+    'halle', 'lagerhalle', 'produktionshalle', 'logistik', 'lager', 'warehouse', 'großfläche', 'grossflaeche',
+    'boden', 'fußboden', 'fussboden', 'fläche', 'flaeche', 'groß', 'gross', 'big', 'riesig', 'industrieboden'
+  ],
+  'maschinenreinigung': [
+    'maschine', 'anlage', 'gerät', 'geraet', 'equipment', 'technik', 'technisch', 'produktion',
+    'wartung', 'pflege', 'öl', 'oel', 'fett', 'schmierstoff', 'späne', 'spaene', 'cnc', 'fräse', 'fraese',
+    'drehe', 'presse', 'roboter', 'automat'
+  ],
+  'tiefgaragenreinigung': [
+    'tiefgarage', 'garage', 'parkhaus', 'parkdeck', 'parken', 'auto', 'fahrzeug', 'kfz', 'pkw',
+    'stellplatz', 'untergrund', 'keller', 'öl', 'oel', 'ölfleck', 'oelfleck', 'reifen', 'abrieb',
+    'streusalz', 'salz', 'winter'
+  ],
+  'parkplatzreinigung': [
+    'parkplatz', 'parken', 'stellfläche', 'stellflaeche', 'außen', 'aussen', 'draußen', 'draussen',
+    'asphalt', 'pflaster', 'laub', 'unkraut', 'kehren', 'fegen', 'markierung', 'linie', 'betriebshof'
+  ],
+  'facility-management': [
+    'facility', 'management', 'gebäude', 'gebaeude', 'verwaltung', 'betreuung', 'fullservice', 'full-service',
+    'alles', 'komplett', 'rundum', 'ganzheitlich', 'one-stop', 'ansprechpartner', 'koordination',
+    'dienstleistung', 'service', 'objekt', 'immobilie'
+  ],
+  'hausmeisterservice': [
+    'hausmeister', 'hauswart', 'facility', 'handwerk', 'reparatur', 'kleinreparatur', 'technik',
+    'wartung', 'kontrolle', 'rundgang', 'müll', 'muell', 'abfall', 'entsorgung', 'schlüssel', 'schluessel',
+    'notfall', 'bereitschaft', 'handwerker'
+  ],
+  'winterdienst': [
+    'winter', 'schnee', 'eis', 'frost', 'glätte', 'glaette', 'räumen', 'raeumen', 'streuen', 'salz',
+    'granulat', 'rutsch', 'gefahr', 'sicherheit', 'früh', 'frueh', 'morgen', 'nacht', 'bereitschaft',
+    'räumpflicht', 'raeumpflicht', 'verkehrssicherung'
+  ],
+  'aussenanlagenpflege': [
+    'außen', 'aussen', 'garten', 'grün', 'gruen', 'rasen', 'mähen', 'maehen', 'hecke', 'schneiden',
+    'beet', 'pflanze', 'baum', 'strauch', 'laub', 'herbst', 'pflege', 'gärtner', 'gaertner',
+    'landschaft', 'landscape', 'outdoor'
+  ],
+  'baureinigung': [
+    'bau', 'baustelle', 'neubau', 'renovierung', 'sanierung', 'umbau', 'handwerker', 'staub', 'baustaub',
+    'dreck', 'schutt', 'abfall', 'fertig', 'bezugsfertig', 'übergabe', 'uebergabe', 'abnahme',
+    'endreinigung', 'fein', 'grob'
+  ],
+  'sonderreinigung': [
+    'sonder', 'spezial', 'special', 'besonders', 'individuell', 'teppich', 'polster', 'möbel', 'moebel',
+    'stein', 'marmor', 'granit', 'graffiti', 'vandalismus', 'beschmierung', 'fleck', 'entfernung'
+  ],
+  'sonderleistungen': [
+    'sonder', 'extra', 'zusatz', 'individuell', 'maßgeschneidert', 'massgeschneidert', 'event', 'veranstaltung',
+    'messe', 'umzug', 'einzug', 'auszug', 'einmalig', 'flexibel', 'kurzfristig', 'spontan'
+  ],
+  'beschaffungsmanagement': [
+    'beschaffung', 'einkauf', 'material', 'hygiene', 'artikel', 'papier', 'toilette', 'seife', 'handtuch',
+    'verbrauch', 'nachfüllen', 'nachfuellen', 'bestellung', 'lieferung', 'lager', 'vorrat', 'spender'
+  ],
+}
+
+// Funktion um zu prüfen ob ein Suchbegriff zu einer Leistung passt
+function matchesSearch(leistungSlug: string, searchQuery: string): boolean {
+  if (!searchQuery.trim()) return true
+
+  const query = searchQuery.toLowerCase().trim()
+  const terms = searchTermsMap[leistungSlug] || []
+  const leistung = leistungen.find(l => l.slug === leistungSlug)
+
+  if (!leistung) return false
+
+  // Prüfe alle Suchbegriffe
+  const allSearchableText = [
+    leistung.name.toLowerCase(),
+    leistung.shortName.toLowerCase(),
+    leistung.description.toLowerCase(),
+    ...leistung.keywords.map(k => k.toLowerCase()),
+    ...terms
+  ].join(' ')
+
+  // Teile die Suchanfrage in einzelne Wörter
+  const queryWords = query.split(/\s+/)
+
+  // Alle Wörter müssen gefunden werden
+  return queryWords.every(word => allSearchableText.includes(word))
+}
+
 export default function LeistungenPage() {
   const [activeFilter, setActiveFilter] = useState<string>('alle')
+  const [searchQuery, setSearchQuery] = useState<string>('')
 
-  const filteredLeistungen = activeFilter === 'alle'
-    ? leistungen
-    : leistungen.filter(l => l.category === activeFilter)
+  const filteredLeistungen = useMemo(() => {
+    let result = leistungen
+
+    // Erst nach Kategorie filtern
+    if (activeFilter !== 'alle') {
+      result = result.filter(l => l.category === activeFilter)
+    }
+
+    // Dann nach Suchbegriff filtern
+    if (searchQuery.trim()) {
+      result = result.filter(l => matchesSearch(l.slug, searchQuery))
+    }
+
+    return result
+  }, [activeFilter, searchQuery])
 
   const allCategories = getAllCategories()
+
+  const handleCategoryClick = (categoryId: string) => {
+    setActiveFilter(categoryId)
+    setSearchQuery('') // Suche zurücksetzen bei Kategorie-Wechsel
+    document.getElementById('leistungen-grid')?.scrollIntoView({ behavior: 'smooth' })
+  }
 
   return (
     <main className="min-h-screen bg-white">
@@ -89,10 +221,7 @@ export default function LeistungenPage() {
                 return (
                   <button
                     key={cat.id}
-                    onClick={() => {
-                      setActiveFilter(cat.id)
-                      document.getElementById('leistungen-grid')?.scrollIntoView({ behavior: 'smooth' })
-                    }}
+                    onClick={() => handleCategoryClick(cat.id)}
                     className="group p-8 bg-white/5 hover:bg-white/10 rounded-[6px] text-left transition-all duration-300 border border-white/10 hover:border-[#109387]/50"
                   >
                     <IconComponent size={36} strokeWidth={1.5} className="text-[#109387] mb-4" />
@@ -115,10 +244,7 @@ export default function LeistungenPage() {
               return (
                 <button
                   key={cat.id}
-                  onClick={() => {
-                    setActiveFilter(cat.id)
-                    document.getElementById('leistungen-grid')?.scrollIntoView({ behavior: 'smooth' })
-                  }}
+                  onClick={() => handleCategoryClick(cat.id)}
                   className="flex items-center gap-4 p-4 bg-white/5 rounded-[6px] text-left border border-white/10 active:bg-white/10"
                 >
                   <IconComponent size={28} strokeWidth={1.5} className="text-[#109387] flex-shrink-0" />
@@ -133,37 +259,70 @@ export default function LeistungenPage() {
         </div>
       </section>
 
-      {/* Filter Section */}
+      {/* Filter Section mit Suche */}
       <section className="sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="flex items-center gap-3 py-4 overflow-x-auto scrollbar-hide">
-            <button
-              onClick={() => setActiveFilter('alle')}
-              className={`px-6 py-3 rounded-[6px] font-bold whitespace-nowrap transition-all ${
-                activeFilter === 'alle'
-                  ? 'bg-[#012956] text-white'
-                  : 'bg-[#f8f9fa] text-[#012956] hover:bg-[#012956] hover:text-white'
-              }`}
-            >
-              Alle ({leistungen.length})
-            </button>
-            {allCategories.map((cat) => {
-              const count = leistungen.filter(l => l.category === cat.id).length
-              return (
+          <div className="flex flex-col md:flex-row md:items-center gap-4 py-4">
+            {/* Suchfeld */}
+            <div className="relative flex-1 max-w-md">
+              <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+              <input
+                type="text"
+                placeholder="Suchen... z.B. Büro, Fenster, Industrie"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-12 pr-10 py-3 rounded-[6px] border border-gray-200 bg-[#f8f9fa] font-semibold text-[#012956] placeholder:text-gray-400 focus:outline-none focus:border-[#109387] focus:ring-2 focus:ring-[#109387]/20 transition-all"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                >
+                  <X size={18} />
+                </button>
+              )}
+            </div>
+
+            {/* Filter Buttons */}
+            <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide">
+              <button
+                onClick={() => { setActiveFilter('alle'); setSearchQuery(''); }}
+                className={`px-5 py-2.5 rounded-[6px] font-bold whitespace-nowrap transition-all ${
+                  activeFilter === 'alle' && !searchQuery
+                    ? 'bg-[#012956] text-white'
+                    : 'bg-[#f8f9fa] text-[#012956] hover:bg-[#012956] hover:text-white'
+                }`}
+              >
+                Alle
+              </button>
+              {allCategories.map((cat) => (
                 <button
                   key={cat.id}
-                  onClick={() => setActiveFilter(cat.id)}
-                  className={`px-6 py-3 rounded-[6px] font-bold whitespace-nowrap transition-all ${
-                    activeFilter === cat.id
+                  onClick={() => { setActiveFilter(cat.id); setSearchQuery(''); }}
+                  className={`px-5 py-2.5 rounded-[6px] font-bold whitespace-nowrap transition-all ${
+                    activeFilter === cat.id && !searchQuery
                       ? 'bg-[#012956] text-white'
                       : 'bg-[#f8f9fa] text-[#012956] hover:bg-[#012956] hover:text-white'
                   }`}
                 >
-                  {categoryShortLabels[cat.id]} ({count})
+                  {categoryShortLabels[cat.id]}
                 </button>
-              )
-            })}
+              ))}
+            </div>
           </div>
+
+          {/* Suchergebnis Info */}
+          {searchQuery && (
+            <div className="pb-4 -mt-2">
+              <p className="text-gray-600 font-semibold">
+                {filteredLeistungen.length === 0 ? (
+                  <span>Keine Ergebnisse für „{searchQuery}"</span>
+                ) : (
+                  <span>{filteredLeistungen.length} Ergebnis{filteredLeistungen.length !== 1 ? 'se' : ''} für „{searchQuery}"</span>
+                )}
+              </p>
+            </div>
+          )}
         </div>
       </section>
 
@@ -173,90 +332,112 @@ export default function LeistungenPage() {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-4">
-              {activeFilter === 'alle'
-                ? 'Alle Leistungen im Überblick'
-                : categories[activeFilter as keyof typeof categories]?.label
+              {searchQuery
+                ? 'Suchergebnisse'
+                : activeFilter === 'alle'
+                  ? 'Alle Leistungen im Überblick'
+                  : categories[activeFilter as keyof typeof categories]?.label
               }
             </h2>
             <p className="text-lg text-gray-700 font-semibold leading-relaxed max-w-2xl mx-auto">
-              {activeFilter === 'alle'
-                ? 'Entdecken Sie unser vollständiges Leistungsspektrum für Ihr Unternehmen.'
-                : categories[activeFilter as keyof typeof categories]?.description
+              {searchQuery
+                ? `Leistungen passend zu Ihrer Suche nach „${searchQuery}"`
+                : activeFilter === 'alle'
+                  ? 'Entdecken Sie unser vollständiges Leistungsspektrum für Ihr Unternehmen.'
+                  : categories[activeFilter as keyof typeof categories]?.description
               }
             </p>
           </div>
 
-          {/* Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredLeistungen.map((leistung) => {
-              const IconComponent = categoryIcons[leistung.category]
-              return (
-                <Link
-                  key={leistung.id}
-                  href={`/leistungen/${leistung.slug}`}
-                  className="group bg-white rounded-[6px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
-                >
-                  {/* Image */}
-                  <div className="relative h-52 lg:h-60 overflow-hidden">
-                    <Image
-                      src={leistung.image}
-                      alt={leistung.name}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#012956]/80 via-transparent to-transparent" />
-
-                    {/* Category Badge */}
-                    <div className="absolute top-4 left-4">
-                      <span
-                        className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[4px] text-white font-bold text-sm"
-                        style={{ backgroundColor: categories[leistung.category].color }}
-                      >
-                        <IconComponent size={14} strokeWidth={2} />
-                        {categoryShortLabels[leistung.category]}
-                      </span>
-                    </div>
-
-                    {/* Title Overlay */}
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-white font-bold text-2xl">
-                        {leistung.name}
-                      </h3>
-                    </div>
-                  </div>
-
-                  {/* Content */}
-                  <div className="p-8">
-                    <p className="text-gray-700 font-semibold leading-relaxed mb-6 line-clamp-2">
-                      {leistung.description}
-                    </p>
-
-                    {/* Benefits Preview */}
-                    <div className="space-y-3 mb-6">
-                      {leistung.benefits.slice(0, 2).map((benefit, i) => (
-                        <div key={i} className="flex items-center gap-3">
-                          <Check size={18} strokeWidth={2.5} className="text-[#109387] flex-shrink-0" />
-                          <span className="text-gray-700 font-semibold">{benefit}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* CTA */}
-                    <div className="flex items-center justify-between pt-6 border-t border-gray-100">
-                      <span className="text-[#109387] font-bold text-lg">
-                        Mehr erfahren
-                      </span>
-                      <ArrowRight
-                        size={20}
-                        strokeWidth={2}
-                        className="text-[#109387] group-hover:translate-x-1 transition-transform"
+          {/* Grid oder Keine Ergebnisse */}
+          {filteredLeistungen.length === 0 ? (
+            <div className="text-center py-16">
+              <div className="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Search size={32} className="text-gray-400" />
+              </div>
+              <h3 className="text-2xl font-bold text-[#012956] mb-3">Keine Ergebnisse gefunden</h3>
+              <p className="text-lg text-gray-600 font-semibold mb-6">
+                Versuchen Sie es mit anderen Suchbegriffen oder wählen Sie eine Kategorie.
+              </p>
+              <button
+                onClick={() => { setSearchQuery(''); setActiveFilter('alle'); }}
+                className="inline-flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-6 py-3 rounded-[6px] transition-all"
+              >
+                Alle Leistungen anzeigen
+              </button>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredLeistungen.map((leistung) => {
+                const IconComponent = categoryIcons[leistung.category]
+                return (
+                  <Link
+                    key={leistung.id}
+                    href={`/leistungen/${leistung.slug}`}
+                    className="group bg-white rounded-[6px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+                  >
+                    {/* Image */}
+                    <div className="relative h-52 lg:h-60 overflow-hidden">
+                      <Image
+                        src={leistung.image}
+                        alt={leistung.name}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#012956]/80 via-transparent to-transparent" />
+
+                      {/* Category Badge */}
+                      <div className="absolute top-4 left-4">
+                        <span
+                          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-[4px] text-white font-bold text-sm"
+                          style={{ backgroundColor: categories[leistung.category].color }}
+                        >
+                          <IconComponent size={14} strokeWidth={2} />
+                          {categoryShortLabels[leistung.category]}
+                        </span>
+                      </div>
+
+                      {/* Title Overlay */}
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <h3 className="text-white font-bold text-2xl">
+                          {leistung.name}
+                        </h3>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              )
-            })}
-          </div>
+
+                    {/* Content */}
+                    <div className="p-8">
+                      <p className="text-gray-700 font-semibold leading-relaxed mb-6 line-clamp-2">
+                        {leistung.description}
+                      </p>
+
+                      {/* Benefits Preview */}
+                      <div className="space-y-3 mb-6">
+                        {leistung.benefits.slice(0, 2).map((benefit, i) => (
+                          <div key={i} className="flex items-center gap-3">
+                            <Check size={18} strokeWidth={2.5} className="text-[#109387] flex-shrink-0" />
+                            <span className="text-gray-700 font-semibold">{benefit}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* CTA */}
+                      <div className="flex items-center justify-between pt-6 border-t border-gray-100">
+                        <span className="text-[#109387] font-bold text-lg">
+                          Mehr erfahren
+                        </span>
+                        <ArrowRight
+                          size={20}
+                          strokeWidth={2}
+                          className="text-[#109387] group-hover:translate-x-1 transition-transform"
+                        />
+                      </div>
+                    </div>
+                  </Link>
+                )
+              })}
+            </div>
+          )}
         </div>
       </section>
 
