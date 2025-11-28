@@ -312,8 +312,8 @@ export default function ReferenzenPage() {
                     className="group bg-white rounded-[6px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
                     onClick={() => openModal(referenz)}
                   >
-                    {/* Image */}
-                    <div className="relative h-56 overflow-hidden">
+                    {/* Image - Instagram/Pinterest Style */}
+                    <div className="relative aspect-[4/5] sm:aspect-[4/3] overflow-hidden">
                       <Image
                         src={referenz.bilder[0]}
                         alt={referenz.projektName}
@@ -321,32 +321,42 @@ export default function ReferenzenPage() {
                         unoptimized
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                      {/* Gradient Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
                       {/* Year Badge */}
-                      <div className="absolute top-4 left-4 bg-[#109387] text-white text-sm font-bold px-3 py-1 rounded-[6px]">
+                      <div className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-[#109387] text-white text-xs sm:text-sm font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-[4px] sm:rounded-[6px]">
                         {referenz.jahr}
                       </div>
 
-                      {/* Expand Icon */}
-                      <div className="absolute top-4 right-4 bg-white text-[#012956] p-2 rounded-[6px] opacity-0 group-hover:opacity-100 transition-opacity">
+                      {/* Expand Icon - Desktop only */}
+                      <div className="absolute top-4 right-4 bg-white text-[#012956] p-2 rounded-[6px] opacity-0 group-hover:opacity-100 transition-opacity hidden sm:block">
                         <Maximize2 className="w-4 h-4" />
                       </div>
 
-                                          </div>
+                      {/* Mobile: Title Overlay auf dem Bild */}
+                      <div className="absolute bottom-0 left-0 right-0 p-3 sm:hidden">
+                        <p className="text-[#109387] text-xs font-bold mb-1">
+                          {getBrancheName(referenz.branche)}
+                        </p>
+                        <h3 className="text-white font-bold text-sm leading-tight line-clamp-2">
+                          {referenz.projektName}
+                        </h3>
+                      </div>
+                    </div>
 
-                    {/* Content */}
-                    <div className="p-6">
+                    {/* Content - Nur auf Desktop sichtbar */}
+                    <div className="hidden sm:block p-4 lg:p-6">
                       <div className="flex items-center gap-2 text-[#109387] text-sm font-semibold mb-2">
                         <Tag className="w-4 h-4" />
                         {getBrancheName(referenz.branche)}
                       </div>
 
-                      <h3 className="text-xl font-bold text-[#012956] mb-2 group-hover:text-[#109387] transition-colors">
+                      <h3 className="text-lg lg:text-xl font-bold text-[#012956] mb-2 group-hover:text-[#109387] transition-colors line-clamp-2">
                         {referenz.projektName}
                       </h3>
 
-                      <p className="text-gray-600 font-semibold mb-4 line-clamp-2">
+                      <p className="text-gray-600 font-semibold mb-4 line-clamp-2 text-sm lg:text-base">
                         {referenz.kurzbeschreibung}
                       </p>
 
@@ -354,19 +364,13 @@ export default function ReferenzenPage() {
                       <div className="flex items-center gap-4 text-sm text-gray-500 font-semibold">
                         <div className="flex items-center gap-1">
                           <MapPin className="w-4 h-4" />
-                          {referenz.standort}
+                          <span className="truncate">{referenz.standort}</span>
                         </div>
-                        {referenz.flaeche && (
-                          <div className="flex items-center gap-1">
-                            <Maximize2 className="w-4 h-4" />
-                            {referenz.flaeche}
-                          </div>
-                        )}
                       </div>
 
-                      {/* Leistungen Tags */}
-                      <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-100">
-                        {referenz.leistungen.slice(0, 3).map((leistungSlug) => (
+                      {/* Leistungen Tags - nur auf lg+ */}
+                      <div className="hidden lg:flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-100">
+                        {referenz.leistungen.slice(0, 2).map((leistungSlug) => (
                           <span
                             key={leistungSlug}
                             className="bg-[#f8f9fa] text-[#012956] text-xs font-semibold px-2.5 py-1 rounded-[6px]"
@@ -374,9 +378,9 @@ export default function ReferenzenPage() {
                             {getLeistungName(leistungSlug)}
                           </span>
                         ))}
-                        {referenz.leistungen.length > 3 && (
+                        {referenz.leistungen.length > 2 && (
                           <span className="text-gray-500 text-xs font-semibold px-2.5 py-1">
-                            +{referenz.leistungen.length - 3} mehr
+                            +{referenz.leistungen.length - 2}
                           </span>
                         )}
                       </div>
