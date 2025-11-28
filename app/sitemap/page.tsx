@@ -78,69 +78,88 @@ export default function SitemapPage() {
       <section className="py-20 lg:py-24">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
-          <div className="grid md:grid-cols-3 gap-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
 
-            {/* Hauptseiten & Rechtliches */}
-            <div className="space-y-12">
-              {/* Hauptseiten */}
-              <div>
-                <h2 className="text-[#012956] font-bold text-lg mb-6 pb-3 border-b-2 border-[#109387]">
-                  Hauptseiten
-                </h2>
-                <ul className="space-y-4">
-                  {sitemapData.hauptseiten.map((item) => (
-                    <li key={item.href}>
-                      <Link
-                        href={item.href}
-                        className="text-gray-700 font-semibold hover:text-[#109387] transition-colors"
-                      >
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            {/* Hauptseiten */}
+            <div>
+              <h2 className="text-[#012956] font-bold text-lg mb-6 pb-3 border-b-2 border-[#109387]">
+                Hauptseiten
+              </h2>
+              <ul className="space-y-4">
+                {sitemapData.hauptseiten.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="text-gray-700 font-semibold hover:text-[#109387] transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
 
               {/* Rechtliches */}
-              <div>
-                <h2 className="text-[#012956] font-bold text-lg mb-6 pb-3 border-b-2 border-[#109387]">
-                  Rechtliches
-                </h2>
-                <ul className="space-y-4">
-                  {sitemapData.rechtliches.map((item) => (
-                    <li key={item.href}>
-                      <Link
-                        href={item.href}
-                        className="text-gray-700 font-semibold hover:text-[#109387] transition-colors"
-                      >
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <h2 className="text-[#012956] font-bold text-lg mb-6 pb-3 border-b-2 border-[#109387] mt-12">
+                Rechtliches
+              </h2>
+              <ul className="space-y-4">
+                {sitemapData.rechtliches.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="text-gray-700 font-semibold hover:text-[#109387] transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             {/* Leistungen */}
-            <div className="md:col-span-2">
+            <div>
               <h2 className="text-[#012956] font-bold text-lg mb-6 pb-3 border-b-2 border-[#109387]">
                 Leistungen
               </h2>
-              <div className="grid sm:grid-cols-2 gap-x-12 gap-y-4">
+              <ul className="space-y-4">
                 {sitemapData.leistungen.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={`font-semibold transition-colors ${
-                      item.isMain
-                        ? 'text-[#109387] hover:text-[#012956] col-span-2 mb-2'
-                        : 'text-gray-700 hover:text-[#109387]'
-                    }`}
-                  >
-                    {item.isMain ? `→ ${item.name}` : item.name}
-                  </Link>
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className={`font-semibold transition-colors ${
+                        item.isMain
+                          ? 'text-[#109387] hover:text-[#012956]'
+                          : 'text-gray-700 hover:text-[#109387]'
+                      }`}
+                    >
+                      {item.isMain ? `→ ${item.name}` : item.name}
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
+            </div>
+
+            {/* Branchen */}
+            <div>
+              <h2 className="text-[#012956] font-bold text-lg mb-6 pb-3 border-b-2 border-[#109387]">
+                Branchen
+              </h2>
+              <ul className="space-y-4">
+                {sitemapData.branchen.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className={`font-semibold transition-colors ${
+                        item.isMain
+                          ? 'text-[#109387] hover:text-[#012956]'
+                          : 'text-gray-700 hover:text-[#109387]'
+                      }`}
+                    >
+                      {item.isMain ? `→ ${item.name}` : item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
 
           </div>
