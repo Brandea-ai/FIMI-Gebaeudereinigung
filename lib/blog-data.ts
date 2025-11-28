@@ -31,29 +31,101 @@ export const blogPosts: BlogPost[] = [
     title: 'Tarifabschluss 2025/2026: Deutliche Lohnsteigerungen in der Gebäudereinigung',
     excerpt: 'Nach intensiven Verhandlungen haben sich die Tarifparteien auf einen neuen Lohntarifvertrag für die rund 700.000 Beschäftigten in der Gebäudereinigung geeinigt. Die Vereinbarung sieht eine stufenweise Erhöhung der Löhne in den Jahren 2025 und 2026 vor, was die Attraktivität der Branche stärkt, aber auch Auswirkungen auf die Dienstleistungspreise haben wird.',
     content: `
+      <!-- Key Facts Box -->
+      <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 12px; padding: 28px 32px; margin-bottom: 40px;">
+        <p style="color: #109387; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">Das Wichtigste auf einen Blick</p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 32px; font-weight: 800; margin-bottom: 4px;">14,25 €</p>
+            <p style="color: rgba(255,255,255,0.6); font-size: 13px; font-weight: 600;">Mindestlohn LG 1 (2025)</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 32px; font-weight: 800; margin-bottom: 4px;">+11 %</p>
+            <p style="color: rgba(255,255,255,0.6); font-size: 13px; font-weight: 600;">Steigerung bis 2026</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 32px; font-weight: 800; margin-bottom: 4px;">700.000</p>
+            <p style="color: rgba(255,255,255,0.6); font-size: 13px; font-weight: 600;">Beschäftigte profitieren</p>
+          </div>
+        </div>
+      </div>
+
       <p>Die Gebäudereinigung, Deutschlands beschäftigungsstärkstes Handwerk, startet mit neuen finanziellen Rahmenbedingungen ins Jahr 2025. Der Ende 2024 zwischen dem <strong>Bundesinnungsverband des Gebäudereiniger-Handwerks (BIV)</strong> und der <strong>Industriegewerkschaft Bauen-Agrar-Umwelt (IG BAU)</strong> ausgehandelte Lohntarifvertrag ist in Kraft getreten und für allgemeinverbindlich erklärt worden.</p>
 
       <h3>Die neuen Tarife ab Januar 2025</h3>
       <p>Der Kernpunkt der Einigung ist die Anpassung des Branchenmindestlohns. Zum 1. Januar 2025 steigt der Lohn in der Einstiegs-Lohngruppe (LG 1), die für die klassische <a href="/leistungen/unterhaltsreinigung">Unterhaltsreinigung</a> maßgeblich ist, von 13,50 Euro auf <strong>14,25 Euro</strong> pro Stunde.</p>
       <p>Auch für qualifizierte Fachkräfte gibt es eine signifikante Erhöhung. In der Lohngruppe 6 (z.B. <a href="/leistungen/glasreinigung">Glas-</a> und <a href="/leistungen/fassadenreinigung">Fassadenreinigung</a>) steigt der Stundenlohn von 16,70 Euro auf <strong>17,65 Euro</strong>.</p>
 
-      <img src="/blog/artikel-1/content.avif" alt="Professionelle Reinigungskraft bei der Arbeit" class="my-8 rounded-lg w-full" />
+      <!-- Bild mit Caption -->
+      <figure style="margin: 40px 0;">
+        <img src="/blog/artikel-1/content.avif" alt="Professionelle Reinigungskraft bei der Arbeit mit modernen Geräten" style="width: 100%; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12);" />
+        <figcaption style="text-align: center; color: #6b7280; font-size: 14px; font-weight: 500; margin-top: 12px;">Professionelle Reinigung erfordert qualifiziertes Personal – faire Löhne sichern die Qualität.</figcaption>
+      </figure>
 
       <h3>Ausblick auf 2026</h3>
       <p>Der Tarifvertrag sieht eine weitere Stufe der Erhöhung zum 1. Januar 2026 vor:</p>
-      <ul>
-        <li><strong>LG 1 (Einstiegslohn):</strong> Steigt auf 15,00 Euro pro Stunde</li>
-        <li><strong>LG 6 (Fachkräfte):</strong> Steigt auf 18,40 Euro pro Stunde</li>
-      </ul>
+
+      <!-- Tarif-Tabelle -->
+      <div style="background: #f8f9fa; border-radius: 12px; padding: 24px; margin: 24px 0;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="border-bottom: 2px solid #e5e7eb;">
+              <th style="text-align: left; padding: 12px 16px; color: #012956; font-weight: 700;">Lohngruppe</th>
+              <th style="text-align: center; padding: 12px 16px; color: #012956; font-weight: 700;">2024</th>
+              <th style="text-align: center; padding: 12px 16px; color: #012956; font-weight: 700;">2025</th>
+              <th style="text-align: center; padding: 12px 16px; color: #012956; font-weight: 700;">2026</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 12px 16px; font-weight: 600;">LG 1 (Unterhaltsreinigung)</td>
+              <td style="text-align: center; padding: 12px 16px; color: #6b7280;">13,50 €</td>
+              <td style="text-align: center; padding: 12px 16px; color: #109387; font-weight: 700;">14,25 €</td>
+              <td style="text-align: center; padding: 12px 16px; color: #109387; font-weight: 700;">15,00 €</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px 16px; font-weight: 600;">LG 6 (Glas-/Fassadenreinigung)</td>
+              <td style="text-align: center; padding: 12px 16px; color: #6b7280;">16,70 €</td>
+              <td style="text-align: center; padding: 12px 16px; color: #109387; font-weight: 700;">17,65 €</td>
+              <td style="text-align: center; padding: 12px 16px; color: #109387; font-weight: 700;">18,40 €</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <p>Über die gesamte Laufzeit bedeutet dies eine <strong>Lohnsteigerung von über 11 Prozent</strong> für Einstiegskräfte.</p>
 
       <h3>Stärkung der Ausbildung</h3>
-      <p>Um dem Fachkräftemangel entgegenzuwirken, wurden auch die Ausbildungsvergütungen ab Januar 2025 deutlich angehoben: Auszubildende erhalten im ersten Lehrjahr nun <strong>1.000 Euro</strong> (vorher 900 Euro), im zweiten <strong>1.150 Euro</strong> und im dritten <strong>1.300 Euro</strong>.</p>
+      <p>Um dem Fachkräftemangel entgegenzuwirken, wurden auch die Ausbildungsvergütungen ab Januar 2025 deutlich angehoben:</p>
+
+      <!-- Ausbildungsvergütung -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0;">
+        <div style="background: #f8f9fa; border-radius: 12px; padding: 20px; text-align: center; border-left: 4px solid #109387;">
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-bottom: 8px;">1. Lehrjahr</p>
+          <p style="color: #012956; font-size: 24px; font-weight: 800;">1.000 €</p>
+          <p style="color: #109387; font-size: 12px; font-weight: 600;">+100 € vs. 2024</p>
+        </div>
+        <div style="background: #f8f9fa; border-radius: 12px; padding: 20px; text-align: center; border-left: 4px solid #109387;">
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-bottom: 8px;">2. Lehrjahr</p>
+          <p style="color: #012956; font-size: 24px; font-weight: 800;">1.150 €</p>
+          <p style="color: #109387; font-size: 12px; font-weight: 600;">+100 € vs. 2024</p>
+        </div>
+        <div style="background: #f8f9fa; border-radius: 12px; padding: 20px; text-align: center; border-left: 4px solid #109387;">
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-bottom: 8px;">3. Lehrjahr</p>
+          <p style="color: #012956; font-size: 24px; font-weight: 800;">1.300 €</p>
+          <p style="color: #109387; font-size: 12px; font-weight: 600;">+100 € vs. 2024</p>
+        </div>
+      </div>
 
       <h3>Auswirkungen für Auftraggeber in Bayern</h3>
       <p>Für Unternehmen in Bayern, die Reinigungsdienstleistungen beauftragen, sind diese Entwicklungen relevant. Da die Gebäudereinigung sehr personalintensiv ist, werden sich die Tariferhöhungen in den Preisen der Dienstleister widerspiegeln.</p>
       <p>Gleichzeitig ist die Tarifeinigung ein wichtiges Signal für Qualität. Höhere Löhne steigern die Wertschätzung für die systemrelevante Arbeit und tragen dazu bei, qualifiziertes Personal zu halten. Dies sichert die Qualität der Reinigungsleistung für die Kunden.</p>
-      <p><strong>FIMI Gebäudereinigung</strong> begrüßt diese Entwicklung. Als verantwortungsvoller Arbeitgeber setzen wir auf tarifkonforme Bezahlung und gut geschultes Personal, um unseren Kunden in <a href="/kontakt">Landshut, München, Regensburg und Umgebung</a> stets höchste Qualität zu bieten. Wir stehen bereit, um mit Ihnen transparent über die notwendigen Anpassungen zu sprechen und die optimale Reinigungsstrategie für Ihr Objekt sicherzustellen.</p>
+
+      <!-- FIMI Highlight Box -->
+      <div style="background: linear-gradient(135deg, #109387 0%, #0d7d72 100%); border-radius: 12px; padding: 28px 32px; margin: 32px 0;">
+        <p style="color: white; font-size: 18px; font-weight: 700; margin-bottom: 12px;">FIMI Gebäudereinigung begrüßt diese Entwicklung</p>
+        <p style="color: rgba(255,255,255,0.9); font-size: 15px; line-height: 1.7;">Als verantwortungsvoller Arbeitgeber setzen wir auf tarifkonforme Bezahlung und gut geschultes Personal, um unseren Kunden in <a href="/kontakt" style="color: white; font-weight: 700; text-decoration: underline;">Landshut, München, Regensburg und Umgebung</a> stets höchste Qualität zu bieten. Wir stehen bereit, um mit Ihnen transparent über die notwendigen Anpassungen zu sprechen und die optimale Reinigungsstrategie für Ihr Objekt sicherzustellen.</p>
+      </div>
 
       <h3>Weiterführende Informationen</h3>
       <ul>
