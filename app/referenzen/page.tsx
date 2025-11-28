@@ -565,62 +565,62 @@ export default function ReferenzenPage() {
         )}
       </AnimatePresence>
 
-      {/* Premium CTA Section */}
-      <section className="py-20 lg:py-28 bg-[#012956] relative overflow-hidden">
-        {/* Background Accents */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-r from-[#109387]/5 to-transparent" />
-          <div className="absolute bottom-0 right-0 w-1/3 h-2/3 bg-gradient-to-tl from-[#109387]/10 to-transparent" />
-        </div>
+      {/* Premium CTA Section - Bento Layout */}
+      <section className="py-20 lg:py-28 bg-[#012956]">
+        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
+          <div className="lg:grid lg:grid-cols-2 lg:gap-16 xl:gap-24 lg:items-center">
+            {/* Content - Links */}
+            <div className="mb-12 lg:mb-0">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] mb-6">
+                Ihr nächstes Projekt
+                <span className="block text-[#109387] mt-2">verdient Qualität</span>
+              </h2>
 
-        <div className="relative w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="max-w-4xl mx-auto text-center">
-            {/* Icon */}
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-[#109387]/20 rounded-[6px] mb-8">
-              <Award size={40} className="text-[#109387]" />
-            </div>
+              <p className="text-xl text-white/80 font-semibold leading-relaxed mb-8 max-w-xl">
+                Lassen Sie sich unverbindlich beraten. Wir analysieren Ihren Bedarf vor Ort
+                und erstellen ein maßgeschneidertes Angebot – kostenfrei.
+              </p>
 
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] mb-6">
-              Ihr nächstes Projekt
-              <span className="block text-[#109387] mt-2">verdient Qualität</span>
-            </h2>
-
-            <p className="text-xl text-white/80 font-semibold leading-relaxed mb-10 max-w-2xl mx-auto">
-              Lassen Sie sich unverbindlich beraten. Wir analysieren Ihren Bedarf vor Ort
-              und erstellen ein maßgeschneidertes Angebot – kostenfrei.
-            </p>
-
-            {/* Trust Points */}
-            <div className="flex flex-wrap justify-center gap-8 mb-12">
-              <div className="flex items-center gap-2">
-                <CheckCircle size={22} className="text-[#109387]" />
-                <span className="text-white font-semibold">Vor-Ort-Besichtigung</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle size={22} className="text-[#109387]" />
-                <span className="text-white font-semibold">Individuelles Angebot</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle size={22} className="text-[#109387]" />
-                <span className="text-white font-semibold">Antwort in 2 Stunden</span>
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/kontakt"
+                  className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
+                >
+                  Jetzt Besichtigung anfragen
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
+                <a
+                  href="tel:+4987143033460"
+                  className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-[#012956] font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"
+                >
+                  0871 430 334 60
+                </a>
               </div>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/kontakt"
-                className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-10 py-5 rounded-[6px] transition-all duration-300 group shadow-lg shadow-[#109387]/20"
-              >
-                Jetzt Besichtigung anfragen
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <a
-                href="tel:+4987143033460"
-                className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-[#012956] font-bold text-lg px-10 py-5 rounded-[6px] transition-all duration-300"
-              >
-                0871 430 334 60
-              </a>
+            {/* Bento Box - Rechts */}
+            <div className="grid grid-cols-2 gap-4">
+              {/* Große Karte oben links */}
+              <div className="col-span-2 bg-white/5 border border-white/10 rounded-[6px] p-8">
+                <p className="text-[#109387] text-5xl font-bold mb-2">2h</p>
+                <p className="text-white font-bold text-lg">Antwortzeit</p>
+                <p className="text-white/60 font-semibold">Garantierte Reaktion auf Ihre Anfrage</p>
+              </div>
+
+              {/* Kleine Karte unten links */}
+              <div className="bg-[#109387] rounded-[6px] p-6">
+                <p className="text-white text-3xl font-bold mb-1">100%</p>
+                <p className="text-white/90 font-bold">Kostenfrei</p>
+                <p className="text-white/70 text-sm font-semibold">Vor-Ort-Besichtigung</p>
+              </div>
+
+              {/* Kleine Karte unten rechts */}
+              <div className="bg-white/10 border border-white/20 rounded-[6px] p-6">
+                <p className="text-white text-3xl font-bold mb-1">8+</p>
+                <p className="text-white font-bold">Jahre</p>
+                <p className="text-white/60 text-sm font-semibold">Erfahrung in Bayern</p>
+              </div>
             </div>
           </div>
         </div>
