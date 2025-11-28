@@ -84,103 +84,16 @@ export const metadata: Metadata = {
   category: 'business',
   icons: {
     icon: [
-      // Light Mode Icons (alle Größen)
-      {
-        url: '/FIMI-LOGO/Fimi-Favicon_Transparent.png',
-        sizes: '16x16',
-        type: 'image/png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/FIMI-LOGO/Fimi-Favicon_Transparent.png',
-        sizes: '32x32',
-        type: 'image/png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/FIMI-LOGO/Fimi-Favicon_Transparent.png',
-        sizes: '48x48',
-        type: 'image/png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/FIMI-LOGO/Fimi-Favicon_Transparent.png',
-        sizes: '64x64',
-        type: 'image/png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/FIMI-LOGO/Fimi-Favicon_Transparent.png',
-        sizes: '128x128',
-        type: 'image/png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/FIMI-LOGO/Fimi-Favicon_Transparent.png',
-        sizes: '192x192',
-        type: 'image/png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/FIMI-LOGO/Fimi-Favicon_Transparent.png',
-        sizes: '512x512',
-        type: 'image/png',
-        media: '(prefers-color-scheme: light)',
-      },
-      // Dark Mode Icons (alle Größen)
-      {
-        url: '/FIMI-LOGO/FIMI-FAVICON_Transparenten-Hintergrund_Weiße-Schrift.png',
-        sizes: '16x16',
-        type: 'image/png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/FIMI-LOGO/FIMI-FAVICON_Transparenten-Hintergrund_Weiße-Schrift.png',
-        sizes: '32x32',
-        type: 'image/png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/FIMI-LOGO/FIMI-FAVICON_Transparenten-Hintergrund_Weiße-Schrift.png',
-        sizes: '48x48',
-        type: 'image/png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/FIMI-LOGO/FIMI-FAVICON_Transparenten-Hintergrund_Weiße-Schrift.png',
-        sizes: '64x64',
-        type: 'image/png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/FIMI-LOGO/FIMI-FAVICON_Transparenten-Hintergrund_Weiße-Schrift.png',
-        sizes: '128x128',
-        type: 'image/png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/FIMI-LOGO/FIMI-FAVICON_Transparenten-Hintergrund_Weiße-Schrift.png',
-        sizes: '192x192',
-        type: 'image/png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/FIMI-LOGO/FIMI-FAVICON_Transparenten-Hintergrund_Weiße-Schrift.png',
-        sizes: '512x512',
-        type: 'image/png',
-        media: '(prefers-color-scheme: dark)',
-      },
+      { url: '/FIMI-LOGO/Fimi-Favicon.png', sizes: '16x16', type: 'image/png' },
+      { url: '/FIMI-LOGO/Fimi-Favicon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/FIMI-LOGO/Fimi-Favicon.png', sizes: '48x48', type: 'image/png' },
+      { url: '/FIMI-LOGO/Fimi-Favicon.png', sizes: '64x64', type: 'image/png' },
+      { url: '/FIMI-LOGO/Fimi-Favicon.png', sizes: '128x128', type: 'image/png' },
+      { url: '/FIMI-LOGO/Fimi-Favicon.png', sizes: '192x192', type: 'image/png' },
+      { url: '/FIMI-LOGO/Fimi-Favicon.png', sizes: '512x512', type: 'image/png' },
     ],
-    // Apple Touch Icons (180x180 Standard)
-    apple: [
-      {
-        url: '/FIMI-LOGO/Fimi-Favicon.png',
-        sizes: '180x180',
-        type: 'image/png',
-      },
-    ],
-    // Shortcut Icon für ältere Browser
-    shortcut: '/FIMI-LOGO/Fimi-Favicon_Transparent.png',
+    apple: { url: '/FIMI-LOGO/Fimi-Favicon.png', sizes: '180x180', type: 'image/png' },
+    shortcut: '/FIMI-LOGO/Fimi-Favicon.png',
   },
 }
 
