@@ -144,28 +144,56 @@ export default function ReferenzenPage() {
               </a>
             </div>
 
-            {/* Stats Cards - Rechts */}
-            <div className="hidden lg:grid grid-cols-2 gap-5 xl:gap-6">
-              <div className="p-8 xl:p-10 bg-white/5 rounded-[6px] border border-white/10">
-                <div className="text-[#109387] font-bold text-5xl xl:text-6xl mb-2">{stats.projekte}+</div>
-                <div className="text-white font-bold text-xl">Projekte</div>
-                <p className="text-white/60 font-semibold mt-2">erfolgreich abgeschlossen</p>
-              </div>
-              <div className="p-8 xl:p-10 bg-white/5 rounded-[6px] border border-white/10">
-                <div className="text-[#109387] font-bold text-5xl xl:text-6xl mb-2">{stats.branchen}</div>
-                <div className="text-white font-bold text-xl">Branchen</div>
-                <p className="text-white/60 font-semibold mt-2">vertrauen auf uns</p>
-              </div>
-              <div className="p-8 xl:p-10 bg-white/5 rounded-[6px] border border-white/10">
-                <div className="text-[#109387] font-bold text-5xl xl:text-6xl mb-2">8+</div>
-                <div className="text-white font-bold text-xl">Jahre</div>
-                <p className="text-white/60 font-semibold mt-2">Erfahrung seit 2016</p>
-              </div>
-              <div className="p-8 xl:p-10 bg-white/5 rounded-[6px] border border-white/10">
-                <div className="text-[#109387] font-bold text-5xl xl:text-6xl mb-2">{Math.round(stats.flaeche / 1000)}k</div>
-                <div className="text-white font-bold text-xl">m² betreut</div>
-                <p className="text-white/60 font-semibold mt-2">Gesamtfläche</p>
-              </div>
+            {/* Links zu Branchen & Leistungen - Rechts */}
+            <div className="hidden lg:flex flex-col gap-6">
+              {/* Intro Text */}
+              <p className="text-white/70 font-semibold text-lg">
+                Entdecken Sie unsere Expertise in verschiedenen Bereichen:
+              </p>
+
+              {/* Branchen Card */}
+              <Link
+                href="/branchen"
+                className="group p-8 bg-white/5 rounded-[6px] border border-white/10 hover:bg-white/10 transition-all duration-300"
+              >
+                <div className="flex items-start gap-5">
+                  <div className="w-14 h-14 bg-[#109387]/20 rounded-[6px] flex items-center justify-center flex-shrink-0">
+                    <Building2 size={28} className="text-[#109387]" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-white font-bold text-xl mb-2">Alle Branchen</h3>
+                    <p className="text-white/60 font-semibold mb-3">
+                      Von Büro & Verwaltung über Industrie bis Gesundheitswesen – wir kennen die Anforderungen Ihrer Branche.
+                    </p>
+                    <span className="inline-flex items-center gap-2 text-[#109387] font-bold group-hover:gap-3 transition-all">
+                      {stats.branchen} Branchen entdecken
+                      <ArrowRight size={18} />
+                    </span>
+                  </div>
+                </div>
+              </Link>
+
+              {/* Leistungen Card */}
+              <Link
+                href="/leistungen"
+                className="group p-8 bg-white/5 rounded-[6px] border border-white/10 hover:bg-white/10 transition-all duration-300"
+              >
+                <div className="flex items-start gap-5">
+                  <div className="w-14 h-14 bg-[#109387]/20 rounded-[6px] flex items-center justify-center flex-shrink-0">
+                    <Award size={28} className="text-[#109387]" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-white font-bold text-xl mb-2">Alle Leistungen</h3>
+                    <p className="text-white/60 font-semibold mb-3">
+                      Unterhaltsreinigung, Industriereinigung, Facility Management und vieles mehr – alles aus einer Hand.
+                    </p>
+                    <span className="inline-flex items-center gap-2 text-[#109387] font-bold group-hover:gap-3 transition-all">
+                      18 Leistungen ansehen
+                      <ArrowRight size={18} />
+                    </span>
+                  </div>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
