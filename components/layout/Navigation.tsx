@@ -186,13 +186,13 @@ export default function Navigation() {
 
               {/* About Dropdown */}
               <div
-                className={`absolute top-full left-0 mt-2 w-48 transition-all duration-300 ${
+                className={`absolute top-full left-0 pt-2 w-48 transition-all duration-300 ${
                   isAboutOpen
                     ? 'opacity-100 visible translate-y-0'
                     : 'opacity-0 invisible -translate-y-2'
                 }`}
               >
-                <div className="bg-white rounded-lg shadow-xl p-4 border border-gray-100">
+                <div className="bg-white rounded-lg shadow-xl p-4 border border-gray-100 mt-0">
                   <ul className="space-y-2">
                     <li>
                       <Link

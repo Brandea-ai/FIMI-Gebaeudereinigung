@@ -52,7 +52,7 @@ export function BrancheHero({ branche }: BrancheHeroProps) {
             Alle Branchen
           </Link>
 
-          {/* Full Width Content - nicht zentriert */}
+          {/* Full Width Content */}
           <div className="max-w-5xl">
 
             {/* Branche Badge */}
@@ -65,8 +65,8 @@ export function BrancheHero({ branche }: BrancheHeroProps) {
               </span>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-[1.08] mb-6">
+            {/* Main Headline - EINE Zeile, nicht umbrechen */}
+            <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-[1.15] mb-6 whitespace-nowrap overflow-hidden text-ellipsis">
               {branche.headline}
             </h1>
 
@@ -75,9 +75,9 @@ export function BrancheHero({ branche }: BrancheHeroProps) {
               {branche.subheadline}
             </p>
 
-            {/* Trust-Punkte - in einer Reihe */}
+            {/* Trust-Punkte - IMMER 2 pro Zeile mit Grid */}
             {branche.benefits && branche.benefits.length > 0 && (
-              <div className="flex flex-wrap gap-x-8 gap-y-3 mb-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 mb-12 max-w-3xl">
                 {branche.benefits.slice(0, 4).map((benefit, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <CheckCircle size={22} className="text-[#109387] flex-shrink-0" />

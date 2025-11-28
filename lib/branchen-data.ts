@@ -165,6 +165,14 @@ Vom 3-Mann-Startup bis zum Verwaltungsgebäude mit 500 Mitarbeitern – wir betr
       {
         frage: 'Bringen Sie eigene Reinigungsmittel mit?',
         antwort: 'Ja, wir arbeiten mit professionellen, umweltfreundlichen Mitteln von Dreiturm und Kiehl. Auf Wunsch nutzen wir auch Ihre bevorzugten Produkte.'
+      },
+      {
+        frage: 'Arbeiten immer dieselben Reinigungskräfte bei uns?',
+        antwort: 'Ja, wir setzen auf feste Teams. Dieselben Mitarbeiter kennen Ihr Büro und Ihre Anforderungen. Das sorgt für gleichbleibende Qualität und Vertrauen.'
+      },
+      {
+        frage: 'Wie läuft die Qualitätskontrolle ab?',
+        antwort: 'Unsere Objektleiter führen regelmäßige Kontrollen durch. Bei Reklamationen reagieren wir innerhalb von 24 Stunden mit kostenloser Nachbesserung.'
       }
     ]
   },
@@ -284,6 +292,14 @@ Nach 8 Jahren Erfahrung wissen wir: Industriekunden brauchen einen Partner, der 
       {
         frage: 'Wie schnell können Sie starten?',
         antwort: 'Nach der Erstbesichtigung und Auftragserteilung können wir meist innerhalb von 1-2 Wochen beginnen. Bei dringendem Bedarf geht es auch schneller.'
+      },
+      {
+        frage: 'Welche Maschinen setzen Sie ein?',
+        antwort: 'Je nach Anforderung nutzen wir Scheuersaugmaschinen, Hochdruckreiniger, Dampfreiniger und Spezialsauger. Alle Geräte sind für den Industrieeinsatz ausgelegt.'
+      },
+      {
+        frage: 'Reinigen Sie auch Hochregale und Decken?',
+        antwort: 'Ja, wir verfügen über Hubarbeitsbühnen und geschultes Personal für Arbeiten in der Höhe. Hochregale, Lüftungsanlagen und Hallenkräne gehören zu unserem Leistungsspektrum.'
       }
     ]
   },
@@ -401,6 +417,14 @@ Auf Wunsch erstellen wir gemeinsam mit Ihnen einen Hygieneplan, der alle Reinigu
       {
         frage: 'Wie gehen Sie mit medizinischen Abfällen um?',
         antwort: 'Wir entsorgen haushaltsähnliche Abfälle. Für medizinische Abfälle (z.B. kontaminiertes Material) empfehlen wir einen spezialisierten Entsorger – wir stellen gerne den Kontakt her.'
+      },
+      {
+        frage: 'Reinigen Sie auch OP-Bereiche?',
+        antwort: 'Für OP-Bereiche und Reinräume arbeiten wir mit speziell geschultem Personal und nach strengen Hygieneprotokollen. Die Anforderungen werden vorab genau abgestimmt.'
+      },
+      {
+        frage: 'Wie oft sollte eine Arztpraxis gereinigt werden?',
+        antwort: 'Die Behandlungsräume sollten täglich gereinigt und desinfiziert werden. Wartebereiche und Sanitärräume ebenfalls täglich, Böden je nach Patientenaufkommen.'
       }
     ]
   },
@@ -526,6 +550,14 @@ Wir haben ein dreistufiges System entwickelt:
       {
         frage: 'Was machen Sie bei starkem Kundenandrang?',
         antwort: 'Bei Stoßzeiten konzentrieren wir uns auf kritische Bereiche (Eingang, Toiletten) und verschieben andere Aufgaben auf ruhigere Zeiten.'
+      },
+      {
+        frage: 'Reinigen Sie auch Schaufenster?',
+        antwort: 'Ja, Schaufensterreinigung gehört zu unserem Standard. Wir sorgen für streifenfreie Scheiben, die Ihre Produkte optimal präsentieren.'
+      },
+      {
+        frage: 'Können Sie auch vor Ladeneröffnung reinigen?',
+        antwort: 'Ja, wir sind flexibel und können früh morgens vor Geschäftsöffnung reinigen. So starten Sie jeden Tag mit einem sauberen Laden.'
       }
     ]
   },
@@ -644,6 +676,14 @@ Ihre Küche ist das Herzstück Ihres Betriebs. Wir sorgen dafür, dass sie nicht
       {
         frage: 'Was passiert bei Veranstaltungen?',
         antwort: 'Für Events bieten wir Vor- und Nachreinigung. Bei mehrtägigen Veranstaltungen auch Zwischenreinigungen. Sprechen Sie uns frühzeitig an.'
+      },
+      {
+        frage: 'Reinigen Sie auch Küchenabluftanlagen?',
+        antwort: 'Ja, die Reinigung von Dunstabzugshauben und Abluftrohren gehört zu unserem Leistungsspektrum. Eine regelmäßige Reinigung ist brandschutztechnisch wichtig.'
+      },
+      {
+        frage: 'Arbeiten Sie auch an Feiertagen?',
+        antwort: 'Ja, gerade in der Gastronomie sind Feiertage Hochbetrieb. Wir reinigen auch an Wochenenden und Feiertagen – nach Vereinbarung.'
       }
     ]
   },
@@ -764,6 +804,14 @@ In Schulen und Kindergärten treffen täglich viele Kinder aufeinander. Keime ve
       {
         frage: 'Reinigen Sie auch Schulküchen?',
         antwort: 'Ja, Mensen und Schulküchen reinigen wir nach Lebensmittelhygienestandards. Dokumentation für Kontrollen inklusive.'
+      },
+      {
+        frage: 'Reinigen Sie auch in den Ferien?',
+        antwort: 'Ja, die Ferien eignen sich ideal für Grundreinigungen und intensive Bodenpflege. So starten Schüler und Lehrer frisch ins neue Schuljahr.'
+      },
+      {
+        frage: 'Wie gehen Sie mit Allergikern um?',
+        antwort: 'Wir verwenden auf Wunsch allergikerfreundliche und duftneutrale Reinigungsmittel. Sprechen Sie uns an, wir passen uns an.'
       }
     ]
   },

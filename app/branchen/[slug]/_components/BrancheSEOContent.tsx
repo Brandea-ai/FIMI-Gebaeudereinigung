@@ -1,30 +1,23 @@
 import { Branche } from '@/lib/branchen-data'
+import { Quote } from 'lucide-react'
 
 interface BrancheSEOContentProps {
   branche: Branche
 }
 
-// Premium Markdown Parser mit Doppelpunkt-Logik für Headlines
-// - Headline mit Doppelpunkt: Text vor Doppelpunkt = grün, Rest = blau (Navy)
-// - Headline ohne Doppelpunkt: alles grün
-// - Keine Doppelpunkte in normalen Texten wo sie nicht hingehören
+// Premium Markdown Parser - KEINE Doppelpunkte in Headlines
 function parseMarkdown(text: string): string {
   return text
-    // H2 Headers mit Doppelpunkt-Logik
+    // H2 Headers - Doppelpunkte entfernen, alles grün
     .replace(/^## (.*$)/gm, (match, content) => {
-      if (content.includes(':')) {
-        const [before, ...after] = content.split(':')
-        return `<h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mt-16 mb-6 leading-tight"><span class="text-[#109387]">${before.trim()}</span> <span class="text-[#012956]">${after.join(':').trim()}</span></h2>`
-      }
-      return `<h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-[#109387] mt-16 mb-6 leading-tight">${content}</h2>`
+      // Doppelpunkte entfernen
+      const cleanContent = content.replace(/:/g, ' –')
+      return `<h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-[#109387] mt-16 mb-6 leading-tight">${cleanContent}</h2>`
     })
-    // H3 Headers mit Doppelpunkt-Logik
+    // H3 Headers - Doppelpunkte entfernen, alles grün
     .replace(/^### (.*$)/gm, (match, content) => {
-      if (content.includes(':')) {
-        const [before, ...after] = content.split(':')
-        return `<h3 class="text-xl md:text-2xl font-bold mt-10 mb-4 leading-tight"><span class="text-[#109387]">${before.trim()}</span> <span class="text-[#012956]">${after.join(':').trim()}</span></h3>`
-      }
-      return `<h3 class="text-xl md:text-2xl font-bold text-[#109387] mt-10 mb-4 leading-tight">${content}</h3>`
+      const cleanContent = content.replace(/:/g, ' –')
+      return `<h3 class="text-xl md:text-2xl font-bold text-[#109387] mt-10 mb-4 leading-tight">${cleanContent}</h3>`
     })
     // Bold Text
     .replace(/\*\*(.*?)\*\*/g, '<strong class="text-[#012956] font-bold">$1</strong>')
@@ -52,11 +45,55 @@ export function BrancheSEOContent({ branche }: BrancheSEOContentProps) {
     <section className="py-16 md:py-24 lg:py-32 bg-white">
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
-        <div className="max-w-4xl">
-          <article
-            className="prose prose-lg max-w-none"
-            dangerouslySetInnerHTML={{ __html: htmlContent }}
-          />
+        <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-16">
+
+          {/* Main Content - Links */}
+          <div className="lg:w-2/3">
+            <article
+              className="prose prose-lg max-w-none"
+              dangerouslySetInnerHTML={{ __html: htmlContent }}
+            />
+          </div>
+
+          {/* Sidebar - Rechts, Sticky */}
+          <div className="lg:w-1/3 lg:sticky lg:top-32">
+
+            {/* Quote Box */}
+            <div className="bg-gradient-to-br from-[#012956] to-[#012956]/90 rounded-[6px] p-8 mb-8">
+              <Quote size={40} className="text-[#109387] mb-4" />
+              <p className="text-white text-xl font-bold leading-relaxed mb-4">
+                „Qualität ist kein Zufall, sondern das Ergebnis von Erfahrung und Sorgfalt."
+              </p>
+              <p className="text-white/70">
+                – FIMI Gebäudereinigung
+              </p>
+            </div>
+
+            {/* Stats Box */}
+            <div className="bg-gray-50 rounded-[6px] p-8 border border-gray-100">
+              <p className="text-[#109387] font-bold text-xs uppercase tracking-[0.2em] mb-6">
+                Unsere Zahlen
+              </p>
+              <div className="space-y-6">
+                <div>
+                  <p className="text-4xl font-bold text-[#012956]">8+</p>
+                  <p className="text-gray-600">Jahre Erfahrung in {branche.shortName}</p>
+                </div>
+                <div className="h-px bg-gray-200" />
+                <div>
+                  <p className="text-4xl font-bold text-[#012956]">85k</p>
+                  <p className="text-gray-600">m² monatliche Reinigungsfläche</p>
+                </div>
+                <div className="h-px bg-gray-200" />
+                <div>
+                  <p className="text-4xl font-bold text-[#012956]">2h</p>
+                  <p className="text-gray-600">Durchschnittliche Reaktionszeit</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
         </div>
 
       </div>

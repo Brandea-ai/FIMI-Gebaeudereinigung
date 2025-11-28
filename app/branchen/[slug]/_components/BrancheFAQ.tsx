@@ -32,7 +32,7 @@ export function BrancheFAQ({ branche }: BrancheFAQProps) {
                 Hier finden Sie Antworten auf die wichtigsten Fragen.
               </p>
 
-              {/* Contact Box - Kontaktformular Button grün mit weißer Schrift */}
+              {/* Contact Box */}
               <div className="bg-gray-50 rounded-[6px] p-6 border border-gray-100">
                 <p className="text-[#012956] font-bold mb-4">Noch Fragen?</p>
                 <p className="text-gray-600 text-sm mb-4">Wir helfen gerne weiter</p>
@@ -42,9 +42,10 @@ export function BrancheFAQ({ branche }: BrancheFAQProps) {
                 >
                   Kontaktformular
                 </a>
+                {/* Telefon mit blauem Rahmen */}
                 <a
                   href="tel:+4987143033460"
-                  className="block w-full text-center text-[#012956] font-bold py-3 mt-2 hover:text-[#109387] transition-colors"
+                  className="block w-full text-center text-[#012956] font-bold py-3 mt-3 rounded-[6px] border-2 border-[#012956] hover:bg-[#012956] hover:text-white transition-colors"
                 >
                   0871 430 334 60
                 </a>
@@ -66,7 +67,7 @@ export function BrancheFAQ({ branche }: BrancheFAQProps) {
                   className="w-full flex items-center justify-between gap-4 p-6 text-left"
                 >
                   <div className="flex items-center gap-4">
-                    {/* Nummer steril ohne Kreis */}
+                    {/* Nummer steril */}
                     <span className={`font-bold text-lg min-w-[24px] transition-colors ${
                       openIndex === i ? 'text-[#109387]' : 'text-gray-400'
                     }`}>

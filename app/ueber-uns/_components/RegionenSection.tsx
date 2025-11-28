@@ -29,7 +29,7 @@ export default function RegionenSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative"
+            className="relative pb-12"
           >
             <Image
               src="/images/home/staedte-fimi.avif"
@@ -40,7 +40,7 @@ export default function RegionenSection() {
             />
 
             {/* Overlay Badge */}
-            <div className="absolute bottom-6 left-6 right-6 bg-[#012956] rounded-[6px] p-4 lg:p-6">
+            <div className="absolute -bottom-8 left-6 right-6 bg-[#012956] rounded-[6px] p-4 lg:p-6 shadow-lg">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0">
                   <MapPin size={24} className="text-white" />
