@@ -299,7 +299,7 @@ export default function ReferenzenPage() {
               </button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
               <AnimatePresence mode="popLayout">
                 {filteredReferenzen.map((referenz, index) => (
                   <motion.div
@@ -318,6 +318,7 @@ export default function ReferenzenPage() {
                         src={referenz.bilder[0]}
                         alt={referenz.projektName}
                         fill
+                        unoptimized
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
@@ -413,6 +414,7 @@ export default function ReferenzenPage() {
                     src={selectedReferenz.bilder[currentImageIndex]}
                     alt={selectedReferenz.projektName}
                     fill
+                    unoptimized
                     className="object-cover"
                   />
 
