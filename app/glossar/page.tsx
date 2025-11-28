@@ -218,76 +218,98 @@ export default function GlossarPage() {
         </div>
       </section>
 
-      {/* Alphabet Navigation */}
-      <section className="sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm">
-        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="flex flex-wrap gap-2 py-4">
-            {letters.map((letter) => (
-              <a
-                key={letter}
-                href={`#${letter}`}
-                className="w-10 h-10 flex items-center justify-center bg-white hover:bg-[#109387] text-[#012956] hover:text-white font-bold rounded-[6px] transition-all shadow-sm"
-              >
-                {letter}
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Glossar Content */}
+      {/* Glossar Content mit Sidebar */}
       <section className="py-16 lg:py-24">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="space-y-16">
-            {letters.map((letter) => (
-              <div key={letter} id={letter}>
-                {/* Letter Header */}
-                <div className="flex items-center gap-4 mb-8">
-                  <span className="text-5xl lg:text-6xl font-bold text-[#109387]">
-                    {letter}
-                  </span>
-                  <div className="flex-1 h-px bg-gray-200" />
-                </div>
+          <div className="flex gap-12 lg:gap-16">
 
-                {/* Terms */}
-                <div className="grid md:grid-cols-2 gap-6">
-                  {groupedGlossar[letter].map((item) => (
-                    <div
-                      key={item.begriff}
-                      className={`bg-[#f8f9fa] rounded-[6px] p-6 hover:shadow-lg transition-shadow ${
-                        item.highlights ? 'md:col-span-2 lg:col-span-1' : ''
-                      }`}
+            {/* Sticky Sidebar - Alphabet Navigation */}
+            <aside className="hidden lg:block w-16 flex-shrink-0">
+              <div className="sticky top-32">
+                <nav className="flex flex-col gap-2">
+                  {letters.map((letter) => (
+                    <a
+                      key={letter}
+                      href={`#${letter}`}
+                      className="w-12 h-12 flex items-center justify-center bg-[#f8f9fa] hover:bg-[#109387] text-[#012956] hover:text-white font-bold text-lg rounded-[6px] transition-all"
                     >
-                      <h2 className="text-xl font-bold text-[#012956] mb-3">
-                        {item.begriff}
-                      </h2>
-                      <p className="text-gray-700 font-medium leading-relaxed mb-4">
-                        {item.definition}
-                      </p>
+                      {letter}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+            </aside>
 
-                      {/* Optional Highlights für Schlüsselbegriffe */}
-                      {item.highlights && (
-                        <ul className="mb-4 space-y-2">
-                          {item.highlights.map((highlight, index) => (
-                            <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
-                              <span className="text-[#109387] mt-0.5">✓</span>
-                              <span>{highlight}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-
-                      <Link
-                        href={item.link}
-                        className="inline-flex items-center gap-2 text-[#109387] hover:text-[#012956] font-semibold text-sm transition-colors"
-                      >
-                        {item.ctaLabel || 'Mehr erfahren'} →
-                      </Link>
-                    </div>
+            {/* Main Content */}
+            <div className="flex-1 min-w-0">
+              {/* Mobile: Horizontal Alphabet */}
+              <div className="lg:hidden mb-10 overflow-x-auto -mx-6 px-6">
+                <div className="flex gap-2 pb-2">
+                  {letters.map((letter) => (
+                    <a
+                      key={letter}
+                      href={`#${letter}`}
+                      className="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-[#f8f9fa] hover:bg-[#109387] text-[#012956] hover:text-white font-bold rounded-[6px] transition-all"
+                    >
+                      {letter}
+                    </a>
                   ))}
                 </div>
               </div>
-            ))}
+
+              <div className="space-y-16">
+                {letters.map((letter) => (
+                  <div key={letter} id={letter} className="scroll-mt-8">
+                    {/* Letter Header */}
+                    <div className="flex items-center gap-4 mb-8">
+                      <span className="text-5xl lg:text-6xl font-bold text-[#109387]">
+                        {letter}
+                      </span>
+                      <div className="flex-1 h-px bg-gray-200" />
+                    </div>
+
+                    {/* Terms */}
+                    <div className="grid md:grid-cols-2 gap-6">
+                      {groupedGlossar[letter].map((item) => (
+                        <div
+                          key={item.begriff}
+                          className={`bg-[#f8f9fa] rounded-[6px] p-6 hover:shadow-lg transition-shadow ${
+                            item.highlights ? 'md:col-span-2 lg:col-span-1' : ''
+                          }`}
+                        >
+                          <h2 className="text-xl font-bold text-[#012956] mb-3">
+                            {item.begriff}
+                          </h2>
+                          <p className="text-gray-700 font-medium leading-relaxed mb-4">
+                            {item.definition}
+                          </p>
+
+                          {/* Optional Highlights für Schlüsselbegriffe */}
+                          {item.highlights && (
+                            <ul className="mb-4 space-y-2">
+                              {item.highlights.map((highlight, index) => (
+                                <li key={index} className="flex items-start gap-2 text-sm text-gray-600">
+                                  <span className="text-[#109387] mt-0.5">✓</span>
+                                  <span>{highlight}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+
+                          <Link
+                            href={item.link}
+                            className="inline-flex items-center gap-2 text-[#109387] hover:text-[#012956] font-semibold text-sm transition-colors"
+                          >
+                            {item.ctaLabel || 'Mehr erfahren'} →
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

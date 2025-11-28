@@ -18,6 +18,8 @@ function parseMarkdown(text: string): string {
       const cleanContent = content.replace(/:\s*/g, ' ').trim()
       return `<h3 class="text-lg sm:text-xl md:text-2xl font-bold text-[#109387] mt-8 sm:mt-10 mb-3 sm:mb-4 leading-tight">${cleanContent}</h3>`
     })
+    // Doppelpunkte nach Bold-Text entfernen: **Text**: → **Text** –
+    .replace(/\*\*([^*]+)\*\*:\s*/g, '**$1** – ')
     // Bold Text
     .replace(/\*\*(.*?)\*\*/g, '<strong class="text-[#012956] font-bold">$1</strong>')
     // Lists
