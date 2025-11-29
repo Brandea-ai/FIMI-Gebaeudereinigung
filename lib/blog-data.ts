@@ -1282,15 +1282,106 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: '11',
-    slug: 'artikel-11',
-    title: 'Artikel 11 - Platzhalter',
-    excerpt: 'Kurzbeschreibung folgt.',
-    content: '<p>Inhalt folgt.</p>',
+    slug: 'fachkraeftemangel-gebaeudereinigung-loesungen-2025',
+    title: 'Fachkräftemangel in der Gebäudereinigung: Herausforderungen und innovative Lösungsansätze',
+    excerpt: 'Trotz stabiler Umsätze kämpft die Gebäudereinigung intensiv mit dem Fach- und Arbeitskräftemangel. Laut BIV müssen viele Unternehmen bereits Aufträge ablehnen, was innovative Strategien wie die Umstellung auf Tagesreinigung und Investitionen in die Arbeitgeberattraktivität erfordert.',
+    content: `
+      <!-- Key Facts Box -->
+      <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 24px 28px; margin-bottom: 32px;">
+        <p style="color: #109387; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px;">Fachkräftemangel 2025</p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">50 %</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Betriebe: bis 10% Umsatzverlust</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">78 %</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">setzen auf Integration</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">Tag</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Tagesreinigung als Lösung</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Die <a href="/leistungen" style="color: #109387; font-weight: 700;">Gebäudereinigung</a> ist ein Wachstumsmarkt, doch der <strong style="font-weight: 800; color: #012956;">Personalmangel</strong> wird zunehmend zur Wachstumsbremse. Branchenreports und Umfragen des <strong style="font-weight: 800; color: #012956;">Bundesinnungsverbands (BIV)</strong> identifizieren den Mangel an Arbeitskräften als die aktuell größte Herausforderung.</p>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Die Situation am Arbeitsmarkt</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Die Lage ist angespannt. Laut BIV-Konjunkturumfragen (Frühjahr 2024) mussten viele Betriebe bereits auf die Annahme neuer Kundenaufträge verzichten.</p>
+
+      <!-- Statistik Box -->
+      <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 24px; margin: 24px 0;">
+        <p style="color: #109387; font-size: 13px; font-weight: 800; margin-bottom: 12px;">📊 BIV-Konjunkturumfrage 2024</p>
+        <p style="color: white; font-size: 15px; font-weight: 600; line-height: 1.7;">Fast <strong style="font-weight: 800;">jedes zweite Unternehmen</strong> bezifferte den personalbedingten Umsatzverlust auf bis zu 10 Prozent. Bei über <strong style="font-weight: 800;">20 Prozent der Betriebe</strong> lag er sogar noch höher.</p>
+      </div>
+
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Die Gründe sind vielfältig: der demografische Wandel, die Konkurrenz durch andere Branchen und Imageprobleme.</p>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Lösungsansatz 1: Digitalisierung und Technologie</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Technologie wird zum entscheidenden Faktor, um Mitarbeiter zu entlasten und die Produktivität zu steigern:</p>
+
+      <!-- Technologie Cards -->
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 24px 0;">
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">🤖 Robotik (Cobotics)</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Autonome Reinigungsroboter übernehmen monotone Aufgaben auf großen Flächen</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">📡 Smart Cleaning</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">IoT-Sensoren ermöglichen bedarfsorientierte Reinigung und reduzieren unnötige Wege</p>
+        </div>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Lösungsansatz 2: Steigerung der Arbeitgeberattraktivität</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Um im Wettbewerb um Arbeitskräfte zu bestehen, müssen Unternehmen attraktive Bedingungen bieten. Neben der tariflichen Bezahlung sind weiche Faktoren entscheidend:</p>
+
+      <!-- Attraktivität Tabelle -->
+      <div style="background: #f8f9fa; border-radius: 6px; padding: 20px; margin: 20px 0;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <tbody>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 10px 14px; font-weight: 800; font-size: 14px; color: #109387; width: 180px;">Wertschätzung</td>
+              <td style="padding: 10px 14px; color: #374151; font-weight: 600; font-size: 14px;">Respektvoller Umgang ist essenziell für die Mitarbeiterbindung</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px; font-weight: 800; font-size: 14px; color: #109387;">Tagesreinigung</td>
+              <td style="padding: 10px 14px; color: #374151; font-weight: 600; font-size: 14px;">Familienfreundlichere Arbeitszeiten, höheres Einkommen durch mehr zusammenhängende Stunden, mehr Sichtbarkeit</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Lösungsansatz 3: Integration und Qualifizierung</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Die Branche ist ein wichtiger <strong style="font-weight: 800; color: #012956;">Integrationsmotor</strong>. Laut BIV halten es rund <strong style="font-weight: 800; color: #012956;">78% der Unternehmen</strong> für wichtig, auf Menschen mit Migrations- und Fluchthintergrund zu setzen. Die Förderung von Spracherwerb und die Qualifizierung von Quereinsteigern sind entscheidend.</p>
+
+      <!-- FIMI Highlight Box -->
+      <div style="background: linear-gradient(135deg, #109387 0%, #0d7d72 100%); border-radius: 6px; padding: 24px 28px; margin: 28px 0;">
+        <p style="color: white; font-size: 17px; font-weight: 800; margin-bottom: 10px;">FIMI stellt sich den Herausforderungen</p>
+        <p style="color: rgba(255,255,255,0.95); font-size: 14px; font-weight: 600; line-height: 1.8;">Wir investieren in moderne Technik, fördern unsere Mitarbeiter durch Schulungen und prüfen aktiv die Umstellung auf Tagesreinigung, wo dies möglich und sinnvoll ist. Wir sind überzeugt, dass dies der Schlüssel ist, um auch in Zukunft erstklassige Dienstleistungen in <a href="/kontakt" style="color: white; font-weight: 800; text-decoration: underline;">Bayern</a> anzubieten.</p>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Weiterführende Informationen</h3>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
+          <a href="https://www.facility-manager.de/aktuelles/personalmangel-bremst-wachstum-in-der-gebaeudereinigung/" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">Facility Manager – Personalmangel bremst Wachstum →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Zusammenfassung der BIV Konjunkturumfrage 2024</p>
+        </li>
+        <li style="padding: 12px 0;">
+          <a href="https://www.boeckler.de/de/suchergebnis-forschungsfoerderungsprojekte-detailseite-2732.htm?projekt=2024-315-7" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">Hans-Böckler-Stiftung – Studie zur Tagesreinigung →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Forschungsprojekt zu Vorteilen und Anforderungen der Tagesreinigung</p>
+        </li>
+      </ul>
+    `,
     image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop',
     category: 'team',
     author: 'FIMI Team',
-    date: '2023-11-30',
-    readTime: 3,
+    date: '2025-03-04',
+    readTime: 5,
+    sources: [
+      'https://www.facility-manager.de/aktuelles/personalmangel-bremst-wachstum-in-der-gebaeudereinigung/',
+      'https://www.boeckler.de/de/suchergebnis-forschungsfoerderungsprojekte-detailseite-2732.htm?projekt=2024-315-7'
+    ]
   },
   {
     id: '12',
