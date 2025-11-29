@@ -276,9 +276,9 @@ const stellenangebote: JobPosition[] = [
     titel: 'Reinigungskraft Minijob (m/w/d)',
     bereich: 'Unterhaltsreinigung',
     standorte: ['Erding', 'Freising'],
-    arbeitszeit: 'Minijob (538 € Basis)',
+    arbeitszeit: 'Minijob (556 € Basis)',
     gehalt: '15,00 € / Stunde',
-    beschreibung: 'Ideal für Nebenverdienst: Als Reinigungskraft auf 538-Euro-Basis reinigen Sie in den frühen Morgen- oder Abendstunden Büros und Praxen im Raum Erding.',
+    beschreibung: 'Ideal für Nebenverdienst: Als Reinigungskraft auf 556-Euro-Basis reinigen Sie in den frühen Morgen- oder Abendstunden Büros und Praxen im Raum Erding.',
     aufgaben: [
       'Unterhaltsreinigung von Büros und Praxen',
       'Reinigung von Sanitäranlagen',
@@ -397,7 +397,7 @@ const stellenangebote: JobPosition[] = [
     titel: 'Reinigungskraft Minijob (m/w/d)',
     bereich: 'Unterhaltsreinigung',
     standorte: ['Straubing', 'Regensburg'],
-    arbeitszeit: 'Minijob (538 € Basis)',
+    arbeitszeit: 'Minijob (556 € Basis)',
     gehalt: '14,50 € / Stunde',
     beschreibung: 'Für den Raum Straubing/Regensburg suchen wir Reinigungskräfte auf Minijob-Basis. Perfekt als Nebenverdienst mit flexiblen Arbeitszeiten.',
     aufgaben: [
