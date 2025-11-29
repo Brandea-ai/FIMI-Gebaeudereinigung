@@ -837,7 +837,7 @@ export const blogPosts: BlogPost[] = [
 
       <!-- KRINKO Neuerungen Box -->
       <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 24px; margin: 24px 0;">
-        <p style="color: #109387; font-size: 13px; font-weight: 800; margin-bottom: 12px;">📋 Zentrale Änderung</p>
+        <p style="color: #109387; font-size: 13px; font-weight: 800; margin-bottom: 12px;">Zentrale Änderung</p>
         <p style="color: white; font-size: 15px; font-weight: 600; line-height: 1.7;">Mindestens <strong style="font-weight: 800;">„nutzungstägliche" Flächendesinfektion</strong> der patientennahen bzw. häufig berührten Flächen. Eine reine "Sichtreinigung" an Wochenenden ist in diesen Bereichen nicht mehr ausreichend.</p>
       </div>
 
@@ -1069,7 +1069,7 @@ export const blogPosts: BlogPost[] = [
 
       <!-- RKI Highlight Box -->
       <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 24px; margin: 24px 0;">
-        <p style="color: #109387; font-size: 13px; font-weight: 800; margin-bottom: 12px;">🏫 RKI-Empfehlung für Schulen</p>
+        <p style="color: #109387; font-size: 13px; font-weight: 800; margin-bottom: 12px;">RKI-Empfehlung für Schulen</p>
         <p style="color: white; font-size: 15px; font-weight: 600; line-height: 1.7;">Eine <strong style="font-weight: 800;">routinemäßige Flächendesinfektion wird in Schulen ausdrücklich nicht empfohlen</strong>. Die angemessene, regelmäßige Reinigung von Oberflächen ist ausreichend. Durch die mechanische Entfernung von Schmutz wird die Keimlast effektiv reduziert.</p>
       </div>
 
@@ -1232,15 +1232,15 @@ export const blogPosts: BlogPost[] = [
       <!-- Karriere Cards -->
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0;">
         <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 20px 16px; text-align: center;">
-          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">🎓 Meister/in</p>
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Meister/in</p>
           <p style="color: white; font-size: 14px; font-weight: 700; line-height: 1.4;">Führung eines Betriebs, Objekt- oder Bereichsleiter</p>
         </div>
         <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 20px 16px; text-align: center;">
-          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">📋 Fachwirt/in</p>
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Fachwirt/in</p>
           <p style="color: white; font-size: 14px; font-weight: 700; line-height: 1.4;">Reinigungs- und Hygienemanagement</p>
         </div>
         <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 20px 16px; text-align: center;">
-          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">💼 Betriebswirt/in</p>
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Betriebswirt/in</p>
           <p style="color: white; font-size: 14px; font-weight: 700; line-height: 1.4;">Management-aufgaben im Handwerk (HwO)</p>
         </div>
       </div>
@@ -1312,7 +1312,7 @@ export const blogPosts: BlogPost[] = [
 
       <!-- Statistik Box -->
       <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 24px; margin: 24px 0;">
-        <p style="color: #109387; font-size: 13px; font-weight: 800; margin-bottom: 12px;">📊 BIV-Konjunkturumfrage 2024</p>
+        <p style="color: #109387; font-size: 13px; font-weight: 800; margin-bottom: 12px;">BIV-Konjunkturumfrage 2024</p>
         <p style="color: white; font-size: 15px; font-weight: 600; line-height: 1.7;">Fast <strong style="font-weight: 800;">jedes zweite Unternehmen</strong> bezifferte den personalbedingten Umsatzverlust auf bis zu 10 Prozent. Bei über <strong style="font-weight: 800;">20 Prozent der Betriebe</strong> lag er sogar noch höher.</p>
       </div>
 
@@ -1324,11 +1324,11 @@ export const blogPosts: BlogPost[] = [
       <!-- Technologie Cards -->
       <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 24px 0;">
         <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">🤖 Robotik (Cobotics)</p>
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Robotik (Cobotics)</p>
           <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Autonome Reinigungsroboter übernehmen monotone Aufgaben auf großen Flächen</p>
         </div>
         <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">📡 Smart Cleaning</p>
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Smart Cleaning</p>
           <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">IoT-Sensoren ermöglichen bedarfsorientierte Reinigung und reduzieren unnötige Wege</p>
         </div>
       </div>
@@ -1415,7 +1415,7 @@ export const blogPosts: BlogPost[] = [
 
       <!-- Ergonomie Info Box -->
       <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 24px; margin: 24px 0;">
-        <p style="color: #109387; font-size: 13px; font-weight: 800; margin-bottom: 12px;">📊 BG BAU Studie</p>
+        <p style="color: #109387; font-size: 13px; font-weight: 800; margin-bottom: 12px;">BG BAU Studie</p>
         <p style="color: white; font-size: 15px; font-weight: 600; line-height: 1.7;"><strong style="font-weight: 800;">74% der Gebäudereiniger</strong> litten im Vorjahr unter Muskel-Skelett-Beschwerden. Studien zeigen: Mit ergonomischen Teleskopstielen lassen sich Belastungen <strong style="font-weight: 800;">signifikant reduzieren</strong>.</p>
       </div>
 
@@ -1424,15 +1424,15 @@ export const blogPosts: BlogPost[] = [
       <!-- Ergonomie Cards -->
       <div style="display: grid; grid-template-columns: repeat(1, 1fr); gap: 12px; margin: 24px 0;">
         <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">🔧 Ergonomische Arbeitsgeräte</p>
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Ergonomische Arbeitsgeräte</p>
           <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.5;">Höhenverstellbare Teleskopstiele für die Bodenreinigung sind zwingend notwendig. Die BG BAU empfiehlt eine Einstellung auf eine Länge zwischen Kinn- und Schulterhöhe für eine aufrechte Körperhaltung.</p>
         </div>
         <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">🛒 Hilfsmittel nutzen</p>
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Hilfsmittel nutzen</p>
           <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.5;">Der Einsatz von gut gewarteten Reinigungswagen und Transporthilfen reduziert die Anstrengung beim Heben und Tragen erheblich.</p>
         </div>
         <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
-          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">📚 Richtiges Arbeiten</p>
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Richtiges Arbeiten</p>
           <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.5;">Schulungen zu korrekten Hebetechniken und Greifvarianten (z.B. das Greifen eines drehbaren Knaufs von oben) helfen, einseitige Belastungen zu reduzieren.</p>
         </div>
       </div>
@@ -1447,19 +1447,19 @@ export const blogPosts: BlogPost[] = [
         <table style="width: 100%; border-collapse: collapse;">
           <tbody>
             <tr style="border-bottom: 1px solid #e5e7eb;">
-              <td style="padding: 12px 14px; font-weight: 800; font-size: 14px; color: #109387; width: 180px;">🧴 Vor der Arbeit</td>
+              <td style="padding: 12px 14px; font-weight: 800; font-size: 14px; color: #109387; width: 180px;">Vor der Arbeit</td>
               <td style="padding: 12px 14px; color: #374151; font-weight: 600; font-size: 14px;">Hautschutzmittel: Cremes schützen die Haut vor dem Aufweichen und dem Eindringen von Stoffen</td>
             </tr>
             <tr style="border-bottom: 1px solid #e5e7eb;">
-              <td style="padding: 12px 14px; font-weight: 800; font-size: 14px; color: #109387;">🧼 Schonende Reinigung</td>
+              <td style="padding: 12px 14px; font-weight: 800; font-size: 14px; color: #109387;">Schonende Reinigung</td>
               <td style="padding: 12px 14px; color: #374151; font-weight: 600; font-size: 14px;">Milde, pH-hautneutrale Waschlotionen verwenden. Sorgfältiges Abtrocknen, auch zwischen den Fingern. Händedesinfektion ist oft hautschonender als häufiges Waschen</td>
             </tr>
             <tr style="border-bottom: 1px solid #e5e7eb;">
-              <td style="padding: 12px 14px; font-weight: 800; font-size: 14px; color: #109387;">🧤 PSA (Schutzausrüstung)</td>
+              <td style="padding: 12px 14px; font-weight: 800; font-size: 14px; color: #109387;">PSA (Schutzausrüstung)</td>
               <td style="padding: 12px 14px; color: #374151; font-weight: 600; font-size: 14px;">Das Tragen geeigneter Schutzhandschuhe ist obligatorisch. Nur so lange wie nötig tragen; Baumwollunterziehhandschuhe können helfen</td>
             </tr>
             <tr>
-              <td style="padding: 12px 14px; font-weight: 800; font-size: 14px; color: #109387;">💧 Nach der Arbeit</td>
+              <td style="padding: 12px 14px; font-weight: 800; font-size: 14px; color: #109387;">Nach der Arbeit</td>
               <td style="padding: 12px 14px; color: #374151; font-weight: 600; font-size: 14px;">Pflegemittel unterstützen die Regeneration der Hautbarriere</td>
             </tr>
           </tbody>

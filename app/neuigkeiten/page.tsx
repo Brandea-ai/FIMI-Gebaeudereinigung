@@ -1,17 +1,34 @@
-import { Metadata } from 'next'
+'use client'
+
+import { useState, useMemo } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Calendar, Clock, User } from 'lucide-react'
-import { blogPosts, blogCategories, getFeaturedPost, formatDate } from '@/lib/blog-data'
+import { ArrowRight, Calendar, Clock } from 'lucide-react'
+import { blogPosts, blogCategories, formatDate, BlogPost } from '@/lib/blog-data'
 
-export const metadata: Metadata = {
-  title: 'Neuigkeiten',
-  description: 'Aktuelle News, Tipps und Einblicke von FIMI Gebäudereinigung. Erfahren Sie mehr über Projekte, Reinigungstipps und unser Team.',
-}
+type CategoryKey = keyof typeof blogCategories | 'all'
 
 export default function NeuigkeitenPage() {
-  const featuredPost = getFeaturedPost()
-  const otherPosts = blogPosts.filter(post => !post.featured)
+  const [activeCategory, setActiveCategory] = useState<CategoryKey>('all')
+
+  // Sort all posts by date (newest first)
+  const sortedPosts = useMemo(() => {
+    return [...blogPosts].sort((a, b) =>
+      new Date(b.date).getTime() - new Date(a.date).getTime()
+    )
+  }, [])
+
+  // Filter posts by category
+  const filteredPosts = useMemo(() => {
+    if (activeCategory === 'all') {
+      return sortedPosts
+    }
+    return sortedPosts.filter(post => post.category === activeCategory)
+  }, [sortedPosts, activeCategory])
+
+  // Featured post is the newest one in filtered results
+  const featuredPost = filteredPosts[0]
+  const otherPosts = filteredPosts.slice(1)
 
   return (
     <main className="min-h-screen bg-white">
@@ -35,13 +52,25 @@ export default function NeuigkeitenPage() {
       <section className="border-b border-gray-200">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="flex gap-2 py-4 overflow-x-auto">
-            <button className="px-5 py-2 bg-[#012956] text-white rounded-[6px] font-semibold text-sm whitespace-nowrap">
+            <button
+              onClick={() => setActiveCategory('all')}
+              className={`px-5 py-2 rounded-[6px] font-semibold text-sm whitespace-nowrap transition-colors cursor-pointer ${
+                activeCategory === 'all'
+                  ? 'bg-[#012956] text-white'
+                  : 'bg-[#f8f9fa] text-[#012956] hover:bg-[#012956] hover:text-white'
+              }`}
+            >
               Alle
             </button>
-            {Object.entries(blogCategories).map(([key, value]) => (
+            {(Object.entries(blogCategories) as [keyof typeof blogCategories, typeof blogCategories[keyof typeof blogCategories]][]).map(([key, value]) => (
               <button
                 key={key}
-                className="px-5 py-2 bg-[#f8f9fa] text-[#012956] hover:bg-[#012956] hover:text-white rounded-[6px] font-semibold text-sm whitespace-nowrap transition-colors"
+                onClick={() => setActiveCategory(key)}
+                className={`px-5 py-2 rounded-[6px] font-semibold text-sm whitespace-nowrap transition-colors cursor-pointer ${
+                  activeCategory === key
+                    ? 'bg-[#012956] text-white'
+                    : 'bg-[#f8f9fa] text-[#012956] hover:bg-[#012956] hover:text-white'
+                }`}
               >
                 {value.label}
               </button>
@@ -108,68 +137,70 @@ export default function NeuigkeitenPage() {
       )}
 
       {/* All Posts Grid */}
-      <section className="py-16 lg:py-20 bg-[#f8f9fa]">
-        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <h2 className="text-2xl font-bold text-[#012956] mb-10">
-            Weitere Beiträge
-          </h2>
+      {otherPosts.length > 0 && (
+        <section className="py-16 lg:py-20 bg-[#f8f9fa]">
+          <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
+            <h2 className="text-2xl font-bold text-[#012956] mb-10">
+              Weitere Beiträge
+            </h2>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {otherPosts.map((post) => (
-              <Link
-                key={post.id}
-                href={`/neuigkeiten/${post.slug}`}
-                className="group bg-white rounded-[6px] overflow-hidden shadow-sm hover:shadow-lg transition-all"
-              >
-                {/* Image */}
-                <div className="relative h-48 overflow-hidden">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute top-3 left-3">
-                    <span
-                      className="px-2.5 py-1 rounded-[4px] text-white text-xs font-bold uppercase"
-                      style={{ backgroundColor: blogCategories[post.category].color }}
-                    >
-                      {blogCategories[post.category].label}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6">
-                  <div className="flex items-center gap-3 text-gray-400 text-xs mb-3">
-                    <span className="flex items-center gap-1">
-                      <Calendar size={12} />
-                      {formatDate(post.date)}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Clock size={12} />
-                      {post.readTime} Min.
-                    </span>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {otherPosts.map((post) => (
+                <Link
+                  key={post.id}
+                  href={`/neuigkeiten/${post.slug}`}
+                  className="group bg-white rounded-[6px] overflow-hidden shadow-sm hover:shadow-lg transition-all"
+                >
+                  {/* Image */}
+                  <div className="relative h-48 overflow-hidden">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute top-3 left-3">
+                      <span
+                        className="px-2.5 py-1 rounded-[4px] text-white text-xs font-bold uppercase"
+                        style={{ backgroundColor: blogCategories[post.category].color }}
+                      >
+                        {blogCategories[post.category].label}
+                      </span>
+                    </div>
                   </div>
 
-                  <h3 className="text-lg font-bold text-[#012956] mb-2 group-hover:text-[#109387] transition-colors line-clamp-2">
-                    {post.title}
-                  </h3>
+                  {/* Content */}
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 text-gray-400 text-xs mb-3">
+                      <span className="flex items-center gap-1">
+                        <Calendar size={12} />
+                        {formatDate(post.date)}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Clock size={12} />
+                        {post.readTime} Min.
+                      </span>
+                    </div>
 
-                  <p className="text-gray-600 text-sm font-medium line-clamp-2 mb-4">
-                    {post.excerpt}
-                  </p>
+                    <h3 className="text-lg font-bold text-[#012956] mb-2 group-hover:text-[#109387] transition-colors line-clamp-2">
+                      {post.title}
+                    </h3>
 
-                  <span className="inline-flex items-center gap-1.5 text-[#109387] font-semibold text-sm group-hover:gap-2.5 transition-all">
-                    Lesen
-                    <ArrowRight size={14} />
-                  </span>
-                </div>
-              </Link>
-            ))}
+                    <p className="text-gray-600 text-sm font-medium line-clamp-2 mb-4">
+                      {post.excerpt}
+                    </p>
+
+                    <span className="inline-flex items-center gap-1.5 text-[#109387] font-semibold text-sm group-hover:gap-2.5 transition-all">
+                      Lesen
+                      <ArrowRight size={14} />
+                    </span>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Newsletter CTA */}
       <section className="py-16 lg:py-20 bg-[#012956]">

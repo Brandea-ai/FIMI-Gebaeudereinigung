@@ -35,6 +35,48 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
+// Helper function to get related posts (different category or older posts)
+function getRelatedPosts(currentPost: typeof blogPosts[0], allPosts: typeof blogPosts, count: number = 3) {
+  // Get posts from different categories first, then fill with same category
+  const otherCategoryPosts = allPosts
+    .filter(p => p.id !== currentPost.id && p.category !== currentPost.category)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+
+  const sameCategoryPosts = allPosts
+    .filter(p => p.id !== currentPost.id && p.category === currentPost.category)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+
+  // Mix: prefer different categories for variety
+  const result = []
+  let otherIdx = 0
+  let sameIdx = 0
+
+  while (result.length < count && (otherIdx < otherCategoryPosts.length || sameIdx < sameCategoryPosts.length)) {
+    // Alternate: 2 from other categories, 1 from same
+    if (result.length % 3 !== 2 && otherIdx < otherCategoryPosts.length) {
+      result.push(otherCategoryPosts[otherIdx++])
+    } else if (sameIdx < sameCategoryPosts.length) {
+      result.push(sameCategoryPosts[sameIdx++])
+    } else if (otherIdx < otherCategoryPosts.length) {
+      result.push(otherCategoryPosts[otherIdx++])
+    }
+  }
+
+  return result
+}
+
+// Helper function to format title with teal highlight (part before colon)
+function formatTitle(title: string) {
+  if (title.includes(':')) {
+    const [highlight, ...rest] = title.split(':')
+    return {
+      highlight: highlight.trim(),
+      rest: rest.join(':').trim()
+    }
+  }
+  return { highlight: '', rest: title }
+}
+
 export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params
   const post = getPostBySlug(slug)
@@ -43,7 +85,8 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound()
   }
 
-  const recentPosts = getRecentPosts(3).filter(p => p.id !== post.id).slice(0, 2)
+  const relatedPosts = getRelatedPosts(post, blogPosts, 3)
+  const { highlight, rest } = formatTitle(post.title)
 
   return (
     <main className="min-h-screen bg-white">
@@ -80,8 +123,15 @@ export default async function BlogPostPage({ params }: PageProps) {
             >
               {blogCategories[post.category].label}
             </span>
-            <h1 className="text-3xl lg:text-5xl font-bold text-white leading-[1.1] max-w-4xl">
-              {post.title}
+            <h1 className="text-3xl lg:text-5xl font-bold leading-[1.1] max-w-4xl">
+              {highlight ? (
+                <>
+                  <span className="text-[#109387]">{highlight}</span>
+                  <span className="text-white"> {rest}</span>
+                </>
+              ) : (
+                <span className="text-white">{rest}</span>
+              )}
             </h1>
           </div>
         </div>
@@ -137,22 +187,6 @@ export default async function BlogPostPage({ params }: PageProps) {
 
             {/* Sidebar */}
             <aside className="lg:sticky lg:top-40 lg:self-start">
-              {/* Content Image in Sidebar */}
-              {post.image && (
-                <div className="mb-6">
-                  <Image
-                    src={post.image.replace('hero', 'content')}
-                    alt={`${post.title} - Detailbild`}
-                    width={350}
-                    height={280}
-                    className="w-full rounded-[6px] object-cover"
-                  />
-                  <p className="text-gray-500 text-xs font-semibold mt-2 text-center">
-                    Professionelle Reinigung für höchste Ansprüche
-                  </p>
-                </div>
-              )}
-
               {/* CTA Box */}
               <div className="bg-[#012956] rounded-[6px] p-6 mb-8">
                 <h3 className="text-white font-bold text-lg mb-3">
@@ -170,33 +204,39 @@ export default async function BlogPostPage({ params }: PageProps) {
                 </a>
               </div>
 
-              {/* Recent Posts */}
-              {recentPosts.length > 0 && (
+              {/* Related Posts - 3 Beiträge */}
+              {relatedPosts.length > 0 && (
                 <div>
                   <h3 className="text-[#012956] font-bold text-lg mb-4">
                     Weitere Beiträge
                   </h3>
                   <div className="space-y-4">
-                    {recentPosts.map((recentPost) => (
+                    {relatedPosts.map((relatedPost) => (
                       <Link
-                        key={recentPost.id}
-                        href={`/neuigkeiten/${recentPost.slug}`}
+                        key={relatedPost.id}
+                        href={`/neuigkeiten/${relatedPost.slug}`}
                         className="group flex gap-4"
                       >
                         <div className="relative w-20 h-20 flex-shrink-0 rounded-[6px] overflow-hidden">
                           <Image
-                            src={recentPost.image}
-                            alt={recentPost.title}
+                            src={relatedPost.image}
+                            alt={relatedPost.title}
                             fill
                             className="object-cover"
                           />
                         </div>
                         <div className="flex-1 min-w-0">
+                          <span
+                            className="inline-block px-2 py-0.5 rounded-[3px] text-white text-[10px] font-bold uppercase mb-1"
+                            style={{ backgroundColor: blogCategories[relatedPost.category].color }}
+                          >
+                            {blogCategories[relatedPost.category].label}
+                          </span>
                           <p className="text-[#012956] font-bold text-sm line-clamp-2 group-hover:text-[#109387] transition-colors">
-                            {recentPost.title}
+                            {relatedPost.title}
                           </p>
                           <p className="text-gray-400 text-xs mt-1">
-                            {formatDate(recentPost.date)}
+                            {formatDate(relatedPost.date)}
                           </p>
                         </div>
                       </Link>
