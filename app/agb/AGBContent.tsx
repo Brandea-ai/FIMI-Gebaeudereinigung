@@ -410,47 +410,47 @@ export default function AGBContent() {
                 </article>
 
                 <article id="agb-p8" className="section-tracked">
-                  <h3 className="subsection-title">8. Gewaehrleistung und Maengelruege</h3>
+                  <h3 className="subsection-title">8. Gewährleistung und Mängelrüge</h3>
                   <p className="text-body">
-                    (1) Der Auftraggeber ist verpflichtet, die erbrachte Reinigungsleistung unverzueglich zu pruefen und erkennbare Maengel innerhalb von 3 Werktagen schriftlich anzuzeigen.
+                    (1) Der Auftraggeber ist verpflichtet, die erbrachte Reinigungsleistung unverzüglich zu prüfen und erkennbare Mängel innerhalb von 3 Werktagen schriftlich anzuzeigen.
                   </p>
 
                   <p className="text-body">
-                    (2) Bei berechtigten Maengelruegen haben wir das Recht zur Nachbesserung. Die Nachbesserung erfolgt kostenfrei innerhalb angemessener Frist.
+                    (2) Bei berechtigten Mängelrügen haben wir das Recht zur Nachbesserung. Die Nachbesserung erfolgt kostenfrei innerhalb angemessener Frist.
                   </p>
 
                   <p className="text-body">
-                    (3) Die Gewaehrleistungsfrist betraegt 12 Monate ab Leistungserbringung, bei regelmaessiger Unterhaltsreinigung ab dem jeweiligen Reinigungstermin.
+                    (3) Die Gewährleistungsfrist beträgt 12 Monate ab Leistungserbringung, bei regelmäßiger Unterhaltsreinigung ab dem jeweiligen Reinigungstermin.
                   </p>
                 </article>
 
                 <article id="agb-p9" className="section-tracked">
                   <h3 className="subsection-title">9. Haftung</h3>
                   <p className="text-body">
-                    (1) Wir haften unbeschraenkt fuer Schaeden aus der Verletzung des Lebens, des Koerpers oder der Gesundheit sowie fuer vorsaetzlich oder grob fahrlaessig verursachte Schaeden.
+                    (1) Wir haften unbeschränkt für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie für vorsätzlich oder grob fahrlässig verursachte Schäden.
                   </p>
 
                   <p className="text-body">
-                    (2) Bei leicht fahrlaessiger Verletzung wesentlicher Vertragspflichten ist die Haftung auf den vorhersehbaren, vertragstypischen Schaden begrenzt.
+                    (2) Bei leicht fahrlässiger Verletzung wesentlicher Vertragspflichten ist die Haftung auf den vorhersehbaren, vertragstypischen Schaden begrenzt.
                   </p>
 
                   <p className="text-body">
-                    (3) Wir verfuegen ueber eine Betriebshaftpflichtversicherung mit angemessener Deckungssumme. Auf Wunsch stellen wir gerne einen Versicherungsnachweis zur Verfuegung.
+                    (3) Wir verfügen über eine Betriebshaftpflichtversicherung mit angemessener Deckungssumme. Auf Wunsch stellen wir gerne einen Versicherungsnachweis zur Verfügung.
                   </p>
 
                   <p className="text-body">
-                    (4) Fuer Wertgegenstaende, Bargeld und aehnliches uebernehmen wir keine Haftung, sofern diese nicht in verschlossenen Behaeltnissen aufbewahrt werden.
+                    (4) Für Wertgegenstände, Bargeld und ähnliches übernehmen wir keine Haftung, sofern diese nicht in verschlossenen Behältnissen aufbewahrt werden.
                   </p>
                 </article>
 
                 <article id="agb-p10" className="section-tracked">
-                  <h3 className="subsection-title">10. Vertragslaufzeit und Kuendigung</h3>
+                  <h3 className="subsection-title">10. Vertragslaufzeit und Kündigung</h3>
                   <p className="text-body">
-                    (1) Die Vertragslaufzeit ergibt sich aus dem jeweiligen Reinigungsvertrag. Bei unbefristeten Vertraegen betraegt die Kuendigungsfrist 4 Wochen zum Monatsende.
+                    (1) Die Vertragslaufzeit ergibt sich aus dem jeweiligen Reinigungsvertrag. Bei unbefristeten Verträgen beträgt die Kündigungsfrist 4 Wochen zum Monatsende.
                   </p>
 
                   <p className="text-body">
-                    (2) Das Recht zur ausserordentlichen Kuendigung aus wichtigem Grund bleibt unberuehrt. Ein wichtiger Grund liegt insbesondere vor bei:
+                    (2) Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt unberührt. Ein wichtiger Grund liegt insbesondere vor bei:
                   </p>
                   <ul className="standard-list">
                     <li>Zahlungsverzug von mehr als 30 Tagen</li>
@@ -459,64 +459,64 @@ export default function AGBContent() {
                   </ul>
 
                   <p className="text-body">
-                    (3) Kuendigungen beduerfender Schriftform.
+                    (3) Kündigungen bedürfen der Schriftform.
                   </p>
                 </article>
 
                 <article id="agb-p11" className="section-tracked">
                   <h3 className="subsection-title">11. Datenschutz</h3>
                   <p className="text-body">
-                    (1) Wir verarbeiten personenbezogene Daten ausschliesslich im Rahmen der geltenden Datenschutzbestimmungen, insbesondere der DSGVO.
+                    (1) Wir verarbeiten personenbezogene Daten ausschließlich im Rahmen der geltenden Datenschutzbestimmungen, insbesondere der DSGVO.
                   </p>
 
                   <p className="text-body">
-                    (2) Die Verarbeitung erfolgt ausschliesslich zum Zweck der Vertragserfuellung und Kundenbetreuung.
+                    (2) Die Verarbeitung erfolgt ausschließlich zum Zweck der Vertragserfüllung und Kundenbetreuung.
                   </p>
 
                   <p className="text-body">
-                    (3) Naehere Informationen finden Sie in unserer Datenschutzerklaerung unter{' '}
-                    <a href="/datenschutz" className="text-link">fimi-service.de/datenschutz</a>.
+                    (3) Nähere Informationen finden Sie in unserer Datenschutzerklärung unter{' '}
+                    <a href="/datenschutz" className="text-link">fimi-reinigung.ch/datenschutz</a>.
                   </p>
                 </article>
 
                 <article id="agb-p12" className="section-tracked">
                   <h3 className="subsection-title">12. Schlussbestimmungen</h3>
                   <p className="text-body">
-                    (1) Fuer diese AGB und die Vertragsbeziehung gilt das Recht der Bundesrepublik Deutschland.
+                    (1) Für diese AGB und die Vertragsbeziehung gilt das Recht der Bundesrepublik Deutschland.
                   </p>
 
                   <p className="text-body">
-                    (2) Ausschliesslicher Gerichtsstand fuer alle Streitigkeiten ist Landshut, sofern der Auftraggeber Kaufmann, juristische Person des oeffentlichen Rechts oder oeffentlich-rechtliches Sondervermoegen ist.
+                    (2) Ausschließlicher Gerichtsstand für alle Streitigkeiten ist Landshut, sofern der Auftraggeber Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen ist.
                   </p>
 
                   <p className="text-body">
-                    (3) Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder werden, bleibt die Gueltigkeit der uebrigen Bestimmungen unberuehrt.
+                    (3) Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder werden, bleibt die Gültigkeit der übrigen Bestimmungen unberührt.
                   </p>
 
                   <p className="text-body">
-                    (4) Aenderungen und Ergaenzungen dieser AGB beduerfender Schriftform.
+                    (4) Änderungen und Ergänzungen dieser AGB bedürfen der Schriftform.
                   </p>
                 </article>
               </section>
 
               <section id="rechtliche-hinweise" className="section-tracked content-block">
-                <h2 className="section-title">Teil B: Rechtliche Hinweise fuer die Webseitennutzung</h2>
+                <h2 className="section-title">Teil B: Rechtliche Hinweise für die Webseitennutzung</h2>
 
                 <article id="haftung-inhalte" className="section-tracked">
-                  <h3 className="subsection-title">Haftung fuer Inhalte</h3>
+                  <h3 className="subsection-title">Haftung für Inhalte</h3>
                   <p className="text-body">
-                    Als Diensteanbieter sind wir gemaess § 7 Abs.1 TMG fuer eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir jedoch nicht verpflichtet, uebermittelte oder gespeicherte fremde Informationen zu ueberwachen.
+                    Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.
                   </p>
 
                   <p className="text-body">
-                    Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberuehrt. Eine diesbezuegliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung moeglich.
+                    Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich.
                   </p>
                 </article>
 
                 <article id="haftung-links" className="section-tracked">
-                  <h3 className="subsection-title">Haftung fuer Links</h3>
+                  <h3 className="subsection-title">Haftung für Links</h3>
                   <p className="text-body">
-                    Unser Angebot enthaelt Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Fuer die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
+                    Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.
                   </p>
 
                   <p className="text-body">
@@ -527,7 +527,7 @@ export default function AGBContent() {
                 <article id="urheberrecht" className="section-tracked">
                   <h3 className="subsection-title">Urheberrecht</h3>
                   <p className="text-body">
-                    Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfaeltigung, Bearbeitung, Verbreitung und jede Art der Verwertung beduerfender schriftlichen Zustimmung des jeweiligen Autors.
+                    Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung bedürfen der schriftlichen Zustimmung des jeweiligen Autors.
                   </p>
 
                   <p className="text-body">
@@ -538,7 +538,7 @@ export default function AGBContent() {
                 <article id="streitbeilegung" className="section-tracked">
                   <h3 className="subsection-title">Streitschlichtung</h3>
                   <p className="text-body">
-                    Die Europaeische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{' '}
+                    Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:{' '}
                     <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="text-link">
                       https://ec.europa.eu/consumers/odr/
                     </a>
@@ -556,48 +556,48 @@ export default function AGBContent() {
                 <article id="handelsregister" className="section-tracked">
                   <h3 className="subsection-title">Handelsregistereintragung</h3>
                   <p className="text-body">
-                    Die FIMI Gebaeudereinigung GmbH befindet sich derzeit im Gruendungsprozess. Die Eintragung in das Handelsregister beim Amtsgericht Landshut ist fuer <strong>Januar 2026</strong> vorgesehen.
+                    Die FIMI Gebäudereinigung GmbH befindet sich derzeit im Gründungsprozess. Die Eintragung in das Handelsregister beim Amtsgericht Landshut ist für <strong>Januar 2026</strong> vorgesehen.
                   </p>
 
                   <div className="info-box">
                     <p className="text-body"><strong>Aktueller Status:</strong></p>
                     <ul className="standard-list">
-                      <li><strong>Rechtsform:</strong> GmbH in Gruendung (i.Gr.)</li>
-                      <li><strong>Zustaendiges Amtsgericht:</strong> Landshut</li>
+                      <li><strong>Rechtsform:</strong> GmbH in Gründung (i.Gr.)</li>
+                      <li><strong>Zuständiges Amtsgericht:</strong> Landshut</li>
                       <li><strong>Geplante Eintragung:</strong> Januar 2026</li>
-                      <li><strong>HRB-Nummer:</strong> Wird nach erfolgreicher Eintragung hier veroeffentlicht</li>
+                      <li><strong>HRB-Nummer:</strong> Wird nach erfolgreicher Eintragung hier veröffentlicht</li>
                     </ul>
                   </div>
 
                   <p className="text-body">
-                    Bis zur Eintragung handeln wir als Einzelunternehmen unter dem Namen FIMI Gebaeudereinigung. Mit der Eintragung im Handelsregister wird diese Seite entsprechend aktualisiert.
+                    Bis zur Eintragung handeln wir als Einzelunternehmen unter dem Namen FIMI Gebäudereinigung. Mit der Eintragung im Handelsregister wird diese Seite entsprechend aktualisiert.
                   </p>
                 </article>
 
                 <article id="qualitaetsstandards" className="section-tracked">
-                  <h3 className="subsection-title">Qualitaetsstandards & Zertifizierungen</h3>
+                  <h3 className="subsection-title">Qualitätsstandards & Zertifizierungen</h3>
                   <p className="text-body">
-                    FIMI Gebaeudereinigung arbeitet nach hoechsten Qualitaetsstandards. Wir streben kontinuierlich nach Verbesserung unserer Prozesse und Dienstleistungen.
+                    FIMI Gebäudereinigung arbeitet nach höchsten Qualitätsstandards. Wir streben kontinuierlich nach Verbesserung unserer Prozesse und Dienstleistungen.
                   </p>
 
                   <div className="info-box">
                     <p className="text-body"><strong>Geplante Zertifizierungen:</strong></p>
                     <ul className="standard-list">
-                      <li><strong>ISO 9001:2015</strong> Qualitaetsmanagementsystem - Ziel: 2026</li>
+                      <li><strong>ISO 9001:2015</strong> Qualitätsmanagementsystem - Ziel: 2026</li>
                       <li><strong>ISO 14001:2015</strong> Umweltmanagementsystem - Ziel: 2026</li>
                     </ul>
                   </div>
 
                   <p className="text-body">
-                    Unsere Mitarbeiter werden regelmaessig geschult und arbeiten nach standardisierten Reinigungsverfahren. Wir dokumentieren alle Leistungen transparent und stehen fuer Qualitaetsprüfungen jederzeit zur Verfuegung.
+                    Unsere Mitarbeiter werden regelmäßig geschult und arbeiten nach standardisierten Reinigungsverfahren. Wir dokumentieren alle Leistungen transparent und stehen für Qualitätsprüfungen jederzeit zur Verfügung.
                   </p>
 
                   <p className="text-body">
-                    <strong>Unsere Qualitaetsgrundsaetze:</strong>
+                    <strong>Unsere Qualitätsgrundsätze:</strong>
                   </p>
                   <ul className="standard-list">
                     <li>Verwendung umweltfreundlicher Reinigungsmittel</li>
-                    <li>Regelmaessige Qualitaetskontrollen</li>
+                    <li>Regelmäßige Qualitätskontrollen</li>
                     <li>Kontinuierliche Mitarbeiterschulungen</li>
                     <li>Transparente Dokumentation aller Leistungen</li>
                     <li>Schnelle Reaktion auf Kundenfeedback</li>
@@ -616,7 +616,7 @@ export default function AGBContent() {
       <button
         className={`mobile-nav-trigger ${!isNavButtonVisible ? 'hidden' : ''}`}
         onClick={openMobileNav}
-        aria-label="Inhaltsverzeichnis oeffnen"
+        aria-label="Inhaltsverzeichnis öffnen"
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
           <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
@@ -641,7 +641,7 @@ export default function AGBContent() {
             <button
               className="mobile-nav-close"
               onClick={closeMobileNav}
-              aria-label="Inhaltsverzeichnis schliessen"
+              aria-label="Inhaltsverzeichnis schließen"
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
