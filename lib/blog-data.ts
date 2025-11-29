@@ -140,7 +140,7 @@ export const blogPosts: BlogPost[] = [
     image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
     category: 'news',
     author: 'FIMI Team',
-    date: '2025-01-15',
+    date: '2025-08-18',
     readTime: 4,
     featured: true,
     sources: [
