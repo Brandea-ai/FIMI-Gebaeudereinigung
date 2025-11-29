@@ -543,7 +543,7 @@ Mit freundlichen Gruessen
                       </tr>
                       <tr>
                         <td data-label="Kategorie"><strong>Analyse</strong></td>
-                        <td data-label="Beschreibung">Derzeit nicht aktiv</td>
+                        <td data-label="Beschreibung">Google Analytics 4 (anonymisierte Nutzungsstatistiken)</td>
                         <td data-label="Erforderlich">Nein</td>
                       </tr>
                       <tr>

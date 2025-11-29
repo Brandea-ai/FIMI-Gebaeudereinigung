@@ -316,26 +316,31 @@ export default function CookieBanner() {
                     </div>
                   </div>
 
-                  {/* Analytics (Future) */}
-                  <div className="bg-white border-2 border-gray-200 rounded-[6px] p-4 hover:border-[#109387] transition-colors opacity-60">
+                  {/* Analytics */}
+                  <div className="bg-white border-2 border-gray-200 rounded-[6px] p-4 hover:border-[#109387] transition-colors">
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-1">
                           <h3 className="font-bold text-[#012956]">Analyse</h3>
-                          <span className="text-xs bg-gray-400 text-white px-2 py-0.5 rounded font-bold">Derzeit nicht aktiv</span>
+                          <span className="text-xs bg-[#109387] text-white px-2 py-0.5 rounded font-bold">Google Analytics</span>
                         </div>
                         <p className="text-gray-600 text-sm font-medium">
-                          Hilft uns zu verstehen, wie Besucher unsere Webseite nutzen, um sie zu verbessern.
+                          Hilft uns zu verstehen, wie Besucher unsere Webseite nutzen, um sie zu verbessern. Anonymisierte Daten.
                         </p>
                       </div>
                       <button
                         onClick={() => toggleConsent('analytics')}
-                        disabled
-                        className="flex-shrink-0 w-12 h-7 bg-gray-200 rounded-full flex items-center justify-start px-1 cursor-not-allowed"
-                        aria-label="Analyse-Cookies (derzeit nicht verfuegbar)"
+                        className={`flex-shrink-0 w-12 h-7 rounded-full flex items-center px-1 transition-colors ${
+                          consent.analytics ? 'bg-[#109387] justify-end' : 'bg-gray-300 justify-start'
+                        }`}
+                        aria-label={consent.analytics ? 'Analyse-Cookies deaktivieren' : 'Analyse-Cookies aktivieren'}
                       >
                         <div className="w-5 h-5 bg-white rounded-full shadow flex items-center justify-center">
-                          <X size={12} className="text-gray-400" />
+                          {consent.analytics ? (
+                            <Check size={12} className="text-[#109387]" />
+                          ) : (
+                            <X size={12} className="text-gray-400" />
+                          )}
                         </div>
                       </button>
                     </div>
