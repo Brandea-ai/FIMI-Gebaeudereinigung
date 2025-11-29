@@ -496,7 +496,7 @@ export const blogPosts: BlogPost[] = [
           <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Aktuelle Leitlinien des Bundesministeriums für Arbeit und Soziales</p>
         </li>
         <li style="padding: 12px 0;">
-          <a href="https://www.baua.de/DE/Angebote/Publikationen/Praxis-kompakt/F109.html" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">BAuA – Lüften am Arbeitsplatz (PDF) →</a>
+          <a href="https://www.baua.de/DE/Angebote/Publikationen/Praxis-kompakt/F93.pdf?__blob=publicationFile&v=4" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">BAuA – Lüften am Arbeitsplatz (PDF) →</a>
           <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Detaillierte Empfehlungen zur Ventilation am Arbeitsplatz</p>
         </li>
       </ul>
@@ -508,7 +508,7 @@ export const blogPosts: BlogPost[] = [
     readTime: 5,
     sources: [
       'https://www.bmas.de/DE/Corona/Fragen-und-Antworten/Fragen-und-Antworten-ASAO/faq-corona-asao.html',
-      'https://www.baua.de/DE/Angebote/Publikationen/Praxis-kompakt/F109.html'
+      'https://www.baua.de/DE/Angebote/Publikationen/Praxis-kompakt/F93.pdf?__blob=publicationFile&v=4'
     ]
   },
   {
