@@ -497,7 +497,7 @@ export const blogPosts: BlogPost[] = [
       <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Weiterführende Informationen</h3>
       <ul style="list-style: none; padding: 0; margin: 0;">
         <li style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
-          <a href="https://www.bmas.de/DE/Corona/Fragen-und-Antworten/Fragen-und-Antworten-ASAO/faq-corona-asao.html" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">BMAS – Betrieblicher Infektionsschutz →</a>
+          <a href="https://www.bmas.de/DE/Arbeit/Arbeitsschutz/Gesundheit-am-Arbeitsplatz/Betrieblicher-Infektionsschutz/betrieblicher-infektionsschutz.html" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">BMAS – Betrieblicher Infektionsschutz →</a>
           <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Aktuelle Leitlinien des Bundesministeriums für Arbeit und Soziales</p>
         </li>
         <li style="padding: 12px 0;">
@@ -512,7 +512,7 @@ export const blogPosts: BlogPost[] = [
     date: '2024-08-22',
     readTime: 5,
     sources: [
-      'https://www.bmas.de/DE/Corona/Fragen-und-Antworten/Fragen-und-Antworten-ASAO/faq-corona-asao.html',
+      'https://www.bmas.de/DE/Arbeit/Arbeitsschutz/Gesundheit-am-Arbeitsplatz/Betrieblicher-Infektionsschutz/betrieblicher-infektionsschutz.html',
       'https://www.baua.de/DE/Angebote/Publikationen/Praxis-kompakt/F93.pdf?__blob=publicationFile&v=4'
     ]
   },
