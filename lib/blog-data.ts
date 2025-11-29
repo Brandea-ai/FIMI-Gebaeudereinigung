@@ -666,15 +666,121 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: '6',
-    slug: 'artikel-6',
-    title: 'Artikel 6 - Platzhalter',
-    excerpt: 'Kurzbeschreibung folgt.',
-    content: '<p>Inhalt folgt.</p>',
-    image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=800&auto=format&fit=crop',
+    slug: 'winterdienst-bayern-pflichten-haftung-bgh-urteil-2025',
+    title: 'Winterdienst für Unternehmen in Bayern: Pflichten, Haftung und das BGH-Urteil 2025',
+    excerpt: 'Der Winterdienst ist eine essenzielle Verkehrssicherungspflicht für Immobilieneigentümer und Unternehmen in Bayern. Die Nichteinhaltung kann zu empfindlichen Haftungsansprüchen führen – ein Risiko, das durch ein aktuelles Urteil des Bundesgerichtshofs vom August 2025 nochmals verschärft wurde.',
+    content: `
+      <!-- Key Facts Box -->
+      <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 24px 28px; margin-bottom: 32px;">
+        <p style="color: #109387; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px;">Wichtige Eckdaten</p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 24px; font-weight: 800; margin-bottom: 2px;">7–20 Uhr</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Räumpflicht werktags</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 24px; font-weight: 800; margin-bottom: 2px;">1,0–1,2 m</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Mindestbreite Gehweg</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 24px; font-weight: 800; margin-bottom: 2px;">BGH 2025</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Neues Haftungsurteil</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Wenn Schnee und Eis die Wege bedecken, beginnt für Eigentümer von Gewerbeimmobilien die Zeit der erhöhten Wachsamkeit. Die Verantwortung für den <a href="/leistungen/winterdienst" style="color: #109387; font-weight: 700;">Winterdienst</a> ergibt sich in Bayern primär aus dem <strong style="font-weight: 800; color: #012956;">Bayerischen Straßen- und Wegegesetz (BayStrWG)</strong>, welches die Gemeinden ermächtigt, die Räum- und Streupflicht per Satzung auf die Anlieger zu übertragen.</p>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Wann, wo und wie muss geräumt werden?</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Die genauen Anforderungen werden lokal festgelegt, folgen aber allgemeinen Grundsätzen:</p>
+
+      <!-- Anforderungen Cards -->
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 24px 0;">
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Zeiten</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Werktags ca. 7:00–20:00 Uhr, Sonn-/Feiertage oft später.</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Frequenz</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Unmittelbar nach Schneefall/Glätte – so oft wie nötig wiederholen.</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Umfang</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Gehwege, Zugänge, Parkplätze, Zufahrten – Breite 1,0–1,2 m freihalten.</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Streumittel</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Salz oft verboten – abstumpfende Mittel wie Sand oder Splitt nutzen.</p>
+        </div>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Haftung und Delegation: Das BGH-Urteil vom August 2025</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Viele Unternehmen übertragen den Winterdienst an externe Dienstleister. Dies ist zulässig, doch die Haftungsfrage wurde durch ein wegweisendes Urteil des <strong style="font-weight: 800; color: #012956;">Bundesgerichtshofs (BGH, Urteil vom 6. August 2025, Az. VIII ZR 250/23)</strong> nochmals präzisiert.</p>
+
+      <!-- BGH Urteil Box -->
+      <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 24px; margin: 24px 0;">
+        <p style="color: #109387; font-size: 13px; font-weight: 800; margin-bottom: 12px;">⚖️ Kernaussage des BGH-Urteils</p>
+        <p style="color: white; font-size: 15px; font-weight: 600; line-height: 1.7;">Ein Immobilieneigentümer haftet für Sturzschäden bei Eisglätte, <strong style="font-weight: 800;">selbst wenn ein professioneller Hausmeisterdienst beauftragt war</strong>. Der Dienstleister gilt als „Erfüllungsgehilfe" – seine Versäumnisse werden dem Eigentümer zugerechnet.</p>
+      </div>
+
+      <!-- Konsequenzen -->
+      <div style="background: #f8f9fa; border-radius: 6px; padding: 20px; margin: 20px 0;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="border-bottom: 2px solid #e5e7eb;">
+              <th style="text-align: left; padding: 10px 14px; color: #012956; font-weight: 800; font-size: 14px;">Konsequenz</th>
+              <th style="text-align: left; padding: 10px 14px; color: #012956; font-weight: 800; font-size: 14px;">Was Sie beachten müssen</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 10px 14px; font-weight: 800; font-size: 14px; color: #109387;">Sorgfältige Auswahl</td>
+              <td style="padding: 10px 14px; color: #374151; font-weight: 600; font-size: 14px;">Nur zuverlässige, professionelle Dienstleister beauftragen</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 10px 14px; font-weight: 800; font-size: 14px; color: #109387;">Dokumentation</td>
+              <td style="padding: 10px 14px; color: #374151; font-weight: 600; font-size: 14px;">Lückenlose Protokollierung aller Einsätze fordern</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px; font-weight: 800; font-size: 14px; color: #109387;">Versicherung</td>
+              <td style="padding: 10px 14px; color: #374151; font-weight: 600; font-size: 14px;">Ausreichenden Versicherungsschutz des Dienstleisters prüfen</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- FIMI Highlight Box -->
+      <div style="background: linear-gradient(135deg, #109387 0%, #0d7d72 100%); border-radius: 6px; padding: 24px 28px; margin: 28px 0;">
+        <p style="color: white; font-size: 17px; font-weight: 800; margin-bottom: 10px;">Professioneller Winterdienst für Ihr Unternehmen</p>
+        <p style="color: rgba(255,255,255,0.95); font-size: 14px; font-weight: 600; line-height: 1.8;">Gehen Sie auf Nummer sicher. FIMI bietet zuverlässigen Winterdienst für Gewerbeimmobilien in <a href="/kontakt" style="color: white; font-weight: 800; text-decoration: underline;">ganz Bayern</a>. Wir kennen die lokalen Satzungen, setzen umweltfreundliche Streumittel ein und dokumentieren unsere Einsätze lückenlos – um Ihr Haftungsrisiko zu minimieren.</p>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Weiterführende Informationen</h3>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
+          <a href="https://www.lto.de/recht/nachrichten/n/viiizr25023-bgh-winterdienst-mietwohnung-sturz-weg" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">LTO – BGH-Urteil zur Winterdienst-Haftung →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Analyse des Urteils VIII ZR 250/23 zur Haftung bei Delegation</p>
+        </li>
+        <li style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
+          <a href="https://www.freistaat.bayern/dokumente/leistung/68331805329" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">BayernPortal – Winterdienst Informationen →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Gesetzliche Grundlagen nach BayStrWG</p>
+        </li>
+        <li style="padding: 12px 0;">
+          <a href="https://www.vkb.de/content/versicherungen/haus-wohnen/ratgeber-haus-wohnen/raeumpflichten-laub-schnee/" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">VKB – Ratgeber Räum- und Streupflicht →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Praktische Tipps zu Umfang und Durchführung</p>
+        </li>
+      </ul>
+    `,
+    image: 'https://images.unsplash.com/photo-1516912481808-3406841bd33c?q=80&w=800&auto=format&fit=crop',
     category: 'tipps',
     author: 'FIMI Team',
-    date: '2024-03-18',
-    readTime: 3,
+    date: '2025-11-14',
+    readTime: 5,
+    sources: [
+      'https://www.lto.de/recht/nachrichten/n/viiizr25023-bgh-winterdienst-mietwohnung-sturz-weg',
+      'https://www.freistaat.bayern/dokumente/leistung/68331805329',
+      'https://www.vkb.de/content/versicherungen/haus-wohnen/ratgeber-haus-wohnen/raeumpflichten-laub-schnee/'
+    ]
   },
   // PROJEKT (3)
   {
