@@ -173,6 +173,13 @@ export default function Navigation() {
             </div>
 
             <Link
+              href="/karriere"
+              className="text-fimi-navy hover:text-fimi-turquoise font-medium transition-colors"
+            >
+              Karriere
+            </Link>
+
+            <Link
               href="/ueber-uns"
               className="text-fimi-navy hover:text-fimi-turquoise font-medium transition-colors"
             >
@@ -293,6 +300,14 @@ export default function Navigation() {
                   </div>
                 )}
               </div>
+
+              <Link
+                href="/karriere"
+                className="block text-fimi-navy hover:text-fimi-turquoise font-medium py-2"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Karriere
+              </Link>
 
               <Link
                 href="/ueber-uns"

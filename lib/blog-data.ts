@@ -1385,15 +1385,119 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: '12',
-    slug: 'artikel-12',
-    title: 'Artikel 12 - Platzhalter',
-    excerpt: 'Kurzbeschreibung folgt.',
-    content: '<p>Inhalt folgt.</p>',
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop',
+    slug: 'gesundheitsschutz-reinigung-ergonomie-hautschutz-bg-bau',
+    title: 'Gesundheitsschutz in der Reinigung: Ergonomie und Hautschutz im Fokus',
+    excerpt: 'Die Arbeit in der Gebäudereinigung ist körperlich anspruchsvoll und birgt Risiken für Muskel-Skelett-Erkrankungen und Hautprobleme. Ein konsequenter Arbeitsschutz, wie ihn die Berufsgenossenschaft der Bauwirtschaft (BG BAU) fordert, ist daher unerlässlich für die Gesundheit der Mitarbeiter.',
+    content: `
+      <!-- Key Facts Box -->
+      <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 24px 28px; margin-bottom: 32px;">
+        <p style="color: #109387; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px;">Gesundheitsschutz 2024</p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">74%</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Muskel-Skelett-Beschwerden</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">BG BAU</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Berufsgenossenschaft</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">DGUV</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Hautschutz-Vorgaben</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Die <strong style="font-weight: 800; color: #012956;">Gesundheit der Mitarbeiter</strong> ist das höchste Gut. In der <a href="/leistungen" style="color: #109387; font-weight: 700;">Gebäudereinigung</a> sind die Beschäftigten jedoch täglich vielfältigen Belastungen ausgesetzt. <strong style="font-weight: 800; color: #012956;">Prävention</strong> ist der Schlüssel zu einem sicheren und gesunden Arbeitsumfeld.</p>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Ergonomie: Muskel-Skelett-Belastungen reduzieren</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Rückenbeschwerden gehören zu den häufigsten Berufskrankheiten in der Branche. In einer Umfrage der <strong style="font-weight: 800; color: #012956;">BG BAU</strong> unter Gebäudereinigern gaben <strong style="font-weight: 800; color: #012956;">74%</strong> an, im vorangegangenen Jahr unter Schmerzen des Muskel-Skelett-Systems gelitten zu haben. Ursachen sind oft ungünstige Körperhaltungen (Bücken, Knien, Überkopfarbeiten) und das Heben schwerer Lasten.</p>
+
+      <!-- Ergonomie Info Box -->
+      <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 24px; margin: 24px 0;">
+        <p style="color: #109387; font-size: 13px; font-weight: 800; margin-bottom: 12px;">📊 BG BAU Studie</p>
+        <p style="color: white; font-size: 15px; font-weight: 600; line-height: 1.7;"><strong style="font-weight: 800;">74% der Gebäudereiniger</strong> litten im Vorjahr unter Muskel-Skelett-Beschwerden. Studien zeigen: Mit ergonomischen Teleskopstielen lassen sich Belastungen <strong style="font-weight: 800;">signifikant reduzieren</strong>.</p>
+      </div>
+
+      <p style="font-weight: 600; color: #374151; line-height: 1.8; margin-top: 20px;"><strong style="font-weight: 800; color: #012956;">Ergonomische Maßnahmen sind entscheidend:</strong></p>
+
+      <!-- Ergonomie Cards -->
+      <div style="display: grid; grid-template-columns: repeat(1, 1fr); gap: 12px; margin: 24px 0;">
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">🔧 Ergonomische Arbeitsgeräte</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.5;">Höhenverstellbare Teleskopstiele für die Bodenreinigung sind zwingend notwendig. Die BG BAU empfiehlt eine Einstellung auf eine Länge zwischen Kinn- und Schulterhöhe für eine aufrechte Körperhaltung.</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">🛒 Hilfsmittel nutzen</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.5;">Der Einsatz von gut gewarteten Reinigungswagen und Transporthilfen reduziert die Anstrengung beim Heben und Tragen erheblich.</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">📚 Richtiges Arbeiten</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.5;">Schulungen zu korrekten Hebetechniken und Greifvarianten (z.B. das Greifen eines drehbaren Knaufs von oben) helfen, einseitige Belastungen zu reduzieren.</p>
+        </div>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Hautschutz: Der richtige Umgang mit Feuchtarbeit und Chemie</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Die Haut ist das am stärksten beanspruchte Organ in der Reinigung. Feuchtarbeit und der Kontakt mit Reinigungsmitteln können die Hautbarriere schädigen.</p>
+
+      <p style="font-weight: 600; color: #374151; line-height: 1.8; margin-top: 16px;"><strong style="font-weight: 800; color: #012956;">Ein effektiver Hautschutzplan (gemäß DGUV-Vorgaben) ist notwendig:</strong></p>
+
+      <!-- Hautschutz Tabelle -->
+      <div style="background: #f8f9fa; border-radius: 6px; padding: 20px; margin: 20px 0;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <tbody>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 12px 14px; font-weight: 800; font-size: 14px; color: #109387; width: 180px;">🧴 Vor der Arbeit</td>
+              <td style="padding: 12px 14px; color: #374151; font-weight: 600; font-size: 14px;">Hautschutzmittel: Cremes schützen die Haut vor dem Aufweichen und dem Eindringen von Stoffen</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 12px 14px; font-weight: 800; font-size: 14px; color: #109387;">🧼 Schonende Reinigung</td>
+              <td style="padding: 12px 14px; color: #374151; font-weight: 600; font-size: 14px;">Milde, pH-hautneutrale Waschlotionen verwenden. Sorgfältiges Abtrocknen, auch zwischen den Fingern. Händedesinfektion ist oft hautschonender als häufiges Waschen</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 12px 14px; font-weight: 800; font-size: 14px; color: #109387;">🧤 PSA (Schutzausrüstung)</td>
+              <td style="padding: 12px 14px; color: #374151; font-weight: 600; font-size: 14px;">Das Tragen geeigneter Schutzhandschuhe ist obligatorisch. Nur so lange wie nötig tragen; Baumwollunterziehhandschuhe können helfen</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px 14px; font-weight: 800; font-size: 14px; color: #109387;">💧 Nach der Arbeit</td>
+              <td style="padding: 12px 14px; color: #374151; font-weight: 600; font-size: 14px;">Pflegemittel unterstützen die Regeneration der Hautbarriere</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- FIMI Highlight Box -->
+      <div style="background: linear-gradient(135deg, #109387 0%, #0d7d72 100%); border-radius: 6px; padding: 24px 28px; margin: 28px 0;">
+        <p style="color: white; font-size: 17px; font-weight: 800; margin-bottom: 10px;">FIMI setzt auf Prävention</p>
+        <p style="color: rgba(255,255,255,0.95); font-size: 14px; font-weight: 600; line-height: 1.8;">Arbeitsschutz ist ein kontinuierlicher Prozess. FIMI Gebäudereinigung nimmt diese Verantwortung ernst. Wir statten unsere Teams in <a href="/kontakt" style="color: white; font-weight: 800; text-decoration: underline;">Bayern</a> mit hochwertiger PSA und ergonomischen Arbeitsmitteln aus (z.B. durch Nutzung von Förderprogrammen der BG BAU für Teleskopstiele) und sorgen durch fortlaufende Schulungen für maximale Sicherheit am Arbeitsplatz.</p>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Weiterführende Informationen</h3>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
+          <a href="https://www.bgbau.de/themen/sicherheit-und-gesundheit/ergonomisches-arbeiten/arbeiten-in-der-reinigungsbranche" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">BG BAU – Ergonomisch arbeiten in der Reinigungsbranche →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Informationen und Studien der Berufsgenossenschaft zur Ergonomie</p>
+        </li>
+        <li style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
+          <a href="https://bauportal.bgbau.de/bauportal-42020/thema/sanierung-und-bauwerksunterhalt/mit-ergonomischen-reinigungsgeraeten-muskel-skelett-belastungen-reduzieren" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">BauPortal BG BAU – Studie zu Teleskopstielen →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Details zur Studie über ergonomische Reinigungsgeräte und Belastungsreduzierung</p>
+        </li>
+        <li style="padding: 12px 0;">
+          <a href="https://bgn-branchenwissen.de/praxishilfen-von-a-z/hautschutz-hautbelastung/faq" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">BGN – FAQ Hautschutz und Hautreinigung →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Praktische Tipps zum richtigen Hautschutz am Arbeitsplatz</p>
+        </li>
+      </ul>
+    `,
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop',
     category: 'team',
     author: 'FIMI Team',
-    date: '2025-01-08',
-    readTime: 3,
+    date: '2024-09-20',
+    readTime: 5,
+    sources: [
+      'https://www.bgbau.de/themen/sicherheit-und-gesundheit/ergonomisches-arbeiten/arbeiten-in-der-reinigungsbranche',
+      'https://bauportal.bgbau.de/bauportal-42020/thema/sanierung-und-bauwerksunterhalt/mit-ergonomischen-reinigungsgeraeten-muskel-skelett-belastungen-reduzieren',
+      'https://bgn-branchenwissen.de/praxishilfen-von-a-z/hautschutz-hautbelastung/faq'
+    ]
   },
 ]
 
