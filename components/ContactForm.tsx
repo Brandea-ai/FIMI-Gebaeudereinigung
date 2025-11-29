@@ -1,8 +1,9 @@
 'use client'
 
-import { useState, useEffect, FormEvent, ChangeEvent } from 'react'
+import { useState, useEffect, FormEvent, ChangeEvent, useRef } from 'react'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle } from 'lucide-react'
+import { useFormTracking, analytics } from './GoogleAnalytics'
 
 interface FormData {
   name: string
@@ -72,15 +73,24 @@ export default function ContactForm() {
   const [requestId, setRequestId] = useState('')
   const [phase2Visible, setPhase2Visible] = useState(false)
   const [formTime] = useState(Math.floor(Date.now() / 1000))
+  const phase2TrackedRef = useRef(false)
+
+  // Analytics Form Tracking Hook
+  const formTracking = useFormTracking('footer')
 
   // Phase 1 → Phase 2 Übergang (wächst bei Eingabe)
   useEffect(() => {
     if (!phase2Visible) {
       if (formData.name.trim().length > 0 && formData.email.trim().length > 0 && formData.phone.trim().length > 0) {
         setTimeout(() => setPhase2Visible(true), 150)
+        // Analytics: Phase 2 erreicht
+        if (!phase2TrackedRef.current) {
+          phase2TrackedRef.current = true
+          formTracking.onPhase2Reached()
+        }
       }
     }
-  }, [formData.name, formData.email, formData.phone, phase2Visible])
+  }, [formData.name, formData.email, formData.phone, phase2Visible, formTracking])
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target
@@ -126,6 +136,14 @@ export default function ContactForm() {
         setRequestId(data.request_id || '')
         setShowModal(true)
 
+        // Analytics: Formular erfolgreich abgeschickt
+        formTracking.onSubmit({
+          service: formData.service,
+          branche: formData.branche,
+          company: formData.company,
+          message: formData.message
+        })
+
         // Reset Form
         setFormData({
           name: '',
@@ -138,13 +156,19 @@ export default function ContactForm() {
           privacy: false
         })
         setPhase2Visible(false)
+        phase2TrackedRef.current = false
       } else {
+        // Analytics: Formular-Fehler
         if (data.errors) {
           setErrors(data.errors)
+          Object.keys(data.errors).forEach(field => {
+            formTracking.onError('validation', field)
+          })
         }
         alert(data.message || 'Fehler aufgetreten. Bitte versuchen Sie es erneut.')
       }
     } catch {
+      formTracking.onError('network', 'submission')
       alert('Technischer Fehler. Bitte kontaktieren Sie uns telefonisch: 0871 430 334 60')
     } finally {
       setIsSubmitting(false)
@@ -167,6 +191,8 @@ export default function ContactForm() {
               name="name"
               value={formData.name}
               onChange={handleChange}
+              onFocus={() => formTracking.onFieldFocus('name')}
+              onBlur={() => formTracking.onFieldComplete('name', formData.name.length > 0)}
               placeholder="Max Mustermann"
               maxLength={100}
               required
@@ -189,6 +215,8 @@ export default function ContactForm() {
               name="email"
               value={formData.email}
               onChange={handleChange}
+              onFocus={() => formTracking.onFieldFocus('email')}
+              onBlur={() => formTracking.onFieldComplete('email', formData.email.length > 0)}
               placeholder="max@beispiel.de"
               required
               autoComplete="email"
@@ -210,6 +238,8 @@ export default function ContactForm() {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
+              onFocus={() => formTracking.onFieldFocus('phone')}
+              onBlur={() => formTracking.onFieldComplete('phone', formData.phone.length > 0)}
               placeholder="+49 123 456789"
               maxLength={20}
               required
@@ -237,6 +267,8 @@ export default function ContactForm() {
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
+                  onFocus={() => formTracking.onFieldFocus('company')}
+                  onBlur={() => formTracking.onFieldComplete('company', formData.company.length > 0)}
                   placeholder="Ihre Firma GmbH"
                   maxLength={100}
                   autoComplete="organization"
@@ -254,6 +286,8 @@ export default function ContactForm() {
                   name="branche"
                   value={formData.branche}
                   onChange={handleChange}
+                  onFocus={() => formTracking.onFieldFocus('branche')}
+                  onBlur={() => formTracking.onFieldComplete('branche', formData.branche.length > 0)}
                   className="w-full px-4 py-3 border-2 border-gray-200 rounded-[6px] text-gray-900 font-semibold transition-all focus:outline-none focus:border-[#109387] focus:ring-2 focus:ring-[#109387]/20 bg-white"
                 >
                   <option value="">Bitte wählen...</option>
@@ -274,6 +308,8 @@ export default function ContactForm() {
                 name="service"
                 value={formData.service}
                 onChange={handleChange}
+                onFocus={() => formTracking.onFieldFocus('service')}
+                onBlur={() => formTracking.onFieldComplete('service', formData.service.length > 0)}
                 className="w-full px-4 py-3 border-2 border-gray-200 rounded-[6px] text-gray-900 font-semibold transition-all focus:outline-none focus:border-[#109387] focus:ring-2 focus:ring-[#109387]/20 bg-white"
               >
                 <option value="">Bitte wählen...</option>
@@ -293,6 +329,8 @@ export default function ContactForm() {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
+                onFocus={() => formTracking.onFieldFocus('message')}
+                onBlur={() => formTracking.onFieldComplete('message', formData.message.length > 0)}
                 rows={4}
                 placeholder="Beschreiben Sie kurz Ihr Anliegen oder Ihre Anforderungen..."
                 maxLength={2000}
