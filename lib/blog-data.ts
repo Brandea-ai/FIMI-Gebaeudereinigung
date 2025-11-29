@@ -513,15 +513,156 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: '5',
-    slug: 'artikel-5',
-    title: 'Artikel 5 - Platzhalter',
-    excerpt: 'Kurzbeschreibung folgt.',
-    content: '<p>Inhalt folgt.</p>',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop',
+    slug: 'reinigungsintervalle-buero-schule-praxis-din-ral',
+    title: 'Die richtigen Reinigungsintervalle: Wie oft muss gereinigt werden?',
+    excerpt: 'Die Festlegung der richtigen Reinigungsintervalle ist entscheidend für Hygiene, Werterhalt und Kosteneffizienz. Starre Vorgaben gibt es selten; vielmehr muss die Frequenz individuell auf Basis von Nutzungsintensität, Raumtyp und relevanten Normen ermittelt werden.',
+    content: `
+      <!-- Key Facts Box -->
+      <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 24px 28px; margin-bottom: 32px;">
+        <p style="color: #109387; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px;">Maßgebliche Standards</p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 24px; font-weight: 800; margin-bottom: 2px;">DIN 77400</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Schulgebäude-Reinigung</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 24px; font-weight: 800; margin-bottom: 2px;">RAL-GZ 902</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Gütezeichen Reinigung</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 24px; font-weight: 800; margin-bottom: 2px;">Individuell</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Bedarfsgerechte Planung</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;"><em style="font-weight: 700; color: #012956;">"Wie oft soll gereinigt werden?"</em> Diese Frage stellen sich Facility Manager und Verantwortliche gleichermaßen. Eine pauschale Antwort gibt es nicht, denn die optimale Reinigungsfrequenz hängt von einer Vielzahl von Faktoren ab. Eine <strong style="font-weight: 800; color: #012956;">bedarfsgerechte Planung</strong> ist der Schlüssel zu einem sauberen und wirtschaftlichen Ergebnis.</p>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Faktoren, die das Reinigungsintervall bestimmen</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Die Basis jeder Planung ist die Analyse der Ist-Situation. Folgende Aspekte müssen berücksichtigt werden:</p>
+
+      <!-- Faktoren Cards -->
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 24px 0;">
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Nutzungsintensität</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Ein Großraumbüro hat anderen Bedarf als ein Archiv.</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Verschmutzungsgrad</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Jahreszeitliche Einflüsse wie Schmutzeintrag im Winter.</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Hygieneanforderungen</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Medizinische Einrichtungen haben strengere Vorgaben.</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Repräsentation</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Eingangsbereiche erfordern oft höhere Frequenz.</p>
+        </div>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Normen und Standards als Orientierung</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Normen und Gütezeichen bieten wichtige Rahmenbedingungen für die Qualität der Reinigung:</p>
+
+      <!-- Normen Tabelle -->
+      <div style="background: #f8f9fa; border-radius: 6px; padding: 20px; margin: 20px 0;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="border-bottom: 2px solid #e5e7eb;">
+              <th style="text-align: left; padding: 10px 14px; color: #012956; font-weight: 800; font-size: 14px;">Standard</th>
+              <th style="text-align: left; padding: 10px 14px; color: #012956; font-weight: 800; font-size: 14px;">Fokus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 10px 14px; font-weight: 800; font-size: 14px; color: #109387;">DIN 77400</td>
+              <td style="padding: 10px 14px; color: #374151; font-weight: 600; font-size: 14px;">Mindestanforderungen für Schulreinigung – Systematik übertragbar auf andere Gebäudetypen</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px; font-weight: 800; font-size: 14px; color: #109387;">RAL-GZ 902</td>
+              <td style="padding: 10px 14px; color: #374151; font-weight: 600; font-size: 14px;">Gütezeichen für Dienstleister – Fachkompetenz, Leistungsverzeichnisse, Eigenüberwachung</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Empfohlene Reinigungsfrequenzen im Überblick</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Basierend auf Branchenstandards lassen sich folgende Empfehlungen ableiten:</p>
+
+      <!-- Büro -->
+      <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 20px; margin: 20px 0;">
+        <p style="color: #109387; font-size: 13px; font-weight: 800; margin-bottom: 12px;">Büro- und Verwaltungsgebäude</p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 16px; font-weight: 800; margin-bottom: 4px;">Täglich</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 11px; font-weight: 600;">Sanitär, Teeküche, Eingang, Kontaktflächen</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 16px; font-weight: 800; margin-bottom: 4px;">2–3× / Woche</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 11px; font-weight: 600;">Büroräume, Böden, Abfall, Oberflächen</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 16px; font-weight: 800; margin-bottom: 4px;">Monatlich</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 11px; font-weight: 600;">Weniger frequentierte Bereiche</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Schulen -->
+      <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 20px; margin: 20px 0;">
+        <p style="color: #109387; font-size: 13px; font-weight: 800; margin-bottom: 12px;">Schulen (angelehnt an DIN 77400)</p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 16px; font-weight: 800; margin-bottom: 4px;">Täglich</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 11px; font-weight: 600;">Klassenzimmer, Sanitär, Flure</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 16px; font-weight: 800; margin-bottom: 4px;">Wöchentlich</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 11px; font-weight: 600;">Fachräume, Verwaltung</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 16px; font-weight: 800; margin-bottom: 4px;">Ferienzeit</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 11px; font-weight: 600;">Grundreinigung</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arztpraxen -->
+      <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 20px; margin: 20px 0;">
+        <p style="color: #109387; font-size: 13px; font-weight: 800; margin-bottom: 12px;">Arztpraxen</p>
+        <div style="text-align: center;">
+          <p style="color: white; font-size: 16px; font-weight: 800; margin-bottom: 4px;">Täglich gemäß Hygieneplan</p>
+          <p style="color: rgba(255,255,255,0.7); font-size: 11px; font-weight: 600;">Behandlungsräume, Wartezimmer, Anmeldung, Sanitäranlagen</p>
+        </div>
+      </div>
+
+      <!-- FIMI Highlight Box -->
+      <div style="background: linear-gradient(135deg, #109387 0%, #0d7d72 100%); border-radius: 6px; padding: 24px 28px; margin: 28px 0;">
+        <p style="color: white; font-size: 17px; font-weight: 800; margin-bottom: 10px;">Individuelles Leistungsverzeichnis</p>
+        <p style="color: rgba(255,255,255,0.95); font-size: 14px; font-weight: 600; line-height: 1.8;">Die Kunst besteht darin, diese Empfehlungen in ein individuelles Leistungsverzeichnis zu übersetzen. FIMI Gebäudereinigung analysiert Ihren Bedarf vor Ort in <a href="/kontakt" style="color: white; font-weight: 800; text-decoration: underline;">Landshut, München oder Freising</a> und entwickelt ein Konzept, das Hygieneanforderungen, Kosteneffizienz und die Vorgaben von DIN und RAL optimal vereint.</p>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Weiterführende Informationen</h3>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
+          <a href="https://www.din.de/de/mitwirken/normenausschuesse/nadl/veroeffentlichungen/wdc-beuth:din21:247267691" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">DIN 77400 – Reinigungsdienstleistungen Schulgebäude →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Überblick über den Anwendungsbereich der Norm beim DIN</p>
+        </li>
+        <li style="padding: 12px 0;">
+          <a href="https://www.ral-guetezeichen.de/guetezeichen/gebaeudereinigung-gz-902/" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">RAL-GZ 902 – Gütezeichen Gebäudereinigung →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Anforderungen und Vorteile der RAL Gütesicherung</p>
+        </li>
+      </ul>
+    `,
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop',
     category: 'tipps',
     author: 'FIMI Team',
-    date: '2024-06-10',
-    readTime: 3,
+    date: '2023-10-18',
+    readTime: 5,
+    sources: [
+      'https://www.din.de/de/mitwirken/normenausschuesse/nadl/veroeffentlichungen/wdc-beuth:din21:247267691',
+      'https://www.ral-guetezeichen.de/guetezeichen/gebaeudereinigung-gz-902/'
+    ]
   },
   {
     id: '6',
