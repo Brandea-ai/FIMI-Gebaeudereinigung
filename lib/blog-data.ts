@@ -790,15 +790,115 @@ export const blogPosts: BlogPost[] = [
   // PROJEKT (3)
   {
     id: '7',
-    slug: 'artikel-7',
-    title: 'Artikel 7 - Platzhalter',
-    excerpt: 'Kurzbeschreibung folgt.',
-    content: '<p>Inhalt folgt.</p>',
+    slug: 'praxisreinigung-rki-krinko-richtlinien-hygiene-gesundheitswesen',
+    title: 'Praxisreinigung nach RKI/KRINKO-Richtlinien: Hygiene im Gesundheitswesen',
+    excerpt: 'Im Gesundheitswesen ist Hygiene die erste Verteidigungslinie gegen Infektionen. Die Kommission für Krankenhaushygiene und Infektionsprävention (KRINKO) beim RKI definiert die Standards für die Reinigung und Desinfektion von Flächen, die 2022 umfassend aktualisiert wurden.',
+    content: `
+      <!-- Key Facts Box -->
+      <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 24px 28px; margin-bottom: 32px;">
+        <p style="color: #109387; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px;">Das Wichtigste auf einen Blick</p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">KRINKO</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Richtlinie Oktober 2022</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">Täglich</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Flächendesinfektion</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">IfSG § 23</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Hygieneplan-Pflicht</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Die Sicherheit von Patienten und Personal hat in Arztpraxen und Kliniken oberste Priorität. Eine fachgerechte <a href="/leistungen/unterhaltsreinigung" style="color: #109387; font-weight: 700;">Reinigung</a> und Desinfektion ist unerlässlich, um nosokomiale Infektionen zu verhindern. Die Grundlage hierfür bilden die Empfehlungen der <strong style="font-weight: 800; color: #012956;">KRINKO</strong>, insbesondere die im Oktober 2022 aktualisierte Richtlinie "Anforderungen an die Hygiene bei der Reinigung und Desinfektion von Flächen".</p>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Risikobewertung als Ausgangspunkt</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Nicht jede Fläche birgt das gleiche Infektionsrisiko. Die KRINKO-Empfehlung betont die Notwendigkeit einer differenzierten <strong style="font-weight: 800; color: #012956;">Risikobewertung</strong>:</p>
+
+      <!-- Risikobewertung Cards -->
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 24px 0;">
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Patientennahe Flächen</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Flächen mit häufigem Kontakt: Untersuchungsstühle, Türgriffe im Behandlungsraum, Sanitäranlagen</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Patientenferne Flächen</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Flächen ohne häufigen Handkontakt: Fußböden außerhalb von Risikobereichen, Lagerbereiche</p>
+        </div>
+      </div>
+
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Diese Einteilung bestimmt die Frequenz und die Methode der Hygienemaßnahmen.</p>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Die Neuerungen der KRINKO 2022</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Die Aktualisierung der Richtlinie hat wichtige Punkte präzisiert:</p>
+
+      <!-- KRINKO Neuerungen Box -->
+      <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 24px; margin: 24px 0;">
+        <p style="color: #109387; font-size: 13px; font-weight: 800; margin-bottom: 12px;">📋 Zentrale Änderung</p>
+        <p style="color: white; font-size: 15px; font-weight: 600; line-height: 1.7;">Mindestens <strong style="font-weight: 800;">„nutzungstägliche" Flächendesinfektion</strong> der patientennahen bzw. häufig berührten Flächen. Eine reine "Sichtreinigung" an Wochenenden ist in diesen Bereichen nicht mehr ausreichend.</p>
+      </div>
+
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Zudem gibt es Empfehlungen zur Vermeidung von Resistenzentwicklungen, etwa beim Einsatz von quartären Ammoniumverbindungen (QAV).</p>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Reinigung vs. Desinfektion</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Eine routinemäßige Flächendesinfektion ist nicht überall erforderlich. Die KRINKO empfiehlt eine <strong style="font-weight: 800; color: #012956;">indikationsgerechte desinfizierende Flächenreinigung</strong>.</p>
+
+      <!-- Desinfektion Tabelle -->
+      <div style="background: #f8f9fa; border-radius: 6px; padding: 20px; margin: 20px 0;">
+        <p style="color: #012956; font-weight: 800; font-size: 14px; margin-bottom: 12px;">Desinfektion ist zwingend erforderlich bei:</p>
+        <table style="width: 100%; border-collapse: collapse;">
+          <tbody>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 10px 14px; font-weight: 800; font-size: 14px; color: #109387; width: 40px;">✓</td>
+              <td style="padding: 10px 14px; color: #374151; font-weight: 600; font-size: 14px;">Sichtbarer Kontamination mit potenziell infektiösem Material (Blut, Sekrete)</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 10px 14px; font-weight: 800; font-size: 14px; color: #109387;">✓</td>
+              <td style="padding: 10px 14px; color: #374151; font-weight: 600; font-size: 14px;">Flächen für aseptische Tätigkeiten (z.B. Vorbereitung von Injektionen)</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px; font-weight: 800; font-size: 14px; color: #109387;">✓</td>
+              <td style="padding: 10px 14px; color: #374151; font-weight: 600; font-size: 14px;">Bereiche mit erhöhtem Infektionsrisiko (z.B. OP-Säle)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">In vielen anderen Bereichen (z.B. Flure, Büros) ist eine qualitativ hochwertige Reinigung ausreichend.</p>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Der individuelle Hygieneplan</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Jede medizinische Einrichtung ist gesetzlich verpflichtet (<strong style="font-weight: 800; color: #012956;">Infektionsschutzgesetz, IfSG § 23</strong>), einen individuellen Hygieneplan zu erstellen. Dieser Plan legt fest: <strong style="font-weight: 800; color: #012956;">Wer</strong> reinigt <strong style="font-weight: 800; color: #012956;">was</strong>, <strong style="font-weight: 800; color: #012956;">wann</strong>, <strong style="font-weight: 800; color: #012956;">womit</strong> und <strong style="font-weight: 800; color: #012956;">wie</strong>.</p>
+
+      <!-- FIMI Highlight Box -->
+      <div style="background: linear-gradient(135deg, #109387 0%, #0d7d72 100%); border-radius: 6px; padding: 24px 28px; margin: 28px 0;">
+        <p style="color: white; font-size: 17px; font-weight: 800; margin-bottom: 10px;">Ihr Spezialist für medizinische Einrichtungen</p>
+        <p style="color: rgba(255,255,255,0.95); font-size: 14px; font-weight: 600; line-height: 1.8;">Die Umsetzung dieser komplexen Anforderungen erfordert spezialisiertes Wissen und geschultes Personal. FIMI Gebäudereinigung ist Ihr Spezialist für die <a href="/branchen/gesundheitswesen" style="color: white; font-weight: 800; text-decoration: underline;">Reinigung medizinischer Einrichtungen</a> in Bayern. Wir kennen die Anforderungen von RKI und KRINKO im Detail und unterstützen Praxen und Kliniken in <a href="/kontakt" style="color: white; font-weight: 800; text-decoration: underline;">München, Landshut und Umgebung</a> bei der Umsetzung rechtskonformer Hygienekonzepte.</p>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Weiterführende Informationen</h3>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
+          <a href="https://www.rki.de/DE/Themen/Infektionskrankheiten/Krankenhaushygiene/KRINKO/Empfehlungen-der-KRINKO/Basishygiene/Downloads/Flaeche_Rili.pdf?__blob=publicationFile" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">KRINKO – Flächenhygiene-Richtlinie 2022 (PDF) →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Zentrale Richtlinie des RKI zur Reinigung und Desinfektion von Flächen</p>
+        </li>
+        <li style="padding: 12px 0;">
+          <a href="https://www.krankenhaushygiene.de/pdfdata/DGKH_Leitfaden%20Hausarztpraxis_HM_24_online%20vorab.pdf" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">DGKH – Leitfaden Hygienemanagement Arztpraxis (PDF) →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Praktischer Leitfaden der Deutschen Gesellschaft für Krankenhaushygiene</p>
+        </li>
+      </ul>
+    `,
     image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop',
     category: 'projekt',
     author: 'FIMI Team',
-    date: '2024-08-22',
-    readTime: 3,
+    date: '2025-04-08',
+    readTime: 5,
+    sources: [
+      'https://www.rki.de/DE/Themen/Infektionskrankheiten/Krankenhaushygiene/KRINKO/Empfehlungen-der-KRINKO/Basishygiene/Downloads/Flaeche_Rili.pdf?__blob=publicationFile',
+      'https://www.krankenhaushygiene.de/pdfdata/DGKH_Leitfaden%20Hausarztpraxis_HM_24_online%20vorab.pdf'
+    ]
   },
   {
     id: '8',
