@@ -366,7 +366,7 @@ export const blogPosts: BlogPost[] = [
       <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Weiterführende Informationen</h3>
       <ul style="list-style: none; padding: 0; margin: 0;">
         <li style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
-          <a href="https://www.die-gebaeudedienstleister.de/der-biv/zahlen-fakten/" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">BIV – Zahlen und Fakten zur Branche →</a>
+          <a href="https://www.die-gebaeudedienstleister.de/unser-handwerk/zahlen-fakten" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">BIV – Zahlen und Fakten zur Branche →</a>
           <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Branchenüberblick des Bundesinnungsverbands</p>
         </li>
         <li style="padding: 12px 0;">
@@ -381,7 +381,7 @@ export const blogPosts: BlogPost[] = [
     date: '2025-06-04',
     readTime: 5,
     sources: [
-      'https://www.die-gebaeudedienstleister.de/der-biv/zahlen-fakten/',
+      'https://www.die-gebaeudedienstleister.de/unser-handwerk/zahlen-fakten',
       'https://www.facility-manager.de/aktuelles/personalmangel-bremst-wachstum-in-der-gebaeudereinigung/'
     ]
   },
