@@ -243,16 +243,16 @@ export const blogPosts: BlogPost[] = [
       <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Weiterführende Informationen</h3>
       <ul style="list-style: none; padding: 0; margin: 0;">
         <li style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
-          <a href="https://environment.ec.europa.eu/topics/circular-economy/ecodesign-sustainable-products-regulation_en" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">EU-Kommission – Ökodesign-Verordnung (ESPR) →</a>
+          <a href="https://commission.europa.eu/energy-climate-change-environment/standards-tools-and-labels/products-labelling-rules-and-standards/ecodesign-and-energy-labelling/ecodesign-sustainable-products-regulation_de" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">EU-Kommission – Ökodesign-Verordnung (ESPR) →</a>
           <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Offizielle Seite der EU zur neuen Verordnung</p>
         </li>
         <li style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
-          <a href="https://environment.ec.europa.eu/topics/circular-economy/eu-ecolabel-home/product-groups-and-criteria/services/cleaning-services_en" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">EU Ecolabel für Reinigungsdienste →</a>
-          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Kriterien und Vorteile des EU-Umweltzeichens</p>
+          <a href="https://ec.europa.eu/environment/ecolabel/documents/Cleaning_Services_Factsheet_Final.pdf" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">EU Ecolabel – Cleaning Services Factsheet (PDF) →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Kriterien und Vorteile des EU-Umweltzeichens für Reinigungsdienste</p>
         </li>
         <li style="padding: 12px 0;">
-          <a href="https://www.izu.bayern.de/praxis/detail_praxis.php?pid=0203010100206" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">IZU Bayern – ISO 14001 vs. EMAS →</a>
-          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Vergleich der Umweltmanagementsysteme</p>
+          <a href="https://www.umweltpakt.bayern.de/management/fachwissen/207/umweltmanagementsystem-nach-din-en-iso-14001" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">Umweltpakt Bayern – ISO 14001 Umweltmanagement →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Informationen zum Umweltmanagementsystem nach DIN EN ISO 14001</p>
         </li>
       </ul>
     `,
@@ -262,9 +262,9 @@ export const blogPosts: BlogPost[] = [
     date: '2024-10-15',
     readTime: 5,
     sources: [
-      'https://environment.ec.europa.eu/topics/circular-economy/ecodesign-sustainable-products-regulation_en',
-      'https://www.hza-seminare.de/zoll-news/689/green-deal-eu-gruendet-sachverstaendigengruppe-fuer-oekodesign',
-      'https://www.izu.bayern.de/praxis/detail_praxis.php?pid=0203010100206'
+      'https://commission.europa.eu/energy-climate-change-environment/standards-tools-and-labels/products-labelling-rules-and-standards/ecodesign-and-energy-labelling/ecodesign-sustainable-products-regulation_de',
+      'https://ec.europa.eu/environment/ecolabel/documents/Cleaning_Services_Factsheet_Final.pdf',
+      'https://www.umweltpakt.bayern.de/management/fachwissen/207/umweltmanagementsystem-nach-din-en-iso-14001'
     ]
   },
   {

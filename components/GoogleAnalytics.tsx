@@ -372,6 +372,105 @@ export const analytics = {
       page_path: pagePath,
     })
   },
+
+  // ----- SERVICE & INDUSTRY PAGES -----
+
+  servicePageViewed: (serviceName: string, serviceCategory: string) => {
+    const leadValue = LEAD_VALUES[serviceName] || LEAD_VALUES['default']
+    trackEvent('view_service_page', 'Service', serviceName, leadValue, {
+      service_category: serviceCategory,
+      potential_value: leadValue,
+    })
+  },
+
+  industryPageViewed: (industryName: string) => {
+    trackEvent('view_industry_page', 'Industry', industryName)
+  },
+
+  // ----- PRICING & QUOTES -----
+
+  priceCalculatorUsed: (service: string, estimatedValue: number) => {
+    trackEvent('price_calculator', 'Conversion', service, estimatedValue, {
+      estimated_value: estimatedValue,
+    })
+  },
+
+  quoteRequested: (service: string, details: Record<string, unknown>) => {
+    const leadValue = LEAD_VALUES[service] || LEAD_VALUES['default']
+    trackEvent('quote_request', 'Conversion', service, leadValue, {
+      ...details,
+      lead_value: leadValue,
+    })
+    trackConversion('quote_request', leadValue)
+  },
+
+  // ----- USER JOURNEY -----
+
+  userJourneyStep: (step: string, stepNumber: number, details?: Record<string, unknown>) => {
+    trackEvent('user_journey', 'Funnel', step, stepNumber, {
+      step_number: stepNumber,
+      ...details,
+    })
+  },
+
+  firstVisit: () => {
+    const session = getSessionData()
+    if (session && !session.isReturning) {
+      trackEvent('first_visit', 'Acquisition', 'new_visitor', undefined, {
+        landing_page: session.landingPage,
+        referrer: session.referrer,
+        traffic_source: session.utmSource || 'organic',
+      })
+    }
+  },
+
+  returnVisit: () => {
+    const session = getSessionData()
+    if (session && session.isReturning) {
+      trackEvent('return_visit', 'Retention', 'returning_visitor')
+    }
+  },
+
+  // ----- CONTENT ENGAGEMENT -----
+
+  videoPlayed: (videoName: string, videoUrl?: string) => {
+    trackEvent('video_play', 'Content', videoName, undefined, {
+      video_url: videoUrl,
+    })
+  },
+
+  videoCompleted: (videoName: string, watchTimeSeconds: number) => {
+    trackEvent('video_complete', 'Content', videoName, watchTimeSeconds, {
+      watch_time_seconds: watchTimeSeconds,
+    })
+  },
+
+  galleryViewed: (galleryName: string, imageCount: number) => {
+    trackEvent('gallery_view', 'Content', galleryName, imageCount)
+  },
+
+  testimonialViewed: (testimonialId: string, clientName?: string) => {
+    trackEvent('testimonial_view', 'Social Proof', testimonialId, undefined, {
+      client_name: clientName,
+    })
+  },
+
+  // ----- MICRO-CONVERSIONS -----
+
+  socialShareClicked: (platform: string, contentType: string) => {
+    trackEvent('social_share', 'Social', platform, undefined, {
+      content_type: contentType,
+    })
+  },
+
+  newsletterSignup: (source: string = 'footer') => {
+    trackEvent('newsletter_signup', 'Conversion', source)
+    trackConversion('newsletter_signup', 20)
+  },
+
+  mapInteraction: (action: 'view' | 'zoom' | 'directions' | 'streetview') => {
+    trackEvent('map_interaction', 'Engagement', action)
+  },
 }
 
 // ============================================================================
@@ -556,9 +655,23 @@ function GoogleAnalyticsInner() {
 
       {isLoaded && (
         <>
+          {/* Core Tracking */}
           <ScrollTracker />
           <TimeOnPageTracker />
           <ExternalLinkTracker />
+
+          {/* Enterprise Features */}
+          <CoreWebVitalsTracker />
+          <DeviceTracker />
+          <RageClickTracker />
+          <ExitIntentTracker />
+          <TabVisibilityTracker />
+          <ContactLinkTracker />
+          <CTAButtonTracker />
+          <EngagementScoreTracker />
+          <PerformanceTracker />
+          <GlobalErrorTracker />
+          <DeadClickTracker />
         </>
       )}
     </>
@@ -577,14 +690,6 @@ export default function GoogleAnalytics() {
 // ============================================================================
 // CORE WEB VITALS - Performance Metriken (Google's Ranking-Faktoren)
 // ============================================================================
-
-interface WebVitalsMetric {
-  name: string
-  value: number
-  rating: 'good' | 'needs-improvement' | 'poor'
-  delta: number
-  id: string
-}
 
 function getCLSRating(value: number): 'good' | 'needs-improvement' | 'poor' {
   if (value <= 0.1) return 'good'
@@ -618,7 +723,6 @@ function CoreWebVitalsTracker() {
 
     // Cumulative Layout Shift (CLS)
     let clsValue = 0
-    let clsEntries: PerformanceEntry[] = []
 
     const clsObserver = new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
@@ -626,7 +730,6 @@ function CoreWebVitalsTracker() {
         if (!entry.hadRecentInput) {
           // @ts-expect-error - LayoutShift type not fully typed
           clsValue += entry.value
-          clsEntries.push(entry)
         }
       }
     })
@@ -1201,6 +1304,119 @@ function PerformanceTracker() {
       })
     }
   }, [])
+
+  return null
+}
+
+// ============================================================================
+// GLOBAL ERROR TRACKING
+// ============================================================================
+
+function GlobalErrorTracker() {
+  const pathname = usePathname()
+
+  useEffect(() => {
+    // JavaScript Errors
+    const handleError = (event: ErrorEvent) => {
+      analytics.errorOccurred(
+        'javascript_error',
+        event.message || 'Unknown error',
+        pathname
+      )
+
+      // Zusätzliche Details
+      trackEvent('error_details', 'Error', event.filename || 'unknown', event.lineno, {
+        error_message: event.message?.substring(0, 200),
+        file: event.filename,
+        line: event.lineno,
+        column: event.colno,
+        page_path: pathname,
+      })
+    }
+
+    // Unhandled Promise Rejections
+    const handleUnhandledRejection = (event: PromiseRejectionEvent) => {
+      const message = event.reason?.message || event.reason?.toString() || 'Unhandled Promise Rejection'
+
+      analytics.errorOccurred(
+        'unhandled_rejection',
+        message,
+        pathname
+      )
+
+      trackEvent('promise_rejection', 'Error', message.substring(0, 100), undefined, {
+        page_path: pathname,
+        reason: event.reason?.toString()?.substring(0, 200),
+      })
+    }
+
+    // Resource Loading Errors (Bilder, Scripts, etc.)
+    const handleResourceError = (event: Event) => {
+      const target = event.target as HTMLElement
+      if (target && (target.tagName === 'IMG' || target.tagName === 'SCRIPT' || target.tagName === 'LINK')) {
+        const src = (target as HTMLImageElement).src ||
+                   (target as HTMLScriptElement).src ||
+                   (target as HTMLLinkElement).href
+
+        trackEvent('resource_error', 'Error', target.tagName.toLowerCase(), undefined, {
+          resource_url: src?.substring(0, 200),
+          page_path: pathname,
+        })
+      }
+    }
+
+    window.addEventListener('error', handleError)
+    window.addEventListener('unhandledrejection', handleUnhandledRejection)
+    window.addEventListener('error', handleResourceError, true) // Capture phase for resources
+
+    return () => {
+      window.removeEventListener('error', handleError)
+      window.removeEventListener('unhandledrejection', handleUnhandledRejection)
+      window.removeEventListener('error', handleResourceError, true)
+    }
+  }, [pathname])
+
+  return null
+}
+
+// ============================================================================
+// DEAD CLICK DETECTION (Klicks auf nicht-interaktive Elemente)
+// ============================================================================
+
+function DeadClickTracker() {
+  const pathname = usePathname()
+
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+
+      // Ignoriere echte interaktive Elemente
+      const isInteractive = target.closest('a, button, input, select, textarea, [role="button"], [onclick]')
+      if (isInteractive) return
+
+      // Prüfe ob das Element "klickbar" aussieht aber nichts tut
+      const style = window.getComputedStyle(target)
+      const looksClickable = style.cursor === 'pointer' ||
+                            target.classList.toString().includes('btn') ||
+                            target.classList.toString().includes('button') ||
+                            target.classList.toString().includes('link') ||
+                            target.classList.toString().includes('click')
+
+      if (looksClickable) {
+        const elementInfo = target.tagName +
+          (target.className ? `.${target.className.split(' ')[0]}` : '')
+
+        trackEvent('dead_click', 'UX Problem', elementInfo, undefined, {
+          page_path: pathname,
+          element_text: target.textContent?.substring(0, 50) || '',
+          element_classes: target.className,
+        })
+      }
+    }
+
+    document.addEventListener('click', handleClick)
+    return () => document.removeEventListener('click', handleClick)
+  }, [pathname])
 
   return null
 }
