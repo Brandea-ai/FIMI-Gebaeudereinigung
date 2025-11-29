@@ -133,7 +133,7 @@ export const blogPosts: BlogPost[] = [
         </li>
       </ul>
     `,
-    image: '/blog/artikel-1/hero.avif',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
     category: 'news',
     author: 'FIMI Team',
     date: '2025-01-15',
@@ -370,7 +370,7 @@ export const blogPosts: BlogPost[] = [
         </li>
       </ul>
     `,
-    image: '/blog/artikel-3/hero.avif',
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800&auto=format&fit=crop',
     category: 'news',
     author: 'FIMI Team',
     date: '2025-06-04',
