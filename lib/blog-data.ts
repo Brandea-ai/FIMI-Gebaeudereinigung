@@ -375,7 +375,6 @@ export const blogPosts: BlogPost[] = [
     author: 'FIMI Team',
     date: '2025-06-04',
     readTime: 5,
-    featured: true,
     sources: [
       'https://www.die-gebaeudedienstleister.de/der-biv/zahlen-fakten/',
       'https://www.facility-manager.de/aktuelles/personalmangel-bremst-wachstum-in-der-gebaeudereinigung/'
