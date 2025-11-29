@@ -379,7 +379,7 @@ export const blogPosts: BlogPost[] = [
     category: 'news',
     author: 'FIMI Team',
     date: '2025-06-04',
-    readTime: 5,
+    readTime: 4,
     sources: [
       'https://www.die-gebaeudedienstleister.de/unser-handwerk/zahlen-fakten',
       'https://www.facility-manager.de/aktuelles/personalmangel-bremst-wachstum-in-der-gebaeudereinigung/'
@@ -510,7 +510,7 @@ export const blogPosts: BlogPost[] = [
     category: 'tipps',
     author: 'FIMI Team',
     date: '2024-08-22',
-    readTime: 5,
+    readTime: 4,
     sources: [
       'https://www.bmas.de/DE/Arbeit/Arbeitsschutz/Gesundheit-am-Arbeitsplatz/Betrieblicher-Infektionsschutz/betrieblicher-infektionsschutz.html',
       'https://www.baua.de/DE/Angebote/Publikationen/Praxis-kompakt/F93.pdf?__blob=publicationFile&v=4'
@@ -663,7 +663,7 @@ export const blogPosts: BlogPost[] = [
     category: 'tipps',
     author: 'FIMI Team',
     date: '2023-10-18',
-    readTime: 5,
+    readTime: 3,
     sources: [
       'https://www.din.de/de/mitwirken/normenausschuesse/nadl/veroeffentlichungen/wdc-beuth:din21:247267691',
       'https://www.ral-guetezeichen.de/guetezeichen/gebaeudereinigung-gz-902/'
@@ -779,8 +779,8 @@ export const blogPosts: BlogPost[] = [
     image: 'https://images.unsplash.com/photo-1516912481808-3406841bd33c?q=80&w=800&auto=format&fit=crop',
     category: 'tipps',
     author: 'FIMI Team',
-    date: '2025-11-14',
-    readTime: 5,
+    date: '2023-12-05',
+    readTime: 4,
     sources: [
       'https://www.lto.de/recht/nachrichten/n/viiizr25023-bgh-winterdienst-mietwohnung-sturz-weg',
       'https://www.freistaat.bayern/dokumente/leistung/68331805329',
@@ -893,7 +893,7 @@ export const blogPosts: BlogPost[] = [
     image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop',
     category: 'projekt',
     author: 'FIMI Team',
-    date: '2025-04-08',
+    date: '2024-07-12',
     readTime: 5,
     sources: [
       'https://www.rki.de/DE/Themen/Infektionskrankheiten/Krankenhaushygiene/KRINKO/Empfehlungen-der-KRINKO/Basishygiene/Downloads/Flaeche_Rili.pdf?__blob=publicationFile',
@@ -1010,8 +1010,8 @@ export const blogPosts: BlogPost[] = [
     image: 'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?q=80&w=800&auto=format&fit=crop',
     category: 'projekt',
     author: 'FIMI Team',
-    date: '2024-02-28',
-    readTime: 5,
+    date: '2024-05-15',
+    readTime: 4,
     sources: [
       'https://medien.bgetem.de/medienportal/artikel/MjA5LTA4OA--',
       'https://publikationen.dguv.de/widgets/pdf/download/article/3365',
@@ -1135,8 +1135,8 @@ export const blogPosts: BlogPost[] = [
     image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=800&auto=format&fit=crop',
     category: 'projekt',
     author: 'FIMI Team',
-    date: '2023-12-12',
-    readTime: 5,
+    date: '2023-11-08',
+    readTime: 4,
     sources: [
       'https://www.stmgp.bayern.de/meine-themen/fuer-schulen-und-kitas/',
       'https://www.gesetze-bayern.de/Content/Document/BayVwV96841-12'
@@ -1272,8 +1272,8 @@ export const blogPosts: BlogPost[] = [
     image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop',
     category: 'team',
     author: 'FIMI Team',
-    date: '2025-05-02',
-    readTime: 5,
+    date: '2025-01-15',
+    readTime: 4,
     sources: [
       'https://web.arbeitsagentur.de/berufenet/beruf/9391',
       'https://www.die-gebaeudedienstleister.de/ausbildung-karriere/ausbildungsberufe',
@@ -1377,7 +1377,7 @@ export const blogPosts: BlogPost[] = [
     category: 'team',
     author: 'FIMI Team',
     date: '2025-03-04',
-    readTime: 5,
+    readTime: 4,
     sources: [
       'https://www.facility-manager.de/aktuelles/personalmangel-bremst-wachstum-in-der-gebaeudereinigung/',
       'https://www.boeckler.de/de/suchergebnis-forschungsfoerderungsprojekte-detailseite-2732.htm?projekt=2024-315-7'
@@ -1492,7 +1492,7 @@ export const blogPosts: BlogPost[] = [
     category: 'team',
     author: 'FIMI Team',
     date: '2024-09-20',
-    readTime: 5,
+    readTime: 4,
     sources: [
       'https://www.bgbau.de/themen/sicherheit-und-gesundheit/ergonomisches-arbeiten/arbeiten-in-der-reinigungsbranche',
       'https://bauportal.bgbau.de/bauportal-42020/thema/sanierung-und-bauwerksunterhalt/mit-ergonomischen-reinigungsgeraeten-muskel-skelett-belastungen-reduzieren',
