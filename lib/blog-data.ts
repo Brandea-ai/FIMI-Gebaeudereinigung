@@ -902,15 +902,121 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: '8',
-    slug: 'artikel-8',
-    title: 'Artikel 8 - Platzhalter',
-    excerpt: 'Kurzbeschreibung folgt.',
-    content: '<p>Inhalt folgt.</p>',
+    slug: 'industriereinigung-arbeitssicherheit-dguv-gefahrstoffv',
+    title: 'Industriereinigung: Arbeitssicherheit und Gefahrstoffmanagement im Fokus',
+    excerpt: 'Die Reinigung von Produktionsanlagen und Maschinen stellt hohe Anforderungen an die Arbeitssicherheit. Der Umgang mit spezialisierten Chemikalien erfordert die strikte Einhaltung der Gefahrstoffverordnung und der DGUV-Vorschriften, insbesondere hinsichtlich PSA und Explosionsschutz.',
+    content: `
+      <!-- Key Facts Box -->
+      <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 24px 28px; margin-bottom: 32px;">
+        <p style="color: #109387; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px;">Sicherheit in der Industriereinigung</p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">GefStoffV</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Gefahrstoffverordnung</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">DGUV</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">209-088 Explosionsschutz</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">PSA</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Schutzausrüstung Pflicht</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;"><a href="/leistungen/industriereinigung" style="color: #109387; font-weight: 700;">Industriereinigung</a> ist essenziell für die Aufrechterhaltung der Produktion und die Langlebigkeit von Maschinen. Reinigungskräfte sind hier oft mit hartnäckigen Verschmutzungen wie Ölen, Fetten oder Chemikalienrückständen konfrontiert. Dies erfordert spezielle Verfahren und ein konsequentes <strong style="font-weight: 800; color: #012956;">Sicherheitsmanagement</strong>.</p>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Die Gefahrstoffverordnung (GefStoffV) als Grundlage</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Bei der Industriereinigung kommen häufig aggressive oder spezialisierte Chemikalien zum Einsatz. Die <strong style="font-weight: 800; color: #012956;">Gefahrstoffverordnung (GefStoffV)</strong> regelt den Schutz der Beschäftigten.</p>
+
+      <!-- GefStoffV Pflichten -->
+      <div style="background: #f8f9fa; border-radius: 6px; padding: 20px; margin: 20px 0;">
+        <p style="color: #012956; font-weight: 800; font-size: 14px; margin-bottom: 12px;">Zentrale Pflichten für den Arbeitgeber:</p>
+        <table style="width: 100%; border-collapse: collapse;">
+          <tbody>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 10px 14px; font-weight: 800; font-size: 14px; color: #109387; width: 180px;">Gefährdungsbeurteilung</td>
+              <td style="padding: 10px 14px; color: #374151; font-weight: 600; font-size: 14px;">Ermittlung und Bewertung aller potenziellen Gefahren</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 10px 14px; font-weight: 800; font-size: 14px; color: #109387;">Sicherheitsdatenblätter</td>
+              <td style="padding: 10px 14px; color: #374151; font-weight: 600; font-size: 14px;">Bereitstellung aktueller Informationen und regelmäßige Unterweisung</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px; font-weight: 800; font-size: 14px; color: #109387;">Expositionsminimierung</td>
+              <td style="padding: 10px 14px; color: #374151; font-weight: 600; font-size: 14px;">Maßnahmen zur Begrenzung der Dauer und Höhe der Exposition (§8 GefStoffV)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Brand- und Explosionsschutz (DGUV 209-088)</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Viele in der Industrie eingesetzte Reiniger, insbesondere <strong style="font-weight: 800; color: #012956;">Kaltreiniger oder Lösemittel</strong>, sind entzündbar. Ihre Dämpfe können explosionsfähige Atmosphären bilden.</p>
+
+      <!-- Explosionsschutz Box -->
+      <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 24px; margin: 24px 0;">
+        <p style="color: #109387; font-size: 13px; font-weight: 800; margin-bottom: 12px;">⚠️ DGUV Information 209-088</p>
+        <p style="color: white; font-size: 15px; font-weight: 600; line-height: 1.7;">Wenn ein relevantes Explosionsrisiko besteht, müssen <strong style="font-weight: 800;">Explosionsschutzzonen (Ex-Zonen)</strong> definiert und entsprechende Arbeitsmittel (z.B. explosionsgeschützte Sauger) verwendet werden.</p>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Persönliche Schutzausrüstung (PSA)</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Technische und organisatorische Maßnahmen haben immer Vorrang (<strong style="font-weight: 800; color: #012956;">TOP-Prinzip</strong>). Dennoch ist die richtige Persönliche Schutzausrüstung in der Industriereinigung unverzichtbar.</p>
+
+      <!-- PSA Cards -->
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 24px 0;">
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Handschutz</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Flüssigkeitsdichte, chemikalienbeständige Schutzhandschuhe (z.B. Nitril)</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Augenschutz</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Dichtschließende Korbbrillen bei Spritzgefahr</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Körperschutz</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Geschlossene Arbeitskleidung und Sicherheitsschuhe</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Atemschutz</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Bei unzureichender Lüftung oder Einsatz von Aerosolen</p>
+        </div>
+      </div>
+
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Die Reinigung von kontaminierter PSA muss ebenfalls streng nach GefStoffV erfolgen.</p>
+
+      <!-- FIMI Highlight Box -->
+      <div style="background: linear-gradient(135deg, #109387 0%, #0d7d72 100%); border-radius: 6px; padding: 24px 28px; margin: 28px 0;">
+        <p style="color: white; font-size: 17px; font-weight: 800; margin-bottom: 10px;">Professionelle Industriereinigung für Ihren Betrieb</p>
+        <p style="color: rgba(255,255,255,0.95); font-size: 14px; font-weight: 600; line-height: 1.8;">Die Industriereinigung erfordert spezialisierte Fachkräfte. FIMI Gebäudereinigung bietet professionelle <a href="/branchen/industrie-produktion" style="color: white; font-weight: 800; text-decoration: underline;">Industriedienstleistungen</a> für Betriebe in Bayern. Unsere geschulten Teams arbeiten streng nach den Vorgaben von DGUV und GefStoffV, um maximale Sicherheit und optimale Reinigungsergebnisse in Ihrer Produktion in <a href="/kontakt" style="color: white; font-weight: 800; text-decoration: underline;">Ingolstadt, Straubing oder Erding</a> zu gewährleisten.</p>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Weiterführende Informationen</h3>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
+          <a href="https://medien.bgetem.de/medienportal/artikel/MjA5LTA4OA--" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">DGUV 209-088 – Reinigen von Werkstücken (BG ETEM) →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Informationen zu Brand- und Explosionsschutz bei der Industriereinigung</p>
+        </li>
+        <li style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
+          <a href="https://publikationen.dguv.de/widgets/pdf/download/article/3365" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">DGUV Regel 101-605 – Branche Gebäudereinigung (PDF) →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Umfassende Regel zum Arbeitsschutz in der Gebäudereinigung</p>
+        </li>
+        <li style="padding: 12px 0;">
+          <a href="https://www.bghm.de/arbeitsschuetzer/praxishilfen/arbeitsschutz-kompakt/015-reinigen-von-werkstuecken" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">BGHM – Arbeitsschutz Kompakt: Werkstückreinigung →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Praktische Hinweise zu Schutzmaßnahmen und PSA</p>
+        </li>
+      </ul>
+    `,
     image: 'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?q=80&w=800&auto=format&fit=crop',
     category: 'projekt',
     author: 'FIMI Team',
-    date: '2024-05-14',
-    readTime: 3,
+    date: '2024-02-28',
+    readTime: 5,
+    sources: [
+      'https://medien.bgetem.de/medienportal/artikel/MjA5LTA4OA--',
+      'https://publikationen.dguv.de/widgets/pdf/download/article/3365',
+      'https://www.bghm.de/arbeitsschuetzer/praxishilfen/arbeitsschutz-kompakt/015-reinigen-von-werkstuecken'
+    ]
   },
   {
     id: '9',
