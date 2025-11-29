@@ -26,23 +26,23 @@ export default function AGBContent() {
     { id: 'agb-p1', label: '§ 1 Geltungsbereich' },
     { id: 'agb-p2', label: '§ 2 Vertragsschluss' },
     { id: 'agb-p3', label: '§ 3 Leistungsumfang' },
-    { id: 'agb-p4', label: '§ 4 Leistungsausfuehrung' },
+    { id: 'agb-p4', label: '§ 4 Leistungsausführung' },
     { id: 'agb-p5', label: '§ 5 Mitwirkungspflichten' },
-    { id: 'agb-p6', label: '§ 6 Verguetung & Zahlung' },
+    { id: 'agb-p6', label: '§ 6 Vergütung & Zahlung' },
     { id: 'agb-p7', label: '§ 7 Termine & Fristen' },
-    { id: 'agb-p8', label: '§ 8 Gewaehrleistung' },
+    { id: 'agb-p8', label: '§ 8 Gewährleistung' },
     { id: 'agb-p9', label: '§ 9 Haftung' },
-    { id: 'agb-p10', label: '§ 10 Kuendigung' },
+    { id: 'agb-p10', label: '§ 10 Kündigung' },
     { id: 'agb-p11', label: '§ 11 Datenschutz' },
     { id: 'agb-p12', label: '§ 12 Schlussbestimmungen' },
     { id: 'rechtliche-hinweise', label: 'Rechtliche Hinweise', main: true },
-    { id: 'haftung-inhalte', label: 'Haftung fuer Inhalte' },
-    { id: 'haftung-links', label: 'Haftung fuer Links' },
+    { id: 'haftung-inhalte', label: 'Haftung für Inhalte' },
+    { id: 'haftung-links', label: 'Haftung für Links' },
     { id: 'urheberrecht', label: 'Urheberrecht' },
     { id: 'streitbeilegung', label: 'Streitbeilegung' },
     { id: 'unternehmenshinweise', label: 'Unternehmenshinweise', main: true },
     { id: 'handelsregister', label: 'Handelsregister' },
-    { id: 'qualitaetsstandards', label: 'Qualitaet & ISO' }
+    { id: 'qualitaetsstandards', label: 'Qualität & ISO' }
   ]
 
   useEffect(() => {
@@ -212,15 +212,15 @@ export default function AGBContent() {
 
       <section className="agb-header">
         <div className="agb-container">
-          <h1 className="agb-header-title">Allgemeine Geschaeftsbedingungen & Rechtliche Hinweise</h1>
-          <p className="agb-header-subtitle">der FIMI Gebaeudereinigung GmbH</p>
+          <h1 className="agb-header-title">Allgemeine Geschäftsbedingungen & Rechtliche Hinweise</h1>
+          <p className="agb-header-subtitle">der FIMI Gebäudereinigung GmbH</p>
         </div>
       </section>
 
       <main className="agb-main">
         <div className="important-notice">
-          <strong>Gueltigkeitserklaerung</strong>
-          <p>Diese Allgemeinen Geschaeftsbedingungen gelten fuer alle Geschaeftsbeziehungen zwischen der FIMI Gebaeudereinigung GmbH und ihren Kunden. Mit der Beauftragung unserer Reinigungsleistungen erkennen Sie diese Bedingungen an.</p>
+          <strong>Gültigkeitserklärung</strong>
+          <p>Diese Allgemeinen Geschäftsbedingungen gelten für alle Geschäftsbeziehungen zwischen der FIMI Gebäudereinigung GmbH und ihren Kunden. Mit der Beauftragung unserer Reinigungsleistungen erkennen Sie diese Bedingungen an.</p>
         </div>
 
         <div className="agb-container">
@@ -258,69 +258,69 @@ export default function AGBContent() {
 
             <div className="agb-content">
               <section id="agb-hauptteil" className="section-tracked content-block">
-                <h2 className="section-title">Teil A: Allgemeine Geschaeftsbedingungen</h2>
+                <h2 className="section-title">Teil A: Allgemeine Geschäftsbedingungen</h2>
 
                 <article id="agb-p1" className="section-tracked">
                   <h3 className="subsection-title">1. Geltungsbereich</h3>
                   <p className="text-body">
-                    (1) Diese Allgemeinen Geschaeftsbedingungen (nachfolgend &quot;AGB&quot;) der FIMI Gebaeudereinigung GmbH (nachfolgend &quot;FIMI&quot;, &quot;wir&quot; oder &quot;uns&quot;) gelten fuer saemtliche Angebote, Lieferungen und Leistungen im Bereich der Gebaeudereinigung und des Facility Managements.
+                    (1) Diese Allgemeinen Geschäftsbedingungen (nachfolgend &quot;AGB&quot;) der FIMI Gebäudereinigung GmbH (nachfolgend &quot;FIMI&quot;, &quot;wir&quot; oder &quot;uns&quot;) gelten für sämtliche Angebote, Lieferungen und Leistungen im Bereich der Gebäudereinigung und des Facility Managements.
                   </p>
 
                   <div className="info-box">
                     <p className="text-body"><strong>Unsere Leistungsbereiche:</strong></p>
                     <ul className="standard-list">
-                      <li><strong>Unterhaltsreinigung:</strong> Regelmaessige Reinigung von Bueros, Praxen, Geschaeftsraeumen</li>
-                      <li><strong>Industriereinigung:</strong> Reinigung von Produktionshallen, Lagern, Werkstaetten</li>
-                      <li><strong>Bueroreinigung:</strong> Professionelle Reinigung von Buero- und Verwaltungsgebaeuden</li>
+                      <li><strong>Unterhaltsreinigung:</strong> Regelmäßige Reinigung von Büros, Praxen, Geschäftsräumen</li>
+                      <li><strong>Industriereinigung:</strong> Reinigung von Produktionshallen, Lagern, Werkstätten</li>
+                      <li><strong>Büroreinigung:</strong> Professionelle Reinigung von Büro- und Verwaltungsgebäuden</li>
                       <li><strong>Sonderreinigungen:</strong> Baureinigung, Grundreinigung, Fensterreinigung</li>
-                      <li><strong>Facility Management:</strong> Hausmeisterservice, Winterdienst, Gruenpflege</li>
+                      <li><strong>Facility Management:</strong> Hausmeisterservice, Winterdienst, Grünpflege</li>
                     </ul>
                   </div>
 
                   <p className="text-body">
-                    (2) Unsere Leistungen richten sich sowohl an Unternehmer im Sinne des § 14 BGB als auch an oeffentliche Auftraggeber und Privatpersonen.
+                    (2) Unsere Leistungen richten sich sowohl an Unternehmer im Sinne des § 14 BGB als auch an öffentliche Auftraggeber und Privatpersonen.
                   </p>
 
                   <p className="text-body">
-                    (3) Abweichende, entgegenstehende oder ergaenzende Allgemeine Geschaeftsbedingungen des Kunden werden nur dann Vertragsbestandteil, wenn wir ihrer Geltung ausdruecklich schriftlich zugestimmt haben.
+                    (3) Abweichende, entgegenstehende oder ergänzende Allgemeine Geschäftsbedingungen des Kunden werden nur dann Vertragsbestandteil, wenn wir ihrer Geltung ausdrücklich schriftlich zugestimmt haben.
                   </p>
                 </article>
 
                 <article id="agb-p2" className="section-tracked">
                   <h3 className="subsection-title">2. Vertragsschluss</h3>
                   <p className="text-body">
-                    (1) Unsere Angebote sind freibleibend und unverbindlich, sofern sie nicht ausdruecklich als verbindlich gekennzeichnet sind. Angebote haben eine Gueltigkeit von 30 Tagen.
+                    (1) Unsere Angebote sind freibleibend und unverbindlich, sofern sie nicht ausdrücklich als verbindlich gekennzeichnet sind. Angebote haben eine Gültigkeit von 30 Tagen.
                   </p>
 
                   <p className="text-body">
                     (2) Die Bestellung der Leistung durch den Kunden gilt als verbindliches Vertragsangebot. Der Vertrag kommt zustande durch:
                   </p>
                   <ul className="standard-list">
-                    <li>Schriftliche Auftragsbestaetigung unsererseits</li>
+                    <li>Schriftliche Auftragsbestätigung unsererseits</li>
                     <li>Beginn der Leistungserbringung</li>
                     <li>Unterzeichnung eines Reinigungsvertrages</li>
                   </ul>
 
                   <p className="text-body">
-                    (3) Muendliche Nebenabreden beduerfender schriftlichen Bestaetigung, um Geltung zu erlangen.
+                    (3) Mündliche Nebenabreden bedürfen der schriftlichen Bestätigung, um Geltung zu erlangen.
                   </p>
                 </article>
 
                 <article id="agb-p3" className="section-tracked">
                   <h3 className="subsection-title">3. Leistungsumfang</h3>
                   <p className="text-body">
-                    (1) Der Umfang der zu erbringenden Reinigungsleistungen ergibt sich aus dem jeweiligen Angebot, der Auftragsbestaetigung bzw. dem Reinigungsvertrag.
+                    (1) Der Umfang der zu erbringenden Reinigungsleistungen ergibt sich aus dem jeweiligen Angebot, der Auftragsbestätigung bzw. dem Reinigungsvertrag.
                   </p>
 
                   <p className="text-body">
-                    (2) Regelmaessige Unterhaltsreinigung umfasst typischerweise:
+                    (2) Regelmäßige Unterhaltsreinigung umfasst typischerweise:
                   </p>
                   <ul className="standard-list">
-                    <li>Staubwischen aller erreichbaren Oberflaechen</li>
+                    <li>Staubwischen aller erreichbaren Oberflächen</li>
                     <li>Bodenreinigung (Saugen, Wischen)</li>
-                    <li>Entleerung und Reinigung der Papierkoerbe</li>
-                    <li>Reinigung der Sanitaeranlagen</li>
-                    <li>Reinigung der Kuechen- und Pausenbereiche</li>
+                    <li>Entleerung und Reinigung der Papierkörbe</li>
+                    <li>Reinigung der Sanitäranlagen</li>
+                    <li>Reinigung der Küchen- und Pausenbereiche</li>
                   </ul>
 
                   <p className="text-body">
@@ -329,75 +329,75 @@ export default function AGBContent() {
                 </article>
 
                 <article id="agb-p4" className="section-tracked">
-                  <h3 className="subsection-title">4. Ausfuehrung der Leistungen</h3>
+                  <h3 className="subsection-title">4. Ausführung der Leistungen</h3>
                   <p className="text-body">
                     (1) Wir erbringen unsere Reinigungsleistungen nach den anerkannten Regeln der Technik und mit der Sorgfalt eines ordentlichen Kaufmanns.
                   </p>
 
                   <p className="text-body">
-                    (2) Die Reinigung erfolgt zu den vertraglich vereinbarten Zeiten. Bei Unterhaltsreinigung in der Regel ausserhalb der Geschaeftszeiten, sofern nicht anders vereinbart.
+                    (2) Die Reinigung erfolgt zu den vertraglich vereinbarten Zeiten. Bei Unterhaltsreinigung in der Regel außerhalb der Geschäftszeiten, sofern nicht anders vereinbart.
                   </p>
 
                   <p className="text-body">
-                    (3) Wir setzen ausschliesslich geschultes und zuverlaessiges Personal ein. Alle Mitarbeiter sind versichert und zur Verschwiegenheit verpflichtet.
+                    (3) Wir setzen ausschließlich geschultes und zuverlässiges Personal ein. Alle Mitarbeiter sind versichert und zur Verschwiegenheit verpflichtet.
                   </p>
 
                   <p className="text-body">
-                    (4) Wir verwenden umweltfreundliche Reinigungsmittel und arbeiten nach oekologischen Standards, soweit technisch moeglich und wirtschaftlich vertretbar.
+                    (4) Wir verwenden umweltfreundliche Reinigungsmittel und arbeiten nach ökologischen Standards, soweit technisch möglich und wirtschaftlich vertretbar.
                   </p>
                 </article>
 
                 <article id="agb-p5" className="section-tracked">
                   <h3 className="subsection-title">5. Mitwirkungspflichten des Auftraggebers</h3>
                   <p className="text-body">
-                    (1) Der Auftraggeber unterstuetzt uns bei der Erbringung unserer Leistungen, indem er insbesondere:
+                    (1) Der Auftraggeber unterstützt uns bei der Erbringung unserer Leistungen, indem er insbesondere:
                   </p>
                   <ul className="standard-list">
-                    <li>Rechtzeitigen Zugang zu den zu reinigenden Raeumlichkeiten gewaehrleistet</li>
-                    <li>Notwendige Schluessel oder Zugangscodes bereitstellt</li>
-                    <li>Wasser- und Stromanschluesse zur Verfuegung stellt</li>
-                    <li>Auf besondere Gefahrenquellen oder empfindliche Oberflaechen hinweist</li>
-                    <li>Einen Ansprechpartner fuer Rueckfragen benennt</li>
+                    <li>Rechtzeitigen Zugang zu den zu reinigenden Räumlichkeiten gewährleistet</li>
+                    <li>Notwendige Schlüssel oder Zugangscodes bereitstellt</li>
+                    <li>Wasser- und Stromanschlüsse zur Verfügung stellt</li>
+                    <li>Auf besondere Gefahrenquellen oder empfindliche Oberflächen hinweist</li>
+                    <li>Einen Ansprechpartner für Rückfragen benennt</li>
                   </ul>
 
                   <p className="text-body">
-                    (2) Kommt der Auftraggeber seinen Mitwirkungspflichten nicht nach, sind wir berechtigt, die Leistung zu unterbrechen. Dadurch entstehende Mehrkosten traegt der Auftraggeber.
+                    (2) Kommt der Auftraggeber seinen Mitwirkungspflichten nicht nach, sind wir berechtigt, die Leistung zu unterbrechen. Dadurch entstehende Mehrkosten trägt der Auftraggeber.
                   </p>
                 </article>
 
                 <article id="agb-p6" className="section-tracked">
-                  <h3 className="subsection-title">6. Verguetung und Zahlungsbedingungen</h3>
+                  <h3 className="subsection-title">6. Vergütung und Zahlungsbedingungen</h3>
                   <p className="text-body">
-                    (1) Die Verguetung richtet sich nach dem vereinbarten Angebot. Folgende Verguetungsmodelle sind moeglich:
+                    (1) Die Vergütung richtet sich nach dem vereinbarten Angebot. Folgende Vergütungsmodelle sind möglich:
                   </p>
 
                   <div className="info-box">
-                    <p className="text-body"><strong>Verguetungsmodelle:</strong></p>
+                    <p className="text-body"><strong>Vergütungsmodelle:</strong></p>
                     <ul className="standard-list">
-                      <li><strong>Pauschalpreis:</strong> Monatliche Pauschale fuer regelmaessige Unterhaltsreinigung</li>
-                      <li><strong>Quadratmeterpreis:</strong> Abrechnung nach gereinigter Flaeche</li>
-                      <li><strong>Stundenpreis:</strong> Abrechnung nach tatsaechlichem Zeitaufwand</li>
-                      <li><strong>Festpreis:</strong> Einmaliger Festpreis fuer definierte Sonderleistungen</li>
+                      <li><strong>Pauschalpreis:</strong> Monatliche Pauschale für regelmäßige Unterhaltsreinigung</li>
+                      <li><strong>Quadratmeterpreis:</strong> Abrechnung nach gereinigter Fläche</li>
+                      <li><strong>Stundenpreis:</strong> Abrechnung nach tatsächlichem Zeitaufwand</li>
+                      <li><strong>Festpreis:</strong> Einmaliger Festpreis für definierte Sonderleistungen</li>
                     </ul>
                   </div>
 
                   <p className="text-body">
-                    (2) Alle Preise verstehen sich zuzueglich der gesetzlichen Umsatzsteuer.
+                    (2) Alle Preise verstehen sich zuzüglich der gesetzlichen Umsatzsteuer.
                   </p>
 
                   <p className="text-body">
-                    (3) Rechnungen sind innerhalb von 14 Tagen nach Erhalt ohne Abzug zur Zahlung faellig. Bei Zahlungsverzug sind wir berechtigt, Verzugszinsen in Hoehe von 9 Prozentpunkten ueber dem Basiszinssatz zu berechnen.
+                    (3) Rechnungen sind innerhalb von 14 Tagen nach Erhalt ohne Abzug zur Zahlung fällig. Bei Zahlungsverzug sind wir berechtigt, Verzugszinsen in Höhe von 9 Prozentpunkten über dem Basiszinssatz zu berechnen.
                   </p>
 
                   <p className="text-body">
-                    (4) Bei laufenden Vertraegen erfolgt die Rechnungsstellung monatlich im Voraus oder nach Vereinbarung.
+                    (4) Bei laufenden Verträgen erfolgt die Rechnungsstellung monatlich im Voraus oder nach Vereinbarung.
                   </p>
                 </article>
 
                 <article id="agb-p7" className="section-tracked">
                   <h3 className="subsection-title">7. Termine und Fristen</h3>
                   <p className="text-body">
-                    (1) Vereinbarte Reinigungstermine sind fuer beide Parteien verbindlich.
+                    (1) Vereinbarte Reinigungstermine sind für beide Parteien verbindlich.
                   </p>
 
                   <p className="text-body">
@@ -405,7 +405,7 @@ export default function AGBContent() {
                   </p>
 
                   <p className="text-body">
-                    (3) Leistungsverzoegerungen aufgrund hoeherer Gewalt (z.B. extreme Witterung, Pandemie) berechtigen uns, die Leistung um die Dauer des behindernden Ereignisses zu verschieben.
+                    (3) Leistungsverzögerungen aufgrund höherer Gewalt (z.B. extreme Witterung, Pandemie) berechtigen uns, die Leistung um die Dauer des behindernden Ereignisses zu verschieben.
                   </p>
                 </article>
 

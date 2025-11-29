@@ -1145,15 +1145,140 @@ export const blogPosts: BlogPost[] = [
   // TEAM (3)
   {
     id: '10',
-    slug: 'artikel-10',
-    title: 'Artikel 10 - Platzhalter',
-    excerpt: 'Kurzbeschreibung folgt.',
-    content: '<p>Inhalt folgt.</p>',
+    slug: 'ausbildung-gebaeudereiniger-gehalt-karriere-2025',
+    title: 'Karriere in der Gebäudereinigung: Ausbildung, Gehalt und Perspektiven 2025',
+    excerpt: 'Der Beruf des Gebäudereinigers ist anspruchsvoll, vielseitig und zukunftssicher. Die Branche investiert in ihren Nachwuchs – mit attraktiven Gehältern, die 2025 erneut gestiegen sind, und vielfältigen Aufstiegsmöglichkeiten bis zum Meister oder Betriebswirt.',
+    content: `
+      <!-- Key Facts Box -->
+      <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 24px 28px; margin-bottom: 32px;">
+        <p style="color: #109387; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px;">Ausbildung Gebäudereiniger 2025</p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">3 Jahre</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Duale Ausbildung</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">1.000 €</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Gehalt 1. Lehrjahr</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">Meister</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Top-Karrierechance</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Das Image der Gebäudereinigung hat sich gewandelt. Wer heute eine Ausbildung in diesem Handwerk beginnt, entscheidet sich für einen Beruf, der weit mehr erfordert als nur Wischmopp und Eimer. Es ist ein <strong style="font-weight: 800; color: #012956;">technischer Beruf</strong>, der Know-how in Chemie, Materialkunde und dem Einsatz hochmoderner Maschinen verlangt.</p>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Die Ausbildungsinhalte: Vielseitig und technisch</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Die duale Ausbildung zum Gebäudereiniger dauert <strong style="font-weight: 800; color: #012956;">drei Jahre</strong>. Die Inhalte sind breit gefächert:</p>
+
+      <!-- Ausbildungsinhalte Cards -->
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 24px 0;">
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Reinigungstechniken</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Verschiedene Methoden für Glas, Metall, Stein und Textilien</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Chemie & Materialkunde</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Sicherer und umweltbewusster Einsatz von Reinigungsmitteln</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Maschineneinsatz</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">High-Tech: Scheuersaugmaschinen, Hochdruckreiniger, Roboter</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Hygiene & Sicherheit</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Hygienestandards, Desinfektion, sicheres Arbeiten in der Höhe</p>
+        </div>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Attraktive Vergütung ab 2025</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Die Wertschätzung für den Beruf spiegelt sich auch in der Vergütung wider. Zum <strong style="font-weight: 800; color: #012956;">1. Januar 2025</strong> wurden die Ausbildungsgehälter deutlich angehoben:</p>
+
+      <!-- Vergütung Tabelle -->
+      <div style="background: #f8f9fa; border-radius: 6px; padding: 20px; margin: 20px 0;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="border-bottom: 2px solid #e5e7eb;">
+              <th style="text-align: left; padding: 10px 14px; color: #012956; font-weight: 800; font-size: 14px;">Lehrjahr</th>
+              <th style="text-align: center; padding: 10px 14px; color: #012956; font-weight: 800; font-size: 14px;">Vorher</th>
+              <th style="text-align: center; padding: 10px 14px; color: #012956; font-weight: 800; font-size: 14px;">Ab 2025</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 10px 14px; font-weight: 700; font-size: 14px; color: #374151;">1. Ausbildungsjahr</td>
+              <td style="text-align: center; padding: 10px 14px; color: #6b7280; font-weight: 600; font-size: 14px;">900 €</td>
+              <td style="text-align: center; padding: 10px 14px; color: #109387; font-weight: 800; font-size: 14px;">1.000 €</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 10px 14px; font-weight: 700; font-size: 14px; color: #374151;">2. Ausbildungsjahr</td>
+              <td style="text-align: center; padding: 10px 14px; color: #6b7280; font-weight: 600; font-size: 14px;">1.050 €</td>
+              <td style="text-align: center; padding: 10px 14px; color: #109387; font-weight: 800; font-size: 14px;">1.150 €</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px; font-weight: 700; font-size: 14px; color: #374151;">3. Ausbildungsjahr</td>
+              <td style="text-align: center; padding: 10px 14px; color: #6b7280; font-weight: 600; font-size: 14px;">1.200 €</td>
+              <td style="text-align: center; padding: 10px 14px; color: #109387; font-weight: 800; font-size: 14px;">1.300 €</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Hervorragende Karriereperspektiven</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Die Ausbildung ist erst der Anfang. Motivierten Fachkräften stehen viele Wege offen:</p>
+
+      <!-- Karriere Cards -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0;">
+        <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 20px 16px; text-align: center;">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">🎓 Meister/in</p>
+          <p style="color: white; font-size: 14px; font-weight: 700; line-height: 1.4;">Führung eines Betriebs, Objekt- oder Bereichsleiter</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 20px 16px; text-align: center;">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">📋 Fachwirt/in</p>
+          <p style="color: white; font-size: 14px; font-weight: 700; line-height: 1.4;">Reinigungs- und Hygienemanagement</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 20px 16px; text-align: center;">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">💼 Betriebswirt/in</p>
+          <p style="color: white; font-size: 14px; font-weight: 700; line-height: 1.4;">Management-aufgaben im Handwerk (HwO)</p>
+        </div>
+      </div>
+
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Die Branche sucht händeringend nach motiviertem Nachwuchs. Die <strong style="font-weight: 800; color: #012956;">Übernahmechancen sind exzellent</strong>.</p>
+
+      <!-- FIMI Highlight Box -->
+      <div style="background: linear-gradient(135deg, #109387 0%, #0d7d72 100%); border-radius: 6px; padding: 24px 28px; margin: 28px 0;">
+        <p style="color: white; font-size: 17px; font-weight: 800; margin-bottom: 10px;">Starte deine Karriere bei FIMI</p>
+        <p style="color: rgba(255,255,255,0.95); font-size: 14px; font-weight: 600; line-height: 1.8;">FIMI Gebäudereinigung ist ein stolzer Ausbildungsbetrieb in Bayern. Wir bieten jungen Menschen eine fundierte Ausbildung und langfristige Perspektiven in einem systemrelevanten Handwerk. Entdecke deine Chancen bei uns in <a href="/karriere" style="color: white; font-weight: 800; text-decoration: underline;">München, Landshut, Regensburg und Umgebung</a>.</p>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Weiterführende Informationen</h3>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
+          <a href="https://web.arbeitsagentur.de/berufenet/beruf/9391" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">Berufenet – Gebäudereiniger/in Profil →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Detaillierte Informationen zu Tätigkeiten und Anforderungen</p>
+        </li>
+        <li style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
+          <a href="https://www.die-gebaeudedienstleister.de/ausbildung-karriere/ausbildungsberufe" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">BIV – Ausbildung und Karriere →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Karriereportal des Bundesinnungsverbands</p>
+        </li>
+        <li style="padding: 12px 0;">
+          <a href="https://www.hwk-duesseldorf.de/artikel/gebaeudereiniger-in-meisterschule-31,0,3380.html" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">HWK Düsseldorf – Meisterschule Gebäudereiniger →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Einblick in die Inhalte der Meisterausbildung</p>
+        </li>
+      </ul>
+    `,
     image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop',
     category: 'team',
     author: 'FIMI Team',
-    date: '2024-02-12',
-    readTime: 3,
+    date: '2025-05-02',
+    readTime: 5,
+    sources: [
+      'https://web.arbeitsagentur.de/berufenet/beruf/9391',
+      'https://www.die-gebaeudedienstleister.de/ausbildung-karriere/ausbildungsberufe',
+      'https://www.hwk-duesseldorf.de/artikel/gebaeudereiniger-in-meisterschule-31,0,3380.html'
+    ]
   },
   {
     id: '11',
