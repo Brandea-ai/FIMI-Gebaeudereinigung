@@ -25,7 +25,7 @@ import {
 } from 'lucide-react'
 
 // ============================================================================
-// STELLENANGEBOTE DATEN
+// STELLENANGEBOTE DATEN - 12 Positionen, 8 Standorte, sortiert nach Datum
 // ============================================================================
 
 interface JobPosition {
@@ -41,23 +41,58 @@ interface JobPosition {
   benefits: string[]
   dringend?: boolean
   neu?: boolean
+  veroeffentlicht: string // Datum für Sortierung
 }
 
 const stellenangebote: JobPosition[] = [
+  // NOVEMBER 2025 (Neueste)
   {
-    id: 'reinigungskraft-vollzeit',
+    id: 'objektleiter-muenchen',
+    titel: 'Objektleiter/in (m/w/d)',
+    bereich: 'Führung & Management',
+    standorte: ['München', 'Freising'],
+    arbeitszeit: 'Vollzeit',
+    gehalt: '3.200 € - 3.800 € / Monat',
+    beschreibung: 'Als Objektleiter/in koordinieren Sie die Reinigungsteams an mehreren Standorten im Großraum München. Sie sind Ansprechpartner für unsere Kunden und stellen die Qualität unserer Dienstleistungen sicher.',
+    aufgaben: [
+      'Führung und Koordination von Reinigungsteams (10-30 Mitarbeiter)',
+      'Kundenbetreuung und -kommunikation vor Ort',
+      'Qualitätskontrolle und Dokumentation',
+      'Personaleinsatzplanung und Dienstplangestaltung',
+      'Einarbeitung neuer Mitarbeiter',
+      'Material- und Bedarfsplanung'
+    ],
+    anforderungen: [
+      'Abgeschlossene Ausbildung oder mehrjährige Erfahrung in der Gebäudereinigung',
+      'Führungserfahrung wünschenswert',
+      'Sehr gute Deutschkenntnisse in Wort und Schrift',
+      'Führerschein Klasse B zwingend erforderlich',
+      'Organisationstalent und Durchsetzungsvermögen'
+    ],
+    benefits: [
+      'Attraktives Gehalt + Prämien',
+      'Firmenwagen zur privaten Nutzung',
+      'Firmenhandy',
+      '30 Tage Urlaub',
+      'Betriebliche Altersvorsorge'
+    ],
+    dringend: true,
+    neu: true,
+    veroeffentlicht: '15. November 2025'
+  },
+  {
+    id: 'reinigungskraft-regensburg',
     titel: 'Reinigungskraft (m/w/d)',
     bereich: 'Unterhaltsreinigung',
-    standorte: ['Landshut', 'München', 'Freising', 'Erding'],
+    standorte: ['Regensburg', 'Straubing'],
     arbeitszeit: 'Vollzeit / Teilzeit',
-    gehalt: '14,25 € - 16,50 € / Stunde',
-    beschreibung: 'Als Reinigungskraft bei FIMI übernehmen Sie die professionelle Unterhaltsreinigung in Bürogebäuden, Praxen und Gewerbeobjekten. Sie arbeiten eigenverantwortlich und sind Teil eines festen Teams.',
+    gehalt: '15,00 € - 17,00 € / Stunde',
+    beschreibung: 'Als Reinigungskraft bei FIMI übernehmen Sie die professionelle Unterhaltsreinigung in Bürogebäuden, Praxen und Gewerbeobjekten im Raum Regensburg.',
     aufgaben: [
       'Professionelle Unterhaltsreinigung von Büro- und Geschäftsräumen',
       'Reinigung von Sanitäranlagen und Küchenbereichen',
       'Pflege von Bodenbelägen (Saugen, Wischen, Polieren)',
       'Staubwischen und Oberflächenpflege',
-      'Müllentsorgung und Abfallmanagement',
       'Dokumentation der durchgeführten Arbeiten'
     ],
     anforderungen: [
@@ -65,71 +100,64 @@ const stellenangebote: JobPosition[] = [
       'Sorgfältige und gründliche Arbeitsweise',
       'Teamfähigkeit und Eigeninitiative',
       'Grundkenntnisse Deutsch von Vorteil',
-      'Führerschein Klasse B von Vorteil',
       'Keine Vorkenntnisse erforderlich – wir schulen Sie!'
     ],
     benefits: [
-      'Übertarifliche Bezahlung ab 14,25 €/Std.',
+      'Faire Bezahlung ab 15,00 €/Std.',
       'Unbefristeter Arbeitsvertrag',
       'Geregelte Arbeitszeiten',
       'Kostenlose Arbeitskleidung',
-      'Moderne Reinigungsgeräte (Kärcher)',
       'Weiterbildungsmöglichkeiten'
     ],
-    dringend: true,
-    neu: true
+    neu: true,
+    veroeffentlicht: '12. November 2025'
   },
   {
-    id: 'objektleiter',
-    titel: 'Objektleiter/in (m/w/d)',
-    bereich: 'Führung & Management',
-    standorte: ['Landshut', 'München'],
-    arbeitszeit: 'Vollzeit',
-    gehalt: '2.800 € - 3.500 € / Monat',
-    beschreibung: 'Als Objektleiter/in koordinieren Sie die Reinigungsteams an mehreren Standorten, sind Ansprechpartner für unsere Kunden und stellen die Qualität unserer Dienstleistungen sicher.',
+    id: 'industriereiniger-ingolstadt',
+    titel: 'Industriereiniger/in (m/w/d)',
+    bereich: 'Industriereinigung',
+    standorte: ['Ingolstadt', 'Regensburg'],
+    arbeitszeit: 'Vollzeit / Schicht',
+    gehalt: '16,00 € - 19,00 € / Stunde',
+    beschreibung: 'Für unsere Industriekunden im Raum Ingolstadt suchen wir erfahrene Industriereiniger. Sie übernehmen die professionelle Reinigung von Produktionshallen und Anlagen.',
     aufgaben: [
-      'Führung und Koordination von Reinigungsteams (10-30 Mitarbeiter)',
-      'Kundenbetreuung und -kommunikation vor Ort',
-      'Qualitätskontrolle und Dokumentation',
-      'Personaleinsatzplanung und Dienstplangestaltung',
-      'Einarbeitung neuer Mitarbeiter',
-      'Material- und Bedarfsplanung',
-      'Durchführung von Objektbegehungen'
+      'Reinigung von Produktionshallen und Lagerflächen',
+      'Bedienung von Scheuersaugmaschinen und Kehrmaschinen',
+      'Maschinenreinigung und Entfettung',
+      'Hochdruckreinigung von Böden und Anlagen',
+      'Einhaltung von Sicherheitsvorschriften'
     ],
     anforderungen: [
-      'Abgeschlossene Ausbildung oder mehrjährige Erfahrung in der Gebäudereinigung',
-      'Führungserfahrung wünschenswert',
-      'Sehr gute Deutschkenntnisse in Wort und Schrift',
-      'Führerschein Klasse B zwingend erforderlich',
-      'Organisationstalent und Durchsetzungsvermögen',
-      'Kundenorientiertes Denken und Handeln',
-      'Sicherer Umgang mit MS Office'
+      'Erfahrung in der Industriereinigung von Vorteil',
+      'Körperliche Belastbarkeit',
+      'Bereitschaft zu Schichtarbeit',
+      'Führerschein Klasse B von Vorteil',
+      'Zuverlässigkeit und Teamfähigkeit'
     ],
     benefits: [
-      'Attraktives Gehalt + Prämien',
-      'Firmenwagen zur privaten Nutzung',
-      'Firmenhandy',
+      'Faire Bezahlung + Schichtzulagen',
+      'Moderne Reinigungsmaschinen',
+      'Sicherheitsausrüstung wird gestellt',
       'Unbefristeter Arbeitsvertrag',
-      '30 Tage Urlaub',
-      'Betriebliche Altersvorsorge',
-      'Weiterbildung zum/zur Geprüften Objektleiter/in'
+      'Betriebliche Altersvorsorge'
     ],
-    dringend: true
+    dringend: true,
+    veroeffentlicht: '08. November 2025'
   },
+  // OKTOBER 2025
   {
-    id: 'vorarbeiter',
+    id: 'vorarbeiter-landshut',
     titel: 'Vorarbeiter/in (m/w/d)',
     bereich: 'Teamleitung',
-    standorte: ['Landshut', 'München', 'Freising'],
+    standorte: ['Landshut', 'Erding'],
     arbeitszeit: 'Vollzeit',
-    gehalt: '16,50 € - 19,00 € / Stunde',
-    beschreibung: 'Als Vorarbeiter/in leiten Sie ein kleines Team und sind für die operative Durchführung der Reinigungsarbeiten in einem oder mehreren Objekten verantwortlich.',
+    gehalt: '17,50 € - 20,00 € / Stunde',
+    beschreibung: 'Als Vorarbeiter/in leiten Sie ein Team und sind für die operative Durchführung der Reinigungsarbeiten in einem oder mehreren Objekten im Raum Landshut verantwortlich.',
     aufgaben: [
       'Fachliche Anleitung eines Reinigungsteams (3-8 Mitarbeiter)',
       'Eigenständige Durchführung von Reinigungsarbeiten',
       'Qualitätssicherung und Nachkontrolle',
       'Einweisung neuer Kollegen',
-      'Materialkontrolle und Nachbestellung',
       'Kommunikation mit Objektleitung und Kunden'
     ],
     anforderungen: [
@@ -140,30 +168,28 @@ const stellenangebote: JobPosition[] = [
       'Bereitschaft zur Schichtarbeit'
     ],
     benefits: [
-      'Übertarifliche Bezahlung',
+      'Attraktive Vergütung',
       'Zulagen für Führungsverantwortung',
       'Unbefristeter Arbeitsvertrag',
       'Aufstiegsmöglichkeiten zum Objektleiter',
-      'Kostenlose Arbeitskleidung',
       'Regelmäßige Schulungen'
     ],
-    neu: true
+    veroeffentlicht: '28. Oktober 2025'
   },
   {
-    id: 'glasreiniger',
+    id: 'glasreiniger-passau',
     titel: 'Glasreiniger/in (m/w/d)',
     bereich: 'Spezialreinigung',
-    standorte: ['Landshut', 'München', 'Umland'],
+    standorte: ['Passau', 'Straubing'],
     arbeitszeit: 'Vollzeit',
-    gehalt: '15,50 € - 18,00 € / Stunde',
-    beschreibung: 'Als Glasreiniger/in sorgen Sie für strahlend saubere Fenster und Glasflächen bei unseren gewerblichen und privaten Kunden. Sie arbeiten mit professionellem Equipment.',
+    gehalt: '16,50 € - 19,00 € / Stunde',
+    beschreibung: 'Für unsere Kunden in Niederbayern suchen wir erfahrene Glasreiniger. Sie sorgen für strahlend saubere Fenster und Glasflächen bei gewerblichen und privaten Kunden.',
     aufgaben: [
       'Professionelle Fenster- und Glasreinigung',
       'Reinigung von Fassadenelementen und Wintergärten',
       'Rahmen- und Falzreinigung',
       'Einsatz von Teleskopstangen und Leitern',
-      'Arbeit mit Osmose-Anlagen für streifenfreie Ergebnisse',
-      'Dokumentation der Arbeiten'
+      'Arbeit mit Osmose-Anlagen für streifenfreie Ergebnisse'
     ],
     anforderungen: [
       'Erfahrung in der Glasreinigung wünschenswert',
@@ -173,89 +199,86 @@ const stellenangebote: JobPosition[] = [
       'Bereitschaft für Außeneinsätze bei jeder Witterung'
     ],
     benefits: [
-      'Übertarifliche Bezahlung',
+      'Attraktive Vergütung',
       'Modernes Equipment (Unger, Moerman)',
       'Firmenwagen für Objektfahrten',
       'Wetterschutzkleidung',
-      'Schulung auf neueste Techniken',
       'Eigenständiges Arbeiten'
-    ]
+    ],
+    veroeffentlicht: '22. Oktober 2025'
   },
   {
-    id: 'industriereiniger',
-    titel: 'Industriereiniger/in (m/w/d)',
-    bereich: 'Industriereinigung',
-    standorte: ['Landshut', 'München', 'Freising', 'Moosburg'],
-    arbeitszeit: 'Vollzeit / Schicht',
-    gehalt: '15,00 € - 18,50 € / Stunde',
-    beschreibung: 'Als Industriereiniger/in übernehmen Sie die professionelle Reinigung von Produktionshallen, Lagern und Industrieanlagen. Erfahrung mit Reinigungsmaschinen ist von Vorteil.',
+    id: 'reinigungskraft-muenchen',
+    titel: 'Reinigungskraft (m/w/d)',
+    bereich: 'Unterhaltsreinigung',
+    standorte: ['München', 'Freising'],
+    arbeitszeit: 'Vollzeit / Teilzeit',
+    gehalt: '15,50 € - 17,50 € / Stunde',
+    beschreibung: 'Für den Großraum München suchen wir zuverlässige Reinigungskräfte für die Unterhaltsreinigung in Bürogebäuden und Gewerbeobjekten.',
     aufgaben: [
-      'Reinigung von Produktionshallen und Lagerflächen',
-      'Bedienung von Scheuersaugmaschinen und Kehrmaschinen',
-      'Maschinenreinigung und Entfettung',
-      'Hochdruckreinigung von Böden und Anlagen',
-      'Entsorgung von Produktionsrückständen',
-      'Einhaltung von Sicherheitsvorschriften'
+      'Professionelle Unterhaltsreinigung von Büro- und Geschäftsräumen',
+      'Reinigung von Sanitäranlagen und Küchenbereichen',
+      'Pflege von Bodenbelägen',
+      'Staubwischen und Oberflächenpflege',
+      'Müllentsorgung und Abfallmanagement'
     ],
     anforderungen: [
-      'Erfahrung in der Industriereinigung von Vorteil',
-      'Körperliche Belastbarkeit',
-      'Bereitschaft zu Schichtarbeit',
-      'Führerschein Klasse B von Vorteil',
-      'Staplerschein von Vorteil',
-      'Zuverlässigkeit und Teamfähigkeit'
+      'Zuverlässigkeit und Pünktlichkeit',
+      'Sorgfältige Arbeitsweise',
+      'Teamfähigkeit',
+      'Grundkenntnisse Deutsch von Vorteil',
+      'Keine Vorkenntnisse erforderlich'
     ],
     benefits: [
-      'Übertarifliche Bezahlung + Schichtzulagen',
-      'Moderne Reinigungsmaschinen',
-      'Sicherheitsausrüstung wird gestellt',
+      'Faire Bezahlung ab 15,50 €/Std.',
       'Unbefristeter Arbeitsvertrag',
-      'Möglichkeit zum Erwerb von Zusatzqualifikationen',
-      'Betriebliche Altersvorsorge'
-    ]
+      'Geregelte Arbeitszeiten',
+      'Kostenlose Arbeitskleidung',
+      'Moderne Reinigungsgeräte'
+    ],
+    dringend: true,
+    veroeffentlicht: '18. Oktober 2025'
   },
   {
-    id: 'hausmeister',
+    id: 'hausmeister-landshut',
     titel: 'Hausmeister/in (m/w/d)',
     bereich: 'Facility Management',
-    standorte: ['Landshut', 'München'],
+    standorte: ['Landshut', 'Erding'],
     arbeitszeit: 'Vollzeit',
-    gehalt: '2.600 € - 3.200 € / Monat',
-    beschreibung: 'Als Hausmeister/in betreuen Sie Wohn- und Gewerbeobjekte unserer Kunden. Sie kümmern sich um kleinere Reparaturen, Außenanlagen und sind Ansprechpartner vor Ort.',
+    gehalt: '2.800 € - 3.400 € / Monat',
+    beschreibung: 'Als Hausmeister/in betreuen Sie Wohn- und Gewerbeobjekte unserer Kunden im Raum Landshut. Sie kümmern sich um kleinere Reparaturen und sind Ansprechpartner vor Ort.',
     aufgaben: [
       'Betreuung von Wohn- und Gewerbeimmobilien',
       'Durchführung kleinerer Reparatur- und Wartungsarbeiten',
       'Pflege von Außenanlagen und Grünflächen',
       'Winterdienst (Schneeräumung, Streuen)',
-      'Kontrolle technischer Anlagen',
-      'Koordination von Handwerkern',
-      'Ansprechpartner für Mieter und Eigentümer'
+      'Kontrolle technischer Anlagen'
     ],
     anforderungen: [
       'Handwerkliches Geschick und technisches Verständnis',
-      'Idealerweise abgeschlossene handwerkliche Ausbildung',
+      'Idealerweise handwerkliche Ausbildung',
       'Führerschein Klasse B erforderlich',
       'Gute Deutschkenntnisse',
-      'Freundliches und serviceorientiertes Auftreten',
-      'Bereitschaft zu Rufbereitschaft'
+      'Freundliches und serviceorientiertes Auftreten'
     ],
     benefits: [
       'Festgehalt mit Zusatzleistungen',
       'Firmenwagen',
       'Firmenhandy',
-      'Werkzeug und Arbeitsmittel werden gestellt',
       'Selbstständiges Arbeiten',
       'Abwechslungsreiche Tätigkeit'
-    ]
+    ],
+    veroeffentlicht: '10. Oktober 2025'
   },
+  // SEPTEMBER 2025
   {
-    id: 'reinigungskraft-minijob',
+    id: 'reinigungskraft-minijob-erding',
     titel: 'Reinigungskraft Minijob (m/w/d)',
     bereich: 'Unterhaltsreinigung',
-    standorte: ['Landshut', 'München', 'Freising', 'Erding', 'Moosburg'],
+    standorte: ['Erding', 'Freising'],
     arbeitszeit: 'Minijob (538 € Basis)',
-    gehalt: '14,25 € / Stunde',
-    beschreibung: 'Ideal für Nebenverdienst: Als Reinigungskraft auf 538-Euro-Basis reinigen Sie in den frühen Morgen- oder Abendstunden Büros und Praxen in Ihrer Nähe.',
+    gehalt: '15,00 € / Stunde',
+    beschreibung: 'Ideal für Nebenverdienst: Als Reinigungskraft auf 538-Euro-Basis reinigen Sie in den frühen Morgen- oder Abendstunden Büros und Praxen im Raum Erding.',
     aufgaben: [
       'Unterhaltsreinigung von Büros und Praxen',
       'Reinigung von Sanitäranlagen',
@@ -274,8 +297,139 @@ const stellenangebote: JobPosition[] = [
       'Kostenlose Arbeitskleidung',
       'Möglichkeit zur Stundenaufstockung'
     ],
-    neu: true
+    veroeffentlicht: '28. September 2025'
+  },
+  {
+    id: 'baureiniger-ingolstadt',
+    titel: 'Baureiniger/in (m/w/d)',
+    bereich: 'Baureinigung',
+    standorte: ['Ingolstadt', 'München'],
+    arbeitszeit: 'Vollzeit / Projektbasis',
+    gehalt: '16,00 € - 18,50 € / Stunde',
+    beschreibung: 'Für Bauprojekte im Raum Ingolstadt und München suchen wir Baureiniger. Sie übernehmen die Grob- und Feinreinigung auf Baustellen nach Fertigstellung.',
+    aufgaben: [
+      'Baugrobreinigung (Entfernen von Baustaub, Mörtelresten)',
+      'Baufeinreinigung vor Übergabe',
+      'Fensterreinigung inkl. Rahmen',
+      'Reinigung von Sanitärräumen',
+      'Bodenreinigung und -pflege'
+    ],
+    anforderungen: [
+      'Erfahrung in der Baureinigung von Vorteil',
+      'Körperliche Belastbarkeit',
+      'Führerschein Klasse B von Vorteil',
+      'Flexibilität bei Arbeitszeiten',
+      'Teamfähigkeit'
+    ],
+    benefits: [
+      'Faire Bezahlung',
+      'Abwechslungsreiche Projekte',
+      'Moderne Ausrüstung',
+      'Unbefristeter Arbeitsvertrag',
+      'Weiterbildungsmöglichkeiten'
+    ],
+    veroeffentlicht: '22. September 2025'
+  },
+  {
+    id: 'objektleiter-passau',
+    titel: 'Objektleiter/in (m/w/d)',
+    bereich: 'Führung & Management',
+    standorte: ['Passau', 'Straubing'],
+    arbeitszeit: 'Vollzeit',
+    gehalt: '3.000 € - 3.600 € / Monat',
+    beschreibung: 'Für den Aufbau unserer Region Niederbayern Ost suchen wir einen erfahrenen Objektleiter. Sie bauen das Team auf und koordinieren die Reinigungseinsätze.',
+    aufgaben: [
+      'Aufbau und Führung eines Reinigungsteams',
+      'Kundenakquise und -betreuung',
+      'Qualitätskontrolle und Dokumentation',
+      'Personaleinsatzplanung',
+      'Angebotserstellung',
+      'Regelmäßiges Reporting'
+    ],
+    anforderungen: [
+      'Mehrjährige Erfahrung in der Gebäudereinigung',
+      'Führungserfahrung erforderlich',
+      'Sehr gute Deutschkenntnisse',
+      'Führerschein Klasse B zwingend erforderlich',
+      'Unternehmerisches Denken'
+    ],
+    benefits: [
+      'Attraktives Gehalt + Provision',
+      'Firmenwagen zur privaten Nutzung',
+      'Firmenhandy und Laptop',
+      '30 Tage Urlaub',
+      'Eigenverantwortliches Arbeiten'
+    ],
+    veroeffentlicht: '15. September 2025'
+  },
+  {
+    id: 'reinigungskraft-landshut',
+    titel: 'Reinigungskraft (m/w/d)',
+    bereich: 'Unterhaltsreinigung',
+    standorte: ['Landshut', 'Moosburg'],
+    arbeitszeit: 'Vollzeit / Teilzeit',
+    gehalt: '14,50 € - 16,50 € / Stunde',
+    beschreibung: 'Für unseren Hauptstandort Landshut suchen wir Reinigungskräfte für verschiedene Objekte. Sie arbeiten in einem festen Team mit geregelten Arbeitszeiten.',
+    aufgaben: [
+      'Unterhaltsreinigung von Bürogebäuden',
+      'Reinigung von Sanitäranlagen',
+      'Pflege von Bodenbelägen',
+      'Staubwischen und Oberflächenpflege',
+      'Müllentsorgung'
+    ],
+    anforderungen: [
+      'Zuverlässigkeit und Pünktlichkeit',
+      'Sorgfältige Arbeitsweise',
+      'Teamfähigkeit',
+      'Keine Vorkenntnisse erforderlich'
+    ],
+    benefits: [
+      'Faire Bezahlung',
+      'Unbefristeter Arbeitsvertrag',
+      'Feste Arbeitszeiten',
+      'Kostenlose Arbeitskleidung',
+      'Kurze Anfahrtswege'
+    ],
+    veroeffentlicht: '10. September 2025'
+  },
+  {
+    id: 'reinigungskraft-minijob-straubing',
+    titel: 'Reinigungskraft Minijob (m/w/d)',
+    bereich: 'Unterhaltsreinigung',
+    standorte: ['Straubing', 'Regensburg'],
+    arbeitszeit: 'Minijob (538 € Basis)',
+    gehalt: '14,50 € / Stunde',
+    beschreibung: 'Für den Raum Straubing/Regensburg suchen wir Reinigungskräfte auf Minijob-Basis. Perfekt als Nebenverdienst mit flexiblen Arbeitszeiten.',
+    aufgaben: [
+      'Unterhaltsreinigung von Büros',
+      'Reinigung von Sanitäranlagen',
+      'Staubwischen und Bodenpflege'
+    ],
+    anforderungen: [
+      'Zuverlässigkeit',
+      'Flexibilität',
+      'Keine Vorkenntnisse nötig'
+    ],
+    benefits: [
+      'Flexible Arbeitszeiten',
+      'Einsätze in Wohnortnähe',
+      'Pünktliche Lohnzahlung',
+      'Kostenlose Arbeitskleidung'
+    ],
+    veroeffentlicht: '05. September 2025'
   }
+]
+
+// 8 Standorte mit Stellenanzahl
+const standorte = [
+  { stadt: 'Landshut', stellen: 3 },
+  { stadt: 'München', stellen: 3 },
+  { stadt: 'Regensburg', stellen: 3 },
+  { stadt: 'Ingolstadt', stellen: 2 },
+  { stadt: 'Freising', stellen: 3 },
+  { stadt: 'Erding', stellen: 3 },
+  { stadt: 'Straubing', stellen: 3 },
+  { stadt: 'Passau', stellen: 2 }
 ]
 
 // ============================================================================
@@ -285,8 +439,8 @@ const stellenangebote: JobPosition[] = [
 const unternehmensvorteile = [
   {
     icon: Euro,
-    titel: 'Übertarifliche Bezahlung',
-    beschreibung: 'Wir zahlen mehr als der Tarifvertrag vorschreibt – pünktlich und zuverlässig.'
+    titel: 'Faire Bezahlung',
+    beschreibung: 'Attraktive Stundenlöhne und pünktliche Lohnzahlung – immer zum Monatsende.'
   },
   {
     icon: Shield,
@@ -355,7 +509,7 @@ export default function KarrierePage() {
   return (
     <main className="min-h-screen bg-white">
       {/* ================================================================== */}
-      {/* HERO SECTION */}
+      {/* HERO SECTION - Linksbündig */}
       {/* ================================================================== */}
       <section className="relative py-20 lg:py-28 bg-[#012956] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
@@ -372,62 +526,55 @@ export default function KarrierePage() {
             Zurück zur Startseite
           </Link>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center gap-2 bg-[#109387]/20 text-[#109387] px-4 py-2 rounded-full text-sm font-bold mb-6">
-                <Briefcase size={16} />
-                Karriere bei FIMI
-              </div>
-
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] mb-6">
-                Ihre Karriere in der
-                <span className="block text-[#109387]">Gebäudereinigung</span>
-              </h1>
-
-              <p className="text-xl text-white/80 font-medium leading-relaxed mb-8 max-w-xl">
-                Werden Sie Teil eines wachsenden Unternehmens mit über 90 Mitarbeitern.
-                Faire Bezahlung, sichere Arbeitsplätze und echte Entwicklungsmöglichkeiten.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button
-                  onClick={() => scrollToSection('stellenangebote')}
-                  className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
-                >
-                  {stellenangebote.length} offene Stellen
-                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button
-                  onClick={() => scrollToSection('initiativbewerbung')}
-                  className="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 border border-white/30"
-                >
-                  Initiativbewerbung
-                </button>
-              </div>
+          <div className="max-w-4xl">
+            <div className="inline-flex items-center gap-2 bg-[#109387]/20 text-[#109387] px-4 py-2 rounded-full text-sm font-bold mb-6">
+              <Briefcase size={16} />
+              Karriere bei FIMI
             </div>
 
-            {/* Stats Box */}
-            <div className="hidden lg:block">
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[12px] p-8">
-                <h3 className="text-white font-bold text-lg mb-6">FIMI in Zahlen</h3>
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="text-center p-4 bg-white/5 rounded-[6px]">
-                    <div className="text-4xl font-bold text-[#109387] mb-1">90+</div>
-                    <div className="text-white/70 text-sm font-medium">Mitarbeiter</div>
-                  </div>
-                  <div className="text-center p-4 bg-white/5 rounded-[6px]">
-                    <div className="text-4xl font-bold text-[#109387] mb-1">{stellenangebote.length}</div>
-                    <div className="text-white/70 text-sm font-medium">Offene Stellen</div>
-                  </div>
-                  <div className="text-center p-4 bg-white/5 rounded-[6px]">
-                    <div className="text-4xl font-bold text-[#109387] mb-1">4</div>
-                    <div className="text-white/70 text-sm font-medium">Standorte</div>
-                  </div>
-                  <div className="text-center p-4 bg-white/5 rounded-[6px]">
-                    <div className="text-4xl font-bold text-[#109387] mb-1">14,25€</div>
-                    <div className="text-white/70 text-sm font-medium">Mindestlohn</div>
-                  </div>
-                </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] mb-6">
+              Ihre Karriere in der
+              <span className="block text-[#109387]">Gebäudereinigung</span>
+            </h1>
+
+            <p className="text-xl text-white/80 font-medium leading-relaxed mb-8 max-w-2xl">
+              Werden Sie Teil eines wachsenden Unternehmens mit über 90 Mitarbeitern.
+              Faire Bezahlung, sichere Arbeitsplätze und echte Entwicklungsmöglichkeiten.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <button
+                onClick={() => scrollToSection('stellenangebote')}
+                className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
+              >
+                {stellenangebote.length} offene Stellen
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+              <button
+                onClick={() => scrollToSection('initiativbewerbung')}
+                className="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 border border-white/30"
+              >
+                Initiativbewerbung
+              </button>
+            </div>
+
+            {/* Stats - Bento Grid Style */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-4">
+                <div className="text-3xl font-bold text-[#109387] mb-1">90+</div>
+                <div className="text-white/70 text-sm font-medium">Mitarbeiter</div>
+              </div>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-4">
+                <div className="text-3xl font-bold text-[#109387] mb-1">{stellenangebote.length}</div>
+                <div className="text-white/70 text-sm font-medium">Offene Stellen</div>
+              </div>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-4">
+                <div className="text-3xl font-bold text-[#109387] mb-1">{standorte.length}</div>
+                <div className="text-white/70 text-sm font-medium">Standorte</div>
+              </div>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-4">
+                <div className="text-3xl font-bold text-[#109387] mb-1">15€+</div>
+                <div className="text-white/70 text-sm font-medium">Stundenlohn</div>
               </div>
             </div>
           </div>
@@ -435,11 +582,11 @@ export default function KarrierePage() {
       </section>
 
       {/* ================================================================== */}
-      {/* VORTEILE */}
+      {/* VORTEILE - Bento Grid, Linksbündig */}
       {/* ================================================================== */}
       <section className="py-16 lg:py-20 bg-[#f8f9fa]">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="text-center mb-12">
+          <div className="mb-12">
             <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-3">
               Warum FIMI?
             </p>
@@ -448,7 +595,7 @@ export default function KarrierePage() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {unternehmensvorteile.map((vorteil) => {
               const IconComponent = vorteil.icon
               return (
@@ -469,20 +616,20 @@ export default function KarrierePage() {
       </section>
 
       {/* ================================================================== */}
-      {/* STELLENANGEBOTE MIT SIDEBAR */}
+      {/* STELLENANGEBOTE MIT SIDEBAR - Bento Style */}
       {/* ================================================================== */}
       <section id="stellenangebote" className="py-16 lg:py-24 bg-white scroll-mt-24">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="text-center mb-12">
+          <div className="mb-12">
             <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-3">
               Aktuelle Stellenangebote
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-[#012956] leading-tight mb-4">
               {stellenangebote.length} offene Positionen
             </h2>
-            <p className="text-gray-600 font-medium max-w-2xl mx-auto">
+            <p className="text-gray-600 font-medium max-w-2xl">
               Finden Sie die passende Stelle für sich. Wir suchen engagierte Mitarbeiter
-              für verschiedene Bereiche und Standorte.
+              für verschiedene Bereiche und Standorte in ganz Bayern.
             </p>
           </div>
 
@@ -492,7 +639,7 @@ export default function KarrierePage() {
               ref={sidebarRef}
               className="lg:w-80 xl:w-96 shrink-0"
             >
-              <div className={`bg-[#f8f9fa] rounded-[8px] p-6 ${isSidebarSticky ? 'lg:sticky lg:top-28' : ''}`}>
+              <div className={`bg-[#f8f9fa] rounded-[6px] p-6 ${isSidebarSticky ? 'lg:sticky lg:top-28' : ''}`}>
                 <h3 className="text-lg font-bold text-[#012956] mb-4 flex items-center gap-2">
                   <FileText size={20} className="text-[#109387]" />
                   Offene Stellen
@@ -514,9 +661,9 @@ export default function KarrierePage() {
                           <div className="flex items-center gap-2 mb-1">
                             {job.dringend && (
                               <span className={`text-xs font-bold px-2 py-0.5 rounded ${
-                                activeJob === job.id ? 'bg-white/20 text-white' : 'bg-red-100 text-red-600'
+                                activeJob === job.id ? 'bg-white/20 text-white' : 'bg-amber-100 text-amber-700'
                               }`}>
-                                DRINGEND
+                                GESUCHT
                               </span>
                             )}
                             {job.neu && (
@@ -567,13 +714,13 @@ export default function KarrierePage() {
               </div>
             </aside>
 
-            {/* JOB LISTINGS */}
-            <div className="flex-1 space-y-8">
+            {/* JOB LISTINGS - Bento Style */}
+            <div className="flex-1 space-y-6">
               {stellenangebote.map((job) => (
                 <article
                   key={job.id}
                   id={job.id}
-                  className="bg-white border border-gray-200 rounded-[8px] overflow-hidden scroll-mt-32 hover:border-[#109387]/30 transition-colors"
+                  className="bg-white border border-gray-200 rounded-[6px] overflow-hidden scroll-mt-32 hover:border-[#109387]/30 transition-colors"
                 >
                   {/* Job Header */}
                   <div className="p-6 lg:p-8 border-b border-gray-100">
@@ -581,8 +728,8 @@ export default function KarrierePage() {
                       <div>
                         <div className="flex items-center gap-2 mb-2">
                           {job.dringend && (
-                            <span className="bg-red-100 text-red-600 text-xs font-bold px-2 py-1 rounded">
-                              DRINGEND GESUCHT
+                            <span className="bg-amber-100 text-amber-700 text-xs font-bold px-2 py-1 rounded">
+                              GESUCHT
                             </span>
                           )}
                           {job.neu && (
@@ -685,7 +832,7 @@ export default function KarrierePage() {
                   <div className="bg-[#f8f9fa] px-6 lg:px-8 py-4 flex flex-wrap items-center justify-between gap-4">
                     <p className="text-sm text-gray-500">
                       <Calendar size={14} className="inline mr-1" />
-                      Stelle aktiv seit November 2024
+                      Veröffentlicht am {job.veroeffentlicht}
                     </p>
                     <div className="flex gap-3">
                       <a
@@ -716,8 +863,8 @@ export default function KarrierePage() {
       {/* ================================================================== */}
       <section id="initiativbewerbung" className="py-16 lg:py-24 bg-[#012956] scroll-mt-24">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
+          <div className="max-w-4xl">
+            <div className="mb-12">
               <div className="inline-flex items-center gap-2 bg-[#109387]/20 text-[#109387] px-4 py-2 rounded-full text-sm font-bold mb-6">
                 <FileText size={16} />
                 Initiativbewerbung
@@ -725,13 +872,13 @@ export default function KarrierePage() {
               <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
                 Keine passende Stelle dabei?
               </h2>
-              <p className="text-white/70 font-medium text-lg max-w-2xl mx-auto">
+              <p className="text-white/70 font-medium text-lg max-w-2xl">
                 Bewerben Sie sich initiativ! Wir sind immer auf der Suche nach
                 engagierten Mitarbeitern und melden uns, sobald eine passende Position frei wird.
               </p>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[12px] p-8 lg:p-12">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-8 lg:p-12">
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
                   <h3 className="text-xl font-bold text-white mb-4">So bewerben Sie sich</h3>
@@ -773,7 +920,7 @@ export default function KarrierePage() {
                 </div>
               </div>
 
-              <div className="mt-8 pt-8 border-t border-white/10 flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="mt-8 pt-8 border-t border-white/10 flex flex-col sm:flex-row gap-4">
                 <a
                   href="mailto:bewerbung@fimi-reinigung.ch?subject=Initiativbewerbung&body=Sehr geehrtes FIMI-Team,%0D%0A%0D%0Ahiermit möchte ich mich initiativ bei Ihnen bewerben.%0D%0A%0D%0AÜber mich:%0D%0A-%20Name:%0D%0A-%20Wohnort:%0D%0A-%20Gewünschte Tätigkeit:%0D%0A-%20Verfügbarkeit:%0D%0A%0D%0AMit freundlichen Grüßen"
                   className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"
@@ -795,11 +942,11 @@ export default function KarrierePage() {
       </section>
 
       {/* ================================================================== */}
-      {/* BEWERBUNGSPROZESS */}
+      {/* BEWERBUNGSPROZESS - Linksbündig */}
       {/* ================================================================== */}
       <section className="py-16 lg:py-20 bg-white">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="text-center mb-12">
+          <div className="mb-12">
             <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-3">
               Einfach & Schnell
             </p>
@@ -815,17 +962,12 @@ export default function KarrierePage() {
               { schritt: '3', titel: 'Kennenlerngespräch', text: 'Ein kurzes Gespräch – persönlich oder telefonisch.' },
               { schritt: '4', titel: 'Willkommen im Team', text: 'Arbeitsvertrag und Einarbeitung – los geht\'s!' }
             ].map((item, i) => (
-              <div key={i} className="text-center">
-                <div className="w-16 h-16 bg-[#109387] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+              <div key={i} className="bg-[#f8f9fa] rounded-[6px] p-6">
+                <div className="w-12 h-12 bg-[#109387] text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">
                   {item.schritt}
                 </div>
                 <h3 className="text-lg font-bold text-[#012956] mb-2">{item.titel}</h3>
                 <p className="text-gray-600 font-medium text-sm">{item.text}</p>
-                {i < 3 && (
-                  <div className="hidden md:block mt-4">
-                    <ArrowRight size={24} className="text-gray-300 mx-auto rotate-0 md:rotate-0" />
-                  </div>
-                )}
               </div>
             ))}
           </div>
@@ -833,11 +975,11 @@ export default function KarrierePage() {
       </section>
 
       {/* ================================================================== */}
-      {/* STANDORTE */}
+      {/* STANDORTE - Bento Grid, 8 Städte */}
       {/* ================================================================== */}
       <section className="py-16 lg:py-20 bg-[#f8f9fa]">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="text-center mb-12">
+          <div className="mb-12">
             <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-3">
               Unsere Einsatzgebiete
             </p>
@@ -846,25 +988,18 @@ export default function KarrierePage() {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              { stadt: 'Landshut', stellen: 7 },
-              { stadt: 'München', stellen: 6 },
-              { stadt: 'Freising', stellen: 4 },
-              { stadt: 'Erding', stellen: 2 },
-              { stadt: 'Moosburg', stellen: 2 },
-              { stadt: 'Umland', stellen: 3 }
-            ].map((standort) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {standorte.map((standort) => (
               <div
                 key={standort.stadt}
-                className="bg-white rounded-[6px] p-6 flex items-center gap-4 shadow-sm"
+                className="bg-white rounded-[6px] p-5 flex items-center gap-4 shadow-sm"
               >
-                <div className="w-12 h-12 bg-[#109387]/10 rounded-[6px] flex items-center justify-center shrink-0">
-                  <Building2 size={24} className="text-[#109387]" />
+                <div className="w-10 h-10 bg-[#109387]/10 rounded-[6px] flex items-center justify-center shrink-0">
+                  <Building2 size={20} className="text-[#109387]" />
                 </div>
                 <div>
                   <h3 className="font-bold text-[#012956]">{standort.stadt}</h3>
-                  <p className="text-sm text-gray-500">{standort.stellen} offene Stellen</p>
+                  <p className="text-sm text-gray-500">{standort.stellen} Stellen</p>
                 </div>
               </div>
             ))}
@@ -873,32 +1008,34 @@ export default function KarrierePage() {
       </section>
 
       {/* ================================================================== */}
-      {/* FINAL CTA */}
+      {/* FINAL CTA - Linksbündig */}
       {/* ================================================================== */}
       <section className="py-16 lg:py-20 bg-[#012956]">
-        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 text-center">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
-            Bereit für den nächsten Schritt?
-          </h2>
-          <p className="text-white/70 font-medium text-lg mb-8 max-w-2xl mx-auto">
-            Starten Sie Ihre Karriere bei FIMI Gebäudereinigung.
-            Wir freuen uns auf Ihre Bewerbung!
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <a
-              href="mailto:bewerbung@fimi-reinigung.ch"
-              className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"
-            >
-              <Mail size={20} />
-              bewerbung@fimi-reinigung.ch
-            </a>
-            <a
-              href="tel:+4917472254773"
-              className="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 border border-white/30"
-            >
-              <Phone size={20} />
-              0174 722 54 773
-            </a>
+        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
+          <div className="max-w-2xl">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
+              Bereit für den nächsten Schritt?
+            </h2>
+            <p className="text-white/70 font-medium text-lg mb-8">
+              Starten Sie Ihre Karriere bei FIMI Gebäudereinigung.
+              Wir freuen uns auf Ihre Bewerbung!
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="mailto:bewerbung@fimi-reinigung.ch"
+                className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"
+              >
+                <Mail size={20} />
+                bewerbung@fimi-reinigung.ch
+              </a>
+              <a
+                href="tel:+4917472254773"
+                className="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 border border-white/30"
+              >
+                <Phone size={20} />
+                0174 722 54 773
+              </a>
+            </div>
           </div>
         </div>
       </section>

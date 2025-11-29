@@ -260,7 +260,7 @@ export const blogPosts: BlogPost[] = [
     category: 'news',
     author: 'FIMI Team',
     date: '2024-10-15',
-    readTime: 5,
+    readTime: 4,
     sources: [
       'https://commission.europa.eu/energy-climate-change-environment/standards-tools-and-labels/products-labelling-rules-and-standards/ecodesign-and-energy-labelling/ecodesign-sustainable-products-regulation_de',
       'https://ec.europa.eu/environment/ecolabel/documents/Cleaning_Services_Factsheet_Final.pdf',

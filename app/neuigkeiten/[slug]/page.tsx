@@ -99,7 +99,8 @@ export default async function BlogPostPage({ params }: PageProps) {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#012956]/90 via-[#012956]/40 to-transparent" />
+        {/* Stronger gradient for better text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#012956] via-[#012956]/70 to-[#012956]/20" />
 
         {/* Back Button */}
         <div className="absolute top-6 left-0 right-0">
@@ -114,7 +115,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           </div>
         </div>
 
-        {/* Title Overlay */}
+        {/* Title Overlay - 2 Zeilen: Grün oben, Weiß unten */}
         <div className="absolute bottom-0 left-0 right-0 pb-10">
           <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
             <span
@@ -123,11 +124,11 @@ export default async function BlogPostPage({ params }: PageProps) {
             >
               {blogCategories[post.category].label}
             </span>
-            <h1 className="text-3xl lg:text-5xl font-bold leading-[1.1] max-w-4xl">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-[1.15]">
               {highlight ? (
                 <>
-                  <span className="text-[#109387]">{highlight}</span>
-                  <span className="text-white"> {rest}</span>
+                  <span className="block text-[#109387] mb-1">{highlight}</span>
+                  <span className="block text-white">{rest}</span>
                 </>
               ) : (
                 <span className="text-white">{rest}</span>
