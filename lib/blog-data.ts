@@ -1020,15 +1020,127 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: '9',
-    slug: 'artikel-9',
-    title: 'Artikel 9 - Platzhalter',
-    excerpt: 'Kurzbeschreibung folgt.',
-    content: '<p>Inhalt folgt.</p>',
+    slug: 'schulreinigung-bayern-rahmenhygieneplan-hygienestandards',
+    title: 'Hygiene in Schulen: Anforderungen des Bayerischen Rahmenhygieneplans',
+    excerpt: 'Ein sauberes Umfeld ist entscheidend für die Gesundheit von Schülern und Lehrkräften. Der Rahmenhygieneplan des Bayerischen Kultusministeriums definiert die Standards für die Schulreinigung, wobei der Fokus klar auf gründlicher Reinigung statt routinemäßiger Desinfektion liegt.',
+    content: `
+      <!-- Key Facts Box -->
+      <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 24px 28px; margin-bottom: 32px;">
+        <p style="color: #109387; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px;">Schulhygiene in Bayern</p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">RHP</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Rahmenhygieneplan</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">RKI</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Reinigung statt Desinfektion</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">DIN</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">77400 Schulgebäude</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Schulen sind Orte, an denen täglich viele Menschen zusammenkommen, was die Übertragung von Krankheitserregern begünstigt. In Bayern bildet der <strong style="font-weight: 800; color: #012956;">Rahmenhygieneplan</strong> die Grundlage für die Infektionsprävention an Schulen. Er legt innerbetriebliche Verfahrensweisen zur Einhaltung der Infektionshygiene fest.</p>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Kernpunkte des Bayerischen Rahmenhygieneplans</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Der Plan umfasst verschiedene Bereiche, wobei die persönliche Hygiene, die Raumlüftung und die <a href="/leistungen/unterhaltsreinigung" style="color: #109387; font-weight: 700;">Gebäudereinigung</a> im Mittelpunkt stehen:</p>
+
+      <!-- Kernpunkte Cards -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0;">
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Persönliche Hygiene</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Händewaschen 20-30 Sek. mit Seife, Flüssigseife & Einmalhandtücher</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Raumlüftung</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Regelmäßiges Stoßlüften der Klassenräume für gute Luftqualität</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Reinigung</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Kontinuierliche, planmäßige Reinigung als Hygiene-Voraussetzung</p>
+        </div>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Reinigung statt Desinfektion: Die RKI-Linie</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Ein wichtiger Grundsatz folgt den Empfehlungen des <strong style="font-weight: 800; color: #012956;">Robert Koch-Instituts (RKI)</strong>:</p>
+
+      <!-- RKI Highlight Box -->
+      <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 24px; margin: 24px 0;">
+        <p style="color: #109387; font-size: 13px; font-weight: 800; margin-bottom: 12px;">🏫 RKI-Empfehlung für Schulen</p>
+        <p style="color: white; font-size: 15px; font-weight: 600; line-height: 1.7;">Eine <strong style="font-weight: 800;">routinemäßige Flächendesinfektion wird in Schulen ausdrücklich nicht empfohlen</strong>. Die angemessene, regelmäßige Reinigung von Oberflächen ist ausreichend. Durch die mechanische Entfernung von Schmutz wird die Keimlast effektiv reduziert.</p>
+      </div>
+
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Der unnötige Einsatz von Desinfektionsmitteln belastet die Umwelt und die Gesundheit. Eine gezielte Desinfektion ist nur in <strong style="font-weight: 800; color: #012956;">Ausnahmefällen</strong> notwendig:</p>
+
+      <!-- Ausnahmen Tabelle -->
+      <div style="background: #f8f9fa; border-radius: 6px; padding: 20px; margin: 20px 0;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <tbody>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 10px 14px; font-weight: 800; font-size: 14px; color: #109387; width: 40px;">✓</td>
+              <td style="padding: 10px 14px; color: #374151; font-weight: 600; font-size: 14px;">Kontamination mit Blut, Erbrochenem oder Stuhl</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px; font-weight: 800; font-size: 14px; color: #109387;">✓</td>
+              <td style="padding: 10px 14px; color: #374151; font-weight: 600; font-size: 14px;">Auf Anweisung des Gesundheitsamtes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Anforderungen an die professionelle Schulreinigung</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Die Schulreinigung muss sicherstellen, dass die Vorgaben des Hygieneplans (und der <strong style="font-weight: 800; color: #012956;">DIN 77400</strong> für Schulgebäude) umgesetzt werden:</p>
+
+      <!-- Reinigungsfokus Cards -->
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 24px 0;">
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Handkontaktflächen</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Türklinken, Lichtschalter, Treppenhandläufe, Tische – regelmäßige Reinigung</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Sanitärbereiche</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Toiletten und Handwaschbecken erfordern tägliche Reinigung</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Bodenreinigung</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Flure und Klassenzimmer müssen regelmäßig feucht gewischt werden</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Farbsystem</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Rot für WC, Gelb für Sanitär-Oberflächen – gegen Keimverschleppung</p>
+        </div>
+      </div>
+
+      <!-- FIMI Highlight Box -->
+      <div style="background: linear-gradient(135deg, #109387 0%, #0d7d72 100%); border-radius: 6px; padding: 24px 28px; margin: 28px 0;">
+        <p style="color: white; font-size: 17px; font-weight: 800; margin-bottom: 10px;">Ihr Partner für Schulreinigung in Bayern</p>
+        <p style="color: rgba(255,255,255,0.95); font-size: 14px; font-weight: 600; line-height: 1.8;">Die Umsetzung des Rahmenhygieneplans ist eine Gemeinschaftsaufgabe. FIMI Gebäudereinigung ist ein erfahrener Partner für die Schulreinigung in Bayern. Wir kennen die spezifischen Anforderungen in <a href="/kontakt" style="color: white; font-weight: 800; text-decoration: underline;">Landshut, Regensburg, Passau und München</a> und sorgen für eine zuverlässige Reinigung gemäß den bayerischen Vorgaben.</p>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Weiterführende Informationen</h3>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
+          <a href="https://www.stmgp.bayern.de/meine-themen/fuer-schulen-und-kitas/" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">StMGP Bayern – Hygiene an Schulen und Kitas →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Überblick des Bayerischen Gesundheitsministeriums</p>
+        </li>
+        <li style="padding: 12px 0;">
+          <a href="https://www.gesetze-bayern.de/Content/Document/BayVwV96841-12" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">Bayern.Recht – Muster-Hygieneplan für Schulen →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Detaillierte Anlage mit Reinigungsintervallen und -methoden</p>
+        </li>
+      </ul>
+    `,
     image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=800&auto=format&fit=crop',
     category: 'projekt',
     author: 'FIMI Team',
-    date: '2023-09-05',
-    readTime: 3,
+    date: '2023-12-12',
+    readTime: 5,
+    sources: [
+      'https://www.stmgp.bayern.de/meine-themen/fuer-schulen-und-kitas/',
+      'https://www.gesetze-bayern.de/Content/Document/BayVwV96841-12'
+    ]
   },
   // TEAM (3)
   {
