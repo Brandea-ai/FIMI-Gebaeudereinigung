@@ -383,15 +383,133 @@ export const blogPosts: BlogPost[] = [
   // TIPPS (3)
   {
     id: '4',
-    slug: 'artikel-4',
-    title: 'Artikel 4 - Platzhalter',
-    excerpt: 'Kurzbeschreibung folgt.',
-    content: '<p>Inhalt folgt.</p>',
-    image: 'https://images.unsplash.com/photo-1491002052546-bf38f186af56?q=80&w=800&auto=format&fit=crop',
+    slug: 'hygiene-arbeitsplatz-standards-buero-bmas-baua',
+    title: 'Hygiene am Arbeitsplatz: Aktuelle Standards für ein gesundes Büro',
+    excerpt: 'Die Pandemie hat das Bewusstsein für Hygiene am Arbeitsplatz nachhaltig verändert. Viele der etablierten Schutzmaßnahmen haben sich bewährt und definieren heute den Standard für ein gesundes Arbeitsumfeld, um Mitarbeiter vor Atemwegsinfektionen zu schützen.',
+    content: `
+      <!-- Key Facts Box -->
+      <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 24px 28px; margin-bottom: 32px;">
+        <p style="color: #109387; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px;">Die AHA+L Formel</p>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">A</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Abstand halten</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">H</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Hygiene beachten</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">A</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Atemschutz</p>
+          </div>
+          <div style="text-align: center;">
+            <p style="color: white; font-size: 28px; font-weight: 800; margin-bottom: 2px;">L</p>
+            <p style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 700;">Lüften</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Ein gesundes Arbeitsumfeld ist die Basis für Produktivität und Mitarbeiterzufriedenheit. Die während der Pandemie entwickelten Hygienekonzepte bleiben relevant, um generell vor Infektionen wie Grippe oder Erkältungen zu schützen. Der <strong style="font-weight: 800; color: #012956;">betriebliche Infektionsschutz</strong> ist eine Daueraufgabe.</p>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Die Grundlage: AHA+L bleibt aktuell</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Das <strong style="font-weight: 800; color: #012956;">Bundesministerium für Arbeit und Soziales (BMAS)</strong> empfiehlt weiterhin die Anwendung der AHA+L-Formel als effektiven Schutz vor Tröpfcheninfektionen:</p>
+
+      <!-- AHA+L Details -->
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 24px 0;">
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">A – Abstand</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Wo möglich, schützt physischer Abstand vor Übertragung.</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">H – Hygiene</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Regelmäßiges Händewaschen & Husten-/Niesetikette. Wer krank ist, bleibt zu Hause.</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">A – Atemschutz</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Bei Erkältungssymptomen ist das Tragen einer Maske wirksamer Fremdschutz.</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">L – Lüften</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Regelmäßiger Luftaustausch verringert die Aerosol-Konzentration.</p>
+        </div>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Lüften als zentrale Säule des Infektionsschutzes</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Die <strong style="font-weight: 800; color: #012956;">Bundesanstalt für Arbeitsschutz und Arbeitsmedizin (BAuA)</strong> betont die Wichtigkeit der Raumluftqualität. In vielen Büroumgebungen ist die Fensterlüftung die praktikabelste Lösung.</p>
+
+      <!-- Lüftungs-Empfehlungen Tabelle -->
+      <div style="background: #f8f9fa; border-radius: 6px; padding: 20px; margin: 20px 0;">
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="border-bottom: 2px solid #e5e7eb;">
+              <th style="text-align: left; padding: 10px 14px; color: #012956; font-weight: 800; font-size: 14px;">Raumtyp</th>
+              <th style="text-align: center; padding: 10px 14px; color: #012956; font-weight: 800; font-size: 14px;">Intervall</th>
+              <th style="text-align: center; padding: 10px 14px; color: #012956; font-weight: 800; font-size: 14px;">Dauer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 10px 14px; font-weight: 700; font-size: 14px; color: #374151;">Büroräume</td>
+              <td style="text-align: center; padding: 10px 14px; color: #109387; font-weight: 800; font-size: 14px;">alle 60 Min.</td>
+              <td style="text-align: center; padding: 10px 14px; color: #6b7280; font-weight: 600; font-size: 14px;">3–10 Min.</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e5e7eb;">
+              <td style="padding: 10px 14px; font-weight: 700; font-size: 14px; color: #374151;">Besprechungsräume</td>
+              <td style="text-align: center; padding: 10px 14px; color: #109387; font-weight: 800; font-size: 14px;">alle 20 Min.</td>
+              <td style="text-align: center; padding: 10px 14px; color: #6b7280; font-weight: 600; font-size: 14px;">3–10 Min.</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 14px; font-weight: 700; font-size: 14px; color: #374151;">CO₂-Grenzwert</td>
+              <td style="text-align: center; padding: 10px 14px; color: #109387; font-weight: 800; font-size: 14px;">max. 1000 ppm</td>
+              <td style="text-align: center; padding: 10px 14px; color: #6b7280; font-weight: 600; font-size: 14px;">CO₂-Ampel nutzen</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Angepasste Reinigung und gezielte Desinfektion</h3>
+      <p style="font-weight: 600; color: #374151; line-height: 1.8;">Die professionelle <a href="/leistungen/bueroreinigung" style="color: #109387; font-weight: 700;">Gebäudereinigung</a> spielt eine Schlüsselrolle bei der Umsetzung der Hygienestandards. Es geht nicht darum, flächendeckend zu desinfizieren, sondern gezielt dort anzusetzen, wo das Übertragungsrisiko am höchsten ist.</p>
+
+      <!-- Reinigungsfokus -->
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 24px 0;">
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Kontaktflächen</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Türklinken, Lichtschalter, Handläufe, Teeküchenoberflächen – kurze Reinigungsintervalle</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #f1f5f9 100%); border-radius: 6px; padding: 20px 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+          <p style="color: #109387; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Sanitärhygiene</p>
+          <p style="color: #012956; font-size: 14px; font-weight: 700; line-height: 1.4;">Seife und Einmalhandtücher müssen stets verfügbar und regelmäßig kontrolliert werden</p>
+        </div>
+      </div>
+
+      <!-- FIMI Highlight Box -->
+      <div style="background: linear-gradient(135deg, #109387 0%, #0d7d72 100%); border-radius: 6px; padding: 24px 28px; margin: 28px 0;">
+        <p style="color: white; font-size: 17px; font-weight: 800; margin-bottom: 10px;">Maßgeschneiderte Hygienepläne</p>
+        <p style="color: rgba(255,255,255,0.95); font-size: 14px; font-weight: 600; line-height: 1.8;">Ein effektives Hygienekonzept ist immer eine Kombination aus technischen, organisatorischen und personenbezogenen Maßnahmen. FIMI unterstützt Unternehmen in <a href="/kontakt" style="color: white; font-weight: 800; text-decoration: underline;">München, Regensburg und Landshut</a> dabei, diese Standards professionell umzusetzen – mit Hygieneplänen, die auf Ihre spezifischen Anforderungen zugeschnitten sind.</p>
+      </div>
+
+      <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Weiterführende Informationen</h3>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
+          <a href="https://www.bmas.de/DE/Corona/Fragen-und-Antworten/Fragen-und-Antworten-ASAO/faq-corona-asao.html" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">BMAS – Betrieblicher Infektionsschutz →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Aktuelle Leitlinien des Bundesministeriums für Arbeit und Soziales</p>
+        </li>
+        <li style="padding: 12px 0;">
+          <a href="https://www.baua.de/DE/Angebote/Publikationen/Praxis-kompakt/F109.html" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">BAuA – Lüften am Arbeitsplatz (PDF) →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Detaillierte Empfehlungen zur Ventilation am Arbeitsplatz</p>
+        </li>
+      </ul>
+    `,
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop',
     category: 'tipps',
     author: 'FIMI Team',
-    date: '2024-10-15',
-    readTime: 3,
+    date: '2024-08-22',
+    readTime: 5,
+    sources: [
+      'https://www.bmas.de/DE/Corona/Fragen-und-Antworten/Fragen-und-Antworten-ASAO/faq-corona-asao.html',
+      'https://www.baua.de/DE/Angebote/Publikationen/Praxis-kompakt/F109.html'
+    ]
   },
   {
     id: '5',
