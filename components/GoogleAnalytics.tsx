@@ -575,6 +575,637 @@ export default function GoogleAnalytics() {
 }
 
 // ============================================================================
+// CORE WEB VITALS - Performance Metriken (Google's Ranking-Faktoren)
+// ============================================================================
+
+interface WebVitalsMetric {
+  name: string
+  value: number
+  rating: 'good' | 'needs-improvement' | 'poor'
+  delta: number
+  id: string
+}
+
+function getCLSRating(value: number): 'good' | 'needs-improvement' | 'poor' {
+  if (value <= 0.1) return 'good'
+  if (value <= 0.25) return 'needs-improvement'
+  return 'poor'
+}
+
+function getLCPRating(value: number): 'good' | 'needs-improvement' | 'poor' {
+  if (value <= 2500) return 'good'
+  if (value <= 4000) return 'needs-improvement'
+  return 'poor'
+}
+
+function getFIDRating(value: number): 'good' | 'needs-improvement' | 'poor' {
+  if (value <= 100) return 'good'
+  if (value <= 300) return 'needs-improvement'
+  return 'poor'
+}
+
+function getTTFBRating(value: number): 'good' | 'needs-improvement' | 'poor' {
+  if (value <= 800) return 'good'
+  if (value <= 1800) return 'needs-improvement'
+  return 'poor'
+}
+
+function CoreWebVitalsTracker() {
+  const pathname = usePathname()
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+
+    // Cumulative Layout Shift (CLS)
+    let clsValue = 0
+    let clsEntries: PerformanceEntry[] = []
+
+    const clsObserver = new PerformanceObserver((list) => {
+      for (const entry of list.getEntries()) {
+        // @ts-expect-error - LayoutShift type not fully typed
+        if (!entry.hadRecentInput) {
+          // @ts-expect-error - LayoutShift type not fully typed
+          clsValue += entry.value
+          clsEntries.push(entry)
+        }
+      }
+    })
+
+    try {
+      clsObserver.observe({ type: 'layout-shift', buffered: true })
+    } catch {
+      // Browser doesn't support this observer
+    }
+
+    // Largest Contentful Paint (LCP)
+    let lcpValue = 0
+
+    const lcpObserver = new PerformanceObserver((list) => {
+      const entries = list.getEntries()
+      const lastEntry = entries[entries.length - 1]
+      if (lastEntry) {
+        lcpValue = lastEntry.startTime
+      }
+    })
+
+    try {
+      lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true })
+    } catch {
+      // Browser doesn't support this observer
+    }
+
+    // First Input Delay (FID)
+    let fidValue = 0
+    let fidReported = false
+
+    const fidObserver = new PerformanceObserver((list) => {
+      const entries = list.getEntries()
+      const firstEntry = entries[0]
+      if (firstEntry && !fidReported) {
+        // @ts-expect-error - PerformanceEventTiming not fully typed
+        fidValue = firstEntry.processingStart - firstEntry.startTime
+        fidReported = true
+
+        // FID sofort reporten da es nur einmal passiert
+        trackEvent('web_vitals', 'Performance', 'FID', Math.round(fidValue), {
+          metric_rating: getFIDRating(fidValue),
+          page_path: pathname,
+        })
+      }
+    })
+
+    try {
+      fidObserver.observe({ type: 'first-input', buffered: true })
+    } catch {
+      // Browser doesn't support this observer
+    }
+
+    // Time to First Byte (TTFB)
+    const navigationEntries = performance.getEntriesByType('navigation')
+    if (navigationEntries.length > 0) {
+      const navEntry = navigationEntries[0] as PerformanceNavigationTiming
+      const ttfb = navEntry.responseStart - navEntry.requestStart
+
+      if (ttfb > 0) {
+        trackEvent('web_vitals', 'Performance', 'TTFB', Math.round(ttfb), {
+          metric_rating: getTTFBRating(ttfb),
+          page_path: pathname,
+        })
+      }
+    }
+
+    // Bei Page-Wechsel oder Unload: CLS und LCP reporten
+    const reportMetrics = () => {
+      if (clsValue > 0) {
+        trackEvent('web_vitals', 'Performance', 'CLS', Math.round(clsValue * 1000), {
+          metric_rating: getCLSRating(clsValue),
+          page_path: pathname,
+        })
+      }
+
+      if (lcpValue > 0) {
+        trackEvent('web_vitals', 'Performance', 'LCP', Math.round(lcpValue), {
+          metric_rating: getLCPRating(lcpValue),
+          page_path: pathname,
+        })
+      }
+    }
+
+    // Beim Verlassen der Seite reporten
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'hidden') {
+        reportMetrics()
+      }
+    }
+
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
+      clsObserver.disconnect()
+      lcpObserver.disconnect()
+      fidObserver.disconnect()
+      reportMetrics()
+    }
+  }, [pathname])
+
+  return null
+}
+
+// ============================================================================
+// DEVICE & BROWSER FINGERPRINTING
+// ============================================================================
+
+interface DeviceInfo {
+  deviceType: 'mobile' | 'tablet' | 'desktop'
+  browser: string
+  browserVersion: string
+  os: string
+  screenResolution: string
+  viewportSize: string
+  touchEnabled: boolean
+  connectionType: string
+  language: string
+  timezone: string
+  colorDepth: number
+}
+
+function getDeviceInfo(): DeviceInfo {
+  if (typeof window === 'undefined') {
+    return {} as DeviceInfo
+  }
+
+  const ua = navigator.userAgent
+
+  // Device Type
+  const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(ua)
+  const isTablet = /iPad|Android(?!.*Mobile)/i.test(ua)
+  const deviceType = isTablet ? 'tablet' : isMobile ? 'mobile' : 'desktop'
+
+  // Browser Detection
+  let browser = 'Unknown'
+  let browserVersion = ''
+
+  if (ua.includes('Firefox/')) {
+    browser = 'Firefox'
+    browserVersion = ua.match(/Firefox\/(\d+\.\d+)/)?.[1] || ''
+  } else if (ua.includes('Edg/')) {
+    browser = 'Edge'
+    browserVersion = ua.match(/Edg\/(\d+\.\d+)/)?.[1] || ''
+  } else if (ua.includes('Chrome/')) {
+    browser = 'Chrome'
+    browserVersion = ua.match(/Chrome\/(\d+\.\d+)/)?.[1] || ''
+  } else if (ua.includes('Safari/') && !ua.includes('Chrome')) {
+    browser = 'Safari'
+    browserVersion = ua.match(/Version\/(\d+\.\d+)/)?.[1] || ''
+  }
+
+  // OS Detection
+  let os = 'Unknown'
+  if (ua.includes('Windows')) os = 'Windows'
+  else if (ua.includes('Mac OS')) os = 'macOS'
+  else if (ua.includes('Linux')) os = 'Linux'
+  else if (ua.includes('Android')) os = 'Android'
+  else if (ua.includes('iOS') || ua.includes('iPhone') || ua.includes('iPad')) os = 'iOS'
+
+  // Connection Type
+  let connectionType = 'unknown'
+  // @ts-expect-error - Navigator connection not fully typed
+  if (navigator.connection) {
+    // @ts-expect-error - Navigator connection not fully typed
+    connectionType = navigator.connection.effectiveType || 'unknown'
+  }
+
+  return {
+    deviceType,
+    browser,
+    browserVersion,
+    os,
+    screenResolution: `${screen.width}x${screen.height}`,
+    viewportSize: `${window.innerWidth}x${window.innerHeight}`,
+    touchEnabled: 'ontouchstart' in window || navigator.maxTouchPoints > 0,
+    connectionType,
+    language: navigator.language,
+    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    colorDepth: screen.colorDepth,
+  }
+}
+
+function DeviceTracker() {
+  useEffect(() => {
+    // Nur einmal pro Session tracken
+    const sessionKey = 'fimi_device_tracked'
+    if (sessionStorage.getItem(sessionKey)) return
+
+    const deviceInfo = getDeviceInfo()
+
+    trackEvent('device_info', 'Technical', deviceInfo.deviceType, undefined, {
+      browser: deviceInfo.browser,
+      browser_version: deviceInfo.browserVersion,
+      os: deviceInfo.os,
+      screen_resolution: deviceInfo.screenResolution,
+      viewport_size: deviceInfo.viewportSize,
+      touch_enabled: deviceInfo.touchEnabled,
+      connection_type: deviceInfo.connectionType,
+      language: deviceInfo.language,
+      timezone: deviceInfo.timezone,
+      color_depth: deviceInfo.colorDepth,
+    })
+
+    sessionStorage.setItem(sessionKey, 'true')
+  }, [])
+
+  return null
+}
+
+// ============================================================================
+// RAGE CLICK DETECTION - Frustrations-Indikator
+// ============================================================================
+
+function RageClickTracker() {
+  const pathname = usePathname()
+
+  useEffect(() => {
+    let clicks: { time: number; x: number; y: number }[] = []
+    const RAGE_THRESHOLD = 3 // Klicks
+    const TIME_WINDOW = 1000 // 1 Sekunde
+    const DISTANCE_THRESHOLD = 30 // Pixel
+
+    const handleClick = (e: MouseEvent) => {
+      const now = Date.now()
+
+      // Alte Klicks entfernen
+      clicks = clicks.filter(c => now - c.time < TIME_WINDOW)
+
+      // Neuen Klick hinzufuegen
+      clicks.push({ time: now, x: e.clientX, y: e.clientY })
+
+      // Pruefen ob Rage Click
+      if (clicks.length >= RAGE_THRESHOLD) {
+        // Pruefen ob alle Klicks in der Naehe sind
+        const firstClick = clicks[0]
+        const allNearby = clicks.every(c =>
+          Math.abs(c.x - firstClick.x) < DISTANCE_THRESHOLD &&
+          Math.abs(c.y - firstClick.y) < DISTANCE_THRESHOLD
+        )
+
+        if (allNearby) {
+          const target = e.target as HTMLElement
+          const elementInfo = target.tagName +
+            (target.className ? `.${target.className.split(' ')[0]}` : '') +
+            (target.id ? `#${target.id}` : '')
+
+          trackEvent('rage_click', 'UX Problem', elementInfo, clicks.length, {
+            page_path: pathname,
+            element_text: target.textContent?.substring(0, 50) || '',
+            click_position: `${e.clientX},${e.clientY}`,
+          })
+
+          // Reset
+          clicks = []
+        }
+      }
+    }
+
+    document.addEventListener('click', handleClick)
+    return () => document.removeEventListener('click', handleClick)
+  }, [pathname])
+
+  return null
+}
+
+// ============================================================================
+// EXIT INTENT DETECTION
+// ============================================================================
+
+function ExitIntentTracker() {
+  const pathname = usePathname()
+
+  useEffect(() => {
+    let exitIntentShown = false
+
+    const handleMouseLeave = (e: MouseEvent) => {
+      // Nur wenn Maus nach oben verlässt (Richtung Browser-UI)
+      if (e.clientY <= 0 && !exitIntentShown) {
+        exitIntentShown = true
+
+        const session = getSessionData()
+        const timeOnPage = session ? Math.round((Date.now() - session.sessionStart) / 1000) : 0
+
+        trackEvent('exit_intent', 'Engagement', pathname, timeOnPage, {
+          page_views: session?.pageViews || 1,
+          time_on_site_seconds: timeOnPage,
+        })
+      }
+    }
+
+    document.addEventListener('mouseleave', handleMouseLeave)
+    return () => document.removeEventListener('mouseleave', handleMouseLeave)
+  }, [pathname])
+
+  return null
+}
+
+// ============================================================================
+// TAB VISIBILITY TRACKING
+// ============================================================================
+
+function TabVisibilityTracker() {
+  const pathname = usePathname()
+
+  useEffect(() => {
+    let hiddenStartTime: number | null = null
+    let totalHiddenTime = 0
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        hiddenStartTime = Date.now()
+        trackEvent('tab_hidden', 'Engagement', pathname)
+      } else {
+        if (hiddenStartTime) {
+          const hiddenDuration = Math.round((Date.now() - hiddenStartTime) / 1000)
+          totalHiddenTime += hiddenDuration
+
+          trackEvent('tab_visible', 'Engagement', pathname, hiddenDuration, {
+            hidden_duration_seconds: hiddenDuration,
+            total_hidden_time: totalHiddenTime,
+          })
+        }
+        hiddenStartTime = null
+      }
+    }
+
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+    return () => document.removeEventListener('visibilitychange', handleVisibilityChange)
+  }, [pathname])
+
+  return null
+}
+
+// ============================================================================
+// PHONE & EMAIL AUTO-TRACKING
+// ============================================================================
+
+function ContactLinkTracker() {
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      const link = target.closest('a')
+
+      if (!link) return
+
+      const href = link.getAttribute('href') || ''
+
+      // Telefon-Links
+      if (href.startsWith('tel:')) {
+        const phoneNumber = href.replace('tel:', '')
+        const location = link.closest('footer') ? 'footer' :
+                        link.closest('header') ? 'header' :
+                        link.closest('nav') ? 'navigation' : 'content'
+
+        analytics.phoneClicked(phoneNumber, location)
+      }
+
+      // Email-Links
+      if (href.startsWith('mailto:')) {
+        const email = href.replace('mailto:', '').split('?')[0]
+        const location = link.closest('footer') ? 'footer' :
+                        link.closest('header') ? 'header' :
+                        link.closest('nav') ? 'navigation' : 'content'
+
+        analytics.emailClicked(email, location)
+      }
+
+      // WhatsApp Links
+      if (href.includes('wa.me') || href.includes('whatsapp')) {
+        const location = link.closest('footer') ? 'footer' :
+                        link.closest('header') ? 'header' : 'content'
+
+        analytics.whatsappClicked(location)
+      }
+    }
+
+    document.addEventListener('click', handleClick)
+    return () => document.removeEventListener('click', handleClick)
+  }, [])
+
+  return null
+}
+
+// ============================================================================
+// CTA BUTTON AUTO-TRACKING
+// ============================================================================
+
+function CTAButtonTracker() {
+  const pathname = usePathname()
+
+  useEffect(() => {
+    const ctaPatterns = [
+      'jetzt anfragen',
+      'kontakt',
+      'angebot',
+      'beratung',
+      'termin',
+      'anfrage',
+      'buchen',
+      'bestellen',
+      'mehr erfahren',
+      'details',
+    ]
+
+    const handleClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      const button = target.closest('button, a.btn, a[class*="button"], [role="button"]')
+
+      if (!button) return
+
+      const buttonText = button.textContent?.toLowerCase().trim() || ''
+      const isCTA = ctaPatterns.some(pattern => buttonText.includes(pattern))
+
+      if (isCTA) {
+        const location = button.closest('footer') ? 'footer' :
+                        button.closest('header') ? 'header' :
+                        button.closest('nav') ? 'navigation' :
+                        button.closest('section')?.getAttribute('id') || 'content'
+
+        const destination = button.getAttribute('href') || undefined
+
+        analytics.ctaClicked(buttonText, location, destination)
+      }
+    }
+
+    document.addEventListener('click', handleClick)
+    return () => document.removeEventListener('click', handleClick)
+  }, [pathname])
+
+  return null
+}
+
+// ============================================================================
+// USER ENGAGEMENT SCORE
+// ============================================================================
+
+interface EngagementData {
+  pageViews: number
+  scrollDepthMax: number
+  timeOnSite: number
+  interactions: number
+  formProgress: number
+}
+
+const ENGAGEMENT_WEIGHTS = {
+  pageViews: 10,        // 10 Punkte pro Seite
+  scrollDepth: 0.2,     // 0.2 Punkte pro % Scroll
+  timeOnSite: 0.5,      // 0.5 Punkte pro Sekunde (max 300 = 150 Punkte)
+  interactions: 5,      // 5 Punkte pro Interaktion
+  formProgress: 20,     // 20 Punkte pro Formular-Phase
+}
+
+function calculateEngagementScore(data: EngagementData): number {
+  const pageScore = Math.min(data.pageViews * ENGAGEMENT_WEIGHTS.pageViews, 50)
+  const scrollScore = data.scrollDepthMax * ENGAGEMENT_WEIGHTS.scrollDepth
+  const timeScore = Math.min(data.timeOnSite * ENGAGEMENT_WEIGHTS.timeOnSite, 150)
+  const interactionScore = Math.min(data.interactions * ENGAGEMENT_WEIGHTS.interactions, 50)
+  const formScore = data.formProgress * ENGAGEMENT_WEIGHTS.formProgress
+
+  return Math.round(pageScore + scrollScore + timeScore + interactionScore + formScore)
+}
+
+function getEngagementLevel(score: number): 'low' | 'medium' | 'high' | 'very_high' {
+  if (score < 30) return 'low'
+  if (score < 70) return 'medium'
+  if (score < 120) return 'high'
+  return 'very_high'
+}
+
+function EngagementScoreTracker() {
+  const pathname = usePathname()
+
+  useEffect(() => {
+    const startTime = Date.now()
+    let maxScrollDepth = 0
+    let interactions = 0
+
+    // Scroll Tracking fuer Engagement
+    const handleScroll = () => {
+      const scrollTop = window.scrollY
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight
+      if (docHeight > 0) {
+        const scrollPercent = Math.round((scrollTop / docHeight) * 100)
+        maxScrollDepth = Math.max(maxScrollDepth, scrollPercent)
+      }
+    }
+
+    // Interaction Counting
+    const handleInteraction = () => {
+      interactions++
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    document.addEventListener('click', handleInteraction)
+
+    // Bei Verlassen: Engagement Score berechnen und senden
+    const reportEngagement = () => {
+      const session = getSessionData()
+      const timeOnSite = Math.round((Date.now() - startTime) / 1000)
+
+      const engagementData: EngagementData = {
+        pageViews: session?.pageViews || 1,
+        scrollDepthMax: maxScrollDepth,
+        timeOnSite,
+        interactions,
+        formProgress: 0, // Wird vom FormTracking gesetzt
+      }
+
+      const score = calculateEngagementScore(engagementData)
+      const level = getEngagementLevel(score)
+
+      trackEvent('engagement_score', 'Engagement', level, score, {
+        page_views: engagementData.pageViews,
+        max_scroll_depth: engagementData.scrollDepthMax,
+        time_on_site: engagementData.timeOnSite,
+        total_interactions: engagementData.interactions,
+        engagement_level: level,
+      })
+    }
+
+    const handleBeforeUnload = () => {
+      reportEngagement()
+    }
+
+    window.addEventListener('beforeunload', handleBeforeUnload)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      document.removeEventListener('click', handleInteraction)
+      window.removeEventListener('beforeunload', handleBeforeUnload)
+    }
+  }, [pathname])
+
+  return null
+}
+
+// ============================================================================
+// PERFORMANCE METRICS
+// ============================================================================
+
+function PerformanceTracker() {
+  useEffect(() => {
+    // Warten bis Seite vollständig geladen
+    if (document.readyState === 'complete') {
+      reportPerformance()
+    } else {
+      window.addEventListener('load', reportPerformance)
+      return () => window.removeEventListener('load', reportPerformance)
+    }
+
+    function reportPerformance() {
+      const navEntries = performance.getEntriesByType('navigation')
+      if (navEntries.length === 0) return
+
+      const nav = navEntries[0] as PerformanceNavigationTiming
+
+      const metrics = {
+        dns_lookup: Math.round(nav.domainLookupEnd - nav.domainLookupStart),
+        tcp_connect: Math.round(nav.connectEnd - nav.connectStart),
+        request_time: Math.round(nav.responseStart - nav.requestStart),
+        response_time: Math.round(nav.responseEnd - nav.responseStart),
+        dom_interactive: Math.round(nav.domInteractive - nav.fetchStart),
+        dom_complete: Math.round(nav.domComplete - nav.fetchStart),
+        page_load: Math.round(nav.loadEventEnd - nav.fetchStart),
+      }
+
+      trackEvent('page_performance', 'Performance', 'page_load', metrics.page_load, {
+        ...metrics,
+        navigation_type: nav.type, // navigate, reload, back_forward
+      })
+    }
+  }, [])
+
+  return null
+}
+
+// ============================================================================
 // AUTO-TRACKING KOMPONENTEN
 // ============================================================================
 

@@ -124,12 +124,16 @@ export const blogPosts: BlogPost[] = [
       <h3 style="font-size: 20px; font-weight: 800; color: #012956; margin-top: 32px; margin-bottom: 16px;">Weiterführende Informationen</h3>
       <ul style="list-style: none; padding: 0; margin: 0;">
         <li style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
-          <a href="https://www.die-gebaeudedienstleister.de/tarifpolitik" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">BIV – Tarifpolitik und Tarifverträge →</a>
+          <a href="https://www.die-gebaeudedienstleister.de/die-branche/tarifpolitik/" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">BIV – Tarifpolitik und Tarifverträge →</a>
           <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Offizielle Informationen des Bundesinnungsverbandes zu den aktuellen Löhnen</p>
         </li>
-        <li style="padding: 12px 0;">
-          <a href="https://igbau.de/Gebaeudereinigung.html" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">IG BAU Informationen zur Gebäudereinigung →</a>
+        <li style="padding: 12px 0; border-bottom: 1px solid #e5e7eb;">
+          <a href="https://igbau.de/Gebaeudereinigung-Dienstleistungen-FM-IDL.html" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">IG BAU – Gebäudereinigung & Dienstleistungen →</a>
           <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Perspektive der Gewerkschaft auf Arbeitsbedingungen und Tarife</p>
+        </li>
+        <li style="padding: 12px 0;">
+          <a href="https://zvoove.de/wissen/blog/neuer-tarif-in-der-gebaeudereinigung" target="_blank" rel="noopener noreferrer" style="color: #109387; font-weight: 700; text-decoration: none;">zvoove – Neuer Tarif in der Gebäudereinigung →</a>
+          <p style="color: #6b7280; font-size: 13px; font-weight: 600; margin-top: 4px;">Detaillierte Übersicht zur Tarifentwicklung 2025/2026</p>
         </li>
       </ul>
     `,
@@ -140,7 +144,8 @@ export const blogPosts: BlogPost[] = [
     readTime: 4,
     featured: true,
     sources: [
-      'https://www.die-gebaeudedienstleister.de/tarifpolitik',
+      'https://www.die-gebaeudedienstleister.de/die-branche/tarifpolitik/',
+      'https://igbau.de/Gebaeudereinigung-Dienstleistungen-FM-IDL.html',
       'https://zvoove.de/wissen/blog/neuer-tarif-in-der-gebaeudereinigung'
     ]
   },
