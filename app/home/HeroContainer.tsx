@@ -35,8 +35,8 @@ export default function HeroContainer() {
       {/* Background - Lachende Menschen/Team */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=3840&auto=format&fit=crop"
-          alt="Professionelles Reinigungsteam"
+          src="/images/hero-cleaning.png"
+          alt="Professionelles Reinigungsteam von FIMI"
           className="w-full h-full object-cover"
         />
         {/* Overlay für besseren Kontrast */}

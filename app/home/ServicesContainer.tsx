@@ -11,7 +11,7 @@ const serviceKategorien = [
     titel: 'Gewerbliche Reinigung',
     problem: 'Das Büro macht keinen guten Eindruck mehr',
     loesung: 'Saubere Räume in denen sich Mitarbeiter und Kunden wohlfühlen. Regelmäßig, zuverlässig, ohne dass Sie sich darum kümmern müssen.',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop',
+    image: '/images/office-cleaning.png',
     link: { text: 'Mehr zur Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
   },
   {
@@ -20,7 +20,7 @@ const serviceKategorien = [
     titel: 'Industriereinigung',
     problem: 'Produktionshallen und Maschinen brauchen Spezialwissen',
     loesung: 'Fachgerechte Reinigung auch unter schwierigen Bedingungen. Im laufenden Betrieb oder außerhalb der Produktionszeiten.',
-    image: 'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?q=80&w=1200&auto=format&fit=crop',
+    image: '/images/industrial-cleaning.png',
     link: { text: 'Mehr zur Industriereinigung', href: '/leistungen/industriereinigung' },
   },
   {
@@ -29,7 +29,7 @@ const serviceKategorien = [
     titel: 'Facility Management',
     problem: 'Zu viele Ansprechpartner für zu viele Aufgaben',
     loesung: 'Ein Partner der sich um alles kümmert. Reinigung, Hausmeister, Winterdienst, Außenanlagen. Alles aus einer Hand.',
-    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1200&auto=format&fit=crop',
+    image: '/images/facility-management.png',
     link: { text: 'Mehr zum Facility Management', href: '/leistungen/facility-management' },
   },
 ]

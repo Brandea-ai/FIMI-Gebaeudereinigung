@@ -1040,113 +1040,112 @@ export default function KarrierePage() {
       </section>
 
       {/* ================================================================== */}
-      {/* INITIATIVBEWERBUNG + VORTEILE */}
+      {/* INITIATIVBEWERBUNG + VORTEILE - Gleiche Höhe */}
       {/* ================================================================== */}
       <section id="initiativbewerbung" className="py-12 lg:py-24 bg-[#012956] scroll-mt-24">
         <div className="w-full max-w-[1800px] mx-auto px-4 lg:px-12 xl:px-20">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
 
             {/* LINKS: Initiativbewerbung */}
-            <div>
-              <div className="mb-8 lg:mb-12">
-                <div className="inline-flex items-center gap-2 bg-[#109387]/20 text-[#109387] px-3 lg:px-4 py-2 rounded-full text-sm font-bold mb-4 lg:mb-6">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-6 lg:p-8 flex flex-col">
+              <div className="mb-6">
+                <div className="inline-flex items-center gap-2 bg-[#109387]/20 text-[#109387] px-3 lg:px-4 py-2 rounded-full text-sm font-bold mb-4">
                   <FileText size={16} />
                   Initiativbewerbung
                 </div>
-                <h2 className="text-2xl md:text-4xl font-bold text-white leading-tight mb-3 lg:mb-4">
+                <h2 className="text-2xl lg:text-3xl font-bold text-white leading-tight mb-3">
                   Keine passende Stelle dabei?
                 </h2>
-                <p className="text-white/70 font-medium text-base lg:text-lg">
-                  Bewerben Sie sich initiativ! Wir sind immer auf der Suche nach
-                  engagierten Mitarbeitern und melden uns, sobald eine passende Position frei wird.
+                <p className="text-white/70 font-medium text-sm lg:text-base">
+                  Bewerben Sie sich initiativ! Wir melden uns, sobald eine passende Position frei wird.
                 </p>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-6 lg:p-8">
-                <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+              <div className="flex-1">
+                <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h3 className="text-lg lg:text-xl font-bold text-white mb-4">So bewerben Sie sich</h3>
-                    <ol className="space-y-4">
+                    <h3 className="text-base lg:text-lg font-bold text-white mb-4">So bewerben Sie sich</h3>
+                    <ol className="space-y-3">
                       <li className="flex items-start gap-3">
-                        <span className="w-8 h-8 bg-[#109387] text-white rounded-full flex items-center justify-center font-bold text-sm shrink-0">1</span>
+                        <span className="w-7 h-7 bg-[#109387] text-white rounded-full flex items-center justify-center font-bold text-xs shrink-0">1</span>
                         <div>
-                          <p className="text-white font-medium">E-Mail senden</p>
-                          <p className="text-white/60 text-sm">An bewerbung@fimi-reinigung.ch</p>
+                          <p className="text-white font-medium text-sm">E-Mail senden</p>
+                          <p className="text-white/60 text-xs">bewerbung@fimi-reinigung.ch</p>
                         </div>
                       </li>
                       <li className="flex items-start gap-3">
-                        <span className="w-8 h-8 bg-[#109387] text-white rounded-full flex items-center justify-center font-bold text-sm shrink-0">2</span>
+                        <span className="w-7 h-7 bg-[#109387] text-white rounded-full flex items-center justify-center font-bold text-xs shrink-0">2</span>
                         <div>
-                          <p className="text-white font-medium">Kurze Vorstellung</p>
-                          <p className="text-white/60 text-sm">Wer sind Sie? Was suchen Sie?</p>
+                          <p className="text-white font-medium text-sm">Kurze Vorstellung</p>
+                          <p className="text-white/60 text-xs">Wer sind Sie?</p>
                         </div>
                       </li>
                       <li className="flex items-start gap-3">
-                        <span className="w-8 h-8 bg-[#109387] text-white rounded-full flex items-center justify-center font-bold text-sm shrink-0">3</span>
+                        <span className="w-7 h-7 bg-[#109387] text-white rounded-full flex items-center justify-center font-bold text-xs shrink-0">3</span>
                         <div>
-                          <p className="text-white font-medium">Lebenslauf anhängen</p>
-                          <p className="text-white/60 text-sm">Optional: Zeugnisse</p>
+                          <p className="text-white font-medium text-sm">Lebenslauf</p>
+                          <p className="text-white/60 text-xs">Optional: Zeugnisse</p>
                         </div>
                       </li>
                     </ol>
                   </div>
 
                   <div>
-                    <h3 className="text-lg lg:text-xl font-bold text-white mb-4">Wir suchen regelmäßig</h3>
-                    <ul className="space-y-3">
-                      {['Reinigungskräfte für Büros und Praxen', 'Industriereiniger für Produktionshallen', 'Glasreiniger mit Erfahrung', 'Hausmeister für Objektbetreuung', 'Vorarbeiter mit Führungserfahrung'].map((item, i) => (
-                        <li key={i} className="flex items-center gap-2 text-white/80 text-sm lg:text-base">
-                          <CheckCircle2 size={18} className="text-[#109387] shrink-0" />
+                    <h3 className="text-base lg:text-lg font-bold text-white mb-4">Wir suchen regelmäßig</h3>
+                    <ul className="space-y-2">
+                      {['Reinigungskräfte', 'Industriereiniger', 'Glasreiniger', 'Hausmeister', 'Vorarbeiter'].map((item, i) => (
+                        <li key={i} className="flex items-center gap-2 text-white/80 text-sm">
+                          <CheckCircle2 size={16} className="text-[#109387] shrink-0" />
                           <span>{item}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
+              </div>
 
-                <div className="mt-6 lg:mt-8 pt-6 lg:pt-8 border-t border-white/10 flex flex-col sm:flex-row gap-3 lg:gap-4">
-                  <a
-                    href="mailto:bewerbung@fimi-reinigung.ch?subject=Initiativbewerbung&body=Sehr geehrtes FIMI-Team,%0D%0A%0D%0Ahiermit möchte ich mich initiativ bei Ihnen bewerben.%0D%0A%0D%0AÜber mich:%0D%0A-%20Name:%0D%0A-%20Wohnort:%0D%0A-%20Gewünschte Tätigkeit:%0D%0A-%20Verfügbarkeit:%0D%0A%0D%0AMit freundlichen Grüßen"
-                    className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4 rounded-[6px] transition-all duration-300"
-                  >
-                    <Mail size={20} />
-                    Initiativbewerbung senden
-                  </a>
-                  <a
-                    href="tel:+4917472254773"
-                    className="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white font-bold text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4 rounded-[6px] transition-all duration-300 border border-white/30"
-                  >
-                    <Phone size={20} />
-                    0174 722 54 773
-                  </a>
-                </div>
+              <div className="mt-6 pt-6 border-t border-white/10 flex flex-col sm:flex-row gap-3">
+                <a
+                  href="mailto:bewerbung@fimi-reinigung.ch?subject=Initiativbewerbung&body=Sehr geehrtes FIMI-Team,%0D%0A%0D%0Ahiermit möchte ich mich initiativ bei Ihnen bewerben.%0D%0A%0D%0AÜber mich:%0D%0A-%20Name:%0D%0A-%20Wohnort:%0D%0A-%20Gewünschte Tätigkeit:%0D%0A-%20Verfügbarkeit:%0D%0A%0D%0AMit freundlichen Grüßen"
+                  className="inline-flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm lg:text-base px-5 lg:px-6 py-3 rounded-[6px] transition-all duration-300"
+                >
+                  <Mail size={18} />
+                  Jetzt bewerben
+                </a>
+                <a
+                  href="tel:+4917472254773"
+                  className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold text-sm lg:text-base px-5 lg:px-6 py-3 rounded-[6px] transition-all duration-300 border border-white/30"
+                >
+                  <Phone size={18} />
+                  Anrufen
+                </a>
               </div>
             </div>
 
             {/* RECHTS: Warum FIMI? Vorteile */}
-            <div>
-              <div className="mb-8 lg:mb-12">
-                <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-2 lg:mb-3">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-6 lg:p-8 flex flex-col">
+              <div className="mb-6">
+                <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-2">
                   Warum FIMI?
                 </p>
-                <h2 className="text-2xl md:text-4xl font-bold text-white leading-tight">
+                <h2 className="text-2xl lg:text-3xl font-bold text-white leading-tight">
                   Das bieten wir Ihnen
                 </h2>
               </div>
 
-              <div className="grid grid-cols-2 gap-3 lg:gap-4">
+              <div className="flex-1 grid grid-cols-2 gap-3 lg:gap-4 content-start">
                 {unternehmensvorteile.map((vorteil) => {
                   const IconComponent = vorteil.icon
                   return (
                     <div
                       key={vorteil.titel}
-                      className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-4 lg:p-6"
+                      className="bg-white/5 rounded-[6px] p-4"
                     >
-                      <div className="w-10 lg:w-12 h-10 lg:h-12 bg-[#109387]/20 rounded-[6px] flex items-center justify-center mb-3 lg:mb-4">
-                        <IconComponent size={20} className="text-[#109387] lg:w-6 lg:h-6" />
+                      <div className="w-10 h-10 bg-[#109387]/20 rounded-[6px] flex items-center justify-center mb-3">
+                        <IconComponent size={20} className="text-[#109387]" />
                       </div>
-                      <h3 className="text-sm lg:text-lg font-bold text-white mb-1 lg:mb-2">{vorteil.titel}</h3>
-                      <p className="text-white/60 font-medium text-xs lg:text-sm hidden lg:block">{vorteil.beschreibung}</p>
+                      <h3 className="text-sm lg:text-base font-bold text-white mb-1">{vorteil.titel}</h3>
+                      <p className="text-white/60 font-medium text-xs hidden lg:block">{vorteil.beschreibung}</p>
                     </div>
                   )
                 })}
