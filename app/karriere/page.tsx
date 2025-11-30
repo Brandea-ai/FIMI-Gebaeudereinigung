@@ -1050,50 +1050,50 @@ export default function KarrierePage() {
             {/* LINKS: Initiativbewerbung */}
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-6 lg:p-8 flex flex-col">
               <div className="mb-6">
-                <div className="inline-flex items-center gap-2 bg-[#109387]/20 text-[#109387] px-3 lg:px-4 py-2 rounded-full text-sm font-bold mb-4">
-                  <FileText size={16} />
+                <div className="inline-flex items-center gap-2 bg-[#109387]/20 text-[#109387] px-3 lg:px-4 py-2 rounded-full text-sm lg:text-base font-extrabold mb-4">
+                  <FileText size={18} />
                   Initiativbewerbung
                 </div>
-                <h2 className="text-2xl lg:text-3xl font-bold text-white leading-tight mb-3">
+                <h2 className="text-2xl lg:text-3xl font-extrabold text-white leading-tight mb-3">
                   Keine passende Stelle dabei?
                 </h2>
-                <p className="text-white/70 font-medium text-sm lg:text-base">
+                <p className="text-white/80 font-semibold text-base lg:text-lg">
                   Bewerben Sie sich initiativ! Wir melden uns, sobald eine passende Position frei wird.
                 </p>
               </div>
 
               <div className="flex-1">
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-8">
                   <div>
-                    <h3 className="text-base lg:text-lg font-bold text-white mb-4">So bewerben Sie sich</h3>
-                    <ol className="space-y-3">
-                      <li className="flex items-start gap-3">
-                        <span className="w-7 h-7 bg-[#109387] text-white rounded-full flex items-center justify-center font-bold text-xs shrink-0">1</span>
+                    <h3 className="text-lg lg:text-xl font-extrabold text-white mb-5">So bewerben Sie sich</h3>
+                    <ol className="space-y-4">
+                      <li className="flex items-start gap-4">
+                        <span className="w-9 h-9 bg-[#109387] text-white rounded-full flex items-center justify-center font-extrabold text-sm shrink-0">1</span>
                         <div>
-                          <p className="text-white font-medium text-sm">E-Mail senden</p>
-                          <p className="text-white/60 text-xs">bewerbung@fimi-reinigung.ch</p>
+                          <p className="text-white font-bold text-base lg:text-lg">E-Mail senden</p>
+                          <p className="text-white/70 text-sm font-medium">bewerbung@fimi-reinigung.ch</p>
                         </div>
                       </li>
-                      <li className="flex items-start gap-3">
-                        <span className="w-7 h-7 bg-[#109387] text-white rounded-full flex items-center justify-center font-bold text-xs shrink-0">2</span>
+                      <li className="flex items-start gap-4">
+                        <span className="w-9 h-9 bg-[#109387] text-white rounded-full flex items-center justify-center font-extrabold text-sm shrink-0">2</span>
                         <div>
-                          <p className="text-white font-medium text-sm">Kurze Vorstellung</p>
-                          <p className="text-white/60 text-xs">Wer sind Sie?</p>
+                          <p className="text-white font-bold text-base lg:text-lg">Kurze Vorstellung</p>
+                          <p className="text-white/70 text-sm font-medium">Wer sind Sie?</p>
                         </div>
                       </li>
-                      <li className="flex items-start gap-3">
-                        <span className="w-7 h-7 bg-[#109387] text-white rounded-full flex items-center justify-center font-bold text-xs shrink-0">3</span>
+                      <li className="flex items-start gap-4">
+                        <span className="w-9 h-9 bg-[#109387] text-white rounded-full flex items-center justify-center font-extrabold text-sm shrink-0">3</span>
                         <div>
-                          <p className="text-white font-medium text-sm">Lebenslauf</p>
-                          <p className="text-white/60 text-xs">Optional: Zeugnisse</p>
+                          <p className="text-white font-bold text-base lg:text-lg">Lebenslauf</p>
+                          <p className="text-white/70 text-sm font-medium">Optional: Zeugnisse</p>
                         </div>
                       </li>
                     </ol>
                   </div>
 
                   <div>
-                    <h3 className="text-base lg:text-lg font-bold text-white mb-4">Wir suchen regelmäßig</h3>
-                    <ul className="space-y-2">
+                    <h3 className="text-lg lg:text-xl font-extrabold text-white mb-5">Wir suchen regelmäßig</h3>
+                    <ul className="space-y-3">
                       {[
                         'Reinigungskräfte',
                         'Industriereiniger',
@@ -1111,15 +1111,15 @@ export default function KarrierePage() {
                           'Teamassistenz'
                         ] : [])
                       ].map((item, i) => (
-                        <li key={i} className="flex items-center gap-2 text-white/80 text-sm">
-                          <CheckCircle2 size={16} className="text-[#109387] shrink-0" />
+                        <li key={i} className="flex items-center gap-3 text-white text-base lg:text-lg font-medium">
+                          <CheckCircle2 size={20} className="text-[#109387] shrink-0" />
                           <span>{item}</span>
                         </li>
                       ))}
                     </ul>
                     <button
                       onClick={() => setShowMoreJobs(!showMoreJobs)}
-                      className="mt-3 text-[#109387] hover:text-[#0d7d72] text-sm font-bold flex items-center gap-1 transition-colors"
+                      className="mt-5 text-[#109387] hover:text-[#0d7d72] text-base lg:text-lg font-extrabold flex items-center gap-2 transition-colors"
                     >
                       {showMoreJobs ? '− Weniger anzeigen' : '+ Mehr anzeigen'}
                     </button>
@@ -1148,27 +1148,27 @@ export default function KarrierePage() {
             {/* RECHTS: Warum FIMI? Vorteile */}
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-6 lg:p-8 flex flex-col">
               <div className="mb-6">
-                <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-2">
+                <p className="text-sm lg:text-base text-[#109387] font-extrabold uppercase tracking-wide mb-2">
                   Warum FIMI?
                 </p>
-                <h2 className="text-2xl lg:text-3xl font-bold text-white leading-tight">
+                <h2 className="text-2xl lg:text-3xl font-extrabold text-white leading-tight">
                   Das bieten wir Ihnen
                 </h2>
               </div>
 
-              <div className="flex-1 grid grid-cols-2 gap-3 lg:gap-4 content-start">
+              <div className="flex-1 grid grid-cols-2 gap-4 lg:gap-5 content-start">
                 {unternehmensvorteile.map((vorteil) => {
                   const IconComponent = vorteil.icon
                   return (
                     <div
                       key={vorteil.titel}
-                      className="bg-white/5 rounded-[6px] p-4"
+                      className="bg-white/5 rounded-[6px] p-4 lg:p-5"
                     >
-                      <div className="w-10 h-10 bg-[#109387]/20 rounded-[6px] flex items-center justify-center mb-3">
-                        <IconComponent size={20} className="text-[#109387]" />
+                      <div className="w-11 h-11 lg:w-12 lg:h-12 bg-[#109387]/20 rounded-[6px] flex items-center justify-center mb-3">
+                        <IconComponent size={22} className="text-[#109387] lg:w-6 lg:h-6" />
                       </div>
-                      <h3 className="text-sm lg:text-base font-bold text-white mb-1">{vorteil.titel}</h3>
-                      <p className="text-white/60 font-medium text-xs hidden lg:block">{vorteil.beschreibung}</p>
+                      <h3 className="text-base lg:text-lg font-extrabold text-white mb-1">{vorteil.titel}</h3>
+                      <p className="text-white/70 font-medium text-sm hidden lg:block">{vorteil.beschreibung}</p>
                     </div>
                   )
                 })}

@@ -1,70 +1,64 @@
 const processSteps = [
   {
     number: '01',
-    title: 'Kostenlose Beratung',
-    description: 'Wir analysieren Ihre Räumlichkeiten und Anforderungen vor Ort und erstellen ein maßgeschneidertes Konzept.'
+    title: 'Besichtigung',
+    description: '[PLATZHALTER: Beschreibung Schritt 1]'
   },
   {
     number: '02',
-    title: 'Individuelles Angebot',
-    description: 'Sie erhalten ein transparentes Festpreisangebot ohne versteckte Kosten, abgestimmt auf Ihre Bedürfnisse.'
+    title: 'Angebot',
+    description: '[PLATZHALTER: Beschreibung Schritt 2]'
   },
   {
     number: '03',
-    title: 'Professionelle Durchführung',
-    description: 'Unser geschultes Team reinigt Ihre Büroräume nach höchsten Standards und zu vereinbarten Zeiten.'
+    title: 'Durchführung',
+    description: '[PLATZHALTER: Beschreibung Schritt 3]'
   },
   {
     number: '04',
     title: 'Qualitätskontrolle',
-    description: 'Regelmäßige Kontrollen und Ihr Feedback sichern dauerhaft höchste Reinigungsqualität.'
+    description: '[PLATZHALTER: Beschreibung Schritt 4]'
   }
 ]
 
 export default function ProcessSection() {
   return (
-    <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
-      <div className="container-custom">
+    <section className="py-20 lg:py-28 bg-white">
+      <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
+
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-fimi-turquoise font-semibold text-sm uppercase tracking-wider mb-4 block">
+          <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-3">
             Unser Prozess
-          </span>
-          <h2 className="mb-6">So läuft's ab</h2>
-          <p className="text-xl text-gray-600">
-            In 4 einfachen Schritten zu sauberen Büroräumen
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-6">
+            So funktioniert's
+          </h2>
+          <p className="text-lg text-gray-700 font-semibold leading-relaxed">
+            [PLATZHALTER: Kurze Einleitung zum Prozess]
           </p>
         </div>
 
         {/* Process Steps */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {processSteps.map((step, index) => (
-            <div key={index} className="relative">
-              {/* Connector Line */}
-              {index < processSteps.length - 1 && (
-                <div className="hidden lg:block absolute top-16 left-full w-full h-0.5 bg-gradient-to-r from-fimi-turquoise to-transparent -z-10" />
-              )}
-
-              <div className="text-center">
-                {/* Number Circle */}
-                <div className="relative inline-flex items-center justify-center w-32 h-32 mb-6">
-                  <div className="absolute inset-0 bg-gradient-to-br from-fimi-navy to-fimi-turquoise rounded-full opacity-10 animate-pulse" />
-                  <div className="relative w-24 h-24 bg-gradient-to-br from-fimi-navy to-fimi-turquoise rounded-full flex items-center justify-center shadow-xl">
-                    <span className="text-4xl font-bold text-white">{step.number}</span>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <h4 className="text-xl font-bold text-fimi-navy mb-3">
-                  {step.title}
-                </h4>
-                <p className="text-gray-600">
-                  {step.description}
-                </p>
+            <div key={index} className="text-center">
+              {/* Number Circle */}
+              <div className="w-20 h-20 bg-[#012956] rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-3xl font-bold text-white">{step.number}</span>
               </div>
+
+              {/* Content */}
+              <h3 className="text-xl font-bold text-[#012956] mb-3">
+                {step.title}
+              </h3>
+              <p className="text-gray-700 font-semibold">
+                {step.description}
+              </p>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   )
