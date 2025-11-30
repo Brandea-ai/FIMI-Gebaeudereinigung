@@ -1093,7 +1093,7 @@ export default function KarrierePage() {
                   <div>
                     <h3 className="text-base lg:text-lg font-bold text-white mb-4">Wir suchen regelmäßig</h3>
                     <ul className="space-y-2">
-                      {['Reinigungskräfte', 'Industriereiniger', 'Glasreiniger', 'Hausmeister', 'Vorarbeiter'].map((item, i) => (
+                      {['Reinigungskräfte', 'Industriereiniger', 'Glasreiniger', 'Hausmeister', 'Vorarbeiter', 'Objektleiter', 'Baureiniger', 'Minijobber'].map((item, i) => (
                         <li key={i} className="flex items-center gap-2 text-white/80 text-sm">
                           <CheckCircle2 size={16} className="text-[#109387] shrink-0" />
                           <span>{item}</span>
