@@ -421,16 +421,16 @@ const stellenangebote: JobPosition[] = [
   }
 ]
 
-// 8 Standorte mit Stellenanzahl
+// 8 Standorte
 const standorte = [
-  { stadt: 'Landshut', stellen: 3 },
-  { stadt: 'München', stellen: 3 },
-  { stadt: 'Regensburg', stellen: 3 },
-  { stadt: 'Ingolstadt', stellen: 2 },
-  { stadt: 'Freising', stellen: 3 },
-  { stadt: 'Erding', stellen: 3 },
-  { stadt: 'Straubing', stellen: 3 },
-  { stadt: 'Passau', stellen: 2 }
+  'Landshut',
+  'München',
+  'Regensburg',
+  'Ingolstadt',
+  'Freising',
+  'Erding',
+  'Straubing',
+  'Passau'
 ]
 
 // ============================================================================
@@ -1227,18 +1227,15 @@ export default function KarrierePage() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-4">
-            {standorte.map((standort) => (
+            {standorte.map((stadt) => (
               <div
-                key={standort.stadt}
+                key={stadt}
                 className="bg-white rounded-[6px] p-4 lg:p-5 flex items-center gap-3 lg:gap-4 shadow-sm"
               >
                 <div className="w-9 lg:w-10 h-9 lg:h-10 bg-[#109387]/10 rounded-[6px] flex items-center justify-center shrink-0">
                   <Building2 size={18} className="text-[#109387] lg:w-5 lg:h-5" />
                 </div>
-                <div>
-                  <h3 className="font-bold text-[#012956] text-sm lg:text-base">{standort.stadt}</h3>
-                  <p className="text-xs lg:text-sm text-gray-500">{standort.stellen} Stellen</p>
-                </div>
+                <h3 className="font-extrabold text-[#012956] text-base lg:text-lg">{stadt}</h3>
               </div>
             ))}
           </div>
