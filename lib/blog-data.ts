@@ -724,7 +724,7 @@ export const blogPosts: BlogPost[] = [
 
       <!-- BGH Urteil Box -->
       <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 24px; margin: 24px 0;">
-        <p style="color: #109387; font-size: 13px; font-weight: 800; margin-bottom: 12px;">⚖️ Kernaussage des BGH-Urteils</p>
+        <p style="color: #109387; font-size: 13px; font-weight: 800; margin-bottom: 12px;">Kernaussage des BGH-Urteils</p>
         <p style="color: white; font-size: 15px; font-weight: 600; line-height: 1.7;">Ein Immobilieneigentümer haftet für Sturzschäden bei Eisglätte, <strong style="font-weight: 800;">selbst wenn ein professioneller Hausmeisterdienst beauftragt war</strong>. Der Dienstleister gilt als „Erfüllungsgehilfe" – seine Versäumnisse werden dem Eigentümer zugerechnet.</p>
       </div>
 
@@ -956,7 +956,7 @@ export const blogPosts: BlogPost[] = [
 
       <!-- Explosionsschutz Box -->
       <div style="background: linear-gradient(135deg, #012956 0%, #01203d 100%); border-radius: 6px; padding: 24px; margin: 24px 0;">
-        <p style="color: #109387; font-size: 13px; font-weight: 800; margin-bottom: 12px;">⚠️ DGUV Information 209-088</p>
+        <p style="color: #109387; font-size: 13px; font-weight: 800; margin-bottom: 12px;">DGUV Information 209-088</p>
         <p style="color: white; font-size: 15px; font-weight: 600; line-height: 1.7;">Wenn ein relevantes Explosionsrisiko besteht, müssen <strong style="font-weight: 800;">Explosionsschutzzonen (Ex-Zonen)</strong> definiert und entsprechende Arbeitsmittel (z.B. explosionsgeschützte Sauger) verwendet werden.</p>
       </div>
 

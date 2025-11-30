@@ -21,7 +21,8 @@ import {
   ChevronRight,
   Building2,
   Star,
-  Calendar
+  Calendar,
+  X
 } from 'lucide-react'
 
 // ============================================================================
@@ -41,7 +42,7 @@ interface JobPosition {
   benefits: string[]
   dringend?: boolean
   neu?: boolean
-  veroeffentlicht: string // Datum für Sortierung
+  veroeffentlicht: string
 }
 
 const stellenangebote: JobPosition[] = [
@@ -86,7 +87,7 @@ const stellenangebote: JobPosition[] = [
     bereich: 'Unterhaltsreinigung',
     standorte: ['Regensburg', 'Straubing'],
     arbeitszeit: 'Vollzeit / Teilzeit',
-    gehalt: '15,00 € - 17,00 € / Stunde',
+    gehalt: '15,00 € - 18,00 € / Stunde',
     beschreibung: 'Als Reinigungskraft bei FIMI übernehmen Sie die professionelle Unterhaltsreinigung in Bürogebäuden, Praxen und Gewerbeobjekten im Raum Regensburg.',
     aufgaben: [
       'Professionelle Unterhaltsreinigung von Büro- und Geschäftsräumen',
@@ -213,7 +214,7 @@ const stellenangebote: JobPosition[] = [
     bereich: 'Unterhaltsreinigung',
     standorte: ['München', 'Freising'],
     arbeitszeit: 'Vollzeit / Teilzeit',
-    gehalt: '15,50 € - 17,50 € / Stunde',
+    gehalt: '15,00 € - 18,00 € / Stunde',
     beschreibung: 'Für den Großraum München suchen wir zuverlässige Reinigungskräfte für die Unterhaltsreinigung in Bürogebäuden und Gewerbeobjekten.',
     aufgaben: [
       'Professionelle Unterhaltsreinigung von Büro- und Geschäftsräumen',
@@ -230,7 +231,7 @@ const stellenangebote: JobPosition[] = [
       'Keine Vorkenntnisse erforderlich'
     ],
     benefits: [
-      'Faire Bezahlung ab 15,50 €/Std.',
+      'Faire Bezahlung ab 15,00 €/Std.',
       'Unbefristeter Arbeitsvertrag',
       'Geregelte Arbeitszeiten',
       'Kostenlose Arbeitskleidung',
@@ -368,7 +369,7 @@ const stellenangebote: JobPosition[] = [
     bereich: 'Unterhaltsreinigung',
     standorte: ['Landshut', 'Moosburg'],
     arbeitszeit: 'Vollzeit / Teilzeit',
-    gehalt: '14,50 € - 16,50 € / Stunde',
+    gehalt: '15,00 € - 18,00 € / Stunde',
     beschreibung: 'Für unseren Hauptstandort Landshut suchen wir Reinigungskräfte für verschiedene Objekte. Sie arbeiten in einem festen Team mit geregelten Arbeitszeiten.',
     aufgaben: [
       'Unterhaltsreinigung von Bürogebäuden',
@@ -398,7 +399,7 @@ const stellenangebote: JobPosition[] = [
     bereich: 'Unterhaltsreinigung',
     standorte: ['Straubing', 'Regensburg'],
     arbeitszeit: 'Minijob (556 € Basis)',
-    gehalt: '14,50 € / Stunde',
+    gehalt: '15,00 € / Stunde',
     beschreibung: 'Für den Raum Straubing/Regensburg suchen wir Reinigungskräfte auf Minijob-Basis. Perfekt als Nebenverdienst mit flexiblen Arbeitszeiten.',
     aufgaben: [
       'Unterhaltsreinigung von Büros',
@@ -470,11 +471,229 @@ const unternehmensvorteile = [
 ]
 
 // ============================================================================
+// JOB MODAL COMPONENT (Fullscreen Mobile)
+// ============================================================================
+
+interface JobModalProps {
+  job: JobPosition | null
+  onClose: () => void
+}
+
+function JobModal({ job, onClose }: JobModalProps) {
+  useEffect(() => {
+    if (job) {
+      document.body.style.overflow = 'hidden'
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [job])
+
+  if (!job) return null
+
+  return (
+    <div className="fixed inset-0 z-50 lg:hidden">
+      {/* Backdrop */}
+      <div className="absolute inset-0 bg-black/50" onClick={onClose} />
+
+      {/* Modal Content */}
+      <div className="absolute inset-0 bg-white overflow-y-auto">
+        {/* Header */}
+        <div className="sticky top-0 bg-white border-b border-gray-200 px-4 py-4 z-10">
+          <div className="flex items-center gap-2 mb-2">
+            {job.dringend && (
+              <span className="bg-amber-100 text-amber-700 text-xs font-bold px-2 py-1 rounded">
+                GESUCHT
+              </span>
+            )}
+            {job.neu && (
+              <span className="bg-[#109387]/10 text-[#109387] text-xs font-bold px-2 py-1 rounded">
+                NEU
+              </span>
+            )}
+            <span className="bg-gray-100 text-gray-600 text-xs font-medium px-2 py-1 rounded">
+              {job.bereich}
+            </span>
+          </div>
+          <h2 className="text-xl font-bold text-[#012956]">{job.titel}</h2>
+        </div>
+
+        {/* Content */}
+        <div className="p-4 pb-32">
+          {/* Meta Info */}
+          <div className="space-y-3 mb-6">
+            <div className="flex items-center gap-2 text-gray-600">
+              <MapPin size={18} className="text-[#109387]" />
+              <span className="font-medium">{job.standorte.join(', ')}</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-600">
+              <Clock size={18} className="text-[#109387]" />
+              <span className="font-medium">{job.arbeitszeit}</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-600">
+              <Euro size={18} className="text-[#109387]" />
+              <span className="font-medium">{job.gehalt}</span>
+            </div>
+            <div className="flex items-center gap-2 text-gray-500 text-sm">
+              <Calendar size={16} />
+              <span>Veröffentlicht am {job.veroeffentlicht}</span>
+            </div>
+          </div>
+
+          {/* Description */}
+          <p className="text-gray-700 mb-6 leading-relaxed">{job.beschreibung}</p>
+
+          {/* Aufgaben */}
+          <div className="mb-6">
+            <h3 className="font-bold text-[#012956] mb-3 flex items-center gap-2">
+              <Briefcase size={18} className="text-[#109387]" />
+              Ihre Aufgaben
+            </h3>
+            <ul className="space-y-2">
+              {job.aufgaben.map((aufgabe, i) => (
+                <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                  <CheckCircle2 size={16} className="text-[#109387] shrink-0 mt-0.5" />
+                  <span>{aufgabe}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Anforderungen */}
+          <div className="mb-6">
+            <h3 className="font-bold text-[#012956] mb-3 flex items-center gap-2">
+              <Star size={18} className="text-[#109387]" />
+              Ihr Profil
+            </h3>
+            <ul className="space-y-2">
+              {job.anforderungen.map((anforderung, i) => (
+                <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                  <CheckCircle2 size={16} className="text-[#109387] shrink-0 mt-0.5" />
+                  <span>{anforderung}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Benefits */}
+          <div className="mb-6">
+            <h3 className="font-bold text-[#012956] mb-3 flex items-center gap-2">
+              <Heart size={18} className="text-[#109387]" />
+              Das bieten wir
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {job.benefits.map((benefit, i) => (
+                <span
+                  key={i}
+                  className="bg-[#109387]/10 text-[#109387] text-sm font-medium px-3 py-1 rounded-full"
+                >
+                  {benefit}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA */}
+          <a
+            href={`mailto:bewerbung@fimi-reinigung.ch?subject=Bewerbung: ${job.titel}&body=Sehr geehrtes FIMI-Team,%0D%0A%0D%0Aich interessiere mich für die Stelle "${job.titel}".%0D%0A%0D%0AMit freundlichen Grüßen`}
+            className="block w-full bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-center py-4 rounded-[6px] mb-4"
+          >
+            Jetzt bewerben
+          </a>
+
+          <a
+            href="tel:+4917472254773"
+            className="block w-full bg-[#012956] hover:bg-[#01203f] text-white font-bold text-center py-4 rounded-[6px]"
+          >
+            <Phone size={18} className="inline mr-2" />
+            Anrufen: 0174 722 54 773
+          </a>
+        </div>
+
+        {/* Fixed Close Button at Bottom */}
+        <div className="fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-200 lg:hidden">
+          <button
+            onClick={onClose}
+            className="w-full flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-bold py-4 rounded-[6px] transition-colors"
+          >
+            <X size={20} />
+            Schließen
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+// ============================================================================
+// MOBILE JOB CARD (Indeed Style)
+// ============================================================================
+
+interface MobileJobCardProps {
+  job: JobPosition
+  onClick: () => void
+}
+
+function MobileJobCard({ job, onClick }: MobileJobCardProps) {
+  return (
+    <button
+      onClick={onClick}
+      className="w-full text-left bg-white border border-gray-200 rounded-[6px] p-4 hover:border-[#109387]/50 hover:shadow-md transition-all"
+    >
+      {/* Tags */}
+      <div className="flex items-center gap-2 mb-2">
+        {job.dringend && (
+          <span className="bg-amber-100 text-amber-700 text-xs font-bold px-2 py-0.5 rounded">
+            GESUCHT
+          </span>
+        )}
+        {job.neu && (
+          <span className="bg-[#109387]/10 text-[#109387] text-xs font-bold px-2 py-0.5 rounded">
+            NEU
+          </span>
+        )}
+      </div>
+
+      {/* Title */}
+      <h3 className="text-lg font-bold text-[#012956] mb-2">{job.titel}</h3>
+
+      {/* Company */}
+      <p className="text-sm text-gray-500 mb-3">FIMI Gebäudereinigung</p>
+
+      {/* Key Facts */}
+      <div className="space-y-2 mb-3">
+        <div className="flex items-center gap-2 text-sm text-gray-600">
+          <MapPin size={14} className="text-[#109387] shrink-0" />
+          <span>{job.standorte.join(', ')}</span>
+        </div>
+        <div className="flex items-center gap-2 text-sm text-gray-600">
+          <Euro size={14} className="text-[#109387] shrink-0" />
+          <span className="font-semibold text-[#012956]">{job.gehalt}</span>
+        </div>
+        <div className="flex items-center gap-2 text-sm text-gray-600">
+          <Clock size={14} className="text-[#109387] shrink-0" />
+          <span>{job.arbeitszeit}</span>
+        </div>
+      </div>
+
+      {/* Bereich Tag */}
+      <div className="flex items-center justify-between">
+        <span className="bg-gray-100 text-gray-600 text-xs font-medium px-2 py-1 rounded">
+          {job.bereich}
+        </span>
+        <ChevronRight size={20} className="text-gray-400" />
+      </div>
+    </button>
+  )
+}
+
+// ============================================================================
 // HAUPTKOMPONENTE
 // ============================================================================
 
 export default function KarrierePage() {
   const [activeJob, setActiveJob] = useState<string | null>(null)
+  const [selectedJob, setSelectedJob] = useState<JobPosition | null>(null)
   const [isSidebarSticky, setIsSidebarSticky] = useState(false)
   const sidebarRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
@@ -508,73 +727,76 @@ export default function KarrierePage() {
 
   return (
     <main className="min-h-screen bg-white">
+      {/* Mobile Job Modal */}
+      <JobModal job={selectedJob} onClose={() => setSelectedJob(null)} />
+
       {/* ================================================================== */}
-      {/* HERO SECTION - Linksbündig */}
+      {/* HERO SECTION */}
       {/* ================================================================== */}
-      <section className="relative py-20 lg:py-28 bg-[#012956] overflow-hidden">
+      <section className="relative py-16 lg:py-28 bg-[#012956] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#109387]/10 to-transparent" />
           <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-gradient-to-t from-[#109387]/5 to-transparent" />
         </div>
 
-        <div className="relative w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
+        <div className="relative w-full max-w-[1800px] mx-auto px-4 lg:px-12 xl:px-20">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-white/60 hover:text-white text-sm font-semibold mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-white/60 hover:text-white text-sm font-semibold mb-6 lg:mb-8 transition-colors"
           >
             <ArrowLeft size={16} />
             Zurück zur Startseite
           </Link>
 
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 bg-[#109387]/20 text-[#109387] px-4 py-2 rounded-full text-sm font-bold mb-6">
+            <div className="inline-flex items-center gap-2 bg-[#109387]/20 text-[#109387] px-3 lg:px-4 py-2 rounded-full text-sm font-bold mb-4 lg:mb-6">
               <Briefcase size={16} />
               Karriere bei FIMI
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] mb-6">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-4 lg:mb-6">
               Ihre Karriere in der
               <span className="block text-[#109387]">Gebäudereinigung</span>
             </h1>
 
-            <p className="text-xl text-white/80 font-medium leading-relaxed mb-8 max-w-2xl">
+            <p className="text-lg lg:text-xl text-white/80 font-medium leading-relaxed mb-6 lg:mb-8 max-w-2xl">
               Werden Sie Teil eines wachsenden Unternehmens mit über 90 Mitarbeitern.
               Faire Bezahlung, sichere Arbeitsplätze und echte Entwicklungsmöglichkeiten.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 mb-8 lg:mb-12">
               <button
                 onClick={() => scrollToSection('stellenangebote')}
-                className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
+                className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4 rounded-[6px] transition-all duration-300 group"
               >
                 {stellenangebote.length} offene Stellen
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </button>
               <button
                 onClick={() => scrollToSection('initiativbewerbung')}
-                className="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 border border-white/30"
+                className="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white font-bold text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4 rounded-[6px] transition-all duration-300 border border-white/30"
               >
                 Initiativbewerbung
               </button>
             </div>
 
             {/* Stats - Bento Grid Style */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-4">
-                <div className="text-3xl font-bold text-[#109387] mb-1">90+</div>
-                <div className="text-white/70 text-sm font-medium">Mitarbeiter</div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-4">
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-3 lg:p-4">
+                <div className="text-2xl lg:text-3xl font-bold text-[#109387] mb-1">90+</div>
+                <div className="text-white/70 text-xs lg:text-sm font-medium">Mitarbeiter</div>
               </div>
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-4">
-                <div className="text-3xl font-bold text-[#109387] mb-1">{stellenangebote.length}</div>
-                <div className="text-white/70 text-sm font-medium">Offene Stellen</div>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-3 lg:p-4">
+                <div className="text-2xl lg:text-3xl font-bold text-[#109387] mb-1">{stellenangebote.length}</div>
+                <div className="text-white/70 text-xs lg:text-sm font-medium">Offene Stellen</div>
               </div>
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-4">
-                <div className="text-3xl font-bold text-[#109387] mb-1">{standorte.length}</div>
-                <div className="text-white/70 text-sm font-medium">Standorte</div>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-3 lg:p-4">
+                <div className="text-2xl lg:text-3xl font-bold text-[#109387] mb-1">{standorte.length}</div>
+                <div className="text-white/70 text-xs lg:text-sm font-medium">Standorte</div>
               </div>
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-4">
-                <div className="text-3xl font-bold text-[#109387] mb-1">15€+</div>
-                <div className="text-white/70 text-sm font-medium">Stundenlohn</div>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-3 lg:p-4">
+                <div className="text-2xl lg:text-3xl font-bold text-[#109387] mb-1">15€+</div>
+                <div className="text-white/70 text-xs lg:text-sm font-medium">Stundenlohn</div>
               </div>
             </div>
           </div>
@@ -582,32 +804,32 @@ export default function KarrierePage() {
       </section>
 
       {/* ================================================================== */}
-      {/* VORTEILE - Bento Grid, Linksbündig */}
+      {/* VORTEILE - Bento Grid */}
       {/* ================================================================== */}
-      <section className="py-16 lg:py-20 bg-[#f8f9fa]">
-        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="mb-12">
-            <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-3">
+      <section className="py-12 lg:py-20 bg-[#f8f9fa]">
+        <div className="w-full max-w-[1800px] mx-auto px-4 lg:px-12 xl:px-20">
+          <div className="mb-8 lg:mb-12">
+            <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-2 lg:mb-3">
               Warum FIMI?
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#012956] leading-tight">
+            <h2 className="text-2xl md:text-4xl font-bold text-[#012956] leading-tight">
               Das bieten wir Ihnen
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4">
             {unternehmensvorteile.map((vorteil) => {
               const IconComponent = vorteil.icon
               return (
                 <div
                   key={vorteil.titel}
-                  className="bg-white rounded-[6px] p-6 shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-white rounded-[6px] p-4 lg:p-6 shadow-sm"
                 >
-                  <div className="w-12 h-12 bg-[#109387]/10 rounded-[6px] flex items-center justify-center mb-4">
-                    <IconComponent size={24} className="text-[#109387]" />
+                  <div className="w-10 lg:w-12 h-10 lg:h-12 bg-[#109387]/10 rounded-[6px] flex items-center justify-center mb-3 lg:mb-4">
+                    <IconComponent size={20} className="text-[#109387] lg:w-6 lg:h-6" />
                   </div>
-                  <h3 className="text-lg font-bold text-[#012956] mb-2">{vorteil.titel}</h3>
-                  <p className="text-gray-600 font-medium text-sm">{vorteil.beschreibung}</p>
+                  <h3 className="text-sm lg:text-lg font-bold text-[#012956] mb-1 lg:mb-2">{vorteil.titel}</h3>
+                  <p className="text-gray-600 font-medium text-xs lg:text-sm hidden lg:block">{vorteil.beschreibung}</p>
                 </div>
               )
             })}
@@ -616,24 +838,36 @@ export default function KarrierePage() {
       </section>
 
       {/* ================================================================== */}
-      {/* STELLENANGEBOTE MIT SIDEBAR - Bento Style */}
+      {/* STELLENANGEBOTE */}
       {/* ================================================================== */}
-      <section id="stellenangebote" className="py-16 lg:py-24 bg-white scroll-mt-24">
-        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="mb-12">
-            <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-3">
+      <section id="stellenangebote" className="py-12 lg:py-24 bg-white scroll-mt-24">
+        <div className="w-full max-w-[1800px] mx-auto px-4 lg:px-12 xl:px-20">
+          <div className="mb-8 lg:mb-12">
+            <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-2 lg:mb-3">
               Aktuelle Stellenangebote
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#012956] leading-tight mb-4">
+            <h2 className="text-2xl md:text-4xl font-bold text-[#012956] leading-tight mb-3 lg:mb-4">
               {stellenangebote.length} offene Positionen
             </h2>
-            <p className="text-gray-600 font-medium max-w-2xl">
+            <p className="text-gray-600 font-medium text-sm lg:text-base max-w-2xl">
               Finden Sie die passende Stelle für sich. Wir suchen engagierte Mitarbeiter
               für verschiedene Bereiche und Standorte in ganz Bayern.
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-8" ref={contentRef}>
+          {/* MOBILE: Indeed-Style Cards */}
+          <div className="lg:hidden space-y-3">
+            {stellenangebote.map((job) => (
+              <MobileJobCard
+                key={job.id}
+                job={job}
+                onClick={() => setSelectedJob(job)}
+              />
+            ))}
+          </div>
+
+          {/* DESKTOP: Sidebar + Full Cards */}
+          <div className="hidden lg:flex flex-col lg:flex-row gap-8" ref={contentRef}>
             {/* SIDEBAR - Sticky */}
             <aside
               ref={sidebarRef}
@@ -714,7 +948,7 @@ export default function KarrierePage() {
               </div>
             </aside>
 
-            {/* JOB LISTINGS - Bento Style */}
+            {/* JOB LISTINGS - Full Cards */}
             <div className="flex-1 space-y-6">
               {stellenangebote.map((job) => (
                 <article
@@ -861,27 +1095,27 @@ export default function KarrierePage() {
       {/* ================================================================== */}
       {/* INITIATIVBEWERBUNG */}
       {/* ================================================================== */}
-      <section id="initiativbewerbung" className="py-16 lg:py-24 bg-[#012956] scroll-mt-24">
-        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
+      <section id="initiativbewerbung" className="py-12 lg:py-24 bg-[#012956] scroll-mt-24">
+        <div className="w-full max-w-[1800px] mx-auto px-4 lg:px-12 xl:px-20">
           <div className="max-w-4xl">
-            <div className="mb-12">
-              <div className="inline-flex items-center gap-2 bg-[#109387]/20 text-[#109387] px-4 py-2 rounded-full text-sm font-bold mb-6">
+            <div className="mb-8 lg:mb-12">
+              <div className="inline-flex items-center gap-2 bg-[#109387]/20 text-[#109387] px-3 lg:px-4 py-2 rounded-full text-sm font-bold mb-4 lg:mb-6">
                 <FileText size={16} />
                 Initiativbewerbung
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
+              <h2 className="text-2xl md:text-4xl font-bold text-white leading-tight mb-3 lg:mb-4">
                 Keine passende Stelle dabei?
               </h2>
-              <p className="text-white/70 font-medium text-lg max-w-2xl">
+              <p className="text-white/70 font-medium text-base lg:text-lg max-w-2xl">
                 Bewerben Sie sich initiativ! Wir sind immer auf der Suche nach
                 engagierten Mitarbeitern und melden uns, sobald eine passende Position frei wird.
               </p>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-8 lg:p-12">
-              <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-6 lg:p-12">
+              <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-4">So bewerben Sie sich</h3>
+                  <h3 className="text-lg lg:text-xl font-bold text-white mb-4">So bewerben Sie sich</h3>
                   <ol className="space-y-4">
                     <li className="flex items-start gap-3">
                       <span className="w-8 h-8 bg-[#109387] text-white rounded-full flex items-center justify-center font-bold text-sm shrink-0">1</span>
@@ -908,11 +1142,11 @@ export default function KarrierePage() {
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-4">Wir suchen regelmäßig</h3>
+                  <h3 className="text-lg lg:text-xl font-bold text-white mb-4">Wir suchen regelmäßig</h3>
                   <ul className="space-y-3">
                     {['Reinigungskräfte für Büros und Praxen', 'Industriereiniger für Produktionshallen', 'Glasreiniger mit Erfahrung', 'Hausmeister für Objektbetreuung', 'Vorarbeiter mit Führungserfahrung'].map((item, i) => (
-                      <li key={i} className="flex items-center gap-2 text-white/80">
-                        <CheckCircle2 size={18} className="text-[#109387]" />
+                      <li key={i} className="flex items-center gap-2 text-white/80 text-sm lg:text-base">
+                        <CheckCircle2 size={18} className="text-[#109387] shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -920,17 +1154,17 @@ export default function KarrierePage() {
                 </div>
               </div>
 
-              <div className="mt-8 pt-8 border-t border-white/10 flex flex-col sm:flex-row gap-4">
+              <div className="mt-6 lg:mt-8 pt-6 lg:pt-8 border-t border-white/10 flex flex-col sm:flex-row gap-3 lg:gap-4">
                 <a
                   href="mailto:bewerbung@fimi-reinigung.ch?subject=Initiativbewerbung&body=Sehr geehrtes FIMI-Team,%0D%0A%0D%0Ahiermit möchte ich mich initiativ bei Ihnen bewerben.%0D%0A%0D%0AÜber mich:%0D%0A-%20Name:%0D%0A-%20Wohnort:%0D%0A-%20Gewünschte Tätigkeit:%0D%0A-%20Verfügbarkeit:%0D%0A%0D%0AMit freundlichen Grüßen"
-                  className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4 rounded-[6px] transition-all duration-300"
                 >
                   <Mail size={20} />
                   Initiativbewerbung senden
                 </a>
                 <a
                   href="tel:+4917472254773"
-                  className="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 border border-white/30"
+                  className="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white font-bold text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4 rounded-[6px] transition-all duration-300 border border-white/30"
                 >
                   <Phone size={20} />
                   0174 722 54 773
@@ -942,32 +1176,32 @@ export default function KarrierePage() {
       </section>
 
       {/* ================================================================== */}
-      {/* BEWERBUNGSPROZESS - Linksbündig */}
+      {/* BEWERBUNGSPROZESS */}
       {/* ================================================================== */}
-      <section className="py-16 lg:py-20 bg-white">
-        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="mb-12">
-            <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-3">
+      <section className="py-12 lg:py-20 bg-white">
+        <div className="w-full max-w-[1800px] mx-auto px-4 lg:px-12 xl:px-20">
+          <div className="mb-8 lg:mb-12">
+            <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-2 lg:mb-3">
               Einfach & Schnell
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#012956] leading-tight">
+            <h2 className="text-2xl md:text-4xl font-bold text-[#012956] leading-tight">
               Unser Bewerbungsprozess
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-6">
             {[
               { schritt: '1', titel: 'Bewerbung einreichen', text: 'Per E-Mail oder Telefon – einfach und unkompliziert.' },
               { schritt: '2', titel: 'Rückmeldung', text: 'Wir melden uns innerhalb von 48 Stunden bei Ihnen.' },
               { schritt: '3', titel: 'Kennenlerngespräch', text: 'Ein kurzes Gespräch – persönlich oder telefonisch.' },
               { schritt: '4', titel: 'Willkommen im Team', text: 'Arbeitsvertrag und Einarbeitung – los geht\'s!' }
             ].map((item, i) => (
-              <div key={i} className="bg-[#f8f9fa] rounded-[6px] p-6">
-                <div className="w-12 h-12 bg-[#109387] text-white rounded-full flex items-center justify-center text-xl font-bold mb-4">
+              <div key={i} className="bg-[#f8f9fa] rounded-[6px] p-4 lg:p-6">
+                <div className="w-10 lg:w-12 h-10 lg:h-12 bg-[#109387] text-white rounded-full flex items-center justify-center text-lg lg:text-xl font-bold mb-3 lg:mb-4">
                   {item.schritt}
                 </div>
-                <h3 className="text-lg font-bold text-[#012956] mb-2">{item.titel}</h3>
-                <p className="text-gray-600 font-medium text-sm">{item.text}</p>
+                <h3 className="text-sm lg:text-lg font-bold text-[#012956] mb-1 lg:mb-2">{item.titel}</h3>
+                <p className="text-gray-600 font-medium text-xs lg:text-sm hidden lg:block">{item.text}</p>
               </div>
             ))}
           </div>
@@ -975,31 +1209,31 @@ export default function KarrierePage() {
       </section>
 
       {/* ================================================================== */}
-      {/* STANDORTE - Bento Grid, 8 Städte */}
+      {/* STANDORTE */}
       {/* ================================================================== */}
-      <section className="py-16 lg:py-20 bg-[#f8f9fa]">
-        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="mb-12">
-            <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-3">
+      <section className="py-12 lg:py-20 bg-[#f8f9fa]">
+        <div className="w-full max-w-[1800px] mx-auto px-4 lg:px-12 xl:px-20">
+          <div className="mb-8 lg:mb-12">
+            <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-2 lg:mb-3">
               Unsere Einsatzgebiete
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#012956] leading-tight">
+            <h2 className="text-2xl md:text-4xl font-bold text-[#012956] leading-tight">
               Arbeiten in Ihrer Nähe
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-4">
             {standorte.map((standort) => (
               <div
                 key={standort.stadt}
-                className="bg-white rounded-[6px] p-5 flex items-center gap-4 shadow-sm"
+                className="bg-white rounded-[6px] p-4 lg:p-5 flex items-center gap-3 lg:gap-4 shadow-sm"
               >
-                <div className="w-10 h-10 bg-[#109387]/10 rounded-[6px] flex items-center justify-center shrink-0">
-                  <Building2 size={20} className="text-[#109387]" />
+                <div className="w-9 lg:w-10 h-9 lg:h-10 bg-[#109387]/10 rounded-[6px] flex items-center justify-center shrink-0">
+                  <Building2 size={18} className="text-[#109387] lg:w-5 lg:h-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-[#012956]">{standort.stadt}</h3>
-                  <p className="text-sm text-gray-500">{standort.stellen} Stellen</p>
+                  <h3 className="font-bold text-[#012956] text-sm lg:text-base">{standort.stadt}</h3>
+                  <p className="text-xs lg:text-sm text-gray-500">{standort.stellen} Stellen</p>
                 </div>
               </div>
             ))}
@@ -1008,29 +1242,30 @@ export default function KarrierePage() {
       </section>
 
       {/* ================================================================== */}
-      {/* FINAL CTA - Linksbündig */}
+      {/* FINAL CTA */}
       {/* ================================================================== */}
-      <section className="py-16 lg:py-20 bg-[#012956]">
-        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
+      <section className="py-12 lg:py-20 bg-[#012956]">
+        <div className="w-full max-w-[1800px] mx-auto px-4 lg:px-12 xl:px-20">
           <div className="max-w-2xl">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4">
+            <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-white mb-3 lg:mb-4">
               Bereit für den nächsten Schritt?
             </h2>
-            <p className="text-white/70 font-medium text-lg mb-8">
+            <p className="text-white/70 font-medium text-base lg:text-lg mb-6 lg:mb-8">
               Starten Sie Ihre Karriere bei FIMI Gebäudereinigung.
               Wir freuen uns auf Ihre Bewerbung!
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 lg:gap-4">
               <a
                 href="mailto:bewerbung@fimi-reinigung.ch"
-                className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"
+                className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4 rounded-[6px] transition-all duration-300"
               >
                 <Mail size={20} />
-                bewerbung@fimi-reinigung.ch
+                <span className="hidden sm:inline">bewerbung@fimi-reinigung.ch</span>
+                <span className="sm:hidden">E-Mail senden</span>
               </a>
               <a
                 href="tel:+4917472254773"
-                className="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 border border-white/30"
+                className="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white font-bold text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4 rounded-[6px] transition-all duration-300 border border-white/30"
               >
                 <Phone size={20} />
                 0174 722 54 773
