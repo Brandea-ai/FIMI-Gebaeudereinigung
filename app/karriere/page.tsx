@@ -695,6 +695,7 @@ export default function KarrierePage() {
   const [activeJob, setActiveJob] = useState<string | null>(null)
   const [selectedJob, setSelectedJob] = useState<JobPosition | null>(null)
   const [isSidebarSticky, setIsSidebarSticky] = useState(false)
+  const [showMoreJobs, setShowMoreJobs] = useState(false)
   const sidebarRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
 
@@ -1093,13 +1094,35 @@ export default function KarrierePage() {
                   <div>
                     <h3 className="text-base lg:text-lg font-bold text-white mb-4">Wir suchen regelmäßig</h3>
                     <ul className="space-y-2">
-                      {['Reinigungskräfte', 'Industriereiniger', 'Glasreiniger', 'Hausmeister', 'Vorarbeiter', 'Objektleiter', 'Baureiniger', 'Minijobber'].map((item, i) => (
+                      {[
+                        'Reinigungskräfte',
+                        'Industriereiniger',
+                        'Glasreiniger',
+                        'Hausmeister',
+                        'Vorarbeiter',
+                        ...(showMoreJobs ? [
+                          'Objektleiter',
+                          'Baureiniger',
+                          'Minijobber',
+                          'Bürokaufleute',
+                          'Vertriebsmitarbeiter',
+                          'Marketing',
+                          'Disponenten',
+                          'Teamassistenz'
+                        ] : [])
+                      ].map((item, i) => (
                         <li key={i} className="flex items-center gap-2 text-white/80 text-sm">
                           <CheckCircle2 size={16} className="text-[#109387] shrink-0" />
                           <span>{item}</span>
                         </li>
                       ))}
                     </ul>
+                    <button
+                      onClick={() => setShowMoreJobs(!showMoreJobs)}
+                      className="mt-3 text-[#109387] hover:text-[#0d7d72] text-sm font-bold flex items-center gap-1 transition-colors"
+                    >
+                      {showMoreJobs ? '− Weniger anzeigen' : '+ Mehr anzeigen'}
+                    </button>
                   </div>
                 </div>
               </div>
