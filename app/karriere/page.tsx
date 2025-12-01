@@ -750,10 +750,9 @@ export default function KarrierePage() {
           </Link>
 
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 bg-[#109387]/20 text-[#109387] px-3 lg:px-4 py-2 rounded-full text-sm font-bold mb-4 lg:mb-6">
-              <Briefcase size={16} />
+            <p className="text-sm lg:text-base text-[#109387] font-extrabold uppercase tracking-wide mb-3 lg:mb-4">
               Karriere bei FIMI
-            </div>
+            </p>
 
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-4 lg:mb-6">
               Ihre Karriere in der
@@ -1234,9 +1233,7 @@ export default function KarrierePage() {
                 }}
                 className="bg-white rounded-[6px] p-4 lg:p-5 flex items-center gap-3 lg:gap-4 shadow-sm hover:shadow-md hover:border-[#109387]/30 border border-transparent transition-all group cursor-pointer"
               >
-                <div className="w-9 lg:w-10 h-9 lg:h-10 bg-[#109387]/10 group-hover:bg-[#109387]/20 rounded-[6px] flex items-center justify-center shrink-0 transition-colors">
-                  <Building2 size={18} className="text-[#109387] lg:w-5 lg:h-5" />
-                </div>
+                <MapPin size={20} className="text-[#109387] shrink-0 lg:w-6 lg:h-6" />
                 <h3 className="font-extrabold text-[#012956] group-hover:text-[#109387] text-base lg:text-lg transition-colors">{stadt}</h3>
               </button>
             ))}
