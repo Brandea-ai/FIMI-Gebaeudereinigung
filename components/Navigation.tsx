@@ -430,10 +430,10 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* Mobile Menu - Kompakt, Barrierefrei, Native */}
+          {/* Mobile Menu - Premium, Strukturiert, Hochwertig */}
           <div
             ref={mobileMenuRef}
-            className={`lg:hidden transition-[max-height,opacity] duration-200 ease-out ${
+            className={`lg:hidden transition-[max-height,opacity] duration-250 ease-out ${
               isMobileMenuOpen
                 ? 'max-h-[calc(100vh-6rem)] opacity-100 overflow-y-auto overscroll-contain'
                 : 'max-h-0 opacity-0 overflow-hidden pointer-events-none'
@@ -447,182 +447,219 @@ export default function Navigation() {
             role="menu"
             aria-label="Hauptnavigation"
           >
-            <div className="py-4 border-t border-gray-100 pb-24">
-              {/* Leistungen Accordion */}
-              <div className="border-b border-gray-100">
-                <button
-                  onClick={() => {
-                    const newState = !mobileLeistungenOpen
-                    setMobileLeistungenOpen(newState)
-                    if (newState) {
-                      setMobileBranchenOpen(false)
-                      setMobileUeberFimiOpen(false)
-                    }
-                  }}
-                  className="flex items-center justify-between w-full text-[#012956] py-3.5 font-bold text-[15px] active:bg-[#f8f9fa] touch-manipulation"
-                  aria-expanded={mobileLeistungenOpen}
-                  aria-controls="mobile-leistungen"
-                >
-                  <span>Leistungen</span>
-                  <ChevronDown
-                    size={20}
-                    strokeWidth={2.5}
-                    className={`transition-transform duration-150 ${mobileLeistungenOpen ? 'rotate-180' : ''}`}
-                  />
-                </button>
+            <div className="pt-6 pb-32 border-t border-gray-100">
 
-                <div
-                  id="mobile-leistungen"
-                  className={`overflow-hidden transition-[max-height,opacity] duration-200 ease-out ${
-                    mobileLeistungenOpen ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
-                  }`}
-                  role="menu"
-                >
-                  <div className="pb-4 pt-1">
-                    {leistungenCategories.map((category) => (
-                      <div key={category.id} className="mb-3">
-                        <p className="text-[#109387] font-bold text-[13px] mb-1.5 flex items-center gap-1.5 uppercase tracking-wide">
-                          <category.icon size={14} strokeWidth={2} />
-                          {category.title}
-                        </p>
-                        <div className="grid grid-cols-2 gap-x-3 gap-y-0.5">
-                          {category.services.map((service) => (
-                            <Link
-                              key={service.href}
-                              href={service.href}
-                              className="text-gray-600 active:text-[#109387] text-[14px] py-2 rounded active:bg-[#f8f9fa] font-medium touch-manipulation"
-                              onClick={() => setIsMobileMenuOpen(false)}
-                              role="menuitem"
-                            >
-                              {service.name}
-                            </Link>
-                          ))}
-                        </div>
+              {/* Hauptnavigation - Cards */}
+              <div className="space-y-3 mb-6">
+
+                {/* Leistungen Card */}
+                <div className="bg-[#f8f9fa] rounded-[8px] overflow-hidden">
+                  <button
+                    onClick={() => {
+                      const newState = !mobileLeistungenOpen
+                      setMobileLeistungenOpen(newState)
+                      if (newState) {
+                        setMobileBranchenOpen(false)
+                        setMobileUeberFimiOpen(false)
+                      }
+                    }}
+                    className="flex items-center justify-between w-full px-5 py-4 touch-manipulation"
+                    aria-expanded={mobileLeistungenOpen}
+                    aria-controls="mobile-leistungen"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-[#109387] rounded-[6px] flex items-center justify-center">
+                        <Sparkles size={20} className="text-white" />
                       </div>
-                    ))}
-                    <Link
-                      href="/leistungen"
-                      className="flex items-center justify-center gap-2 w-full text-[#012956] font-bold text-[14px] py-2.5 bg-[#f8f9fa] rounded-[6px] mt-3 active:bg-gray-200 touch-manipulation"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      role="menuitem"
-                    >
-                      Alle 18 Leistungen
-                      <ArrowRight size={14} strokeWidth={2.5} />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-              {/* Branchen Accordion */}
-              <div className="border-b border-gray-100">
-                <button
-                  onClick={() => {
-                    const newState = !mobileBranchenOpen
-                    setMobileBranchenOpen(newState)
-                    if (newState) {
-                      setMobileLeistungenOpen(false)
-                      setMobileUeberFimiOpen(false)
-                    }
-                  }}
-                  className="flex items-center justify-between w-full text-[#012956] py-3.5 font-bold text-[15px] active:bg-[#f8f9fa] touch-manipulation"
-                  aria-expanded={mobileBranchenOpen}
-                  aria-controls="mobile-branchen"
-                >
-                  <span>Branchen</span>
-                  <ChevronDown
-                    size={20}
-                    strokeWidth={2.5}
-                    className={`transition-transform duration-150 ${mobileBranchenOpen ? 'rotate-180' : ''}`}
-                  />
-                </button>
-
-                <div
-                  id="mobile-branchen"
-                  className={`overflow-hidden transition-[max-height,opacity] duration-200 ease-out ${
-                    mobileBranchenOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
-                  }`}
-                  role="menu"
-                >
-                  <div className="pb-4 pt-1">
-                    <div className="grid grid-cols-2 gap-x-3 gap-y-0.5">
-                      {branchenData.map((branche) => (
-                        <Link
-                          key={branche.href}
-                          href={branche.href}
-                          className="text-gray-600 active:text-[#109387] text-[14px] py-2 rounded active:bg-[#f8f9fa] font-medium touch-manipulation"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                          role="menuitem"
-                        >
-                          {branche.name}
-                        </Link>
-                      ))}
+                      <div className="text-left">
+                        <p className="text-[#012956] font-bold text-[16px]">Leistungen</p>
+                        <p className="text-gray-500 text-[13px] font-medium">18 Services</p>
+                      </div>
                     </div>
-                    <Link
-                      href="/branchen"
-                      className="flex items-center justify-center gap-2 w-full text-[#012956] font-bold text-[14px] py-2.5 bg-[#f8f9fa] rounded-[6px] mt-3 active:bg-gray-200 touch-manipulation"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      role="menuitem"
-                    >
-                      Alle 12 Branchen
-                      <ArrowRight size={14} strokeWidth={2.5} />
-                    </Link>
-                  </div>
-                </div>
-              </div>
+                    <ChevronDown
+                      size={22}
+                      strokeWidth={2}
+                      className={`text-[#012956] transition-transform duration-200 ${mobileLeistungenOpen ? 'rotate-180' : ''}`}
+                    />
+                  </button>
 
-              {/* Über FIMI Accordion */}
-              <div className="border-b border-gray-100">
-                <button
-                  onClick={() => {
-                    const newState = !mobileUeberFimiOpen
-                    setMobileUeberFimiOpen(newState)
-                    if (newState) {
-                      setMobileLeistungenOpen(false)
-                      setMobileBranchenOpen(false)
-                    }
-                  }}
-                  className="flex items-center justify-between w-full text-[#012956] py-3.5 font-bold text-[15px] active:bg-[#f8f9fa] touch-manipulation"
-                  aria-expanded={mobileUeberFimiOpen}
-                  aria-controls="mobile-ueberfimi"
-                >
-                  <span>Über FIMI</span>
-                  <ChevronDown
-                    size={20}
-                    strokeWidth={2.5}
-                    className={`transition-transform duration-150 ${mobileUeberFimiOpen ? 'rotate-180' : ''}`}
-                  />
-                </button>
-
-                <div
-                  id="mobile-ueberfimi"
-                  className={`overflow-hidden transition-[max-height,opacity] duration-200 ease-out ${
-                    mobileUeberFimiOpen ? 'max-h-[200px] opacity-100' : 'max-h-0 opacity-0'
-                  }`}
-                  role="menu"
-                >
-                  <div className="pb-4 pt-1 grid grid-cols-2 gap-x-3 gap-y-0.5">
-                    {ueberFimiLinks.map((link) => (
+                  <div
+                    id="mobile-leistungen"
+                    className={`overflow-hidden transition-[max-height,opacity] duration-250 ease-out ${
+                      mobileLeistungenOpen ? 'max-h-[1200px] opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                    role="menu"
+                  >
+                    <div className="px-5 pb-5 space-y-4">
+                      {leistungenCategories.map((category) => (
+                        <div key={category.id} className="bg-white rounded-[6px] p-4">
+                          <div className="flex items-center gap-2 mb-3">
+                            <category.icon size={16} className="text-[#109387]" strokeWidth={2} />
+                            <p className="text-[#109387] font-bold text-[14px]">{category.title}</p>
+                          </div>
+                          <div className="space-y-1">
+                            {category.services.map((service) => (
+                              <Link
+                                key={service.href}
+                                href={service.href}
+                                className="flex items-center gap-2 text-gray-600 text-[15px] py-2.5 px-3 -mx-1 rounded-[6px] font-medium active:bg-[#f8f9fa] active:text-[#109387] touch-manipulation"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                role="menuitem"
+                              >
+                                <ArrowRight size={14} className="text-gray-300" />
+                                {service.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
                       <Link
-                        key={link.href}
-                        href={link.href}
-                        className="text-gray-600 active:text-[#109387] text-[14px] py-2 rounded active:bg-[#f8f9fa] font-medium touch-manipulation"
+                        href="/leistungen"
+                        className="flex items-center justify-center gap-2 w-full text-white font-bold text-[15px] py-3.5 bg-[#012956] rounded-[6px] active:bg-[#01203d] touch-manipulation"
                         onClick={() => setIsMobileMenuOpen(false)}
                         role="menuitem"
                       >
-                        {link.label}
+                        Alle Leistungen ansehen
+                        <ArrowRight size={16} strokeWidth={2.5} />
                       </Link>
-                    ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Branchen Card */}
+                <div className="bg-[#f8f9fa] rounded-[8px] overflow-hidden">
+                  <button
+                    onClick={() => {
+                      const newState = !mobileBranchenOpen
+                      setMobileBranchenOpen(newState)
+                      if (newState) {
+                        setMobileLeistungenOpen(false)
+                        setMobileUeberFimiOpen(false)
+                      }
+                    }}
+                    className="flex items-center justify-between w-full px-5 py-4 touch-manipulation"
+                    aria-expanded={mobileBranchenOpen}
+                    aria-controls="mobile-branchen"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-[#012956] rounded-[6px] flex items-center justify-center">
+                        <Building2 size={20} className="text-white" />
+                      </div>
+                      <div className="text-left">
+                        <p className="text-[#012956] font-bold text-[16px]">Branchen</p>
+                        <p className="text-gray-500 text-[13px] font-medium">12 Spezialisierungen</p>
+                      </div>
+                    </div>
+                    <ChevronDown
+                      size={22}
+                      strokeWidth={2}
+                      className={`text-[#012956] transition-transform duration-200 ${mobileBranchenOpen ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+
+                  <div
+                    id="mobile-branchen"
+                    className={`overflow-hidden transition-[max-height,opacity] duration-250 ease-out ${
+                      mobileBranchenOpen ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                    role="menu"
+                  >
+                    <div className="px-5 pb-5">
+                      <div className="bg-white rounded-[6px] p-4 space-y-1">
+                        {branchenData.map((branche) => {
+                          const BrancheIcon = branche.icon
+                          return (
+                            <Link
+                              key={branche.href}
+                              href={branche.href}
+                              className="flex items-center gap-3 text-gray-600 text-[15px] py-2.5 px-3 -mx-1 rounded-[6px] font-medium active:bg-[#f8f9fa] active:text-[#109387] touch-manipulation"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                              role="menuitem"
+                            >
+                              <BrancheIcon size={16} className="text-gray-400" />
+                              {branche.name}
+                            </Link>
+                          )
+                        })}
+                      </div>
+                      <Link
+                        href="/branchen"
+                        className="flex items-center justify-center gap-2 w-full text-white font-bold text-[15px] py-3.5 bg-[#109387] rounded-[6px] mt-4 active:bg-[#0d7d72] touch-manipulation"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        role="menuitem"
+                      >
+                        Alle Branchen ansehen
+                        <ArrowRight size={16} strokeWidth={2.5} />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Über FIMI Card */}
+                <div className="bg-[#f8f9fa] rounded-[8px] overflow-hidden">
+                  <button
+                    onClick={() => {
+                      const newState = !mobileUeberFimiOpen
+                      setMobileUeberFimiOpen(newState)
+                      if (newState) {
+                        setMobileLeistungenOpen(false)
+                        setMobileBranchenOpen(false)
+                      }
+                    }}
+                    className="flex items-center justify-between w-full px-5 py-4 touch-manipulation"
+                    aria-expanded={mobileUeberFimiOpen}
+                    aria-controls="mobile-ueberfimi"
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 bg-[#012956] rounded-[6px] flex items-center justify-center">
+                        <Building2 size={20} className="text-white" />
+                      </div>
+                      <div className="text-left">
+                        <p className="text-[#012956] font-bold text-[16px]">Über FIMI</p>
+                        <p className="text-gray-500 text-[13px] font-medium">Unternehmen</p>
+                      </div>
+                    </div>
+                    <ChevronDown
+                      size={22}
+                      strokeWidth={2}
+                      className={`text-[#012956] transition-transform duration-200 ${mobileUeberFimiOpen ? 'rotate-180' : ''}`}
+                    />
+                  </button>
+
+                  <div
+                    id="mobile-ueberfimi"
+                    className={`overflow-hidden transition-[max-height,opacity] duration-250 ease-out ${
+                      mobileUeberFimiOpen ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                    role="menu"
+                  >
+                    <div className="px-5 pb-5">
+                      <div className="bg-white rounded-[6px] p-4 space-y-1">
+                        {ueberFimiLinks.map((link) => (
+                          <Link
+                            key={link.href}
+                            href={link.href}
+                            className="flex items-center gap-2 text-gray-600 text-[15px] py-2.5 px-3 -mx-1 rounded-[6px] font-medium active:bg-[#f8f9fa] active:text-[#109387] touch-manipulation"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            role="menuitem"
+                          >
+                            <ArrowRight size={14} className="text-gray-300" />
+                            {link.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
               {/* Direkte Links */}
-              <div className="flex gap-4 py-3 border-b border-gray-100">
+              <div className="flex gap-3 mb-6">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-[#012956] font-bold text-[15px] active:text-[#109387] touch-manipulation"
+                    className="flex-1 flex items-center justify-center text-[#012956] font-bold text-[15px] py-4 bg-[#f8f9fa] rounded-[8px] active:bg-gray-200 touch-manipulation"
                     onClick={() => setIsMobileMenuOpen(false)}
                     role="menuitem"
                   >
@@ -631,36 +668,42 @@ export default function Navigation() {
                 ))}
               </div>
 
-              {/* CTA Bereich - kompakt */}
-              <div className="pt-4 space-y-3">
+              {/* CTA Bereich - Premium */}
+              <div className="bg-[#012956] rounded-[8px] p-5 space-y-4">
+                <div className="text-center mb-2">
+                  <p className="text-white/70 text-[13px] font-semibold uppercase tracking-wide mb-1">Jetzt Kontakt aufnehmen</p>
+                  <p className="text-white font-bold text-[18px]">Kostenfreie Beratung</p>
+                </div>
                 <a
                   href="tel:+4987143033460"
-                  className="flex items-center justify-center gap-2 text-[#012956] py-3 font-bold text-[15px] bg-[#f8f9fa] rounded-[6px] active:bg-gray-200 touch-manipulation"
+                  className="flex items-center justify-center gap-3 w-full text-white py-4 font-bold text-[16px] bg-white/10 rounded-[6px] active:bg-white/20 touch-manipulation"
                   role="menuitem"
                 >
-                  <Phone size={18} strokeWidth={2} />
+                  <Phone size={20} strokeWidth={2} />
                   <span>0871 430 334 60</span>
                 </a>
                 <button
                   onClick={scrollToContact}
-                  className="flex items-center justify-center gap-2 w-full bg-[#109387] active:bg-[#0d7d72] text-white font-bold text-[15px] py-4 rounded-[6px] touch-manipulation"
+                  className="flex items-center justify-center gap-2 w-full bg-[#109387] active:bg-[#0d7d72] text-white font-bold text-[16px] py-4 rounded-[6px] touch-manipulation"
                   role="menuitem"
                 >
-                  <span>Kostenfreie Besichtigung</span>
-                  <ArrowRight size={16} strokeWidth={2.5} />
-                </button>
-                <button
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex items-center justify-center gap-2 w-full text-gray-500 font-semibold text-[14px] py-3 border border-gray-200 rounded-[6px] active:bg-gray-100 touch-manipulation"
-                  aria-label="Menü schließen"
-                >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                  </svg>
-                  <span>Schließen</span>
+                  <span>Besichtigung vereinbaren</span>
+                  <ArrowRight size={18} strokeWidth={2.5} />
                 </button>
               </div>
+
+              {/* Schließen Button */}
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center justify-center gap-2 w-full text-gray-500 font-semibold text-[15px] py-4 mt-4 border border-gray-200 rounded-[8px] active:bg-gray-100 touch-manipulation"
+                aria-label="Menü schließen"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+                <span>Menü schließen</span>
+              </button>
             </div>
           </div>
         </div>
