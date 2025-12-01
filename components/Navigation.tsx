@@ -456,7 +456,15 @@ export default function Navigation() {
                 {/* Mobile Leistungen Accordion */}
                 <div>
                   <button
-                    onClick={() => setMobileLeistungenOpen(!mobileLeistungenOpen)}
+                    onClick={() => {
+                      const newState = !mobileLeistungenOpen
+                      setMobileLeistungenOpen(newState)
+                      // Schließe andere Dropdowns automatisch
+                      if (newState) {
+                        setMobileBranchenOpen(false)
+                        setMobileUeberFimiOpen(false)
+                      }
+                    }}
                     className="flex items-center justify-between w-full text-[#012956] py-4 px-2 -mx-2 rounded-[6px] font-bold text-[16px] hover:bg-[#f8f9fa] transition-all"
                   >
                     <span>Leistungen</span>
@@ -469,7 +477,7 @@ export default function Navigation() {
 
                   <div
                     className={`overflow-hidden transition-all duration-300 ${
-                      mobileLeistungenOpen ? 'max-h-[900px] opacity-100' : 'max-h-0 opacity-0'
+                      mobileLeistungenOpen ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
                     <div className="pl-3 pb-4 space-y-5 mt-2">
@@ -493,14 +501,22 @@ export default function Navigation() {
                           </div>
                         </div>
                       ))}
-                      <Link
-                        href="/leistungen"
-                        className="inline-flex items-center gap-2 text-[#012956] font-bold text-[15px] mt-3 py-3 px-4 bg-[#f8f9fa] rounded-[6px]"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        Alle Leistungen
-                        <ArrowRight size={16} strokeWidth={2.5} />
-                      </Link>
+                      <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-gray-200">
+                        <Link
+                          href="/leistungen"
+                          className="inline-flex items-center justify-center gap-2 text-[#012956] font-bold text-[15px] py-3 px-4 bg-[#f8f9fa] rounded-[6px]"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          Alle Leistungen
+                          <ArrowRight size={16} strokeWidth={2.5} />
+                        </Link>
+                        <button
+                          onClick={() => setMobileLeistungenOpen(false)}
+                          className="flex items-center justify-center gap-2 text-gray-500 font-semibold text-[14px] py-3 px-4 border border-gray-200 rounded-[6px] hover:bg-gray-50 transition-all"
+                        >
+                          Schließen
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -508,7 +524,15 @@ export default function Navigation() {
                 {/* Mobile Branchen Accordion */}
                 <div>
                   <button
-                    onClick={() => setMobileBranchenOpen(!mobileBranchenOpen)}
+                    onClick={() => {
+                      const newState = !mobileBranchenOpen
+                      setMobileBranchenOpen(newState)
+                      // Schließe andere Dropdowns automatisch
+                      if (newState) {
+                        setMobileLeistungenOpen(false)
+                        setMobileUeberFimiOpen(false)
+                      }
+                    }}
                     className="flex items-center justify-between w-full text-[#012956] py-4 px-2 -mx-2 rounded-[6px] font-bold text-[16px] hover:bg-[#f8f9fa] transition-all"
                   >
                     <span>Branchen</span>
@@ -521,7 +545,7 @@ export default function Navigation() {
 
                   <div
                     className={`overflow-hidden transition-all duration-300 ${
-                      mobileBranchenOpen ? 'max-h-[700px] opacity-100' : 'max-h-0 opacity-0'
+                      mobileBranchenOpen ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
                     <div className="pl-3 pb-4 space-y-1 mt-2">
@@ -535,6 +559,22 @@ export default function Navigation() {
                           {branche.name}
                         </Link>
                       ))}
+                      <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-gray-200">
+                        <Link
+                          href="/branchen"
+                          className="inline-flex items-center justify-center gap-2 text-[#012956] font-bold text-[15px] py-3 px-4 bg-[#f8f9fa] rounded-[6px]"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          Alle Branchen
+                          <ArrowRight size={16} strokeWidth={2.5} />
+                        </Link>
+                        <button
+                          onClick={() => setMobileBranchenOpen(false)}
+                          className="flex items-center justify-center gap-2 text-gray-500 font-semibold text-[14px] py-3 px-4 border border-gray-200 rounded-[6px] hover:bg-gray-50 transition-all"
+                        >
+                          Schließen
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -542,7 +582,15 @@ export default function Navigation() {
                 {/* Mobile Über FIMI Accordion */}
                 <div>
                   <button
-                    onClick={() => setMobileUeberFimiOpen(!mobileUeberFimiOpen)}
+                    onClick={() => {
+                      const newState = !mobileUeberFimiOpen
+                      setMobileUeberFimiOpen(newState)
+                      // Schließe andere Dropdowns automatisch
+                      if (newState) {
+                        setMobileLeistungenOpen(false)
+                        setMobileBranchenOpen(false)
+                      }
+                    }}
                     className="flex items-center justify-between w-full text-[#012956] py-4 px-2 -mx-2 rounded-[6px] font-bold text-[16px] hover:bg-[#f8f9fa] transition-all"
                   >
                     <span>Über FIMI</span>
@@ -555,7 +603,7 @@ export default function Navigation() {
 
                   <div
                     className={`overflow-hidden transition-all duration-300 ${
-                      mobileUeberFimiOpen ? 'max-h-[200px] opacity-100' : 'max-h-0 opacity-0'
+                      mobileUeberFimiOpen ? 'max-h-[350px] opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
                     <div className="pl-3 pb-4 space-y-1 mt-2">
@@ -569,6 +617,14 @@ export default function Navigation() {
                           {link.label}
                         </Link>
                       ))}
+                      <div className="mt-4 pt-4 border-t border-gray-200">
+                        <button
+                          onClick={() => setMobileUeberFimiOpen(false)}
+                          className="flex items-center justify-center gap-2 w-full text-gray-500 font-semibold text-[14px] py-3 px-4 border border-gray-200 rounded-[6px] hover:bg-gray-50 transition-all"
+                        >
+                          Schließen
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>

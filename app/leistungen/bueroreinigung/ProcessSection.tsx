@@ -7,21 +7,21 @@ const processSteps = [
     number: '01',
     icon: Phone,
     title: 'Anfrage',
-    description: 'Sie rufen an oder fuellen das Formular aus. Wir melden uns innerhalb von 2 Stunden.',
+    description: 'Sie rufen an oder füllen das Formular aus. Wir melden uns innerhalb von 2 Stunden.',
     time: '5 Minuten',
   },
   {
     number: '02',
     icon: MapPin,
     title: 'Besichtigung',
-    description: 'Wir kommen kostenfrei zu Ihnen und schauen uns die Raeumlichkeiten an.',
+    description: 'Wir kommen kostenfrei zu Ihnen und schauen uns die Räumlichkeiten an.',
     time: '1-2 Tage',
   },
   {
     number: '03',
     icon: FileText,
     title: 'Angebot',
-    description: 'Sie erhalten ein massgeschneidertes Angebot mit transparenten Festpreisen.',
+    description: 'Sie erhalten ein maßgeschneidertes Angebot mit transparenten Festpreisen.',
     time: '24 Stunden',
   },
   {
@@ -41,13 +41,13 @@ export default function ProcessSection() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-[#109387] font-bold text-sm uppercase tracking-wide mb-4 block">
-            So starten wir zusammen
+            Unser Prozess
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight mb-6">
-            In 4 Schritten zum sauberen Buero
+            In 4 Schritten zum sauberen Büro
           </h2>
           <p className="text-lg text-gray-600 font-semibold leading-relaxed">
-            Vom ersten Kontakt bis zur regelmaessigen Reinigung -
+            Vom ersten Kontakt bis zur regelmäßigen Reinigung –
             unkompliziert und transparent.
           </p>
         </div>
@@ -95,7 +95,7 @@ export default function ProcessSection() {
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
           <p className="text-lg text-gray-600 font-semibold mb-6">
-            <strong className="text-[#012956]">Gesamtdauer:</strong> Durchschnittlich 5-7 Werktage vom Erstkontakt bis zum sauberen Buero.
+            <strong className="text-[#012956]">Gesamtdauer:</strong> Durchschnittlich 5-7 Werktage vom Erstkontakt bis zum sauberen Büro.
           </p>
           <a
             href="#kontakt"

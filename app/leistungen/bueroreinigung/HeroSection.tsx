@@ -11,7 +11,7 @@ export default function HeroSection() {
       <div className="absolute inset-0">
         <Image
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=3840&auto=format&fit=crop"
-          alt="Modernes sauberes Buero mit professioneller Reinigung"
+          alt="Modernes sauberes Büro mit professioneller Reinigung"
           fill
           className="object-cover"
           priority
@@ -40,7 +40,7 @@ export default function HeroSection() {
                 </Link>
               </li>
               <li className="text-white/40">/</li>
-              <li className="text-[#109387]">Bueroreinigung</li>
+              <li className="text-[#109387]">Büroreinigung</li>
             </ol>
           </nav>
 
@@ -54,22 +54,22 @@ export default function HeroSection() {
 
             {/* H1 - SEO optimiert */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.05] mb-6">
-              Bueroreinigung in Bayern
+              Büroreinigung in Bayern
             </h1>
 
             {/* Subheadline - Kundennutzen */}
             <p className="text-xl md:text-2xl lg:text-3xl font-bold text-[#109387] mb-6">
-              Saubere Raeume, in denen sich Mitarbeiter und Kunden wohlfuehlen
+              Saubere Räume, in denen sich Mitarbeiter und Kunden wohlfühlen
             </p>
 
             {/* Description */}
             <p className="text-lg lg:text-xl text-white/80 font-semibold leading-relaxed mb-10 max-w-3xl">
-              Sie kommen morgens ins Buero und alles glaenzt? Die Teekueche ist frisch,
-              die Sanitaeranlagen hygienisch, der Empfang repraesentativ.
-              Das ist kein Zufall – das ist professionelle Bueroreinigung von FIMI.
+              Sie kommen morgens ins Büro und alles glänzt? Die Teeküche ist frisch,
+              die Sanitäranlagen hygienisch, der Empfang repräsentativ.
+              Das ist kein Zufall – das ist professionelle Büroreinigung von FIMI.
             </p>
 
-            {/* Trust Points - 3 Saeulen */}
+            {/* Trust Points - 3 Säulen */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
               <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-[6px] px-4 py-3">
                 <Clock size={24} className="text-[#109387] flex-shrink-0" />
@@ -119,16 +119,6 @@ export default function HeroSection() {
             </p>
           </div>
 
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:block">
-        <div className="flex flex-col items-center gap-2 text-white/50">
-          <span className="text-xs font-semibold uppercase tracking-wider">Mehr erfahren</span>
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
-            <div className="w-1.5 h-3 bg-[#109387] rounded-full animate-bounce" />
-          </div>
         </div>
       </div>
     </section>

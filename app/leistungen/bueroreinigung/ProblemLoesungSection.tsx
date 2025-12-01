@@ -6,23 +6,23 @@ import { ArrowRight, Coffee, Wind, UserX, Eye } from 'lucide-react'
 const probleme = [
   {
     icon: Coffee,
-    problem: 'Die Teekueche macht keinen guten Eindruck mehr',
-    loesung: 'Taegliche Reinigung aller Gemeinschaftsflaechen - Kueche, Aufenthaltsraum, Kaffeebar. Ihre Mitarbeiter verdienen einen sauberen Pausenbereich.',
+    problem: 'Die Teeküche macht keinen guten Eindruck mehr',
+    loesung: 'Tägliche Reinigung aller Gemeinschaftsflächen – Küche, Aufenthaltsraum, Kaffeebar. Ihre Mitarbeiter verdienen einen sauberen Pausenbereich.',
   },
   {
     icon: Wind,
-    problem: 'Mitarbeiter beschweren sich ueber Staub und schlechte Luft',
-    loesung: 'Professionelle Staubentfernung inkl. schwer erreichbarer Stellen. Regelmaessige Reinigung von Lueftungsgittern und Heizkoerpern.',
+    problem: 'Mitarbeiter beschweren sich über Staub und schlechte Luft',
+    loesung: 'Professionelle Staubentfernung inkl. schwer erreichbarer Stellen. Regelmäßige Reinigung von Lüftungsgittern und Heizkörpern.',
   },
   {
     icon: UserX,
-    problem: 'Der aktuelle Dienstleister ist unzuverlaessig',
-    loesung: 'Bei uns reinigt ein festes Team, das Ihre Raeume kennt. Kein staendiger Personalwechsel, keine Ueberraschungen.',
+    problem: 'Der aktuelle Dienstleister ist unzuverlässig',
+    loesung: 'Bei uns reinigt ein festes Team, das Ihre Räume kennt. Kein ständiger Personalwechsel, keine Überraschungen.',
   },
   {
     icon: Eye,
-    problem: 'Besucher sehen als erstes schmutzige Fenster und Boeden',
-    loesung: 'Repraesentativer Empfangsbereich, streifenfreie Glasflaechen, gepflegte Boeden. Der erste Eindruck zaehlt.',
+    problem: 'Besucher sehen als erstes schmutzige Fenster und Böden',
+    loesung: 'Repräsentativer Empfangsbereich, streifenfreie Glasflächen, gepflegte Böden. Der erste Eindruck zählt.',
   },
 ]
 
@@ -37,15 +37,15 @@ export default function ProblemLoesungSection() {
             Kennen Sie das?
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight mb-6">
-            Probleme, die wir taeglich loesen
+            Probleme, die wir täglich lösen
           </h2>
           <p className="text-lg text-gray-600 font-semibold leading-relaxed">
             Jeder dieser Punkte kostet Sie Zeit, Nerven und im schlimmsten Fall Kunden.
-            Wir sorgen dafuer, dass Sie sich auf Ihr Kerngeschaeft konzentrieren koennen.
+            Wir sorgen dafür, dass Sie sich auf Ihr Kerngeschäft konzentrieren können.
           </p>
         </div>
 
-        {/* Problem-Loesung Grid */}
+        {/* Problem-Lösung Grid */}
         <div className="grid lg:grid-cols-2 gap-6">
           {probleme.map((item, index) => (
             <div
@@ -68,11 +68,11 @@ export default function ProblemLoesungSection() {
                   <div className="flex items-center gap-2 mb-3">
                     <ArrowRight size={18} className="text-[#109387]" />
                     <span className="text-[#109387] font-bold text-sm uppercase tracking-wide">
-                      Unsere Loesung
+                      Unsere Lösung
                     </span>
                   </div>
 
-                  {/* Loesung */}
+                  {/* Lösung */}
                   <p className="text-gray-700 font-semibold leading-relaxed">
                     {item.loesung}
                   </p>
@@ -87,7 +87,7 @@ export default function ProblemLoesungSection() {
           <div className="relative h-[300px] lg:h-[400px] rounded-[6px] overflow-hidden">
             <Image
               src="https://images.unsplash.com/photo-1497215842964-222b430dc094?q=80&w=2000&auto=format&fit=crop"
-              alt="Sauberes modernes Buero nach professioneller Reinigung"
+              alt="Sauberes modernes Büro nach professioneller Reinigung"
               fill
               className="object-cover"
             />
@@ -95,19 +95,19 @@ export default function ProblemLoesungSection() {
 
           <div className="lg:pl-8">
             <h3 className="text-2xl lg:text-3xl font-bold text-[#012956] mb-4">
-              Sie haben genuegend andere Sorgen
+              Sie haben genügend andere Sorgen
             </h3>
             <p className="text-gray-600 font-semibold leading-relaxed mb-6">
-              Lassen Sie die Reinigung Profis machen. Waehrend Sie Ihr Unternehmen fuehren,
-              sorgen wir im Hintergrund fuer Sauberkeit und Hygiene - zuverlaessig,
-              diskret und nach Ihren Wuenschen.
+              Lassen Sie die Reinigung Profis machen. Während Sie Ihr Unternehmen führen,
+              sorgen wir im Hintergrund für Sauberkeit und Hygiene – zuverlässig,
+              diskret und nach Ihren Wünschen.
             </p>
             <a
               href="#kontakt"
-              className="inline-flex items-center gap-2 text-[#109387] font-bold hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-6 py-3 rounded-[6px] transition-colors group"
             >
-              Jetzt Problem loesen
-              <ArrowRight size={18} />
+              Jetzt Problem lösen
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </div>
