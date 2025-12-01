@@ -29,7 +29,7 @@ export default function CTASection() {
               Unterhaltsreinigung für Ihre Branche
             </h3>
 
-            {/* Branchen als hochwertiges 2x3 Grid - Outlined Icons */}
+            {/* Branchen als hochwertiges 2x3 Grid - Gefüllt für Kontrast */}
             <div className="grid grid-cols-2 gap-4 mb-8">
               {branchen.map((branche) => {
                 const Icon = branche.icon
@@ -39,9 +39,9 @@ export default function CTASection() {
                     href={`/branchen/${branche.slug}`}
                     className="group flex items-center gap-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#109387]/50 rounded-[6px] p-4 transition-all duration-300"
                   >
-                    {/* Icon - Outlined Style */}
-                    <div className="w-11 h-11 border-2 border-[#109387] group-hover:bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0 transition-all duration-300">
-                      <Icon size={20} className="text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
+                    {/* Icon - Dauerhaft gefüllt für Kontrast */}
+                    <div className="w-11 h-11 bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0">
+                      <Icon size={20} className="text-white" strokeWidth={1.5} />
                     </div>
                     <span className="text-white font-semibold text-sm group-hover:text-[#109387] transition-colors">
                       {branche.name}
@@ -70,13 +70,13 @@ export default function CTASection() {
               Kostenfreie Besichtigung, transparentes Angebot, schneller Start.
             </p>
 
-            {/* Telefon prominent - Outlined Icon */}
+            {/* Telefon prominent - Gefüllt für Kontrast */}
             <a
               href="tel:+4987143033460"
               className="flex items-center gap-4 bg-[#012956] hover:bg-[#01203d] rounded-[6px] p-5 mb-6 group transition-colors"
             >
-              <div className="w-14 h-14 border-2 border-[#109387] group-hover:bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0 transition-all duration-300">
-                <Phone size={24} className="text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
+              <div className="w-14 h-14 bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0">
+                <Phone size={24} className="text-white" strokeWidth={1.5} />
               </div>
               <div>
                 <span className="text-white/60 text-sm font-semibold block">Direkt anrufen</span>
