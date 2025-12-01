@@ -3,7 +3,10 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Phone, ChevronDown, Building2, Factory, Wrench, Sparkles, Users, Stethoscope, ShoppingBag, GraduationCap, UtensilsCrossed, Dumbbell, Warehouse, Home, Landmark, Banknote, Car } from 'lucide-react'
+import { ArrowRight, Phone, ChevronDown, Building2, Factory, Wrench, Sparkles, Stethoscope, ShoppingBag, GraduationCap, UtensilsCrossed, Dumbbell, Warehouse, Home, Landmark, Banknote, Car } from 'lucide-react'
+
+// Type für Dropdown States
+type DropdownType = 'leistungen' | 'branchen' | 'ueberfimi' | null
 
 // Mega Menu - Leistungen (ALLE 18 Services)
 const leistungenCategories = [
@@ -83,13 +86,44 @@ export default function Navigation() {
   const [showNavToggle, setShowNavToggle] = useState(false)
   const [showMobileMenuButton, setShowMobileMenuButton] = useState(true)
   const [mobileMenuHalfHidden, setMobileMenuHalfHidden] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [activeDropdown, setActiveDropdown] = useState<DropdownType>(null)
   const [mobileLeistungenOpen, setMobileLeistungenOpen] = useState(false)
   const [mobileBranchenOpen, setMobileBranchenOpen] = useState(false)
   const [mobileUeberFimiOpen, setMobileUeberFimiOpen] = useState(false)
   const lastScrollTime = useRef<number>(Date.now())
   const autoHideIntervalRef = useRef<NodeJS.Timeout | null>(null)
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const mobileMenuRef = useRef<HTMLDivElement>(null)
+  const navRef = useRef<HTMLElement>(null)
+
+  // Body Scroll Lock wenn Mobile Menu offen ist
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      // Speichere aktuelle Scroll Position
+      const scrollY = window.scrollY
+      document.body.style.position = 'fixed'
+      document.body.style.top = `-${scrollY}px`
+      document.body.style.width = '100%'
+      document.body.style.overflow = 'hidden'
+    } else {
+      // Stelle Scroll Position wieder her
+      const scrollY = document.body.style.top
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.width = ''
+      document.body.style.overflow = ''
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0') * -1)
+      }
+    }
+
+    return () => {
+      document.body.style.position = ''
+      document.body.style.top = ''
+      document.body.style.width = ''
+      document.body.style.overflow = ''
+    }
+  }, [isMobileMenuOpen])
 
   // Auto-Hide Interval
   useEffect(() => {
@@ -99,7 +133,7 @@ export default function Navigation() {
       if (timeSinceLastScroll >= 1500) {
         const currentScrollY = window.scrollY
 
-        if (currentScrollY > 100) {
+        if (currentScrollY > 100 && !isMobileMenuOpen) {
           setShowNavToggle(false)
           setMobileMenuHalfHidden(true)
         }
@@ -111,10 +145,13 @@ export default function Navigation() {
         clearInterval(autoHideIntervalRef.current)
       }
     }
-  }, [])
+  }, [isMobileMenuOpen])
 
   useEffect(() => {
     const handleScroll = () => {
+      // Ignoriere Scroll Events wenn Mobile Menu offen ist
+      if (isMobileMenuOpen) return
+
       const currentScrollY = window.scrollY
       setIsScrolled(currentScrollY > 20)
 
@@ -146,7 +183,7 @@ export default function Navigation() {
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [lastScrollY])
+  }, [lastScrollY, isMobileMenuOpen])
 
   const handleShowNav = () => {
     setIsNavVisible(true)
@@ -157,25 +194,41 @@ export default function Navigation() {
     e.preventDefault()
     setIsMobileMenuOpen(false)
     setActiveDropdown(null)
-    const footer = document.getElementById('contact-form')
-    if (footer) {
-      footer.scrollIntoView({ behavior: 'smooth' })
-    }
+    // Kurze Verzögerung damit Body Scroll Lock aufgehoben wird
+    setTimeout(() => {
+      const footer = document.getElementById('contact-form')
+      if (footer) {
+        footer.scrollIntoView({ behavior: 'smooth' })
+      }
+    }, 50)
   }, [])
 
-  // Dropdown Handlers
-  const handleDropdownEnter = (dropdown: string) => {
+  // VERBESSERTE Dropdown Handlers - sofortiges Umschalten
+  const handleDropdownEnter = useCallback((dropdown: DropdownType) => {
+    // Immer sofort den Timeout clearen
     if (dropdownTimeoutRef.current) {
       clearTimeout(dropdownTimeoutRef.current)
+      dropdownTimeoutRef.current = null
     }
+    // Sofort das neue Dropdown setzen
     setActiveDropdown(dropdown)
-  }
+  }, [])
 
-  const handleDropdownLeave = () => {
+  const handleDropdownLeave = useCallback(() => {
+    // Timeout nur wenn wir wirklich verlassen (nicht zu anderem Dropdown wechseln)
     dropdownTimeoutRef.current = setTimeout(() => {
       setActiveDropdown(null)
-    }, 150)
-  }
+    }, 100) // Reduziert von 150ms auf 100ms
+  }, [])
+
+  // Cleanup Timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (dropdownTimeoutRef.current) {
+        clearTimeout(dropdownTimeoutRef.current)
+      }
+    }
+  }, [])
 
   // Über FIMI Dropdown Links
   const ueberFimiLinks = [
@@ -211,16 +264,16 @@ export default function Navigation() {
               />
             </Link>
 
-            {/* Desktop Navigation - Premium Spacing */}
-            <div className="hidden lg:flex items-center gap-2">
-              {/* Leistungen Dropdown */}
+            {/* Desktop Navigation - Keine Gap für nahtloses Hovern */}
+            <div className="hidden lg:flex items-center">
+              {/* Leistungen Dropdown - mit Padding statt Gap */}
               <div
-                className="relative"
+                className="relative px-1"
                 onMouseEnter={() => handleDropdownEnter('leistungen')}
                 onMouseLeave={handleDropdownLeave}
               >
                 <button
-                  className={`flex items-center gap-2 px-5 py-3 rounded-[6px] text-[15px] font-bold transition-all duration-200 ${
+                  className={`flex items-center gap-2 px-5 py-3 rounded-[6px] text-[15px] font-bold transition-all duration-150 ${
                     activeDropdown === 'leistungen'
                       ? 'text-[#109387] bg-[#109387]/5'
                       : 'text-[#012956] hover:text-[#109387] hover:bg-[#f8f9fa]'
@@ -230,19 +283,19 @@ export default function Navigation() {
                   <ChevronDown
                     size={16}
                     strokeWidth={2.5}
-                    className={`transition-transform duration-300 ${activeDropdown === 'leistungen' ? 'rotate-180' : ''}`}
+                    className={`transition-transform duration-200 ${activeDropdown === 'leistungen' ? 'rotate-180' : ''}`}
                   />
                 </button>
               </div>
 
               {/* Branchen Dropdown */}
               <div
-                className="relative"
+                className="relative px-1"
                 onMouseEnter={() => handleDropdownEnter('branchen')}
                 onMouseLeave={handleDropdownLeave}
               >
                 <button
-                  className={`flex items-center gap-2 px-5 py-3 rounded-[6px] text-[15px] font-bold transition-all duration-200 ${
+                  className={`flex items-center gap-2 px-5 py-3 rounded-[6px] text-[15px] font-bold transition-all duration-150 ${
                     activeDropdown === 'branchen'
                       ? 'text-[#109387] bg-[#109387]/5'
                       : 'text-[#012956] hover:text-[#109387] hover:bg-[#f8f9fa]'
@@ -252,19 +305,19 @@ export default function Navigation() {
                   <ChevronDown
                     size={16}
                     strokeWidth={2.5}
-                    className={`transition-transform duration-300 ${activeDropdown === 'branchen' ? 'rotate-180' : ''}`}
+                    className={`transition-transform duration-200 ${activeDropdown === 'branchen' ? 'rotate-180' : ''}`}
                   />
                 </button>
               </div>
 
               {/* Über FIMI Dropdown */}
               <div
-                className="relative"
+                className="relative px-1"
                 onMouseEnter={() => handleDropdownEnter('ueberfimi')}
                 onMouseLeave={handleDropdownLeave}
               >
                 <button
-                  className={`flex items-center gap-2 px-5 py-3 rounded-[6px] text-[15px] font-bold transition-all duration-200 ${
+                  className={`flex items-center gap-2 px-5 py-3 rounded-[6px] text-[15px] font-bold transition-all duration-150 ${
                     activeDropdown === 'ueberfimi'
                       ? 'text-[#109387] bg-[#109387]/5'
                       : 'text-[#012956] hover:text-[#109387] hover:bg-[#f8f9fa]'
@@ -274,30 +327,32 @@ export default function Navigation() {
                   <ChevronDown
                     size={16}
                     strokeWidth={2.5}
-                    className={`transition-transform duration-300 ${activeDropdown === 'ueberfimi' ? 'rotate-180' : ''}`}
+                    className={`transition-transform duration-200 ${activeDropdown === 'ueberfimi' ? 'rotate-180' : ''}`}
                   />
                 </button>
 
-                {/* Über FIMI Dropdown Menu - Premium */}
+                {/* Über FIMI Dropdown Menu - mit Bridge für smooth hovering */}
                 <div
-                  className={`absolute top-full left-0 mt-3 bg-white rounded-[8px] shadow-2xl border border-gray-100 overflow-hidden transition-all duration-300 ${
+                  className={`absolute top-full left-0 pt-2 transition-all duration-200 ${
                     activeDropdown === 'ueberfimi'
                       ? 'opacity-100 visible translate-y-0'
-                      : 'opacity-0 invisible -translate-y-2'
+                      : 'opacity-0 invisible -translate-y-2 pointer-events-none'
                   }`}
                 >
-                  <div className="py-3 min-w-[220px]">
-                    {ueberFimiLinks.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className="flex items-center gap-3 px-5 py-4 text-gray-600 hover:bg-[#f8f9fa] hover:text-[#109387] transition-all text-[15px] font-semibold group"
-                        onClick={() => setActiveDropdown(null)}
-                      >
-                        <ArrowRight size={14} strokeWidth={2.5} className="text-gray-300 group-hover:text-[#109387] group-hover:translate-x-1 transition-all" />
-                        {link.label}
-                      </Link>
-                    ))}
+                  <div className="bg-white rounded-[8px] shadow-2xl border border-gray-100 overflow-hidden">
+                    <div className="py-3 min-w-[220px]">
+                      {ueberFimiLinks.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className="flex items-center gap-3 px-5 py-4 text-gray-600 hover:bg-[#f8f9fa] hover:text-[#109387] transition-all text-[15px] font-semibold group"
+                          onClick={() => setActiveDropdown(null)}
+                        >
+                          <ArrowRight size={14} strokeWidth={2.5} className="text-gray-300 group-hover:text-[#109387] group-hover:translate-x-1 transition-all" />
+                          {link.label}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -375,13 +430,28 @@ export default function Navigation() {
             </div>
           </div>
 
-          {/* Mobile Menu - Premium */}
+          {/* Mobile Menu - Premium mit Touch-Scroll Support */}
           <div
-            className={`lg:hidden overflow-hidden transition-all duration-300 ${
-              isMobileMenuOpen ? 'max-h-[1200px] opacity-100' : 'max-h-0 opacity-0'
+            ref={mobileMenuRef}
+            className={`lg:hidden transition-all duration-300 ${
+              isMobileMenuOpen
+                ? 'max-h-[calc(100vh-6rem)] opacity-100 overflow-y-auto overscroll-contain'
+                : 'max-h-0 opacity-0 overflow-hidden'
             }`}
+            style={{
+              WebkitOverflowScrolling: 'touch',
+              touchAction: 'pan-y'
+            }}
+            onTouchStart={(e) => {
+              // Verhindere dass Touch-Events das Menu schließen
+              e.stopPropagation()
+            }}
+            onTouchMove={(e) => {
+              // Erlaube Scrollen innerhalb des Menus
+              e.stopPropagation()
+            }}
           >
-            <div className="py-6 border-t border-gray-100">
+            <div className="py-6 border-t border-gray-100 pb-32">
               <div className="flex flex-col gap-1">
                 {/* Mobile Leistungen Accordion */}
                 <div>
@@ -539,16 +609,19 @@ export default function Navigation() {
           </div>
         </div>
 
-        {/* Leistungen Mega Menu - Premium */}
+        {/* Leistungen Mega Menu - Premium mit Bridge */}
         <div
-          className={`absolute left-0 right-0 bg-white shadow-2xl border-t border-gray-100 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          className={`absolute left-0 right-0 transition-all duration-200 ${
             activeDropdown === 'leistungen'
               ? 'opacity-100 visible translate-y-0'
-              : 'opacity-0 invisible -translate-y-4'
+              : 'opacity-0 invisible -translate-y-2 pointer-events-none'
           }`}
           onMouseEnter={() => handleDropdownEnter('leistungen')}
           onMouseLeave={handleDropdownLeave}
         >
+          {/* Invisible Bridge für smooth hovering */}
+          <div className="h-2 bg-transparent" />
+          <div className="bg-white shadow-2xl border-t border-gray-100">
           <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-12">
             <div className="grid grid-cols-4 gap-12">
               {leistungenCategories.map((category) => {
@@ -612,18 +685,22 @@ export default function Navigation() {
               </div>
             </Link>
           </div>
+          </div>
         </div>
 
-        {/* Branchen Mega Menu - Premium */}
+        {/* Branchen Mega Menu - Premium mit Bridge */}
         <div
-          className={`absolute left-0 right-0 bg-white shadow-2xl border-t border-gray-100 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          className={`absolute left-0 right-0 transition-all duration-200 ${
             activeDropdown === 'branchen'
               ? 'opacity-100 visible translate-y-0'
-              : 'opacity-0 invisible -translate-y-4'
+              : 'opacity-0 invisible -translate-y-2 pointer-events-none'
           }`}
           onMouseEnter={() => handleDropdownEnter('branchen')}
           onMouseLeave={handleDropdownLeave}
         >
+          {/* Invisible Bridge für smooth hovering */}
+          <div className="h-2 bg-transparent" />
+          <div className="bg-white shadow-2xl border-t border-gray-100">
           <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-12">
             <div className="grid grid-cols-4 xl:grid-cols-6 gap-5">
               {branchenData.map((branche) => {
@@ -665,6 +742,7 @@ export default function Navigation() {
                 <ArrowRight size={18} strokeWidth={2.5} className="group-hover:translate-x-1 transition-transform" />
               </div>
             </Link>
+          </div>
           </div>
         </div>
       </nav>
