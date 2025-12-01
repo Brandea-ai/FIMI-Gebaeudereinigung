@@ -699,6 +699,7 @@ export default function KarrierePage() {
   const [expandedStep, setExpandedStep] = useState<number | null>(null)
   const sidebarRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
+  const sidebarNavRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -711,11 +712,28 @@ export default function KarrierePage() {
       const jobElements = stellenangebote.map(job => document.getElementById(job.id))
       const viewportCenter = window.innerHeight / 3
 
-      for (const element of jobElements) {
+      for (let i = 0; i < jobElements.length; i++) {
+        const element = jobElements[i]
         if (element) {
           const rect = element.getBoundingClientRect()
           if (rect.top <= viewportCenter && rect.bottom >= viewportCenter) {
-            setActiveJob(element.id)
+            const jobId = element.id
+            setActiveJob(jobId)
+
+            // Auto-scroll Sidebar: Scrolle zum aktiven Button in der Sidebar
+            if (sidebarNavRef.current) {
+              const sidebarButtons = sidebarNavRef.current.querySelectorAll('button')
+              const activeButton = sidebarButtons[i]
+              if (activeButton) {
+                const navRect = sidebarNavRef.current.getBoundingClientRect()
+                const buttonRect = activeButton.getBoundingClientRect()
+
+                // Prüfe ob Button außerhalb des sichtbaren Bereichs ist
+                if (buttonRect.top < navRect.top || buttonRect.bottom > navRect.bottom) {
+                  activeButton.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+                }
+              }
+            }
             break
           }
         }
@@ -841,7 +859,7 @@ export default function KarrierePage() {
                   Offene Stellen
                 </h3>
 
-                <nav className="space-y-2 max-h-[50vh] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-[#109387]/30 scrollbar-track-transparent">
+                <nav ref={sidebarNavRef} className="space-y-2 max-h-[50vh] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-[#109387]/30 scrollbar-track-transparent">
                   {stellenangebote.map((job) => (
                     <button
                       key={job.id}

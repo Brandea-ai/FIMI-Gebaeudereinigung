@@ -4,6 +4,7 @@ const processSteps = [
   { number: '03', title: 'Schritt 3', description: 'Beschreibung folgt.' },
   { number: '04', title: 'Schritt 4', description: 'Beschreibung folgt.' }
 ]
+
 export default function ProcessSection() {
   return (
     <section className="py-20 lg:py-28 bg-white">

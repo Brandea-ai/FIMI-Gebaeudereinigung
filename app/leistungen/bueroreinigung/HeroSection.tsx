@@ -2,82 +2,59 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Phone } from 'lucide-react'
+import { ArrowRight, Phone, ArrowLeft } from 'lucide-react'
 
 export default function HeroSection() {
-  const scrollToContact = () => {
-    const footer = document.getElementById('kontakt-formular')
-    if (footer) {
-      footer.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
-
   return (
-    <section className="relative min-h-[70vh] flex items-center overflow-hidden mt-20 lg:mt-24">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+    <section className="relative min-h-[85vh] flex items-center">
+      <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2940&auto=format&fit=crop"
-          alt="Professionelle Büroreinigung"
+          src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=3540&auto=format&fit=crop"
+          alt="Büroreinigung"
           fill
           className="object-cover"
           priority
         />
-        <div className="gradient-overlay opacity-90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#012956]/95 via-[#012956]/80 to-[#012956]/60" />
       </div>
 
-      {/* Content */}
-      <div className="container-custom relative z-10 py-20">
-        <div className="max-w-4xl">
-          {/* Breadcrumb */}
-          <div className="flex items-center space-x-2 text-sm text-gray-300 mb-6">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <span>/</span>
-            <Link href="/#leistungen" className="hover:text-white transition-colors">Leistungen</Link>
-            <span>/</span>
-            <span className="text-fimi-turquoise">Gewerbliche Objektreinigung</span>
-          </div>
+      <div className="relative z-10 w-full">
+        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-32">
+          <Link href="/leistungen" className="inline-flex items-center gap-2 text-white/70 hover:text-white font-semibold mb-8 transition-colors">
+            <ArrowLeft size={18} />
+            Alle Leistungen
+          </Link>
 
-          {/* Category Badge */}
-          <div className="inline-flex items-center bg-fimi-turquoise/20 backdrop-blur-sm border border-fimi-turquoise/30 rounded-full px-6 py-2 mb-6">
-            <span className="text-sm font-semibold text-fimi-turquoise">Gewerbliche Objektreinigung</span>
-          </div>
+          <div className="max-w-4xl">
+            <div className="inline-flex items-center bg-[#109387]/20 backdrop-blur-sm border border-[#109387]/30 rounded-[6px] px-4 py-2 mb-6">
+              <span className="text-sm font-bold text-[#109387] uppercase tracking-wide">Gewerbliche Reinigung</span>
+            </div>
 
-          {/* Title */}
-          <h1 className="text-white mb-4">Büroreinigung in Landshut</h1>
-          <p className="text-2xl md:text-3xl text-fimi-turquoise font-semibold mb-6">
-            Saubere Büros für produktives Arbeiten
-          </p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.05] mb-6">
+              Büroreinigung
+            </h1>
 
-          {/* Description */}
-          <p className="text-xl text-gray-200 mb-10 leading-relaxed max-w-3xl">
-            Professionelle Büroreinigung, die Ihren Mitarbeitern ein angenehmes und gesundes Arbeitsumfeld schafft.
-            Verlassen Sie sich auf unsere Erfahrung und Zuverlässigkeit.
-          </p>
+            <p className="text-xl md:text-2xl lg:text-3xl font-bold text-[#109387] mb-8">
+              Saubere Büros für produktives Arbeiten
+            </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <button
-              onClick={scrollToContact}
-              className="btn-primary inline-flex items-center justify-center space-x-2 group"
-            >
-              <span>Jetzt Angebot anfordern</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
+            <p className="text-lg lg:text-xl text-white/80 font-semibold leading-relaxed mb-10 max-w-3xl">
+              Beschreibung folgt.
+            </p>
 
-            <a
-              href="tel:01747225473"
-              className="btn-outline bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-fimi-navy inline-flex items-center justify-center space-x-2"
-            >
-              <Phone className="w-5 h-5" />
-              <span>01747225473</span>
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#contact-form" className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group shadow-lg">
+                Kostenfreie Besichtigung
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+              <a href="tel:+4917472254773" className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-[#012956] font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300">
+                <Phone size={20} />
+                0174 722 54 773
+              </a>
+            </div>
           </div>
         </div>
       </div>
-
-      {/* Decorative Element */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent z-10" />
     </section>
   )
 }
