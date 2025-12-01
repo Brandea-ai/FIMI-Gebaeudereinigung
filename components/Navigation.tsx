@@ -501,21 +501,15 @@ export default function Navigation() {
                           </div>
                         </div>
                       ))}
-                      <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-gray-200">
+                      <div className="mt-4 pt-4 border-t border-gray-200">
                         <Link
                           href="/leistungen"
-                          className="inline-flex items-center justify-center gap-2 text-[#012956] font-bold text-[15px] py-3 px-4 bg-[#f8f9fa] rounded-[6px]"
+                          className="inline-flex items-center justify-center gap-2 w-full text-[#012956] font-bold text-[15px] py-3 px-4 bg-[#f8f9fa] rounded-[6px]"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           Alle Leistungen
                           <ArrowRight size={16} strokeWidth={2.5} />
                         </Link>
-                        <button
-                          onClick={() => setMobileLeistungenOpen(false)}
-                          className="flex items-center justify-center gap-2 text-gray-500 font-semibold text-[14px] py-3 px-4 border border-gray-200 rounded-[6px] hover:bg-gray-50 transition-all"
-                        >
-                          Schließen
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -559,21 +553,15 @@ export default function Navigation() {
                           {branche.name}
                         </Link>
                       ))}
-                      <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-gray-200">
+                      <div className="mt-4 pt-4 border-t border-gray-200">
                         <Link
                           href="/branchen"
-                          className="inline-flex items-center justify-center gap-2 text-[#012956] font-bold text-[15px] py-3 px-4 bg-[#f8f9fa] rounded-[6px]"
+                          className="inline-flex items-center justify-center gap-2 w-full text-[#012956] font-bold text-[15px] py-3 px-4 bg-[#f8f9fa] rounded-[6px]"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           Alle Branchen
                           <ArrowRight size={16} strokeWidth={2.5} />
                         </Link>
-                        <button
-                          onClick={() => setMobileBranchenOpen(false)}
-                          className="flex items-center justify-center gap-2 text-gray-500 font-semibold text-[14px] py-3 px-4 border border-gray-200 rounded-[6px] hover:bg-gray-50 transition-all"
-                        >
-                          Schließen
-                        </button>
                       </div>
                     </div>
                   </div>
@@ -617,14 +605,6 @@ export default function Navigation() {
                           {link.label}
                         </Link>
                       ))}
-                      <div className="mt-4 pt-4 border-t border-gray-200">
-                        <button
-                          onClick={() => setMobileUeberFimiOpen(false)}
-                          className="flex items-center justify-center gap-2 w-full text-gray-500 font-semibold text-[14px] py-3 px-4 border border-gray-200 rounded-[6px] hover:bg-gray-50 transition-all"
-                        >
-                          Schließen
-                        </button>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -660,6 +640,20 @@ export default function Navigation() {
                   <span>Kostenfreie Besichtigung</span>
                   <ArrowRight size={18} strokeWidth={2.5} />
                 </button>
+
+                {/* Menü schließen Button - ganz unten */}
+                <div className="mt-6 pt-6 border-t border-gray-200">
+                  <button
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex items-center justify-center gap-3 w-full text-[#012956] font-bold text-[16px] py-4 px-6 border-2 border-[#012956] rounded-[8px] hover:bg-[#012956] hover:text-white transition-all"
+                  >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                    <span>Menü schließen</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
