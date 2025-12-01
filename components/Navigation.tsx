@@ -298,15 +298,15 @@ export default function Navigation() {
         } ${isNavVisible ? 'translate-y-0' : '-translate-y-full'}`}
       >
         <div className="w-full max-w-[1800px] mx-auto px-4 lg:px-8 xl:px-12 2xl:px-20">
-          <div className="flex items-center justify-between h-20 lg:h-24 xl:h-28">
-            {/* Logo */}
+          <div className="flex items-center justify-between h-24 lg:h-28 xl:h-32">
+            {/* Logo - Größer */}
             <Link href="/" className="relative z-10 flex-shrink-0">
               <Image
                 src="/FIMI-LOGO/FIMI-Logo_Transparent_FUER-Webseite.png"
                 alt="FIMI Gebäudereinigung"
-                width={320}
-                height={107}
-                className="h-16 lg:h-20 xl:h-24 w-auto"
+                width={400}
+                height={133}
+                className="h-20 lg:h-24 xl:h-28 w-auto"
                 priority
               />
             </Link>
@@ -424,20 +424,20 @@ export default function Navigation() {
               ))}
             </div>
 
-            {/* CTA Buttons - Beratung zuerst, dann Telefon */}
-            <div className="hidden lg:flex items-center gap-2 xl:gap-3 ml-2 xl:ml-4 2xl:ml-6">
+            {/* CTA Buttons - Größer und unternehmerischer */}
+            <div className="hidden lg:flex items-center gap-3 xl:gap-4 ml-4 xl:ml-6 2xl:ml-8">
               <Link
                 href="/kontakt"
-                className="flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-xs xl:text-sm px-4 xl:px-6 py-2.5 xl:py-3 rounded-[6px] transition-all whitespace-nowrap"
+                className="flex items-center gap-2.5 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-[15px] xl:text-[16px] px-6 xl:px-8 py-3.5 xl:py-4 rounded-[6px] transition-all whitespace-nowrap shadow-md hover:shadow-lg hover:-translate-y-0.5"
               >
                 <span>Jetzt anfragen</span>
-                <ArrowRight size={16} />
+                <ArrowRight size={18} strokeWidth={2.5} />
               </Link>
               <a
                 href="tel:+4987143033460"
-                className="flex items-center gap-1.5 xl:gap-2 text-[#012956] hover:text-[#109387] border-2 border-[#012956] hover:border-[#109387] font-semibold text-xs xl:text-sm px-3 xl:px-5 py-2 xl:py-2.5 rounded-[6px] transition-all whitespace-nowrap"
+                className="flex items-center gap-2.5 text-[#012956] hover:text-white bg-white hover:bg-[#012956] border-2 border-[#012956] font-bold text-[15px] xl:text-[16px] px-5 xl:px-7 py-3 xl:py-3.5 rounded-[6px] transition-all whitespace-nowrap shadow-sm hover:shadow-md"
               >
-                <Phone size={16} className="xl:w-[18px] xl:h-[18px]" />
+                <Phone size={18} strokeWidth={2} />
                 <span>0871 430 334 60</span>
               </a>
             </div>
@@ -911,7 +911,7 @@ export default function Navigation() {
       </div>
 
       {/* Spacer für fixed Navigation */}
-      <div className="h-20 lg:h-24 xl:h-28" />
+      <div className="h-24 lg:h-28 xl:h-32" />
     </>
   )
 }
