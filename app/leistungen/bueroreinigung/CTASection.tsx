@@ -1,9 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, Phone, CheckCircle, Building2, Stethoscope, GraduationCap, Banknote, Landmark, ShoppingBag, Factory, UtensilsCrossed, Dumbbell } from 'lucide-react'
+import { ArrowRight, Phone, CheckCircle, Building2, Stethoscope, GraduationCap, Banknote, Landmark, ShoppingBag } from 'lucide-react'
 
-// Kompakte Branchen-Liste
+// 6 beliebteste Branchen für Büroreinigung
 const branchen = [
   { slug: 'buero-verwaltung', name: 'Büro & Verwaltung', icon: Building2 },
   { slug: 'gesundheitswesen', name: 'Gesundheitswesen', icon: Stethoscope },
@@ -11,9 +11,6 @@ const branchen = [
   { slug: 'bildung-schulen', name: 'Bildung & Schulen', icon: GraduationCap },
   { slug: 'oeffentliche-einrichtungen', name: 'Öffentliche Einrichtungen', icon: Landmark },
   { slug: 'einzelhandel', name: 'Einzelhandel', icon: ShoppingBag },
-  { slug: 'industrie-produktion', name: 'Industrie', icon: Factory },
-  { slug: 'gastronomie-hotel', name: 'Gastronomie & Hotel', icon: UtensilsCrossed },
-  { slug: 'fitness-sport', name: 'Fitness & Sport', icon: Dumbbell },
 ]
 
 export default function CTASection() {
@@ -23,42 +20,43 @@ export default function CTASection() {
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
 
-          {/* LINKS: Branchen kompakt */}
+          {/* LINKS: Branchen hochwertig */}
           <div>
             <span className="text-[#109387] font-bold text-sm uppercase tracking-wide mb-4 block">
-              Unsere Branchen
+              Branchenkompetenz
             </span>
             <h3 className="text-2xl lg:text-3xl font-bold text-white mb-6">
-              Büroreinigung für jede Branche
+              Spezialisiert auf Ihre Branche
             </h3>
-            <p className="text-white/70 font-semibold leading-relaxed mb-8">
-              Wir kennen die Anforderungen Ihrer Branche und bieten maßgeschneiderte Reinigungskonzepte.
-            </p>
 
-            {/* Branchen als kompakte Chips */}
-            <div className="flex flex-wrap gap-3 mb-8">
+            {/* Branchen als hochwertiges 2x3 Grid */}
+            <div className="grid grid-cols-2 gap-4 mb-8">
               {branchen.map((branche) => {
                 const Icon = branche.icon
                 return (
                   <Link
                     key={branche.slug}
                     href={`/branchen/${branche.slug}`}
-                    className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold text-sm px-4 py-2.5 rounded-[6px] transition-all group"
+                    className="group flex items-center gap-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#109387]/50 rounded-[6px] p-4 transition-all duration-300"
                   >
-                    <Icon size={16} className="text-[#109387]" />
-                    {branche.name}
+                    <div className="w-11 h-11 bg-[#109387]/20 group-hover:bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0 transition-colors">
+                      <Icon size={20} className="text-[#109387] group-hover:text-white transition-colors" />
+                    </div>
+                    <span className="text-white font-semibold text-sm group-hover:text-[#109387] transition-colors">
+                      {branche.name}
+                    </span>
                   </Link>
                 )
               })}
             </div>
 
-            {/* Alle Branchen Link */}
+            {/* Alle Branchen CTA */}
             <Link
               href="/branchen"
-              className="inline-flex items-center gap-2 text-[#109387] font-bold hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/10 text-white font-bold px-6 py-3 rounded-[6px] transition-all group"
             >
-              Alle 12 Branchen ansehen
-              <ArrowRight size={18} />
+              Alle 12 Branchen entdecken
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 
