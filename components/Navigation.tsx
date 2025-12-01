@@ -299,20 +299,20 @@ export default function Navigation() {
       >
         <div className="w-full max-w-[1800px] mx-auto px-4 lg:px-8 xl:px-12 2xl:px-20">
           <div className="flex items-center justify-between h-24 lg:h-28 xl:h-32">
-            {/* Logo - Größer */}
+            {/* Logo - Noch größer */}
             <Link href="/" className="relative z-10 flex-shrink-0">
               <Image
                 src="/FIMI-LOGO/FIMI-Logo_Transparent_FUER-Webseite.png"
                 alt="FIMI Gebäudereinigung"
-                width={400}
-                height={133}
-                className="h-20 lg:h-24 xl:h-28 w-auto"
+                width={450}
+                height={150}
+                className="h-24 lg:h-28 xl:h-32 w-auto"
                 priority
               />
             </Link>
 
             {/* Desktop Navigation - Premium Design mit visuellen Trennern */}
-            <div className="hidden lg:flex items-center bg-[#f8f9fa] rounded-[6px] px-2 py-1.5 xl:px-3 xl:py-2">
+            <div className="hidden lg:flex items-center bg-[#109387]/[0.06] rounded-[6px] px-2 py-1.5 xl:px-3 xl:py-2">
               {/* Leistungen Dropdown */}
               <div
                 className="relative"
@@ -336,7 +336,7 @@ export default function Navigation() {
               </div>
 
               {/* Trenner */}
-              <div className="w-px h-5 bg-gray-300 mx-1" />
+              <div className="w-px h-5 bg-[#109387]/20 mx-1" />
 
               {/* Branchen Dropdown */}
               <div
@@ -361,7 +361,7 @@ export default function Navigation() {
               </div>
 
               {/* Trenner */}
-              <div className="w-px h-5 bg-gray-300 mx-1" />
+              <div className="w-px h-5 bg-[#109387]/20 mx-1" />
 
               {/* Über FIMI Dropdown */}
               <div
@@ -411,7 +411,7 @@ export default function Navigation() {
               </div>
 
               {/* Trenner */}
-              <div className="w-px h-5 bg-gray-300 mx-1" />
+              <div className="w-px h-5 bg-[#109387]/20 mx-1" />
 
               {navLinks.map((link) => (
                 <Link
