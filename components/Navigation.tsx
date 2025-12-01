@@ -421,7 +421,7 @@ export default function Navigation() {
                 href="/kontakt"
                 className="flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-xs xl:text-sm px-4 xl:px-6 py-2.5 xl:py-3 rounded-[6px] transition-all whitespace-nowrap"
               >
-                <span>Kostenlos beraten lassen</span>
+                <span>Jetzt anfragen</span>
                 <ArrowRight size={16} />
               </Link>
               <a
