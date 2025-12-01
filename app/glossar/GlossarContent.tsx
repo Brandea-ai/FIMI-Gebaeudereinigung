@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 
 interface GlossarItem {
@@ -227,6 +227,7 @@ const letters = Object.keys(groupedGlossar).sort()
 
 export default function GlossarContent() {
   const [activeLetter, setActiveLetter] = useState<string>(letters[0])
+  const letterRefs = useRef<Record<string, HTMLAnchorElement | null>>({})
 
   useEffect(() => {
     const handleScroll = () => {
@@ -250,22 +251,30 @@ export default function GlossarContent() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Auto-scroll mobile filter to active letter
+  useEffect(() => {
+    const activeButton = letterRefs.current[activeLetter]
+    if (activeButton) {
+      activeButton.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center',
+      })
+    }
+  }, [activeLetter])
+
   const isActive = (letter: string) => letter === activeLetter
 
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#012956] py-20 lg:py-24">
+      <section className="bg-[#012956] py-16 lg:py-20">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <p className="text-[#109387] font-semibold text-sm uppercase tracking-wider mb-4">
-            Fachbegriffe
-          </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
-            Glossar der Gebäudereinigung
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.1] mb-4">
+            Glossar
           </h1>
-          <p className="mt-6 text-white/60 font-semibold text-lg max-w-2xl">
-            Die wichtigsten Begriffe rund um professionelle Reinigung, Facility Management
-            und Gebäudedienstleistungen verständlich erklärt.
+          <p className="text-white/70 font-semibold text-base lg:text-lg max-w-xl">
+            Fachbegriffe der professionellen Gebäudereinigung - von A bis W.
           </p>
         </div>
       </section>
@@ -280,6 +289,7 @@ export default function GlossarContent() {
                 return (
                   <a
                     key={letter}
+                    ref={(el) => { letterRefs.current[letter] = el }}
                     href={`#${letter}`}
                     className={`w-10 h-10 flex-shrink-0 flex items-center justify-center font-bold rounded-[6px] transition-all duration-300 ${
                       active
