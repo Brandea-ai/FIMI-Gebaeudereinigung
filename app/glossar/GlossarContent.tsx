@@ -270,12 +270,38 @@ export default function GlossarContent() {
         </div>
       </section>
 
+      {/* Mobile: Sticky Horizontal Alphabet - AUSSERHALB der Section */}
+      <div className="lg:hidden sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm">
+        <div className="w-full max-w-[1800px] mx-auto px-6">
+          <div className="overflow-x-auto scrollbar-hide py-3">
+            <div className="flex gap-2">
+              {letters.map((letter) => {
+                const active = isActive(letter)
+                return (
+                  <a
+                    key={letter}
+                    href={`#${letter}`}
+                    className={`w-10 h-10 flex-shrink-0 flex items-center justify-center font-bold rounded-[6px] transition-all duration-300 ${
+                      active
+                        ? 'bg-[#109387] text-white scale-110 shadow-lg'
+                        : 'bg-[#f8f9fa] text-[#012956] hover:bg-[#109387] hover:text-white'
+                    }`}
+                  >
+                    {letter}
+                  </a>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Glossar Content mit Sidebar */}
       <section className="py-16 lg:py-24">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="flex gap-12 lg:gap-16">
 
-            {/* Sticky Sidebar - Alphabet Navigation */}
+            {/* Sticky Sidebar - Alphabet Navigation (nur Desktop) */}
             <aside className="hidden lg:block w-14 flex-shrink-0">
               <div className="sticky top-32">
                 <nav className="flex flex-col items-center gap-1 bg-[#f8f9fa] rounded-[6px] p-2">
@@ -299,30 +325,6 @@ export default function GlossarContent() {
                 </nav>
               </div>
             </aside>
-
-            {/* Mobile: Sticky Horizontal Alphabet - außerhalb des Grids */}
-            <div className="lg:hidden sticky top-0 z-20 bg-white -mx-6 px-6 py-3 border-b border-gray-200 shadow-sm mb-8">
-              <div className="overflow-x-auto scrollbar-hide">
-                <div className="flex gap-2">
-                  {letters.map((letter) => {
-                    const active = isActive(letter)
-                    return (
-                      <a
-                        key={letter}
-                        href={`#${letter}`}
-                        className={`w-10 h-10 flex-shrink-0 flex items-center justify-center font-bold rounded-[6px] transition-all duration-300 ${
-                          active
-                            ? 'bg-[#109387] text-white scale-110 shadow-lg'
-                            : 'bg-[#f8f9fa] text-[#012956] hover:bg-[#109387] hover:text-white'
-                        }`}
-                      >
-                        {letter}
-                      </a>
-                    )
-                  })}
-                </div>
-              </div>
-            </div>
 
             {/* Main Content */}
             <div className="flex-1 min-w-0">
