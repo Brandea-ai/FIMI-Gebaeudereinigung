@@ -240,30 +240,24 @@ export default function Navigation() {
     // Zuerst andere schließen
     setMobileBranchenOpen(false)
     setMobileUeberFimiOpen(false)
+    setMobileLeistungenOpen(newState)
 
     if (newState && mobileMenuRef.current) {
       // Leistungen ist erste Card - scroll to top
       mobileMenuRef.current.scrollTo({ top: 0, behavior: 'smooth' })
     }
-
-    setMobileLeistungenOpen(newState)
   }, [mobileLeistungenOpen])
 
   const handleMobileBranchenToggle = useCallback(() => {
     const newState = !mobileBranchenOpen
 
-    // Zuerst andere schließen
+    // Zuerst andere schließen und SOFORT scroll to top
     setMobileLeistungenOpen(false)
     setMobileUeberFimiOpen(false)
 
-    if (newState && mobileMenuRef.current && branchenCardRef.current) {
-      // Warte kurz bis Leistungen geschlossen ist, dann scroll zur Branchen Card
-      setTimeout(() => {
-        if (branchenCardRef.current && mobileMenuRef.current) {
-          const cardTop = branchenCardRef.current.offsetTop - 24 // 24px padding oben
-          mobileMenuRef.current.scrollTo({ top: cardTop, behavior: 'smooth' })
-        }
-      }, 50)
+    if (newState && mobileMenuRef.current) {
+      // Sofort nach oben scrollen - Branchen wird dann direkt sichtbar sein
+      mobileMenuRef.current.scrollTo({ top: 0, behavior: 'instant' })
     }
 
     setMobileBranchenOpen(newState)
@@ -272,18 +266,13 @@ export default function Navigation() {
   const handleMobileUeberFimiToggle = useCallback(() => {
     const newState = !mobileUeberFimiOpen
 
-    // Zuerst andere schließen
+    // Zuerst andere schließen und SOFORT scroll to top
     setMobileLeistungenOpen(false)
     setMobileBranchenOpen(false)
 
-    if (newState && mobileMenuRef.current && ueberFimiCardRef.current) {
-      // Warte kurz bis andere geschlossen sind, dann scroll zur Über FIMI Card
-      setTimeout(() => {
-        if (ueberFimiCardRef.current && mobileMenuRef.current) {
-          const cardTop = ueberFimiCardRef.current.offsetTop - 24
-          mobileMenuRef.current.scrollTo({ top: cardTop, behavior: 'smooth' })
-        }
-      }, 50)
+    if (newState && mobileMenuRef.current) {
+      // Sofort nach oben scrollen
+      mobileMenuRef.current.scrollTo({ top: 0, behavior: 'instant' })
     }
 
     setMobileUeberFimiOpen(newState)
