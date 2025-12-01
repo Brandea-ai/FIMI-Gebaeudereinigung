@@ -6,6 +6,8 @@ import Link from 'next/link'
 import { ArrowRight, Check, Building2, Factory, Wrench, Sparkles, Search, X } from 'lucide-react'
 import { leistungen, categories, getAllCategories } from '@/lib/leistungen-data'
 import FadeIn from '@/components/FadeIn'
+import PartnerLogosSlider from '@/components/PartnerLogosSlider'
+import KundenLogosSlider from '@/components/KundenLogosSlider'
 
 const categoryIcons = {
   gewerblich: Building2,
@@ -502,6 +504,20 @@ export default function LeistungenPage() {
           </div>
         </div>
       </section>
+
+      {/* Partner Trust - Professionelle Ausrüstung */}
+      <PartnerLogosSlider
+        showHeader={true}
+        showStats={true}
+        bgColor="#f8f9fa"
+      />
+
+      {/* Kunden Trust - Social Proof vor CTA */}
+      <KundenLogosSlider
+        showHeader={true}
+        showStats={false}
+        bgColor="#ffffff"
+      />
 
       {/* CTA Section */}
       <section className="py-20 lg:py-28 bg-[#012956]">

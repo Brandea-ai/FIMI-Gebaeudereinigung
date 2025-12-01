@@ -6,6 +6,8 @@ import Link from 'next/link'
 import { ArrowRight, Building2, Factory, Stethoscope, ShoppingBag, UtensilsCrossed, GraduationCap, Dumbbell, Warehouse, Home, Landmark, Banknote, Car, Search, X } from 'lucide-react'
 import { branchen } from '@/lib/branchen-data'
 import FadeIn from '@/components/FadeIn'
+import PartnerLogosSlider from '@/components/PartnerLogosSlider'
+import KundenLogosSlider from '@/components/KundenLogosSlider'
 
 const branchenIcons: Record<string, any> = {
   Building2, Factory, Stethoscope, ShoppingBag, UtensilsCrossed, GraduationCap,
@@ -646,6 +648,20 @@ export default function BranchenPage() {
           )}
         </div>
       </section>
+
+      {/* Partner Trust - Ausrüstung */}
+      <PartnerLogosSlider
+        showHeader={true}
+        showStats={true}
+        bgColor="#ffffff"
+      />
+
+      {/* Kunden Trust - Social Proof vor CTA */}
+      <KundenLogosSlider
+        showHeader={true}
+        showStats={false}
+        bgColor="#f8f9fa"
+      />
 
       {/* CTA Section */}
       <section className="py-20 lg:py-28 bg-[#012956]">

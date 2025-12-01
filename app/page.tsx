@@ -7,6 +7,7 @@ import ProcessContainer from './home/ProcessContainer'
 import FAQContainer from './home/FAQContainer'
 import FloatingNav from '@/components/FloatingNav'
 import KundenLogosSlider from '@/components/KundenLogosSlider'
+import PartnerLogosSlider from '@/components/PartnerLogosSlider'
 
 // Navigation items for FloatingNav
 const floatingNavItems = [
@@ -66,6 +67,11 @@ export default function HomePage() {
       <HeroContainer />
       <TrustContainer />
       <ServicesContainer />
+      <PartnerLogosSlider
+        showHeader={true}
+        showStats={true}
+        bgColor="#ffffff"
+      />
       <RegionenContainer />
       <ProcessContainer />
       <KundenLogosSlider
