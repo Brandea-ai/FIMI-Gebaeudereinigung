@@ -52,7 +52,7 @@ export default function ProcessSection() {
           </p>
         </div>
 
-        {/* Process Steps */}
+        {/* Process Steps - OUTLINED ICONS */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {processSteps.map((step, index) => (
             <div
@@ -69,9 +69,9 @@ export default function ProcessSection() {
                 {step.number}
               </div>
 
-              {/* Icon */}
-              <div className="w-16 h-16 rounded-[6px] bg-[#012956] group-hover:bg-[#109387] flex items-center justify-center mb-6 transition-colors">
-                <step.icon size={32} className="text-white" strokeWidth={1.5} />
+              {/* Icon - Outlined Style */}
+              <div className="w-16 h-16 rounded-[6px] border-2 border-[#109387] group-hover:bg-[#109387] flex items-center justify-center mb-6 transition-all duration-300">
+                <step.icon size={32} className="text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
               </div>
 
               {/* Content */}

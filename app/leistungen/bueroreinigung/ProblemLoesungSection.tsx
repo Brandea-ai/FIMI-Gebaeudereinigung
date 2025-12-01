@@ -53,9 +53,9 @@ export default function ProblemLoesungSection() {
               className="bg-white rounded-[6px] p-8 shadow-sm hover:shadow-lg transition-all duration-300 group"
             >
               <div className="flex items-start gap-5">
-                {/* Icon */}
-                <div className="w-14 h-14 rounded-[6px] bg-[#012956] flex items-center justify-center flex-shrink-0 group-hover:bg-[#109387] transition-colors">
-                  <item.icon size={28} className="text-white" strokeWidth={1.5} />
+                {/* Icon - Outlined Style */}
+                <div className="w-14 h-14 rounded-[6px] border-2 border-[#109387] group-hover:bg-[#109387] flex items-center justify-center flex-shrink-0 transition-all duration-300">
+                  <item.icon size={28} className="text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
                 </div>
 
                 <div className="flex-1">
