@@ -467,14 +467,9 @@ export default function Navigation() {
                     aria-expanded={mobileLeistungenOpen}
                     aria-controls="mobile-leistungen"
                   >
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-[#109387] rounded-[6px] flex items-center justify-center">
-                        <Sparkles size={20} className="text-white" />
-                      </div>
-                      <div className="text-left">
-                        <p className="text-[#012956] font-bold text-[16px]">Leistungen</p>
-                        <p className="text-gray-500 text-[13px] font-medium">18 Services</p>
-                      </div>
+                    <div className="text-left">
+                      <p className="text-[#012956] font-bold text-[16px]">Leistungen</p>
+                      <p className="text-gray-500 text-[13px] font-medium">18 Services</p>
                     </div>
                     <ChevronDown
                       size={22}
@@ -541,14 +536,9 @@ export default function Navigation() {
                     aria-expanded={mobileBranchenOpen}
                     aria-controls="mobile-branchen"
                   >
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-[#012956] rounded-[6px] flex items-center justify-center">
-                        <Building2 size={20} className="text-white" />
-                      </div>
-                      <div className="text-left">
-                        <p className="text-[#012956] font-bold text-[16px]">Branchen</p>
-                        <p className="text-gray-500 text-[13px] font-medium">12 Spezialisierungen</p>
-                      </div>
+                    <div className="text-left">
+                      <p className="text-[#012956] font-bold text-[16px]">Branchen</p>
+                      <p className="text-gray-500 text-[13px] font-medium">12 Spezialisierungen</p>
                     </div>
                     <ChevronDown
                       size={22}
@@ -610,14 +600,9 @@ export default function Navigation() {
                     aria-expanded={mobileUeberFimiOpen}
                     aria-controls="mobile-ueberfimi"
                   >
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-[#012956] rounded-[6px] flex items-center justify-center">
-                        <Building2 size={20} className="text-white" />
-                      </div>
-                      <div className="text-left">
-                        <p className="text-[#012956] font-bold text-[16px]">Über FIMI</p>
-                        <p className="text-gray-500 text-[13px] font-medium">Unternehmen</p>
-                      </div>
+                    <div className="text-left">
+                      <p className="text-[#012956] font-bold text-[16px]">Über FIMI</p>
+                      <p className="text-gray-500 text-[13px] font-medium">Unternehmen</p>
                     </div>
                     <ChevronDown
                       size={22}
