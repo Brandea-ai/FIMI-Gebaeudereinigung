@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Calendar, Clock } from 'lucide-react'
 import { blogPosts, blogCategories, formatDate, BlogPost } from '@/lib/blog-data'
+import FadeIn from '@/components/FadeIn'
 
 type CategoryKey = keyof typeof blogCategories | 'all'
 
@@ -35,16 +36,18 @@ export default function NeuigkeitenPage() {
       {/* Hero */}
       <section className="bg-[#012956] py-20 lg:py-28">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <p className="text-[#109387] font-semibold text-sm uppercase tracking-wider mb-4">
-            Blog
-          </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6">
-            Neuigkeiten
-          </h1>
-          <p className="text-white/70 font-semibold text-lg max-w-2xl">
-            Aktuelles aus der Welt der professionellen Gebäudereinigung.
-            Tipps, Projekte und Einblicke hinter die Kulissen.
-          </p>
+          <FadeIn direction="left">
+            <p className="text-[#109387] font-semibold text-sm uppercase tracking-wider mb-4">
+              Blog
+            </p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6">
+              Neuigkeiten
+            </h1>
+            <p className="text-white/70 font-semibold text-lg max-w-2xl">
+              Aktuelles aus der Welt der professionellen Gebäudereinigung.
+              Tipps, Projekte und Einblicke hinter die Kulissen.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
@@ -205,19 +208,21 @@ export default function NeuigkeitenPage() {
       {/* Newsletter CTA */}
       <section className="py-16 lg:py-20 bg-[#012956]">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 text-center">
-          <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-            Keine Neuigkeit verpassen
-          </h2>
-          <p className="text-white/60 font-semibold mb-8 max-w-xl mx-auto">
-            Erhalten Sie regelmäßig Tipps und Neuigkeiten rund um professionelle Gebäudereinigung.
-          </p>
-          <a
-            href="#contact-form"
-            className="inline-flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-8 py-4 rounded-[6px] transition-all group"
-          >
-            <span>Kontakt aufnehmen</span>
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </a>
+          <FadeIn>
+            <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+              Keine Neuigkeit verpassen
+            </h2>
+            <p className="text-white/60 font-semibold mb-8 max-w-xl mx-auto">
+              Erhalten Sie regelmäßig Tipps und Neuigkeiten rund um professionelle Gebäudereinigung.
+            </p>
+            <a
+              href="#contact-form"
+              className="inline-flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-8 py-4 rounded-[6px] transition-all group"
+            >
+              <span>Kontakt aufnehmen</span>
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+          </FadeIn>
         </div>
       </section>
     </main>
