@@ -14,6 +14,8 @@ const partner = [
   { name: 'Taski', kategorie: 'Bodenreinigung' },
   { name: 'Hagleitner', kategorie: 'Spendersysteme' },
   { name: 'Wetrok', kategorie: 'Maschinen' },
+  { name: 'Copterclean', kategorie: 'Drohnenreinigung' },
+  { name: 'Deolo', kategorie: 'Reinigungslösungen' },
 ]
 
 export default function PartnerSection() {
