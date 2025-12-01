@@ -10,165 +10,133 @@ const partner = [
     kategorie: 'Reinigungsgeräte',
     url: 'https://www.kaercher.com/de/professional.html',
     seitentext: 'Für maschinelle Innen- und Außenreinigung setzen wir auf professionelle Reinigungsgeräte von Kärcher.',
-    linktext: 'Kärcher – professionelle Reinigungsgeräte für gewerbliche Anwendungen',
   },
   {
     name: 'Unger',
     kategorie: 'Fensterreinigung',
     url: 'https://www.ungerglobal.com/de/startseite',
     seitentext: 'Für Glas- und Fensterreinigung nutzen wir ergonomische Werkzeuge und Systeme von Unger.',
-    linktext: 'Unger – Systeme für professionelle Glas- und Fensterreinigung',
   },
   {
     name: 'Vermop',
     kategorie: 'Reinigungssysteme',
     url: 'https://www.vermop.com/de-de/',
     seitentext: 'Unsere Wagen- und Moppsysteme stammen von Vermop, einem führenden Hersteller professioneller Reinigungssysteme.',
-    linktext: 'Vermop – professionelle Reinigungssysteme für Gebäudedienste',
   },
   {
     name: 'Tana',
     kategorie: 'Reinigungsmittel',
     url: 'https://wmprof.com/brands/tana-professional/',
     seitentext: 'Bei Reinigungs- und Pflegemitteln setzen wir auf Produkte von Tana Professional.',
-    linktext: 'Tana Professional – Reinigungs- und Pflegemittel für Profis',
   },
   {
     name: 'Dr. Schnell',
     kategorie: 'Hygiene',
     url: 'https://www.dr-schnell.com/',
     seitentext: 'Für Küchen-, Sanitär- und Flächenhygiene verwenden wir Reinigungs- und Desinfektionsmittel von DR.SCHNELL.',
-    linktext: 'DR.SCHNELL – Reinigungs- und Hygienelösungen',
   },
   {
     name: 'Ecolab',
     kategorie: 'Desinfektion',
     url: 'https://en-de.ecolab.com/',
     seitentext: 'In hygienekritischen Bereichen arbeiten wir mit Desinfektions- und Hygienelösungen von Ecolab.',
-    linktext: 'Ecolab – Lösungen für Hygiene und Desinfektion',
   },
   {
     name: 'Numatic',
     kategorie: 'Staubsauger',
     url: 'https://www.numatic.de/',
     seitentext: 'Für die tägliche Unterhaltsreinigung setzen wir auf robuste Profistaubsauger von Numatic.',
-    linktext: 'Numatic – Profi-Staubsauger und Bodenreinigungstechnik',
   },
   {
     name: 'Taski',
     kategorie: 'Bodenreinigung',
     url: 'https://taski.com/',
     seitentext: 'Auf großen Flächen kommen bei uns Scheuersaugmaschinen und Bodenreinigungstechnik von TASKI zum Einsatz.',
-    linktext: 'TASKI – Maschinen für professionelle Bodenreinigung',
   },
   {
     name: 'Hagleitner',
     kategorie: 'Spendersysteme',
     url: 'https://www.hagleitner.com/de/',
     seitentext: 'Unsere Waschraum- und Spendersysteme beziehen wir von Hagleitner, Spezialist für digitale Hygienelösungen.',
-    linktext: 'Hagleitner – Hygienespender und Dosiersysteme',
   },
   {
     name: 'Wetrok',
     kategorie: 'Maschinen',
     url: 'https://wetrok.de/',
     seitentext: 'Je nach Objekt setzen wir Reinigungsmaschinen und -chemie von Wetrok ein.',
-    linktext: 'Wetrok – Reinigungsmaschinen und -chemie',
   },
   {
     name: 'CopterClean',
     kategorie: 'Drohnenreinigung',
     url: 'https://www.copterclean.de/',
     seitentext: 'Für schwer zugängliche Fassaden, Dächer und PV-Anlagen arbeiten wir mit der Drohnenreinigung von CopterClean.',
-    linktext: 'CopterClean – Drohnenreinigung für Fassade, Dach & PV',
   },
   {
     name: 'STIHL',
     kategorie: 'Außenanlagen',
     url: 'https://www.stihl.de/',
     seitentext: 'Bei der Reinigung von Außenanlagen nutzen wir Hochdruckreiniger und Geräte von STIHL.',
-    linktext: 'STIHL – Geräte für Außenreinigung und Hochdruckreinigung',
   },
   {
     name: 'Hako',
     kategorie: 'Kommunalmaschinen',
     url: 'https://www.hako.com/',
     seitentext: 'Für großflächige Außen- und Kommunalreinigung kommen Kehr- und Reinigungsmaschinen von Hako zum Einsatz.',
-    linktext: 'Hako – Reinigungs- und Kommunaltechnik',
   },
 ]
 
-// Flip Card Component
+// Minimalist Partner Card with subtle hover overlay
 function PartnerCard({ item, onHover }: { item: typeof partner[0]; onHover: (hovering: boolean) => void }) {
-  const [isFlipped, setIsFlipped] = useState(false)
+  const [isHovered, setIsHovered] = useState(false)
 
   return (
-    <div
-      className="flex-shrink-0 w-64 h-52 perspective-1000"
+    <a
+      href={item.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex-shrink-0 w-64 h-48 relative group"
       onMouseEnter={() => {
-        setIsFlipped(true)
+        setIsHovered(true)
         onHover(true)
       }}
       onMouseLeave={() => {
-        setIsFlipped(false)
+        setIsHovered(false)
         onHover(false)
       }}
     >
-      <div
-        className={`relative w-full h-full transition-transform duration-500 transform-style-3d ${
-          isFlipped ? 'rotate-y-180' : ''
-        }`}
-        style={{
-          transformStyle: 'preserve-3d',
-          transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
-          transition: 'transform 0.6s ease-out',
-        }}
-      >
-        {/* Front Side */}
-        <div
-          className="absolute inset-0 bg-white rounded-[6px] p-6 shadow-sm flex flex-col items-center justify-center backface-hidden"
-          style={{ backfaceVisibility: 'hidden' }}
-        >
-          <div className="h-16 w-16 bg-gradient-to-br from-gray-50 to-gray-100 rounded-[6px] flex items-center justify-center mb-4">
-            <span className="text-2xl font-bold text-[#109387]">
+      {/* Base Card */}
+      <div className="absolute inset-0 bg-white rounded-[6px] shadow-sm transition-shadow duration-500 group-hover:shadow-md">
+        {/* Default Content */}
+        <div className={`absolute inset-0 flex flex-col items-center justify-center p-6 transition-opacity duration-500 ${isHovered ? 'opacity-0' : 'opacity-100'}`}>
+          <div className="h-14 w-14 bg-gray-50 rounded-[6px] flex items-center justify-center mb-4">
+            <span className="text-xl font-bold text-[#109387]">
               {item.name.charAt(0)}
             </span>
           </div>
-          <p className="text-lg font-bold text-[#012956] text-center">
+          <p className="text-base font-bold text-[#012956] text-center">
             {item.kategorie}
           </p>
         </div>
 
-        {/* Back Side */}
-        <div
-          className="absolute inset-0 bg-gradient-to-br from-[#012956] to-[#01406e] rounded-[6px] p-5 shadow-lg flex flex-col justify-between backface-hidden"
-          style={{
-            backfaceVisibility: 'hidden',
-            transform: 'rotateY(180deg)',
-          }}
-        >
+        {/* Hover Content - Subtle fade in */}
+        <div className={`absolute inset-0 flex flex-col justify-between p-5 transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
           <div>
             <p className="text-xs text-[#109387] font-semibold uppercase tracking-wide mb-2">
-              {item.kategorie}
+              {item.name}
             </p>
-            <p className="text-sm text-white/90 leading-relaxed">
+            <p className="text-sm text-gray-600 leading-relaxed">
               {item.seitentext}
             </p>
           </div>
-          <a
-            href={item.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-[#109387] hover:text-white transition-colors duration-200 font-medium flex items-center gap-1 mt-3"
-          >
-            {item.name} besuchen
+          <div className="flex items-center gap-1 text-xs text-[#109387] font-medium">
+            <span>Website besuchen</span>
             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
-          </a>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
   )
 }
 
@@ -186,7 +154,7 @@ export default function PartnerSection() {
       controls.start({
         x: -totalWidth,
         transition: {
-          duration: 40,
+          duration: 80, // Viel langsamer - 80 Sekunden
           repeat: Infinity,
           ease: 'linear',
           repeatType: 'loop',
@@ -203,10 +171,9 @@ export default function PartnerSection() {
     controls.stop()
     controls.set({ x: `+=${scrollAmount}` })
 
-    // Resume auto-scroll after 3 seconds
     setTimeout(() => {
       setIsPaused(false)
-    }, 3000)
+    }, 4000)
   }
 
   const handleCardHover = (hovering: boolean) => {
@@ -242,38 +209,38 @@ export default function PartnerSection() {
         {/* Left Navigation Button */}
         <button
           onClick={() => scroll('left')}
-          className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 lg:w-14 lg:h-14 rounded-[6px] bg-white shadow-lg flex items-center justify-center transition-all duration-300 hover:bg-[#109387] hover:text-white hover:scale-105 cursor-pointer"
+          className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 lg:w-12 lg:h-12 rounded-[6px] bg-white/90 backdrop-blur-sm shadow-sm flex items-center justify-center transition-all duration-300 hover:bg-[#109387] hover:text-white cursor-pointer"
           aria-label="Nach links scrollen"
         >
           <svg
-            className="w-6 h-6 lg:w-7 lg:h-7"
+            className="w-5 h-5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
 
         {/* Right Navigation Button */}
         <button
           onClick={() => scroll('right')}
-          className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 lg:w-14 lg:h-14 rounded-[6px] bg-white shadow-lg flex items-center justify-center transition-all duration-300 hover:bg-[#109387] hover:text-white hover:scale-105 cursor-pointer"
+          className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 lg:w-12 lg:h-12 rounded-[6px] bg-white/90 backdrop-blur-sm shadow-sm flex items-center justify-center transition-all duration-300 hover:bg-[#109387] hover:text-white cursor-pointer"
           aria-label="Nach rechts scrollen"
         >
           <svg
-            className="w-6 h-6 lg:w-7 lg:h-7"
+            className="w-5 h-5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>
 
         {/* Gradient Overlays */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#f8f9fa] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#f8f9fa] to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 lg:w-32 bg-gradient-to-r from-[#f8f9fa] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 lg:w-32 bg-gradient-to-l from-[#f8f9fa] to-transparent z-10 pointer-events-none" />
 
         {/* Infinite Slider Track */}
         <motion.div
@@ -301,10 +268,10 @@ export default function PartnerSection() {
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white rounded-[6px] p-4 shadow-sm text-center hover:shadow-md transition-shadow"
+              className="bg-white rounded-[6px] p-4 shadow-sm text-center"
             >
-              <div className="h-12 bg-gray-100 rounded-[6px] flex items-center justify-center mb-2">
-                <span className="text-xl font-bold text-[#109387]">
+              <div className="h-10 bg-gray-50 rounded-[6px] flex items-center justify-center mb-2">
+                <span className="text-lg font-bold text-[#109387]">
                   {item.name.charAt(0)}
                 </span>
               </div>
