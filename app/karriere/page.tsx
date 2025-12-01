@@ -1050,16 +1050,12 @@ export default function KarrierePage() {
             {/* LINKS: Initiativbewerbung */}
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-6 lg:p-8 flex flex-col">
               <div className="mb-6">
-                <div className="inline-flex items-center gap-2 bg-[#109387]/20 text-[#109387] px-3 lg:px-4 py-2 rounded-full text-sm lg:text-base font-extrabold mb-4">
-                  <FileText size={18} />
+                <p className="text-sm lg:text-base text-[#109387] font-extrabold uppercase tracking-wide mb-2">
                   Initiativbewerbung
-                </div>
-                <h2 className="text-2xl lg:text-3xl font-extrabold text-white leading-tight mb-3">
+                </p>
+                <h2 className="text-2xl lg:text-3xl font-extrabold text-white leading-tight">
                   Keine passende Stelle dabei?
                 </h2>
-                <p className="text-white/80 font-semibold text-base lg:text-lg">
-                  Bewerben Sie sich initiativ! Wir melden uns, sobald eine passende Position frei wird.
-                </p>
               </div>
 
               <div className="flex-1">
