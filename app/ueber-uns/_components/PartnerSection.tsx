@@ -2,86 +2,113 @@
 
 import { useState, useEffect } from 'react'
 import { motion, useAnimationControls } from 'framer-motion'
+import Image from 'next/image'
 
-// Partner/Hersteller mit URLs und Beschreibungen
+// Partner/Hersteller mit URLs, Beschreibungen und Logos
 const partner = [
   {
     name: 'Kärcher',
     kategorie: 'Reinigungsgeräte',
     url: 'https://www.kaercher.com/de/professional.html',
     seitentext: 'Für maschinelle Innen- und Außenreinigung setzen wir auf professionelle Reinigungsgeräte von Kärcher.',
+    logoAvif: '/images/ueber-uns/avif/Logo_Kärcher_Fimi.avif',
+    logoWebp: '/images/ueber-uns/webp/Logo_Kärcher_Fimi.webp',
   },
   {
     name: 'Unger',
     kategorie: 'Fensterreinigung',
     url: 'https://www.ungerglobal.com/de/startseite',
     seitentext: 'Für Glas- und Fensterreinigung nutzen wir ergonomische Werkzeuge und Systeme von Unger.',
+    logoAvif: '/images/ueber-uns/avif/Logo_Unger_Fimi.avif',
+    logoWebp: '/images/ueber-uns/webp/Logo_Unger_Fimi.webp',
   },
   {
     name: 'Vermop',
     kategorie: 'Reinigungssysteme',
     url: 'https://www.vermop.com/de-de/',
     seitentext: 'Unsere Wagen- und Moppsysteme stammen von Vermop, einem führenden Hersteller professioneller Reinigungssysteme.',
+    logoAvif: '/images/ueber-uns/avif/Logo_Vermop_Fimi.avif',
+    logoWebp: '/images/ueber-uns/webp/Logo_Vermop_Fimi.webp',
   },
   {
     name: 'Dreiturm',
     kategorie: 'Reinigungsmittel',
     url: 'https://dreiturm-reinigungsmittel.de/',
     seitentext: 'Bei Reinigungs- und Pflegemitteln setzen wir auf hochwertige Produkte von Dreiturm.',
+    logoAvif: '/images/ueber-uns/avif/Logo_Dreitrum_Fimi.avif',
+    logoWebp: '/images/ueber-uns/webp/Logo_Dreitrum_Fimi.webp',
   },
   {
     name: 'Dr. Schnell',
     kategorie: 'Hygiene',
     url: 'https://www.dr-schnell.com/',
     seitentext: 'Für Küchen-, Sanitär- und Flächenhygiene verwenden wir Reinigungs- und Desinfektionsmittel von DR.SCHNELL.',
+    logoAvif: '/images/ueber-uns/avif/Logo_DrSchnell_Fimi.avif',
+    logoWebp: '/images/ueber-uns/webp/Logo_DrSchnell_Fimi.webp',
   },
   {
     name: 'Ecolab',
     kategorie: 'Desinfektion',
     url: 'https://en-de.ecolab.com/',
     seitentext: 'In hygienekritischen Bereichen arbeiten wir mit Desinfektions- und Hygienelösungen von Ecolab.',
+    logoAvif: '/images/ueber-uns/avif/Logo_Ecolab_Fimi.avif',
+    logoWebp: '/images/ueber-uns/webp/Logo_Ecolab_Fimi.webp',
   },
   {
     name: 'Numatic',
     kategorie: 'Staubsauger',
     url: 'https://www.numatic.de/',
     seitentext: 'Für die tägliche Unterhaltsreinigung setzen wir auf robuste Profistaubsauger von Numatic.',
+    logoAvif: '/images/ueber-uns/avif/Logo_Numatic.avif',
+    logoWebp: '/images/ueber-uns/webp/Logo_Numatic.webp',
   },
   {
     name: 'Taski',
     kategorie: 'Bodenreinigung',
     url: 'https://taski.com/',
     seitentext: 'Auf großen Flächen kommen bei uns Scheuersaugmaschinen und Bodenreinigungstechnik von TASKI zum Einsatz.',
+    logoAvif: '/images/ueber-uns/avif/Logo_Taksi_fimi.avif',
+    logoWebp: '/images/ueber-uns/webp/Logo_Taksi_fimi.webp',
   },
   {
     name: 'Hagleitner',
     kategorie: 'Spendersysteme',
     url: 'https://www.hagleitner.com/de/',
     seitentext: 'Unsere Waschraum- und Spendersysteme beziehen wir von Hagleitner, Spezialist für digitale Hygienelösungen.',
+    logoAvif: '/images/ueber-uns/avif/Logo_Hagleitner_Fimi.avif',
+    logoWebp: '/images/ueber-uns/webp/Logo_Hagleitner_Fimi.webp',
   },
   {
     name: 'Wetrok',
     kategorie: 'Maschinen',
     url: 'https://wetrok.de/',
     seitentext: 'Je nach Objekt setzen wir Reinigungsmaschinen und -chemie von Wetrok ein.',
+    logoAvif: '/images/ueber-uns/avif/Logo_Wtrok_Fimi.avif',
+    logoWebp: '/images/ueber-uns/webp/Logo_Wtrok_Fimi.webp',
   },
   {
     name: 'CopterClean',
     kategorie: 'Drohnenreinigung',
     url: 'https://www.copterclean.de/',
     seitentext: 'Für schwer zugängliche Fassaden, Dächer und PV-Anlagen arbeiten wir mit der Drohnenreinigung von CopterClean.',
+    logoAvif: '/images/ueber-uns/avif/Logo_Copterclean_Fimi.avif',
+    logoWebp: '/images/ueber-uns/webp/Logo_Copterclean_Fimi.webp',
   },
   {
     name: 'STIHL',
     kategorie: 'Außenanlagen',
     url: 'https://www.stihl.de/',
     seitentext: 'Bei der Reinigung von Außenanlagen nutzen wir Hochdruckreiniger und Geräte von STIHL.',
+    logoAvif: '/images/ueber-uns/avif/Logo_Stihl_Fimi.avif',
+    logoWebp: '/images/ueber-uns/webp/Logo_Stihl_Fimi.webp',
   },
   {
     name: 'Hako',
     kategorie: 'Kommunalmaschinen',
     url: 'https://www.hako.com/',
     seitentext: 'Für großflächige Außen- und Kommunalreinigung kommen Kehr- und Reinigungsmaschinen von Hako zum Einsatz.',
+    logoAvif: '/images/ueber-uns/avif/Logo_Hako_Fimi.avif',
+    logoWebp: '/images/ueber-uns/webp/Logo_Hako_Fimi.webp',
   },
 ]
 
@@ -106,14 +133,22 @@ function PartnerCard({ item, onHover }: { item: typeof partner[0]; onHover: (hov
     >
       {/* Base Card */}
       <div className="absolute inset-0 bg-white rounded-[6px] shadow-sm transition-shadow duration-500 group-hover:shadow-md">
-        {/* Default Content */}
+        {/* Default Content - Logo */}
         <div className={`absolute inset-0 flex flex-col items-center justify-center p-4 sm:p-6 transition-opacity duration-500 ${isHovered ? 'opacity-0' : 'opacity-100'}`}>
-          <div className="h-10 w-10 sm:h-14 sm:w-14 bg-gray-50 rounded-[6px] flex items-center justify-center mb-2 sm:mb-4">
-            <span className="text-base sm:text-xl font-bold text-[#109387]">
-              {item.name.charAt(0)}
-            </span>
+          <div className="h-16 w-28 sm:h-20 sm:w-36 lg:h-24 lg:w-40 relative mb-2 sm:mb-3">
+            <picture>
+              <source srcSet={item.logoAvif} type="image/avif" />
+              <source srcSet={item.logoWebp} type="image/webp" />
+              <Image
+                src={item.logoWebp}
+                alt={`${item.name} Logo`}
+                fill
+                className="object-contain"
+                sizes="(max-width: 640px) 112px, (max-width: 1024px) 144px, 160px"
+              />
+            </picture>
           </div>
-          <p className="text-sm sm:text-base font-bold text-[#012956] text-center">
+          <p className="text-xs sm:text-sm font-semibold text-gray-500 text-center">
             {item.kategorie}
           </p>
         </div>
