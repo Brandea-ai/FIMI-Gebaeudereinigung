@@ -165,15 +165,23 @@ export default function PartnerSection() {
     }
   }, [isPaused, controls, totalWidth])
 
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
   const scroll = (direction: 'left' | 'right') => {
-    setIsPaused(true)
+    // Clear any existing timeout
+    if (scrollTimeoutRef.current) {
+      clearTimeout(scrollTimeoutRef.current)
+    }
+
     const scrollAmount = direction === 'left' ? cardWidth : -cardWidth
     controls.stop()
     controls.set({ x: `+=${scrollAmount}` })
+    setIsPaused(true)
 
-    setTimeout(() => {
+    // Resume auto-scroll after 2 seconds
+    scrollTimeoutRef.current = setTimeout(() => {
       setIsPaused(false)
-    }, 4000)
+    }, 2000)
   }
 
   const handleCardHover = (hovering: boolean) => {
@@ -181,7 +189,7 @@ export default function PartnerSection() {
   }
 
   return (
-    <section className="py-20 lg:py-28 bg-[#f8f9fa] overflow-hidden">
+    <section id="partner" className="py-20 lg:py-28 bg-[#f8f9fa] overflow-hidden">
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
         {/* Header */}
@@ -206,10 +214,15 @@ export default function PartnerSection() {
       {/* Infinite Slider with Navigation */}
       <div className="relative">
 
-        {/* Left Navigation Button */}
+        {/* Left Navigation Button - z-30 und pointer-events für unabhängige Funktionalität */}
         <button
-          onClick={() => scroll('left')}
-          className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 lg:w-12 lg:h-12 rounded-[6px] bg-white/90 backdrop-blur-sm shadow-sm flex items-center justify-center transition-all duration-300 hover:bg-[#109387] hover:text-white cursor-pointer"
+          onClick={(e) => {
+            e.stopPropagation()
+            scroll('left')
+          }}
+          onMouseEnter={(e) => e.stopPropagation()}
+          onMouseLeave={(e) => e.stopPropagation()}
+          className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 lg:w-12 lg:h-12 rounded-[6px] bg-white shadow-md flex items-center justify-center transition-all duration-300 hover:bg-[#109387] hover:text-white cursor-pointer"
           aria-label="Nach links scrollen"
         >
           <svg
@@ -222,10 +235,15 @@ export default function PartnerSection() {
           </svg>
         </button>
 
-        {/* Right Navigation Button */}
+        {/* Right Navigation Button - z-30 und pointer-events für unabhängige Funktionalität */}
         <button
-          onClick={() => scroll('right')}
-          className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 lg:w-12 lg:h-12 rounded-[6px] bg-white/90 backdrop-blur-sm shadow-sm flex items-center justify-center transition-all duration-300 hover:bg-[#109387] hover:text-white cursor-pointer"
+          onClick={(e) => {
+            e.stopPropagation()
+            scroll('right')
+          }}
+          onMouseEnter={(e) => e.stopPropagation()}
+          onMouseLeave={(e) => e.stopPropagation()}
+          className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 lg:w-12 lg:h-12 rounded-[6px] bg-white shadow-md flex items-center justify-center transition-all duration-300 hover:bg-[#109387] hover:text-white cursor-pointer"
           aria-label="Nach rechts scrollen"
         >
           <svg
