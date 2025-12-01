@@ -417,13 +417,13 @@ export default function Navigation() {
 
             {/* CTA Buttons - Kontakt zuerst, dann Telefon */}
             <div className="hidden lg:flex items-center gap-2 xl:gap-4">
-              <button
-                onClick={scrollToContact}
+              <Link
+                href="/kontakt"
                 className="flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-xs xl:text-sm px-4 xl:px-6 py-2.5 xl:py-3 rounded-[6px] transition-all whitespace-nowrap"
               >
                 <span>Kontakt</span>
                 <ArrowRight size={16} />
-              </button>
+              </Link>
               <a
                 href="tel:+4987143033460"
                 className="flex items-center gap-1.5 xl:gap-2 text-[#012956] hover:text-[#109387] transition-colors font-semibold text-xs xl:text-sm whitespace-nowrap"
