@@ -449,6 +449,66 @@ export default function BranchenPage() {
         </div>
       </section>
 
+      {/* Sticky Search Bar */}
+      <section className="sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm">
+        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
+          <div className="py-4">
+            <div className="flex flex-col md:flex-row md:items-center gap-4">
+              {/* Search Input */}
+              <div className="relative flex-1 max-w-xl">
+                <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                <input
+                  type="text"
+                  placeholder="Branche suchen... z.B. Arzt, Hotel, Werkstatt"
+                  value={searchQuery}
+                  onChange={(e) => handleSearch(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  className="w-full pl-12 pr-10 py-3 rounded-[6px] border border-gray-200 bg-[#f8f9fa] font-semibold text-[#012956] placeholder:text-gray-400 focus:outline-none focus:border-[#109387] focus:ring-2 focus:ring-[#109387]/20 transition-all"
+                />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery('')}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                  >
+                    <X size={18} />
+                  </button>
+                )}
+              </div>
+
+              {/* Quick Tags - nur Desktop */}
+              <div className="hidden lg:flex items-center gap-2">
+                {['Arztpraxis', 'Hotel', 'Büro', 'Autohaus'].map((term) => (
+                  <button
+                    key={term}
+                    onClick={() => handleSearch(term)}
+                    className={`px-4 py-2 rounded-[6px] font-semibold text-sm whitespace-nowrap transition-all ${
+                      searchQuery === term
+                        ? 'bg-[#012956] text-white'
+                        : 'bg-[#f8f9fa] text-[#012956] hover:bg-[#012956] hover:text-white'
+                    }`}
+                  >
+                    {term}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Result Count */}
+            {searchQuery && (
+              <div className="mt-3">
+                <p className="text-gray-600 font-semibold">
+                  {filteredBranchen.length === 0 ? (
+                    <span>Keine Ergebnisse für „{searchQuery}"</span>
+                  ) : (
+                    <span>{filteredBranchen.length} Branche{filteredBranchen.length !== 1 ? 'n' : ''} gefunden</span>
+                  )}
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
       {/* Branchen Grid */}
       <section id="branchen-grid" className="py-16 lg:py-28 bg-[#f8f9fa]">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
