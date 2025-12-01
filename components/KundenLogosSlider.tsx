@@ -217,11 +217,11 @@ export default function KundenLogosSlider({
             className="text-center"
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-6">
-              Diese Unternehmen vertrauen
-              <span className="text-[#109387]"> FIMI</span>
+              Für diese Unternehmen waren wir
+              <span className="text-[#109387]"> im Einsatz</span>
             </h2>
             <p className="text-lg text-gray-700 font-semibold max-w-2xl mx-auto">
-              Von lokalen Betrieben bis zu internationalen Konzernen – wir liefern zuverlässig Qualität.
+              Von lokalen Betrieben bis zu internationalen Konzernen – unsere Arbeit spricht für sich.
             </p>
           </motion.div>
         </div>
