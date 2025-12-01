@@ -470,7 +470,7 @@ export default function BranchenPage() {
 
       {/* Sticky Search Bar - erscheint beim Scrollen am Hero vorbei */}
       <div
-        className={`fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-lg transition-all duration-500 ease-out ${
+        className={`fixed top-0 left-0 right-0 z-40 bg-white border-b border-gray-200 shadow-lg transition-all duration-500 ease-out ${
           showStickySearch
             ? 'translate-y-0 opacity-100'
             : '-translate-y-full opacity-0 pointer-events-none'
