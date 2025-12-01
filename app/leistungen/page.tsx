@@ -447,8 +447,15 @@ export default function LeistungenPage() {
         </div>
       </section>
 
+      {/* Partner Trust - Professionelle Ausrüstung (VOR Warum FIMI) */}
+      <PartnerLogosSlider
+        showHeader={true}
+        showStats={true}
+        bgColor="#ffffff"
+      />
+
       {/* Why Choose Us */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-20 lg:py-28 bg-[#f8f9fa]">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Content */}
@@ -504,13 +511,6 @@ export default function LeistungenPage() {
           </div>
         </div>
       </section>
-
-      {/* Partner Trust - Professionelle Ausrüstung */}
-      <PartnerLogosSlider
-        showHeader={true}
-        showStats={true}
-        bgColor="#f8f9fa"
-      />
 
       {/* Kunden Trust - Social Proof vor CTA */}
       <KundenLogosSlider
