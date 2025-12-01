@@ -199,7 +199,7 @@ export default function RegionenContainer() {
               {/* Left Arrow */}
               <button
                 onClick={() => scroll('left')}
-                className={`flex-shrink-0 w-10 h-10 rounded-full border-2 border-[#012956] flex items-center justify-center transition-all duration-300
+                className={`flex-shrink-0 w-10 h-10 rounded-[6px] border-2 border-[#012956] flex items-center justify-center transition-all duration-300
                   ${canScrollLeft
                     ? 'bg-white text-[#012956] hover:bg-[#012956] hover:text-white cursor-pointer'
                     : 'bg-gray-100 text-gray-300 border-gray-200 cursor-not-allowed'
@@ -239,7 +239,7 @@ export default function RegionenContainer() {
               {/* Right Arrow */}
               <button
                 onClick={() => scroll('right')}
-                className={`flex-shrink-0 w-10 h-10 rounded-full border-2 border-[#012956] flex items-center justify-center transition-all duration-300
+                className={`flex-shrink-0 w-10 h-10 rounded-[6px] border-2 border-[#012956] flex items-center justify-center transition-all duration-300
                   ${canScrollRight
                     ? 'bg-white text-[#012956] hover:bg-[#012956] hover:text-white cursor-pointer'
                     : 'bg-gray-100 text-gray-300 border-gray-200 cursor-not-allowed'
@@ -261,19 +261,32 @@ export default function RegionenContainer() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
 
           {/* Left: Map + Link */}
-          <div className="relative w-full">
-            <Image
-              src="/images/home/staedte-fimi.avif"
-              alt="Bayern Karte - FIMI Gebäudereinigung Servicegebiete"
-              width={4800}
-              height={3584}
-              className="w-full h-auto rounded-[6px]"
-              priority
-            />
-            {/* Overlay Link auf dem Bild - höher positioniert */}
+          <div className="w-full">
+            {/* Bild Container */}
+            <div className="relative w-full">
+              <Image
+                src="/images/home/staedte-fimi.avif"
+                alt="Bayern Karte - FIMI Gebäudereinigung Servicegebiete"
+                width={4800}
+                height={3584}
+                className="w-full h-auto rounded-[6px]"
+                priority
+              />
+              {/* Desktop: Overlay Link auf dem Bild */}
+              <Link
+                href="/unternehmen"
+                className="hidden lg:flex absolute bottom-8 left-4 right-4 bg-[#012956] rounded-[6px] px-6 py-4 items-center justify-center gap-3 group hover:bg-[#01203d] transition-all"
+              >
+                <span className="text-white font-bold text-lg">
+                  Mehr über FIMI erfahren
+                </span>
+                <ArrowRight size={20} className="text-white group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+            {/* Mobile: Button unter dem Bild */}
             <Link
               href="/unternehmen"
-              className="absolute bottom-8 left-4 right-4 bg-[#012956] rounded-[6px] px-6 py-4 flex items-center justify-center gap-3 group hover:bg-[#01203d] transition-all"
+              className="lg:hidden flex mt-4 bg-[#012956] rounded-[6px] px-6 py-4 items-center justify-center gap-3 group hover:bg-[#01203d] transition-all"
             >
               <span className="text-white font-bold text-lg">
                 Mehr über FIMI erfahren
@@ -346,20 +359,20 @@ export default function RegionenContainer() {
                   </ul>
                 </div>
 
-                {/* Service Links - 4 left, 4 right */}
+                {/* Service Links - responsive grid */}
                 <div className="border-t border-gray-200 pt-6">
                   <h4 className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-4">
                     Unsere Leistungen in {stadt.name}
                   </h4>
-                  <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
                     {services.map((service) => (
                       <Link
                         key={service.href}
                         href={service.href}
-                        className="flex items-center gap-2 text-[#109387] font-semibold hover:text-[#012956] transition-colors group"
+                        className="flex items-center gap-2 text-[#109387] font-semibold hover:text-[#012956] transition-colors group py-1"
                       >
-                        <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                        {service.name}
+                        <ArrowRight size={14} className="flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+                        <span className="text-sm sm:text-base">{service.name}</span>
                       </Link>
                     ))}
                   </div>
