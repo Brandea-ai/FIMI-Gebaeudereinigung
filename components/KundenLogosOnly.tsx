@@ -168,11 +168,13 @@ function KundeCard({ item, onHover }: { item: typeof kunden[0]; onHover: (hoveri
 
 interface KundenLogosOnlyProps {
   bgColor?: string
+  topGradientFrom?: string  // Farbe für den weichen Übergang von oben
   className?: string
 }
 
 export default function KundenLogosOnly({
   bgColor = '#ffffff',
+  topGradientFrom = '#012956',  // Standard: Navy (von TrustBar/Hero)
   className = ''
 }: KundenLogosOnlyProps) {
   const controls = useAnimationControls()
@@ -202,9 +204,19 @@ export default function KundenLogosOnly({
   }
 
   return (
-    <section className={`py-12 lg:py-16 overflow-hidden ${className}`} style={{ backgroundColor: bgColor }}>
-      {/* Nur der Slider - kein Header, keine Stats, kein CTA */}
-      <div className="relative">
+    <section className={`relative overflow-hidden ${className}`} style={{ backgroundColor: bgColor }}>
+      {/* Weicher Gradient-Übergang von oben (z.B. von dunklem Hero/TrustBar) */}
+      <div
+        className="absolute top-0 left-0 right-0 h-24 lg:h-32 pointer-events-none"
+        style={{
+          background: `linear-gradient(to bottom, ${topGradientFrom}, ${bgColor})`
+        }}
+      />
+
+      {/* Content mit Padding (extra oben für Gradient-Bereich) */}
+      <div className="relative pt-20 lg:pt-28 pb-12 lg:pb-16">
+        {/* Nur der Slider - kein Header, keine Stats, kein CTA */}
+        <div className="relative">
         <div
           className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 lg:w-32 z-10 pointer-events-none"
           style={{ background: `linear-gradient(to right, ${bgColor}, transparent)` }}
@@ -227,6 +239,7 @@ export default function KundenLogosOnly({
             />
           ))}
         </motion.div>
+        </div>
       </div>
     </section>
   )
