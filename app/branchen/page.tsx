@@ -331,37 +331,37 @@ export default function BranchenPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section ref={heroRef} className="relative bg-[#012956] py-16 md:py-24 lg:py-32 overflow-hidden">
+      <section ref={heroRef} className="relative bg-[#012956] py-12 md:py-16 lg:py-20 xl:py-28 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#109387]/10 to-transparent" />
         </div>
 
         <div className="relative w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="text-center lg:text-left lg:grid lg:grid-cols-2 lg:gap-16 xl:gap-20 lg:items-center">
+          <div className="text-center lg:text-left lg:grid lg:grid-cols-2 lg:gap-12 xl:gap-20 lg:items-start">
             {/* Content */}
-            <div>
+            <div className="lg:pt-4">
               <p className="text-sm text-[#109387] font-semibold uppercase tracking-wide mb-3">
                 Unsere Branchen
               </p>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.15] mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-white leading-[1.15] mb-4 lg:mb-5">
                 Branchenspezifische
-                <span className="block text-[#109387] mt-2">Reinigungslösungen</span>
+                <span className="block text-[#109387] mt-1 lg:mt-2">Reinigungslösungen</span>
               </h1>
 
-              <p className="text-base sm:text-lg text-white/80 font-semibold leading-relaxed mb-6 sm:mb-10 max-w-xl mx-auto lg:mx-0">
+              <p className="text-base sm:text-lg lg:text-base xl:text-lg text-white/80 font-semibold leading-relaxed mb-5 sm:mb-8 max-w-xl mx-auto lg:mx-0">
                 Jede Branche hat eigene Anforderungen – wir kennen sie und liefern maßgeschneiderte Lösungen.
               </p>
 
               {/* Stats - 3 nebeneinander auf Mobile */}
-              <div className="grid grid-cols-3 gap-3 sm:gap-6 lg:gap-10 mb-6 sm:mb-10 max-w-md mx-auto lg:max-w-none lg:mx-0 lg:flex lg:justify-start">
+              <div className="grid grid-cols-3 gap-3 sm:gap-6 lg:gap-6 xl:gap-10 mb-5 sm:mb-8 max-w-md mx-auto lg:max-w-none lg:mx-0 lg:flex lg:justify-start">
                 {[
                   { value: '12', label: 'Branchen' },
                   { value: '8+', label: 'Jahre' },
                   { value: '100%', label: 'Expertise' },
                 ].map((stat, i) => (
                   <div key={i} className="text-center">
-                    <div className="text-[#109387] font-bold text-2xl sm:text-3xl lg:text-5xl">{stat.value}</div>
+                    <div className="text-[#109387] font-bold text-2xl sm:text-3xl lg:text-3xl xl:text-4xl">{stat.value}</div>
                     <div className="text-white/60 font-semibold text-xs sm:text-sm">{stat.label}</div>
                   </div>
                 ))}
@@ -369,7 +369,7 @@ export default function BranchenPage() {
 
               <a
                 href="#contact-form"
-                className="inline-flex items-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
+                className="inline-flex items-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4 rounded-[6px] transition-all duration-300 group"
               >
                 Branche anfragen
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -378,42 +378,42 @@ export default function BranchenPage() {
 
             {/* Search Box - Desktop */}
             <div className="hidden lg:block">
-              <div className="bg-white/5 backdrop-blur-sm rounded-[12px] p-8 border border-white/10">
-                <h3 className="text-white font-bold text-2xl mb-2">Branche finden</h3>
-                <p className="text-white/60 font-semibold mb-6">
+              <div className="bg-white/5 backdrop-blur-sm rounded-[12px] p-5 xl:p-8 border border-white/10">
+                <h3 className="text-white font-bold text-xl xl:text-2xl mb-2">Branche finden</h3>
+                <p className="text-white/60 font-semibold text-sm xl:text-base mb-4 xl:mb-6">
                   Suchen Sie nach Ihrer Branche, z.B. Arzt, Hotel, Werkstatt...
                 </p>
 
                 {/* Search Input */}
                 <div className="relative">
-                  <Search size={22} className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400" />
+                  <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
                   <input
                     type="text"
                     placeholder="z.B. Physiotherapie, Autohaus, Schule..."
                     value={searchQuery}
                     onChange={(e) => handleSearch(e.target.value)}
                     onKeyDown={handleKeyDown}
-                    className="w-full pl-14 pr-12 py-5 rounded-[8px] border-2 border-transparent bg-white font-semibold text-lg text-[#012956] placeholder:text-gray-400 focus:outline-none focus:border-[#109387] transition-all"
+                    className="w-full pl-12 pr-10 py-3 xl:py-4 rounded-[8px] border-2 border-transparent bg-white font-semibold text-base xl:text-lg text-[#012956] placeholder:text-gray-400 focus:outline-none focus:border-[#109387] transition-all"
                   />
                   {searchQuery && (
                     <button
                       onClick={() => setSearchQuery('')}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 w-7 h-7 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors"
                     >
-                      <X size={16} className="text-gray-500" />
+                      <X size={14} className="text-gray-500" />
                     </button>
                   )}
                 </div>
 
                 {/* Quick Suggestions */}
-                <div className="mt-6">
-                  <p className="text-white/50 font-semibold text-sm mb-3">Beliebte Suchen:</p>
-                  <div className="flex flex-wrap gap-2">
+                <div className="mt-4 xl:mt-6">
+                  <p className="text-white/50 font-semibold text-xs xl:text-sm mb-2 xl:mb-3">Beliebte Suchen:</p>
+                  <div className="flex flex-wrap gap-1.5 xl:gap-2">
                     {['Arztpraxis', 'Hotel', 'Fitnessstudio', 'Autohaus', 'Schule', 'Büro'].map((term) => (
                       <button
                         key={term}
                         onClick={() => handleSearch(term)}
-                        className="px-4 py-2 bg-white/10 hover:bg-white/20 text-white font-semibold text-sm rounded-[6px] transition-all"
+                        className="px-3 xl:px-4 py-1.5 xl:py-2 bg-white/10 hover:bg-white/20 text-white font-semibold text-xs xl:text-sm rounded-[6px] transition-all"
                       >
                         {term}
                       </button>
@@ -423,8 +423,8 @@ export default function BranchenPage() {
 
                 {/* Result Count */}
                 {searchQuery && (
-                  <div className="mt-6 pt-6 border-t border-white/10">
-                    <p className="text-white font-semibold">
+                  <div className="mt-4 xl:mt-6 pt-4 xl:pt-6 border-t border-white/10">
+                    <p className="text-white font-semibold text-sm xl:text-base">
                       {filteredBranchen.length === 0 ? (
                         <span className="text-red-400">Keine Ergebnisse für „{searchQuery}"</span>
                       ) : (

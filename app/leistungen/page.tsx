@@ -168,7 +168,7 @@ export default function LeistungenPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-[#012956] py-16 md:py-24 lg:py-32 overflow-hidden">
+      <section className="relative bg-[#012956] py-12 md:py-16 lg:py-20 xl:py-28 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#109387]/10 to-transparent" />
@@ -176,40 +176,40 @@ export default function LeistungenPage() {
 
         <div className="relative w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           {/* Mobile & Desktop Content */}
-          <div className="text-center lg:text-left lg:grid lg:grid-cols-2 lg:gap-16 xl:gap-20 lg:items-center">
+          <div className="text-center lg:text-left lg:grid lg:grid-cols-2 lg:gap-12 xl:gap-20 lg:items-start">
             {/* Content */}
-            <div>
+            <div className="lg:pt-4">
               <p className="text-sm text-[#109387] font-semibold uppercase tracking-wide mb-3">
                 Unsere Leistungen
               </p>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.15] mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-white leading-[1.15] mb-4 lg:mb-5">
                 18 professionelle
-                <span className="block text-[#109387] mt-2">Reinigungsservices</span>
+                <span className="block text-[#109387] mt-1 lg:mt-2">Reinigungsservices</span>
               </h1>
 
-              <p className="text-lg text-white/80 font-semibold leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0">
+              <p className="text-base sm:text-lg lg:text-base xl:text-lg text-white/80 font-semibold leading-relaxed mb-6 lg:mb-8 max-w-xl mx-auto lg:mx-0">
                 Von der täglichen Büroreinigung bis zur spezialisierten Industriereinigung –
                 wir haben die passende Lösung für Ihr Unternehmen.
               </p>
 
               {/* Quick Stats */}
-              <div className="flex flex-wrap justify-center lg:justify-start gap-10 mb-10">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-6 lg:gap-8 xl:gap-10 mb-6 lg:mb-8">
                 {[
                   { value: '18', label: 'Services' },
                   { value: '4', label: 'Kategorien' },
                   { value: '48h', label: 'Angebot' },
                 ].map((stat, i) => (
                   <div key={i} className="text-center">
-                    <div className="text-[#109387] font-bold text-4xl lg:text-5xl">{stat.value}</div>
-                    <div className="text-white/60 font-semibold">{stat.label}</div>
+                    <div className="text-[#109387] font-bold text-3xl lg:text-3xl xl:text-4xl">{stat.value}</div>
+                    <div className="text-white/60 font-semibold text-sm">{stat.label}</div>
                   </div>
                 ))}
               </div>
 
               <a
                 href="#contact-form"
-                className="inline-flex items-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
+                className="inline-flex items-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4 rounded-[6px] transition-all duration-300 group"
               >
                 Kostenfreie Besichtigung
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -217,7 +217,7 @@ export default function LeistungenPage() {
             </div>
 
             {/* Category Cards - Desktop only - Premium Design */}
-            <div className="hidden lg:grid grid-cols-2 gap-5 xl:gap-6">
+            <div className="hidden lg:grid grid-cols-2 gap-3 xl:gap-5">
               {allCategories.map((cat) => {
                 const IconComponent = categoryIcons[cat.id as keyof typeof categoryIcons]
                 const count = leistungen.filter(l => l.category === cat.id).length
@@ -225,16 +225,16 @@ export default function LeistungenPage() {
                   <button
                     key={cat.id}
                     onClick={() => handleCategoryClick(cat.id)}
-                    className="group p-8 xl:p-10 bg-white/5 hover:bg-white/10 rounded-[6px] text-left transition-all duration-300 border border-white/10 hover:border-[#109387]/50 hover:scale-[1.02]"
+                    className="group p-5 xl:p-8 bg-white/5 hover:bg-white/10 rounded-[6px] text-left transition-all duration-300 border border-white/10 hover:border-[#109387]/50 hover:scale-[1.02]"
                   >
-                    <div className="w-16 h-16 xl:w-20 xl:h-20 bg-[#109387]/10 rounded-[6px] flex items-center justify-center mb-5 group-hover:bg-[#109387]/20 transition-colors">
-                      <IconComponent size={32} className="xl:hidden text-[#109387]" strokeWidth={1.5} />
-                      <IconComponent size={40} className="hidden xl:block text-[#109387]" strokeWidth={1.5} />
+                    <div className="w-12 h-12 xl:w-16 xl:h-16 bg-[#109387]/10 rounded-[6px] flex items-center justify-center mb-3 xl:mb-4 group-hover:bg-[#109387]/20 transition-colors">
+                      <IconComponent size={24} className="xl:hidden text-[#109387]" strokeWidth={1.5} />
+                      <IconComponent size={32} className="hidden xl:block text-[#109387]" strokeWidth={1.5} />
                     </div>
-                    <h3 className="text-white font-bold text-xl xl:text-2xl mb-2">{categoryShortLabels[cat.id]}</h3>
-                    <p className="text-white/60 font-semibold text-lg mb-5">{count} Leistungen</p>
-                    <span className="inline-flex items-center gap-2 text-[#109387] font-bold text-lg group-hover:gap-3 transition-all">
-                      Anzeigen <ArrowRight size={20} />
+                    <h3 className="text-white font-bold text-lg xl:text-xl mb-1">{categoryShortLabels[cat.id]}</h3>
+                    <p className="text-white/60 font-semibold text-sm xl:text-base mb-3 xl:mb-4">{count} Leistungen</p>
+                    <span className="inline-flex items-center gap-2 text-[#109387] font-bold text-sm xl:text-base group-hover:gap-3 transition-all">
+                      Anzeigen <ArrowRight size={18} />
                     </span>
                   </button>
                 )
