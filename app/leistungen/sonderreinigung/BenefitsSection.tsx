@@ -13,7 +13,7 @@ export default function BenefitsSection() {
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-3">Ihre Vorteile</p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-6">Warum FIMI Sonderleistungen?</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-6">Warum FIMI Sonderreinigung?</h2>
           <p className="text-lg text-gray-700 font-semibold leading-relaxed">Beschreibung folgt.</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

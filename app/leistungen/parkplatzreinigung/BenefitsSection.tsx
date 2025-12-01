@@ -1,80 +1,29 @@
 import { Shield, Clock, Sparkles, Award, Users, Leaf } from 'lucide-react'
-
 const benefits = [
-  {
-    icon: Shield,
-    title: 'Höchste Qualitätsstandards',
-    description: 'Wir arbeiten nach ISO-Standards und führen regelmäßige Qualitätskontrollen durch für perfekte Ergebnisse.'
-  },
-  {
-    icon: Clock,
-    title: 'Flexible Einsatzzeiten',
-    description: 'Reinigung außerhalb Ihrer Geschäftszeiten - morgens, abends oder am Wochenende. Ihr Tagesgeschäft wird nicht gestört.'
-  },
-  {
-    icon: Sparkles,
-    title: 'Gründliche Reinigung',
-    description: 'Von Arbeitsflächen über Sanitäranlagen bis zu Gemeinschaftsräumen - wir sorgen für absolute Sauberkeit in jedem Bereich.'
-  },
-  {
-    icon: Award,
-    title: 'Erfahrenes Fachpersonal',
-    description: 'Geschulte und zuverlässige Reinigungskräfte mit langjähriger Erfahrung in der professionellen Büroreinigung.'
-  },
-  {
-    icon: Users,
-    title: 'Fester Ansprechpartner',
-    description: 'Ein dedizierter Ansprechpartner koordiniert alle Reinigungsarbeiten und steht Ihnen jederzeit zur Verfügung.'
-  },
-  {
-    icon: Leaf,
-    title: 'Ökologische Reinigungsmittel',
-    description: 'Umweltschonende und gesundheitsverträgliche Reinigungsmittel für ein gesundes Arbeitsklima.'
-  }
+  { icon: Shield, title: 'Vorteil 1', description: 'Beschreibung folgt.' },
+  { icon: Clock, title: 'Vorteil 2', description: 'Beschreibung folgt.' },
+  { icon: Sparkles, title: 'Vorteil 3', description: 'Beschreibung folgt.' },
+  { icon: Award, title: 'Vorteil 4', description: 'Beschreibung folgt.' },
+  { icon: Users, title: 'Vorteil 5', description: 'Beschreibung folgt.' },
+  { icon: Leaf, title: 'Vorteil 6', description: 'Beschreibung folgt.' }
 ]
-
 export default function BenefitsSection() {
   return (
-    <section className="section-padding bg-white">
-      <div className="container-custom">
-        {/* Header */}
+    <section className="py-20 lg:py-28 bg-[#f8f9fa]">
+      <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-fimi-turquoise font-semibold text-sm uppercase tracking-wider mb-4 block">
-            Ihre Vorteile
-          </span>
-          <h2 className="mb-6">Warum FIMI Parkplatzreinigung?</h2>
-          <p className="text-xl text-gray-600">
-            Unsere Parkplatzreinigung vereint Qualität, professionelle Technik und Gründlichkeit für gepflegte Außenflächen.
-          </p>
+          <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-3">Ihre Vorteile</p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-6">Warum FIMI Parkplatzreinigung?</h2>
+          <p className="text-lg text-gray-700 font-semibold leading-relaxed">Beschreibung folgt.</p>
         </div>
-
-        {/* Benefits Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {benefits.map((benefit, index) => {
-            const Icon = benefit.icon
-            return (
-              <div
-                key={index}
-                className="group bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border border-gray-200 hover:border-fimi-turquoise hover:shadow-xl transition-all duration-300 card-hover"
-              >
-                {/* Icon */}
-                <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-fimi-navy to-fimi-turquoise rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="absolute top-0 left-0 w-16 h-16 bg-fimi-turquoise rounded-xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300" />
-                </div>
-
-                {/* Content */}
-                <h4 className="text-xl font-bold text-fimi-navy mb-3">
-                  {benefit.title}
-                </h4>
-                <p className="text-gray-600 leading-relaxed">
-                  {benefit.description}
-                </p>
-              </div>
-            )
-          })}
+          {benefits.map((benefit, index) => { const Icon = benefit.icon; return (
+            <div key={index} className="bg-white p-8 rounded-[6px] shadow-sm hover:shadow-lg transition-all duration-300">
+              <div className="w-14 h-14 bg-[#109387]/10 rounded-[6px] flex items-center justify-center mb-6"><Icon size={28} className="text-[#109387]" /></div>
+              <h3 className="text-xl font-bold text-[#012956] mb-3">{benefit.title}</h3>
+              <p className="text-gray-700 font-semibold leading-relaxed">{benefit.description}</p>
+            </div>
+          )})}
         </div>
       </div>
     </section>
