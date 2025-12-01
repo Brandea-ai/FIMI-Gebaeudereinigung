@@ -415,18 +415,18 @@ export default function Navigation() {
               ))}
             </div>
 
-            {/* CTA Buttons - Kontakt zuerst, dann Telefon */}
-            <div className="hidden lg:flex items-center gap-2 xl:gap-4">
+            {/* CTA Buttons - Beratung zuerst, dann Telefon */}
+            <div className="hidden lg:flex items-center gap-2 xl:gap-3">
               <Link
                 href="/kontakt"
                 className="flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-xs xl:text-sm px-4 xl:px-6 py-2.5 xl:py-3 rounded-[6px] transition-all whitespace-nowrap"
               >
-                <span>Kontakt</span>
+                <span>Kostenlos beraten lassen</span>
                 <ArrowRight size={16} />
               </Link>
               <a
                 href="tel:+4987143033460"
-                className="flex items-center gap-1.5 xl:gap-2 text-[#012956] hover:text-[#109387] transition-colors font-semibold text-xs xl:text-sm whitespace-nowrap"
+                className="flex items-center gap-1.5 xl:gap-2 text-[#012956] hover:text-[#109387] border-2 border-[#012956] hover:border-[#109387] font-semibold text-xs xl:text-sm px-3 xl:px-5 py-2 xl:py-2.5 rounded-[6px] transition-all whitespace-nowrap"
               >
                 <Phone size={16} className="xl:w-[18px] xl:h-[18px]" />
                 <span>0871 430 334 60</span>
