@@ -31,7 +31,7 @@ const stats = [
 
 export default function TrustBarSection() {
   return (
-    <section className="bg-[#012956] py-8 lg:py-10">
+    <section className="bg-[#012956] py-8 lg:py-10 shadow-xl shadow-black/20">
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {stats.map((stat, index) => (
