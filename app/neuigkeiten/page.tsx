@@ -51,10 +51,10 @@ export default function NeuigkeitenPage() {
         </div>
       </section>
 
-      {/* Category Filter */}
-      <section className="border-b border-gray-200">
+      {/* Category Filter - Sticky */}
+      <section className="sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="flex gap-2 py-4 overflow-x-auto">
+          <div className="flex gap-2 py-4 overflow-x-auto scrollbar-hide">
             <button
               onClick={() => setActiveCategory('all')}
               className={`px-5 py-2 rounded-[6px] font-semibold text-sm whitespace-nowrap transition-colors cursor-pointer ${
