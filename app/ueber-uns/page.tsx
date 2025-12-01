@@ -17,9 +17,9 @@ const floatingNavItems = [
   { id: 'timeline', label: 'Geschichte' },
   { id: 'team', label: 'Team' },
   { id: 'philosophie', label: 'Philosophie' },
+  { id: 'kunden', label: 'Kunden' },
   { id: 'gruender', label: 'Geschäftsführung' },
   { id: 'partner', label: 'Partner' },
-  { id: 'kunden', label: 'Kunden' },
   { id: 'regionen', label: 'Standorte' },
 ]
 
@@ -43,8 +43,6 @@ export default function UeberUnsPage() {
       <TimelineSection />
       <TeamSection />
       <PhilosophieSection />
-      <GruenderSection />
-      <PartnerSection />
       <div id="kunden">
         <KundenLogosSlider
           showHeader={true}
@@ -52,6 +50,8 @@ export default function UeberUnsPage() {
           bgColor="#ffffff"
         />
       </div>
+      <GruenderSection />
+      <PartnerSection />
       <RegionenSection />
     </main>
   )
