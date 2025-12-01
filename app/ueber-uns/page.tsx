@@ -9,7 +9,6 @@ import {
   RegionenSection,
 } from './_components'
 import FloatingNav from '@/components/FloatingNav'
-import KundenLogosSlider from '@/components/KundenLogosSlider'
 
 // Navigation items for FloatingNav
 const floatingNavItems = [
@@ -19,7 +18,6 @@ const floatingNavItems = [
   { id: 'philosophie', label: 'Philosophie' },
   { id: 'gruender', label: 'Geschäftsführung' },
   { id: 'partner', label: 'Partner' },
-  { id: 'kunden', label: 'Kunden' },
   { id: 'regionen', label: 'Standorte' },
 ]
 
@@ -45,9 +43,6 @@ export default function UeberUnsPage() {
       <PhilosophieSection />
       <GruenderSection />
       <PartnerSection />
-      <div id="kunden">
-        <KundenLogosSlider />
-      </div>
       <RegionenSection />
     </main>
   )
