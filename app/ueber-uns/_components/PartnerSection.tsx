@@ -24,10 +24,10 @@ const partner = [
     seitentext: 'Unsere Wagen- und Moppsysteme stammen von Vermop, einem führenden Hersteller professioneller Reinigungssysteme.',
   },
   {
-    name: 'Tana',
+    name: 'Dreiturm',
     kategorie: 'Reinigungsmittel',
-    url: 'https://wmprof.com/brands/tana-professional/',
-    seitentext: 'Bei Reinigungs- und Pflegemitteln setzen wir auf Produkte von Tana Professional.',
+    url: 'https://www.dreiturm.de/',
+    seitentext: 'Bei Reinigungs- und Pflegemitteln setzen wir auf hochwertige Produkte von Dreiturm.',
   },
   {
     name: 'Dr. Schnell',
