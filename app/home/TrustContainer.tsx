@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { Shield, Clock, Users, Award, ArrowRight } from 'lucide-react'
 import FadeIn from '@/components/FadeIn'
 
@@ -99,27 +100,41 @@ export default function TrustContainer() {
           ))}
         </div>
 
-        {/* Stats Bar - Größer und prominenter */}
+        {/* Stats Bar mit Bild - Größer und prominenter */}
         <FadeIn>
           <div
-            className="bg-[#012956] rounded-[6px] py-12 px-8 lg:py-16 lg:px-16"
+            className="bg-[#012956] rounded-[6px] overflow-hidden"
             role="region"
             aria-label="FIMI in Zahlen"
           >
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
-              {stats.map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <div className="text-5xl lg:text-6xl font-bold text-[#109387] mb-2">
-                    {stat.zahl}
-                  </div>
-                  <div className="text-white font-bold text-lg">
-                    {stat.label}
-                  </div>
-                  <div className="text-white/60 font-semibold">
-                    {stat.sublabel}
-                  </div>
+            <div className="grid lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_500px]">
+              {/* Stats */}
+              <div className="py-12 px-8 lg:py-16 lg:px-16">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+                  {stats.map((stat) => (
+                    <div key={stat.label} className="text-center">
+                      <div className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#109387] mb-2">
+                        {stat.zahl}
+                      </div>
+                      <div className="text-white font-bold text-base lg:text-lg">
+                        {stat.label}
+                      </div>
+                      <div className="text-white/60 font-semibold text-sm lg:text-base">
+                        {stat.sublabel}
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              {/* Bild */}
+              <div className="relative hidden lg:block h-64 lg:h-auto">
+                <Image
+                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop"
+                  alt="FIMI Team bei der Arbeit"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </FadeIn>

@@ -32,10 +32,10 @@ export default function HeroContainer() {
   return (
     <section id="hero" className="relative min-h-screen">
 
-      {/* Background - Lachende Menschen/Team */}
+      {/* Background - Professionelles Reinigungsteam */}
       <div className="absolute inset-0">
         <img
-          src="/images/hero-cleaning.png"
+          src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=2000&auto=format&fit=crop"
           alt="Professionelles Reinigungsteam von FIMI"
           className="w-full h-full object-cover"
         />
