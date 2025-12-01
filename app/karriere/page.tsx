@@ -1174,29 +1174,31 @@ export default function KarrierePage() {
             </div>
 
             {/* RECHTS: Warum FIMI? Vorteile */}
-            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-6 lg:p-8 flex flex-col">
-              <div className="mb-6">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[6px] p-5 lg:p-8 flex flex-col">
+              <div className="mb-5 lg:mb-6">
                 <p className="text-sm lg:text-base text-[#109387] font-extrabold uppercase tracking-wide mb-2">
                   Warum FIMI?
                 </p>
-                <h2 className="text-2xl lg:text-3xl font-extrabold text-white leading-tight">
+                <h2 className="text-xl lg:text-3xl font-extrabold text-white leading-tight">
                   Das bieten wir Ihnen
                 </h2>
               </div>
 
-              <div className="flex-1 grid grid-cols-2 gap-4 lg:gap-5 content-start">
+              <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4 content-start">
                 {unternehmensvorteile.map((vorteil) => {
                   const IconComponent = vorteil.icon
                   return (
                     <div
                       key={vorteil.titel}
-                      className="bg-white/5 rounded-[6px] p-4 lg:p-5"
+                      className="bg-white/5 rounded-[6px] p-4 lg:p-5 flex items-start gap-3"
                     >
-                      <div className="w-11 h-11 lg:w-12 lg:h-12 bg-[#109387]/20 rounded-[6px] flex items-center justify-center mb-3">
-                        <IconComponent size={22} className="text-[#109387] lg:w-6 lg:h-6" />
+                      <div className="w-10 h-10 lg:w-11 lg:h-11 bg-[#109387]/20 rounded-[6px] flex items-center justify-center shrink-0">
+                        <IconComponent size={20} className="text-[#109387]" />
                       </div>
-                      <h3 className="text-base lg:text-lg font-extrabold text-white mb-1">{vorteil.titel}</h3>
-                      <p className="text-white/70 font-medium text-sm hidden lg:block">{vorteil.beschreibung}</p>
+                      <div className="min-w-0">
+                        <h3 className="text-sm lg:text-base font-extrabold text-white mb-0.5 leading-tight">{vorteil.titel}</h3>
+                        <p className="text-white/60 font-medium text-xs lg:text-sm leading-snug line-clamp-2">{vorteil.beschreibung}</p>
+                      </div>
                     </div>
                   )
                 })}
