@@ -2,72 +2,72 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { MapPin, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react'
+import { MapPin, CheckCircle, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react'
 
 const regionen = [
   {
     id: 'landshut',
     name: 'Landshut',
     image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1600&auto=format&fit=crop',
-    headline: 'Bueroreinigung in Landshut',
-    beschreibung: 'Als Landshuter Unternehmen kennen wir die Anforderungen der regionalen Wirtschaft. Ob Altstadt, Ergolding oder Gewerbegebiet - wir sind schnell vor Ort.',
+    headline: 'Büroreinigung in Landshut',
+    beschreibung: 'Als Landshuter Unternehmen kennen wir die Anforderungen der regionalen Wirtschaft. Ob Altstadt, Ergolding oder Gewerbegebiet – wir sind schnell vor Ort.',
     vorteile: ['30 Min. Anfahrt', 'Lokales Team', 'Notfallservice'],
   },
   {
     id: 'muenchen',
-    name: 'Muenchen',
+    name: 'München',
     image: 'https://images.unsplash.com/photo-1595867818082-083862f3d630?q=80&w=1600&auto=format&fit=crop',
-    headline: 'Bueroreinigung in Muenchen',
-    beschreibung: 'Professionelle Bueroreinigung fuer die Landeshauptstadt. Vom Werksviertel bis Schwabing - unsere Teams arbeiten diskret ausserhalb Ihrer Geschaeftszeiten.',
-    vorteile: ['Alle Stadtteile', 'Wochenend-Service', 'Grossprojekte'],
+    headline: 'Büroreinigung in München',
+    beschreibung: 'Professionelle Büroreinigung für die Landeshauptstadt. Vom Werksviertel bis Schwabing – unsere Teams arbeiten diskret außerhalb Ihrer Geschäftszeiten.',
+    vorteile: ['Alle Stadtteile', 'Wochenend-Service', 'Großprojekte'],
   },
   {
     id: 'regensburg',
     name: 'Regensburg',
     image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1600&auto=format&fit=crop',
-    headline: 'Bueroreinigung in Regensburg',
-    beschreibung: 'Von der UNESCO-Altstadt bis zum Gewerbepark. Wir pflegen historische Gebaeude genauso sorgfaeltig wie moderne Bueros.',
+    headline: 'Büroreinigung in Regensburg',
+    beschreibung: 'Von der UNESCO-Altstadt bis zum Gewerbepark. Wir pflegen historische Gebäude genauso sorgfältig wie moderne Büros.',
     vorteile: ['Denkmalschutz-Erfahrung', 'Gewerbepark', 'A3 Anbindung'],
   },
   {
     id: 'ingolstadt',
     name: 'Ingolstadt',
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop',
-    headline: 'Bueroreinigung in Ingolstadt',
-    beschreibung: 'Der Automobilstandort verlangt Praezision. Fuer Zulieferer, Bueros und Einzelhandel arbeiten wir nach hoechsten Standards.',
+    headline: 'Büroreinigung in Ingolstadt',
+    beschreibung: 'Der Automobilstandort verlangt Präzision. Für Zulieferer, Büros und Einzelhandel arbeiten wir nach höchsten Standards.',
     vorteile: ['Automotive-Erfahrung', 'ISO-Standards', 'Schichtmodelle'],
   },
   {
     id: 'freising',
     name: 'Freising',
     image: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?q=80&w=1600&auto=format&fit=crop',
-    headline: 'Bueroreinigung in Freising',
-    beschreibung: 'Zwischen Flughafen und TU Weihenstephan. Wir reinigen Bueros, Forschungseinrichtungen und Gewerbeobjekte im gesamten Landkreis.',
-    vorteile: ['Flughafen-Naehe', 'Forschung & Uni', 'Umweltschonend'],
+    headline: 'Büroreinigung in Freising',
+    beschreibung: 'Zwischen Flughafen und TU Weihenstephan. Wir reinigen Büros, Forschungseinrichtungen und Gewerbeobjekte im gesamten Landkreis.',
+    vorteile: ['Flughafen-Nähe', 'Forschung & Uni', 'Umweltschonend'],
   },
   {
     id: 'erding',
     name: 'Erding',
     image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1600&auto=format&fit=crop',
-    headline: 'Bueroreinigung in Erding',
-    beschreibung: 'Fuer den wachsenden Landkreis. Gewerbebetriebe, Hotels und oeffentliche Einrichtungen vertrauen auf unsere Qualitaet.',
+    headline: 'Büroreinigung in Erding',
+    beschreibung: 'Für den wachsenden Landkreis. Gewerbebetriebe, Hotels und öffentliche Einrichtungen vertrauen auf unsere Qualität.',
     vorteile: ['Schnelles Wachstum', 'Hotel-Expertise', 'Flexible Zeiten'],
   },
   {
     id: 'straubing',
     name: 'Straubing',
     image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1600&auto=format&fit=crop',
-    headline: 'Bueroreinigung in Straubing',
-    beschreibung: 'Niederbayern verdient erstklassige Reinigung. Von der Innenstadt bis zum Industriegebiet - wir sind Ihr Partner.',
-    vorteile: ['Niederbayern-Fokus', 'Industrie-Erfahrung', 'Persoenlich'],
+    headline: 'Büroreinigung in Straubing',
+    beschreibung: 'Niederbayern verdient erstklassige Reinigung. Von der Innenstadt bis zum Industriegebiet – wir sind Ihr Partner.',
+    vorteile: ['Niederbayern-Fokus', 'Industrie-Erfahrung', 'Persönlich'],
   },
   {
     id: 'passau',
     name: 'Passau',
     image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop',
-    headline: 'Bueroreinigung in Passau',
-    beschreibung: 'Die Dreifluessestadt mit Charakter. Altstadt, Universitaet und Gewerbe - wir passen uns Ihren Anforderungen an.',
-    vorteile: ['Universitaet', 'Grenznaehe', 'Tourismus-Know-how'],
+    headline: 'Büroreinigung in Passau',
+    beschreibung: 'Die Dreiflüssestadt mit Charakter. Altstadt, Universität und Gewerbe – wir passen uns Ihren Anforderungen an.',
+    vorteile: ['Universität', 'Grenznähe', 'Tourismus-Know-how'],
   },
 ]
 
@@ -88,10 +88,10 @@ export default function RegionenSection() {
             Ihre Region
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight mb-6">
-            Bueroreinigung in Ihrer Naehe
+            Büroreinigung in der Nähe
           </h2>
           <p className="text-lg text-gray-600 font-semibold leading-relaxed">
-            Wir sind in ganz Bayern fuer Sie da. Kurze Wege, schnelle Reaktionszeiten, lokale Teams.
+            Wir sind in ganz Bayern für Sie da. Kurze Wege, schnelle Reaktionszeiten, lokale Teams.
           </p>
         </div>
 
@@ -170,25 +170,37 @@ export default function RegionenSection() {
               ))}
             </div>
 
-            {/* CTA */}
+            {/* CTA Button - Real Teal Button */}
             <a
               href="#kontakt"
-              className="inline-flex items-center gap-2 text-[#109387] font-bold hover:gap-3 transition-all"
+              className="inline-flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-6 py-3 rounded-[6px] transition-colors w-fit group"
             >
-              Bueroreinigung in {active.name} anfragen
-              <ChevronRight size={18} />
+              Büroreinigung in {active.name} anfragen
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </div>
 
-        {/* All Regions Link */}
-        <div className="mt-12 text-center">
-          <p className="text-gray-500 font-semibold">
-            Nicht dabei? Wir sind in ganz Bayern aktiv.{' '}
-            <a href="#kontakt" className="text-[#109387] font-bold hover:underline">
-              Fragen Sie an
+        {/* Nicht dabei? - Prominenter Block */}
+        <div className="mt-16 bg-[#f8f9fa] rounded-[6px] p-8 lg:p-10">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+            <div>
+              <h3 className="text-xl lg:text-2xl font-bold text-[#012956] mb-2">
+                Ihre Stadt nicht dabei?
+              </h3>
+              <p className="text-gray-600 font-semibold">
+                Wir sind in ganz Bayern aktiv – von Passau bis Würzburg, von Augsburg bis Hof.
+                Fragen Sie uns einfach an!
+              </p>
+            </div>
+            <a
+              href="#kontakt"
+              className="inline-flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-8 py-4 rounded-[6px] transition-colors whitespace-nowrap group"
+            >
+              Standort anfragen
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
-          </p>
+          </div>
         </div>
 
       </div>

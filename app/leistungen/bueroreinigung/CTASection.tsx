@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { Phone, Mail, MapPin, Clock, ArrowRight } from 'lucide-react'
 import ContactForm from '@/components/ContactForm'
@@ -26,7 +25,7 @@ export default function CTASection() {
           </h2>
           <p className="text-lg text-white/70 font-semibold leading-relaxed">
             Unverbindlich und ohne versteckte Kosten. Wir kommen zu Ihnen,
-            schauen uns die Raeumlichkeiten an und erstellen ein massgeschneidertes Angebot.
+            schauen uns die Räumlichkeiten an und erstellen ein maßgeschneidertes Angebot.
           </p>
         </div>
 
@@ -82,7 +81,7 @@ export default function CTASection() {
                   <MapPin size={20} className="text-[#109387]" />
                 </div>
                 <div>
-                  <span className="text-white font-bold block">FIMI Gebaeudereinigung</span>
+                  <span className="text-white font-bold block">FIMI Gebäudereinigung</span>
                   <span className="text-white/70 font-semibold text-sm">
                     Kellerstr. 39<br />
                     84036 Landshut
@@ -100,7 +99,7 @@ export default function CTASection() {
                   <Clock size={20} className="text-[#109387]" />
                 </div>
                 <div>
-                  <span className="text-white font-bold block mb-1">Mo - Fr: 08:00 - 18:00</span>
+                  <span className="text-white font-bold block mb-1">Mo – Fr: 08:00 – 18:00</span>
                   <span className="text-white/70 font-semibold text-sm block">
                     Reinigung: 24/7 nach Vereinbarung
                   </span>

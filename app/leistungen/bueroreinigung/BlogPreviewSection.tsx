@@ -4,12 +4,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Clock, Calendar } from 'lucide-react'
 
-// Thematisch passende Artikel fuer Bueroreinigung
+// Thematisch passende Artikel für Büroreinigung
 const relatedPosts = [
   {
     slug: 'tariflohn-gebaeudereinigung-2025-2026',
-    title: 'Tarifabschluss 2025/2026: Was bedeutet das fuer Ihre Reinigungskosten?',
-    excerpt: 'Die neuen Loehne in der Gebaeudereinigung und ihre Auswirkungen auf Qualitaet und Preise.',
+    title: 'Tarifabschluss 2025/2026: Was bedeutet das für Ihre Reinigungskosten?',
+    excerpt: 'Die neuen Löhne in der Gebäudereinigung und ihre Auswirkungen auf Qualität und Preise.',
     image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
     category: 'Neuigkeiten',
     date: '2025-01-18',
@@ -17,8 +17,8 @@ const relatedPosts = [
   },
   {
     slug: 'bueroreinigung-ausserhalb-geschaeftszeiten',
-    title: 'Warum Bueroreinigung ausserhalb der Geschaeftszeiten sinnvoll ist',
-    excerpt: 'Produktivitaet steigern, Stoerungen vermeiden: Die Vorteile von Nacht- und Wochenendreinigung.',
+    title: 'Warum Büroreinigung außerhalb der Geschäftszeiten sinnvoll ist',
+    excerpt: 'Produktivität steigern, Störungen vermeiden: Die Vorteile von Nacht- und Wochenendreinigung.',
     image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=800&auto=format&fit=crop',
     category: 'Tipps',
     date: '2025-01-10',
@@ -27,7 +27,7 @@ const relatedPosts = [
   {
     slug: 'hygiene-arbeitsplatz-mitarbeitergesundheit',
     title: 'Sauberkeit am Arbeitsplatz: So bleibt Ihr Team gesund',
-    excerpt: 'Desinfektion, Luftqualitaet, Kontaktflaechen - was professionelle Reinigung fuer die Gesundheit leistet.',
+    excerpt: 'Desinfektion, Luftqualität, Kontaktflächen – was professionelle Reinigung für die Gesundheit leistet.',
     image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop',
     category: 'Tipps',
     date: '2025-01-05',
@@ -47,10 +47,10 @@ export default function BlogPreviewSection() {
               Neuigkeiten & Tipps
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight mb-4">
-              Wissen rund um Bueroreinigung
+              Wissen rund um Büroreinigung
             </h2>
             <p className="text-lg text-gray-600 font-semibold leading-relaxed">
-              Aktuelle Branchennews, praktische Tipps und Einblicke in professionelle Gebaeudereinigung.
+              Aktuelle Branchennews, praktische Tipps und Einblicke in professionelle Gebäudereinigung.
             </p>
           </div>
 
@@ -145,14 +145,14 @@ export default function BlogPreviewSection() {
             <ArrowRight size={24} className="text-white group-hover:translate-x-2 transition-transform flex-shrink-0 ml-4" />
           </Link>
 
-          {/* Ueber uns Link */}
+          {/* Über uns Link */}
           <Link
             href="/ueber-uns"
             className="bg-[#f8f9fa] rounded-[6px] p-8 flex items-center justify-between group hover:bg-gray-100 transition-colors"
           >
             <div>
               <span className="text-[#109387] font-bold text-sm uppercase tracking-wide mb-2 block">
-                Ueber FIMI
+                Über FIMI
               </span>
               <h3 className="text-xl font-bold text-[#012956] mb-2">
                 8+ Jahre Erfahrung in Bayern
