@@ -1200,25 +1200,49 @@ export default function KarrierePage() {
                 schritt: '1',
                 titel: 'Bewerbung einreichen',
                 text: 'Per E-Mail, Telefon oder WhatsApp – unkompliziert und schnell. Wir melden uns innerhalb von 48 Stunden.',
-                details: 'Sie können sich ganz einfach bei uns bewerben – ein kurzer Anruf oder eine E-Mail genügt. Lebenslauf oder Zeugnisse sind hilfreich, aber kein Muss. Wichtig ist uns vor allem Ihre Motivation und Zuverlässigkeit. Unser HR-Team prüft Ihre Unterlagen persönlich und meldet sich garantiert innerhalb von 48 Stunden bei Ihnen zurück – oft sogar am gleichen Tag.'
+                bullets: [
+                  'Einfach per Anruf oder E-Mail bewerben',
+                  'Lebenslauf hilfreich, aber kein Muss',
+                  'Motivation & Zuverlässigkeit zählen',
+                  'Persönliche Prüfung durch HR-Team',
+                  'Rückmeldung innerhalb von 48 Stunden'
+                ]
               },
               {
                 schritt: '2',
                 titel: 'Kennenlerngespräch',
                 text: 'Ein persönliches Gespräch – vor Ort oder telefonisch, in Ihrer Sprache.',
-                details: 'Im Kennenlerngespräch möchten wir Sie als Person verstehen: Was motiviert Sie? Welche Erfahrungen bringen Sie mit? Was sind Ihre Stärken? Das Gespräch führen wir in Ihrer bevorzugten Sprache (Deutsch, Englisch, Türkisch, Polnisch, Rumänisch u.a.). Es geht nicht darum, Sie zu prüfen – sondern gemeinsam herauszufinden, welche Position optimal zu Ihnen passt.'
+                bullets: [
+                  'Gespräch in Ihrer Sprache (DE, EN, TR, PL, RO)',
+                  'Was motiviert Sie? Was sind Ihre Stärken?',
+                  'Keine Prüfung – gemeinsames Kennenlernen',
+                  'Welche Position passt optimal zu Ihnen?',
+                  'Vor Ort oder telefonisch möglich'
+                ]
               },
               {
                 schritt: '3',
                 titel: 'Kompetenz-Check',
                 text: 'Ihr Wissen bestimmt Ihr Gehalt – faire Chancen für alle.',
-                details: 'Unser Kompetenz-Check ist Ihre Chance auf ein höheres Einstiegsgehalt. In einem begleiteten Multiple-Choice-Test in Ihrer Sprache prüfen wir Ihr Fachwissen, Ihre Sprachkenntnisse und Ihr Verständnis für Qualitätsstandards. Das Besondere: Je besser Ihr Ergebnis, desto höher Ihr Stundenlohn. Bei 100 Punkten erhalten Sie bis zu 1,00 € mehr pro Stunde – ab Tag 1. Nach der Probezeit folgt bei guter Leistung eine weitere Gehaltserhöhung. Wir investieren in Qualität und belohnen Engagement – so profitieren beide Seiten.'
+                bullets: [
+                  'Multiple-Choice-Test in Ihrer Sprache',
+                  'Fachwissen, Sprache & Qualitätsverständnis',
+                  'Je besser das Ergebnis, desto höher der Lohn',
+                  '100 Punkte = bis zu +1,00 €/Std. ab Tag 1',
+                  'Weitere Erhöhung nach Probezeit möglich'
+                ]
               },
               {
                 schritt: '4',
                 titel: 'Willkommen im Team',
                 text: 'Arbeitsvertrag, Einarbeitung und ein fester Ansprechpartner – los geht\'s!',
-                details: 'Nach erfolgreichem Kompetenz-Check erhalten Sie Ihren unbefristeten Arbeitsvertrag. In der ersten Woche werden Sie von einem erfahrenen Paten eingearbeitet, der Ihnen alles zeigt und Ihre Fragen beantwortet. Sie bekommen kostenlose Arbeitskleidung, alle nötigen Arbeitsmittel und einen festen Ansprechpartner für die ersten Monate. Bei FIMI sind Sie vom ersten Tag an Teil des Teams – nicht nur eine Nummer.'
+                bullets: [
+                  'Unbefristeter Arbeitsvertrag',
+                  'Einarbeitung durch erfahrenen Paten',
+                  'Kostenlose Arbeitskleidung & Arbeitsmittel',
+                  'Fester Ansprechpartner für die ersten Monate',
+                  'Teil des Teams – nicht nur eine Nummer'
+                ]
               }
             ].map((item, i) => (
               <div
@@ -1227,18 +1251,25 @@ export default function KarrierePage() {
                   expandedStep === i ? 'ring-2 ring-[#109387]' : ''
                 }`}
               >
-                <div className="w-11 lg:w-12 h-11 lg:h-12 bg-[#109387] text-white rounded-full flex items-center justify-center text-lg lg:text-xl font-extrabold mb-4">
+                <div className="w-11 lg:w-12 h-11 lg:h-12 bg-[#109387] text-white rounded-[6px] flex items-center justify-center text-lg lg:text-xl font-extrabold mb-4">
                   {item.schritt}
                 </div>
                 <h3 className="text-base lg:text-lg font-extrabold text-[#012956] mb-2">{item.titel}</h3>
                 <p className="text-gray-600 font-medium text-sm lg:text-base mb-3">{item.text}</p>
 
-                {/* Expandable Details */}
+                {/* Expandable Details - Bullet Points */}
                 <div className={`overflow-hidden transition-all duration-300 ${
                   expandedStep === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}>
                   <div className="pt-3 border-t border-gray-200">
-                    <p className="text-gray-700 text-sm leading-relaxed">{item.details}</p>
+                    <ul className="space-y-2">
+                      {item.bullets.map((bullet, j) => (
+                        <li key={j} className="flex items-start gap-2 text-gray-700 text-sm">
+                          <span className="w-2 h-2 bg-[#109387] rounded-[2px] shrink-0 mt-1.5" />
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
 
