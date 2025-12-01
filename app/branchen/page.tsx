@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Building2, Factory, Stethoscope, ShoppingBag, UtensilsCrossed, GraduationCap, Dumbbell, Warehouse, Home, Landmark, Banknote, Car, Search, X } from 'lucide-react'
 import { branchen } from '@/lib/branchen-data'
+import FadeIn from '@/components/FadeIn'
 
 const branchenIcons: Record<string, any> = {
   Building2, Factory, Stethoscope, ShoppingBag, UtensilsCrossed, GraduationCap,
@@ -553,35 +554,37 @@ export default function BranchenPage() {
       {/* CTA Section */}
       <section className="py-20 lg:py-28 bg-[#012956]">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="text-center max-w-3xl mx-auto">
-            <p className="text-sm text-gray-400 font-semibold uppercase tracking-wide mb-3">
-              Ihre Branche nicht dabei?
-            </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-6">
-              Wir finden die passende
-              <span className="block text-white mt-2">Lösung für Sie</span>
-            </h2>
-            <p className="text-lg text-white/80 font-semibold leading-relaxed mb-10">
-              Kontaktieren Sie uns für ein individuelles Reinigungskonzept –
-              wir haben für jede Branche die richtige Lösung.
-            </p>
+          <FadeIn>
+            <div className="text-center max-w-3xl mx-auto">
+              <p className="text-sm text-gray-400 font-semibold uppercase tracking-wide mb-3">
+                Ihre Branche nicht dabei?
+              </p>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-6">
+                Wir finden die passende
+                <span className="block text-white mt-2">Lösung für Sie</span>
+              </h2>
+              <p className="text-lg text-white/80 font-semibold leading-relaxed mb-10">
+                Kontaktieren Sie uns für ein individuelles Reinigungskonzept –
+                wir haben für jede Branche die richtige Lösung.
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="#contact-form"
-                className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
-              >
-                Kostenfreie Beratung
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a
-                href="tel:+4987143033460"
-                className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-[#012956] font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"
-              >
-                0871 430 334 60
-              </a>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="#contact-form"
+                  className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
+                >
+                  Kostenfreie Beratung
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                </a>
+                <a
+                  href="tel:+4987143033460"
+                  className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-[#012956] font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"
+                >
+                  0871 430 334 60
+                </a>
+              </div>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
     </main>

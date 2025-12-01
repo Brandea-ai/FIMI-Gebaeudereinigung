@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Building2, Factory, Wrench } from 'lucide-react'
+import FadeIn from '@/components/FadeIn'
 
 const serviceKategorien = [
   {
@@ -42,72 +43,73 @@ export default function ServicesContainer() {
         <div className="grid lg:grid-cols-[400px_1fr] xl:grid-cols-[450px_1fr] gap-12 lg:gap-20">
 
           {/* Sticky Sidebar */}
-          <aside className="lg:sticky lg:top-32 lg:self-start">
-
-            {/* Headline */}
-            <h2
-              id="services-heading"
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-8"
-            >
-              Was brauchen Sie?
-            </h2>
-
-            {/* Content - Psychologisch aus Kundensicht */}
-            <div className="space-y-5 mb-10">
-              <p className="text-lg text-gray-700 font-semibold leading-relaxed">
-                Jedes Unternehmen hat andere Anforderungen. Manche brauchen
-                nur eine zuverlässige Büroreinigung. Andere suchen einen
-                Partner der das komplette Gebäudemanagement übernimmt.
-              </p>
-              <p className="text-lg text-gray-700 font-semibold leading-relaxed">
-                Wir hören erst zu. Dann schauen wir uns Ihre Räume an.
-                Und dann machen wir Ihnen ein Angebot das zu Ihrem
-                Bedarf passt. Nicht mehr und nicht weniger.
-              </p>
-            </div>
-
-            {/* CTAs */}
-            <div className="space-y-4">
-              <a
-                href="#contact-form"
-                className="flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group w-full"
+          <FadeIn direction="left" className="lg:sticky lg:top-32 lg:self-start">
+            <aside>
+              {/* Headline */}
+              <h2
+                id="services-heading"
+                className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-8"
               >
-                Unverbindlich anfragen
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-              <Link
-                href="/leistungen"
-                className="flex items-center justify-center gap-3 border-2 border-[#109387] text-[#109387] font-bold text-lg px-8 py-4 rounded-[6px] hover:bg-[#109387] hover:text-white transition-all w-full"
-              >
-                Alle Leistungen ansehen
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="7" y1="17" x2="17" y2="7"></line>
-                  <polyline points="7 7 17 7 17 17"></polyline>
-                </svg>
-              </Link>
-            </div>
+                Was brauchen Sie?
+              </h2>
 
-            {/* ISO Standards - prominent in Navy */}
-            <div className="mt-10 bg-[#012956] rounded-[6px] p-6">
-              <p className="text-sm text-white/70 font-semibold uppercase tracking-wide mb-1">
-                Qualitätsstandards
-              </p>
-              <p className="text-2xl text-white font-bold">
-                ISO 9001 & 14001
-              </p>
-            </div>
-          </aside>
+              {/* Content - Psychologisch aus Kundensicht */}
+              <div className="space-y-5 mb-10">
+                <p className="text-lg text-gray-700 font-semibold leading-relaxed">
+                  Jedes Unternehmen hat andere Anforderungen. Manche brauchen
+                  nur eine zuverlässige Büroreinigung. Andere suchen einen
+                  Partner der das komplette Gebäudemanagement übernimmt.
+                </p>
+                <p className="text-lg text-gray-700 font-semibold leading-relaxed">
+                  Wir hören erst zu. Dann schauen wir uns Ihre Räume an.
+                  Und dann machen wir Ihnen ein Angebot das zu Ihrem
+                  Bedarf passt. Nicht mehr und nicht weniger.
+                </p>
+              </div>
+
+              {/* CTAs */}
+              <div className="space-y-4">
+                <a
+                  href="#contact-form"
+                  className="flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group w-full"
+                >
+                  Unverbindlich anfragen
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                </a>
+                <Link
+                  href="/leistungen"
+                  className="flex items-center justify-center gap-3 border-2 border-[#109387] text-[#109387] font-bold text-lg px-8 py-4 rounded-[6px] hover:bg-[#109387] hover:text-white transition-all w-full"
+                >
+                  Alle Leistungen ansehen
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </Link>
+              </div>
+
+              {/* ISO Standards - prominent in Navy */}
+              <div className="mt-10 bg-[#012956] rounded-[6px] p-6">
+                <p className="text-sm text-white/70 font-semibold uppercase tracking-wide mb-1">
+                  Qualitätsstandards
+                </p>
+                <p className="text-2xl text-white font-bold">
+                  ISO 9001 & 14001
+                </p>
+              </div>
+            </aside>
+          </FadeIn>
 
           {/* Service Cards - Fokus auf Problem → Lösung */}
           <div className="space-y-8" role="list" aria-label="Unsere Leistungsbereiche">
             {serviceKategorien.map((kategorie, index) => {
               const Icon = kategorie.icon
               return (
-                <article
-                  key={kategorie.id}
-                  className="group bg-white rounded-[6px] overflow-hidden"
-                  role="listitem"
-                >
+                <FadeIn key={kategorie.id} delay={index * 0.15}>
+                  <article
+                    className="group bg-white rounded-[6px] overflow-hidden"
+                    role="listitem"
+                  >
                   <div className={`grid md:grid-cols-2 ${index % 2 === 1 ? 'md:grid-flow-dense' : ''}`}>
 
                     {/* Image */}
@@ -152,7 +154,8 @@ export default function ServicesContainer() {
 
                     </div>
                   </div>
-                </article>
+                  </article>
+                </FadeIn>
               )
             })}
           </div>

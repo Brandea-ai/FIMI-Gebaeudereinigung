@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Check, Building2, Factory, Wrench, Sparkles, Search, X } from 'lucide-react'
 import { leistungen, categories, getAllCategories } from '@/lib/leistungen-data'
+import FadeIn from '@/components/FadeIn'
 
 const categoryIcons = {
   gewerblich: Building2,
@@ -449,38 +450,40 @@ export default function LeistungenPage() {
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Content */}
-            <div className="order-2 lg:order-1">
-              <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3">
-                Warum FIMI
-              </p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-6">
-                Qualität, die Sie überzeugt
-              </h2>
-              <p className="text-lg text-gray-700 font-semibold leading-relaxed mb-10">
-                Seit über 8 Jahren vertrauen Unternehmen in ganz Bayern auf unsere Expertise.
-                Wir kennen die Anforderungen verschiedener Branchen und liefern zuverlässig.
-              </p>
+            <FadeIn direction="left" className="order-2 lg:order-1">
+              <div>
+                <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3">
+                  Warum FIMI
+                </p>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-6">
+                  Qualität, die Sie überzeugt
+                </h2>
+                <p className="text-lg text-gray-700 font-semibold leading-relaxed mb-10">
+                  Seit über 8 Jahren vertrauen Unternehmen in ganz Bayern auf unsere Expertise.
+                  Wir kennen die Anforderungen verschiedener Branchen und liefern zuverlässig.
+                </p>
 
-              <div className="space-y-6">
-                {[
-                  { title: 'Geschultes Stammpersonal', desc: 'Feste Teams, die Ihr Objekt kennen' },
-                  { title: 'Umweltfreundliche Reinigung', desc: 'ISO 14001 zertifiziert' },
-                  { title: 'Flexible Verträge', desc: 'Monatlich kündbar' },
-                  { title: 'Persönlicher Ansprechpartner', desc: 'Direkter Draht zu Ihrem Objektleiter' },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-4">
-                    <Check size={24} strokeWidth={2.5} className="text-[#109387] flex-shrink-0 mt-0.5" />
-                    <div>
-                      <h3 className="font-bold text-[#012956] text-lg">{item.title}</h3>
-                      <p className="text-gray-700 font-semibold">{item.desc}</p>
+                <div className="space-y-6">
+                  {[
+                    { title: 'Geschultes Stammpersonal', desc: 'Feste Teams, die Ihr Objekt kennen' },
+                    { title: 'Umweltfreundliche Reinigung', desc: 'ISO 14001 zertifiziert' },
+                    { title: 'Flexible Verträge', desc: 'Monatlich kündbar' },
+                    { title: 'Persönlicher Ansprechpartner', desc: 'Direkter Draht zu Ihrem Objektleiter' },
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-4">
+                      <Check size={24} strokeWidth={2.5} className="text-[#109387] flex-shrink-0 mt-0.5" />
+                      <div>
+                        <h3 className="font-bold text-[#012956] text-lg">{item.title}</h3>
+                        <p className="text-gray-700 font-semibold">{item.desc}</p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
+            </FadeIn>
 
             {/* Image */}
-            <div className="relative order-1 lg:order-2">
+            <FadeIn direction="right" className="relative order-1 lg:order-2">
               <div className="relative h-80 lg:h-[550px] rounded-[6px] overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop"
@@ -495,7 +498,7 @@ export default function LeistungenPage() {
                 <div className="text-white font-bold text-lg">Jahre</div>
                 <div className="text-white/60 font-semibold">Erfahrung</div>
               </div>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -503,34 +506,36 @@ export default function LeistungenPage() {
       {/* CTA Section */}
       <section className="py-20 lg:py-28 bg-[#012956]">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="text-center max-w-3xl mx-auto">
-            <p className="text-sm text-gray-400 font-semibold uppercase tracking-wide mb-3">
-              Jetzt starten
-            </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-6">
-              Kostenfreie Besichtigung in 48 Stunden
-            </h2>
-            <p className="text-lg text-white/80 font-semibold leading-relaxed mb-10">
-              Wir schauen uns Ihre Räume an und erstellen ein transparentes Angebot.
-              Unverbindlich und ohne versteckte Kosten.
-            </p>
+          <FadeIn>
+            <div className="text-center max-w-3xl mx-auto">
+              <p className="text-sm text-gray-400 font-semibold uppercase tracking-wide mb-3">
+                Jetzt starten
+              </p>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-6">
+                Kostenfreie Besichtigung in 48 Stunden
+              </h2>
+              <p className="text-lg text-white/80 font-semibold leading-relaxed mb-10">
+                Wir schauen uns Ihre Räume an und erstellen ein transparentes Angebot.
+                Unverbindlich und ohne versteckte Kosten.
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="#contact-form"
-                className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
-              >
-                Besichtigung anfragen
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a
-                href="tel:+4987143033460"
-                className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-[#012956] font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"
-              >
-                0871 430 334 60
-              </a>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="#contact-form"
+                  className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
+                >
+                  Besichtigung anfragen
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                </a>
+                <a
+                  href="tel:+4987143033460"
+                  className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-[#012956] font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"
+                >
+                  0871 430 334 60
+                </a>
+              </div>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
     </main>

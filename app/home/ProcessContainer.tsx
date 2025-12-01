@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Phone, ClipboardCheck, FileText, Sparkles } from 'lucide-react'
+import FadeIn from '@/components/FadeIn'
 
 const schritte = [
   {
@@ -43,49 +44,50 @@ export default function ProcessContainer() {
           <div className="px-6 lg:px-12 xl:px-20 py-16 lg:py-20 flex flex-col justify-center order-2 lg:order-1">
 
             {/* Header */}
-            <div className="mb-10">
-              <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3">
-                So funktioniert's
-              </p>
-              <h2
-                id="process-heading"
-                className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-6"
-              >
-                In 4 Schritten zu sauberen Räumen
-              </h2>
-              <p className="text-lg text-gray-700 font-semibold leading-relaxed">
-                Kein komplizierter Prozess. Kein Papierkram. Sie sagen was Sie brauchen,
-                wir kümmern uns um den Rest.
-              </p>
-            </div>
+            <FadeIn direction="left">
+              <div className="mb-10">
+                <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3">
+                  So funktioniert's
+                </p>
+                <h2
+                  id="process-heading"
+                  className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-6"
+                >
+                  In 4 Schritten zu sauberen Räumen
+                </h2>
+                <p className="text-lg text-gray-700 font-semibold leading-relaxed">
+                  Kein komplizierter Prozess. Kein Papierkram. Sie sagen was Sie brauchen,
+                  wir kümmern uns um den Rest.
+                </p>
+              </div>
+            </FadeIn>
 
             {/* 4 Schritte */}
             <div className="space-y-6 mb-10">
-              {schritte.map((schritt) => {
+              {schritte.map((schritt, index) => {
                 const Icon = schritt.icon
                 return (
-                  <div
-                    key={schritt.nummer}
-                    className="flex gap-4 items-start"
-                  >
-                    {/* Nummer + Icon */}
-                    <div className="flex-shrink-0 w-14 h-14 bg-[#012956] rounded-[6px] flex items-center justify-center relative">
-                      <Icon size={24} className="text-white" strokeWidth={1.5} />
-                      <span className="absolute -top-2 -right-2 w-6 h-6 bg-[#109387] rounded-full text-white text-xs font-bold flex items-center justify-center">
-                        {schritt.nummer}
-                      </span>
-                    </div>
+                  <FadeIn key={schritt.nummer} delay={index * 0.1} direction="left">
+                    <div className="flex gap-4 items-start">
+                      {/* Nummer + Icon */}
+                      <div className="flex-shrink-0 w-14 h-14 bg-[#012956] rounded-[6px] flex items-center justify-center relative">
+                        <Icon size={24} className="text-white" strokeWidth={1.5} />
+                        <span className="absolute -top-2 -right-2 w-6 h-6 bg-[#109387] rounded-full text-white text-xs font-bold flex items-center justify-center">
+                          {schritt.nummer}
+                        </span>
+                      </div>
 
-                    {/* Text */}
-                    <div className="flex-1 pt-1">
-                      <h3 className="text-lg font-bold text-[#012956] mb-1">
-                        {schritt.titel}
-                      </h3>
-                      <p className="text-gray-700 font-semibold leading-relaxed">
-                        {schritt.beschreibung}
-                      </p>
+                      {/* Text */}
+                      <div className="flex-1 pt-1">
+                        <h3 className="text-lg font-bold text-[#012956] mb-1">
+                          {schritt.titel}
+                        </h3>
+                        <p className="text-gray-700 font-semibold leading-relaxed">
+                          {schritt.beschreibung}
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </FadeIn>
                 )
               })}
             </div>

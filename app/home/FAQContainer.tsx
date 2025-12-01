@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { ChevronDown, ArrowRight } from 'lucide-react'
+import FadeIn from '@/components/FadeIn'
 
 const faqs = [
   {
@@ -53,43 +54,45 @@ export default function FAQContainer() {
         <div className="grid lg:grid-cols-[400px_1fr] xl:grid-cols-[450px_1fr] gap-12 lg:gap-20">
 
           {/* Left: Sticky Sidebar */}
-          <aside className="lg:sticky lg:top-32 lg:self-start">
-            <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3">
-              Häufige Fragen
-            </p>
-            <h2
-              id="faq-heading"
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-6"
-            >
-              Haben Sie noch Fragen?
-            </h2>
-            <p className="text-lg text-gray-700 font-semibold leading-relaxed mb-10">
-              Hier finden Sie Antworten auf die häufigsten Fragen.
-              Falls Ihre Frage nicht dabei ist, kontaktieren Sie uns einfach direkt.
-            </p>
-
-            {/* CTA */}
-            <a
-              href="#contact-form"
-              className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group w-full"
-            >
-              Kostenfreie Besichtigung
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </a>
-
-            {/* Kontakt-Info */}
-            <div className="mt-8 bg-[#f8f9fa] rounded-[6px] p-6">
-              <p className="text-sm text-gray-500 font-semibold mb-2">
-                Lieber persönlich sprechen?
+          <FadeIn direction="left" className="lg:sticky lg:top-32 lg:self-start">
+            <aside>
+              <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3">
+                Häufige Fragen
               </p>
-              <a
-                href="tel:+4987143033460"
-                className="text-xl font-bold text-[#012956] hover:text-[#109387] transition-colors"
+              <h2
+                id="faq-heading"
+                className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-6"
               >
-                0871 430 334 60
+                Haben Sie noch Fragen?
+              </h2>
+              <p className="text-lg text-gray-700 font-semibold leading-relaxed mb-10">
+                Hier finden Sie Antworten auf die häufigsten Fragen.
+                Falls Ihre Frage nicht dabei ist, kontaktieren Sie uns einfach direkt.
+              </p>
+
+              {/* CTA */}
+              <a
+                href="#contact-form"
+                className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group w-full"
+              >
+                Kostenfreie Besichtigung
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </a>
-            </div>
-          </aside>
+
+              {/* Kontakt-Info */}
+              <div className="mt-8 bg-[#f8f9fa] rounded-[6px] p-6">
+                <p className="text-sm text-gray-500 font-semibold mb-2">
+                  Lieber persönlich sprechen?
+                </p>
+                <a
+                  href="tel:+4987143033460"
+                  className="text-xl font-bold text-[#012956] hover:text-[#109387] transition-colors"
+                >
+                  0871 430 334 60
+                </a>
+              </div>
+            </aside>
+          </FadeIn>
 
           {/* Right: FAQ Accordion */}
           <div className="space-y-4" role="list" aria-label="Häufig gestellte Fragen">
