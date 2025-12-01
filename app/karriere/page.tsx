@@ -696,6 +696,7 @@ export default function KarrierePage() {
   const [selectedJob, setSelectedJob] = useState<JobPosition | null>(null)
   const [isSidebarSticky, setIsSidebarSticky] = useState(false)
   const [showMoreJobs, setShowMoreJobs] = useState(false)
+  const [expandedStep, setExpandedStep] = useState<number | null>(null)
   const sidebarRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
 
@@ -1175,32 +1176,78 @@ export default function KarrierePage() {
       </section>
 
       {/* ================================================================== */}
-      {/* BEWERBUNGSPROZESS */}
+      {/* BEWERBUNGSPROZESS - FIMI HR */}
       {/* ================================================================== */}
       <section className="py-12 lg:py-20 bg-white">
         <div className="w-full max-w-[1800px] mx-auto px-4 lg:px-12 xl:px-20">
           <div className="mb-8 lg:mb-12">
-            <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-2 lg:mb-3">
-              Einfach & Schnell
+            <p className="text-sm lg:text-base text-[#109387] font-extrabold uppercase tracking-wide mb-2 lg:mb-3">
+              FIMI HR-Prozess
             </p>
-            <h2 className="text-2xl md:text-4xl font-bold text-[#012956] leading-tight">
-              Unser Bewerbungsprozess
+            <h2 className="text-2xl md:text-4xl font-extrabold text-[#012956] leading-tight mb-4">
+              Ihr Weg zu uns
             </h2>
+            <p className="text-gray-600 font-medium text-base lg:text-lg max-w-3xl">
+              Unser strukturierter Einstellungsprozess stellt sicher, dass wir die richtige Position für Sie finden
+              und Sie optimal auf Ihre neue Aufgabe vorbereitet sind. Der gesamte Prozess wird in Ihrer bevorzugten
+              Sprache begleitet.
+            </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
             {[
-              { schritt: '1', titel: 'Bewerbung einreichen', text: 'Per E-Mail oder Telefon – einfach und unkompliziert.' },
-              { schritt: '2', titel: 'Rückmeldung', text: 'Wir melden uns innerhalb von 48 Stunden bei Ihnen.' },
-              { schritt: '3', titel: 'Kennenlerngespräch', text: 'Ein kurzes Gespräch – persönlich oder telefonisch.' },
-              { schritt: '4', titel: 'Willkommen im Team', text: 'Arbeitsvertrag und Einarbeitung – los geht\'s!' }
+              {
+                schritt: '1',
+                titel: 'Bewerbung einreichen',
+                text: 'Per E-Mail, Telefon oder WhatsApp – unkompliziert und schnell. Wir melden uns innerhalb von 48 Stunden.',
+                details: 'Sie können sich ganz einfach bei uns bewerben – ein kurzer Anruf oder eine E-Mail genügt. Lebenslauf oder Zeugnisse sind hilfreich, aber kein Muss. Wichtig ist uns vor allem Ihre Motivation und Zuverlässigkeit. Unser HR-Team prüft Ihre Unterlagen persönlich und meldet sich garantiert innerhalb von 48 Stunden bei Ihnen zurück – oft sogar am gleichen Tag.'
+              },
+              {
+                schritt: '2',
+                titel: 'Kennenlerngespräch',
+                text: 'Ein persönliches Gespräch – vor Ort oder telefonisch, in Ihrer Sprache.',
+                details: 'Im Kennenlerngespräch möchten wir Sie als Person verstehen: Was motiviert Sie? Welche Erfahrungen bringen Sie mit? Was sind Ihre Stärken? Das Gespräch führen wir in Ihrer bevorzugten Sprache (Deutsch, Englisch, Türkisch, Polnisch, Rumänisch u.a.). Es geht nicht darum, Sie zu prüfen – sondern gemeinsam herauszufinden, welche Position optimal zu Ihnen passt.'
+              },
+              {
+                schritt: '3',
+                titel: 'Kompetenz-Check',
+                text: 'Ein begleiteter Praxistag, um Ihre Stärken optimal einzusetzen.',
+                details: 'Der Kompetenz-Check ist kein Test im klassischen Sinne – sondern ein begleiteter Praxistag. Gemeinsam mit einem erfahrenen Kollegen arbeiten Sie einen halben Tag in einem echten Objekt. So können Sie den Arbeitsalltag kennenlernen, während wir Ihre praktischen Fähigkeiten, Ihr Sprachverständnis und Ihre Arbeitsweise einschätzen. Dies hilft uns, Sie genau dort einzusetzen, wo Ihre Stärken am besten zur Geltung kommen.'
+              },
+              {
+                schritt: '4',
+                titel: 'Willkommen im Team',
+                text: 'Arbeitsvertrag, Einarbeitung und ein fester Ansprechpartner – los geht\'s!',
+                details: 'Nach erfolgreichem Kompetenz-Check erhalten Sie Ihren unbefristeten Arbeitsvertrag. In der ersten Woche werden Sie von einem erfahrenen Paten eingearbeitet, der Ihnen alles zeigt und Ihre Fragen beantwortet. Sie bekommen kostenlose Arbeitskleidung, alle nötigen Arbeitsmittel und einen festen Ansprechpartner für die ersten Monate. Bei FIMI sind Sie vom ersten Tag an Teil des Teams – nicht nur eine Nummer.'
+              }
             ].map((item, i) => (
-              <div key={i} className="bg-[#f8f9fa] rounded-[6px] p-4 lg:p-6">
-                <div className="w-10 lg:w-12 h-10 lg:h-12 bg-[#109387] text-white rounded-full flex items-center justify-center text-lg lg:text-xl font-bold mb-3 lg:mb-4">
+              <div
+                key={i}
+                className={`bg-[#f8f9fa] rounded-[6px] p-5 lg:p-6 transition-all duration-300 ${
+                  expandedStep === i ? 'ring-2 ring-[#109387]' : ''
+                }`}
+              >
+                <div className="w-11 lg:w-12 h-11 lg:h-12 bg-[#109387] text-white rounded-full flex items-center justify-center text-lg lg:text-xl font-extrabold mb-4">
                   {item.schritt}
                 </div>
-                <h3 className="text-sm lg:text-lg font-bold text-[#012956] mb-1 lg:mb-2">{item.titel}</h3>
-                <p className="text-gray-600 font-medium text-xs lg:text-sm hidden lg:block">{item.text}</p>
+                <h3 className="text-base lg:text-lg font-extrabold text-[#012956] mb-2">{item.titel}</h3>
+                <p className="text-gray-600 font-medium text-sm lg:text-base mb-3">{item.text}</p>
+
+                {/* Expandable Details */}
+                <div className={`overflow-hidden transition-all duration-300 ${
+                  expandedStep === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                }`}>
+                  <div className="pt-3 border-t border-gray-200">
+                    <p className="text-gray-700 text-sm leading-relaxed">{item.details}</p>
+                  </div>
+                </div>
+
+                <button
+                  onClick={() => setExpandedStep(expandedStep === i ? null : i)}
+                  className="mt-3 text-[#109387] hover:text-[#0d7d72] text-sm font-bold flex items-center gap-1 transition-colors"
+                >
+                  {expandedStep === i ? '− Weniger lesen' : '+ Mehr lesen'}
+                </button>
               </div>
             ))}
           </div>
