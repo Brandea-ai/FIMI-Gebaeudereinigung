@@ -287,11 +287,11 @@ export default function LeistungenPage() {
               )}
             </div>
 
-            {/* Filter Buttons */}
-            <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide">
+            {/* Filter Buttons - kompakter auf Mobile */}
+            <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto scrollbar-hide">
               <button
                 onClick={() => { setActiveFilter('alle'); setSearchQuery(''); }}
-                className={`px-5 py-2.5 rounded-[6px] font-bold whitespace-nowrap transition-all ${
+                className={`px-3 sm:px-5 py-2 sm:py-2.5 rounded-[6px] font-bold text-sm sm:text-base whitespace-nowrap transition-all ${
                   activeFilter === 'alle' && !searchQuery
                     ? 'bg-[#012956] text-white'
                     : 'bg-[#f8f9fa] text-[#012956] hover:bg-[#012956] hover:text-white'
@@ -303,7 +303,7 @@ export default function LeistungenPage() {
                 <button
                   key={cat.id}
                   onClick={() => { setActiveFilter(cat.id); setSearchQuery(''); }}
-                  className={`px-5 py-2.5 rounded-[6px] font-bold whitespace-nowrap transition-all ${
+                  className={`px-3 sm:px-5 py-2 sm:py-2.5 rounded-[6px] font-bold text-sm sm:text-base whitespace-nowrap transition-all ${
                     activeFilter === cat.id && !searchQuery
                       ? 'bg-[#012956] text-white'
                       : 'bg-[#f8f9fa] text-[#012956] hover:bg-[#012956] hover:text-white'
