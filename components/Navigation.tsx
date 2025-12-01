@@ -333,7 +333,7 @@ export default function Navigation() {
 
                 {/* Über FIMI Dropdown Menu - mit Bridge für smooth hovering */}
                 <div
-                  className={`absolute top-full left-0 pt-2 transition-all duration-200 ${
+                  className={`absolute top-full left-1/2 -translate-x-1/2 pt-2 transition-all duration-200 ${
                     activeDropdown === 'ueberfimi'
                       ? 'opacity-100 visible translate-y-0'
                       : 'opacity-0 invisible -translate-y-2 pointer-events-none'
