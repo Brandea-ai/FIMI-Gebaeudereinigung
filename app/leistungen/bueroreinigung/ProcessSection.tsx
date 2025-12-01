@@ -69,37 +69,42 @@ export default function ProcessSection() {
                 {step.number}
               </div>
 
-              {/* Icon - Outlined Style */}
-              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-[6px] border-2 border-[#109387] group-hover:bg-[#109387] flex items-center justify-center mb-4 sm:mb-5 lg:mb-6 transition-all duration-300">
-                <step.icon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
-              </div>
+              {/* Icon + Content horizontal layout */}
+              <div className="flex items-start gap-3 sm:gap-4">
+                {/* Icon - Outlined Style */}
+                <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-[6px] border-2 border-[#109387] group-hover:bg-[#109387] flex items-center justify-center flex-shrink-0 transition-all duration-300">
+                  <step.icon className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
+                </div>
 
-              {/* Content */}
-              <h3 className="text-lg sm:text-xl font-bold text-[#012956] mb-2 sm:mb-3">
-                {step.title}
-              </h3>
-              <p className="text-sm sm:text-base text-gray-600 font-semibold leading-relaxed mb-3 sm:mb-4">
-                {step.description}
-              </p>
+                {/* Content */}
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold text-[#012956] mb-1.5 sm:mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm lg:text-base text-gray-600 font-semibold leading-relaxed mb-2 sm:mb-3">
+                    {step.description}
+                  </p>
 
-              {/* Time Badge */}
-              <div className="inline-flex items-center bg-[#f8f9fa] rounded-[6px] px-2.5 sm:px-3 py-1 sm:py-1.5">
-                <span className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wide">
-                  Dauer: {step.time}
-                </span>
+                  {/* Time Badge */}
+                  <div className="inline-flex items-center bg-[#f8f9fa] rounded-[6px] px-2 sm:px-2.5 py-1">
+                    <span className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wide">
+                      Dauer: {step.time}
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-10 sm:mt-12 lg:mt-16 text-center">
-          <p className="text-sm sm:text-base lg:text-lg text-gray-600 font-semibold mb-4 sm:mb-6">
+        <div className="mt-10 sm:mt-12 lg:mt-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 bg-white rounded-[6px] p-5 sm:p-6 lg:p-8">
+          <p className="text-sm sm:text-base lg:text-lg text-gray-600 font-semibold">
             <strong className="text-[#012956]">Gesamtdauer:</strong> Durchschnittlich 5-7 Werktage vom Erstkontakt bis zum sauberen Büro.
           </p>
           <a
             href="#kontakt"
-            className="inline-flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-[6px] transition-colors group text-sm sm:text-base"
+            className="inline-flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-[6px] transition-colors group text-sm sm:text-base whitespace-nowrap flex-shrink-0"
           >
             Jetzt Schritt 1 starten
             <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />

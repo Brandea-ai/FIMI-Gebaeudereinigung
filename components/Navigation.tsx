@@ -311,70 +311,76 @@ export default function Navigation() {
               />
             </Link>
 
-            {/* Desktop Navigation - Responsive für alle Größen */}
-            <div className="hidden lg:flex items-center">
-              {/* Leistungen Dropdown - mit Padding statt Gap */}
+            {/* Desktop Navigation - Premium Design mit visuellen Trennern */}
+            <div className="hidden lg:flex items-center bg-[#f8f9fa] rounded-full px-2 py-1.5 xl:px-3 xl:py-2">
+              {/* Leistungen Dropdown */}
               <div
-                className="relative px-0.5 xl:px-1"
+                className="relative"
                 onMouseEnter={() => handleDropdownEnter('leistungen')}
                 onMouseLeave={handleDropdownLeave}
               >
                 <button
-                  className={`flex items-center gap-1.5 xl:gap-2 px-3 xl:px-5 py-2.5 xl:py-3 rounded-[6px] text-[13px] xl:text-[15px] font-bold transition-all duration-150 ${
+                  className={`flex items-center gap-2 px-5 xl:px-6 py-2.5 xl:py-3 rounded-full text-[14px] xl:text-[15px] font-bold transition-all duration-200 ${
                     activeDropdown === 'leistungen'
-                      ? 'text-[#109387] bg-[#109387]/5'
-                      : 'text-[#012956] hover:text-[#109387] hover:bg-[#f8f9fa]'
+                      ? 'text-white bg-[#109387] shadow-lg'
+                      : 'text-[#012956] hover:text-[#109387] hover:bg-white hover:shadow-md'
                   }`}
                 >
                   <span>Leistungen</span>
                   <ChevronDown
-                    size={14}
+                    size={15}
                     strokeWidth={2.5}
-                    className={`xl:w-4 xl:h-4 transition-transform duration-200 ${activeDropdown === 'leistungen' ? 'rotate-180' : ''}`}
+                    className={`transition-transform duration-200 ${activeDropdown === 'leistungen' ? 'rotate-180' : ''}`}
                   />
                 </button>
               </div>
 
+              {/* Trenner */}
+              <div className="w-px h-5 bg-gray-300 mx-1" />
+
               {/* Branchen Dropdown */}
               <div
-                className="relative px-0.5 xl:px-1"
+                className="relative"
                 onMouseEnter={() => handleDropdownEnter('branchen')}
                 onMouseLeave={handleDropdownLeave}
               >
                 <button
-                  className={`flex items-center gap-1.5 xl:gap-2 px-3 xl:px-5 py-2.5 xl:py-3 rounded-[6px] text-[13px] xl:text-[15px] font-bold transition-all duration-150 ${
+                  className={`flex items-center gap-2 px-5 xl:px-6 py-2.5 xl:py-3 rounded-full text-[14px] xl:text-[15px] font-bold transition-all duration-200 ${
                     activeDropdown === 'branchen'
-                      ? 'text-[#109387] bg-[#109387]/5'
-                      : 'text-[#012956] hover:text-[#109387] hover:bg-[#f8f9fa]'
+                      ? 'text-white bg-[#109387] shadow-lg'
+                      : 'text-[#012956] hover:text-[#109387] hover:bg-white hover:shadow-md'
                   }`}
                 >
                   <span>Branchen</span>
                   <ChevronDown
-                    size={14}
+                    size={15}
                     strokeWidth={2.5}
-                    className={`xl:w-4 xl:h-4 transition-transform duration-200 ${activeDropdown === 'branchen' ? 'rotate-180' : ''}`}
+                    className={`transition-transform duration-200 ${activeDropdown === 'branchen' ? 'rotate-180' : ''}`}
                   />
                 </button>
               </div>
 
+              {/* Trenner */}
+              <div className="w-px h-5 bg-gray-300 mx-1" />
+
               {/* Über FIMI Dropdown */}
               <div
-                className="relative px-0.5 xl:px-1"
+                className="relative"
                 onMouseEnter={() => handleDropdownEnter('ueberfimi')}
                 onMouseLeave={handleDropdownLeave}
               >
                 <button
-                  className={`flex items-center gap-1.5 xl:gap-2 px-3 xl:px-5 py-2.5 xl:py-3 rounded-[6px] text-[13px] xl:text-[15px] font-bold transition-all duration-150 ${
+                  className={`flex items-center gap-2 px-5 xl:px-6 py-2.5 xl:py-3 rounded-full text-[14px] xl:text-[15px] font-bold transition-all duration-200 ${
                     activeDropdown === 'ueberfimi'
-                      ? 'text-[#109387] bg-[#109387]/5'
-                      : 'text-[#012956] hover:text-[#109387] hover:bg-[#f8f9fa]'
+                      ? 'text-white bg-[#109387] shadow-lg'
+                      : 'text-[#012956] hover:text-[#109387] hover:bg-white hover:shadow-md'
                   }`}
                 >
                   <span>Über FIMI</span>
                   <ChevronDown
-                    size={14}
+                    size={15}
                     strokeWidth={2.5}
-                    className={`xl:w-4 xl:h-4 transition-transform duration-200 ${activeDropdown === 'ueberfimi' ? 'rotate-180' : ''}`}
+                    className={`transition-transform duration-200 ${activeDropdown === 'ueberfimi' ? 'rotate-180' : ''}`}
                   />
                 </button>
 
@@ -404,11 +410,14 @@ export default function Navigation() {
                 </div>
               </div>
 
+              {/* Trenner */}
+              <div className="w-px h-5 bg-gray-300 mx-1" />
+
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="px-3 xl:px-5 py-2.5 xl:py-3 rounded-[6px] text-[#012956] hover:text-[#109387] hover:bg-[#f8f9fa] transition-all duration-200 text-[13px] xl:text-[15px] font-bold"
+                  className="px-5 xl:px-6 py-2.5 xl:py-3 rounded-full text-[#012956] hover:text-[#109387] hover:bg-white hover:shadow-md transition-all duration-200 text-[14px] xl:text-[15px] font-bold"
                 >
                   {link.label}
                 </Link>
@@ -416,7 +425,7 @@ export default function Navigation() {
             </div>
 
             {/* CTA Buttons - Beratung zuerst, dann Telefon */}
-            <div className="hidden lg:flex items-center gap-2 xl:gap-3">
+            <div className="hidden lg:flex items-center gap-2 xl:gap-3 ml-2 xl:ml-4 2xl:ml-6">
               <Link
                 href="/kontakt"
                 className="flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-xs xl:text-sm px-4 xl:px-6 py-2.5 xl:py-3 rounded-[6px] transition-all whitespace-nowrap"

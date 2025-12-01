@@ -99,7 +99,7 @@ export default function RegionenSection() {
         <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8 lg:hidden">
           <button
             onClick={prev}
-            className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#f8f9fa] flex items-center justify-center hover:bg-[#012956] hover:text-white transition-colors"
+            className="w-9 h-9 sm:w-10 sm:h-10 rounded-[6px] bg-[#f8f9fa] flex items-center justify-center hover:bg-[#012956] hover:text-white transition-colors"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -108,7 +108,7 @@ export default function RegionenSection() {
           </div>
           <button
             onClick={next}
-            className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#f8f9fa] flex items-center justify-center hover:bg-[#012956] hover:text-white transition-colors"
+            className="w-9 h-9 sm:w-10 sm:h-10 rounded-[6px] bg-[#f8f9fa] flex items-center justify-center hover:bg-[#012956] hover:text-white transition-colors"
           >
             <ChevronRight className="w-5 h-5" />
           </button>

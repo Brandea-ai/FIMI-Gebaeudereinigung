@@ -29,21 +29,21 @@ export default function CTASection() {
               Unterhaltsreinigung für Ihre Branche
             </h3>
 
-            {/* Branchen als hochwertiges 2x3 Grid - Gefüllt für Kontrast */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
+            {/* Branchen als hochwertiges 2x3 Grid - Outlined Style wie Gesundheitswesen */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 lg:gap-4 mb-6 sm:mb-8">
               {branchen.map((branche) => {
                 const Icon = branche.icon
                 return (
                   <Link
                     key={branche.slug}
                     href={`/branchen/${branche.slug}`}
-                    className="group flex items-center gap-3 sm:gap-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#109387]/50 rounded-[6px] p-3 sm:p-4 transition-all duration-300"
+                    className="group flex items-center gap-2 sm:gap-3 bg-transparent hover:bg-white/10 border-2 border-white/20 hover:border-[#109387] rounded-[6px] p-2.5 sm:p-3 lg:p-4 transition-all duration-300"
                   >
-                    {/* Icon - Dauerhaft gefüllt für Kontrast */}
-                    <div className="w-9 h-9 sm:w-11 sm:h-11 bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0">
-                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" strokeWidth={1.5} />
+                    {/* Icon - Outlined Style */}
+                    <div className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 border-2 border-[#109387] group-hover:bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0 transition-all duration-300">
+                      <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
                     </div>
-                    <span className="text-white font-semibold text-xs sm:text-sm group-hover:text-[#109387] transition-colors">
+                    <span className="text-white font-semibold text-[10px] sm:text-xs lg:text-sm group-hover:text-[#109387] transition-colors leading-tight">
                       {branche.name}
                     </span>
                   </Link>
@@ -66,34 +66,34 @@ export default function CTASection() {
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#012956] mb-3 sm:mb-4">
               Jetzt starten
             </h3>
-            <p className="text-sm sm:text-base text-gray-600 font-semibold leading-relaxed mb-5 sm:mb-8">
+            <p className="text-sm sm:text-base text-gray-600 font-semibold leading-relaxed mb-5 sm:mb-6">
               Kostenfreie Besichtigung, transparentes Angebot, schneller Start.
             </p>
 
-            {/* Telefon prominent - Gefüllt für Kontrast */}
-            <a
-              href="tel:+4987143033460"
-              className="flex items-center gap-3 sm:gap-4 bg-[#012956] hover:bg-[#01203d] rounded-[6px] p-3 sm:p-4 lg:p-5 mb-4 sm:mb-6 group transition-colors"
-            >
-              <div className="w-11 h-11 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0">
-                <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-white" strokeWidth={1.5} />
-              </div>
-              <div>
-                <span className="text-white/60 text-xs sm:text-sm font-semibold block">Direkt anrufen</span>
-                <span className="text-white font-bold text-lg sm:text-xl lg:text-2xl group-hover:text-[#109387] transition-colors">
-                  0871 430 334 60
-                </span>
-              </div>
-            </a>
-
-            {/* CTA Button */}
+            {/* CTA Button - Kontaktformular ZUERST */}
             <Link
               href="/kontakt"
-              className="flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm sm:text-base lg:text-lg px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-[6px] transition-colors w-full group mb-5 sm:mb-8"
+              className="flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm sm:text-base lg:text-lg px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-[6px] transition-colors w-full group mb-4 sm:mb-5"
             >
               Kostenfreie Besichtigung anfragen
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
+
+            {/* Telefon ZWEITE Option */}
+            <a
+              href="tel:+4987143033460"
+              className="flex items-center gap-3 sm:gap-4 bg-[#f8f9fa] hover:bg-[#012956] rounded-[6px] p-3 sm:p-4 lg:p-5 mb-5 sm:mb-6 group transition-colors"
+            >
+              <div className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 border-2 border-[#109387] group-hover:bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0 transition-all duration-300">
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
+              </div>
+              <div>
+                <span className="text-gray-500 group-hover:text-white/60 text-xs sm:text-sm font-semibold block transition-colors">Oder direkt anrufen</span>
+                <span className="text-[#012956] group-hover:text-white font-bold text-base sm:text-lg lg:text-xl transition-colors">
+                  0871 430 334 60
+                </span>
+              </div>
+            </a>
 
             {/* Trust-Elemente */}
             <div className="space-y-2 sm:space-y-3">
