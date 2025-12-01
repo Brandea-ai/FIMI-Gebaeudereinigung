@@ -10,7 +10,7 @@ export function BrancheProcess({ branche }: BrancheProcessProps) {
 
   return (
     <section className="py-16 md:py-24 lg:py-32 bg-gray-50">
-      <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
+      <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
 
         {/* Section Header */}
         <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#012956] leading-tight mb-8 sm:mb-12 md:mb-16">

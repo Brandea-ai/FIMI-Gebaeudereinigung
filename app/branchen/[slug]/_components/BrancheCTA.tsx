@@ -8,7 +8,7 @@ interface BrancheCTAProps {
 export function BrancheCTA({ branche }: BrancheCTAProps) {
   return (
     <section id="contact-form" className="py-16 md:py-24 lg:py-32 bg-[#012956]">
-      <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
+      <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
 
         <div className="max-w-4xl mx-auto text-center">
 

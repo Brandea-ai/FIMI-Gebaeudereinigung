@@ -10,7 +10,7 @@ export function BrancheChallenges({ branche }: BrancheChallengesProps) {
 
   return (
     <section id="herausforderungen" className="py-16 md:py-24 lg:py-32 bg-white">
-      <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
+      <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
 
         {/* Section Header - Kein Icon, kein Eyebrow, kein Einzeiler rechts */}
         <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#012956] leading-tight mb-12 md:mb-16">

@@ -109,7 +109,7 @@ export function BrancheRegionen({ branche }: BrancheRegionenProps) {
 
   return (
     <section id="standorte" className="py-12 sm:py-16 md:py-24 lg:py-32 bg-gray-50">
-      <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
+      <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
 
         {/* GESAMTES Layout als Grid - Sidebar sticky über alles */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-12">
@@ -142,14 +142,14 @@ export function BrancheRegionen({ branche }: BrancheRegionenProps) {
             </div>
 
             {/* Städte Grid */}
-            <div className="grid grid-cols-4 gap-2 sm:gap-3 mb-10 sm:mb-14">
+            <div className="grid grid-cols-4 gap-1.5 sm:gap-3 mb-10 sm:mb-14">
               {staedte.map((stadt) => (
                 <div
                   key={stadt.name}
-                  className="bg-white rounded-[6px] p-2 sm:p-3 text-center shadow-sm border border-gray-100"
+                  className="bg-white rounded-[6px] p-1.5 sm:p-3 text-center shadow-sm border border-gray-100"
                 >
-                  <p className="font-bold text-[#012956] text-xs sm:text-sm">{stadt.name}</p>
-                  <p className="text-[10px] sm:text-xs text-gray-500">{stadt.info}</p>
+                  <p className="font-bold text-[#012956] text-[10px] sm:text-sm leading-tight">{stadt.name}</p>
+                  <p className="text-[9px] sm:text-xs text-gray-500">{stadt.info}</p>
                 </div>
               ))}
             </div>
