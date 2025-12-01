@@ -1211,8 +1211,8 @@ export default function KarrierePage() {
               {
                 schritt: '3',
                 titel: 'Kompetenz-Check',
-                text: 'Ein begleiteter Praxistag, um Ihre Stärken optimal einzusetzen.',
-                details: 'Der Kompetenz-Check ist kein Test im klassischen Sinne – sondern ein begleiteter Praxistag. Gemeinsam mit einem erfahrenen Kollegen arbeiten Sie einen halben Tag in einem echten Objekt. So können Sie den Arbeitsalltag kennenlernen, während wir Ihre praktischen Fähigkeiten, Ihr Sprachverständnis und Ihre Arbeitsweise einschätzen. Dies hilft uns, Sie genau dort einzusetzen, wo Ihre Stärken am besten zur Geltung kommen.'
+                text: 'Ihr Wissen bestimmt Ihr Gehalt – faire Chancen für alle.',
+                details: 'Unser Kompetenz-Check ist Ihre Chance auf ein höheres Einstiegsgehalt. In einem begleiteten Multiple-Choice-Test in Ihrer Sprache prüfen wir Ihr Fachwissen, Ihre Sprachkenntnisse und Ihr Verständnis für Qualitätsstandards. Das Besondere: Je besser Ihr Ergebnis, desto höher Ihr Stundenlohn. Bei 100 Punkten erhalten Sie bis zu 1,00 € mehr pro Stunde – ab Tag 1. Nach der Probezeit folgt bei guter Leistung eine weitere Gehaltserhöhung. Wir investieren in Qualität und belohnen Engagement – so profitieren beide Seiten.'
               },
               {
                 schritt: '4',
