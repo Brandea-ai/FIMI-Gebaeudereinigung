@@ -15,7 +15,7 @@ export function BrancheFAQ({ branche }: BrancheFAQProps) {
 
   return (
     <section id="faq" className="py-16 md:py-24 lg:py-32 bg-white">
-      <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
+      <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-16">
 

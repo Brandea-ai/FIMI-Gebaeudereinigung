@@ -41,7 +41,7 @@ export function BrancheHero({ branche }: BrancheHeroProps) {
 
       {/* Content */}
       <div className="relative z-10 min-h-[85vh] lg:min-h-screen flex items-center">
-        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-24 lg:py-32">
+        <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 py-24 lg:py-32">
 
           {/* Back Link */}
           <Link

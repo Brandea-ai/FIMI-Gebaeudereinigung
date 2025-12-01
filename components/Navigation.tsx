@@ -95,6 +95,9 @@ export default function Navigation() {
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const mobileMenuRef = useRef<HTMLDivElement>(null)
   const navRef = useRef<HTMLElement>(null)
+  const leistungenCardRef = useRef<HTMLDivElement>(null)
+  const branchenCardRef = useRef<HTMLDivElement>(null)
+  const ueberFimiCardRef = useRef<HTMLDivElement>(null)
 
   // Body Scroll Lock wenn Mobile Menu offen ist
   useEffect(() => {
@@ -228,6 +231,19 @@ export default function Navigation() {
         clearTimeout(dropdownTimeoutRef.current)
       }
     }
+  }, [])
+
+  // Scroll to card when opening dropdown in mobile menu
+  const scrollToCard = useCallback((cardRef: React.RefObject<HTMLDivElement | null>) => {
+    setTimeout(() => {
+      if (cardRef.current && mobileMenuRef.current) {
+        const cardTop = cardRef.current.offsetTop
+        mobileMenuRef.current.scrollTo({
+          top: cardTop - 20,
+          behavior: 'smooth'
+        })
+      }
+    }, 50)
   }, [])
 
   // Über FIMI Dropdown Links
@@ -453,7 +469,7 @@ export default function Navigation() {
               <div className="space-y-3 mb-6">
 
                 {/* Leistungen Card */}
-                <div className="bg-[#f8f9fa] rounded-[8px] overflow-hidden">
+                <div ref={leistungenCardRef} className="bg-[#f8f9fa] rounded-[8px] overflow-hidden">
                   <div className="flex items-center justify-between px-5 py-4">
                     <button
                       onClick={() => {
@@ -462,6 +478,7 @@ export default function Navigation() {
                         if (newState) {
                           setMobileBranchenOpen(false)
                           setMobileUeberFimiOpen(false)
+                          scrollToCard(leistungenCardRef)
                         }
                       }}
                       className="flex items-center gap-3 touch-manipulation"
@@ -532,7 +549,7 @@ export default function Navigation() {
                 </div>
 
                 {/* Branchen Card */}
-                <div className="bg-[#f8f9fa] rounded-[8px] overflow-hidden">
+                <div ref={branchenCardRef} className="bg-[#f8f9fa] rounded-[8px] overflow-hidden">
                   <div className="flex items-center justify-between px-5 py-4">
                     <button
                       onClick={() => {
@@ -541,6 +558,7 @@ export default function Navigation() {
                         if (newState) {
                           setMobileLeistungenOpen(false)
                           setMobileUeberFimiOpen(false)
+                          scrollToCard(branchenCardRef)
                         }
                       }}
                       className="flex items-center gap-3 touch-manipulation"
@@ -606,7 +624,7 @@ export default function Navigation() {
                 </div>
 
                 {/* Über FIMI Card */}
-                <div className="bg-[#f8f9fa] rounded-[8px] overflow-hidden">
+                <div ref={ueberFimiCardRef} className="bg-[#f8f9fa] rounded-[8px] overflow-hidden">
                   <button
                     onClick={() => {
                       const newState = !mobileUeberFimiOpen
@@ -614,6 +632,7 @@ export default function Navigation() {
                       if (newState) {
                         setMobileLeistungenOpen(false)
                         setMobileBranchenOpen(false)
+                        scrollToCard(ueberFimiCardRef)
                       }
                     }}
                     className="flex items-center justify-between w-full px-5 py-4 touch-manipulation"
