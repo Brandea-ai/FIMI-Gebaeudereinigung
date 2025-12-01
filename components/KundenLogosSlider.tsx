@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react'
 import { motion, useAnimationControls } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 
 // Kunden/Referenzen mit URLs, Beschreibungen und Logos
 const kunden = [
@@ -272,6 +274,19 @@ export default function KundenLogosSlider({
           </div>
         </div>
       )}
+
+      {/* Link zu allen Referenzen */}
+      <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 mt-8 lg:mt-10">
+        <div className="flex justify-center">
+          <Link
+            href="/referenzen"
+            className="inline-flex items-center gap-2 text-[#109387] hover:text-[#0d7d72] font-semibold transition-colors duration-300 group"
+          >
+            Alle Referenzen ansehen
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-300" />
+          </Link>
+        </div>
+      </div>
     </section>
   )
 }
