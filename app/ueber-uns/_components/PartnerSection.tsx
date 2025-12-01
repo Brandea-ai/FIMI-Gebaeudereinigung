@@ -16,7 +16,6 @@ const partner = [
   { name: 'Hagleitner', kategorie: 'Spendersysteme' },
   { name: 'Wetrok', kategorie: 'Maschinen' },
   { name: 'Copterclean', kategorie: 'Drohnenreinigung' },
-  { name: 'Devolo', kategorie: 'Reinigungslösungen' },
   { name: 'STIHL', kategorie: 'Reinigungstechnik & Kommunalgeräte' },
   { name: 'Hako', kategorie: 'Kommunalmaschinen' },
 ]
@@ -183,7 +182,7 @@ export default function PartnerSection() {
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 mt-12">
         <div className="flex flex-wrap justify-center gap-8 text-center">
           <div>
-            <p className="text-3xl font-bold text-[#109387]">14+</p>
+            <p className="text-3xl font-bold text-[#109387]">13+</p>
             <p className="text-gray-600 font-semibold">Premium Partner</p>
           </div>
           <div className="w-px bg-gray-300 hidden sm:block" />
