@@ -158,20 +158,20 @@ export default function UnterhaltsreinigungPage() {
         <FloatingNav items={floatingNavItems} />
         <HeroSection />
         <TrustBarSection />
-        <ProblemLoesungSection />
-        <LeistungsumfangSection />
-        <ProcessSection />
         <KundenLogosSlider
           showHeader={true}
           showStats={false}
           bgColor="#ffffff"
         />
+        <ProblemLoesungSection />
+        <LeistungsumfangSection />
+        <ProcessSection />
+        <RegionenSection />
         <PartnerLogosSlider
           showHeader={true}
           showStats={false}
           bgColor="#f8f9fa"
         />
-        <RegionenSection />
         <FAQSection />
         <BlogPreviewSection />
         <CTASection />
