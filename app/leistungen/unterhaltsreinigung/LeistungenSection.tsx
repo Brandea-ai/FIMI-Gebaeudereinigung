@@ -80,7 +80,7 @@ export default function LeistungenSection() {
           <div className="relative h-[400px] lg:h-[500px] rounded-[12px] overflow-hidden">
             <Image
               src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=2574&auto=format&fit=crop"
-              alt="Professionelle Reinigungskraft bei der Büroreinigung"
+              alt="Professionelle Reinigungskraft bei der Unterhaltsreinigung"
               fill
               className="object-cover"
             />
@@ -132,7 +132,7 @@ export default function LeistungenSection() {
           </div>
         </div>
 
-        {/* Reinigungsbereiche Grid */}
+        {/* Reinigungsbereiche Grid - Outlined Icons */}
         <div className="mb-20 lg:mb-28">
           <h3 className="text-2xl lg:text-3xl font-bold text-[#012956] mb-10">
             Diese Bereiche reinigen wir
@@ -145,8 +145,9 @@ export default function LeistungenSection() {
                   key={bereich.titel}
                   className="group bg-[#f8f9fa] p-6 rounded-[6px] hover:bg-[#012956] transition-all duration-300"
                 >
-                  <div className="w-12 h-12 bg-[#109387]/10 rounded-[6px] flex items-center justify-center mb-4 group-hover:bg-[#109387]/20 transition-colors">
-                    <Icon size={24} className="text-[#109387]" />
+                  {/* Icon - Outlined Style */}
+                  <div className="w-12 h-12 border-2 border-[#109387] group-hover:bg-[#109387] rounded-[6px] flex items-center justify-center mb-4 transition-all duration-300">
+                    <Icon size={24} className="text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
                   </div>
                   <h4 className="text-lg font-bold text-[#012956] group-hover:text-white mb-2 transition-colors">
                     {bereich.titel}
@@ -160,7 +161,7 @@ export default function LeistungenSection() {
           </div>
         </div>
 
-        {/* Intervalle Section */}
+        {/* Intervalle Section - Outlined Icons */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <div>
@@ -175,16 +176,16 @@ export default function LeistungenSection() {
               {intervalle.map((intervall) => (
                 <div
                   key={intervall.name}
-                  className="flex items-start gap-4 p-4 bg-[#f8f9fa] rounded-[6px]"
+                  className="flex items-start gap-4 p-4 bg-[#f8f9fa] rounded-[6px] group hover:bg-[#012956] transition-all duration-300"
                 >
-                  <div className="w-10 h-10 bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0">
-                    <span className="text-white font-bold text-sm">
+                  <div className="w-10 h-10 border-2 border-[#109387] group-hover:bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0 transition-all duration-300">
+                    <span className="text-[#109387] group-hover:text-white font-bold text-sm transition-colors duration-300">
                       {intervall.name.charAt(0)}
                     </span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#012956]">{intervall.name}</h4>
-                    <p className="text-gray-600 font-semibold text-sm">{intervall.beschreibung}</p>
+                    <h4 className="font-bold text-[#012956] group-hover:text-white transition-colors">{intervall.name}</h4>
+                    <p className="text-gray-600 group-hover:text-white/80 font-semibold text-sm transition-colors">{intervall.beschreibung}</p>
                     <p className="text-[#109387] font-semibold text-sm mt-1">Ideal für: {intervall.ideal}</p>
                   </div>
                 </div>
@@ -196,7 +197,7 @@ export default function LeistungenSection() {
           <div className="relative h-[400px] lg:h-[500px] rounded-[12px] overflow-hidden">
             <Image
               src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2670&auto=format&fit=crop"
-              alt="Besprechung Reinigungsplan - Team bei der Arbeit"
+              alt="Besprechung Reinigungsplan – Team bei der Arbeit"
               fill
               className="object-cover"
             />

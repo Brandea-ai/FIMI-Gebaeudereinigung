@@ -180,16 +180,10 @@ export default function PartnerSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 lg:mb-16"
         >
-          <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3">
-            Unsere Partner
-          </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-6">
             Ausgestattet mit den
             <span className="text-[#109387]"> Besten</span>
           </h2>
-          <p className="text-lg text-gray-700 font-semibold max-w-2xl mx-auto mb-2">
-            Wir arbeiten nur mit führenden Herstellern zusammen.
-          </p>
           <p className="text-lg text-gray-700 font-semibold max-w-2xl mx-auto">
             Professionelle Ausrüstung ist die Grundlage für professionelle Ergebnisse.
           </p>

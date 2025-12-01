@@ -8,9 +8,9 @@ const branchen = [
   { slug: 'buero-verwaltung', name: 'Büro & Verwaltung', icon: Building2 },
   { slug: 'gesundheitswesen', name: 'Gesundheitswesen', icon: Stethoscope },
   { slug: 'industrie-produktion', name: 'Industrie & Produktion', icon: Factory },
-  { slug: 'bildung-oeffentlich', name: 'Bildung & Schulen', icon: GraduationCap },
+  { slug: 'bildung-schulen', name: 'Bildung & Schulen', icon: GraduationCap },
   { slug: 'einzelhandel', name: 'Einzelhandel', icon: ShoppingBag },
-  { slug: 'immobilien', name: 'Immobilien', icon: Home },
+  { slug: 'wohnungswirtschaft', name: 'Wohnungswirtschaft', icon: Home },
 ]
 
 export default function CTASection() {
@@ -20,7 +20,7 @@ export default function CTASection() {
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
 
-          {/* LINKS: Branchen hochwertig */}
+          {/* LINKS: Branchen hochwertig mit Outlined Icons */}
           <div>
             <span className="text-[#109387] font-bold text-sm uppercase tracking-wide mb-4 block">
               Branchenkompetenz
@@ -29,7 +29,7 @@ export default function CTASection() {
               Unterhaltsreinigung für Ihre Branche
             </h3>
 
-            {/* Branchen als hochwertiges 2x3 Grid */}
+            {/* Branchen als hochwertiges 2x3 Grid - Outlined Icons */}
             <div className="grid grid-cols-2 gap-4 mb-8">
               {branchen.map((branche) => {
                 const Icon = branche.icon
@@ -39,8 +39,9 @@ export default function CTASection() {
                     href={`/branchen/${branche.slug}`}
                     className="group flex items-center gap-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#109387]/50 rounded-[6px] p-4 transition-all duration-300"
                   >
-                    <div className="w-11 h-11 bg-[#109387]/20 group-hover:bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0 transition-colors">
-                      <Icon size={20} className="text-[#109387] group-hover:text-white transition-colors" />
+                    {/* Icon - Outlined Style */}
+                    <div className="w-11 h-11 border-2 border-[#109387] group-hover:bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0 transition-all duration-300">
+                      <Icon size={20} className="text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
                     </div>
                     <span className="text-white font-semibold text-sm group-hover:text-[#109387] transition-colors">
                       {branche.name}
@@ -69,13 +70,13 @@ export default function CTASection() {
               Kostenfreie Besichtigung, transparentes Angebot, schneller Start.
             </p>
 
-            {/* Telefon prominent */}
+            {/* Telefon prominent - Outlined Icon */}
             <a
               href="tel:+4987143033460"
               className="flex items-center gap-4 bg-[#012956] hover:bg-[#01203d] rounded-[6px] p-5 mb-6 group transition-colors"
             >
-              <div className="w-14 h-14 bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0">
-                <Phone size={24} className="text-white" />
+              <div className="w-14 h-14 border-2 border-[#109387] group-hover:bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0 transition-all duration-300">
+                <Phone size={24} className="text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
               </div>
               <div>
                 <span className="text-white/60 text-sm font-semibold block">Direkt anrufen</span>
