@@ -510,7 +510,7 @@ export default function Navigation() {
                       ))}
                       <Link
                         href="/leistungen"
-                        className="flex items-center justify-center gap-2 w-full text-white font-bold text-[15px] py-3.5 bg-[#012956] rounded-[6px] active:bg-[#01203d] touch-manipulation"
+                        className="flex items-center justify-center gap-2 w-full text-white font-bold text-[15px] py-3.5 bg-[#109387] rounded-[6px] active:bg-[#0d7d72] touch-manipulation"
                         onClick={() => setIsMobileMenuOpen(false)}
                         role="menuitem"
                       >
