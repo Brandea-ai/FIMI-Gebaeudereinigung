@@ -4,6 +4,8 @@ import TrustBarSection from './TrustBarSection'
 import ProblemLoesungSection from './ProblemLoesungSection'
 import LeistungsumfangSection from './LeistungsumfangSection'
 import ProcessSection from './ProcessSection'
+import KundenLogosSlider from '@/components/KundenLogosSlider'
+import PartnerLogosSlider from '@/components/PartnerLogosSlider'
 import RegionenSection from './RegionenSection'
 import FAQSection from './FAQSection'
 import BlogPreviewSection from './BlogPreviewSection'
@@ -146,6 +148,16 @@ export default function BueroreinigungPage() {
         <ProblemLoesungSection />
         <LeistungsumfangSection />
         <ProcessSection />
+        <KundenLogosSlider
+          showHeader={true}
+          showStats={false}
+          bgColor="#ffffff"
+        />
+        <PartnerLogosSlider
+          showHeader={true}
+          showStats={false}
+          bgColor="#f8f9fa"
+        />
         <RegionenSection />
         <FAQSection />
         <BlogPreviewSection />
