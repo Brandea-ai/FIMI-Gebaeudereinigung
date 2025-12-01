@@ -300,11 +300,10 @@ export default function GlossarContent() {
               </div>
             </aside>
 
-            {/* Main Content */}
-            <div className="flex-1 min-w-0">
-              {/* Mobile: Horizontal Alphabet */}
-              <div className="lg:hidden mb-10 overflow-x-auto -mx-6 px-6">
-                <div className="flex gap-2 pb-2">
+            {/* Mobile: Sticky Horizontal Alphabet - außerhalb des Grids */}
+            <div className="lg:hidden sticky top-0 z-20 bg-white -mx-6 px-6 py-3 border-b border-gray-200 shadow-sm mb-8">
+              <div className="overflow-x-auto scrollbar-hide">
+                <div className="flex gap-2">
                   {letters.map((letter) => {
                     const active = isActive(letter)
                     return (
@@ -323,10 +322,13 @@ export default function GlossarContent() {
                   })}
                 </div>
               </div>
+            </div>
 
+            {/* Main Content */}
+            <div className="flex-1 min-w-0">
               <div className="space-y-16">
                 {letters.map((letter) => (
-                  <div key={letter} id={letter} className="scroll-mt-8">
+                  <div key={letter} id={letter} className="scroll-mt-20 lg:scroll-mt-8">
                     {/* Letter Header */}
                     <div className="flex items-center gap-4 mb-8">
                       <span className="text-5xl lg:text-6xl font-bold text-[#109387]">
