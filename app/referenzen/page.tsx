@@ -203,11 +203,11 @@ export default function ReferenzenPage() {
       <section className="sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="flex flex-col md:flex-row md:items-center gap-4 py-4">
-            {/* Filter Buttons */}
-            <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide">
+            {/* Filter Buttons - kleiner auf Mobile damit man sieht dass es scrollbar ist */}
+            <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto scrollbar-hide">
               <button
                 onClick={resetFilters}
-                className={`px-5 py-2.5 rounded-[6px] font-bold whitespace-nowrap transition-all ${
+                className={`px-3 sm:px-5 py-2 sm:py-2.5 rounded-[6px] font-bold text-sm sm:text-base whitespace-nowrap transition-all ${
                   !hasActiveFilters
                     ? 'bg-[#012956] text-white'
                     : 'bg-[#f8f9fa] text-[#012956] hover:bg-[#012956] hover:text-white'
@@ -220,7 +220,7 @@ export default function ReferenzenPage() {
               <select
                 value={selectedJahr || ''}
                 onChange={(e) => setSelectedJahr(e.target.value ? Number(e.target.value) : null)}
-                className="appearance-none bg-[#f8f9fa] hover:bg-[#012956] hover:text-white text-[#012956] font-bold px-5 py-2.5 pr-10 rounded-[6px] cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-[#109387]/20"
+                className="appearance-none bg-[#f8f9fa] hover:bg-[#012956] hover:text-white text-[#012956] font-bold text-sm sm:text-base px-3 sm:px-5 py-2 sm:py-2.5 pr-7 sm:pr-10 rounded-[6px] cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-[#109387]/20"
               >
                 <option value="">Jahr</option>
                 {jahre.map((jahr) => (
@@ -232,7 +232,7 @@ export default function ReferenzenPage() {
               <select
                 value={selectedBranche || ''}
                 onChange={(e) => setSelectedBranche(e.target.value || null)}
-                className="appearance-none bg-[#f8f9fa] hover:bg-[#012956] hover:text-white text-[#012956] font-bold px-5 py-2.5 pr-10 rounded-[6px] cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-[#109387]/20"
+                className="appearance-none bg-[#f8f9fa] hover:bg-[#012956] hover:text-white text-[#012956] font-bold text-sm sm:text-base px-3 sm:px-5 py-2 sm:py-2.5 pr-7 sm:pr-10 rounded-[6px] cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-[#109387]/20"
               >
                 <option value="">Branche</option>
                 {branchen.map((branche) => (
@@ -244,7 +244,7 @@ export default function ReferenzenPage() {
               <select
                 value={selectedLeistung || ''}
                 onChange={(e) => setSelectedLeistung(e.target.value || null)}
-                className="appearance-none bg-[#f8f9fa] hover:bg-[#012956] hover:text-white text-[#012956] font-bold px-5 py-2.5 pr-10 rounded-[6px] cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-[#109387]/20"
+                className="appearance-none bg-[#f8f9fa] hover:bg-[#012956] hover:text-white text-[#012956] font-bold text-sm sm:text-base px-3 sm:px-5 py-2 sm:py-2.5 pr-7 sm:pr-10 rounded-[6px] cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-[#109387]/20"
               >
                 <option value="">Leistung</option>
                 {leistungen.map((leistung) => (
