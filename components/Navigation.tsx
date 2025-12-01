@@ -454,29 +454,39 @@ export default function Navigation() {
 
                 {/* Leistungen Card */}
                 <div className="bg-[#f8f9fa] rounded-[8px] overflow-hidden">
-                  <button
-                    onClick={() => {
-                      const newState = !mobileLeistungenOpen
-                      setMobileLeistungenOpen(newState)
-                      if (newState) {
-                        setMobileBranchenOpen(false)
-                        setMobileUeberFimiOpen(false)
-                      }
-                    }}
-                    className="flex items-center justify-between w-full px-5 py-4 touch-manipulation"
-                    aria-expanded={mobileLeistungenOpen}
-                    aria-controls="mobile-leistungen"
-                  >
-                    <div className="text-left">
-                      <p className="text-[#012956] font-bold text-[16px]">Leistungen</p>
-                      <p className="text-gray-500 text-[13px] font-medium">18 Services</p>
-                    </div>
-                    <ChevronDown
-                      size={22}
-                      strokeWidth={2}
-                      className={`text-[#012956] transition-transform duration-200 ${mobileLeistungenOpen ? 'rotate-180' : ''}`}
-                    />
-                  </button>
+                  <div className="flex items-center justify-between px-5 py-4">
+                    <button
+                      onClick={() => {
+                        const newState = !mobileLeistungenOpen
+                        setMobileLeistungenOpen(newState)
+                        if (newState) {
+                          setMobileBranchenOpen(false)
+                          setMobileUeberFimiOpen(false)
+                        }
+                      }}
+                      className="flex items-center gap-3 touch-manipulation"
+                      aria-expanded={mobileLeistungenOpen}
+                      aria-controls="mobile-leistungen"
+                    >
+                      <div className="text-left">
+                        <p className="text-[#012956] font-bold text-[16px]">Leistungen</p>
+                        <p className="text-gray-500 text-[13px] font-medium">18 Services</p>
+                      </div>
+                      <ChevronDown
+                        size={22}
+                        strokeWidth={2}
+                        className={`text-[#012956] transition-transform duration-200 ${mobileLeistungenOpen ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+                    <Link
+                      href="/leistungen"
+                      className="flex items-center gap-1.5 text-white font-bold text-[13px] px-4 py-2.5 bg-[#109387] rounded-[6px] active:bg-[#0d7d72] touch-manipulation"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Übersicht
+                      <ArrowRight size={14} strokeWidth={2.5} />
+                    </Link>
+                  </div>
 
                   <div
                     id="mobile-leistungen"
@@ -523,29 +533,39 @@ export default function Navigation() {
 
                 {/* Branchen Card */}
                 <div className="bg-[#f8f9fa] rounded-[8px] overflow-hidden">
-                  <button
-                    onClick={() => {
-                      const newState = !mobileBranchenOpen
-                      setMobileBranchenOpen(newState)
-                      if (newState) {
-                        setMobileLeistungenOpen(false)
-                        setMobileUeberFimiOpen(false)
-                      }
-                    }}
-                    className="flex items-center justify-between w-full px-5 py-4 touch-manipulation"
-                    aria-expanded={mobileBranchenOpen}
-                    aria-controls="mobile-branchen"
-                  >
-                    <div className="text-left">
-                      <p className="text-[#012956] font-bold text-[16px]">Branchen</p>
-                      <p className="text-gray-500 text-[13px] font-medium">12 Spezialisierungen</p>
-                    </div>
-                    <ChevronDown
-                      size={22}
-                      strokeWidth={2}
-                      className={`text-[#012956] transition-transform duration-200 ${mobileBranchenOpen ? 'rotate-180' : ''}`}
-                    />
-                  </button>
+                  <div className="flex items-center justify-between px-5 py-4">
+                    <button
+                      onClick={() => {
+                        const newState = !mobileBranchenOpen
+                        setMobileBranchenOpen(newState)
+                        if (newState) {
+                          setMobileLeistungenOpen(false)
+                          setMobileUeberFimiOpen(false)
+                        }
+                      }}
+                      className="flex items-center gap-3 touch-manipulation"
+                      aria-expanded={mobileBranchenOpen}
+                      aria-controls="mobile-branchen"
+                    >
+                      <div className="text-left">
+                        <p className="text-[#012956] font-bold text-[16px]">Branchen</p>
+                        <p className="text-gray-500 text-[13px] font-medium">12 Spezialisierungen</p>
+                      </div>
+                      <ChevronDown
+                        size={22}
+                        strokeWidth={2}
+                        className={`text-[#012956] transition-transform duration-200 ${mobileBranchenOpen ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+                    <Link
+                      href="/branchen"
+                      className="flex items-center gap-1.5 text-white font-bold text-[13px] px-4 py-2.5 bg-[#109387] rounded-[6px] active:bg-[#0d7d72] touch-manipulation"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      Übersicht
+                      <ArrowRight size={14} strokeWidth={2.5} />
+                    </Link>
+                  </div>
 
                   <div
                     id="mobile-branchen"

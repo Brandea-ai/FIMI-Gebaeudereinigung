@@ -95,12 +95,12 @@ export function BrancheServices({ branche }: BrancheServicesProps) {
 
   return (
     <section id="leistungen" className="py-16 md:py-24 lg:py-32 bg-[#012956]">
-      <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
+      <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
 
-        {/* Section Header */}
-        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight mb-8 sm:mb-12 md:mb-16">
-          Professionelle Reinigung{' '}
-          <span className="text-[#109387]">für {branche.name}</span>
+        {/* Section Header - "für" auf zweiter Zeile */}
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-8 sm:mb-12 md:mb-16">
+          <span className="text-white">Professionelle Reinigung</span>
+          <span className="block text-[#109387]">für {branche.name}</span>
         </h2>
 
         {/* Services Grid - Mobile 2 Spalten mit kleinerem Padding */}
@@ -115,13 +115,13 @@ export function BrancheServices({ branche }: BrancheServicesProps) {
                 <Link
                   key={i}
                   href={url}
-                  className="group relative bg-white/5 hover:bg-white rounded-[6px] p-4 sm:p-5 md:p-6 border border-white/10 hover:border-[#109387] transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
+                  className="group relative bg-white/5 hover:bg-white rounded-[6px] p-3 sm:p-4 md:p-5 border border-white/10 hover:border-[#109387] transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
                 >
                   {/* Einheitliches Icon */}
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-[6px] bg-[#109387]/20 group-hover:bg-[#109387] flex items-center justify-center mb-3 sm:mb-4 transition-colors">
-                    <Check size={20} strokeWidth={2} className="text-[#109387] group-hover:text-white transition-colors sm:w-6 sm:h-6" />
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-[6px] bg-[#109387]/20 group-hover:bg-[#109387] flex items-center justify-center mb-2 sm:mb-3 transition-colors">
+                    <Check size={16} strokeWidth={2} className="text-[#109387] group-hover:text-white transition-colors sm:w-5 sm:h-5" />
                   </div>
-                  <p className="text-white group-hover:text-[#012956] font-bold text-sm sm:text-base leading-tight transition-colors">
+                  <p className="text-white group-hover:text-[#012956] font-bold text-xs sm:text-sm leading-tight transition-colors">
                     {service}
                   </p>
                 </Link>
@@ -131,12 +131,12 @@ export function BrancheServices({ branche }: BrancheServicesProps) {
               return (
                 <div
                   key={i}
-                  className="bg-white/5 rounded-[6px] p-4 sm:p-5 md:p-6 border border-white/10"
+                  className="bg-white/5 rounded-[6px] p-3 sm:p-4 md:p-5 border border-white/10"
                 >
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-[6px] bg-[#109387]/20 flex items-center justify-center mb-3 sm:mb-4">
-                    <Check size={20} strokeWidth={2} className="text-[#109387] sm:w-6 sm:h-6" />
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-[6px] bg-[#109387]/20 flex items-center justify-center mb-2 sm:mb-3">
+                    <Check size={16} strokeWidth={2} className="text-[#109387] sm:w-5 sm:h-5" />
                   </div>
-                  <p className="text-white font-bold text-sm sm:text-base leading-tight">
+                  <p className="text-white font-bold text-xs sm:text-sm leading-tight">
                     {service}
                   </p>
                 </div>
