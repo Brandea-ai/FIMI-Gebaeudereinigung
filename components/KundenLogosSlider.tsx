@@ -4,102 +4,165 @@ import { useState, useEffect } from 'react'
 import { motion, useAnimationControls } from 'framer-motion'
 import Image from 'next/image'
 
-// Kunden/Referenzen mit Logos
+// Kunden/Referenzen mit URLs, Beschreibungen und Logos
 const kunden = [
   {
     name: 'Stadt Landshut',
-    branche: 'Öffentlicher Sektor',
+    kategorie: 'Öffentlicher Sektor',
+    url: 'https://www.landshut.de/',
+    seitentext: 'Die Stadt Landshut ist die Regierungshauptstadt Niederbayerns und informiert auf ihrem Stadtportal über Verwaltung, Service, Wirtschaft und Veranstaltungen.',
     logoAvif: '/images/ueber-uns/avif-2/Logo_Stadt_Landshut_Fiimi.avif',
     logoWebp: '/images/ueber-uns/webp-2/Logo_Stadt_Landshut_Fiimi.webp',
   },
   {
-    name: 'TÜV Süd',
-    branche: 'Prüfdienstleistungen',
+    name: 'TÜV SÜD',
+    kategorie: 'Prüfdienstleister',
+    url: 'https://www.tuvsud.com/de-de',
+    seitentext: 'TÜV SÜD ist ein internationaler Prüfdienstleister für Qualität, Sicherheit und Nachhaltigkeit mit vielfältigen Prüf-, Inspektions- und Zertifizierungsleistungen.',
     logoAvif: '/images/ueber-uns/avif-2/Logo_Tüv-Süd_Fimi.avif',
     logoWebp: '/images/ueber-uns/webp-2/Logo_Tüv-Süd_Fimi.webp',
   },
   {
-    name: 'Allianz Versicherung',
-    branche: 'Versicherung',
+    name: 'Allianz',
+    kategorie: 'Versicherung',
+    url: 'https://www.allianz.de/',
+    seitentext: 'Allianz ist einer der größten Versicherungs- und Finanzdienstleister und bietet in Deutschland Lösungen rund um Versicherung, Vorsorge und Vermögensaufbau.',
     logoAvif: '/images/ueber-uns/avif-2/Logo_Allianz-Versicherung_Fimi.avif',
     logoWebp: '/images/ueber-uns/webp-2/Logo_Allianz-Versicherung_Fimi.webp',
   },
   {
     name: 'Texas Instruments',
-    branche: 'Technologie',
+    kategorie: 'Halbleiter',
+    url: 'https://www.ti.com/de-de/homepage.html',
+    seitentext: 'Texas Instruments ist ein globales Halbleiterunternehmen und entwickelt, produziert und verkauft analoge und eingebettete Prozessor- und IC-Lösungen.',
     logoAvif: '/images/ueber-uns/avif-2/Logo_Texas-Intruments_Fimi.avif',
     logoWebp: '/images/ueber-uns/webp-2/Logo_Texas-Intruments_Fimi.webp',
   },
   {
-    name: 'Volksbank Raiffeisenbank',
-    branche: 'Finanzwesen',
+    name: 'Volksbanken Raiffeisenbanken',
+    kategorie: 'Finanzwesen',
+    url: 'https://www.vr.de/privatkunden.html',
+    seitentext: 'Die Volksbanken Raiffeisenbanken sind ein genossenschaftlicher Bankenverbund und bieten Privat- und Firmenkunden bundesweit Finanzlösungen vor Ort.',
     logoAvif: '/images/ueber-uns/avif-2/Logo_volksbank-Raiffeisenbank_Fimi.avif',
     logoWebp: '/images/ueber-uns/webp-2/Logo_volksbank-Raiffeisenbank_Fimi.webp',
   },
   {
-    name: 'Flottweg',
-    branche: 'Maschinenbau',
+    name: 'Flottweg SE',
+    kategorie: 'Maschinenbau',
+    url: 'https://www.flottweg.com/de/',
+    seitentext: 'Flottweg SE mit Sitz in Vilsbiburg entwickelt und produziert Maschinen und Anlagen für die mechanische Fest-Flüssig-Trennung in vielen Industrien.',
     logoAvif: '/images/ueber-uns/avif-2/Logo_Flottweg_Fimi.avif',
     logoWebp: '/images/ueber-uns/webp-2/Logo_Flottweg_Fimi.webp',
   },
   {
-    name: 'ALDI',
-    branche: 'Einzelhandel',
+    name: 'ALDI SÜD',
+    kategorie: 'Einzelhandel',
+    url: 'https://www.aldi-sued.de/de/homepage.html',
+    seitentext: 'ALDI SÜD ist ein international tätiger Lebensmitteldiscounter mit Filialnetz in Süd- und Westdeutschland und Fokus auf Eigenmarken.',
     logoAvif: '/images/ueber-uns/avif-2/Logo_Aldi_Fimi.avif',
     logoWebp: '/images/ueber-uns/webp-2/Logo_Aldi_Fimi.webp',
   },
   {
     name: 'EDEKA',
-    branche: 'Einzelhandel',
+    kategorie: 'Lebensmittelhandel',
+    url: 'https://www.edeka.de/',
+    seitentext: 'EDEKA ist einer der führenden Lebensmittelhändler in Deutschland mit einem Verbund selbstständiger Kaufleute und regionalen Supermärkten.',
     logoAvif: '/images/ueber-uns/avif-2/Logo_Edeka_Fimi.avif',
     logoWebp: '/images/ueber-uns/webp-2/Logo_Edeka_Fimi.webp',
   },
   {
-    name: 'Einhell',
-    branche: 'Werkzeuge',
+    name: 'Einhell Germany AG',
+    kategorie: 'Werkzeuge',
+    url: 'https://www.einhell.de/',
+    seitentext: 'Einhell ist ein Hersteller moderner Elektrowerkzeuge und Gartengeräte und bekannt für das Akku-System Power X-Change für Haus und Garten.',
     logoAvif: '/images/ueber-uns/avif-2/Logo_Einhell_Fimi.avif',
     logoWebp: '/images/ueber-uns/webp-2/Logo_Einhell_Fimi.webp',
   },
   {
-    name: 'Europcar Landshut',
-    branche: 'Mobilität',
+    name: 'EuroCar Landshut',
+    kategorie: 'Autohaus',
+    url: 'https://www.eurocar-landshut.de/',
+    seitentext: 'EuroCar Landshut ist ein Mehrmarken-Autohaus in Landshut mit Neu- und Gebrauchtwagen sowie Werkstattservice.',
     logoAvif: '/images/ueber-uns/avif-2/Logo_Europcar-Landshut_Fimi.avif',
     logoWebp: '/images/ueber-uns/webp-2/Logo_Europcar-Landshut_Fimi.webp',
   },
   {
-    name: 'Staudinger Loiching',
-    branche: 'Gewerbe',
+    name: 'Staudinger GmbH',
+    kategorie: 'Automatisierung',
+    url: 'https://www.staudinger-est.de/',
+    seitentext: 'Staudinger GmbH Automatisierungstechnik ist ein niederbayerisches Familienunternehmen für Automatisierungstechnik und Anlagenbau mit Sitz in Loiching.',
     logoAvif: '/images/ueber-uns/avif-2/Logo_Staudinger-Loiching_Fimi.avif',
     logoWebp: '/images/ueber-uns/webp-2/Logo_Staudinger-Loiching_Fimi.webp',
   },
   {
-    name: 'Strama MPS',
-    branche: 'Industrie',
+    name: 'Strama-MPS',
+    kategorie: 'Sondermaschinenbau',
+    url: 'https://www.strama-mps.de/',
+    seitentext: 'Strama-MPS Maschinenbau entwickelt Sondermaschinen, Anlagen und Komplettlösungen für Fertigung, Montage und Prüfung komplexer technischer Bauteile.',
     logoAvif: '/images/ueber-uns/avif-2/Logo_Strama-mps_Fimi.avif',
     logoWebp: '/images/ueber-uns/webp-2/Logo_Strama-mps_Fimi.webp',
   },
 ]
 
-// Kunden Card Komponente
-function KundeCard({ item }: { item: typeof kunden[0] }) {
+// Kunden Card Komponente - wie PartnerCard mit Hover-Effekt
+function KundeCard({ item, onHover }: { item: typeof kunden[0]; onHover: (hovering: boolean) => void }) {
+  const [isHovered, setIsHovered] = useState(false)
+
   return (
-    <div className="flex-shrink-0 w-36 sm:w-44 lg:w-52 h-24 sm:h-28 lg:h-32 relative group">
-      <div className="absolute inset-0 bg-white rounded-[6px] shadow-sm transition-all duration-300 group-hover:shadow-md flex items-center justify-center p-4 sm:p-5 lg:p-6">
-        <div className="h-12 w-24 sm:h-14 sm:w-28 lg:h-16 lg:w-32 relative">
-          <picture>
-            <source srcSet={item.logoAvif} type="image/avif" />
-            <source srcSet={item.logoWebp} type="image/webp" />
-            <Image
-              src={item.logoWebp}
-              alt={`${item.name} Logo`}
-              fill
-              className="object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
-              sizes="(max-width: 640px) 96px, (max-width: 1024px) 112px, 128px"
-            />
-          </picture>
+    <a
+      href={item.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex-shrink-0 w-44 sm:w-56 lg:w-64 h-36 sm:h-44 lg:h-48 relative group"
+      onMouseEnter={() => {
+        setIsHovered(true)
+        onHover(true)
+      }}
+      onMouseLeave={() => {
+        setIsHovered(false)
+        onHover(false)
+      }}
+    >
+      <div className="absolute inset-0 bg-white rounded-[6px] shadow-sm transition-shadow duration-500 group-hover:shadow-md">
+        {/* Default Content - Logo */}
+        <div className={`absolute inset-0 flex flex-col items-center justify-center p-4 sm:p-6 transition-opacity duration-500 ${isHovered ? 'opacity-0' : 'opacity-100'}`}>
+          <div className="h-16 w-28 sm:h-20 sm:w-36 lg:h-24 lg:w-40 relative mb-2 sm:mb-3">
+            <picture>
+              <source srcSet={item.logoAvif} type="image/avif" />
+              <source srcSet={item.logoWebp} type="image/webp" />
+              <Image
+                src={item.logoWebp}
+                alt={`${item.name} Logo`}
+                fill
+                className="object-contain"
+                sizes="(max-width: 640px) 112px, (max-width: 1024px) 144px, 160px"
+              />
+            </picture>
+          </div>
+          <p className="text-xs sm:text-sm font-semibold text-gray-500 text-center">
+            {item.kategorie}
+          </p>
+        </div>
+
+        {/* Hover Content - Subtle fade in */}
+        <div className={`absolute inset-0 flex flex-col justify-between p-3 sm:p-5 transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
+          <div>
+            <p className="text-[10px] sm:text-xs text-[#109387] font-semibold uppercase tracking-wide mb-1 sm:mb-2">
+              {item.name}
+            </p>
+            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed line-clamp-3 sm:line-clamp-none">
+              {item.seitentext}
+            </p>
+          </div>
+          <div className="flex items-center gap-1 text-[10px] sm:text-xs text-[#109387] font-medium">
+            <span>Website</span>
+            <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
   )
 }
 
@@ -108,28 +171,26 @@ interface KundenLogosSliderProps {
   showStats?: boolean
   bgColor?: string
   className?: string
-  direction?: 'left' | 'right'
 }
 
 export default function KundenLogosSlider({
   showHeader = true,
   showStats = true,
   bgColor = '#ffffff',
-  className = '',
-  direction = 'left'
+  className = ''
 }: KundenLogosSliderProps) {
   const controls = useAnimationControls()
   const [isPaused, setIsPaused] = useState(false)
 
-  const cardWidth = 208 + 16 // w-52 (208px) + gap-4 (16px)
+  const cardWidth = 256 + 24 // w-64 (256px) + gap-6 (24px)
   const totalWidth = kunden.length * cardWidth
 
   useEffect(() => {
     if (!isPaused) {
       controls.start({
-        x: direction === 'left' ? -totalWidth : 0,
+        x: -totalWidth,
         transition: {
-          duration: 60,
+          duration: 70,
           repeat: Infinity,
           ease: 'linear',
           repeatType: 'loop',
@@ -138,7 +199,11 @@ export default function KundenLogosSlider({
     } else {
       controls.stop()
     }
-  }, [isPaused, controls, totalWidth, direction])
+  }, [isPaused, controls, totalWidth])
+
+  const handleCardHover = (hovering: boolean) => {
+    setIsPaused(hovering)
+  }
 
   return (
     <section className={`py-16 lg:py-24 overflow-hidden ${className}`} style={{ backgroundColor: bgColor }}>
@@ -151,73 +216,60 @@ export default function KundenLogosSlider({
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <p className="text-sm text-[#109387] font-semibold uppercase tracking-wider mb-3">
-              Referenzen
-            </p>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#012956] leading-[1.1] mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-6">
               Diese Unternehmen vertrauen
               <span className="text-[#109387]"> FIMI</span>
             </h2>
-            <p className="text-base lg:text-lg text-gray-600 font-medium max-w-2xl mx-auto">
-              Von lokalen Betrieben bis hin zu internationalen Konzernen – wir liefern zuverlässig Qualität.
+            <p className="text-lg text-gray-700 font-semibold max-w-2xl mx-auto">
+              Von lokalen Betrieben bis zu internationalen Konzernen – wir liefern zuverlässig Qualität.
             </p>
           </motion.div>
         </div>
       )}
 
       {/* Infinite Slider */}
-      <div
-        className="relative"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-      >
+      <div className="relative">
         <div
-          className="absolute left-0 top-0 bottom-0 w-12 sm:w-20 lg:w-28 z-10 pointer-events-none"
+          className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 lg:w-32 z-10 pointer-events-none"
           style={{ background: `linear-gradient(to right, ${bgColor}, transparent)` }}
         />
         <div
-          className="absolute right-0 top-0 bottom-0 w-12 sm:w-20 lg:w-28 z-10 pointer-events-none"
+          className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 lg:w-32 z-10 pointer-events-none"
           style={{ background: `linear-gradient(to left, ${bgColor}, transparent)` }}
         />
 
         <motion.div
           animate={controls}
-          initial={{ x: direction === 'right' ? -totalWidth : 0 }}
-          className="flex gap-3 sm:gap-4 py-2"
+          className="flex gap-4 sm:gap-6 py-4"
         >
           {[...kunden, ...kunden, ...kunden].map((item, index) => (
             <KundeCard
               key={`${item.name}-${index}`}
               item={item}
+              onHover={handleCardHover}
             />
           ))}
         </motion.div>
       </div>
 
       {showStats && (
-        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 mt-10 lg:mt-14">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex justify-center items-center gap-6 sm:gap-8 lg:gap-12 text-center"
-          >
+        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 mt-8 lg:mt-12">
+          <div className="flex justify-center items-center gap-4 sm:gap-6 lg:gap-8 text-center">
             <div>
-              <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012956]">120+</p>
-              <p className="text-gray-500 font-semibold text-xs sm:text-sm">Zufriedene Kunden</p>
+              <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#109387]">120+</p>
+              <p className="text-gray-600 font-semibold text-xs sm:text-sm">Zufriedene Kunden</p>
             </div>
-            <div className="w-px h-10 sm:h-12 bg-gray-200" />
+            <div className="w-px h-8 sm:h-10 bg-gray-300" />
             <div>
-              <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012956]">8+</p>
-              <p className="text-gray-500 font-semibold text-xs sm:text-sm">Jahre Erfahrung</p>
+              <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#109387]">8+</p>
+              <p className="text-gray-600 font-semibold text-xs sm:text-sm">Jahre Erfahrung</p>
             </div>
-            <div className="w-px h-10 sm:h-12 bg-gray-200" />
+            <div className="w-px h-8 sm:h-10 bg-gray-300" />
             <div>
-              <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012956]">98%</p>
-              <p className="text-gray-500 font-semibold text-xs sm:text-sm">Weiterempfehlung</p>
+              <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#109387]">98%</p>
+              <p className="text-gray-600 font-semibold text-xs sm:text-sm">Weiterempfehlung</p>
             </div>
-          </motion.div>
+          </div>
         </div>
       )}
     </section>
