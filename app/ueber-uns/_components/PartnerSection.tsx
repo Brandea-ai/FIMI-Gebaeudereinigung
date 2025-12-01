@@ -26,7 +26,7 @@ const partner = [
   {
     name: 'Dreiturm',
     kategorie: 'Reinigungsmittel',
-    url: 'https://www.dreiturm.de/',
+    url: 'https://dreiturm-reinigungsmittel.de/',
     seitentext: 'Bei Reinigungs- und Pflegemitteln setzen wir auf hochwertige Produkte von Dreiturm.',
   },
   {
