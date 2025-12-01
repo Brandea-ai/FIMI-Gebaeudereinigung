@@ -24,6 +24,7 @@ import {
   Calendar,
   X
 } from 'lucide-react'
+import FadeIn from '@/components/FadeIn'
 
 // ============================================================================
 // STELLENANGEBOTE DATEN - 12 Positionen, 8 Standorte, sortiert nach Datum
@@ -782,7 +783,7 @@ export default function KarrierePage() {
             Zurück zur Startseite
           </Link>
 
-          <div className="max-w-4xl">
+          <FadeIn direction="left" className="max-w-4xl">
             <p className="text-sm lg:text-base text-[#109387] font-extrabold uppercase tracking-wide mb-3 lg:mb-4">
               Karriere bei FIMI
             </p>
@@ -812,7 +813,7 @@ export default function KarrierePage() {
                 Initiativbewerbung
               </button>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -1214,19 +1215,21 @@ export default function KarrierePage() {
       {/* ================================================================== */}
       <section className="py-12 lg:py-20 bg-white">
         <div className="w-full max-w-[1800px] mx-auto px-4 lg:px-12 xl:px-20">
-          <div className="mb-8 lg:mb-12">
-            <p className="text-sm lg:text-base text-[#109387] font-extrabold uppercase tracking-wide mb-2 lg:mb-3">
-              FIMI HR-Prozess
-            </p>
-            <h2 className="text-2xl md:text-4xl font-extrabold text-[#012956] leading-tight mb-4">
-              Ihr Weg zu uns
-            </h2>
-            <p className="text-gray-600 font-medium text-base lg:text-lg max-w-3xl">
-              Unser strukturierter Einstellungsprozess stellt sicher, dass wir die richtige Position für Sie finden
-              und Sie optimal auf Ihre neue Aufgabe vorbereitet sind. Der gesamte Prozess wird in Ihrer bevorzugten
-              Sprache begleitet.
-            </p>
-          </div>
+          <FadeIn>
+            <div className="mb-8 lg:mb-12">
+              <p className="text-sm lg:text-base text-[#109387] font-extrabold uppercase tracking-wide mb-2 lg:mb-3">
+                FIMI HR-Prozess
+              </p>
+              <h2 className="text-2xl md:text-4xl font-extrabold text-[#012956] leading-tight mb-4">
+                Ihr Weg zu uns
+              </h2>
+              <p className="text-gray-600 font-medium text-base lg:text-lg max-w-3xl">
+                Unser strukturierter Einstellungsprozess stellt sicher, dass wir die richtige Position für Sie finden
+                und Sie optimal auf Ihre neue Aufgabe vorbereitet sind. Der gesamte Prozess wird in Ihrer bevorzugten
+                Sprache begleitet.
+              </p>
+            </div>
+          </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
             {[
@@ -1324,14 +1327,16 @@ export default function KarrierePage() {
       {/* ================================================================== */}
       <section className="py-12 lg:py-20 bg-[#f8f9fa]">
         <div className="w-full max-w-[1800px] mx-auto px-4 lg:px-12 xl:px-20">
-          <div className="mb-8 lg:mb-12">
-            <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-2 lg:mb-3">
-              Unsere Einsatzgebiete
-            </p>
-            <h2 className="text-2xl md:text-4xl font-bold text-[#012956] leading-tight">
-              Arbeiten in Ihrer Nähe
-            </h2>
-          </div>
+          <FadeIn>
+            <div className="mb-8 lg:mb-12">
+              <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-2 lg:mb-3">
+                Unsere Einsatzgebiete
+              </p>
+              <h2 className="text-2xl md:text-4xl font-bold text-[#012956] leading-tight">
+                Arbeiten in Ihrer Nähe
+              </h2>
+            </div>
+          </FadeIn>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-4">
             {standorte.map((stadt) => (
@@ -1358,7 +1363,7 @@ export default function KarrierePage() {
       {/* ================================================================== */}
       <section className="py-12 lg:py-20 bg-[#012956]">
         <div className="w-full max-w-[1800px] mx-auto px-4 lg:px-12 xl:px-20">
-          <div className="max-w-2xl">
+          <FadeIn className="max-w-2xl">
             <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-white mb-3 lg:mb-4">
               Bereit für den nächsten Schritt?
             </h2>
@@ -1383,7 +1388,7 @@ export default function KarrierePage() {
                 0174 722 54 773
               </a>
             </div>
-          </div>
+          </FadeIn>
         </div>
       </section>
     </main>
