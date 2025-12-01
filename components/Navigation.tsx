@@ -287,7 +287,6 @@ export default function Navigation() {
 
   const navLinks = [
     { label: 'Neuigkeiten', href: '/neuigkeiten' },
-    { label: 'Kontakt', href: '/kontakt' },
   ]
 
   return (
@@ -298,8 +297,8 @@ export default function Navigation() {
           isScrolled ? 'bg-white/95 backdrop-blur-lg shadow-lg' : 'bg-white'
         } ${isNavVisible ? 'translate-y-0' : '-translate-y-full'}`}
       >
-        <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="flex items-center justify-between h-24 lg:h-32">
+        <div className="w-full max-w-[1800px] mx-auto px-4 lg:px-8 xl:px-12 2xl:px-20">
+          <div className="flex items-center justify-between h-20 lg:h-24 xl:h-28">
             {/* Logo */}
             <Link href="/" className="relative z-10 flex-shrink-0">
               <Image
@@ -307,21 +306,21 @@ export default function Navigation() {
                 alt="FIMI Gebäudereinigung"
                 width={320}
                 height={107}
-                className="h-20 lg:h-28 w-auto"
+                className="h-16 lg:h-20 xl:h-24 w-auto"
                 priority
               />
             </Link>
 
-            {/* Desktop Navigation - Keine Gap für nahtloses Hovern */}
+            {/* Desktop Navigation - Responsive für alle Größen */}
             <div className="hidden lg:flex items-center">
               {/* Leistungen Dropdown - mit Padding statt Gap */}
               <div
-                className="relative px-1"
+                className="relative px-0.5 xl:px-1"
                 onMouseEnter={() => handleDropdownEnter('leistungen')}
                 onMouseLeave={handleDropdownLeave}
               >
                 <button
-                  className={`flex items-center gap-2 px-5 py-3 rounded-[6px] text-[15px] font-bold transition-all duration-150 ${
+                  className={`flex items-center gap-1.5 xl:gap-2 px-3 xl:px-5 py-2.5 xl:py-3 rounded-[6px] text-[13px] xl:text-[15px] font-bold transition-all duration-150 ${
                     activeDropdown === 'leistungen'
                       ? 'text-[#109387] bg-[#109387]/5'
                       : 'text-[#012956] hover:text-[#109387] hover:bg-[#f8f9fa]'
@@ -329,21 +328,21 @@ export default function Navigation() {
                 >
                   <span>Leistungen</span>
                   <ChevronDown
-                    size={16}
+                    size={14}
                     strokeWidth={2.5}
-                    className={`transition-transform duration-200 ${activeDropdown === 'leistungen' ? 'rotate-180' : ''}`}
+                    className={`xl:w-4 xl:h-4 transition-transform duration-200 ${activeDropdown === 'leistungen' ? 'rotate-180' : ''}`}
                   />
                 </button>
               </div>
 
               {/* Branchen Dropdown */}
               <div
-                className="relative px-1"
+                className="relative px-0.5 xl:px-1"
                 onMouseEnter={() => handleDropdownEnter('branchen')}
                 onMouseLeave={handleDropdownLeave}
               >
                 <button
-                  className={`flex items-center gap-2 px-5 py-3 rounded-[6px] text-[15px] font-bold transition-all duration-150 ${
+                  className={`flex items-center gap-1.5 xl:gap-2 px-3 xl:px-5 py-2.5 xl:py-3 rounded-[6px] text-[13px] xl:text-[15px] font-bold transition-all duration-150 ${
                     activeDropdown === 'branchen'
                       ? 'text-[#109387] bg-[#109387]/5'
                       : 'text-[#012956] hover:text-[#109387] hover:bg-[#f8f9fa]'
@@ -351,21 +350,21 @@ export default function Navigation() {
                 >
                   <span>Branchen</span>
                   <ChevronDown
-                    size={16}
+                    size={14}
                     strokeWidth={2.5}
-                    className={`transition-transform duration-200 ${activeDropdown === 'branchen' ? 'rotate-180' : ''}`}
+                    className={`xl:w-4 xl:h-4 transition-transform duration-200 ${activeDropdown === 'branchen' ? 'rotate-180' : ''}`}
                   />
                 </button>
               </div>
 
               {/* Über FIMI Dropdown */}
               <div
-                className="relative px-1"
+                className="relative px-0.5 xl:px-1"
                 onMouseEnter={() => handleDropdownEnter('ueberfimi')}
                 onMouseLeave={handleDropdownLeave}
               >
                 <button
-                  className={`flex items-center gap-2 px-5 py-3 rounded-[6px] text-[15px] font-bold transition-all duration-150 ${
+                  className={`flex items-center gap-1.5 xl:gap-2 px-3 xl:px-5 py-2.5 xl:py-3 rounded-[6px] text-[13px] xl:text-[15px] font-bold transition-all duration-150 ${
                     activeDropdown === 'ueberfimi'
                       ? 'text-[#109387] bg-[#109387]/5'
                       : 'text-[#012956] hover:text-[#109387] hover:bg-[#f8f9fa]'
@@ -373,9 +372,9 @@ export default function Navigation() {
                 >
                   <span>Über FIMI</span>
                   <ChevronDown
-                    size={16}
+                    size={14}
                     strokeWidth={2.5}
-                    className={`transition-transform duration-200 ${activeDropdown === 'ueberfimi' ? 'rotate-180' : ''}`}
+                    className={`xl:w-4 xl:h-4 transition-transform duration-200 ${activeDropdown === 'ueberfimi' ? 'rotate-180' : ''}`}
                   />
                 </button>
 
@@ -388,12 +387,12 @@ export default function Navigation() {
                   }`}
                 >
                   <div className="bg-white rounded-[8px] shadow-2xl border border-gray-100 overflow-hidden">
-                    <div className="py-3 min-w-[220px]">
+                    <div className="py-3 min-w-[200px] xl:min-w-[220px]">
                       {ueberFimiLinks.map((link) => (
                         <Link
                           key={link.href}
                           href={link.href}
-                          className="flex items-center gap-3 px-5 py-4 text-gray-600 hover:bg-[#f8f9fa] hover:text-[#109387] transition-all text-[15px] font-semibold group"
+                          className="flex items-center gap-3 px-4 xl:px-5 py-3 xl:py-4 text-gray-600 hover:bg-[#f8f9fa] hover:text-[#109387] transition-all text-[14px] xl:text-[15px] font-semibold group"
                           onClick={() => setActiveDropdown(null)}
                         >
                           <ArrowRight size={14} strokeWidth={2.5} className="text-gray-300 group-hover:text-[#109387] group-hover:translate-x-1 transition-all" />
@@ -409,29 +408,29 @@ export default function Navigation() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="px-5 py-3 rounded-[6px] text-[#012956] hover:text-[#109387] hover:bg-[#f8f9fa] transition-all duration-200 text-[15px] font-bold"
+                  className="px-3 xl:px-5 py-2.5 xl:py-3 rounded-[6px] text-[#012956] hover:text-[#109387] hover:bg-[#f8f9fa] transition-all duration-200 text-[13px] xl:text-[15px] font-bold"
                 >
                   {link.label}
                 </Link>
               ))}
             </div>
 
-            {/* CTA Buttons */}
-            <div className="hidden lg:flex items-center gap-4">
-              <a
-                href="tel:+4987143033460"
-                className="flex items-center gap-2 text-[#012956] hover:text-[#109387] transition-colors font-semibold text-sm"
-              >
-                <Phone size={18} />
-                <span>0871 430 334 60</span>
-              </a>
+            {/* CTA Buttons - Kontakt zuerst, dann Telefon */}
+            <div className="hidden lg:flex items-center gap-2 xl:gap-4">
               <button
                 onClick={scrollToContact}
-                className="flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm px-6 py-3 rounded-[6px] transition-all"
+                className="flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-xs xl:text-sm px-4 xl:px-6 py-2.5 xl:py-3 rounded-[6px] transition-all whitespace-nowrap"
               >
-                <span>Kostenfreie Besichtigung</span>
+                <span>Kontakt</span>
                 <ArrowRight size={16} />
               </button>
+              <a
+                href="tel:+4987143033460"
+                className="flex items-center gap-1.5 xl:gap-2 text-[#012956] hover:text-[#109387] transition-colors font-semibold text-xs xl:text-sm whitespace-nowrap"
+              >
+                <Phone size={16} className="xl:w-[18px] xl:h-[18px]" />
+                <span>0871 430 334 60</span>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -483,7 +482,7 @@ export default function Navigation() {
             ref={mobileMenuRef}
             className={`lg:hidden transition-[max-height,opacity] duration-250 ease-out ${
               isMobileMenuOpen
-                ? 'max-h-[calc(100vh-6rem)] opacity-100 overflow-y-auto overscroll-contain'
+                ? 'max-h-[calc(100vh-5rem)] opacity-100 overflow-y-auto overscroll-contain'
                 : 'max-h-0 opacity-0 overflow-hidden pointer-events-none'
             }`}
             style={{
@@ -903,7 +902,7 @@ export default function Navigation() {
       </div>
 
       {/* Spacer für fixed Navigation */}
-      <div className="h-24 lg:h-32" />
+      <div className="h-20 lg:h-24 xl:h-28" />
     </>
   )
 }
