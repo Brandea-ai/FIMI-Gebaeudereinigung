@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Building2, Factory, Stethoscope, ShoppingBag, UtensilsCrossed, GraduationCap, Dumbbell, Warehouse, Home, Landmark, Banknote, Car, Search, X } from 'lucide-react'
@@ -285,11 +285,28 @@ function matchesSearch(brancheSlug: string, searchQuery: string): boolean {
 
 export default function BranchenPage() {
   const [searchQuery, setSearchQuery] = useState<string>('')
+  const [showStickySearch, setShowStickySearch] = useState(false)
+  const heroRef = useRef<HTMLElement>(null)
 
   const filteredBranchen = useMemo(() => {
     if (!searchQuery.trim()) return branchen
     return branchen.filter(b => matchesSearch(b.slug, searchQuery))
   }, [searchQuery])
+
+  // Scroll-Detection für sticky Suchleiste
+  useEffect(() => {
+    const handleScroll = () => {
+      if (heroRef.current) {
+        const heroBottom = heroRef.current.getBoundingClientRect().bottom
+        setShowStickySearch(heroBottom < 0)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll() // Initial check
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   // Auto-scroll zu Ergebnissen
   const scrollToResults = () => {
@@ -312,7 +329,7 @@ export default function BranchenPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-[#012956] py-16 md:py-24 lg:py-32 overflow-hidden">
+      <section ref={heroRef} className="relative bg-[#012956] py-16 md:py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#109387]/10 to-transparent" />
         </div>
@@ -449,11 +466,17 @@ export default function BranchenPage() {
         </div>
       </section>
 
-      {/* Sticky Search Bar */}
-      <section className="sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm">
+      {/* Sticky Search Bar - erscheint beim Scrollen am Hero vorbei */}
+      <div
+        className={`fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-lg transition-all duration-500 ease-out ${
+          showStickySearch
+            ? 'translate-y-0 opacity-100'
+            : '-translate-y-full opacity-0 pointer-events-none'
+        }`}
+      >
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
-          <div className="py-4">
-            <div className="flex flex-col md:flex-row md:items-center gap-4">
+          <div className="py-3 lg:py-4">
+            <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-4">
               {/* Search Input */}
               <div className="relative flex-1 max-w-xl">
                 <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
@@ -491,12 +514,25 @@ export default function BranchenPage() {
                   </button>
                 ))}
               </div>
+
+              {/* Result Count - inline auf Desktop */}
+              {searchQuery && (
+                <div className="hidden md:block">
+                  <p className="text-gray-600 font-semibold text-sm whitespace-nowrap">
+                    {filteredBranchen.length === 0 ? (
+                      <span className="text-red-500">Keine Ergebnisse</span>
+                    ) : (
+                      <span className="text-[#109387]">{filteredBranchen.length} gefunden</span>
+                    )}
+                  </p>
+                </div>
+              )}
             </div>
 
-            {/* Result Count */}
+            {/* Result Count - Mobile */}
             {searchQuery && (
-              <div className="mt-3">
-                <p className="text-gray-600 font-semibold">
+              <div className="md:hidden mt-2">
+                <p className="text-gray-600 font-semibold text-sm">
                   {filteredBranchen.length === 0 ? (
                     <span>Keine Ergebnisse für „{searchQuery}"</span>
                   ) : (
@@ -507,7 +543,7 @@ export default function BranchenPage() {
             )}
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Branchen Grid */}
       <section id="branchen-grid" className="py-16 lg:py-28 bg-[#f8f9fa]">

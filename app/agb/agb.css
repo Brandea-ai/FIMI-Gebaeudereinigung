@@ -355,20 +355,21 @@
   transform: translateX(-50%);
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, var(--fimi-teal) 0%, var(--fimi-teal-light) 100%);
+  background: var(--fimi-teal);
   color: var(--white);
-  border-radius: 20px;
+  border-radius: 6px;
   border: none;
   cursor: pointer;
   z-index: 1001;
-  box-shadow: 0 8px 24px rgba(16, 147, 135, 0.3);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(16, 147, 135, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-tap-highlight-color: transparent;
 }
 
 .mobile-nav-trigger:hover {
-  transform: translateX(-50%) translateY(-2px) scale(1.05);
-  box-shadow: 0 12px 32px rgba(16, 147, 135, 0.4);
+  background: #0d7d72;
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 147, 135, 0.4);
 }
 
 .mobile-nav-trigger.hidden {
