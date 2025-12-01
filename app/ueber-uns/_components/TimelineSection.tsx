@@ -92,6 +92,9 @@ export default function TimelineSection() {
           {/* Center Line - Desktop */}
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[#109387] via-[#012956] to-[#109387] transform -translate-x-1/2" />
 
+          {/* Left Line - Mobile */}
+          <div className="lg:hidden absolute left-4 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#109387] via-[#012956] to-[#109387]" />
+
           {timeline.map((item, index) => (
             <motion.div
               key={item.year}
@@ -99,16 +102,30 @@ export default function TimelineSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`relative mb-12 lg:mb-20 ${
+              className={`relative mb-8 lg:mb-20 pl-12 lg:pl-0 ${
                 index % 2 === 0 ? 'lg:pr-[52%]' : 'lg:pl-[52%]'
               }`}
             >
-              {/* Year Badge - Center on Desktop */}
+              {/* Year Badge - Left on Mobile, Center on Desktop */}
+              <div className={`lg:hidden absolute left-0 top-0 z-10 w-8 h-8 rounded-full flex items-center justify-center
+                ${item.highlight ? 'bg-[#109387]' : 'bg-[#012956]'} shadow-md`}
+              >
+                <div className="w-3 h-3 bg-white rounded-full" />
+              </div>
               <div className={`hidden lg:flex absolute top-0 left-1/2 transform -translate-x-1/2 z-10
                 ${item.highlight ? 'bg-[#109387]' : 'bg-[#012956]'}
                 text-white font-bold text-xl px-6 py-3 rounded-[6px] shadow-lg`}
               >
                 {item.year}
+              </div>
+
+              {/* Mobile Year Label */}
+              <div className="lg:hidden mb-2">
+                <span className={`inline-block text-sm font-bold px-3 py-1 rounded-[6px] ${
+                  item.highlight ? 'bg-[#109387] text-white' : 'bg-[#012956] text-white'
+                }`}>
+                  {item.year}
+                </span>
               </div>
 
               {/* Card */}
@@ -117,7 +134,7 @@ export default function TimelineSection() {
               >
                 <div className="grid md:grid-cols-2 gap-0">
                   {/* Image */}
-                  <div className={`relative h-64 md:h-full min-h-[280px] ${
+                  <div className={`relative h-48 md:h-full min-h-[200px] lg:min-h-[280px] ${
                     index % 2 === 0 ? 'md:order-1' : 'md:order-2'
                   }`}>
                     <Image
@@ -127,26 +144,19 @@ export default function TimelineSection() {
                       unoptimized
                       className="object-cover"
                     />
-                    {/* Mobile Year Badge */}
-                    <div className={`lg:hidden absolute top-4 left-4
-                      ${item.highlight ? 'bg-[#109387]' : 'bg-[#012956]'}
-                      text-white font-bold text-lg px-4 py-2 rounded-[6px]`}
-                    >
-                      {item.year}
-                    </div>
                   </div>
 
                   {/* Content */}
-                  <div className={`p-8 lg:p-10 flex flex-col justify-center ${
+                  <div className={`p-5 lg:p-10 flex flex-col justify-center ${
                     index % 2 === 0 ? 'md:order-2' : 'md:order-1'
                   }`}>
-                    <p className="text-[#109387] font-bold text-sm uppercase tracking-wide mb-2">
+                    <p className="text-[#109387] font-bold text-xs lg:text-sm uppercase tracking-wide mb-1 lg:mb-2">
                       {item.subtitle}
                     </p>
-                    <h3 className="text-2xl lg:text-3xl font-bold text-[#012956] mb-4">
+                    <h3 className="text-xl lg:text-3xl font-bold text-[#012956] mb-2 lg:mb-4">
                       {item.title}
                     </h3>
-                    <p className="text-gray-700 font-semibold leading-relaxed">
+                    <p className="text-gray-700 font-semibold leading-relaxed text-sm lg:text-base">
                       {item.description}
                     </p>
                   </div>

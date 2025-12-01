@@ -35,8 +35,8 @@ export default function HeroSection() {
                 Über FIMI Gebäudereinigung
               </p>
 
-              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-[1.05] mb-8">
-                Seit 2016 Ihr Partner für
+              <h1 className="text-[1.65rem] sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-[1.05] mb-8">
+                <span className="whitespace-nowrap">Seit 2016 Ihr Partner für</span>
                 <span className="block text-[#109387] mt-2">professionelle Sauberkeit</span>
               </h1>
 
@@ -57,18 +57,18 @@ export default function HeroSection() {
               </motion.div>
 
               {/* Trust Points */}
-              <div className="flex flex-wrap gap-6 mb-10">
-                <div className="flex items-center gap-2">
-                  <CheckCircle size={22} className="text-[#109387]" />
-                  <span className="text-white font-semibold">8+ Jahre Erfahrung</span>
+              <div className="grid grid-cols-3 gap-3 sm:flex sm:flex-wrap sm:gap-6 mb-10">
+                <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
+                  <CheckCircle size={20} className="text-[#109387] flex-shrink-0" />
+                  <span className="text-white font-semibold text-xs sm:text-base text-center sm:text-left">8+ Jahre</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle size={22} className="text-[#109387]" />
-                  <span className="text-white font-semibold">90+ Mitarbeiter</span>
+                <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
+                  <CheckCircle size={20} className="text-[#109387] flex-shrink-0" />
+                  <span className="text-white font-semibold text-xs sm:text-base text-center sm:text-left">90+ Mitarbeiter</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle size={22} className="text-[#109387]" />
-                  <span className="text-white font-semibold">8 Einsatzgebiete</span>
+                <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
+                  <CheckCircle size={20} className="text-[#109387] flex-shrink-0" />
+                  <span className="text-white font-semibold text-xs sm:text-base text-center sm:text-left">8 Standorte</span>
                 </div>
               </div>
 

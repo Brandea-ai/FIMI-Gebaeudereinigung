@@ -85,7 +85,7 @@ const partner = [
   },
 ]
 
-// Minimalist Partner Card with subtle hover overlay
+// Minimalist Partner Card with subtle hover overlay - responsive
 function PartnerCard({ item, onHover }: { item: typeof partner[0]; onHover: (hovering: boolean) => void }) {
   const [isHovered, setIsHovered] = useState(false)
 
@@ -94,7 +94,7 @@ function PartnerCard({ item, onHover }: { item: typeof partner[0]; onHover: (hov
       href={item.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex-shrink-0 w-64 h-48 relative group"
+      className="flex-shrink-0 w-44 sm:w-56 lg:w-64 h-36 sm:h-44 lg:h-48 relative group"
       onMouseEnter={() => {
         setIsHovered(true)
         onHover(true)
@@ -107,30 +107,30 @@ function PartnerCard({ item, onHover }: { item: typeof partner[0]; onHover: (hov
       {/* Base Card */}
       <div className="absolute inset-0 bg-white rounded-[6px] shadow-sm transition-shadow duration-500 group-hover:shadow-md">
         {/* Default Content */}
-        <div className={`absolute inset-0 flex flex-col items-center justify-center p-6 transition-opacity duration-500 ${isHovered ? 'opacity-0' : 'opacity-100'}`}>
-          <div className="h-14 w-14 bg-gray-50 rounded-[6px] flex items-center justify-center mb-4">
-            <span className="text-xl font-bold text-[#109387]">
+        <div className={`absolute inset-0 flex flex-col items-center justify-center p-4 sm:p-6 transition-opacity duration-500 ${isHovered ? 'opacity-0' : 'opacity-100'}`}>
+          <div className="h-10 w-10 sm:h-14 sm:w-14 bg-gray-50 rounded-[6px] flex items-center justify-center mb-2 sm:mb-4">
+            <span className="text-base sm:text-xl font-bold text-[#109387]">
               {item.name.charAt(0)}
             </span>
           </div>
-          <p className="text-base font-bold text-[#012956] text-center">
+          <p className="text-sm sm:text-base font-bold text-[#012956] text-center">
             {item.kategorie}
           </p>
         </div>
 
         {/* Hover Content - Subtle fade in */}
-        <div className={`absolute inset-0 flex flex-col justify-between p-5 transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
+        <div className={`absolute inset-0 flex flex-col justify-between p-3 sm:p-5 transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
           <div>
-            <p className="text-xs text-[#109387] font-semibold uppercase tracking-wide mb-2">
+            <p className="text-[10px] sm:text-xs text-[#109387] font-semibold uppercase tracking-wide mb-1 sm:mb-2">
               {item.name}
             </p>
-            <p className="text-sm text-gray-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed line-clamp-3 sm:line-clamp-none">
               {item.seitentext}
             </p>
           </div>
-          <div className="flex items-center gap-1 text-xs text-[#109387] font-medium">
-            <span>Website besuchen</span>
-            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="flex items-center gap-1 text-[10px] sm:text-xs text-[#109387] font-medium">
+            <span>Website</span>
+            <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </div>
@@ -191,17 +191,17 @@ export default function PartnerSection() {
 
       </div>
 
-      {/* Infinite Slider */}
+      {/* Infinite Slider - läuft auf allen Bildschirmgrößen */}
       <div className="relative">
 
         {/* Gradient Overlays */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 lg:w-32 bg-gradient-to-r from-[#f8f9fa] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 lg:w-32 bg-gradient-to-l from-[#f8f9fa] to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 lg:w-32 bg-gradient-to-r from-[#f8f9fa] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 lg:w-32 bg-gradient-to-l from-[#f8f9fa] to-transparent z-10 pointer-events-none" />
 
         {/* Infinite Slider Track */}
         <motion.div
           animate={controls}
-          className="flex gap-6 py-4"
+          className="flex gap-4 sm:gap-6 py-4"
         >
           {/* Triple the items for seamless infinite loop */}
           {[...partner, ...partner, ...partner].map((item, index) => (
@@ -212,28 +212,6 @@ export default function PartnerSection() {
             />
           ))}
         </motion.div>
-      </div>
-
-      {/* Static Grid for smaller screens */}
-      <div className="lg:hidden mt-8 w-full max-w-[1800px] mx-auto px-6">
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-          {partner.slice(0, 6).map((item) => (
-            <a
-              key={item.name}
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white rounded-[6px] p-4 shadow-sm text-center"
-            >
-              <div className="h-10 bg-gray-50 rounded-[6px] flex items-center justify-center mb-2">
-                <span className="text-lg font-bold text-[#109387]">
-                  {item.name.charAt(0)}
-                </span>
-              </div>
-              <p className="text-sm font-bold text-[#012956]">{item.kategorie}</p>
-            </a>
-          ))}
-        </div>
       </div>
 
       {/* Bottom Info */}
