@@ -706,6 +706,20 @@ export default function KarrierePage() {
         const sidebarTop = sidebarRef.current.getBoundingClientRect().top
         setIsSidebarSticky(sidebarTop <= 100)
       }
+
+      // Auto-highlight: Finde den Job der gerade im Viewport ist
+      const jobElements = stellenangebote.map(job => document.getElementById(job.id))
+      const viewportCenter = window.innerHeight / 3
+
+      for (const element of jobElements) {
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          if (rect.top <= viewportCenter && rect.bottom >= viewportCenter) {
+            setActiveJob(element.id)
+            break
+          }
+        }
+      }
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -816,7 +830,7 @@ export default function KarrierePage() {
 
           {/* DESKTOP: Sidebar + Full Cards */}
           <div className="hidden lg:flex flex-col lg:flex-row gap-8" ref={contentRef}>
-            {/* SIDEBAR - Sticky */}
+            {/* SIDEBAR - Sticky & Scrollable */}
             <aside
               ref={sidebarRef}
               className="lg:w-80 xl:w-96 shrink-0"
@@ -827,7 +841,7 @@ export default function KarrierePage() {
                   Offene Stellen
                 </h3>
 
-                <nav className="space-y-2">
+                <nav className="space-y-2 max-h-[50vh] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-[#109387]/30 scrollbar-track-transparent">
                   {stellenangebote.map((job) => (
                     <button
                       key={job.id}

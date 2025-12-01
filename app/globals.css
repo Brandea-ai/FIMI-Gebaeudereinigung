@@ -42,6 +42,29 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Custom Scrollbar for Sidebar */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(16, 147, 135, 0.3) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: rgba(16, 147, 135, 0.3);
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(16, 147, 135, 0.5);
+  }
 }
 
 @layer components {
