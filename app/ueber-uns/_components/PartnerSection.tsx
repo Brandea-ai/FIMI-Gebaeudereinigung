@@ -214,22 +214,22 @@ export default function PartnerSection() {
         </motion.div>
       </div>
 
-      {/* Bottom Info */}
-      <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 mt-12">
-        <div className="flex flex-wrap justify-center gap-8 text-center">
+      {/* Bottom Info - kompakt */}
+      <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 mt-8 lg:mt-12">
+        <div className="flex justify-center items-center gap-4 sm:gap-6 lg:gap-8 text-center">
           <div>
-            <p className="text-3xl font-bold text-[#109387]">13+</p>
-            <p className="text-gray-600 font-semibold">Premium Partner</p>
+            <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#109387]">13+</p>
+            <p className="text-gray-600 font-semibold text-xs sm:text-sm">Premium Hersteller</p>
           </div>
-          <div className="w-px bg-gray-300 hidden sm:block" />
+          <div className="w-px h-8 sm:h-10 bg-gray-300" />
           <div>
-            <p className="text-3xl font-bold text-[#109387]">100%</p>
-            <p className="text-gray-600 font-semibold">Markenqualität</p>
+            <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#109387]">100%</p>
+            <p className="text-gray-600 font-semibold text-xs sm:text-sm">Markenqualität</p>
           </div>
-          <div className="w-px bg-gray-300 hidden sm:block" />
+          <div className="w-px h-8 sm:h-10 bg-gray-300" />
           <div>
-            <p className="text-3xl font-bold text-[#109387]">72h</p>
-            <p className="text-gray-600 font-semibold">Zulieferung</p>
+            <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#109387]">72h</p>
+            <p className="text-gray-600 font-semibold text-xs sm:text-sm">Zulieferung</p>
           </div>
         </div>
       </div>

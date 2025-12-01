@@ -14,9 +14,9 @@ import FloatingNav from '@/components/FloatingNav'
 const floatingNavItems = [
   { id: 'hero', label: 'Übersicht' },
   { id: 'timeline', label: 'Geschichte' },
-  { id: 'gruender', label: 'Geschäftsführung' },
-  { id: 'philosophie', label: 'Philosophie' },
   { id: 'team', label: 'Team' },
+  { id: 'philosophie', label: 'Philosophie' },
+  { id: 'gruender', label: 'Geschäftsführung' },
   { id: 'partner', label: 'Partner' },
   { id: 'regionen', label: 'Standorte' },
 ]
@@ -39,9 +39,9 @@ export default function UeberUnsPage() {
       <FloatingNav items={floatingNavItems} />
       <HeroSection />
       <TimelineSection />
-      <GruenderSection />
-      <PhilosophieSection />
       <TeamSection />
+      <PhilosophieSection />
+      <GruenderSection />
       <PartnerSection />
       <RegionenSection />
     </main>

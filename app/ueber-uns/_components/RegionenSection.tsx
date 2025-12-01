@@ -31,7 +31,8 @@ export default function RegionenSection() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="relative rounded-[6px] overflow-hidden shadow-lg">
+            {/* Bild */}
+            <div className="rounded-t-[6px] lg:rounded-[6px] overflow-hidden shadow-lg">
               <Image
                 src="/images/home/staedte-fimi.avif"
                 alt="FIMI Gebäudereinigung - Einsatzgebiete in Bayern"
@@ -39,21 +40,21 @@ export default function RegionenSection() {
                 height={3584}
                 className="w-full h-auto"
               />
+            </div>
 
-              {/* Overlay Badge - am unteren Rand, bündig mit dem Bild */}
-              <div className="absolute bottom-0 left-0 right-0 bg-[#012956] p-3 sm:p-4 lg:p-5">
-                <div className="flex items-center gap-3 sm:gap-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0">
-                    <MapPin size={20} className="text-white sm:w-6 sm:h-6" />
-                  </div>
-                  <div>
-                    <p className="text-white font-bold text-sm sm:text-base lg:text-lg">
-                      8 Einsatzgebiete in Bayern
-                    </p>
-                    <p className="text-white/70 font-semibold text-xs sm:text-sm">
-                      Immer in Ihrer Nähe
-                    </p>
-                  </div>
+            {/* Badge - unter dem Bild auf Mobile, überlappend auf Desktop */}
+            <div className="bg-[#012956] rounded-b-[6px] lg:rounded-[6px] lg:absolute lg:-bottom-6 lg:left-6 lg:right-6 p-3 sm:p-4 lg:p-5 lg:shadow-lg">
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0">
+                  <MapPin size={20} className="text-white sm:w-6 sm:h-6" />
+                </div>
+                <div>
+                  <p className="text-white font-bold text-sm sm:text-base lg:text-lg">
+                    8 Einsatzgebiete in Bayern
+                  </p>
+                  <p className="text-white/70 font-semibold text-xs sm:text-sm">
+                    Immer in Ihrer Nähe
+                  </p>
                 </div>
               </div>
             </div>
