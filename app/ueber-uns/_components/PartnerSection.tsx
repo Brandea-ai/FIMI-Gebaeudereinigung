@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, useAnimationControls } from 'framer-motion'
 
 // Partner/Hersteller mit URLs und Beschreibungen
@@ -143,9 +143,8 @@ function PartnerCard({ item, onHover }: { item: typeof partner[0]; onHover: (hov
 export default function PartnerSection() {
   const controls = useAnimationControls()
   const [isPaused, setIsPaused] = useState(false)
-  const containerRef = useRef<HTMLDivElement>(null)
 
-  // Card width + gap
+  // Card width + gap für endlose Animation
   const cardWidth = 256 + 24 // w-64 (256px) + gap-6 (24px)
   const totalWidth = partner.length * cardWidth
 
@@ -164,25 +163,6 @@ export default function PartnerSection() {
       controls.stop()
     }
   }, [isPaused, controls, totalWidth])
-
-  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null)
-
-  const scroll = (direction: 'left' | 'right') => {
-    // Clear any existing timeout
-    if (scrollTimeoutRef.current) {
-      clearTimeout(scrollTimeoutRef.current)
-    }
-
-    const scrollAmount = direction === 'left' ? cardWidth : -cardWidth
-    controls.stop()
-    controls.set({ x: `+=${scrollAmount}` })
-    setIsPaused(true)
-
-    // Resume auto-scroll after 2 seconds
-    scrollTimeoutRef.current = setTimeout(() => {
-      setIsPaused(false)
-    }, 2000)
-  }
 
   const handleCardHover = (hovering: boolean) => {
     setIsPaused(hovering)
@@ -204,57 +184,21 @@ export default function PartnerSection() {
             Unsere Partner
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-6">
-            Wir arbeiten nur mit führenden
-            <span className="text-[#109387]"> Herstellern</span> zusammen
+            Ausgestattet mit den
+            <span className="text-[#109387]"> Besten</span>
           </h2>
+          <p className="text-lg text-gray-700 font-semibold max-w-2xl mx-auto mb-2">
+            Wir arbeiten nur mit führenden Herstellern zusammen.
+          </p>
+          <p className="text-lg text-gray-700 font-semibold max-w-2xl mx-auto">
+            Professionelle Ausrüstung ist die Grundlage für professionelle Ergebnisse.
+          </p>
         </motion.div>
 
       </div>
 
-      {/* Infinite Slider with Navigation */}
+      {/* Infinite Slider */}
       <div className="relative">
-
-        {/* Left Navigation Button - z-30 und pointer-events für unabhängige Funktionalität */}
-        <button
-          onClick={(e) => {
-            e.stopPropagation()
-            scroll('left')
-          }}
-          onMouseEnter={(e) => e.stopPropagation()}
-          onMouseLeave={(e) => e.stopPropagation()}
-          className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 lg:w-12 lg:h-12 rounded-[6px] bg-white shadow-md flex items-center justify-center transition-all duration-300 hover:bg-[#109387] hover:text-white cursor-pointer"
-          aria-label="Nach links scrollen"
-        >
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-
-        {/* Right Navigation Button - z-30 und pointer-events für unabhängige Funktionalität */}
-        <button
-          onClick={(e) => {
-            e.stopPropagation()
-            scroll('right')
-          }}
-          onMouseEnter={(e) => e.stopPropagation()}
-          onMouseLeave={(e) => e.stopPropagation()}
-          className="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 lg:w-12 lg:h-12 rounded-[6px] bg-white shadow-md flex items-center justify-center transition-all duration-300 hover:bg-[#109387] hover:text-white cursor-pointer"
-          aria-label="Nach rechts scrollen"
-        >
-          <svg
-            className="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </button>
 
         {/* Gradient Overlays */}
         <div className="absolute left-0 top-0 bottom-0 w-24 lg:w-32 bg-gradient-to-r from-[#f8f9fa] to-transparent z-10 pointer-events-none" />
