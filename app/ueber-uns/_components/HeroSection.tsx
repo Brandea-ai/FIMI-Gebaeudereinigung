@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] bg-[#012956] overflow-hidden">
+    <section id="hero" className="relative min-h-[90vh] bg-[#012956] overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image

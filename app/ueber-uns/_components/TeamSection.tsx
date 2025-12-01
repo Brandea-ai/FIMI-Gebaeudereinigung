@@ -79,7 +79,7 @@ const teamBereiche = [
 
 export default function TeamSection() {
   return (
-    <section className="py-20 lg:py-32 bg-[#012956]">
+    <section id="team" className="py-20 lg:py-32 bg-[#012956]">
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
         {/* Header */}

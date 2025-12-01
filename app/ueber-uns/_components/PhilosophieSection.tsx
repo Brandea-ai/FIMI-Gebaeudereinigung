@@ -38,7 +38,7 @@ const werte = [
 
 export default function PhilosophieSection() {
   return (
-    <section className="py-20 lg:py-32 bg-[#109387]/5">
+    <section id="philosophie" className="py-20 lg:py-32 bg-[#109387]/5">
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
         {/* Header */}

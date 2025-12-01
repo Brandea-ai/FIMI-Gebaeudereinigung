@@ -25,6 +25,17 @@ import {
   X
 } from 'lucide-react'
 import FadeIn from '@/components/FadeIn'
+import FloatingNav from '@/components/FloatingNav'
+
+// Navigation items for FloatingNav
+const floatingNavItems = [
+  { id: 'hero', label: 'Übersicht' },
+  { id: 'stellenangebote', label: 'Stellenangebote' },
+  { id: 'initiativbewerbung', label: 'Initiativ bewerben' },
+  { id: 'bewerbung', label: 'Bewerbungsprozess' },
+  { id: 'standorte', label: 'Standorte' },
+  { id: 'kontakt', label: 'Kontakt' },
+]
 
 // ============================================================================
 // STELLENANGEBOTE DATEN - 12 Positionen, 8 Standorte, sortiert nach Datum
@@ -762,13 +773,16 @@ export default function KarrierePage() {
 
   return (
     <main className="min-h-screen bg-white">
+      {/* Floating Navigation */}
+      <FloatingNav items={floatingNavItems} />
+
       {/* Mobile Job Modal */}
       <JobModal job={selectedJob} onClose={() => setSelectedJob(null)} />
 
       {/* ================================================================== */}
       {/* HERO SECTION */}
       {/* ================================================================== */}
-      <section className="relative py-16 lg:py-28 bg-[#012956] overflow-hidden">
+      <section id="hero" className="relative py-16 lg:py-28 bg-[#012956] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#109387]/10 to-transparent" />
           <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-gradient-to-t from-[#109387]/5 to-transparent" />
@@ -1213,7 +1227,7 @@ export default function KarrierePage() {
       {/* ================================================================== */}
       {/* BEWERBUNGSPROZESS - FIMI HR */}
       {/* ================================================================== */}
-      <section className="py-12 lg:py-20 bg-white">
+      <section id="bewerbung" className="py-12 lg:py-20 bg-white">
         <div className="w-full max-w-[1800px] mx-auto px-4 lg:px-12 xl:px-20">
           <FadeIn>
             <div className="mb-8 lg:mb-12">
@@ -1325,7 +1339,7 @@ export default function KarrierePage() {
       {/* ================================================================== */}
       {/* STANDORTE */}
       {/* ================================================================== */}
-      <section className="py-12 lg:py-20 bg-[#f8f9fa]">
+      <section id="standorte" className="py-12 lg:py-20 bg-[#f8f9fa]">
         <div className="w-full max-w-[1800px] mx-auto px-4 lg:px-12 xl:px-20">
           <FadeIn>
             <div className="mb-8 lg:mb-12">
@@ -1361,7 +1375,7 @@ export default function KarrierePage() {
       {/* ================================================================== */}
       {/* FINAL CTA */}
       {/* ================================================================== */}
-      <section className="py-12 lg:py-20 bg-[#012956]">
+      <section id="kontakt" className="py-12 lg:py-20 bg-[#012956]">
         <div className="w-full max-w-[1800px] mx-auto px-4 lg:px-12 xl:px-20">
           <FadeIn className="max-w-2xl">
             <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-white mb-3 lg:mb-4">
