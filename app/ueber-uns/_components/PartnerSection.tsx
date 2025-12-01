@@ -16,7 +16,7 @@ const partner = [
   { name: 'Hagleitner', kategorie: 'Spendersysteme' },
   { name: 'Wetrok', kategorie: 'Maschinen' },
   { name: 'Copterclean', kategorie: 'Drohnenreinigung' },
-  { name: 'Deolo', kategorie: 'Reinigungslösungen' },
+  { name: 'Devolo', kategorie: 'Reinigungslösungen' },
   { name: 'STIHL', kategorie: 'Reinigungstechnik & Kommunalgeräte' },
   { name: 'Hako', kategorie: 'Kommunalmaschinen' },
 ]
