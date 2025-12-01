@@ -178,9 +178,9 @@ export default function LeistungsumfangSection() {
                   key={intervall.name}
                   className="flex items-start gap-4 p-4 bg-[#f8f9fa] rounded-[6px] group hover:bg-[#012956] transition-all duration-300"
                 >
-                  {/* Icon - Outlined Style */}
-                  <div className="w-10 h-10 border-2 border-[#109387] group-hover:bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0 transition-all duration-300">
-                    <span className="text-[#109387] group-hover:text-white font-bold text-sm transition-colors duration-300">
+                  {/* Icon - Dauerhaft gefüllt */}
+                  <div className="w-10 h-10 bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0">
+                    <span className="text-white font-bold text-sm">
                       {intervall.name.charAt(0)}
                     </span>
                   </div>
