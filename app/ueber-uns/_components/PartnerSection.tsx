@@ -16,6 +16,7 @@ const partner = [
   { name: 'Wetrok', kategorie: 'Maschinen' },
   { name: 'Copterclean', kategorie: 'Drohnenreinigung' },
   { name: 'Deolo', kategorie: 'Reinigungslösungen' },
+  { name: 'Sill', kategorie: 'Reinigungstechnik' },
 ]
 
 export default function PartnerSection() {
