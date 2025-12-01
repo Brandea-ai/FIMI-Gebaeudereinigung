@@ -384,7 +384,7 @@ export default function RegionenContainer() {
                     href="#contact-form"
                     className="flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group w-full"
                   >
-                    Kostenfreie Besichtigung in {stadt.name}
+                    Kostenfreie Besichtigung
                     <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>

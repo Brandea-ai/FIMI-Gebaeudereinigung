@@ -233,18 +233,61 @@ export default function Navigation() {
     }
   }, [])
 
-  // Scroll to card when opening dropdown in mobile menu
-  const scrollToCard = useCallback((cardRef: React.RefObject<HTMLDivElement | null>) => {
-    setTimeout(() => {
-      if (cardRef.current && mobileMenuRef.current) {
-        const cardTop = cardRef.current.offsetTop
-        mobileMenuRef.current.scrollTo({
-          top: cardTop - 20,
-          behavior: 'smooth'
-        })
-      }
-    }, 50)
-  }, [])
+  // Handlers für Mobile Dropdowns mit Auto-Scroll
+  const handleMobileLeistungenToggle = useCallback(() => {
+    const newState = !mobileLeistungenOpen
+
+    // Zuerst andere schließen
+    setMobileBranchenOpen(false)
+    setMobileUeberFimiOpen(false)
+
+    if (newState && mobileMenuRef.current) {
+      // Leistungen ist erste Card - scroll to top
+      mobileMenuRef.current.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+
+    setMobileLeistungenOpen(newState)
+  }, [mobileLeistungenOpen])
+
+  const handleMobileBranchenToggle = useCallback(() => {
+    const newState = !mobileBranchenOpen
+
+    // Zuerst andere schließen
+    setMobileLeistungenOpen(false)
+    setMobileUeberFimiOpen(false)
+
+    if (newState && mobileMenuRef.current && branchenCardRef.current) {
+      // Warte kurz bis Leistungen geschlossen ist, dann scroll zur Branchen Card
+      setTimeout(() => {
+        if (branchenCardRef.current && mobileMenuRef.current) {
+          const cardTop = branchenCardRef.current.offsetTop - 24 // 24px padding oben
+          mobileMenuRef.current.scrollTo({ top: cardTop, behavior: 'smooth' })
+        }
+      }, 50)
+    }
+
+    setMobileBranchenOpen(newState)
+  }, [mobileBranchenOpen])
+
+  const handleMobileUeberFimiToggle = useCallback(() => {
+    const newState = !mobileUeberFimiOpen
+
+    // Zuerst andere schließen
+    setMobileLeistungenOpen(false)
+    setMobileBranchenOpen(false)
+
+    if (newState && mobileMenuRef.current && ueberFimiCardRef.current) {
+      // Warte kurz bis andere geschlossen sind, dann scroll zur Über FIMI Card
+      setTimeout(() => {
+        if (ueberFimiCardRef.current && mobileMenuRef.current) {
+          const cardTop = ueberFimiCardRef.current.offsetTop - 24
+          mobileMenuRef.current.scrollTo({ top: cardTop, behavior: 'smooth' })
+        }
+      }, 50)
+    }
+
+    setMobileUeberFimiOpen(newState)
+  }, [mobileUeberFimiOpen])
 
   // Über FIMI Dropdown Links
   const ueberFimiLinks = [
@@ -472,15 +515,7 @@ export default function Navigation() {
                 <div ref={leistungenCardRef} className="bg-[#f8f9fa] rounded-[8px] overflow-hidden">
                   <div className="flex items-center justify-between px-5 py-4">
                     <button
-                      onClick={() => {
-                        const newState = !mobileLeistungenOpen
-                        setMobileLeistungenOpen(newState)
-                        if (newState) {
-                          setMobileBranchenOpen(false)
-                          setMobileUeberFimiOpen(false)
-                          scrollToCard(leistungenCardRef)
-                        }
-                      }}
+                      onClick={handleMobileLeistungenToggle}
                       className="flex items-center gap-3 touch-manipulation"
                       aria-expanded={mobileLeistungenOpen}
                       aria-controls="mobile-leistungen"
@@ -552,15 +587,7 @@ export default function Navigation() {
                 <div ref={branchenCardRef} className="bg-[#f8f9fa] rounded-[8px] overflow-hidden">
                   <div className="flex items-center justify-between px-5 py-4">
                     <button
-                      onClick={() => {
-                        const newState = !mobileBranchenOpen
-                        setMobileBranchenOpen(newState)
-                        if (newState) {
-                          setMobileLeistungenOpen(false)
-                          setMobileUeberFimiOpen(false)
-                          scrollToCard(branchenCardRef)
-                        }
-                      }}
+                      onClick={handleMobileBranchenToggle}
                       className="flex items-center gap-3 touch-manipulation"
                       aria-expanded={mobileBranchenOpen}
                       aria-controls="mobile-branchen"
@@ -626,15 +653,7 @@ export default function Navigation() {
                 {/* Über FIMI Card */}
                 <div ref={ueberFimiCardRef} className="bg-[#f8f9fa] rounded-[8px] overflow-hidden">
                   <button
-                    onClick={() => {
-                      const newState = !mobileUeberFimiOpen
-                      setMobileUeberFimiOpen(newState)
-                      if (newState) {
-                        setMobileLeistungenOpen(false)
-                        setMobileBranchenOpen(false)
-                        scrollToCard(ueberFimiCardRef)
-                      }
-                    }}
+                    onClick={handleMobileUeberFimiToggle}
                     className="flex items-center justify-between w-full px-5 py-4 touch-manipulation"
                     aria-expanded={mobileUeberFimiOpen}
                     aria-controls="mobile-ueberfimi"
