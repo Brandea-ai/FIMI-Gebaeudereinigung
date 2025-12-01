@@ -158,7 +158,7 @@ export default function UnterhaltsreinigungPage() {
         <FloatingNav items={floatingNavItems} />
         <HeroSection />
         <TrustBarSection />
-        <KundenLogosOnly bgColor="#ffffff" />
+        <KundenLogosOnly />
         <ProblemLoesungSection />
         <LeistungsumfangSection />
         <ProcessSection />

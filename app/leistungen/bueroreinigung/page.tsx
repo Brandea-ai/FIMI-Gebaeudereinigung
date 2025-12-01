@@ -145,7 +145,7 @@ export default function BueroreinigungPage() {
       <main className="min-h-screen bg-white">
         <HeroSection />
         <TrustBarSection />
-        <KundenLogosOnly bgColor="#ffffff" />
+        <KundenLogosOnly />
         <ProblemLoesungSection />
         <LeistungsumfangSection />
         <ProcessSection />

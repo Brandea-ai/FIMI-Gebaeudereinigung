@@ -167,12 +167,10 @@ function KundeCard({ item, onHover }: { item: typeof kunden[0]; onHover: (hoveri
 }
 
 interface KundenLogosOnlyProps {
-  bgColor?: string
   className?: string
 }
 
 export default function KundenLogosOnly({
-  bgColor = '#ffffff',
   className = ''
 }: KundenLogosOnlyProps) {
   const controls = useAnimationControls()
@@ -202,16 +200,16 @@ export default function KundenLogosOnly({
   }
 
   return (
-    <section className={`py-12 lg:py-16 overflow-hidden ${className}`} style={{ backgroundColor: bgColor }}>
+    <section className={`py-5 lg:py-6 overflow-hidden bg-[#012956]/[0.04] ${className}`}>
       {/* Nur der Slider - kein Header, keine Stats, kein CTA */}
       <div className="relative">
         <div
           className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 lg:w-32 z-10 pointer-events-none"
-          style={{ background: `linear-gradient(to right, ${bgColor}, transparent)` }}
+          style={{ background: 'linear-gradient(to right, rgba(1,41,86,0.04), transparent)' }}
         />
         <div
           className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 lg:w-32 z-10 pointer-events-none"
-          style={{ background: `linear-gradient(to left, ${bgColor}, transparent)` }}
+          style={{ background: 'linear-gradient(to left, rgba(1,41,86,0.04), transparent)' }}
         />
 
         <motion.div
