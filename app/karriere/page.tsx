@@ -1228,16 +1228,21 @@ export default function KarrierePage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-4">
             {standorte.map((stadt) => (
-              <Link
+              <button
                 key={stadt}
-                href="/kontakt"
+                onClick={() => {
+                  const footer = document.querySelector('footer')
+                  if (footer) {
+                    footer.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                  }
+                }}
                 className="bg-white rounded-[6px] p-4 lg:p-5 flex items-center gap-3 lg:gap-4 shadow-sm hover:shadow-md hover:border-[#109387]/30 border border-transparent transition-all group cursor-pointer"
               >
                 <div className="w-9 lg:w-10 h-9 lg:h-10 bg-[#109387]/10 group-hover:bg-[#109387]/20 rounded-[6px] flex items-center justify-center shrink-0 transition-colors">
                   <Building2 size={18} className="text-[#109387] lg:w-5 lg:h-5" />
                 </div>
                 <h3 className="font-extrabold text-[#012956] group-hover:text-[#109387] text-base lg:text-lg transition-colors">{stadt}</h3>
-              </Link>
+              </button>
             ))}
           </div>
         </div>
