@@ -28,7 +28,7 @@ export default function PartnerSection() {
       {/* Partner Slider - wiederverwendbare Komponente */}
       <PartnerLogosSlider
         showHeader={false}
-        showStats={true}
+        showStats={false}
         bgColor="#f8f9fa"
       />
     </section>

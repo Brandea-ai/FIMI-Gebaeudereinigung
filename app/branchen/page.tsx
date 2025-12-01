@@ -349,21 +349,20 @@ export default function BranchenPage() {
                 <span className="block text-[#109387] mt-2">Reinigungslösungen</span>
               </h1>
 
-              <p className="text-lg text-white/80 font-semibold leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0">
-                Jede Branche hat ihre eigenen Anforderungen an Sauberkeit und Hygiene.
-                Wir kennen die Besonderheiten und bieten maßgeschneiderte Konzepte.
+              <p className="text-base sm:text-lg text-white/80 font-semibold leading-relaxed mb-6 sm:mb-10 max-w-xl mx-auto lg:mx-0">
+                Jede Branche hat eigene Anforderungen – wir kennen sie und liefern maßgeschneiderte Lösungen.
               </p>
 
-              {/* Stats */}
-              <div className="flex flex-wrap justify-center lg:justify-start gap-10 mb-10">
+              {/* Stats - 3 nebeneinander auf Mobile */}
+              <div className="grid grid-cols-3 gap-3 sm:gap-6 lg:gap-10 mb-6 sm:mb-10 max-w-md mx-auto lg:max-w-none lg:mx-0 lg:flex lg:justify-start">
                 {[
                   { value: '12', label: 'Branchen' },
-                  { value: '8+', label: 'Jahre Erfahrung' },
-                  { value: '100%', label: 'Branchenkenntnis' },
+                  { value: '8+', label: 'Jahre' },
+                  { value: '100%', label: 'Expertise' },
                 ].map((stat, i) => (
                   <div key={i} className="text-center">
-                    <div className="text-[#109387] font-bold text-4xl lg:text-5xl">{stat.value}</div>
-                    <div className="text-white/60 font-semibold">{stat.label}</div>
+                    <div className="text-[#109387] font-bold text-2xl sm:text-3xl lg:text-5xl">{stat.value}</div>
+                    <div className="text-white/60 font-semibold text-xs sm:text-sm">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -652,7 +651,7 @@ export default function BranchenPage() {
       {/* Partner Trust - Ausrüstung */}
       <PartnerLogosSlider
         showHeader={true}
-        showStats={true}
+        showStats={false}
         bgColor="#ffffff"
       />
 

@@ -69,7 +69,7 @@ export default function HomePage() {
       <ServicesContainer />
       <PartnerLogosSlider
         showHeader={true}
-        showStats={true}
+        showStats={false}
         bgColor="#ffffff"
       />
       <RegionenContainer />

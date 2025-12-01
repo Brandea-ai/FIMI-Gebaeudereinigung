@@ -450,7 +450,7 @@ export default function LeistungenPage() {
       {/* Partner Trust - Professionelle Ausrüstung (VOR Warum FIMI) */}
       <PartnerLogosSlider
         showHeader={true}
-        showStats={true}
+        showStats={false}
         bgColor="#ffffff"
       />
 
