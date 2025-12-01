@@ -27,7 +27,7 @@ function getIcon(iconName: string, className: string) {
 
 export function BrancheHero({ branche }: BrancheHeroProps) {
   return (
-    <section className="relative min-h-[85vh] lg:min-h-screen">
+    <section id="hero" className="relative min-h-[85vh] lg:min-h-screen">
 
       {/* Background Image */}
       <div className="absolute inset-0">

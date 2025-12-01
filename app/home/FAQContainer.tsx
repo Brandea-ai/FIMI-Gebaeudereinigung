@@ -47,7 +47,7 @@ export default function FAQContainer() {
   }
 
   return (
-    <section className="py-20 lg:py-28 bg-white" aria-labelledby="faq-heading">
+    <section id="faq" className="py-20 lg:py-28 bg-white" aria-labelledby="faq-heading">
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
         {/* Two Column Layout */}

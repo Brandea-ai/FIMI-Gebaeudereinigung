@@ -22,7 +22,7 @@ export function BrancheGallery({ branche }: BrancheGalleryProps) {
   if (!branche.gallery || branche.gallery.length === 0) return null
 
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-gray-50">
+    <section id="galerie" className="py-16 md:py-24 lg:py-32 bg-gray-50">
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
         {/* Section Header - Kein Icon, kein Einzeiler rechts */}

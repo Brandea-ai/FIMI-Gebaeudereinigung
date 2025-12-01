@@ -1,114 +1,113 @@
 'use client'
 
-import { ArrowRight, Phone, Mail, Clock } from 'lucide-react'
+import Link from 'next/link'
+import { ArrowRight, Phone, CheckCircle, Building2, Stethoscope, GraduationCap, Factory, ShoppingBag, Home } from 'lucide-react'
+
+// 6 beliebteste Branchen für Unterhaltsreinigung
+const branchen = [
+  { slug: 'buero-verwaltung', name: 'Büro & Verwaltung', icon: Building2 },
+  { slug: 'gesundheitswesen', name: 'Gesundheitswesen', icon: Stethoscope },
+  { slug: 'industrie-produktion', name: 'Industrie & Produktion', icon: Factory },
+  { slug: 'bildung-oeffentlich', name: 'Bildung & Schulen', icon: GraduationCap },
+  { slug: 'einzelhandel', name: 'Einzelhandel', icon: ShoppingBag },
+  { slug: 'immobilien', name: 'Immobilien', icon: Home },
+]
 
 export default function CTASection() {
   return (
-    <section className="py-20 lg:py-28 bg-[#012956]">
+    <section id="kontakt" className="py-20 lg:py-28 bg-[#012956]">
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
 
-          {/* Left: Content */}
+          {/* LINKS: Branchen hochwertig */}
           <div>
-            <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-3">
-              Jetzt anfragen
-            </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.1] mb-6">
-              Bereit für eine Reinigung, die funktioniert?
-            </h2>
-            <p className="text-lg text-white/70 font-semibold leading-relaxed mb-8">
-              Keine langen Wartezeiten, keine komplizierten Verträge.
-              Melden Sie sich – wir melden uns innerhalb von 2 Stunden zurück
-              und vereinbaren einen Termin für die kostenlose Besichtigung.
-            </p>
+            <span className="text-[#109387] font-bold text-sm uppercase tracking-wide mb-4 block">
+              Branchenkompetenz
+            </span>
+            <h3 className="text-2xl lg:text-3xl font-bold text-white mb-6">
+              Unterhaltsreinigung für Ihre Branche
+            </h3>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-10">
-              <a
-                href="#contact-form"
-                className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group shadow-lg"
-              >
-                Kostenfreie Besichtigung
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a
-                href="tel:+4987143033460"
-                className="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"
-              >
-                <Phone size={20} />
-                Jetzt anrufen
-              </a>
+            {/* Branchen als hochwertiges 2x3 Grid */}
+            <div className="grid grid-cols-2 gap-4 mb-8">
+              {branchen.map((branche) => {
+                const Icon = branche.icon
+                return (
+                  <Link
+                    key={branche.slug}
+                    href={`/branchen/${branche.slug}`}
+                    className="group flex items-center gap-4 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#109387]/50 rounded-[6px] p-4 transition-all duration-300"
+                  >
+                    <div className="w-11 h-11 bg-[#109387]/20 group-hover:bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0 transition-colors">
+                      <Icon size={20} className="text-[#109387] group-hover:text-white transition-colors" />
+                    </div>
+                    <span className="text-white font-semibold text-sm group-hover:text-[#109387] transition-colors">
+                      {branche.name}
+                    </span>
+                  </Link>
+                )
+              })}
             </div>
 
-            {/* Trust Element */}
-            <div className="flex items-center gap-3 text-white/60 font-semibold">
-              <Clock size={20} className="text-[#109387]" />
-              <span>Antwort garantiert innerhalb von 2 Stunden</span>
-            </div>
+            {/* Alle Branchen CTA */}
+            <Link
+              href="/branchen"
+              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/10 text-white font-bold px-6 py-3 rounded-[6px] transition-all group"
+            >
+              Alle 12 Branchen entdecken
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
 
-          {/* Right: Contact Box */}
-          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[12px] p-8">
-            <h3 className="text-2xl font-bold text-white mb-6">So erreichen Sie uns</h3>
+          {/* RECHTS: CTA - Lead abholen */}
+          <div className="bg-white rounded-[6px] p-8 lg:p-10">
+            <h3 className="text-2xl lg:text-3xl font-bold text-[#012956] mb-4">
+              Jetzt starten
+            </h3>
+            <p className="text-gray-600 font-semibold leading-relaxed mb-8">
+              Kostenfreie Besichtigung, transparentes Angebot, schneller Start.
+            </p>
 
-            <div className="space-y-6">
-              {/* Telefon */}
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-[#109387]/20 rounded-[6px] flex items-center justify-center flex-shrink-0">
-                  <Phone size={24} className="text-[#109387]" />
-                </div>
-                <div>
-                  <p className="text-white/60 font-semibold text-sm mb-1">Telefon</p>
-                  <a
-                    href="tel:+4987143033460"
-                    className="text-xl font-bold text-white hover:text-[#109387] transition-colors"
-                  >
-                    0871 430 334 60
-                  </a>
-                  <p className="text-white/60 font-semibold text-sm mt-1">Mo-Fr 7:00 - 18:00 Uhr</p>
-                </div>
+            {/* Telefon prominent */}
+            <a
+              href="tel:+4987143033460"
+              className="flex items-center gap-4 bg-[#012956] hover:bg-[#01203d] rounded-[6px] p-5 mb-6 group transition-colors"
+            >
+              <div className="w-14 h-14 bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0">
+                <Phone size={24} className="text-white" />
               </div>
-
-              {/* Mobil */}
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-[#109387]/20 rounded-[6px] flex items-center justify-center flex-shrink-0">
-                  <Phone size={24} className="text-[#109387]" />
-                </div>
-                <div>
-                  <p className="text-white/60 font-semibold text-sm mb-1">Mobil (auch WhatsApp)</p>
-                  <a
-                    href="tel:+4917472254773"
-                    className="text-xl font-bold text-white hover:text-[#109387] transition-colors"
-                  >
-                    0174 722 54 773
-                  </a>
-                </div>
+              <div>
+                <span className="text-white/60 text-sm font-semibold block">Direkt anrufen</span>
+                <span className="text-white font-bold text-2xl group-hover:text-[#109387] transition-colors">
+                  0871 430 334 60
+                </span>
               </div>
+            </a>
 
-              {/* E-Mail */}
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-[#109387]/20 rounded-[6px] flex items-center justify-center flex-shrink-0">
-                  <Mail size={24} className="text-[#109387]" />
-                </div>
-                <div>
-                  <p className="text-white/60 font-semibold text-sm mb-1">E-Mail</p>
-                  <a
-                    href="mailto:info@fimi-reinigung.de"
-                    className="text-xl font-bold text-white hover:text-[#109387] transition-colors"
-                  >
-                    info@fimi-reinigung.de
-                  </a>
-                </div>
+            {/* CTA Button */}
+            <Link
+              href="/kontakt"
+              className="flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-colors w-full group mb-8"
+            >
+              Kostenfreie Besichtigung anfragen
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+
+            {/* Trust-Elemente */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <CheckCircle size={20} className="text-[#109387] flex-shrink-0" />
+                <span className="text-gray-700 font-semibold">Antwort innerhalb von 2 Stunden</span>
               </div>
-            </div>
-
-            {/* Standort Info */}
-            <div className="mt-8 pt-6 border-t border-white/20">
-              <p className="text-white/60 font-semibold text-sm mb-2">Hauptsitz</p>
-              <p className="text-white font-bold">FIMI Gebäudereinigung</p>
-              <p className="text-white/80 font-semibold">Landshut, Bayern</p>
-              <p className="text-[#109387] font-semibold text-sm mt-2">+ 7 weitere Standorte in Bayern</p>
+              <div className="flex items-center gap-3">
+                <CheckCircle size={20} className="text-[#109387] flex-shrink-0" />
+                <span className="text-gray-700 font-semibold">100% unverbindlich & kostenfrei</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <CheckCircle size={20} className="text-[#109387] flex-shrink-0" />
+                <span className="text-gray-700 font-semibold">Transparente Festpreise</span>
+              </div>
             </div>
           </div>
 

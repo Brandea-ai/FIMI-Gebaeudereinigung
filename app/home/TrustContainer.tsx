@@ -35,7 +35,7 @@ const stats = [
 
 export default function TrustContainer() {
   return (
-    <section className="py-20 lg:py-28 bg-white" aria-labelledby="trust-heading">
+    <section id="trust" className="py-20 lg:py-28 bg-white" aria-labelledby="trust-heading">
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
         {/* Header */}

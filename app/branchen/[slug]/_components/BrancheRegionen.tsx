@@ -108,7 +108,7 @@ export function BrancheRegionen({ branche }: BrancheRegionenProps) {
   }
 
   return (
-    <section className="py-12 sm:py-16 md:py-24 lg:py-32 bg-gray-50">
+    <section id="standorte" className="py-12 sm:py-16 md:py-24 lg:py-32 bg-gray-50">
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
         {/* GESAMTES Layout als Grid - Sidebar sticky über alles */}

@@ -30,7 +30,7 @@ export default function HeroContainer() {
   }, [])
 
   return (
-    <section className="relative min-h-screen">
+    <section id="hero" className="relative min-h-screen">
 
       {/* Background - Lachende Menschen/Team */}
       <div className="absolute inset-0">

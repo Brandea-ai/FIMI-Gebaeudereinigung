@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { branchen, getBrancheBySlug } from '@/lib/branchen-data'
+import FloatingNav from '@/components/FloatingNav'
 
 // Komponenten - jede Sektion in eigener Datei
 import { BrancheHero } from './_components/BrancheHero'
@@ -12,6 +13,17 @@ import { BrancheRegionen } from './_components/BrancheRegionen'
 import { BrancheProcess } from './_components/BrancheProcess'
 import { BrancheFAQ } from './_components/BrancheFAQ'
 import { BrancheCTA } from './_components/BrancheCTA'
+
+// Navigation items for FloatingNav
+const floatingNavItems = [
+  { id: 'hero', label: 'Übersicht' },
+  { id: 'galerie', label: 'Galerie' },
+  { id: 'herausforderungen', label: 'Anforderungen' },
+  { id: 'leistungen', label: 'Leistungen' },
+  { id: 'standorte', label: 'Standorte' },
+  { id: 'faq', label: 'FAQ' },
+  { id: 'contact-form', label: 'Kontakt' },
+]
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -48,6 +60,7 @@ export default async function BranchePage({ params }: PageProps) {
 
   return (
     <main className="min-h-screen bg-white">
+      <FloatingNav items={floatingNavItems} />
       {/* Hero mit Headline, Subheadline, Benefits */}
       <BrancheHero branche={branche} />
 

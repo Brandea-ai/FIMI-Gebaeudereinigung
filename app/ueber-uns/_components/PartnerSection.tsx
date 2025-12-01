@@ -206,7 +206,6 @@ export default function PartnerSection() {
 
         {/* Infinite Slider Track */}
         <motion.div
-          ref={containerRef}
           animate={controls}
           className="flex gap-6 py-4"
         >

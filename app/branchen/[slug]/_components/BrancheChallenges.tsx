@@ -9,7 +9,7 @@ export function BrancheChallenges({ branche }: BrancheChallengesProps) {
   if (!branche.detailedChallenges || branche.detailedChallenges.length === 0) return null
 
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-white">
+    <section id="herausforderungen" className="py-16 md:py-24 lg:py-32 bg-white">
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
         {/* Section Header - Kein Icon, kein Eyebrow, kein Einzeiler rechts */}

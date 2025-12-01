@@ -34,7 +34,7 @@ const schritte = [
 
 export default function ProcessContainer() {
   return (
-    <section className="bg-[#f8f9fa]" aria-labelledby="process-heading">
+    <section id="prozess" className="bg-[#f8f9fa]" aria-labelledby="process-heading">
       <div className="w-full max-w-[1800px] mx-auto">
 
         {/* Two Column Layout: Content Left, Image Right */}

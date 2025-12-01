@@ -1,110 +1,109 @@
 'use client'
 
-import Image from 'next/image'
-import { ArrowRight, Phone, ClipboardCheck, FileText, Users } from 'lucide-react'
+import { Phone, MapPin, FileText, Sparkles, ArrowRight } from 'lucide-react'
 
-const schritte = [
+const processSteps = [
   {
-    nummer: '01',
+    number: '01',
     icon: Phone,
-    titel: 'Kontakt aufnehmen',
-    beschreibung: 'Rufen Sie an oder schreiben Sie uns. Innerhalb von 2 Stunden melden wir uns bei Ihnen zurück.',
+    title: 'Anfrage',
+    description: 'Sie rufen an oder füllen das Formular aus. Wir melden uns innerhalb von 2 Stunden.',
+    time: '5 Minuten',
   },
   {
-    nummer: '02',
-    icon: ClipboardCheck,
-    titel: 'Kostenlose Besichtigung',
-    beschreibung: 'Wir schauen uns Ihre Räume an, verstehen Ihre Anforderungen und erstellen ein maßgeschneidertes Konzept.',
+    number: '02',
+    icon: MapPin,
+    title: 'Besichtigung',
+    description: 'Wir kommen kostenfrei zu Ihnen und schauen uns die Räumlichkeiten an.',
+    time: '1-2 Tage',
   },
   {
-    nummer: '03',
+    number: '03',
     icon: FileText,
-    titel: 'Transparentes Angebot',
-    beschreibung: 'Sie erhalten ein Festpreisangebot ohne versteckte Kosten. Was drinsteht, gilt – garantiert.',
+    title: 'Angebot',
+    description: 'Sie erhalten ein maßgeschneidertes Angebot mit transparenten Festpreisen.',
+    time: '24 Stunden',
   },
   {
-    nummer: '04',
-    icon: Users,
-    titel: 'Ihr festes Team startet',
-    beschreibung: 'Wir stellen Ihnen Ihr Reinigungsteam vor. Ab jetzt kümmern wir uns – Sie lehnen sich zurück.',
+    number: '04',
+    icon: Sparkles,
+    title: 'Start',
+    description: 'Nach Ihrer Zusage starten wir innerhalb weniger Tage mit der Reinigung.',
+    time: '3-5 Tage',
   },
 ]
 
 export default function ProcessSection() {
   return (
-    <section className="bg-[#f8f9fa]">
-      <div className="w-full max-w-[1800px] mx-auto">
+    <section id="prozess" className="py-20 lg:py-28 bg-[#f8f9fa]">
+      <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
-        {/* Two Column Layout */}
-        <div className="grid lg:grid-cols-2">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-[#109387] font-bold text-sm uppercase tracking-wide mb-4 block">
+            Unser Prozess
+          </span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight mb-6">
+            In 4 Schritten zur regelmäßigen Reinigung
+          </h2>
+          <p className="text-lg text-gray-600 font-semibold leading-relaxed">
+            Vom ersten Kontakt bis zur regelmäßigen Unterhaltsreinigung –
+            unkompliziert und transparent.
+          </p>
+        </div>
 
-          {/* Left: Content */}
-          <div className="px-6 lg:px-12 xl:px-20 py-20 lg:py-28 flex flex-col justify-center order-2 lg:order-1">
+        {/* Process Steps */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          {processSteps.map((step, index) => (
+            <div
+              key={index}
+              className="relative bg-white rounded-[6px] p-8 shadow-sm hover:shadow-lg transition-shadow group"
+            >
+              {/* Connector Line (not on last item) */}
+              {index < processSteps.length - 1 && (
+                <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-[#109387]/30" />
+              )}
 
-            {/* Header */}
-            <div className="mb-12">
-              <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-3">
-                So starten wir
+              {/* Number Badge */}
+              <div className="absolute -top-4 left-8 bg-[#109387] text-white text-sm font-bold px-3 py-1 rounded-[6px]">
+                {step.number}
+              </div>
+
+              {/* Icon */}
+              <div className="w-16 h-16 rounded-[6px] bg-[#012956] group-hover:bg-[#109387] flex items-center justify-center mb-6 transition-colors">
+                <step.icon size={32} className="text-white" strokeWidth={1.5} />
+              </div>
+
+              {/* Content */}
+              <h3 className="text-xl font-bold text-[#012956] mb-3">
+                {step.title}
+              </h3>
+              <p className="text-gray-600 font-semibold leading-relaxed mb-4">
+                {step.description}
               </p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-6">
-                In 4 Schritten zu Ihrer Unterhaltsreinigung
-              </h2>
-              <p className="text-lg text-gray-700 font-semibold leading-relaxed">
-                Kein komplizierter Prozess. Keine langen Verträge am Anfang.
-                Erst wenn Sie zufrieden sind, machen wir weiter.
-              </p>
+
+              {/* Time Badge */}
+              <div className="inline-flex items-center bg-[#f8f9fa] rounded-[6px] px-3 py-1.5">
+                <span className="text-xs font-bold text-gray-500 uppercase tracking-wide">
+                  Dauer: {step.time}
+                </span>
+              </div>
             </div>
+          ))}
+        </div>
 
-            {/* 4 Schritte */}
-            <div className="space-y-6 mb-12">
-              {schritte.map((schritt) => {
-                const Icon = schritt.icon
-                return (
-                  <div key={schritt.nummer} className="flex gap-4 items-start">
-                    <div className="flex-shrink-0 w-14 h-14 bg-[#012956] rounded-[6px] flex items-center justify-center relative">
-                      <Icon size={24} className="text-white" strokeWidth={1.5} />
-                      <span className="absolute -top-2 -right-2 w-6 h-6 bg-[#109387] rounded-full text-white text-xs font-bold flex items-center justify-center">
-                        {schritt.nummer}
-                      </span>
-                    </div>
-                    <div className="flex-1 pt-1">
-                      <h3 className="text-lg font-bold text-[#012956] mb-1">{schritt.titel}</h3>
-                      <p className="text-gray-600 font-semibold leading-relaxed">{schritt.beschreibung}</p>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#contact-form"
-                className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
-              >
-                Jetzt Besichtigung anfragen
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </a>
-              <a
-                href="tel:+4987143033460"
-                className="inline-flex items-center justify-center gap-3 border-2 border-[#012956] text-[#012956] font-bold text-lg px-8 py-4 rounded-[6px] hover:bg-[#012956] hover:text-white transition-all"
-              >
-                <Phone size={20} />
-                0871 430 334 60
-              </a>
-            </div>
-          </div>
-
-          {/* Right: Full Height Image */}
-          <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full lg:min-h-[700px] order-1 lg:order-2 overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2532&auto=format&fit=crop"
-              alt="Professionelle Beratung zur Unterhaltsreinigung"
-              fill
-              className="object-cover"
-            />
-          </div>
-
+        {/* Bottom CTA */}
+        <div className="mt-16 text-center">
+          <p className="text-lg text-gray-600 font-semibold mb-6">
+            <strong className="text-[#012956]">Gesamtdauer:</strong> Durchschnittlich 5-7 Werktage vom Erstkontakt bis zur ersten Reinigung.
+          </p>
+          <a
+            href="#kontakt"
+            className="inline-flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-8 py-4 rounded-[6px] transition-colors group"
+          >
+            Jetzt Schritt 1 starten
+            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+          </a>
         </div>
 
       </div>
