@@ -312,7 +312,7 @@ export default function Navigation() {
             </Link>
 
             {/* Desktop Navigation - Premium Design mit visuellen Trennern */}
-            <div className="hidden lg:flex items-center bg-[#f8f9fa] rounded-full px-2 py-1.5 xl:px-3 xl:py-2">
+            <div className="hidden lg:flex items-center bg-[#f8f9fa] rounded-[6px] px-2 py-1.5 xl:px-3 xl:py-2">
               {/* Leistungen Dropdown */}
               <div
                 className="relative"
@@ -320,7 +320,7 @@ export default function Navigation() {
                 onMouseLeave={handleDropdownLeave}
               >
                 <button
-                  className={`flex items-center gap-2 px-5 xl:px-6 py-2.5 xl:py-3 rounded-full text-[14px] xl:text-[15px] font-bold transition-all duration-200 ${
+                  className={`flex items-center gap-2 px-5 xl:px-6 py-2.5 xl:py-3 rounded-[6px] text-[15px] xl:text-[16px] font-bold transition-all duration-200 ${
                     activeDropdown === 'leistungen'
                       ? 'text-white bg-[#109387] shadow-lg'
                       : 'text-[#012956] hover:text-[#109387] hover:bg-white hover:shadow-md'
@@ -328,7 +328,7 @@ export default function Navigation() {
                 >
                   <span>Leistungen</span>
                   <ChevronDown
-                    size={15}
+                    size={16}
                     strokeWidth={2.5}
                     className={`transition-transform duration-200 ${activeDropdown === 'leistungen' ? 'rotate-180' : ''}`}
                   />
@@ -345,7 +345,7 @@ export default function Navigation() {
                 onMouseLeave={handleDropdownLeave}
               >
                 <button
-                  className={`flex items-center gap-2 px-5 xl:px-6 py-2.5 xl:py-3 rounded-full text-[14px] xl:text-[15px] font-bold transition-all duration-200 ${
+                  className={`flex items-center gap-2 px-5 xl:px-6 py-2.5 xl:py-3 rounded-[6px] text-[15px] xl:text-[16px] font-bold transition-all duration-200 ${
                     activeDropdown === 'branchen'
                       ? 'text-white bg-[#109387] shadow-lg'
                       : 'text-[#012956] hover:text-[#109387] hover:bg-white hover:shadow-md'
@@ -353,7 +353,7 @@ export default function Navigation() {
                 >
                   <span>Branchen</span>
                   <ChevronDown
-                    size={15}
+                    size={16}
                     strokeWidth={2.5}
                     className={`transition-transform duration-200 ${activeDropdown === 'branchen' ? 'rotate-180' : ''}`}
                   />
@@ -370,7 +370,7 @@ export default function Navigation() {
                 onMouseLeave={handleDropdownLeave}
               >
                 <button
-                  className={`flex items-center gap-2 px-5 xl:px-6 py-2.5 xl:py-3 rounded-full text-[14px] xl:text-[15px] font-bold transition-all duration-200 ${
+                  className={`flex items-center gap-2 px-5 xl:px-6 py-2.5 xl:py-3 rounded-[6px] text-[15px] xl:text-[16px] font-bold transition-all duration-200 ${
                     activeDropdown === 'ueberfimi'
                       ? 'text-white bg-[#109387] shadow-lg'
                       : 'text-[#012956] hover:text-[#109387] hover:bg-white hover:shadow-md'
@@ -378,7 +378,7 @@ export default function Navigation() {
                 >
                   <span>Über FIMI</span>
                   <ChevronDown
-                    size={15}
+                    size={16}
                     strokeWidth={2.5}
                     className={`transition-transform duration-200 ${activeDropdown === 'ueberfimi' ? 'rotate-180' : ''}`}
                   />
@@ -417,7 +417,7 @@ export default function Navigation() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="px-5 xl:px-6 py-2.5 xl:py-3 rounded-full text-[#012956] hover:text-[#109387] hover:bg-white hover:shadow-md transition-all duration-200 text-[14px] xl:text-[15px] font-bold"
+                  className="px-5 xl:px-6 py-2.5 xl:py-3 rounded-[6px] text-[#012956] hover:text-[#109387] hover:bg-white hover:shadow-md transition-all duration-200 text-[15px] xl:text-[16px] font-bold"
                 >
                   {link.label}
                 </Link>
