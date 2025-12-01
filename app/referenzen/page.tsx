@@ -262,11 +262,6 @@ export default function ReferenzenPage() {
                 </button>
               )}
             </div>
-
-            {/* Results Count */}
-            <div className="md:ml-auto text-gray-600 font-semibold">
-              {filteredReferenzen.length} Projekt{filteredReferenzen.length !== 1 ? 'e' : ''}
-            </div>
           </div>
         </div>
       </section>
