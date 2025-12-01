@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Building2, Bath, Coffee, Footprints, DoorOpen, Sofa, Trash2, Sparkles } from 'lucide-react'
+import { ArrowRight, Sparkles, Building2, Sofa, Coffee, Bath, Footprints, Trash2, DoorOpen } from 'lucide-react'
 
 const reinigungsbereiche = [
   {
@@ -48,10 +48,10 @@ const reinigungsbereiche = [
 ]
 
 const intervalle = [
-  { kuerzel: 'T', name: 'Täglich', beschreibung: 'Für stark frequentierte Bereiche', ideal: 'Praxen, Einzelhandel, Gastronomie' },
-  { kuerzel: '3', name: '3x pro Woche', beschreibung: 'Der goldene Mittelweg', ideal: 'Büros, Agenturen, Kanzleien' },
-  { kuerzel: 'W', name: 'Wöchentlich', beschreibung: 'Für weniger genutzte Räume', ideal: 'Lager, Archiv, Nebenflächen' },
-  { kuerzel: 'N', name: 'Nach Bedarf', beschreibung: 'Flexibel und individuell', ideal: 'Projektbüros, Coworking' },
+  { name: 'Täglich', beschreibung: 'Für stark frequentierte Bereiche', ideal: 'Praxen, Einzelhandel, Gastronomie' },
+  { name: '3x pro Woche', beschreibung: 'Der goldene Mittelweg', ideal: 'Büros, Agenturen, Kanzleien' },
+  { name: 'Wöchentlich', beschreibung: 'Für weniger genutzte Räume', ideal: 'Lager, Archiv, Nebenflächen' },
+  { name: 'Nach Bedarf', beschreibung: 'Flexibel und individuell', ideal: 'Projektbüros, Coworking' },
 ]
 
 export default function LeistungsumfangSection() {
@@ -65,39 +65,103 @@ export default function LeistungsumfangSection() {
             Was wir reinigen
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-6">
-            Diese Bereiche reinigen wir
+            Büroreinigung im Detail
           </h2>
           <p className="text-lg text-gray-700 font-semibold leading-relaxed">
-            Büroreinigung ist mehr als nur Staubwischen. Wir kümmern uns um alle Bereiche,
-            die Ihr Team täglich nutzt – von der Arbeitsfläche bis zur Teeküche.
+            Büroreinigung bedeutet regelmäßige, wiederkehrende Reinigung Ihrer Geschäftsräume.
+            Anders als eine einmalige Grundreinigung sorgen wir kontinuierlich dafür, dass Ihr Unternehmen
+            sauber bleibt – mit einem festen Team, das Ihre Räume kennt und weiß, worauf es ankommt.
           </p>
         </div>
 
-        {/* Reinigungsbereiche Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20 lg:mb-28">
-          {reinigungsbereiche.map((bereich) => {
-            const Icon = bereich.icon
-            return (
-              <div
-                key={bereich.titel}
-                className="group bg-[#f8f9fa] p-6 rounded-[6px] hover:bg-[#012956] transition-all duration-300"
+        {/* Two Column: Image + Text */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20 lg:mb-28">
+          {/* Image */}
+          <div className="relative h-[400px] lg:h-[500px] rounded-[12px] overflow-hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=2574&auto=format&fit=crop"
+              alt="Professionelle Reinigungskraft bei der Büroreinigung"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          {/* Content */}
+          <div>
+            <h3 className="text-2xl lg:text-3xl font-bold text-[#012956] mb-6">
+              Warum regelmäßige Reinigung?
+            </h3>
+            <div className="space-y-4 text-gray-700 font-semibold leading-relaxed">
+              <p>
+                Staub sammelt sich. Fingerabdrücke entstehen. Papierkörbe füllen sich. Das ist normal
+                in jedem Betrieb. Die Frage ist nur: Wer kümmert sich darum?
+              </p>
+              <p>
+                Ihre Mitarbeiter? Die haben besseres zu tun. Sie selbst? Dafür ist Ihre Zeit zu wertvoll.
+                Eine Reinigungsfirma die mal kommt und mal nicht? Das führt zu Frust.
+              </p>
+              <p>
+                <strong className="text-[#012956]">Unsere Büroreinigung funktioniert anders:</strong> Ein festes Team
+                kommt zu festen Zeiten. Sie wissen genau was zu tun ist. Sie kennen Ihre Räume.
+                Und Sie haben einen Ansprechpartner wenn mal etwas nicht passt.
+              </p>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/leistungen/unterhaltsreinigung"
+                className="inline-flex items-center gap-2 text-[#109387] font-bold hover:text-[#012956] transition-colors"
               >
-                <div className="w-12 h-12 bg-[#109387]/10 rounded-[6px] flex items-center justify-center mb-4 group-hover:bg-[#109387]/20 transition-colors">
-                  <Icon size={24} className="text-[#109387]" />
+                Unterhaltsreinigung
+                <ArrowRight size={18} />
+              </Link>
+              <Link
+                href="/leistungen/glasreinigung"
+                className="inline-flex items-center gap-2 text-[#109387] font-bold hover:text-[#012956] transition-colors"
+              >
+                Glasreinigung
+                <ArrowRight size={18} />
+              </Link>
+              <Link
+                href="/leistungen/sonderreinigung"
+                className="inline-flex items-center gap-2 text-[#109387] font-bold hover:text-[#012956] transition-colors"
+              >
+                Sonderreinigung
+                <ArrowRight size={18} />
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Reinigungsbereiche Grid */}
+        <div className="mb-20 lg:mb-28">
+          <h3 className="text-2xl lg:text-3xl font-bold text-[#012956] mb-10">
+            Diese Bereiche reinigen wir
+          </h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {reinigungsbereiche.map((bereich) => {
+              const Icon = bereich.icon
+              return (
+                <div
+                  key={bereich.titel}
+                  className="group bg-[#f8f9fa] p-6 rounded-[6px] hover:bg-[#012956] transition-all duration-300"
+                >
+                  <div className="w-12 h-12 bg-[#109387]/10 rounded-[6px] flex items-center justify-center mb-4 group-hover:bg-[#109387]/20 transition-colors">
+                    <Icon size={24} className="text-[#109387]" />
+                  </div>
+                  <h4 className="text-lg font-bold text-[#012956] group-hover:text-white mb-2 transition-colors">
+                    {bereich.titel}
+                  </h4>
+                  <p className="text-gray-600 font-semibold text-sm leading-relaxed group-hover:text-white/80 transition-colors">
+                    {bereich.beschreibung}
+                  </p>
                 </div>
-                <h4 className="text-lg font-bold text-[#012956] group-hover:text-white mb-2 transition-colors">
-                  {bereich.titel}
-                </h4>
-                <p className="text-gray-600 font-semibold text-sm leading-relaxed group-hover:text-white/80 transition-colors">
-                  {bereich.beschreibung}
-                </p>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
 
         {/* Intervalle Section */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Content */}
           <div>
             <h3 className="text-2xl lg:text-3xl font-bold text-[#012956] mb-6">
@@ -115,7 +179,7 @@ export default function LeistungsumfangSection() {
                 >
                   <div className="w-10 h-10 bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0">
                     <span className="text-white font-bold text-sm">
-                      {intervall.kuerzel}
+                      {intervall.name.charAt(0)}
                     </span>
                   </div>
                   <div>
@@ -132,33 +196,12 @@ export default function LeistungsumfangSection() {
           <div className="relative h-[400px] lg:h-[500px] rounded-[12px] overflow-hidden">
             <Image
               src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2670&auto=format&fit=crop"
-              alt="Besprechung Reinigungsplan - Team bei der Arbeit"
+              alt="Besprechung Reinigungsplan – Team bei der Arbeit"
               fill
               className="object-cover"
             />
           </div>
         </div>
-
-        {/* Spezielles CTA Block - Ganz klickbar */}
-        <Link
-          href="/leistungen"
-          className="block bg-[#012956] rounded-[6px] p-8 lg:p-12 hover:bg-[#01203d] transition-colors group"
-        >
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-            <div>
-              <h3 className="text-xl lg:text-2xl font-bold text-white mb-2">
-                Sie brauchen etwas Spezielles?
-              </h3>
-              <p className="text-white/70 font-semibold">
-                Grundreinigung, Baureinigung, Sonderreinigung – wir haben für jeden Bedarf die passende Lösung.
-              </p>
-            </div>
-            <div className="inline-flex items-center justify-center gap-2 bg-[#109387] group-hover:bg-[#0d7d72] text-white font-bold px-6 py-3 rounded-[6px] transition-colors whitespace-nowrap">
-              Alle 18 Leistungen ansehen
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-            </div>
-          </div>
-        </Link>
 
       </div>
     </section>
