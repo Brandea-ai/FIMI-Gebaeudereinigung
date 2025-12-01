@@ -190,7 +190,7 @@ export default function KundenLogosSlider({
   useEffect(() => {
     if (!isPaused) {
       controls.start({
-        x: -totalWidth,
+        x: 0,
         transition: {
           duration: 70,
           repeat: Infinity,
@@ -241,6 +241,7 @@ export default function KundenLogosSlider({
         />
 
         <motion.div
+          initial={{ x: -totalWidth }}
           animate={controls}
           className="flex gap-4 sm:gap-6 py-4"
         >
