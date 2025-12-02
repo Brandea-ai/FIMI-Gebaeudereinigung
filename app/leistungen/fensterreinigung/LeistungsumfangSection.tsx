@@ -55,6 +55,10 @@ const techniken = [
     beschreibung: 'Für Großobjekte und schwer zugängliche Stellen – sicher und effizient',
   },
   {
+    name: 'Drohnen-Reinigung',
+    beschreibung: 'Für unerreichbare Stellen – Glasdächer, Kuppeln und extreme Höhen',
+  },
+  {
     name: 'Traditionelle Technik',
     beschreibung: 'Einwascher und Abzieher für normale Fenster – bewährt und schnell',
   },
@@ -128,7 +132,7 @@ export default function LeistungsumfangSection() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6">
             {techniken.map((technik, index) => (
               <div
                 key={index}

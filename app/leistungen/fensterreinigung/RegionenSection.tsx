@@ -113,16 +113,18 @@ export default function RegionenSection() {
         <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
 
           {/* Karte */}
-          <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] rounded-[6px] overflow-hidden">
+          <div className="relative rounded-[6px] overflow-hidden">
             <Image
               src="/images/home/staedte-fimi.avif"
               alt="FIMI Gebäudereinigung - Fensterreinigung Einzugsgebiet Bayern"
-              fill
-              className="object-cover"
+              width={1200}
+              height={900}
+              className="w-full h-auto"
             />
-            <div className="absolute bottom-4 left-4 right-4 bg-[#012956]/90 backdrop-blur-sm rounded-[6px] p-4">
+            {/* Badge direkt am unteren Bildrand */}
+            <div className="absolute bottom-0 left-0 right-0 bg-[#012956] px-4 sm:px-6 py-3 sm:py-4">
               <div className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-[#109387]" />
+                <MapPin className="w-5 h-5 text-[#109387] flex-shrink-0" />
                 <div>
                   <p className="text-white font-bold text-sm sm:text-base">Hauptsitz: Landshut</p>
                   <p className="text-white/60 text-xs sm:text-sm">Kellerstr. 39, 84036 Landshut</p>

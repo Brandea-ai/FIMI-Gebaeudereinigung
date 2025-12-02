@@ -56,13 +56,8 @@ export default function ProcessSection() {
           {schritte.map((schritt, index) => (
             <div
               key={index}
-              className="relative group"
+              className="group"
             >
-              {/* Verbindungslinie - nur zwischen Steps, nicht nach dem letzten */}
-              {index < schritte.length - 1 && (
-                <div className="hidden lg:block absolute top-14 left-[calc(50%+40px)] w-[calc(100%-40px)] h-0.5 bg-[#109387]/20" />
-              )}
-
               <div className="bg-[#f8f9fa] rounded-[6px] p-5 sm:p-6 lg:p-8 h-full hover:shadow-lg transition-shadow">
                 {/* Nummer + Icon */}
                 <div className="flex items-start justify-between mb-4 sm:mb-6">

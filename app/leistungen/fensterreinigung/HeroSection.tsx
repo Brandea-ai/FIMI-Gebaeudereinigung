@@ -64,9 +64,10 @@ export default function HeroSection() {
 
             {/* Description */}
             <p className="text-sm sm:text-base lg:text-xl text-white/80 font-semibold leading-relaxed mb-6 sm:mb-8 lg:mb-10 max-w-3xl">
-              Saubere Fenster sind die Visitenkarte Ihres Unternehmens. Unsere professionelle
-              Fensterreinigung sorgt für streifenfreie Glasflächen – von der Büroscheibe bis
-              zur Glasfassade. Ein festes Team, das weiß, worauf es ankommt.
+              Verschmutzte Fenster fallen auf – saubere nicht. Genau so soll es sein.
+              Wir reinigen Ihre Glasflächen professionell, ob Bürofenster, Schaufenster oder
+              Glasfassade in 30 Metern Höhe. Mit Osmose-Technik, Teleskopstangen und sogar Drohnen
+              erreichen wir jede Stelle.
             </p>
 
             {/* Trust Points - 3 Säulen */}
