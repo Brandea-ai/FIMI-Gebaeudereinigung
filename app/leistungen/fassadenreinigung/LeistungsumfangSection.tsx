@@ -114,7 +114,7 @@ export default function LeistungsumfangSection() {
                 <Link
                   key={index}
                   href={link.href}
-                  className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-4 py-2.5 rounded-[6px] transition-colors group"
+                  className="flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-semibold px-4 py-2.5 rounded-[6px] transition-colors group"
                 >
                   {link.name}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

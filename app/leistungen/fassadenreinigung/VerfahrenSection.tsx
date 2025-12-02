@@ -124,21 +124,27 @@ export default function VerfahrenSection() {
 
               {/* Text */}
               <div className="p-5 sm:p-6 lg:p-8">
-                <p className="text-gray-700 font-semibold leading-relaxed mb-6 text-sm sm:text-base">
-                  {activeVerfahren.beschreibung}
-                </p>
+                {/* Premium formatted description */}
+                <div className="mb-6 sm:mb-8">
+                  <p className="text-gray-700 font-semibold leading-relaxed text-sm sm:text-base lg:text-lg">
+                    {activeVerfahren.beschreibung}
+                  </p>
+                </div>
 
-                {/* Geeignet für */}
-                <h4 className="text-sm font-bold text-gray-500 uppercase tracking-wide mb-3">
-                  Geeignet für:
-                </h4>
-                <div className="grid grid-cols-2 gap-2">
-                  {activeVerfahren.geeignet.map((item, index) => (
-                    <div key={index} className="flex items-center gap-2">
-                      <Check className="w-4 h-4 text-[#109387] flex-shrink-0" strokeWidth={2.5} />
-                      <span className="text-gray-700 font-semibold text-sm">{item}</span>
-                    </div>
-                  ))}
+                {/* Geeignet für - Premium Card Style */}
+                <div className="bg-white rounded-[6px] p-4 sm:p-5 lg:p-6 border border-gray-100">
+                  <h4 className="text-xs sm:text-sm font-bold text-[#109387] uppercase tracking-wide mb-4 flex items-center gap-2">
+                    <Check className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={2.5} />
+                    Geeignet für
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                    {activeVerfahren.geeignet.map((item, index) => (
+                      <div key={index} className="flex items-center gap-2 sm:gap-3 bg-[#f8f9fa] rounded-[6px] px-3 py-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#109387] flex-shrink-0" />
+                        <span className="text-gray-700 font-semibold text-xs sm:text-sm">{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

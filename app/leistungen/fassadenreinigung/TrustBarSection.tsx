@@ -11,9 +11,9 @@ const stats = [
   },
   {
     icon: Building2,
-    value: '500+',
-    label: 'Fassaden gereinigt',
-    sublabel: 'Seit Gründung',
+    value: '€10 Mio.',
+    label: 'Haftpflicht',
+    sublabel: 'Vollversichert',
   },
   {
     icon: Shield,

@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { ChevronDown, HelpCircle } from 'lucide-react'
+import Image from 'next/image'
+import { ChevronDown, ArrowRight } from 'lucide-react'
 
 const faqs = [
   {
@@ -51,37 +52,49 @@ export default function FAQSection() {
 
         <div className="grid lg:grid-cols-[350px_1fr] xl:grid-cols-[400px_1fr] gap-8 lg:gap-16 xl:gap-20">
 
-          {/* Sticky Sidebar */}
+          {/* Sticky Sidebar - wie Startseite */}
           <aside className="lg:sticky lg:top-24 lg:self-start">
-            <span className="text-[#109387] font-bold text-xs sm:text-sm uppercase tracking-wide mb-3 sm:mb-4 block">
+            <span className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3 block">
               Häufige Fragen
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight mb-4 sm:mb-6">
-              FAQ zur Fensterreinigung
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-tight mb-4 sm:mb-6">
+              Haben Sie noch Fragen?
             </h2>
-            <p className="text-base sm:text-lg text-gray-600 font-semibold leading-relaxed mb-6 sm:mb-8">
-              Die wichtigsten Fragen unserer Kunden – ehrlich und direkt beantwortet.
+            <p className="text-base sm:text-lg text-gray-700 font-semibold leading-relaxed mb-6 sm:mb-8">
+              Hier finden Sie Antworten auf die häufigsten Fragen zur Fensterreinigung.
+              Falls Ihre Frage nicht dabei ist, kontaktieren Sie uns einfach direkt.
             </p>
 
-            {/* Help Box - versteckt auf mobile */}
-            <div className="bg-[#012956] rounded-[6px] p-4 sm:p-6 hidden lg:block">
-              <div className="flex items-start gap-3 sm:gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-[6px] bg-[#109387]/20 flex items-center justify-center flex-shrink-0">
-                  <HelpCircle className="w-5 h-5 sm:w-6 sm:h-6 text-[#109387]" />
-                </div>
-                <div>
-                  <h4 className="text-white font-bold mb-2 text-sm sm:text-base">Noch Fragen?</h4>
-                  <p className="text-white/70 font-semibold text-xs sm:text-sm mb-3 sm:mb-4">
-                    Wir beraten Sie gerne persönlich.
-                  </p>
-                  <a
-                    href="tel:+4987143033460"
-                    className="text-[#109387] font-bold hover:underline text-sm sm:text-base"
-                  >
-                    0871 430 334 60
-                  </a>
-                </div>
-              </div>
+            {/* CTA Button */}
+            <a
+              href="#kontakt"
+              className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-[6px] transition-all duration-300 group w-full"
+            >
+              Kostenfreie Besichtigung
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+
+            {/* Kontakt-Info */}
+            <div className="mt-6 sm:mt-8 bg-white rounded-[6px] p-4 sm:p-6">
+              <p className="text-sm text-gray-500 font-semibold mb-2">
+                Lieber persönlich sprechen?
+              </p>
+              <a
+                href="tel:+4987143033460"
+                className="text-lg sm:text-xl font-bold text-[#012956] hover:text-[#109387] transition-colors"
+              >
+                0871 430 334 60
+              </a>
+            </div>
+
+            {/* Bild - nur Desktop */}
+            <div className="relative mt-6 sm:mt-8 h-48 lg:h-64 rounded-[6px] overflow-hidden hidden lg:block">
+              <Image
+                src="https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?q=80&w=800&auto=format&fit=crop"
+                alt="Kundenservice FIMI Gebäudereinigung"
+                fill
+                className="object-cover"
+              />
             </div>
           </aside>
 
