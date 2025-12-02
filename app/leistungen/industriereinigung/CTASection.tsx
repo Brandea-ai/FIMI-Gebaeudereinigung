@@ -1,16 +1,14 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, Phone, CheckCircle, Factory, Cog, Building2, Warehouse, Zap, Pill } from 'lucide-react'
+import { ArrowRight, Phone, CheckCircle, Building2, Sparkles, Wrench, Square } from 'lucide-react'
 
-// 6 relevante Branchen für Industriereinigung (nur echte Branchen)
-const branchen = [
-  { slug: 'industrie-produktion', name: 'Industrie & Produktion', icon: Factory },
-  { slug: 'automotive', name: 'Automotive', icon: Cog },
-  { slug: 'logistik-lager', name: 'Logistik & Lager', icon: Warehouse },
-  { slug: 'gesundheitswesen', name: 'Gesundheitswesen', icon: Building2 },
-  { slug: 'gastronomie-hotel', name: 'Gastronomie & Hotel', icon: Building2 },
-  { slug: 'oeffentliche-einrichtungen', name: 'Öffentliche Einrichtungen', icon: Building2 },
+// 4 verwandte Leistungen für Industriereinigung
+const verwandteLeistungen = [
+  { slug: 'bueroreinigung', name: 'Büroreinigung', icon: Building2 },
+  { slug: 'unterhaltsreinigung', name: 'Unterhaltsreinigung', icon: Sparkles },
+  { slug: 'fassadenreinigung', name: 'Fassadenreinigung', icon: Wrench },
+  { slug: 'fensterreinigung', name: 'Fensterreinigung', icon: Square },
 ]
 
 export default function CTASection() {
@@ -20,43 +18,43 @@ export default function CTASection() {
 
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16">
 
-          {/* LINKS: Branchen hochwertig mit Outlined Icons */}
+          {/* LINKS: Verwandte Leistungen */}
           <div>
             <span className="text-[#109387] font-bold text-xs sm:text-sm uppercase tracking-wide mb-3 sm:mb-4 block">
-              Branchenkompetenz
+              Passende Leistungen
             </span>
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4 sm:mb-6">
-              Industriereinigung für Ihre Branche
+              Das könnte Sie auch interessieren
             </h3>
 
-            {/* Branchen als hochwertiges 2x3 Grid - Outlined Style wie Gesundheitswesen */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 lg:gap-4 mb-6 sm:mb-8">
-              {branchen.map((branche) => {
-                const Icon = branche.icon
+            {/* Leistungen Grid - 2x2 */}
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
+              {verwandteLeistungen.map((leistung) => {
+                const Icon = leistung.icon
                 return (
                   <Link
-                    key={branche.slug}
-                    href={`/branchen/${branche.slug}`}
-                    className="group flex items-center gap-2 sm:gap-3 bg-transparent hover:bg-white/10 border-2 border-white/20 hover:border-[#109387] rounded-[6px] p-2.5 sm:p-3 lg:p-4 transition-all duration-300"
+                    key={leistung.slug}
+                    href={`/leistungen/${leistung.slug}`}
+                    className="group flex items-center gap-2 sm:gap-3 bg-transparent hover:bg-white/10 border-2 border-white/20 hover:border-[#109387] rounded-[6px] p-3 sm:p-4 transition-all duration-300"
                   >
-                    {/* Icon - Outlined Style */}
-                    <div className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 border-2 border-[#109387] group-hover:bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0 transition-all duration-300">
-                      <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
+                    {/* Icon */}
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 border-2 border-[#109387] group-hover:bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0 transition-all duration-300">
+                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
                     </div>
-                    <span className="text-white font-semibold text-[10px] sm:text-xs lg:text-sm group-hover:text-[#109387] transition-colors leading-tight">
-                      {branche.name}
+                    <span className="text-white font-semibold text-xs sm:text-sm group-hover:text-[#109387] transition-colors leading-tight">
+                      {leistung.name}
                     </span>
                   </Link>
                 )
               })}
             </div>
 
-            {/* Alle Branchen CTA */}
+            {/* Alle Leistungen CTA */}
             <Link
-              href="/branchen"
+              href="/leistungen"
               className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/10 text-white font-bold px-4 sm:px-6 py-2.5 sm:py-3 rounded-[6px] transition-all group text-sm sm:text-base"
             >
-              Alle 12 Branchen entdecken
+              Alle 18 Leistungen entdecken
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
