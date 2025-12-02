@@ -2,10 +2,7 @@ import { Metadata } from 'next'
 import HeroSection from './HeroSection'
 import TrustBarSection from './TrustBarSection'
 import ProblemLoesungSection from './ProblemLoesungSection'
-import ImageShowcaseSection from './ImageShowcaseSection'
 import LeistungsumfangSection from './LeistungsumfangSection'
-import DrohnenSection from './DrohnenSection'
-import EinsatzgebieteSection from './EinsatzgebieteSection'
 import ProcessSection from './ProcessSection'
 import KundenLogosOnly from '@/components/KundenLogosOnly'
 import PartnerLogosSlider from '@/components/PartnerLogosSlider'
@@ -20,7 +17,6 @@ const floatingNavItems = [
   { id: 'hero', label: 'Übersicht' },
   { id: 'probleme', label: 'Herausforderungen' },
   { id: 'leistungen', label: 'Leistungen' },
-  { id: 'einsatzgebiete', label: 'Branchen' },
   { id: 'prozess', label: 'Ablauf' },
   { id: 'regionen', label: 'Standorte' },
   { id: 'faq', label: 'FAQ' },
@@ -193,10 +189,7 @@ export default function FensterreinigungPage() {
         <TrustBarSection />
         <KundenLogosOnly />
         <ProblemLoesungSection />
-        <ImageShowcaseSection />
         <LeistungsumfangSection />
-        <DrohnenSection />
-        <EinsatzgebieteSection />
         <ProcessSection />
         <RegionenSection />
         <PartnerLogosSlider
