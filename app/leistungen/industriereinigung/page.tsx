@@ -3,16 +3,13 @@ import HeroSection from './HeroSection'
 import TrustBarSection from './TrustBarSection'
 import ProblemLoesungSection from './ProblemLoesungSection'
 import LeistungsumfangSection from './LeistungsumfangSection'
-import BranchenSection from './BranchenSection'
-import VerfahrenSection from './VerfahrenSection'
 import ProcessSection from './ProcessSection'
+import KundenLogosOnly from '@/components/KundenLogosOnly'
+import PartnerLogosSlider from '@/components/PartnerLogosSlider'
 import RegionenSection from './RegionenSection'
-import ReferenzenSection from './ReferenzenSection'
 import FAQSection from './FAQSection'
 import BlogPreviewSection from './BlogPreviewSection'
 import CTASection from './CTASection'
-import KundenLogosOnly from '@/components/KundenLogosOnly'
-import PartnerLogosSlider from '@/components/PartnerLogosSlider'
 import FloatingNav from '@/components/FloatingNav'
 
 // Navigation items for FloatingNav
@@ -20,8 +17,6 @@ const floatingNavItems = [
   { id: 'hero', label: 'Übersicht' },
   { id: 'probleme', label: 'Herausforderungen' },
   { id: 'leistungen', label: 'Leistungen' },
-  { id: 'branchen', label: 'Branchen' },
-  { id: 'verfahren', label: 'Verfahren' },
   { id: 'prozess', label: 'Ablauf' },
   { id: 'regionen', label: 'Standorte' },
   { id: 'faq', label: 'FAQ' },
@@ -43,8 +38,6 @@ export const metadata: Metadata = {
     'Fabrikreinigung',
     'Industriereinigung Kosten',
     'Hallenreinigung Preise',
-    'Trockeneisreinigung Industrie',
-    'Industriereinigung Automotive',
     'Produktionsreinigung Bayern',
     'gewerbliche Industriereinigung',
   ].join(', '),
@@ -98,13 +91,6 @@ const serviceSchema = {
       addressRegion: 'Bayern',
       addressCountry: 'DE',
     },
-    priceRange: '€€',
-    openingHoursSpecification: {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '07:00',
-      closes: '18:00',
-    },
   },
   areaServed: [
     { '@type': 'City', name: 'Landshut' },
@@ -115,47 +101,8 @@ const serviceSchema = {
     { '@type': 'City', name: 'Straubing' },
     { '@type': 'City', name: 'Passau' },
     { '@type': 'City', name: 'Freising' },
-    { '@type': 'City', name: 'Erding' },
   ],
   serviceType: 'Industriereinigung',
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Industriereinigung Leistungen',
-    itemListElement: [
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Hallenreinigung',
-          description: 'Professionelle Reinigung von Produktions- und Lagerhallen',
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Maschinenreinigung',
-          description: 'Fachgerechte Reinigung von Produktionsmaschinen und Anlagen',
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Trockeneisreinigung',
-          description: 'Schonende Reinigung mit CO2-Pellets ohne Rückstände',
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Entölung und Entfettung',
-          description: 'Professionelle Entfernung von Ölen und Fetten',
-        },
-      },
-    ],
-  },
 }
 
 // Schema.org FAQ
@@ -187,52 +134,6 @@ const faqSchema = {
         text: 'Bei Notfällen garantieren wir eine Reaktionszeit von 2 Stunden im Raum Landshut und 4 Stunden in ganz Bayern. Für geplante Einsätze benötigen wir normalerweise 2-5 Werktage Vorlauf.',
       },
     },
-    {
-      '@type': 'Question',
-      name: 'Welche Zertifikate und Standards haben Sie?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Wir arbeiten nach den Standards ISO 9001 (Qualitätsmanagement) und ISO 14001 (Umweltmanagement). Unser Personal ist geschult in Arbeitssicherheit, Gefahrstoffen und branchenspezifischen Anforderungen wie HACCP.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Wie lange dauert eine Hallenreinigung?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Eine normale Unterhaltsreinigung einer 2.000 m² Halle dauert etwa 4-6 Stunden. Mit unseren Aufsitz-Scheuersaugmaschinen reinigen wir bis zu 5.000 m² pro Stunde.',
-      },
-    },
-  ],
-}
-
-// Schema.org HowTo (Prozess)
-const howToSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'HowTo',
-  name: 'So funktioniert Industriereinigung bei FIMI',
-  description: 'In 4 Schritten zur professionellen Industriereinigung',
-  step: [
-    {
-      '@type': 'HowToStep',
-      name: 'Anfrage & Erstgespräch',
-      text: 'Kontaktieren Sie uns per Telefon oder Formular. Wir besprechen Ihre Situation und terminieren eine Besichtigung.',
-    },
-    {
-      '@type': 'HowToStep',
-      name: 'Besichtigung & Angebot',
-      text: 'Wir besichtigen Ihre Räumlichkeiten vor Ort und erstellen ein transparentes Festpreisangebot.',
-    },
-    {
-      '@type': 'HowToStep',
-      name: 'Planung & Vorbereitung',
-      text: 'Wir planen den Einsatz und stimmen den Zeitpunkt mit Ihrer Produktion ab.',
-    },
-    {
-      '@type': 'HowToStep',
-      name: 'Durchführung & Abnahme',
-      text: 'Unser Team führt die Reinigung durch und Sie nehmen das Ergebnis ab.',
-    },
   ],
 }
 
@@ -248,59 +149,23 @@ export default function IndustriereinigungPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
-      />
 
       <main className="min-h-screen bg-white">
-        {/* Floating Navigation */}
         <FloatingNav items={floatingNavItems} />
-
-        {/* Hero */}
         <HeroSection />
-
-        {/* Trust Stats */}
         <TrustBarSection />
-
-        {/* Kundenlogos - Social Proof */}
         <KundenLogosOnly />
-
-        {/* Problem → Lösung */}
         <ProblemLoesungSection />
-
-        {/* Leistungsumfang */}
         <LeistungsumfangSection />
-
-        {/* Branchen-Spezialisierung */}
-        <BranchenSection />
-
-        {/* Reinigungsverfahren */}
-        <VerfahrenSection />
-
-        {/* Prozess / Ablauf */}
         <ProcessSection />
-
-        {/* Regionen Bayern */}
         <RegionenSection />
-
-        {/* Partner/Equipment Logos */}
         <PartnerLogosSlider
           showHeader={true}
           showStats={false}
-          bgColor="#ffffff"
+          bgColor="#f8f9fa"
         />
-
-        {/* Referenzen */}
-        <ReferenzenSection />
-
-        {/* FAQ */}
         <FAQSection />
-
-        {/* Blog Preview */}
         <BlogPreviewSection />
-
-        {/* CTA */}
         <CTASection />
       </main>
     </>

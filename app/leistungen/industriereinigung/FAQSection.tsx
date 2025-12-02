@@ -18,8 +18,8 @@ const faqs = [
     antwort: 'Bei Notfällen – zum Beispiel Ölaustritten oder kurzfristigen Audits – garantieren wir eine Reaktionszeit von 2 Stunden im Raum Landshut und 4 Stunden in ganz Bayern. Für geplante Einsätze benötigen wir normalerweise 2-5 Werktage Vorlauf, je nach Umfang. Rufen Sie uns einfach an, und wir finden eine Lösung.',
   },
   {
-    frage: 'Welche Zertifikate und Standards haben Sie?',
-    antwort: 'Wir arbeiten nach den Standards ISO 9001 (Qualitätsmanagement) und ISO 14001 (Umweltmanagement). Unser Personal ist regelmäßig geschult in Arbeitssicherheit, Gefahrstoffen und branchenspezifischen Anforderungen wie HACCP für Lebensmittelbetriebe. Auf Wunsch dokumentieren wir alle Reinigungsarbeiten mit Protokollen und Fotos für Ihr QM-System.',
+    frage: 'Nach welchen Standards arbeiten Sie?',
+    antwort: 'Wir arbeiten nach den Qualitätsstandards von ISO 9001 und ISO 14001 – ohne selbst zertifiziert zu sein. Das bedeutet: dokumentierte Prozesse, regelmäßige Qualitätskontrollen und umweltbewusstes Arbeiten. Unser Personal ist geschult in Arbeitssicherheit, Gefahrstoffen und branchenspezifischen Anforderungen wie HACCP für Lebensmittelbetriebe. Auf Wunsch dokumentieren wir alle Reinigungsarbeiten mit Protokollen und Fotos für Ihr QM-System.',
   },
   {
     frage: 'Was ist in der Industriereinigung enthalten?',
