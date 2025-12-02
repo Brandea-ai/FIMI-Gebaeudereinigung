@@ -113,16 +113,18 @@ export default function RegionenSection() {
         <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
 
           {/* Karte */}
-          <div className="relative rounded-[6px] overflow-hidden">
-            <Image
-              src="/images/home/staedte-fimi.avif"
-              alt="FIMI Gebäudereinigung - Fensterreinigung Einzugsgebiet Bayern"
-              width={1200}
-              height={900}
-              className="w-full h-auto"
-            />
-            {/* Badge direkt am unteren Bildrand */}
-            <div className="absolute bottom-0 left-0 right-0 bg-[#012956] px-4 sm:px-6 py-3 sm:py-4">
+          <div className="relative">
+            <div className="rounded-[6px] overflow-hidden">
+              <Image
+                src="/images/home/staedte-fimi.avif"
+                alt="FIMI Gebäudereinigung - Fensterreinigung Einzugsgebiet Bayern"
+                width={1200}
+                height={900}
+                className="w-full h-auto block"
+              />
+            </div>
+            {/* Badge direkt unter dem Bild */}
+            <div className="bg-[#012956] px-4 sm:px-6 py-3 sm:py-4 rounded-b-[6px] -mt-[6px]">
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-[#109387] flex-shrink-0" />
                 <div>
