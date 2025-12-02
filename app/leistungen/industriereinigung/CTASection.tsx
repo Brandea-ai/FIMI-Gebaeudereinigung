@@ -3,14 +3,14 @@
 import Link from 'next/link'
 import { ArrowRight, Phone, CheckCircle, Factory, Cog, Building2, Warehouse, Zap, Pill } from 'lucide-react'
 
-// 6 relevante Branchen für Industriereinigung
+// 6 relevante Branchen für Industriereinigung (nur echte Branchen)
 const branchen = [
   { slug: 'industrie-produktion', name: 'Industrie & Produktion', icon: Factory },
   { slug: 'automotive', name: 'Automotive', icon: Cog },
   { slug: 'logistik-lager', name: 'Logistik & Lager', icon: Warehouse },
-  { slug: 'lebensmittel', name: 'Lebensmittel', icon: Building2 },
-  { slug: 'pharma-chemie', name: 'Pharma & Chemie', icon: Pill },
-  { slug: 'elektronik', name: 'Elektronik', icon: Zap },
+  { slug: 'gesundheitswesen', name: 'Gesundheitswesen', icon: Building2 },
+  { slug: 'gastronomie-hotel', name: 'Gastronomie & Hotel', icon: Building2 },
+  { slug: 'oeffentliche-einrichtungen', name: 'Öffentliche Einrichtungen', icon: Building2 },
 ]
 
 export default function CTASection() {

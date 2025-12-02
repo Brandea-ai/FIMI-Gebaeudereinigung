@@ -70,21 +70,25 @@ export default function FAQSection() {
                 unserer Industriereinigung. Ihre Frage nicht dabei?
               </p>
 
-              {/* Contact Hint */}
-              <div className="bg-[#f8f9fa] rounded-[6px] p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <HelpCircle size={24} className="text-[#109387]" />
-                  <span className="text-[#012956] font-bold">Weitere Fragen?</span>
+              {/* Contact Hint - Dark Style wie Büroreinigung */}
+              <div className="bg-[#012956] rounded-[6px] p-4 sm:p-6">
+                <div className="flex items-start gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-[6px] bg-[#109387]/20 flex items-center justify-center flex-shrink-0">
+                    <HelpCircle className="w-5 h-5 sm:w-6 sm:h-6 text-[#109387]" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold mb-2 text-sm sm:text-base">Noch Fragen?</h4>
+                    <p className="text-white/70 font-semibold text-xs sm:text-sm mb-3 sm:mb-4">
+                      Wir beraten Sie gerne persönlich.
+                    </p>
+                    <a
+                      href="tel:+4987143033460"
+                      className="text-[#109387] font-bold hover:underline text-sm sm:text-base"
+                    >
+                      0871 430 334 60
+                    </a>
+                  </div>
                 </div>
-                <p className="text-gray-700 font-semibold text-sm mb-4">
-                  Rufen Sie uns an oder schreiben Sie uns. Wir beraten Sie gerne persönlich.
-                </p>
-                <a
-                  href="tel:+4987143033460"
-                  className="inline-flex items-center gap-2 text-[#109387] font-bold hover:text-[#012956] transition-colors"
-                >
-                  0871 430 334 60
-                </a>
               </div>
             </aside>
           </FadeIn>
