@@ -97,19 +97,21 @@ export default function ProcessSection() {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-10 sm:mt-12 lg:mt-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 bg-white rounded-[6px] p-5 sm:p-6 lg:p-8">
-          <p className="text-sm sm:text-base lg:text-lg text-gray-600 font-semibold">
-            <strong className="text-[#012956]">Gesamtdauer:</strong> Durchschnittlich 5-7 Werktage vom Erstkontakt bis zur sauberen Fassade.
-          </p>
-          <a
-            href="#kontakt"
-            className="inline-flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-[6px] transition-colors group text-sm sm:text-base whitespace-nowrap flex-shrink-0"
-          >
-            Jetzt Schritt 1 starten
-            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
-        </div>
+        {/* Bottom CTA - Vollständig klickbar */}
+        <a
+          href="#kontakt"
+          className="block mt-10 sm:mt-12 lg:mt-16 bg-white hover:bg-[#012956] rounded-[6px] p-5 sm:p-6 lg:p-8 transition-all duration-300 group"
+        >
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
+            <p className="text-sm sm:text-base lg:text-lg text-gray-600 group-hover:text-white/80 font-semibold transition-colors">
+              <strong className="text-[#012956] group-hover:text-white transition-colors">Gesamtdauer:</strong> Durchschnittlich 5-7 Werktage vom Erstkontakt bis zur sauberen Fassade.
+            </p>
+            <div className="inline-flex items-center justify-center gap-2 bg-[#109387] group-hover:bg-white text-white group-hover:text-[#012956] font-bold px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-[6px] transition-colors whitespace-nowrap flex-shrink-0 text-sm sm:text-base">
+              Jetzt Schritt 1 starten
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+            </div>
+          </div>
+        </a>
 
       </div>
     </section>
