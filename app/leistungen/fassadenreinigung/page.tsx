@@ -1,17 +1,261 @@
 import { Metadata } from 'next'
+import HeroSection from './HeroSection'
+import TrustBarSection from './TrustBarSection'
+import ProblemLoesungSection from './ProblemLoesungSection'
+import VorherNachherSection from './VorherNachherSection'
+import LeistungsumfangSection from './LeistungsumfangSection'
+import VerfahrenSection from './VerfahrenSection'
+import RegionenSection from './RegionenSection'
+import BranchenSection from './BranchenSection'
+import ProcessSection from './ProcessSection'
+import KostenSection from './KostenSection'
+import FAQSection from './FAQSection'
+import BlogPreviewSection from './BlogPreviewSection'
+import CTASection from './CTASection'
+import KundenLogosOnly from '@/components/KundenLogosOnly'
+import PartnerLogosSlider from '@/components/PartnerLogosSlider'
+import FloatingNav from '@/components/FloatingNav'
+
+// Navigation items for FloatingNav
+const floatingNavItems = [
+  { id: 'hero', label: 'Start' },
+  { id: 'probleme', label: 'Probleme' },
+  { id: 'vorher-nachher', label: 'Ergebnisse' },
+  { id: 'leistungen', label: 'Leistungen' },
+  { id: 'verfahren', label: 'Verfahren' },
+  { id: 'regionen', label: 'Standorte' },
+  { id: 'kosten', label: 'Kosten' },
+  { id: 'faq', label: 'FAQ' },
+  { id: 'kontakt', label: 'Kontakt' },
+]
 
 export const metadata: Metadata = {
-  title: 'Fassadenreinigung Bayern | FIMI Gebäudereinigung',
-  description: 'Professionelle Fassadenreinigung in Bayern. Seite wird bald aktualisiert.',
+  title: 'Fassadenreinigung Bayern | Algen & Moos entfernen | FIMI',
+  description: 'Professionelle Fassadenreinigung in Landshut, München, Regensburg. Algen, Moos, Grünbelag schonend entfernen. Ab 10€/m². 5-10 Jahre Schutz. Kostenfreie Besichtigung.',
+  keywords: [
+    'Fassadenreinigung Bayern',
+    'Fassadenreinigung Landshut',
+    'Fassadenreinigung München',
+    'Fassadenreinigung Regensburg',
+    'Algen Fassade entfernen',
+    'Moos Hauswand entfernen',
+    'WDVS reinigen',
+    'Dämmfassade reinigen',
+    'Fassadenreinigung Kosten',
+    'Fassadenreinigung Mehrfamilienhaus',
+    'Grünbelag Fassade entfernen',
+    'Fassadenreinigung Gewerbe',
+    'professionelle Fassadenreinigung',
+    'Hausfassade reinigen lassen',
+  ].join(', '),
+  openGraph: {
+    title: 'Fassadenreinigung Bayern | FIMI Gebäudereinigung',
+    description: 'Vergrünte Fassade? Wir entfernen Algen, Moos und Grünbelag schonend und nachhaltig. Günstiger als Neuanstrich. Kostenfreie Besichtigung.',
+    type: 'website',
+    locale: 'de_DE',
+    url: 'https://fimi-service.de/leistungen/fassadenreinigung',
+    siteName: 'FIMI Gebäudereinigung',
+    images: [
+      {
+        url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop',
+        width: 1200,
+        height: 630,
+        alt: 'Professionelle Fassadenreinigung von FIMI',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Fassadenreinigung Bayern | FIMI',
+    description: 'Algen & Moos entfernen. Günstiger als Neuanstrich. Kostenfreie Besichtigung.',
+  },
+  alternates: {
+    canonical: 'https://fimi-service.de/leistungen/fassadenreinigung',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
+
+// Schema.org Structured Data - Service
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Fassadenreinigung',
+  description: 'Professionelle Fassadenreinigung in Bayern. Schonende Entfernung von Algen, Moos und Grünbelag. Geeignet für WDVS, Putz, Klinker und alle Fassadentypen. Mit Langzeit-Imprägnierung.',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'FIMI Gebäudereinigung',
+    image: 'https://fimi-service.de/og-image.jpg',
+    telephone: '+4987143033460',
+    email: 'info@fimi-service.de',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Kellerstr. 39',
+      addressLocality: 'Landshut',
+      postalCode: '84036',
+      addressRegion: 'Bayern',
+      addressCountry: 'DE',
+    },
+    priceRange: '€€',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '47',
+    },
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Landshut' },
+    { '@type': 'City', name: 'München' },
+    { '@type': 'City', name: 'Regensburg' },
+    { '@type': 'City', name: 'Ingolstadt' },
+    { '@type': 'City', name: 'Freising' },
+    { '@type': 'City', name: 'Erding' },
+    { '@type': 'City', name: 'Straubing' },
+    { '@type': 'City', name: 'Passau' },
+  ],
+  serviceType: 'Fassadenreinigung',
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Fassadenreinigung Leistungen',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Algen- und Moosentfernung',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'WDVS-Fassadenreinigung',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Fassaden-Imprägnierung',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Graffiti-Entfernung',
+        },
+      },
+    ],
+  },
+}
+
+// FAQ Schema
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Was kostet Fassadenreinigung pro Quadratmeter?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Professionelle Fassadenreinigung kostet zwischen 10 und 25 Euro pro Quadratmeter. Der Preis hängt von Verschmutzungsgrad, Fassadentyp und Zugänglichkeit ab. Eine Imprägnierung kostet zusätzlich 5-10 Euro pro m². Bei einer kostenfreien Besichtigung erstellen wir Ihnen ein Festpreisangebot.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Ist Fassadenreinigung günstiger als ein Neuanstrich?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ja, deutlich. Eine Fassadenreinigung kostet etwa 10-25 Euro pro m², ein Neuanstrich hingegen 35-50 Euro pro m² inklusive Gerüst. Bei einem Mehrfamilienhaus mit 300 m² Fassade sparen Sie so 7.500 bis 15.000 Euro.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Wie lange hält eine professionelle Fassadenreinigung?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Mit einer professionellen Imprägnierung bleibt Ihre Fassade 5-10 Jahre sauber. Der Schutzfilm verhindert, dass sich neue Algen und Moose ansiedeln können. Ohne Imprägnierung beginnt die Vergrünung je nach Standort nach 2-3 Jahren erneut.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Kann man WDVS-Fassaden (Dämmfassaden) reinigen?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ja, mit dem richtigen Verfahren. Wir verwenden ein schonendes Niederdruck-System, das die empfindliche Putzoberfläche nicht beschädigt. Hochdruckreiniger sind für WDVS ungeeignet und können die Fassade zerstören.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Warum wird meine Fassade grün?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Moderne Dämmfassaden (WDVS) speichern keine Wärme an der Oberfläche. Nachts kühlt die Fassade stark ab, Feuchtigkeit kondensiert. Diese feuchte Umgebung ist ideal für Algen und Moose. Besonders Nordseiten und schattige Bereiche sind betroffen.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Brauche ich ein Gerüst für die Fassadenreinigung?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'In den meisten Fällen nicht. Mit unserem Teleskopsystem erreichen wir Höhen bis 18 Meter ohne Gerüst. Das spart Kosten und Zeit. Nur bei sehr hohen Gebäuden oder schwer zugänglichen Stellen setzen wir Hubsteiger oder Gerüste ein.',
+      },
+    },
+  ],
 }
 
 export default function FassadenreinigungPage() {
   return (
-    <main className="min-h-screen bg-white flex items-center justify-center">
-      <div className="text-center py-40">
-        <h1 className="text-4xl font-bold text-[#012956] mb-4">Fassadenreinigung</h1>
-        <p className="text-gray-500">Seite wird bald aktualisiert.</p>
-      </div>
-    </main>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      <main className="min-h-screen bg-white">
+        <FloatingNav items={floatingNavItems} />
+
+        {/* Hero + Trust + Social Proof */}
+        <HeroSection />
+        <TrustBarSection />
+        <KundenLogosOnly />
+
+        {/* Problem → Lösung → Beweis */}
+        <ProblemLoesungSection />
+        <VorherNachherSection />
+
+        {/* Was wir tun + Wie wir es tun */}
+        <LeistungsumfangSection />
+        <VerfahrenSection />
+
+        {/* Lokale Relevanz + Zielgruppen */}
+        <RegionenSection />
+        <BranchenSection />
+
+        {/* Prozess + Kosten (Transparenz) */}
+        <ProcessSection />
+        <KostenSection />
+
+        {/* Trust + SEO */}
+        <PartnerLogosSlider
+          showHeader={true}
+          showStats={false}
+          bgColor="#f8f9fa"
+        />
+        <FAQSection />
+        <BlogPreviewSection />
+
+        {/* Final CTA */}
+        <CTASection />
+      </main>
+    </>
   )
 }
