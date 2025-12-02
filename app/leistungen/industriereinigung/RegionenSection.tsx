@@ -181,8 +181,11 @@ export default function RegionenSection() {
           </div>
         </div>
 
-        {/* Nicht dabei? */}
-        <div className="mt-10 sm:mt-12 lg:mt-16 bg-[#f8f9fa] rounded-[6px] p-4 sm:p-6 lg:p-10">
+        {/* Nicht dabei? - komplett klickbar */}
+        <a
+          href="#kontakt"
+          className="mt-10 sm:mt-12 lg:mt-16 bg-[#f8f9fa] hover:bg-[#e9ecef] rounded-[6px] p-4 sm:p-6 lg:p-10 block transition-colors group cursor-pointer"
+        >
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
             <div>
               <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-[#012956] mb-1 sm:mb-2">
@@ -192,15 +195,12 @@ export default function RegionenSection() {
                 Wir sind in ganz Bayern aktiv – von Passau bis Würzburg.
               </p>
             </div>
-            <a
-              href="#kontakt"
-              className="inline-flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-5 sm:px-8 py-3 sm:py-4 rounded-[6px] transition-colors whitespace-nowrap group text-sm sm:text-base"
-            >
+            <span className="inline-flex items-center justify-center gap-2 bg-[#109387] group-hover:bg-[#0d7d72] text-white font-bold px-5 sm:px-8 py-3 sm:py-4 rounded-[6px] transition-colors whitespace-nowrap text-sm sm:text-base">
               Standort anfragen
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </span>
           </div>
-        </div>
+        </a>
 
       </div>
     </section>
