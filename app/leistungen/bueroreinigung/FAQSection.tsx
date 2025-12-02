@@ -75,17 +75,17 @@ export default function FAQSection() {
             </a>
 
             {/* Kontakt-Info */}
-            <div className="mt-6 sm:mt-8 bg-white border-2 border-[#012956] rounded-[6px] p-4 sm:p-6">
-              <p className="text-sm text-gray-500 font-semibold mb-2">
+            <a
+              href="tel:+4987143033460"
+              className="mt-6 sm:mt-8 bg-white border-2 border-[#012956] hover:bg-[#012956] rounded-[6px] p-4 sm:p-6 block transition-all duration-300 group"
+            >
+              <p className="text-sm text-gray-500 group-hover:text-white/70 font-semibold mb-2 transition-colors">
                 Lieber persönlich sprechen?
               </p>
-              <a
-                href="tel:+4987143033460"
-                className="text-lg sm:text-xl font-bold text-[#012956] hover:text-[#109387] transition-colors"
-              >
+              <span className="text-lg sm:text-xl font-bold text-[#012956] group-hover:text-white transition-colors">
                 0871 430 334 60
-              </a>
-            </div>
+              </span>
+            </a>
 
             {/* Bild - nur Desktop */}
             <div className="relative mt-6 sm:mt-8 h-48 lg:h-64 rounded-[6px] overflow-hidden hidden lg:block">
