@@ -97,19 +97,19 @@ export default function ProcessSection() {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-10 sm:mt-12 lg:mt-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 bg-white rounded-[6px] p-5 sm:p-6 lg:p-8">
+        {/* Bottom CTA - komplett klickbar */}
+        <a
+          href="#kontakt"
+          className="mt-10 sm:mt-12 lg:mt-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 bg-white hover:bg-gray-50 rounded-[6px] p-5 sm:p-6 lg:p-8 transition-colors group cursor-pointer"
+        >
           <p className="text-sm sm:text-base lg:text-lg text-gray-600 font-semibold">
             <strong className="text-[#012956]">Gesamtdauer:</strong> Durchschnittlich 5-7 Werktage vom Erstkontakt bis zum sauberen Büro.
           </p>
-          <a
-            href="#kontakt"
-            className="inline-flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-[6px] transition-colors group text-sm sm:text-base whitespace-nowrap flex-shrink-0"
-          >
+          <span className="inline-flex items-center justify-center gap-2 bg-[#109387] group-hover:bg-[#0d7d72] text-white font-bold px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-[6px] transition-colors text-sm sm:text-base whitespace-nowrap flex-shrink-0">
             Jetzt Schritt 1 starten
             <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
-        </div>
+          </span>
+        </a>
 
       </div>
     </section>
