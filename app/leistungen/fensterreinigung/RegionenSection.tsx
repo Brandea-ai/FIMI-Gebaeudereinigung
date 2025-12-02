@@ -123,8 +123,8 @@ export default function RegionenSection() {
                 className="w-full h-auto block"
               />
             </div>
-            {/* Badge direkt unter dem Bild */}
-            <div className="bg-[#012956] px-4 sm:px-6 py-3 sm:py-4 rounded-b-[6px] -mt-[6px]">
+            {/* Badge über dem Bild (absolute positioned) */}
+            <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 bg-[#012956] px-4 sm:px-6 py-3 sm:py-4 rounded-[6px]">
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-[#109387] flex-shrink-0" />
                 <div>

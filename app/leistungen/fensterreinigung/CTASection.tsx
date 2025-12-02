@@ -1,13 +1,14 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, Phone, CheckCircle, Droplets, Building2, Sparkles, Wrench } from 'lucide-react'
+import { ArrowRight, Phone, CheckCircle, Building2, Sparkles, Wrench, Factory } from 'lucide-react'
 
 // Verwandte Leistungen
 const verwandteLeistungen = [
   { slug: 'bueroreinigung', name: 'Büroreinigung', icon: Building2 },
   { slug: 'unterhaltsreinigung', name: 'Unterhaltsreinigung', icon: Sparkles },
   { slug: 'fassadenreinigung', name: 'Fassadenreinigung', icon: Wrench },
+  { slug: 'industriereinigung', name: 'Industriereinigung', icon: Factory },
 ]
 
 export default function CTASection() {
