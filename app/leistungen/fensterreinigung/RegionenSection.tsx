@@ -1,0 +1,205 @@
+'use client'
+
+import { useState } from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowRight, MapPin, Clock, CheckCircle } from 'lucide-react'
+
+const staedte = [
+  {
+    id: 'landshut',
+    name: 'Landshut',
+    headline: 'Fensterreinigung in Landshut',
+    beschreibung: 'Als Landshuter Unternehmen sind wir schnell vor Ort. Fensterreinigung für Büros in der Altstadt, Gewerbegebiete in Ergolding und Umgebung.',
+    anfahrt: '< 30 Min',
+    vorteile: ['Hauptsitz – schnellste Reaktionszeit', 'Lokale Teams', 'Flexible Termine'],
+  },
+  {
+    id: 'muenchen',
+    name: 'München',
+    headline: 'Fensterreinigung in München',
+    beschreibung: 'Professionelle Glasreinigung in der Landeshauptstadt. Von Bürokomplexen im Werksviertel bis zu Schaufenstern in der Innenstadt.',
+    anfahrt: '< 60 Min',
+    vorteile: ['Erfahrung mit Großprojekten', 'Wochenend-Service', 'Alle Stadtteile'],
+  },
+  {
+    id: 'regensburg',
+    name: 'Regensburg',
+    headline: 'Fensterreinigung in Regensburg',
+    beschreibung: 'Von der UNESCO-Altstadt bis zum Gewerbepark. Wir reinigen historische Fensterfronten genauso sorgfältig wie moderne Glasfassaden.',
+    anfahrt: '< 45 Min',
+    vorteile: ['Denkmalschutz-Erfahrung', 'Industriereinigung', 'Schnell über A3'],
+  },
+  {
+    id: 'ingolstadt',
+    name: 'Ingolstadt',
+    headline: 'Fensterreinigung in Ingolstadt',
+    beschreibung: 'Fensterreinigung auf Industrieniveau. Für Automotive-Zulieferer, Bürokomplexe und den Einzelhandel in Ingolstadt.',
+    anfahrt: '< 50 Min',
+    vorteile: ['Automotive-Erfahrung', 'Flexible Schichten', 'ISO-Standards'],
+  },
+  {
+    id: 'freising',
+    name: 'Freising',
+    headline: 'Fensterreinigung in Freising',
+    beschreibung: 'Zuverlässige Fensterreinigung im Landkreis Freising. Nähe zum Flughafen München stellt besondere Anforderungen – wir erfüllen sie.',
+    anfahrt: '< 40 Min',
+    vorteile: ['Flughafen-Nähe', 'Forschungseinrichtungen', 'Garantierte Termine'],
+  },
+  {
+    id: 'erding',
+    name: 'Erding',
+    headline: 'Fensterreinigung in Erding',
+    beschreibung: 'Fensterreinigung für den wachsenden Landkreis Erding. Gewerbebetriebe, Hotels und öffentliche Einrichtungen.',
+    anfahrt: '< 35 Min',
+    vorteile: ['Lokale Präsenz', 'Hotel-Erfahrung', 'Langfristige Partner'],
+  },
+  {
+    id: 'straubing',
+    name: 'Straubing',
+    headline: 'Fensterreinigung in Straubing',
+    beschreibung: 'Professionelle Fensterreinigung in der Gäuboden-Metropole. Industrie am Hafen, Handel in der Innenstadt.',
+    anfahrt: '< 50 Min',
+    vorteile: ['Niederbayern-verwurzelt', 'Industriereinigung', 'Ganzjähriger Service'],
+  },
+  {
+    id: 'passau',
+    name: 'Passau',
+    headline: 'Fensterreinigung in Passau',
+    beschreibung: 'Glasreinigung in der Dreiflüssestadt bis zur österreichischen Grenze. Hotels, Büros und Gewerbeobjekte.',
+    anfahrt: '< 70 Min',
+    vorteile: ['Bis Österreich-Grenze', 'Hotellerie-Fokus', 'Mehrsprachige Teams'],
+  },
+]
+
+export default function RegionenSection() {
+  const [activeStadt, setActiveStadt] = useState(staedte[0])
+
+  return (
+    <section id="regionen" className="py-12 sm:py-16 lg:py-28 bg-white">
+      <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
+
+        {/* Header */}
+        <div className="max-w-3xl mb-8 sm:mb-12">
+          <span className="text-[#109387] font-bold text-xs sm:text-sm uppercase tracking-wide mb-3 sm:mb-4 block">
+            Einzugsgebiet
+          </span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight mb-4 sm:mb-6">
+            Fensterreinigung in ganz Bayern
+          </h2>
+          <p className="text-base sm:text-lg text-gray-600 font-semibold leading-relaxed">
+            Von Landshut aus betreuen wir Kunden in ganz Bayern. Kurze Wege, schnelle Reaktionszeiten.
+          </p>
+        </div>
+
+        {/* Stadt-Tabs */}
+        <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8">
+          {staedte.map((stadt) => (
+            <button
+              key={stadt.id}
+              onClick={() => setActiveStadt(stadt)}
+              className={`px-3 sm:px-4 py-2 rounded-[6px] font-bold text-sm transition-all ${
+                activeStadt.id === stadt.id
+                  ? 'bg-[#012956] text-white'
+                  : 'bg-[#f8f9fa] text-[#012956] hover:bg-[#e9ecef]'
+              }`}
+            >
+              {stadt.name}
+            </button>
+          ))}
+        </div>
+
+        {/* Content Grid */}
+        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
+
+          {/* Karte */}
+          <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] rounded-[6px] overflow-hidden">
+            <Image
+              src="/images/home/staedte-fimi.avif"
+              alt="FIMI Gebäudereinigung - Fensterreinigung Einzugsgebiet Bayern"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute bottom-4 left-4 right-4 bg-[#012956]/90 backdrop-blur-sm rounded-[6px] p-4">
+              <div className="flex items-center gap-3">
+                <MapPin className="w-5 h-5 text-[#109387]" />
+                <div>
+                  <p className="text-white font-bold text-sm sm:text-base">Hauptsitz: Landshut</p>
+                  <p className="text-white/60 text-xs sm:text-sm">Kellerstr. 39, 84036 Landshut</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Stadt-Details */}
+          <div className="bg-[#f8f9fa] rounded-[6px] p-5 sm:p-6 lg:p-8">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#012956] mb-2">
+              {activeStadt.headline}
+            </h3>
+
+            <div className="flex items-center gap-2 mb-4 sm:mb-6">
+              <Clock className="w-4 h-4 text-[#109387]" />
+              <span className="text-[#109387] font-bold text-sm">
+                Anfahrt: {activeStadt.anfahrt}
+              </span>
+            </div>
+
+            <p className="text-gray-600 font-semibold leading-relaxed mb-6 text-sm sm:text-base">
+              {activeStadt.beschreibung}
+            </p>
+
+            {/* Vorteile */}
+            <div className="mb-6 sm:mb-8">
+              <h4 className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3">
+                Ihre Vorteile in {activeStadt.name}
+              </h4>
+              <ul className="space-y-2">
+                {activeStadt.vorteile.map((vorteil, index) => (
+                  <li key={index} className="flex items-center gap-2 text-gray-700 font-semibold text-sm sm:text-base">
+                    <CheckCircle className="w-4 h-4 text-[#109387] flex-shrink-0" />
+                    {vorteil}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Leistungen Links */}
+            <div className="border-t border-gray-200 pt-6">
+              <h4 className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-4">
+                Unsere Leistungen in {activeStadt.name}
+              </h4>
+              <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                {[
+                  { name: 'Fensterreinigung', href: '/leistungen/fensterreinigung' },
+                  { name: 'Glasreinigung', href: '/leistungen/glasreinigung' },
+                  { name: 'Büroreinigung', href: '/leistungen/bueroreinigung' },
+                  { name: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
+                ].map((leistung) => (
+                  <Link
+                    key={leistung.href}
+                    href={leistung.href}
+                    className="flex items-center gap-1.5 text-[#109387] font-semibold text-sm hover:text-[#012956] transition-colors group"
+                  >
+                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                    {leistung.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA */}
+            <a
+              href="#kontakt"
+              className="mt-6 flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold py-3 sm:py-4 rounded-[6px] transition-colors group text-sm sm:text-base"
+            >
+              Fensterreinigung in {activeStadt.name} anfragen
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  )
+}
