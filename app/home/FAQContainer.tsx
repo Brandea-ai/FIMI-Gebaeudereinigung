@@ -81,7 +81,7 @@ export default function FAQContainer() {
               </a>
 
               {/* Kontakt-Info */}
-              <div className="mt-8 bg-[#f8f9fa] rounded-[6px] p-6">
+              <div className="mt-8 bg-white border-2 border-[#012956] rounded-[6px] p-6">
                 <p className="text-sm text-gray-500 font-semibold mb-2">
                   Lieber persönlich sprechen?
                 </p>
