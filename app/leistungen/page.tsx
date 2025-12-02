@@ -36,13 +36,10 @@ const searchTermsMap: Record<string, string[]> = {
     'geschäft', 'geschaeft', 'praxis', 'kanzlei', 'agentur', 'verwaltung', 'administration', 'empfang',
     'konferenz', 'meeting', 'besprechung', 'arbeitsraum', 'workspace', 'coworking'
   ],
-  'glasreinigung': [
-    'glas', 'fenster', 'scheibe', 'scheiben', 'window', 'durchsicht', 'transparent', 'spiegel',
-    'glasfläche', 'glasflaeche', 'verglasung', 'streifenfrei', 'klar', 'putzen', 'polieren'
-  ],
   'fensterreinigung': [
     'fenster', 'window', 'rahmen', 'fensterbank', 'fensterbrett', 'scheibe', 'glas', 'außen', 'aussen',
-    'innen', 'höhe', 'hoehe', 'jalousie', 'rollladen', 'rollo', 'sonnenschutz', 'licht', 'tageslicht'
+    'innen', 'höhe', 'hoehe', 'jalousie', 'rollladen', 'rollo', 'sonnenschutz', 'licht', 'tageslicht',
+    'glasfläche', 'glasflaeche', 'verglasung', 'streifenfrei', 'klar', 'putzen', 'polieren', 'spiegel'
   ],
   'fassadenreinigung': [
     'fassade', 'außen', 'aussen', 'wand', 'mauer', 'hauswand', 'gebäudehülle', 'gebaeudehulle',

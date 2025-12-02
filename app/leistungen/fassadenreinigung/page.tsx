@@ -8,7 +8,6 @@ import VerfahrenSection from './VerfahrenSection'
 import RegionenSection from './RegionenSection'
 import BranchenSection from './BranchenSection'
 import ProcessSection from './ProcessSection'
-import KostenSection from './KostenSection'
 import FAQSection from './FAQSection'
 import BlogPreviewSection from './BlogPreviewSection'
 import CTASection from './CTASection'
@@ -24,14 +23,13 @@ const floatingNavItems = [
   { id: 'leistungen', label: 'Leistungen' },
   { id: 'verfahren', label: 'Verfahren' },
   { id: 'regionen', label: 'Standorte' },
-  { id: 'kosten', label: 'Kosten' },
   { id: 'faq', label: 'FAQ' },
   { id: 'kontakt', label: 'Kontakt' },
 ]
 
 export const metadata: Metadata = {
   title: 'Fassadenreinigung Bayern | Algen & Moos entfernen | FIMI',
-  description: 'Professionelle Fassadenreinigung in Landshut, München, Regensburg. Algen, Moos, Grünbelag schonend entfernen. Ab 10€/m². 5-10 Jahre Schutz. Kostenfreie Besichtigung.',
+  description: 'Professionelle Fassadenreinigung in Landshut, München, Regensburg. Algen, Moos, Grünbelag schonend entfernen. 5-10 Jahre Schutz mit Imprägnierung. Kostenfreie Besichtigung.',
   keywords: [
     'Fassadenreinigung Bayern',
     'Fassadenreinigung Landshut',
@@ -41,7 +39,7 @@ export const metadata: Metadata = {
     'Moos Hauswand entfernen',
     'WDVS reinigen',
     'Dämmfassade reinigen',
-    'Fassadenreinigung Kosten',
+    'Fassadenreinigung Angebot',
     'Fassadenreinigung Mehrfamilienhaus',
     'Grünbelag Fassade entfernen',
     'Fassadenreinigung Gewerbe',
@@ -159,18 +157,10 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Was kostet Fassadenreinigung pro Quadratmeter?',
+      name: 'Wie läuft eine professionelle Fassadenreinigung ab?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Professionelle Fassadenreinigung kostet zwischen 10 und 25 Euro pro Quadratmeter. Der Preis hängt von Verschmutzungsgrad, Fassadentyp und Zugänglichkeit ab. Eine Imprägnierung kostet zusätzlich 5-10 Euro pro m². Bei einer kostenfreien Besichtigung erstellen wir Ihnen ein Festpreisangebot.',
-      },
-    },
-    {
-      '@type': 'Question',
-      name: 'Ist Fassadenreinigung günstiger als ein Neuanstrich?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ja, deutlich. Eine Fassadenreinigung kostet etwa 10-25 Euro pro m², ein Neuanstrich hingegen 35-50 Euro pro m² inklusive Gerüst. Bei einem Mehrfamilienhaus mit 300 m² Fassade sparen Sie so 7.500 bis 15.000 Euro.',
+        text: 'Nach einer kostenfreien Besichtigung erstellen wir ein individuelles Angebot. Die Reinigung erfolgt mit schonenden Niederdruckverfahren, die Algen und Moos entfernen ohne die Fassade zu beschädigen. Auf Wunsch folgt eine Langzeit-Imprägnierung.',
       },
     },
     {
@@ -202,7 +192,15 @@ const faqSchema = {
       name: 'Brauche ich ein Gerüst für die Fassadenreinigung?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'In den meisten Fällen nicht. Mit unserem Teleskopsystem erreichen wir Höhen bis 18 Meter ohne Gerüst. Das spart Kosten und Zeit. Nur bei sehr hohen Gebäuden oder schwer zugänglichen Stellen setzen wir Hubsteiger oder Gerüste ein.',
+        text: 'In den meisten Fällen nicht. Mit unserem Teleskopsystem erreichen wir Höhen bis 18 Meter ohne Gerüst. Bei sehr hohen Gebäuden setzen wir Drohnentechnologie oder Hubsteiger ein.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Welche Fassadentypen können Sie reinigen?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Wir reinigen alle gängigen Fassadentypen: WDVS, Putzfassaden, Klinker, Naturstein, Beton und Holz. Für jeden Untergrund wählen wir das passende Verfahren, um optimale Ergebnisse zu erzielen.',
       },
     },
   ],
@@ -240,9 +238,8 @@ export default function FassadenreinigungPage() {
         <RegionenSection />
         <BranchenSection />
 
-        {/* Prozess + Kosten (Transparenz) */}
+        {/* Prozess */}
         <ProcessSection />
-        <KostenSection />
 
         {/* Trust + SEO */}
         <PartnerLogosSlider

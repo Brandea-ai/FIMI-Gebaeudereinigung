@@ -175,7 +175,7 @@ export default function RegionenSection() {
               <div className="grid grid-cols-2 gap-2 sm:gap-3">
                 {[
                   { name: 'Fensterreinigung', href: '/leistungen/fensterreinigung' },
-                  { name: 'Glasreinigung', href: '/leistungen/glasreinigung' },
+                  { name: 'Fassadenreinigung', href: '/leistungen/fassadenreinigung' },
                   { name: 'Büroreinigung', href: '/leistungen/bueroreinigung' },
                   { name: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
                 ].map((leistung) => (

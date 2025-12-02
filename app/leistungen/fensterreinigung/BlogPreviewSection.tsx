@@ -15,9 +15,9 @@ const blogArtikel = [
     kategorie: 'Ratgeber',
   },
   {
-    slug: 'glasreinigung-vs-fensterreinigung',
-    titel: 'Glasreinigung vs. Fensterreinigung: Der Unterschied',
-    beschreibung: 'Die Begriffe werden oft verwechselt. Wir klären auf, was genau gemeint ist und welche Leistungen jeweils enthalten sind.',
+    slug: 'streifenfreie-fenster-profi-tipps',
+    titel: 'Streifenfreie Fenster: Profi-Tipps für perfekte Ergebnisse',
+    beschreibung: 'Die richtigen Werkzeuge, Techniken und Reinigungsmittel für makellos saubere Fenster – Tipps vom Fachbetrieb.',
     bild: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop',
     lesezeit: '4 Min',
     kategorie: 'Wissen',

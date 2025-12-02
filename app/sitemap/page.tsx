@@ -21,7 +21,6 @@ const sitemapData = {
     { name: 'Büroreinigung', href: '/leistungen/bueroreinigung' },
     { name: 'Industriereinigung', href: '/leistungen/industriereinigung' },
     { name: 'Fensterreinigung', href: '/leistungen/fensterreinigung' },
-    { name: 'Glasreinigung', href: '/leistungen/glasreinigung' },
     { name: 'Fassadenreinigung', href: '/leistungen/fassadenreinigung' },
     { name: 'Hallenreinigung', href: '/leistungen/hallenreinigung' },
     { name: 'Maschinenreinigung', href: '/leistungen/maschinenreinigung' },

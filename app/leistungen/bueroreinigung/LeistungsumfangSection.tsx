@@ -115,10 +115,10 @@ export default function LeistungsumfangSection() {
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </Link>
               <Link
-                href="/leistungen/glasreinigung"
+                href="/leistungen/fensterreinigung"
                 className="inline-flex items-center gap-1.5 sm:gap-2 text-[#109387] font-bold hover:text-[#012956] transition-colors text-sm sm:text-base"
               >
-                Glasreinigung
+                Fensterreinigung
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </Link>
               <Link

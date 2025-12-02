@@ -11,7 +11,7 @@ const serviceToUrl: Record<string, string> = {
   // Hauptleistungen
   'Unterhaltsreinigung': '/leistungen/unterhaltsreinigung',
   'Büroreinigung': '/leistungen/bueroreinigung',
-  'Glasreinigung': '/leistungen/glasreinigung',
+  'Glasreinigung': '/leistungen/fensterreinigung',
   'Fensterreinigung': '/leistungen/fensterreinigung',
   'Industriereinigung': '/leistungen/industriereinigung',
   'Maschinenreinigung': '/leistungen/maschinenreinigung',
@@ -45,7 +45,7 @@ const serviceToUrl: Record<string, string> = {
   'Desinfektion': '/leistungen/sonderreinigung',
 
   // Einzelhandel
-  'Schaufensterreinigung': '/leistungen/glasreinigung',
+  'Schaufensterreinigung': '/leistungen/fensterreinigung',
   'Tagesreinigung': '/leistungen/unterhaltsreinigung',
   'Kassenbereichsreinigung': '/leistungen/unterhaltsreinigung',
   'Lagerreinigung': '/leistungen/hallenreinigung',

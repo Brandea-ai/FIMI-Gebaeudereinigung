@@ -5,7 +5,6 @@ import { ArrowRight, Phone, CheckCircle, Droplets, Building2, Sparkles, Wrench }
 
 // Verwandte Leistungen
 const verwandteLeistungen = [
-  { slug: 'glasreinigung', name: 'Glasreinigung', icon: Droplets },
   { slug: 'bueroreinigung', name: 'Büroreinigung', icon: Building2 },
   { slug: 'unterhaltsreinigung', name: 'Unterhaltsreinigung', icon: Sparkles },
   { slug: 'fassadenreinigung', name: 'Fassadenreinigung', icon: Wrench },

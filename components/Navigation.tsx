@@ -18,7 +18,6 @@ const leistungenCategories = [
     services: [
       { name: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
       { name: 'Büroreinigung', href: '/leistungen/bueroreinigung' },
-      { name: 'Glasreinigung', href: '/leistungen/glasreinigung' },
       { name: 'Fensterreinigung', href: '/leistungen/fensterreinigung' },
       { name: 'Fassadenreinigung', href: '/leistungen/fassadenreinigung' },
     ],

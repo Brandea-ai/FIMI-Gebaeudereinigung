@@ -5,12 +5,8 @@ import { ChevronDown, ArrowRight } from 'lucide-react'
 
 const faqs = [
   {
-    frage: 'Was kostet Fassadenreinigung pro Quadratmeter?',
-    antwort: 'Professionelle Fassadenreinigung kostet zwischen 10 und 25 Euro pro Quadratmeter. Der genaue Preis hängt vom Verschmutzungsgrad, Fassadentyp und der Zugänglichkeit ab. Eine Imprägnierung kostet zusätzlich 5-10 Euro pro m². Bei einer kostenfreien Besichtigung erstellen wir Ihnen ein verbindliches Festpreisangebot.',
-  },
-  {
-    frage: 'Ist Fassadenreinigung günstiger als ein Neuanstrich?',
-    antwort: 'Ja, deutlich. Eine Fassadenreinigung kostet etwa 10-25 Euro pro m², ein Neuanstrich hingegen 35-50 Euro pro m² inklusive Gerüst. Bei einem Mehrfamilienhaus mit 300 m² Fassadenfläche sparen Sie mit einer Reinigung zwischen 7.500 und 15.000 Euro im Vergleich zum Neuanstrich.',
+    frage: 'Wie läuft eine professionelle Fassadenreinigung ab?',
+    antwort: 'Nach Ihrer Anfrage vereinbaren wir einen kostenfreien Besichtigungstermin. Vor Ort analysieren wir den Fassadenzustand, den Verschmutzungsgrad und die Zugänglichkeit. Anschließend erhalten Sie ein individuelles Festpreisangebot. Die Reinigung erfolgt mit schonenden Verfahren, auf Wunsch mit abschließender Imprägnierung.',
   },
   {
     frage: 'Wie lange hält eine professionelle Fassadenreinigung?',
@@ -26,11 +22,15 @@ const faqs = [
   },
   {
     frage: 'Brauche ich ein Gerüst für die Fassadenreinigung?',
-    antwort: 'In den meisten Fällen nicht. Mit unserem Teleskopsystem erreichen wir Höhen bis 18 Meter komplett ohne Gerüst. Das spart Ihnen Kosten und Zeit. Nur bei sehr hohen Gebäuden über 18 Meter oder schwer zugänglichen Stellen setzen wir Hubsteiger oder Gerüste ein.',
+    antwort: 'In den meisten Fällen nicht. Mit unserem Teleskopsystem erreichen wir Höhen bis 18 Meter komplett ohne Gerüst. Bei sehr hohen Gebäuden oder schwer zugänglichen Stellen setzen wir moderne Drohnentechnologie oder Hubsteiger ein.',
   },
   {
     frage: 'Wie lange dauert eine Fassadenreinigung?',
     antwort: 'Das hängt von der Fassadengröße ab. Ein Einfamilienhaus reinigen wir in der Regel an einem Tag. Mehrfamilienhäuser und größere Objekte benötigen 2-3 Tage. Im Gegensatz zu einem Neuanstrich gibt es keine Trocknungszeit – die Fassade ist sofort wieder nutzbar.',
+  },
+  {
+    frage: 'Welche Fassadentypen können Sie reinigen?',
+    antwort: 'Wir reinigen alle gängigen Fassadentypen: WDVS (Wärmedämmverbundsystem), Putzfassaden, Klinker, Naturstein, Beton und Holz. Für jeden Untergrund wählen wir das passende Verfahren, um optimale Ergebnisse ohne Beschädigung zu erzielen.',
   },
   {
     frage: 'Ist die Reinigung umweltschonend?',

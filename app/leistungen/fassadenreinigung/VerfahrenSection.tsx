@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { Droplets, Wind, Sparkles, Shield, Check } from 'lucide-react'
+import { Droplets, Wind, Sparkles, Shield, Check, Plane } from 'lucide-react'
 
 const verfahren = [
   {
@@ -22,6 +22,15 @@ const verfahren = [
     beschreibung: 'Mit unseren Teleskopstangen erreichen wir Höhen bis 18 Meter – ganz ohne teures Gerüst. Das Reinigungsmittel wird aufgesprüht, wirkt ein und wird dann abgespült.',
     geeignet: ['Mehrfamilienhäuser', 'Bürogebäude', 'Gewerbeobjekte', 'Schwer zugängliche Stellen'],
     bild: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop',
+  },
+  {
+    id: 'drohne',
+    icon: Plane,
+    name: 'Drohnen-Reinigung',
+    kurz: 'Für extreme Höhen',
+    beschreibung: 'Bei besonders hohen oder schwer zugänglichen Gebäuden setzen wir Drohnentechnologie ein. Die Drohne trägt das Reinigungsmittel auf und ermöglicht präzise Reinigung auch in großen Höhen.',
+    geeignet: ['Hochhäuser', 'Kirchtürme', 'Industrieanlagen', 'Schwer erreichbare Fassaden'],
+    bild: 'https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=1200&auto=format&fit=crop',
   },
   {
     id: 'chemisch',

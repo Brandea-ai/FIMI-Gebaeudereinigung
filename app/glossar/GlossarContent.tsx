@@ -73,8 +73,8 @@ const glossarData: GlossarItem[] = [
   {
     begriff: 'Glasreinigung',
     definition: 'Professionelle Reinigung aller Glasflächen wie Fenster, Glasfassaden, Schaufenster und Glastrennwände. Für optimale Transparenz und Lichtdurchlässigkeit.',
-    link: '/leistungen/glasreinigung',
-    ctaLabel: 'Mehr zur Glasreinigung',
+    link: '/leistungen/fensterreinigung',
+    ctaLabel: 'Mehr zur Fensterreinigung',
   },
   {
     begriff: 'Grundreinigung',

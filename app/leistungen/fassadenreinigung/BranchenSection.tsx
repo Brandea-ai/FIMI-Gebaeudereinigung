@@ -9,42 +9,36 @@ const branchen = [
     name: 'Wohnungswirtschaft',
     slug: 'wohnungswirtschaft',
     text: 'Mehrfamilienhäuser, WEGs, Hausverwaltungen',
-    beispiel: '300 m² Fassade ab 3.000€',
   },
   {
     icon: Building2,
     name: 'Büro & Verwaltung',
     slug: 'buero-verwaltung',
     text: 'Bürogebäude, Verwaltungsbauten, Kanzleien',
-    beispiel: '500 m² Fassade ab 4.500€',
   },
   {
     icon: Factory,
     name: 'Industrie & Produktion',
     slug: 'industrie-produktion',
     text: 'Produktionshallen, Lagerhallen, Gewerbeobjekte',
-    beispiel: '800 m² Fassade ab 6.000€',
   },
   {
     icon: Landmark,
     name: 'Öffentliche Einrichtungen',
     slug: 'oeffentliche-einrichtungen',
     text: 'Rathäuser, Schulen, Kindergärten',
-    beispiel: 'Individuelle Angebote',
   },
   {
     icon: ShoppingBag,
     name: 'Einzelhandel',
     slug: 'einzelhandel',
     text: 'Geschäfte, Einkaufszentren, Märkte',
-    beispiel: '200 m² Fassade ab 2.000€',
   },
   {
     icon: GraduationCap,
     name: 'Bildung & Schulen',
     slug: 'bildung-schulen',
     text: 'Schulen, Universitäten, Kitas',
-    beispiel: 'Ferienzeit-Service',
   },
 ]
 
@@ -84,17 +78,12 @@ export default function BranchenSection() {
               <h3 className="text-lg sm:text-xl font-bold text-[#012956] group-hover:text-white mb-2 transition-colors">
                 {branche.name}
               </h3>
-              <p className="text-gray-600 group-hover:text-white/70 font-semibold text-sm mb-3 transition-colors">
+              <p className="text-gray-600 group-hover:text-white/70 font-semibold text-sm mb-4 transition-colors">
                 {branche.text}
               </p>
 
-              {/* Beispiel */}
-              <div className="text-[#109387] group-hover:text-[#109387] font-bold text-sm">
-                {branche.beispiel}
-              </div>
-
               {/* Arrow */}
-              <div className="flex items-center gap-2 mt-4 text-[#109387] group-hover:text-white font-bold text-sm transition-colors">
+              <div className="flex items-center gap-2 text-[#109387] group-hover:text-white font-bold text-sm transition-colors">
                 Mehr erfahren
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>

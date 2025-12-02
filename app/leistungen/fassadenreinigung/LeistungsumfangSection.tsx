@@ -52,7 +52,7 @@ const leistungen = [
 
 const crossLinks = [
   { name: 'Fensterreinigung', href: '/leistungen/fensterreinigung', desc: 'Fenster gleich mit reinigen?' },
-  { name: 'Glasreinigung', href: '/leistungen/glasreinigung', desc: 'Glasflächen & Wintergärten' },
+  { name: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung', desc: 'Regelmäßige Gebäudereinigung' },
   { name: 'Baureinigung', href: '/leistungen/baureinigung', desc: 'Nach Renovierungen' },
 ]
 
