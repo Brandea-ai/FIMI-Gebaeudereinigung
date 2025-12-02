@@ -75,7 +75,7 @@ export default function FAQSection() {
             </a>
 
             {/* Kontakt-Info */}
-            <div className="mt-6 sm:mt-8 bg-white rounded-[6px] p-4 sm:p-6">
+            <div className="mt-6 sm:mt-8 bg-white border-2 border-[#012956] rounded-[6px] p-4 sm:p-6">
               <p className="text-sm text-gray-500 font-semibold mb-2">
                 Lieber persönlich sprechen?
               </p>
