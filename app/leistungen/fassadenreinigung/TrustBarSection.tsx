@@ -11,9 +11,9 @@ const stats = [
   },
   {
     icon: Building2,
-    value: '€10 Mio.',
-    label: 'Haftpflicht',
-    sublabel: 'Vollversichert',
+    value: '100%',
+    label: 'Versichert',
+    sublabel: 'Rundum geschützt',
   },
   {
     icon: Shield,
