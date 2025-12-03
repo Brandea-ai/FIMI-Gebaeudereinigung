@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Check, Building2, Factory, Wrench, Sparkles, Search, X } from 'lucide-react'
@@ -137,6 +137,9 @@ function matchesSearch(leistungSlug: string, searchQuery: string): boolean {
 export default function LeistungenPage() {
   const [activeFilter, setActiveFilter] = useState<string>('alle')
   const [searchQuery, setSearchQuery] = useState<string>('')
+  const [showStickyFilter, setShowStickyFilter] = useState(false)
+  const heroRef = useRef<HTMLElement>(null)
+  const gridSectionRef = useRef<HTMLElement>(null)
 
   const filteredLeistungen = useMemo(() => {
     let result = leistungen
@@ -156,6 +159,24 @@ export default function LeistungenPage() {
 
   const allCategories = getAllCategories()
 
+  // Scroll-Detection für sticky Filter
+  // Zeigt sticky bar nur zwischen Hero-Ende und Grid-Section-Ende
+  useEffect(() => {
+    const handleScroll = () => {
+      if (heroRef.current && gridSectionRef.current) {
+        const heroBottom = heroRef.current.getBoundingClientRect().bottom
+        const gridBottom = gridSectionRef.current.getBoundingClientRect().bottom
+        const stickyBarHeight = 100 // Ungefähre Höhe der Sticky Bar
+        setShowStickyFilter(heroBottom < 0 && gridBottom > stickyBarHeight)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll() // Initial check
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   const handleCategoryClick = (categoryId: string) => {
     setActiveFilter(categoryId)
     setSearchQuery('') // Suche zurücksetzen bei Kategorie-Wechsel
@@ -165,7 +186,7 @@ export default function LeistungenPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-[#012956] py-12 md:py-16 lg:py-20 xl:py-28 overflow-hidden">
+      <section ref={heroRef} className="relative bg-[#012956] py-12 md:py-16 lg:py-20 xl:py-28 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#109387]/10 to-transparent" />
@@ -262,8 +283,14 @@ export default function LeistungenPage() {
         </div>
       </section>
 
-      {/* Filter Section mit Suche */}
-      <section className="sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm">
+      {/* Filter Section mit Suche - Fixed, erscheint nur zwischen Hero und Grid-Ende */}
+      <div
+        className={`fixed top-0 left-0 right-0 z-30 bg-white border-b border-gray-200 shadow-lg transition-all duration-500 ease-out ${
+          showStickyFilter
+            ? 'translate-y-0 opacity-100'
+            : '-translate-y-full opacity-0 pointer-events-none'
+        }`}
+      >
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="flex flex-col md:flex-row md:items-center gap-4 py-4">
             {/* Suchfeld */}
@@ -327,10 +354,10 @@ export default function LeistungenPage() {
             </div>
           )}
         </div>
-      </section>
+      </div>
 
       {/* Leistungen Grid */}
-      <section id="leistungen-grid" className="py-16 lg:py-28 bg-[#f8f9fa]">
+      <section ref={gridSectionRef} id="leistungen-grid" className="py-16 lg:py-28 bg-[#f8f9fa]">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           {/* Section Header */}
           <div className="text-center mb-16">
