@@ -289,6 +289,7 @@ export default function BranchenPage() {
   const [searchQuery, setSearchQuery] = useState<string>('')
   const [showStickySearch, setShowStickySearch] = useState(false)
   const heroRef = useRef<HTMLElement>(null)
+  const gridSectionRef = useRef<HTMLElement>(null)
 
   const filteredBranchen = useMemo(() => {
     if (!searchQuery.trim()) return branchen
@@ -296,11 +297,15 @@ export default function BranchenPage() {
   }, [searchQuery])
 
   // Scroll-Detection für sticky Suchleiste
+  // Zeigt sticky bar nur zwischen Hero-Ende und Grid-Section-Ende
   useEffect(() => {
     const handleScroll = () => {
-      if (heroRef.current) {
+      if (heroRef.current && gridSectionRef.current) {
         const heroBottom = heroRef.current.getBoundingClientRect().bottom
-        setShowStickySearch(heroBottom < 0)
+        const gridBottom = gridSectionRef.current.getBoundingClientRect().bottom
+        // Sichtbar: Hero vorbei UND Grid-Sektion noch nicht zu Ende (mit etwas Puffer für die Höhe der Sticky Bar)
+        const stickyBarHeight = 80 // Ungefähre Höhe der Sticky Bar
+        setShowStickySearch(heroBottom < 0 && gridBottom > stickyBarHeight)
       }
     }
 
@@ -547,7 +552,7 @@ export default function BranchenPage() {
       </div>
 
       {/* Branchen Grid */}
-      <section id="branchen-grid" className="py-16 lg:py-28 bg-[#f8f9fa]">
+      <section ref={gridSectionRef} id="branchen-grid" className="py-16 lg:py-28 bg-[#f8f9fa]">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           {/* Section Header */}
           <div className="text-center mb-16">
