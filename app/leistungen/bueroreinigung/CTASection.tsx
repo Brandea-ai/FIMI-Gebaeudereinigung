@@ -30,20 +30,20 @@ export default function CTASection() {
             </h3>
 
             {/* Branchen als hochwertiges Grid - Outlined Style */}
-            <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 lg:gap-4 mb-6 sm:mb-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 lg:gap-4 mb-6 sm:mb-8">
               {branchen.map((branche) => {
                 const Icon = branche.icon
                 return (
                   <Link
                     key={branche.slug}
                     href={`/branchen/${branche.slug}`}
-                    className="group flex items-center gap-2 sm:gap-3 bg-transparent hover:bg-white/10 border-2 border-white/20 hover:border-[#109387] rounded-[6px] p-2.5 sm:p-3 lg:p-4 transition-all duration-300 min-w-0"
+                    className="group flex items-center gap-2 sm:gap-3 bg-transparent hover:bg-white/10 border-2 border-white/20 hover:border-[#109387] rounded-[6px] p-2.5 sm:p-3 lg:p-4 transition-all duration-300"
                   >
                     {/* Icon - Outlined Style */}
                     <div className="w-8 h-8 sm:w-9 sm:h-9 lg:w-10 lg:h-10 border-2 border-[#109387] group-hover:bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0 transition-all duration-300">
                       <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5 text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
                     </div>
-                    <span className="text-white font-semibold text-xs sm:text-xs lg:text-sm group-hover:text-[#109387] transition-colors leading-tight truncate">
+                    <span className="text-white font-semibold text-[11px] sm:text-xs lg:text-sm group-hover:text-[#109387] transition-colors leading-tight">
                       {branche.name}
                     </span>
                   </Link>
