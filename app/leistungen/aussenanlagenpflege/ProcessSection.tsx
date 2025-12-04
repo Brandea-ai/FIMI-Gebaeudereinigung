@@ -50,7 +50,7 @@ export default function ProcessSection() {
           <p className="text-xs sm:text-sm text-[#109387] font-bold uppercase tracking-wide mb-2 sm:mb-3">
             So einfach geht&apos;s
           </p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-4 sm:mb-6 whitespace-nowrap">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-4 sm:mb-6 lg:whitespace-nowrap">
             In 5 Schritten zur gepflegten Außenanlage
           </h2>
           <p className="text-sm sm:text-base lg:text-lg text-gray-700 font-semibold leading-relaxed">

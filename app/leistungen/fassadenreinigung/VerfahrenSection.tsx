@@ -64,7 +64,7 @@ export default function VerfahrenSection() {
           <span className="text-[#109387] font-bold text-xs sm:text-sm uppercase tracking-wide mb-3 sm:mb-4 block">
             Unsere Methoden
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight mb-4 sm:mb-6 whitespace-nowrap">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight mb-4 sm:mb-6 lg:whitespace-nowrap">
             Das richtige Verfahren für Ihre Fassade
           </h2>
           <p className="text-base sm:text-lg text-gray-600 font-semibold leading-relaxed">
