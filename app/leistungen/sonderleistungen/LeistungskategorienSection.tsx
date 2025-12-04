@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { ArrowRight, Users, Home, Calendar, Shield, Briefcase, Clock } from 'lucide-react'
+import { ArrowRight, Users, Home, Calendar, Shield, Briefcase, UtensilsCrossed } from 'lucide-react'
 
 const leistungen = [
   {
@@ -17,12 +17,22 @@ const leistungen = [
   {
     id: 'housekeeping',
     icon: Home,
-    title: 'Housekeeping & Hotelservice',
+    title: 'Housekeeping',
     subtitle: 'Perfektion in jedem Zimmer',
-    description: 'Zimmermädchen und Etagenservice für Hotels, Pensionen und Ferienwohnungen. Professionell geschult in Hotellerie-Standards für makellose Sauberkeit.',
-    features: ['Zimmerreinigung', 'Bettenwechsel', 'Minibar-Service', 'Wäscheservice'],
+    description: 'Zimmermädchen und Etagenservice für Hotels und Pensionen. Professionell geschult in Hotellerie-Standards für makellose Sauberkeit und zufriedene Gäste.',
+    features: ['Zimmerreinigung', 'Bettenwechsel', 'Etagenservice', 'Wäscheservice'],
     image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=800&auto=format&fit=crop',
     zielgruppe: 'Hotels, Pensionen, Ferienwohnungen',
+  },
+  {
+    id: 'hotelservice',
+    icon: UtensilsCrossed,
+    title: 'Hotelservice',
+    subtitle: 'Exzellenter Gästeservice',
+    description: 'Roomservice, Minibar-Betreuung und Lobby-Service für gehobene Hotellerie. Tagesdamen und Servicepersonal mit Erfahrung in 4- und 5-Sterne-Standards.',
+    features: ['Roomservice', 'Minibar-Service', 'Lobby-Service', 'Concierge-Hilfe'],
+    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop',
+    zielgruppe: 'Hotels, Resorts, Ferienwohnungen',
   },
   {
     id: 'eventservice',
@@ -41,7 +51,7 @@ const leistungen = [
     subtitle: 'Kontrolle und Sicherheit',
     description: 'Zuverlässiger Pfortendienst und Besuchermanagement. Zugangskontrolle, Schlüsselverwaltung und professionelle Anmeldung für Industrie und Gewerbe.',
     features: ['Zugangskontrolle', 'Besucheranmeldung', 'Schlüsselverwaltung', 'Wareneingang'],
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297q=80&w=800&auto=format&fit=crop',
     zielgruppe: 'Industrie, Gewerbe, Verwaltung',
   },
   {
@@ -53,16 +63,6 @@ const leistungen = [
     features: ['Telefonservice', 'Postverteilung', 'Ablage & Archiv', 'Büroorganisation'],
     image: 'https://images.unsplash.com/photo-1497215842964-222b430dc094?q=80&w=800&auto=format&fit=crop',
     zielgruppe: 'Unternehmen, Kanzleien, Praxen',
-  },
-  {
-    id: 'vertretung',
-    icon: Clock,
-    title: 'Urlaubs- & Krankheitsvertretung',
-    subtitle: 'Schnell und zuverlässig',
-    description: 'Kurzfristiger Ersatz bei Personalausfall. Ob Urlaub, Krankheit oder unerwartete Engpässe – wir stellen innerhalb weniger Stunden qualifiziertes Personal.',
-    features: ['2h Reaktionszeit', 'Eingearbeitetes Personal', 'Flexible Einsatzdauer', 'Alle Bereiche'],
-    image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=800&auto=format&fit=crop',
-    zielgruppe: 'Alle Branchen',
   },
 ]
 
@@ -91,9 +91,10 @@ export default function LeistungskategorienSection() {
           {leistungen.map((leistung) => {
             const Icon = leistung.icon
             return (
-              <article
+              <a
                 key={leistung.id}
-                className="group bg-white rounded-[8px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100"
+                href="#kontakt"
+                className="group bg-white rounded-[8px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 cursor-pointer block"
               >
                 {/* Image */}
                 <div className="relative h-48 sm:h-52 lg:h-56 overflow-hidden">
@@ -152,22 +153,19 @@ export default function LeistungskategorienSection() {
                     Ideal für: {leistung.zielgruppe}
                   </p>
 
-                  {/* CTA */}
-                  <a
-                    href="#kontakt"
-                    className="flex items-center justify-between pt-4 border-t border-gray-100 group/link"
-                  >
-                    <span className="text-[#109387] font-bold text-sm sm:text-[15px] group-hover/link:text-[#012956] transition-colors">
+                  {/* CTA Visual */}
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                    <span className="text-[#109387] font-bold text-sm sm:text-[15px] group-hover:text-[#012956] transition-colors">
                       Jetzt anfragen
                     </span>
                     <ArrowRight
                       size={18}
                       strokeWidth={2}
-                      className="text-[#109387] group-hover/link:translate-x-1 group-hover/link:text-[#012956] transition-all duration-300"
+                      className="text-[#109387] group-hover:translate-x-1 group-hover:text-[#012956] transition-all duration-300"
                     />
-                  </a>
+                  </div>
                 </div>
-              </article>
+              </a>
             )
           })}
         </div>

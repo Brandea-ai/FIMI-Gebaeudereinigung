@@ -102,8 +102,8 @@ export default function EinsatzszenarienSection() {
             {/* Overlay Content */}
             <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
               <div className="flex items-center gap-2 mb-3">
-                <AlertCircle className="w-5 h-5 text-red-400" />
-                <span className="text-red-400 font-bold text-sm uppercase tracking-wide">Das Problem</span>
+                <AlertCircle className="w-5 h-5 text-[#109387]" />
+                <span className="text-[#109387] font-bold text-sm uppercase tracking-wide">Die Situation</span>
               </div>
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
                 {active.problem}

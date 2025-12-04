@@ -1,152 +1,115 @@
 'use client'
 
-import { Phone, FileText, Users, Rocket, ThumbsUp, ArrowRight } from 'lucide-react'
+import { Phone, FileText, Users, Sparkles, ArrowRight } from 'lucide-react'
 
-const schritte = [
+const processSteps = [
   {
-    nummer: '01',
+    number: '01',
     icon: Phone,
     title: 'Anfrage',
-    subtitle: 'Ihr Bedarf',
-    beschreibung: 'Sie kontaktieren uns per Telefon, E-Mail oder Formular. Schildern Sie uns Ihren Personalbedarf – ob kurzfristig oder geplant.',
-    zeitrahmen: 'Sofort',
+    description: 'Sie rufen an oder füllen das Formular aus. Schildern Sie uns Ihren Personalbedarf – ob kurzfristig oder geplant.',
+    time: '5 Minuten',
   },
   {
-    nummer: '02',
+    number: '02',
     icon: FileText,
     title: 'Bedarfsanalyse',
-    subtitle: 'Wir verstehen',
-    beschreibung: 'Wir klären alle Details: Einsatzort, Zeitraum, Anforderungen, Qualifikationen. Auf Wunsch besuchen wir Sie vor Ort.',
-    zeitrahmen: 'Innerhalb 2h',
+    description: 'Wir klären alle Details: Einsatzort, Zeitraum, Anforderungen, Qualifikationen. Auf Wunsch besuchen wir Sie vor Ort.',
+    time: 'Innerhalb 2h',
   },
   {
-    nummer: '03',
+    number: '03',
     icon: Users,
     title: 'Personalauswahl',
-    subtitle: 'Passende Mitarbeiter',
-    beschreibung: 'Wir wählen die passenden Mitarbeiter aus unserem Pool. Geschult, zuverlässig und auf Ihre Anforderungen abgestimmt.',
-    zeitrahmen: '2-24h',
+    description: 'Wir wählen die passenden Mitarbeiter aus unserem Pool. Geschult, zuverlässig und auf Ihre Anforderungen abgestimmt.',
+    time: '2-24h',
   },
   {
-    nummer: '04',
-    icon: Rocket,
+    number: '04',
+    icon: Sparkles,
     title: 'Einsatzstart',
-    subtitle: 'Wir sind da',
-    beschreibung: 'Unser Personal beginnt pünktlich mit der Arbeit. Einweisung vor Ort, professionelles Auftreten, sofort einsatzbereit.',
-    zeitrahmen: 'Nach Vereinbarung',
-  },
-  {
-    nummer: '05',
-    icon: ThumbsUp,
-    title: 'Qualitätssicherung',
-    subtitle: 'Ihr Feedback zählt',
-    beschreibung: 'Regelmäßige Rücksprache, schnelle Reaktion bei Anpassungswünschen. Ihre Zufriedenheit ist unser Maßstab.',
-    zeitrahmen: 'Laufend',
+    description: 'Unser Personal beginnt pünktlich mit der Arbeit. Einweisung vor Ort, professionelles Auftreten, sofort einsatzbereit.',
+    time: 'Nach Vereinbarung',
   },
 ]
 
 export default function ProcessSection() {
   return (
-    <section id="ablauf" className="py-12 sm:py-16 lg:py-28 bg-[#f8f9fa]">
+    <section id="prozess" className="py-12 sm:py-16 lg:py-28 bg-[#f8f9fa]">
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
 
-        {/* Section Header */}
-        <div className="max-w-3xl mb-10 sm:mb-12 lg:mb-16">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-16">
           <span className="text-[#109387] font-bold text-xs sm:text-sm uppercase tracking-wide mb-3 sm:mb-4 block">
-            So funktioniert es
+            Unser Prozess
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight mb-4 sm:mb-6">
-            In 5 Schritten zu Ihrem Personal
+            In 4 Schritten zu Ihrem Personal
           </h2>
           <p className="text-base sm:text-lg text-gray-600 font-semibold leading-relaxed">
-            Von der ersten Anfrage bis zum Einsatzstart – unser Prozess ist transparent,
-            schnell und auf Ihre Bedürfnisse ausgerichtet.
+            Von der ersten Anfrage bis zum Einsatzstart –
+            unkompliziert und transparent.
           </p>
         </div>
 
-        {/* Process Steps */}
-        <div className="relative">
-          {/* Connection Line - nur Desktop */}
-          <div className="hidden lg:block absolute top-[60px] left-[10%] right-[10%] h-0.5 bg-[#109387]/20" />
+        {/* Process Steps - Outlined Icons */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+          {processSteps.map((step, index) => (
+            <div
+              key={index}
+              className="relative bg-white rounded-[6px] p-5 sm:p-6 lg:p-8 shadow-sm hover:shadow-lg transition-shadow group"
+            >
+              {/* Connector Line (not on last item) */}
+              {index < processSteps.length - 1 && (
+                <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-[#109387]/30" />
+              )}
 
-          {/* Steps Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4">
-            {schritte.map((schritt, index) => {
-              const Icon = schritt.icon
-              return (
-                <div
-                  key={index}
-                  className="relative bg-white rounded-[8px] p-5 sm:p-6 shadow-sm hover:shadow-lg transition-shadow"
-                >
-                  {/* Step Number Badge */}
-                  <div className="absolute -top-3 left-5 bg-[#109387] text-white font-bold text-xs px-3 py-1 rounded-[4px]">
-                    Schritt {schritt.nummer}
-                  </div>
+              {/* Number Badge */}
+              <div className="absolute -top-3 sm:-top-4 left-5 sm:left-8 bg-[#109387] text-white text-xs sm:text-sm font-bold px-2.5 sm:px-3 py-1 rounded-[6px]">
+                {step.number}
+              </div>
 
-                  {/* Icon */}
-                  <div className="w-14 h-14 bg-[#109387]/10 rounded-[8px] flex items-center justify-center mb-4 mt-2">
-                    <Icon className="w-7 h-7 text-[#109387]" strokeWidth={1.5} />
-                  </div>
-
-                  {/* Content */}
-                  <h3 className="text-lg sm:text-xl font-bold text-[#012956] mb-1">
-                    {schritt.title}
-                  </h3>
-                  <p className="text-[#109387] font-semibold text-sm mb-3">
-                    {schritt.subtitle}
-                  </p>
-                  <p className="text-gray-600 font-semibold text-sm leading-relaxed mb-4">
-                    {schritt.beschreibung}
-                  </p>
-
-                  {/* Zeitrahmen */}
-                  <div className="pt-3 border-t border-gray-100">
-                    <span className="text-xs text-gray-500 font-semibold uppercase tracking-wide">
-                      Zeitrahmen:
-                    </span>
-                    <span className="text-sm text-[#012956] font-bold ml-2">
-                      {schritt.zeitrahmen}
-                    </span>
-                  </div>
-
-                  {/* Arrow - nur zwischen Steps auf Desktop */}
-                  {index < schritte.length - 1 && (
-                    <div className="hidden lg:flex absolute -right-4 top-1/2 -translate-y-1/2 w-8 h-8 bg-[#109387] rounded-full items-center justify-center z-10">
-                      <ArrowRight className="w-4 h-4 text-white" />
-                    </div>
-                  )}
+              {/* Icon + Content horizontal layout */}
+              <div className="flex items-start gap-3 sm:gap-4">
+                {/* Icon - Outlined Style */}
+                <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-[6px] border-2 border-[#109387] group-hover:bg-[#109387] flex items-center justify-center flex-shrink-0 transition-all duration-300">
+                  <step.icon className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
                 </div>
-              )
-            })}
-          </div>
+
+                {/* Content */}
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-base sm:text-lg lg:text-xl font-bold text-[#012956] mb-1.5 sm:mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm lg:text-base text-gray-600 font-semibold leading-relaxed mb-2 sm:mb-3">
+                    {step.description}
+                  </p>
+
+                  {/* Time Badge */}
+                  <div className="inline-flex items-center bg-[#f8f9fa] rounded-[6px] px-2 sm:px-2.5 py-1">
+                    <span className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wide">
+                      Dauer: {step.time}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-12 sm:mt-16 bg-[#012956] rounded-[8px] p-6 sm:p-8 lg:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-          <div>
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
-              Bereit loszulegen?
-            </h3>
-            <p className="text-white/80 font-semibold">
-              Kontaktieren Sie uns jetzt – wir melden uns innerhalb von 2 Stunden.
-            </p>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <a
-              href="#kontakt"
-              className="inline-flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-base px-6 py-3 rounded-[6px] transition-all duration-300 group whitespace-nowrap"
-            >
-              Personal anfragen
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a
-              href="tel:+4987143033460"
-              className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-100 text-[#012956] font-bold text-base px-6 py-3 rounded-[6px] transition-all duration-300 whitespace-nowrap"
-            >
-              0871 430 334 60
-            </a>
-          </div>
-        </div>
+        {/* Bottom CTA - komplett klickbar */}
+        <a
+          href="#kontakt"
+          className="mt-10 sm:mt-12 lg:mt-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 bg-white hover:bg-gray-50 rounded-[6px] p-5 sm:p-6 lg:p-8 transition-colors group cursor-pointer"
+        >
+          <p className="text-sm sm:text-base lg:text-lg text-gray-600 font-semibold">
+            <strong className="text-[#012956]">Kurzfristig verfügbar:</strong> Bei dringendem Bedarf stellen wir Personal innerhalb von 2-4 Stunden.
+          </p>
+          <span className="inline-flex items-center justify-center gap-2 bg-[#109387] group-hover:bg-[#0d7d72] text-white font-bold px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-[6px] transition-colors text-sm sm:text-base whitespace-nowrap flex-shrink-0">
+            Jetzt Personal anfragen
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+          </span>
+        </a>
 
       </div>
     </section>
