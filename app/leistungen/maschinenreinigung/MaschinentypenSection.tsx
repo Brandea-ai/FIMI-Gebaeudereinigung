@@ -92,7 +92,7 @@ export default function MaschinentypenSection() {
           <span className="text-[#109387] font-bold text-xs sm:text-sm uppercase tracking-wide mb-3 sm:mb-4 block">
             Unsere Expertise
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight mb-4 sm:mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight mb-4 sm:mb-6 whitespace-nowrap">
             Diese Maschinentypen reinigen wir
           </h2>
           <p className="text-base sm:text-lg text-gray-600 font-semibold leading-relaxed">
