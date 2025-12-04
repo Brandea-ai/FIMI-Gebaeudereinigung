@@ -32,11 +32,11 @@ export default function ProblemLoesungSection() {
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
 
         {/* Header */}
-        <div className="max-w-3xl mb-8 sm:mb-12 lg:mb-16">
+        <div className="max-w-4xl mb-8 sm:mb-12 lg:mb-16">
           <span className="text-[#109387] font-bold text-xs sm:text-sm uppercase tracking-wide mb-3 sm:mb-4 block">
             Kennen Sie das?
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight mb-4 sm:mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight mb-4 sm:mb-6 whitespace-nowrap">
             Probleme, die wir jeden Tag lösen
           </h2>
           <p className="text-base sm:text-lg text-gray-600 font-semibold leading-relaxed">

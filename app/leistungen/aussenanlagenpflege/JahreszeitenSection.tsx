@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { Flower2, Sun, Leaf, Snowflake, Check } from 'lucide-react'
+import Link from 'next/link'
+import { Flower2, Sun, Leaf, Snowflake, Check, ArrowRight } from 'lucide-react'
 
 const jahreszeiten = [
   {
@@ -162,8 +163,8 @@ export default function JahreszeitenSection() {
             </a>
           </div>
 
-          {/* Right: Arbeiten Liste */}
-          <div>
+          {/* Right: Arbeiten Liste - Sticky */}
+          <div className="lg:sticky lg:top-24 lg:self-start">
             <h4 className="text-lg sm:text-xl font-bold text-white mb-4 sm:mb-6">
               Unsere Arbeiten im {aktiveJahreszeit.name}
             </h4>
@@ -185,26 +186,26 @@ export default function JahreszeitenSection() {
           </div>
         </div>
 
-        {/* Bottom Info */}
-        <div className="mt-10 sm:mt-12 lg:mt-16 bg-[#109387]/20 rounded-[8px] p-5 sm:p-6 lg:p-8">
+        {/* Bottom Info - Clickable */}
+        <Link
+          href="/kontakt"
+          className="mt-10 sm:mt-12 lg:mt-16 bg-[#109387]/20 hover:bg-[#109387]/30 rounded-[8px] p-5 sm:p-6 lg:p-8 block transition-all duration-300 group"
+        >
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
               <h4 className="text-lg sm:text-xl font-bold text-white mb-2">
                 Ganzjährige Betreuung aus einer Hand
               </h4>
               <p className="text-white/70 font-semibold text-sm sm:text-base">
-                Ein Vertrag, ein Ansprechpartner – für alle Jahreszeiten. Kein Wechsel zwischen
-                Gärtner im Sommer und Winterdienst im Winter.
+                Ein Vertrag, ein Ansprechpartner – für alle Jahreszeiten. Kein Wechsel zwischen Gärtner im Sommer und Winterdienst im Winter.
               </p>
             </div>
-            <a
-              href="tel:+4987143033460"
-              className="inline-flex items-center justify-center gap-2 bg-white text-[#012956] font-bold px-6 py-3 rounded-[6px] hover:bg-gray-100 transition-colors whitespace-nowrap text-sm sm:text-base"
-            >
+            <span className="inline-flex items-center justify-center gap-2 bg-white text-[#012956] font-bold px-6 py-3 rounded-[6px] group-hover:bg-gray-100 transition-colors whitespace-nowrap text-sm sm:text-base">
               Jetzt beraten lassen
-            </a>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </span>
           </div>
-        </div>
+        </Link>
 
       </div>
     </section>
