@@ -88,7 +88,7 @@ export default function CTASection() {
                 </Link>
                 <span className="text-white/40">|</span>
                 <Link
-                  href="/leistungen/gruenpflege"
+                  href="/leistungen/aussenanlagenpflege"
                   className="text-white/80 hover:text-[#109387] font-semibold text-xs sm:text-sm transition-colors"
                 >
                   Grünpflege

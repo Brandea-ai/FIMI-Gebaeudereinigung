@@ -1,122 +1,114 @@
 'use client'
 
-import { AlertTriangle, PhoneOff, Users, ArrowRight, CheckCircle, Sparkles } from 'lucide-react'
+import Image from 'next/image'
+import { ArrowRight, FileText, PhoneOff, Users, Clock } from 'lucide-react'
 
-const problems = [
+const probleme = [
   {
-    icon: AlertTriangle,
-    title: 'Vier Rechnungen, vier Ansprechpartner',
-    description: 'Reinigung, Hausmeister, Winterdienst, Grünpflege – jeder Dienstleister hat eigene Standards, eigene Termine, eigene Probleme.',
+    icon: FileText,
+    problem: 'Vier Rechnungen, vier Ansprechpartner, vier verschiedene Standards',
+    loesung: 'Ein Vertrag, eine Rechnung, ein persönlicher Ansprechpartner. Wir koordinieren Reinigung, Hausmeister, Winterdienst und Grünpflege.',
   },
   {
     icon: PhoneOff,
-    title: 'Wenn es schneit, erreichen Sie niemanden',
-    description: 'Der Winterdienst war nicht da, aber Sie haben drei Nummern und keiner fühlt sich zuständig. Ihre Mieter beschweren sich.',
+    problem: 'Wenn es schneit, erreichen Sie niemanden',
+    loesung: 'Garantierte Erreichbarkeit mit 2h Reaktionszeit. Ihr persönlicher Betreuer ist auch am Wochenende und bei Notfällen für Sie da.',
   },
   {
     icon: Users,
-    title: 'Die linke Hand weiß nicht, was die rechte tut',
-    description: 'Der Hausmeister kennt den Reinigungsplan nicht. Die Grünpflege hat den Müll nicht mitgenommen. Sie koordinieren ständig.',
+    problem: 'Ständig wechselnde Mitarbeiter, keiner kennt Ihr Objekt',
+    loesung: 'Feste Teams, die Ihre Räumlichkeiten kennen. Kein ständiges Einarbeiten, gleichbleibend hohe Qualität.',
   },
-]
-
-const solutions = [
-  'Ein Vertrag für alle Leistungen',
-  'Eine Rechnung pro Monat',
-  'Ein Ansprechpartner, der alles koordiniert',
-  'Einheitlich hohe Qualität',
-  '2 Stunden Reaktionszeit – garantiert',
-  'Festes Personal, das Ihr Objekt kennt',
+  {
+    icon: Clock,
+    problem: 'Sie koordinieren mehr als Sie sollten',
+    loesung: 'Schluss mit Abstimmungsaufwand. Wir übernehmen die komplette Koordination aller Gewerke – Sie konzentrieren sich auf Ihr Geschäft.',
+  },
 ]
 
 export default function ProblemLoesungSection() {
   return (
-    <section className="py-16 sm:py-20 lg:py-28 bg-white">
+    <section id="probleme" className="py-12 sm:py-16 lg:py-28 bg-[#f8f9fa]">
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
 
-        {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-16">
+        {/* Header */}
+        <div className="max-w-3xl mb-8 sm:mb-12 lg:mb-16">
           <span className="text-[#109387] font-bold text-xs sm:text-sm uppercase tracking-wide mb-3 sm:mb-4 block">
-            Das Problem
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-4 sm:mb-6">
             Kennen Sie das?
+          </span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight mb-4 sm:mb-6">
+            Probleme, die wir täglich lösen
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 font-semibold max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 font-semibold leading-relaxed">
             Montag: Der Winterdienst war nicht da. Dienstag: Die Reinigung hat den Müll nicht mitgenommen.
-            Mittwoch: Der Hausmeister ist krank, niemand weiß Bescheid.
+            Mittwoch: Der Hausmeister ist krank. Wir kennen diese Probleme – und haben die Lösung.
           </p>
         </div>
 
-        {/* Problem Cards */}
-        <div className="grid md:grid-cols-3 gap-6 sm:gap-8 mb-16 sm:mb-20">
-          {problems.map((problem, index) => (
+        {/* Problem-Lösung Grid */}
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
+          {probleme.map((item, index) => (
             <div
               key={index}
-              className="bg-[#f8f9fa] rounded-[6px] p-6 sm:p-8 border-l-4 border-red-400"
+              className="bg-white rounded-[6px] p-4 sm:p-6 lg:p-8 shadow-sm hover:shadow-lg transition-all duration-300 group"
             >
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-[6px] bg-red-100 flex items-center justify-center mb-4 sm:mb-6">
-                <problem.icon className="w-6 h-6 sm:w-7 sm:h-7 text-red-500" strokeWidth={1.5} />
+              <div className="flex items-start gap-3 sm:gap-4 lg:gap-5">
+                {/* Icon - Outlined Style */}
+                <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-[6px] border-2 border-[#109387] group-hover:bg-[#109387] flex items-center justify-center flex-shrink-0 transition-all duration-300">
+                  <item.icon className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
+                </div>
+
+                <div className="flex-1">
+                  {/* Problem */}
+                  <p className="text-gray-500 font-semibold italic mb-2 sm:mb-3 text-sm sm:text-base">
+                    &ldquo;{item.problem}&rdquo;
+                  </p>
+
+                  {/* Pfeil */}
+                  <div className="flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-3">
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#109387]" />
+                    <span className="text-[#109387] font-bold text-xs sm:text-sm uppercase tracking-wide">
+                      Unsere Lösung
+                    </span>
+                  </div>
+
+                  {/* Lösung */}
+                  <p className="text-gray-700 font-semibold leading-relaxed text-sm sm:text-base">
+                    {item.loesung}
+                  </p>
+                </div>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#012956] mb-3">
-                {problem.title}
-              </h3>
-              <p className="text-gray-600 font-semibold leading-relaxed text-sm sm:text-base">
-                {problem.description}
-              </p>
             </div>
           ))}
         </div>
 
-        {/* Solution Section */}
-        <div className="bg-[#012956] rounded-[6px] p-6 sm:p-10 lg:p-16">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        {/* Image + CTA */}
+        <div className="mt-10 sm:mt-12 lg:mt-16 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
+          <div className="relative h-[220px] sm:h-[280px] md:h-[350px] lg:h-[400px] rounded-[6px] overflow-hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop"
+              alt="Professionelles Facility Management - ein Ansprechpartner für alle Gebäudedienstleistungen"
+              fill
+              className="object-cover"
+            />
+          </div>
 
-            {/* Left: Solution Text */}
-            <div>
-              <div className="inline-flex items-center bg-[#109387]/20 rounded-[6px] px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6">
-                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-[#109387] mr-2" />
-                <span className="text-xs sm:text-sm font-bold text-[#109387] uppercase tracking-wide">
-                  Die Lösung
-                </span>
-              </div>
-
-              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6 leading-[1.1]">
-                Mit FIMI Facility Management haben Sie einen Partner für alles
-              </h3>
-
-              <p className="text-white/80 font-semibold leading-relaxed text-base sm:text-lg mb-6 sm:mb-8">
-                Stellen Sie sich vor: Ein Anruf genügt. Egal ob die Heizung streikt, Schnee liegt oder
-                die Reinigung angepasst werden muss – wir kümmern uns. Ihr persönlicher Ansprechpartner
-                kennt Ihr Objekt und koordiniert alle Leistungen. Sie haben Zeit für das, was wirklich zählt.
-              </p>
-
-              <a
-                href="#contact-form"
-                className="inline-flex items-center gap-2 sm:gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm sm:text-base lg:text-lg px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-[6px] transition-all duration-300 group"
-              >
-                Jetzt Beratung anfragen
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
-            </div>
-
-            {/* Right: Solution List */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-[6px] p-6 sm:p-8">
-              <h4 className="text-white font-bold text-lg sm:text-xl mb-6">
-                Das ändert sich mit FIMI:
-              </h4>
-              <ul className="space-y-4">
-                {solutions.map((solution, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-[#109387] flex-shrink-0 mt-0.5" />
-                    <span className="text-white font-semibold text-sm sm:text-base">
-                      {solution}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
+          <div className="md:pl-4 lg:pl-8">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#012956] mb-3 sm:mb-4">
+              Ein Partner für alles – so einfach kann es sein
+            </h3>
+            <p className="text-gray-600 font-semibold leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
+              Stellen Sie sich vor: Ein Anruf genügt. Egal ob die Heizung streikt, Schnee liegt oder
+              die Reinigung angepasst werden muss – wir kümmern uns. Ihr persönlicher Ansprechpartner
+              kennt Ihr Objekt und koordiniert alle Leistungen.
+            </p>
+            <a
+              href="#kontakt"
+              className="inline-flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-4 sm:px-6 py-2.5 sm:py-3 rounded-[6px] transition-colors group text-sm sm:text-base"
+            >
+              Jetzt Problem lösen
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
           </div>
         </div>
 

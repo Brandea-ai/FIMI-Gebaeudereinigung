@@ -4,34 +4,34 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Clock, Calendar } from 'lucide-react'
 
-// Thematisch passende Artikel für Parkplatzreinigung
+// Thematisch passende Artikel für Parkplatzreinigung (echte Blog-Slugs)
 const relatedPosts = [
   {
-    slug: 'parkplatzpflege-erster-eindruck',
-    title: 'Parkplatzpflege: Warum der erste Eindruck bei Kunden entscheidet',
-    excerpt: 'Studien zeigen: 70% der Kunden urteilen bereits auf dem Parkplatz über ein Unternehmen.',
-    image: 'https://images.unsplash.com/photo-1621929747188-0b4dc28498d2?q=80&w=800&auto=format&fit=crop',
-    category: 'Tipps',
+    slug: 'winterdienst-bayern-pflichten-haftung-bgh-urteil-2025',
+    title: 'Winterdienst Bayern: Pflichten, Haftung & BGH-Urteil 2025',
+    excerpt: 'Streupflicht, Räumpflicht und Haftungsrisiken – was Eigentümer wissen müssen.',
+    image: 'https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?q=80&w=800&auto=format&fit=crop',
+    category: 'Recht',
     date: '2025-01-20',
-    readTime: 4,
+    readTime: 6,
   },
   {
-    slug: 'fruehjahrsreinigung-parkplatz',
-    title: 'Frühjahrsreinigung: So machen Sie Ihren Parkplatz fit nach dem Winter',
-    excerpt: 'Streusalz, Split, Laub – was der Winter hinterlässt und wie Sie es loswerden.',
-    image: 'https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?q=80&w=800&auto=format&fit=crop',
-    category: 'Saisonal',
+    slug: 'reinigungsintervalle-buero-schule-praxis-din-ral',
+    title: 'Reinigungsintervalle nach DIN & RAL: Büro, Schule, Praxis',
+    excerpt: 'Wie oft muss gereinigt werden? Normen und Empfehlungen im Überblick.',
+    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800&auto=format&fit=crop',
+    category: 'Standards',
     date: '2025-01-15',
     readTime: 5,
   },
   {
-    slug: 'oelflecken-entfernen-professionell',
-    title: 'Ölflecken auf dem Parkplatz: Profi-Tipps vs. Hausmittel',
-    excerpt: 'Wann sich DIY lohnt und wann Sie besser den Profi rufen sollten.',
+    slug: 'industriereinigung-arbeitssicherheit-dguv-gefahrstoffv',
+    title: 'Industriereinigung & Arbeitssicherheit: DGUV & Gefahrstoffverordnung',
+    excerpt: 'Sicherheitsstandards für professionelle Reinigung in Industrie und Gewerbe.',
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
-    category: 'Ratgeber',
+    category: 'Sicherheit',
     date: '2025-01-10',
-    readTime: 6,
+    readTime: 7,
   },
 ]
 

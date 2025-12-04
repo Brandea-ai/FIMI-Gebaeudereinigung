@@ -4,34 +4,34 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Clock, Calendar } from 'lucide-react'
 
-// Thematisch passende Artikel für Tiefgaragenreinigung
+// Thematisch passende Artikel für Tiefgaragenreinigung (echte Blog-Slugs)
 const relatedPosts = [
   {
-    slug: 'tiefgarage-fruehjahrsreinigung',
-    title: 'Tiefgarage nach dem Winter: Warum jetzt die Grundreinigung fällig ist',
-    excerpt: 'Streusalzreste greifen Beton und Beschichtungen an. So schützen Sie Ihre Tiefgarage.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
-    category: 'Saisonal',
+    slug: 'winterdienst-bayern-pflichten-haftung-bgh-urteil-2025',
+    title: 'Winterdienst Bayern: Pflichten, Haftung & BGH-Urteil 2025',
+    excerpt: 'Was Eigentümer und Verwalter über Streupflicht und Haftungsrisiken wissen müssen.',
+    image: 'https://images.unsplash.com/photo-1516738901171-8eb4fc13bd20?q=80&w=800&auto=format&fit=crop',
+    category: 'Recht',
     date: '2025-01-20',
-    readTime: 5,
-  },
-  {
-    slug: 'oelflecken-entfernen-professionell',
-    title: 'Ölflecken im Beton: Profi-Tipps für dauerhafte Entfernung',
-    excerpt: 'Wann sich DIY lohnt und wann Sie besser den Profi rufen sollten.',
-    image: 'https://images.unsplash.com/photo-1621929747188-0b4dc28498d2?q=80&w=800&auto=format&fit=crop',
-    category: 'Ratgeber',
-    date: '2025-01-15',
     readTime: 6,
   },
   {
-    slug: 'weg-reinigung-richtig-beauftragen',
-    title: 'WEG-Beschluss: So beauftragen Sie Reinigungsarbeiten rechtssicher',
-    excerpt: 'Tipps für Verwaltungsbeiräte zur korrekten Beschlussfassung und Dokumentation.',
+    slug: 'industriereinigung-arbeitssicherheit-dguv-gefahrstoffv',
+    title: 'Industriereinigung & Arbeitssicherheit: DGUV & Gefahrstoffverordnung',
+    excerpt: 'Sicherheitsstandards für professionelle Reinigung in Industrie und Gewerbe.',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
+    category: 'Sicherheit',
+    date: '2025-01-15',
+    readTime: 7,
+  },
+  {
+    slug: 'reinigungsintervalle-buero-schule-praxis-din-ral',
+    title: 'Reinigungsintervalle nach DIN & RAL: Büro, Schule, Praxis',
+    excerpt: 'Wie oft muss gereinigt werden? Normen und Empfehlungen für verschiedene Bereiche.',
     image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800&auto=format&fit=crop',
-    category: 'Tipps',
+    category: 'Standards',
     date: '2025-01-10',
-    readTime: 4,
+    readTime: 5,
   },
 ]
 
