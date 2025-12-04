@@ -19,12 +19,9 @@ export default function FloatingNav({ items, scrollOffset = 80 }: FloatingNavPro
   const [isVisible, setIsVisible] = useState(false)
   const [activeSection, setActiveSection] = useState(items[0]?.id || '')
   const [isHovering, setIsHovering] = useState(false)
-  const [hasAutoOpened, setHasAutoOpened] = useState(false)
-  const [userManuallyClosed, setUserManuallyClosed] = useState(false)
   const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   // Show toggle button when hero is ~30% scrolled away
-  // Auto-open menu at 49% page scroll
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
@@ -32,18 +29,8 @@ export default function FloatingNav({ items, scrollOffset = 80 }: FloatingNavPro
       const heroHeight = heroElement ? heroElement.offsetHeight : 800
       const showThreshold = heroHeight * 0.3
 
-      // Calculate page scroll percentage
-      const documentHeight = document.documentElement.scrollHeight - window.innerHeight
-      const scrollPercentage = (currentScrollY / documentHeight) * 100
-
       if (currentScrollY > showThreshold) {
         setIsVisible(true)
-
-        // Auto-open at 49% scroll (only once and only if user hasn't manually closed it)
-        if (scrollPercentage >= 49 && !hasAutoOpened && !userManuallyClosed) {
-          setIsOpen(true)
-          setHasAutoOpened(true)
-        }
 
         // Auto-hide menu (not toggle button) after 2s of no scroll - BUT ONLY if not hovering
         if (isOpen && !isHovering) {
@@ -70,7 +57,7 @@ export default function FloatingNav({ items, scrollOffset = 80 }: FloatingNavPro
         clearTimeout(hideTimeoutRef.current)
       }
     }
-  }, [isOpen, isHovering, hasAutoOpened, userManuallyClosed])
+  }, [isOpen, isHovering])
 
   // Track active section using Intersection Observer
   useEffect(() => {
@@ -158,12 +145,7 @@ export default function FloatingNav({ items, scrollOffset = 80 }: FloatingNavPro
           hover:bg-[#0d7d72] hover:-translate-y-0.5
           hover:shadow-[0_16px_48px_-10px_rgba(16,147,135,0.45),0_6px_20px_-6px_rgba(0,0,0,0.15),0_0_0_1px_rgba(16,147,135,0.25)]
         `}
-        onClick={() => {
-          setIsOpen(!isOpen)
-          if (!isOpen) {
-            setUserManuallyClosed(false)
-          }
-        }}
+        onClick={() => setIsOpen(!isOpen)}
         aria-label="Navigation öffnen/schließen"
         title="Navigation"
       >
@@ -202,10 +184,7 @@ export default function FloatingNav({ items, scrollOffset = 80 }: FloatingNavPro
           <span className="text-base font-semibold text-[#012956]">Navigation</span>
           <button
             className="w-8 h-8 flex items-center justify-center bg-transparent border-none cursor-pointer rounded hover:bg-gray-100 transition-colors"
-            onClick={() => {
-              setIsOpen(false)
-              setUserManuallyClosed(true)
-            }}
+            onClick={() => setIsOpen(false)}
             aria-label="Schließen"
           >
             <X size={18} className="text-gray-600" strokeWidth={2.5} />
