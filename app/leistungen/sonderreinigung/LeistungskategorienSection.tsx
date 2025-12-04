@@ -109,9 +109,10 @@ export default function LeistungskategorienSection() {
           {leistungen.map((leistung, index) => {
             const Icon = leistung.icon
             return (
-              <div
+              <a
                 key={index}
-                className="group bg-[#f8f9fa] rounded-[6px] overflow-hidden hover:shadow-xl transition-all duration-300"
+                href="#kontakt"
+                className="group bg-[#f8f9fa] rounded-[6px] overflow-hidden hover:shadow-xl transition-all duration-300 block cursor-pointer"
               >
                 {/* Image Header */}
                 <div className="relative h-[140px] sm:h-[160px] overflow-hidden">
@@ -152,15 +153,14 @@ export default function LeistungskategorienSection() {
                   </ul>
 
                   {/* CTA */}
-                  <a
-                    href="#kontakt"
-                    className="inline-flex items-center gap-2 text-[#109387] font-bold text-sm hover:gap-3 transition-all"
+                  <span
+                    className="inline-flex items-center gap-2 text-[#109387] font-bold text-sm group-hover:gap-3 transition-all"
                   >
                     Anfragen
                     <ArrowRight className="w-4 h-4" />
-                  </a>
+                  </span>
                 </div>
-              </div>
+              </a>
             )
           })}
         </div>

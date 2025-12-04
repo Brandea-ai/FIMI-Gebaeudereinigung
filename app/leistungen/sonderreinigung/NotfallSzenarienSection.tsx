@@ -76,9 +76,10 @@ export default function NotfallSzenarienSection() {
         {/* Szenarien Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {szenarien.map((szenario, index) => (
-            <div
+            <a
               key={index}
-              className="group bg-white rounded-[6px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+              href="#kontakt"
+              className="group bg-white rounded-[6px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 block cursor-pointer"
             >
               {/* Image */}
               <div className="relative h-[160px] sm:h-[180px] overflow-hidden">
@@ -118,15 +119,14 @@ export default function NotfallSzenarienSection() {
                 </p>
 
                 {/* CTA */}
-                <a
-                  href="#kontakt"
+                <span
                   className="inline-flex items-center gap-1.5 sm:gap-2 text-[#109387] font-bold text-xs sm:text-sm group-hover:gap-3 transition-all"
                 >
                   Hilfe anfragen
                   <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                </a>
+                </span>
               </div>
-            </div>
+            </a>
           ))}
         </div>
 
