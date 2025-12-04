@@ -74,7 +74,7 @@ export default function LeistungsumfangSection() {
             {/* Image */}
             <div className="relative h-64 sm:h-80 lg:h-96 rounded-[8px] overflow-hidden mb-6 sm:mb-8">
               <Image
-                src="https://images.unsplash.com/photo-1610557892470-55d9e80c0571?q=80&w=1200&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1478719059408-592965723cbc?q=80&w=1200&auto=format&fit=crop"
                 alt="Professionelle Schneeräumung mit Räumfahrzeug"
                 fill
                 className="object-cover"
