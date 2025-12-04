@@ -54,7 +54,8 @@ export default function HeroSection() {
 
             {/* H1 - SEO optimiert */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.05] mb-4 sm:mb-6">
-              Industriereinigung in Bayern
+              Industriereinigung
+              <span className="block text-[#109387]">in Bayern</span>
             </h1>
 
             {/* Subheadline - Kundennutzen */}
