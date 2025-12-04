@@ -110,8 +110,11 @@ export default function VerfahrenTechnikSection() {
           })}
         </div>
 
-        {/* Bottom Info */}
-        <div className="mt-10 sm:mt-12 lg:mt-16 bg-[#012956] rounded-[6px] p-6 sm:p-8 lg:p-10">
+        {/* Bottom Info - Komplett klickbar */}
+        <a
+          href="#kontakt"
+          className="mt-10 sm:mt-12 lg:mt-16 bg-[#012956] hover:bg-[#01203d] rounded-[6px] p-6 sm:p-8 lg:p-10 block transition-colors group cursor-pointer"
+        >
           <div className="grid md:grid-cols-[2fr_1fr] gap-6 items-center">
             <div>
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
@@ -124,16 +127,13 @@ export default function VerfahrenTechnikSection() {
               </p>
             </div>
             <div className="flex justify-start md:justify-end">
-              <a
-                href="#kontakt"
-                className="inline-flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-6 py-3 rounded-[6px] transition-colors group text-sm sm:text-base"
-              >
+              <span className="inline-flex items-center gap-2 bg-[#109387] group-hover:bg-[#0d7d72] text-white font-bold px-6 py-3 rounded-[6px] transition-colors text-sm sm:text-base">
                 Beratung anfragen
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-              </a>
+              </span>
             </div>
           </div>
-        </div>
+        </a>
 
       </div>
     </section>

@@ -4,33 +4,33 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Clock, Calendar } from 'lucide-react'
 
-// Thematisch passende Artikel für Sonderreinigung
+// Thematisch passende Artikel für Sonderreinigung (echte Artikel aus /lib/blog-data.ts)
 const relatedPosts = [
   {
-    slug: 'wasserschaden-erste-schritte',
-    title: 'Wasserschaden: Die ersten 24 Stunden richtig handeln',
-    excerpt: 'Was Sie sofort tun sollten, wenn ein Wasserschaden passiert – und welche Fehler Sie vermeiden müssen.',
-    image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?q=80&w=800&auto=format&fit=crop',
-    category: 'Notfall-Tipps',
-    date: '2025-01-20',
-    readTime: 6,
+    slug: 'industriereinigung-arbeitssicherheit-dguv-gefahrstoffv',
+    title: 'Industriereinigung: Arbeitssicherheit und Gefahrstoffmanagement im Fokus',
+    excerpt: 'Die Reinigung von Produktionsanlagen stellt hohe Anforderungen an die Arbeitssicherheit. Der Umgang mit spezialisierten Chemikalien erfordert die strikte Einhaltung der Gefahrstoffverordnung.',
+    image: 'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?q=80&w=800&auto=format&fit=crop',
+    category: 'Fachwissen',
+    date: '2024-05-15',
+    readTime: 4,
   },
   {
-    slug: 'versicherung-schadenfall-tipps',
-    title: 'Versicherungsfall: So dokumentieren Sie Schäden richtig',
-    excerpt: 'Die wichtigsten Tipps für eine reibungslose Abwicklung mit Ihrer Versicherung nach Brand- oder Wasserschäden.',
-    image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=800&auto=format&fit=crop',
+    slug: 'hygiene-arbeitsplatz-standards-buero-bmas-baua',
+    title: 'Hygiene am Arbeitsplatz: Aktuelle Standards für ein gesundes Büro',
+    excerpt: 'Die Pandemie hat das Bewusstsein für Hygiene am Arbeitsplatz nachhaltig verändert. Viele der etablierten Schutzmaßnahmen definieren heute den Standard.',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop',
     category: 'Tipps',
-    date: '2025-01-15',
+    date: '2024-09-10',
     readTime: 5,
   },
   {
-    slug: 'schimmel-nach-wasserschaden',
-    title: 'Schimmel nach Wasserschaden: Gefahren und professionelle Beseitigung',
-    excerpt: 'Warum schnelles Handeln entscheidend ist und wie professionelle Trocknung Schimmel verhindert.',
-    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop',
+    slug: 'gesundheitsschutz-reinigung-ergonomie-hautschutz-bg-bau',
+    title: 'Gesundheitsschutz in der Reinigung: Ergonomie und Hautschutz',
+    excerpt: 'Reinigungskräfte sind besonderen körperlichen Belastungen ausgesetzt. Ergonomische Arbeitstechniken und konsequenter Hautschutz sind entscheidend.',
+    image: 'https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?q=80&w=800&auto=format&fit=crop',
     category: 'Fachwissen',
-    date: '2025-01-08',
+    date: '2024-03-20',
     readTime: 4,
   },
 ]

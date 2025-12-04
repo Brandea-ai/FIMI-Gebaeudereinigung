@@ -38,7 +38,7 @@ const regionen = [
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop',
     headline: 'Sonderreinigung in Ingolstadt',
     beschreibung: 'Der Automobilstandort verlangt schnelle Reaktionen. Industriereinigung nach Ölunfällen, Brandschäden in der Produktion – wir kennen die Anforderungen.',
-    vorteile: ['Industrie-Erfahrung', 'Gefahrstoff-Kompetenz', 'ISO-Standards'],
+    vorteile: ['Industrie-Erfahrung', 'Gefahrstoff-Kompetenz', 'Nach ISO-Standards'],
     reaktionszeit: '3 Stunden',
   },
   {

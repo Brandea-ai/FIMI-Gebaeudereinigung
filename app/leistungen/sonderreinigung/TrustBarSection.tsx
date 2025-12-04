@@ -24,8 +24,8 @@ const stats = [
   {
     icon: Award,
     value: 'ISO',
-    label: 'Zertifiziert',
-    sublabel: '9001 & 14001',
+    label: 'Standards',
+    sublabel: 'nach 9001 & 14001',
   },
 ]
 

@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     frage: 'Welche Qualifikationen haben Ihre Mitarbeiter?',
-    antwort: 'Unsere Spezialteams bestehen aus staatlich geprüften Desinfektoren und zertifizierten Fachkräften. Wir arbeiten nach ISO 9001 und ISO 14001 Standards. Alle Mitarbeiter sind geschult im Umgang mit Gefahrstoffen und verfügen über die notwendigen Zulassungen für die Entsorgung von Sondermüll.',
+    antwort: 'Unsere Spezialteams bestehen aus staatlich geprüften Desinfektoren und ausgebildeten Fachkräften. Wir arbeiten nach den Standards von ISO 9001 und ISO 14001. Alle Mitarbeiter sind geschult im Umgang mit Gefahrstoffen und verfügen über die notwendigen Zulassungen für die Entsorgung von Sondermüll.',
   },
   {
     frage: 'Was passiert mit dem Sondermüll?',
