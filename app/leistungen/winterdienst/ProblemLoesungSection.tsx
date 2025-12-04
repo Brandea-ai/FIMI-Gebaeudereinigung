@@ -1,53 +1,42 @@
 'use client'
 
-import { Building2, Factory, ShoppingBag, RefreshCw, ArrowRight, AlertTriangle } from 'lucide-react'
+import Image from 'next/image'
+import { ArrowRight, Clock, ShieldAlert, Users, Snowflake } from 'lucide-react'
 
-const scenarios = [
+const probleme = [
   {
-    icon: Building2,
-    persona: 'Hausverwalter',
+    icon: Clock,
     problem: '7 Uhr morgens müssen die Gehwege frei sein – wer räumt so früh?',
-    painPoint: 'Verkehrssicherungspflicht ab 7 Uhr, Mieter beschweren sich, Haftungsrisiko',
-    solution: 'Feste Räumzeiten ab 5:30 Uhr. Dokumentation für Ihre Hausverwaltung. Wir betreuen mehrere Objekte gleichzeitig.',
-    highlight: 'Räumung ab 5:30 Uhr',
+    loesung: 'Feste Räumzeiten ab 5:30 Uhr. Dokumentation für Ihre Hausverwaltung. Wir betreuen mehrere Objekte gleichzeitig.',
   },
   {
-    icon: Factory,
-    persona: 'Geschäftsführer',
+    icon: ShieldAlert,
     problem: 'Der Firmenparkplatz ist vereist – Mitarbeiter rutschen fast aus',
-    painPoint: 'Arbeitsunfälle, Haftung als Arbeitgeber, BG-Prüfung',
-    solution: 'Betriebsgelände-Paket mit voller Haftungsübernahme. Räumung vor Schichtbeginn. Rechtssichere Dokumentation.',
-    highlight: 'Haftungsübernahme inklusive',
+    loesung: 'Betriebsgelände-Paket mit voller Haftungsübernahme. Räumung vor Schichtbeginn. Rechtssichere Dokumentation.',
   },
   {
-    icon: ShoppingBag,
-    persona: 'Center Manager',
+    icon: Users,
     problem: 'Bei Glätte meiden Kunden unser Einkaufszentrum – Umsatzverlust',
-    painPoint: 'Kundenfrequenz sinkt, Mieter beschweren sich, Image leidet',
-    solution: 'Schnelleinsatz bei Schneefall. Sichere Kundenwege zu jeder Öffnungszeit. 24/7-Bereitschaft auch am Wochenende.',
-    highlight: '24/7 Wochenend-Service',
+    loesung: 'Schnelleinsatz bei Schneefall. Sichere Kundenwege zu jeder Öffnungszeit. 24/7-Bereitschaft auch am Wochenende.',
   },
   {
-    icon: RefreshCw,
-    persona: 'Facility Manager',
+    icon: Snowflake,
     problem: 'Unser bisheriger Dienst hat uns im Schneechaos hängen lassen',
-    painPoint: 'Unzuverlässigkeit, keine Erreichbarkeit, Vertrauensverlust',
-    solution: '24/7-Einsatzzentrale. Backup-Teams bei Großwetterlagen. 2h Reaktionszeit garantiert. Ein Ansprechpartner.',
-    highlight: '2h Notfall-Reaktion',
+    loesung: '24/7-Einsatzzentrale. Backup-Teams bei Großwetterlagen. 2h Reaktionszeit garantiert. Ein Ansprechpartner.',
   },
 ]
 
 export default function ProblemLoesungSection() {
   return (
-    <section id="probleme" className="py-12 sm:py-16 lg:py-28 bg-white">
+    <section id="probleme" className="py-12 sm:py-16 lg:py-28 bg-[#f8f9fa]">
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
 
         {/* Header */}
-        <div className="max-w-3xl mb-10 sm:mb-12 lg:mb-16">
-          <span className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3 block">
+        <div className="max-w-3xl mb-8 sm:mb-12 lg:mb-16">
+          <span className="text-[#109387] font-bold text-xs sm:text-sm uppercase tracking-wide mb-3 sm:mb-4 block">
             Kennen Sie das?
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight mb-4 sm:mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight mb-4 sm:mb-6 whitespace-nowrap">
             Winterprobleme, die wir täglich lösen
           </h2>
           <p className="text-base sm:text-lg text-gray-600 font-semibold leading-relaxed">
@@ -56,66 +45,72 @@ export default function ProblemLoesungSection() {
           </p>
         </div>
 
-        {/* Scenario Cards */}
-        <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-          {scenarios.map((scenario, index) => (
+        {/* Problem-Lösung Grid */}
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
+          {probleme.map((item, index) => (
             <div
               key={index}
-              className="group bg-[#f8f9fa] hover:bg-white rounded-[8px] p-5 sm:p-6 lg:p-8 transition-all duration-300 hover:shadow-xl border border-transparent hover:border-gray-100"
+              className="bg-white rounded-[6px] p-4 sm:p-6 lg:p-8 shadow-sm hover:shadow-lg transition-all duration-300 group"
             >
-              {/* Header mit Icon und Persona */}
-              <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-5">
-                <div className="w-11 h-11 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-[#012956] group-hover:bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0 transition-colors duration-300">
-                  <scenario.icon className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-white" strokeWidth={1.5} />
+              <div className="flex items-start gap-3 sm:gap-4 lg:gap-5">
+                {/* Icon - Outlined Style */}
+                <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-[6px] border-2 border-[#109387] group-hover:bg-[#109387] flex items-center justify-center flex-shrink-0 transition-all duration-300">
+                  <item.icon className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
                 </div>
-                <div>
-                  <span className="text-[#109387] font-bold text-xs sm:text-sm uppercase tracking-wide">
-                    {scenario.persona}
-                  </span>
-                  <h3 className="text-base sm:text-lg lg:text-xl font-bold text-[#012956] leading-snug mt-1">
-                    "{scenario.problem}"
-                  </h3>
+
+                <div className="flex-1">
+                  {/* Problem */}
+                  <p className="text-gray-500 font-semibold italic mb-2 sm:mb-3 text-sm sm:text-base">
+                    &ldquo;{item.problem}&rdquo;
+                  </p>
+
+                  {/* Pfeil */}
+                  <div className="flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-3">
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#109387]" />
+                    <span className="text-[#109387] font-bold text-xs sm:text-sm uppercase tracking-wide">
+                      Unsere Lösung
+                    </span>
+                  </div>
+
+                  {/* Lösung */}
+                  <p className="text-gray-700 font-semibold leading-relaxed text-sm sm:text-base">
+                    {item.loesung}
+                  </p>
                 </div>
-              </div>
-
-              {/* Pain Point */}
-              <div className="flex items-start gap-2 sm:gap-3 mb-4 sm:mb-5 bg-red-50 rounded-[6px] p-3 sm:p-4">
-                <AlertTriangle className="w-4 h-4 sm:w-5 sm:h-5 text-red-500 flex-shrink-0 mt-0.5" />
-                <p className="text-red-700 font-semibold text-xs sm:text-sm leading-relaxed">
-                  {scenario.painPoint}
-                </p>
-              </div>
-
-              {/* Solution */}
-              <div className="mb-4 sm:mb-5">
-                <p className="text-gray-600 font-semibold text-sm sm:text-base leading-relaxed">
-                  <span className="text-[#109387] font-bold">FIMI-Lösung:</span> {scenario.solution}
-                </p>
-              </div>
-
-              {/* Highlight Badge */}
-              <div className="flex items-center justify-between">
-                <span className="inline-flex items-center bg-[#109387]/10 text-[#109387] font-bold text-xs sm:text-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-[6px]">
-                  {scenario.highlight}
-                </span>
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-300 group-hover:text-[#109387] group-hover:translate-x-1 transition-all" />
               </div>
             </div>
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-10 sm:mt-12 lg:mt-16 text-center">
-          <p className="text-gray-500 font-semibold text-sm sm:text-base mb-4 sm:mb-6">
-            Erkennen Sie Ihre Situation? Sprechen Sie mit uns.
-          </p>
-          <a
-            href="#kontakt"
-            className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-[6px] transition-all duration-300 group"
-          >
-            Kostenfreie Beratung anfragen
-            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
+        {/* Image + CTA */}
+        <div className="mt-10 sm:mt-12 lg:mt-16 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
+          <div className="relative h-[220px] sm:h-[280px] md:h-[350px] lg:h-[400px] rounded-[6px] overflow-hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1516912481808-3406841bd33c?q=80&w=2000&auto=format&fit=crop"
+              alt="Winterdienst räumt Schnee von Firmenparkplatz"
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          <div className="md:pl-4 lg:pl-8">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#012956] mb-3 sm:mb-4">
+              Sichere Wege sollten selbstverständlich sein
+            </h3>
+            <p className="text-gray-600 font-semibold leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
+              Ihre Kunden und Mitarbeiter bemerken geräumte Wege nicht bewusst –
+              aber vereiste Gehwege fallen sofort auf. Professioneller Winterdienst
+              bedeutet: Rechtssicherheit, weniger Haftungsrisiko und ein Arbeitsumfeld,
+              in dem sich alle sicher bewegen können.
+            </p>
+            <a
+              href="#kontakt"
+              className="inline-flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-4 sm:px-6 py-2.5 sm:py-3 rounded-[6px] transition-colors group text-sm sm:text-base"
+            >
+              Jetzt Winterdienst anfragen
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
         </div>
 
       </div>

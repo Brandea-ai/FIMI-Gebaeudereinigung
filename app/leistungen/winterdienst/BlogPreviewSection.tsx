@@ -4,34 +4,34 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Clock, Calendar } from 'lucide-react'
 
-// Thematisch passende Artikel für Winterdienst
+// Thematisch passende Artikel für Winterdienst - nur echte existierende Slugs
 const relatedPosts = [
   {
-    slug: 'winterdienst-pflichten-unternehmen',
-    title: 'Winterdienst-Pflichten für Unternehmen: Was Sie wissen müssen',
-    excerpt: 'Verkehrssicherungspflicht, Räumzeiten, Haftung – ein Überblick für Gewerbetreibende.',
-    image: 'https://images.unsplash.com/photo-1517299321609-52687d1bc55a?q=80&w=800&auto=format&fit=crop',
+    slug: 'winterdienst-bayern-pflichten-haftung-bgh-urteil-2025',
+    title: 'Winterdienst Bayern: Pflichten, Haftung & BGH-Urteil 2025',
+    excerpt: 'Verkehrssicherungspflicht, Räumzeiten, Haftung – ein Überblick für Gewerbetreibende in Bayern.',
+    image: 'https://images.unsplash.com/photo-1491002052546-bf38f186af56?q=80&w=800&auto=format&fit=crop',
     category: 'Tipps',
     date: '2025-01-15',
-    readTime: 5,
+    readTime: 7,
   },
   {
-    slug: 'streumittel-vergleich',
-    title: 'Streumittel im Vergleich: Salz, Splitt oder Granulat?',
-    excerpt: 'Welches Streugut ist für Ihre Flächen geeignet? Umweltaspekte und Wirksamkeit im Check.',
-    image: 'https://images.unsplash.com/photo-1610557892470-55d9e80c0571?q=80&w=800&auto=format&fit=crop',
+    slug: 'hygiene-arbeitsplatz-standards-buero-bmas-baua',
+    title: 'Hygiene am Arbeitsplatz: Standards für Büro & Gewerbe',
+    excerpt: 'BMAS- und BAuA-konforme Hygienestandards für ein sicheres Arbeitsumfeld.',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop',
     category: 'Tipps',
     date: '2025-01-08',
-    readTime: 4,
+    readTime: 6,
   },
   {
-    slug: 'winterdienst-kosten-senken',
-    title: 'Winterdienst-Kosten senken: Saisonpauschale oder Einsatzabrechnung?',
-    excerpt: 'Das passende Abrechnungsmodell für Ihr Unternehmen – wann sich was lohnt.',
-    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
+    slug: 'fachkraeftemangel-gebaeudereinigung-loesungen-2025',
+    title: 'Fachkräftemangel in der Gebäudereinigung: Lösungen 2025',
+    excerpt: 'Wie Unternehmen dem Personalmangel in der Reinigungsbranche begegnen können.',
+    image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=800&auto=format&fit=crop',
     category: 'Neuigkeiten',
     date: '2024-12-20',
-    readTime: 3,
+    readTime: 5,
   },
 ]
 
