@@ -11,19 +11,6 @@ import RegionenSection from './RegionenSection'
 import FAQSection from './FAQSection'
 import BlogPreviewSection from './BlogPreviewSection'
 import CTASection from './CTASection'
-import FloatingNav from '@/components/FloatingNav'
-
-// Navigation items for FloatingNav
-const floatingNavItems = [
-  { id: 'hero', label: 'Übersicht' },
-  { id: 'probleme', label: 'Herausforderungen' },
-  { id: 'hallentypen', label: 'Hallentypen' },
-  { id: 'leistungen', label: 'Leistungen' },
-  { id: 'prozess', label: 'Ablauf' },
-  { id: 'regionen', label: 'Standorte' },
-  { id: 'faq', label: 'FAQ' },
-  { id: 'kontakt', label: 'Kontakt' },
-]
 
 export const metadata: Metadata = {
   title: 'Hallenreinigung Bayern | Lagerhallen & Produktionshallen reinigen | FIMI',
@@ -170,7 +157,6 @@ export default function HallenreinigungPage() {
       />
 
       <main className="min-h-screen bg-white">
-        <FloatingNav items={floatingNavItems} />
         <HeroSection />
         <TrustBarSection />
         <KundenLogosOnly />

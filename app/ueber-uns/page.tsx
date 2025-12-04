@@ -8,20 +8,7 @@ import {
   PartnerSection,
   RegionenSection,
 } from './_components'
-import FloatingNav from '@/components/FloatingNav'
 import KundenLogosSlider from '@/components/KundenLogosSlider'
-
-// Navigation items for FloatingNav
-const floatingNavItems = [
-  { id: 'hero', label: 'Übersicht' },
-  { id: 'timeline', label: 'Geschichte' },
-  { id: 'team', label: 'Team' },
-  { id: 'philosophie', label: 'Philosophie' },
-  { id: 'kunden', label: 'Kunden' },
-  { id: 'gruender', label: 'Geschäftsführung' },
-  { id: 'partner', label: 'Partner' },
-  { id: 'regionen', label: 'Standorte' },
-]
 
 export const metadata: Metadata = {
   title: 'Über uns - FIMI Gebäudereinigung | Seit 2016 Ihr Partner für Sauberkeit',
@@ -38,7 +25,6 @@ export const metadata: Metadata = {
 export default function UeberUnsPage() {
   return (
     <main className="min-h-screen bg-white">
-      <FloatingNav items={floatingNavItems} />
       <HeroSection />
       <TimelineSection />
       <TeamSection />

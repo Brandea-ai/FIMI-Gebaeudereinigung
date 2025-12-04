@@ -25,17 +25,6 @@ import {
   X
 } from 'lucide-react'
 import FadeIn from '@/components/FadeIn'
-import FloatingNav from '@/components/FloatingNav'
-
-// Navigation items for FloatingNav
-const floatingNavItems = [
-  { id: 'hero', label: 'Übersicht' },
-  { id: 'stellenangebote', label: 'Stellenangebote' },
-  { id: 'initiativbewerbung', label: 'Initiativ bewerben' },
-  { id: 'bewerbung', label: 'Bewerbungsprozess' },
-  { id: 'standorte', label: 'Standorte' },
-  { id: 'kontakt', label: 'Kontakt' },
-]
 
 // ============================================================================
 // STELLENANGEBOTE DATEN - 12 Positionen, 8 Standorte, sortiert nach Datum
@@ -773,9 +762,6 @@ export default function KarrierePage() {
 
   return (
     <main className="min-h-screen bg-white">
-      {/* Floating Navigation */}
-      <FloatingNav items={floatingNavItems} />
-
       {/* Mobile Job Modal */}
       <JobModal job={selectedJob} onClose={() => setSelectedJob(null)} />
 
