@@ -54,7 +54,7 @@ export default function HeroSection() {
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white/90 mb-4 sm:mb-6 leading-tight">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#109387] mb-4 sm:mb-6 leading-tight">
               Ihr Kundenparkplatz ist Ihre Visitenkarte
             </p>
 

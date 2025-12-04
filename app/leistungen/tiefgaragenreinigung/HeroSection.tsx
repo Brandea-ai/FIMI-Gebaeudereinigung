@@ -60,7 +60,7 @@ export default function HeroSection() {
 
             {/* Subheadline - Pain Point direkt ansprechen */}
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#109387] mb-4 sm:mb-6">
-              Ölflecken, Reifenabrieb, Streusalzreste? Wir machen Ihre Tiefgarage wieder sauber.
+              Ölflecken, Reifenabrieb, Streusalzreste?<br />Wir machen Ihre Tiefgarage wieder sauber.
             </p>
 
             {/* Description - SEO + Kundennutzen */}

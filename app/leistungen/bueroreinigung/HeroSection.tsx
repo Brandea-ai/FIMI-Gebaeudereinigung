@@ -60,7 +60,7 @@ export default function HeroSection() {
 
             {/* Subheadline - Kundennutzen */}
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#109387] mb-4 sm:mb-6">
-              Saubere Räume, in denen sich Mitarbeiter und Kunden wohlfühlen
+              Saubere Räume, in denen sich Mitarbeiter<br />und Kunden wohlfühlen
             </p>
 
             {/* Description */}

@@ -60,7 +60,7 @@ export default function HeroSection() {
 
             {/* Subheadline - Problem-orientiert, Kundensprache */}
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#109387] mb-4 sm:mb-6">
-              Ihr Hallenboden ist verschmutzt – der Betrieb muss weiterlaufen?
+              Ihr Hallenboden ist verschmutzt –<br />der Betrieb muss weiterlaufen?
             </p>
 
             {/* Description - SEO-optimiert mit WDF*IDF Termen */}
