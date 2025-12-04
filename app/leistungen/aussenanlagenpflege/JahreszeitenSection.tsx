@@ -188,7 +188,7 @@ export default function JahreszeitenSection() {
 
         {/* Bottom Info - Clickable */}
         <Link
-          href="/kontakt"
+          href="#kontakt"
           className="mt-10 sm:mt-12 lg:mt-16 bg-[#109387]/20 hover:bg-[#109387]/30 rounded-[8px] p-5 sm:p-6 lg:p-8 block transition-all duration-300 group"
         >
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">

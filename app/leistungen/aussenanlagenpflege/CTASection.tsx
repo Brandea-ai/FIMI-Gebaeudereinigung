@@ -60,7 +60,7 @@ export default function CTASection() {
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
-                href="/kontakt"
+                href="#kontakt"
                 className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm sm:text-base lg:text-lg px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-[6px] transition-all duration-300 group shadow-lg hover:shadow-xl"
               >
                 Kostenfreie Besichtigung anfragen

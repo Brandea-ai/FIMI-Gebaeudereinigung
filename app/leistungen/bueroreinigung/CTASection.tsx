@@ -72,7 +72,7 @@ export default function CTASection() {
 
             {/* CTA Button - Kontaktformular ZUERST */}
             <Link
-              href="/kontakt"
+              href="#kontakt"
               className="flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm sm:text-base lg:text-lg px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-[6px] transition-colors w-full group mb-4 sm:mb-5"
             >
               Kostenfreie Besichtigung anfragen
