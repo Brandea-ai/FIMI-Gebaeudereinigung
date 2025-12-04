@@ -77,17 +77,17 @@ export default function CTASection() {
               24 Stunden am Tag, 7 Tage die Woche – bei Wasserschäden, Bränden und allen Notfällen.
             </p>
 
-            {/* Notfall-Telefon ZUERST (bei Sonderreinigung wichtiger!) */}
+            {/* Telefon */}
             <a
               href="tel:+4987143033460"
-              className="flex items-center gap-3 sm:gap-4 bg-red-600 hover:bg-red-700 rounded-[6px] p-3 sm:p-4 lg:p-5 mb-4 sm:mb-5 group transition-colors"
+              className="flex items-center gap-3 sm:gap-4 bg-[#f8f9fa] hover:bg-[#012956] rounded-[6px] p-3 sm:p-4 lg:p-5 mb-4 sm:mb-5 group transition-colors"
             >
-              <div className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 bg-white rounded-[6px] flex items-center justify-center flex-shrink-0">
-                <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-red-600" strokeWidth={2} />
+              <div className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 border-2 border-[#109387] group-hover:bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0 transition-all duration-300">
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
               </div>
               <div>
-                <span className="text-white/80 text-xs sm:text-sm font-semibold block">24h Notfall-Hotline</span>
-                <span className="text-white font-bold text-lg sm:text-xl lg:text-2xl">
+                <span className="text-gray-500 group-hover:text-white/60 text-xs sm:text-sm font-semibold block transition-colors">24h Notfall-Hotline</span>
+                <span className="text-[#012956] group-hover:text-white font-bold text-base sm:text-lg lg:text-xl transition-colors">
                   0871 430 334 60
                 </span>
               </div>

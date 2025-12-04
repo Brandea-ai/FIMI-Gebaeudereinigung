@@ -82,22 +82,17 @@ export default function FAQSection() {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
 
-            {/* Notfall-Telefon */}
+            {/* Kontakt-Info */}
             <a
               href="tel:+4987143033460"
-              className="mt-4 sm:mt-6 bg-red-600 hover:bg-red-700 rounded-[6px] p-4 sm:p-5 flex items-center gap-4 transition-colors group"
+              className="mt-4 sm:mt-6 bg-white border-2 border-[#012956] hover:bg-[#012956] rounded-[6px] p-4 sm:p-5 block transition-all duration-300 group"
             >
-              <div className="w-12 h-12 bg-white rounded-[6px] flex items-center justify-center flex-shrink-0">
-                <Phone className="w-6 h-6 text-red-600" />
-              </div>
-              <div>
-                <p className="text-white/80 font-semibold text-sm mb-1">
-                  24h Notfall-Hotline
-                </p>
-                <span className="text-lg sm:text-xl font-bold text-white">
-                  0871 430 334 60
-                </span>
-              </div>
+              <p className="text-sm text-gray-500 group-hover:text-white/70 font-semibold mb-2 transition-colors">
+                24h Notfall-Hotline
+              </p>
+              <span className="text-lg sm:text-xl font-bold text-[#012956] group-hover:text-white transition-colors">
+                0871 430 334 60
+              </span>
             </a>
 
             {/* Bild - nur Desktop */}
