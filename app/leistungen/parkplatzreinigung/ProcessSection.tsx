@@ -99,7 +99,7 @@ export default function ProcessSection() {
 
         {/* Bottom CTA */}
         <a
-          href="/kontakt"
+          href="#kontakt"
           className="mt-10 sm:mt-12 lg:mt-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 bg-[#f8f9fa] hover:bg-gray-100 rounded-[6px] p-5 sm:p-6 lg:p-8 transition-colors group cursor-pointer"
         >
           <p className="text-sm sm:text-base lg:text-lg text-gray-600 font-semibold">

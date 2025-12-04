@@ -80,13 +80,13 @@ export default function HeroSection() {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-              <Link
-                href="/kontakt"
+              <a
+                href="#kontakt"
                 className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-base sm:text-lg px-6 sm:px-8 py-3.5 sm:py-4 rounded-[6px] transition-all duration-300 group shadow-lg"
               >
                 Kostenfreie Besichtigung
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </Link>
+              </a>
 
               <a
                 href="tel:+4987143033460"

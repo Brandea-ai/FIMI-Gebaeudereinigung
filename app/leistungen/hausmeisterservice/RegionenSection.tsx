@@ -172,19 +172,19 @@ export default function RegionenSection() {
             </div>
 
             {/* CTA Button */}
-            <Link
-              href="/kontakt"
+            <a
+              href="#kontakt"
               className="inline-flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-4 sm:px-6 py-2.5 sm:py-3 rounded-[6px] transition-colors w-fit group text-sm sm:text-base"
             >
               Hausmeisterservice in {active.name} anfragen
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </a>
           </div>
         </div>
 
         {/* Nicht dabei? */}
-        <Link
-          href="/kontakt"
+        <a
+          href="#kontakt"
           className="mt-10 sm:mt-12 lg:mt-16 bg-[#f8f9fa] hover:bg-[#e9ecef] rounded-[6px] p-4 sm:p-6 lg:p-10 block transition-colors group cursor-pointer"
         >
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
@@ -201,7 +201,7 @@ export default function RegionenSection() {
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </span>
           </div>
-        </Link>
+        </a>
 
       </div>
     </section>

@@ -114,7 +114,7 @@ export default function ProblemLoesungSection() {
             Sie haben ein anderes Problem? Wir finden die Lösung.
           </p>
           <a
-            href="/kontakt"
+            href="#kontakt"
             className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-[#012956] hover:bg-[#01203d] text-white font-bold text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-[6px] transition-all duration-300 group"
           >
             Kostenlose Beratung anfragen

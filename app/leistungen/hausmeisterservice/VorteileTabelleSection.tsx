@@ -166,13 +166,13 @@ export default function VorteileTabelleSection() {
                 Wir zeigen Ihnen in einer kostenfreien Beratung, wie viel Sie sparen können.
               </p>
             </div>
-            <Link
-              href="/kontakt"
+            <a
+              href="#kontakt"
               className="inline-flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm sm:text-base lg:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-[6px] transition-all duration-300 group whitespace-nowrap flex-shrink-0"
             >
               Jetzt wechseln
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </a>
           </div>
         </div>
 

@@ -172,7 +172,7 @@ export default function RegionenSection() {
 
             {/* CTA Button */}
             <a
-              href="/kontakt"
+              href="#kontakt"
               className="inline-flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-4 sm:px-6 py-2.5 sm:py-3 rounded-[6px] transition-colors w-fit group text-sm sm:text-base"
             >
               Parkplatzreinigung in {active.name} anfragen
@@ -183,7 +183,7 @@ export default function RegionenSection() {
 
         {/* Nicht dabei? */}
         <a
-          href="/kontakt"
+          href="#kontakt"
           className="mt-10 sm:mt-12 lg:mt-16 bg-white hover:bg-gray-50 border border-gray-200 rounded-[6px] p-4 sm:p-6 lg:p-10 block transition-colors group cursor-pointer"
         >
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">

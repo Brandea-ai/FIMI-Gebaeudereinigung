@@ -99,8 +99,8 @@ export default function ProcessSection() {
         </div>
 
         {/* Bottom CTA */}
-        <Link
-          href="/kontakt"
+        <a
+          href="#kontakt"
           className="mt-10 sm:mt-12 lg:mt-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 bg-white hover:bg-gray-50 rounded-[6px] p-5 sm:p-6 lg:p-8 transition-colors group cursor-pointer"
         >
           <div>
@@ -113,7 +113,7 @@ export default function ProcessSection() {
             Jetzt Schritt 1 starten
             <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
           </span>
-        </Link>
+        </a>
 
       </div>
     </section>
