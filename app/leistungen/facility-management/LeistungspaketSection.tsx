@@ -48,8 +48,8 @@ const zusatzleistungen = [
   { name: 'Sonderreinigung', href: '/leistungen/sonderreinigung' },
   { name: 'Büroreinigung', href: '/leistungen/bueroreinigung' },
   { name: 'Hallenreinigung', href: '/leistungen/hallenreinigung' },
-  { name: 'Grundreinigung', href: '/leistungen/grundreinigung' },
-  { name: 'Treppenhausreinigung', href: '/leistungen/treppenhausreinigung' },
+  { name: 'Fassadenreinigung', href: '/leistungen/fassadenreinigung' },
+  { name: 'Maschinenreinigung', href: '/leistungen/maschinenreinigung' },
 ]
 
 export default function LeistungspaketSection() {
@@ -124,28 +124,25 @@ export default function LeistungspaketSection() {
 
         {/* Zusatzleistungen */}
         <div className="bg-white rounded-[6px] p-6 sm:p-8 lg:p-10">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-            <div>
-              <h3 className="text-xl sm:text-2xl font-bold text-[#012956] mb-2">
-                Zusätzlich buchbar
-              </h3>
-              <p className="text-gray-600 font-semibold">
-                Erweitern Sie Ihr Paket nach Bedarf – alle Leistungen aus einer Hand.
-              </p>
-            </div>
+          <div className="mb-6">
+            <h3 className="text-xl sm:text-2xl font-bold text-[#012956] mb-2">
+              Zusätzlich buchbar
+            </h3>
+            <p className="text-gray-600 font-semibold">
+              Erweitern Sie Ihr Paket nach Bedarf – alle Leistungen aus einer Hand.
+            </p>
+          </div>
 
-            <div className="flex flex-wrap gap-2 sm:gap-3">
-              {zusatzleistungen.map((leistung, index) => (
-                <Link
-                  key={index}
-                  href={leistung.href}
-                  className="inline-flex items-center gap-2 bg-[#f8f9fa] hover:bg-[#012956] border-2 border-[#012956] text-[#012956] hover:text-white font-bold text-sm px-4 py-2 rounded-[6px] transition-all duration-300"
-                >
-                  {leistung.name}
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-              ))}
-            </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+            {zusatzleistungen.map((leistung, index) => (
+              <Link
+                key={index}
+                href={leistung.href}
+                className="flex items-center justify-center gap-2 bg-[#f8f9fa] hover:bg-[#012956] border-2 border-[#012956] text-[#012956] hover:text-white font-bold text-xs sm:text-sm px-3 sm:px-4 py-2.5 sm:py-3 rounded-[6px] transition-all duration-300 text-center"
+              >
+                {leistung.name}
+              </Link>
+            ))}
           </div>
         </div>
 
