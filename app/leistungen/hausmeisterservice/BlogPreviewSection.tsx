@@ -7,28 +7,28 @@ import { ArrowRight, Clock, Tag } from 'lucide-react'
 // Relevante Blog-Artikel für Hausmeisterservice
 const blogPosts = [
   {
-    slug: 'winterdienst-verkehrssicherungspflicht',
-    title: 'Winterdienst & Verkehrssicherungspflicht: Was Eigentümer wissen müssen',
-    excerpt: 'Wer haftet bei Glatteis? Welche Pflichten haben Eigentümer und Verwalter? Ein Überblick über rechtliche Grundlagen und praktische Tipps.',
+    slug: 'winterdienst-bayern-pflichten-haftung-bgh-urteil-2025',
+    title: 'Winterdienst Bayern: Pflichten, Haftung & BGH-Urteil 2025',
+    excerpt: 'Wer haftet bei Glatteis? Welche Pflichten haben Eigentümer und Verwalter? Ein Überblick über rechtliche Grundlagen und aktuelle BGH-Urteile.',
     image: 'https://images.unsplash.com/photo-1491002052546-bf38f186af56?q=80&w=800&auto=format&fit=crop',
     kategorie: 'Winterdienst',
-    lesezeit: '5 Min.',
+    lesezeit: '8 Min.',
   },
   {
-    slug: 'betriebskosten-hausmeister-umlegen',
-    title: 'Hausmeisterkosten auf Mieter umlegen: So geht es richtig',
-    excerpt: 'Welche Tätigkeiten sind umlagefähig? Wie muss die Abrechnung aussehen? Praxistipps für Vermieter und Hausverwaltungen.',
+    slug: 'tariflohn-gebaeudereinigung-2025-2026',
+    title: 'Tariflohn Gebäudereinigung 2025/2026: Aktuelle Löhne & Zulagen',
+    excerpt: 'Was verdienen Reinigungskräfte und Hausmeister nach Tarif? Alle aktuellen Lohngruppen, Zulagen und regionale Unterschiede im Überblick.',
     image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
-    kategorie: 'Hausverwaltung',
-    lesezeit: '7 Min.',
+    kategorie: 'Branche',
+    lesezeit: '10 Min.',
   },
   {
-    slug: 'objektbegehung-checkliste',
-    title: 'Objektbegehung: Die komplette Checkliste für Hausverwalter',
-    excerpt: 'Was sollte bei regelmäßigen Kontrollgängen geprüft werden? Unsere Checkliste für eine professionelle Objektbegehung.',
+    slug: 'fachkraeftemangel-gebaeudereinigung-loesungen-2025',
+    title: 'Fachkräftemangel Gebäudereinigung: Lösungen für 2025',
+    excerpt: 'Der Fachkräftemangel trifft auch den Hausmeisterservice. Welche Strategien helfen Unternehmen, qualifiziertes Personal zu finden und zu halten?',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop',
-    kategorie: 'Praxis-Tipps',
-    lesezeit: '6 Min.',
+    kategorie: 'Branche',
+    lesezeit: '9 Min.',
   },
 ]
 

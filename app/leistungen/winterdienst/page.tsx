@@ -1,7 +1,4 @@
 import { Metadata } from 'next'
-import HeroSection from './HeroSection'
-import BenefitsSection from './BenefitsSection'
-import ProcessSection from './ProcessSection'
 
 export const metadata: Metadata = {
   title: 'Winterdienst Bayern | FIMI Gebäudereinigung',
@@ -12,9 +9,7 @@ export const metadata: Metadata = {
 export default function WinterdienstPage() {
   return (
     <main className="min-h-screen bg-white">
-      <HeroSection />
-      <BenefitsSection />
-      <ProcessSection />
+      {/* Seite wird neu aufgebaut */}
     </main>
   )
 }
