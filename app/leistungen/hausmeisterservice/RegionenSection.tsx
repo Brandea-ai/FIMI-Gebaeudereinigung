@@ -89,7 +89,7 @@ export default function RegionenSection() {
             Ihre Region
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-4 sm:mb-6 whitespace-nowrap">
-            Hausmeisterservice in Ihrer Nähe
+            Hausmeisterservice in der Nähe
           </h2>
           <p className="text-base sm:text-lg text-gray-600 font-semibold leading-relaxed">
             Wir sind in ganz Bayern für Sie da. Kurze Wege, schnelle Reaktionszeiten, lokale Teams die Ihre Region kennen.
