@@ -104,7 +104,7 @@ export default function ProblemLoesungSection() {
               Bauleiter und Projektverantwortliche stehen – und liefern zuverlässig bezugsfertige Ergebnisse.
             </p>
             <Link
-              href="/kontakt"
+              href="#kontakt"
               className="inline-flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-4 sm:px-6 py-2.5 sm:py-3 rounded-[6px] transition-colors group text-sm sm:text-base"
             >
               Jetzt Termin sichern

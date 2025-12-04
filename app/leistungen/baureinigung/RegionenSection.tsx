@@ -155,7 +155,7 @@ export default function RegionenSection() {
 
               {/* CTA */}
               <Link
-                href="/kontakt"
+                href="#kontakt"
                 className="inline-flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-6 py-3 rounded-[6px] transition-colors group w-full justify-center sm:w-auto"
               >
                 Baureinigung in {activeRegion.name} anfragen
