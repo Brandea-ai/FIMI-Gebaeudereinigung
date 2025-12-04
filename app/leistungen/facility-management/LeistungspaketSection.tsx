@@ -46,6 +46,10 @@ const zusatzleistungen = [
   { name: 'Baureinigung', href: '/leistungen/baureinigung' },
   { name: 'Industriereinigung', href: '/leistungen/industriereinigung' },
   { name: 'Sonderreinigung', href: '/leistungen/sonderreinigung' },
+  { name: 'Büroreinigung', href: '/leistungen/bueroreinigung' },
+  { name: 'Hallenreinigung', href: '/leistungen/hallenreinigung' },
+  { name: 'Grundreinigung', href: '/leistungen/grundreinigung' },
+  { name: 'Treppenhausreinigung', href: '/leistungen/treppenhausreinigung' },
 ]
 
 export default function LeistungspaketSection() {
