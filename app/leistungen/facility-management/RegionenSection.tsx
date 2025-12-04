@@ -233,29 +233,20 @@ export default function RegionenSection() {
 
           {/* Left: Map */}
           <div className="w-full">
-            <div className="relative w-full">
-              <Image
-                src="/images/home/staedte-fimi.avif"
-                alt="Bayern Karte - FIMI Facility Management Servicegebiete"
-                width={4800}
-                height={3584}
-                className="w-full h-auto rounded-[6px]"
-                priority
-              />
-              <Link
-                href="/ueber-uns"
-                className="hidden lg:flex absolute bottom-6 sm:bottom-8 left-4 right-4 bg-[#012956] rounded-[6px] px-4 sm:px-6 py-3 sm:py-4 items-center justify-center gap-2 sm:gap-3 group hover:bg-[#01203d] transition-all"
-              >
-                <span className="text-white font-bold text-base sm:text-lg">Mehr über FIMI erfahren</span>
-                <ArrowRight size={18} className="text-white group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
+            <Image
+              src="/images/home/staedte-fimi.avif"
+              alt="Bayern Karte - FIMI Servicegebiete"
+              width={4800}
+              height={3584}
+              className="w-full h-auto rounded-[6px]"
+              priority
+            />
             <Link
               href="/ueber-uns"
-              className="lg:hidden flex mt-4 bg-[#012956] rounded-[6px] px-4 sm:px-6 py-3 sm:py-4 items-center justify-center gap-2 sm:gap-3 group hover:bg-[#01203d] transition-all"
+              className="inline-flex items-center gap-1.5 text-gray-500 hover:text-[#109387] font-semibold text-xs sm:text-sm mt-3 transition-colors group"
             >
-              <span className="text-white font-bold text-base sm:text-lg">Mehr über FIMI erfahren</span>
-              <ArrowRight size={18} className="text-white group-hover:translate-x-1 transition-transform" />
+              Mehr über FIMI
+              <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
             </Link>
           </div>
 
