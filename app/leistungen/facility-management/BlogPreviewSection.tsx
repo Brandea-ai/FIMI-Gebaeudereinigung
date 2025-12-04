@@ -124,12 +124,15 @@ export default function BlogPreviewSection() {
           ))}
         </div>
 
-        {/* Verwandte Leistungen */}
+        {/* FM-Kernleistungen - 5 Stück */}
         <div className="mt-10 sm:mt-12 lg:mt-16">
-          <h3 className="text-lg sm:text-xl font-bold text-[#012956] mb-4 sm:mb-6">
+          <h3 className="text-lg sm:text-xl font-bold text-[#012956] mb-2">
             Unsere FM-Kernleistungen
           </h3>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+          <p className="text-gray-600 font-semibold text-sm sm:text-base mb-4 sm:mb-6">
+            Alle Basisleistungen für Ihre Objektbetreuung – ein Vertrag, ein Ansprechpartner.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
             <Link
               href="/leistungen/unterhaltsreinigung"
               className="bg-[#f8f9fa] hover:bg-[#109387] rounded-[6px] p-4 sm:p-5 group transition-all duration-300"
@@ -138,7 +141,18 @@ export default function BlogPreviewSection() {
                 Unterhaltsreinigung
               </span>
               <span className="text-gray-500 group-hover:text-white/80 font-semibold text-xs sm:text-sm">
-                Regelmäßige Gebäudereinigung
+                Regelmäßige Reinigung
+              </span>
+            </Link>
+            <Link
+              href="/leistungen/bueroreinigung"
+              className="bg-[#f8f9fa] hover:bg-[#109387] rounded-[6px] p-4 sm:p-5 group transition-all duration-300"
+            >
+              <span className="text-[#012956] group-hover:text-white font-bold text-sm sm:text-base block mb-1">
+                Büroreinigung
+              </span>
+              <span className="text-gray-500 group-hover:text-white/80 font-semibold text-xs sm:text-sm">
+                Arbeitsplatzpflege
               </span>
             </Link>
             <Link
@@ -172,6 +186,73 @@ export default function BlogPreviewSection() {
               </span>
               <span className="text-gray-500 group-hover:text-white/80 font-semibold text-xs sm:text-sm">
                 Grünpflege & Garten
+              </span>
+            </Link>
+          </div>
+        </div>
+
+        {/* Zusätzlich buchbar - 5 Stück */}
+        <div className="mt-6 sm:mt-8">
+          <h3 className="text-lg sm:text-xl font-bold text-[#012956] mb-2">
+            Zusätzlich buchbar
+          </h3>
+          <p className="text-gray-600 font-semibold text-sm sm:text-base mb-4 sm:mb-6">
+            Erweitern Sie Ihr Paket nach Bedarf – alle Leistungen aus einer Hand.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+            <Link
+              href="/leistungen/fensterreinigung"
+              className="bg-[#f8f9fa] hover:bg-[#109387] rounded-[6px] p-4 sm:p-5 group transition-all duration-300"
+            >
+              <span className="text-[#012956] group-hover:text-white font-bold text-sm sm:text-base block mb-1">
+                Fensterreinigung
+              </span>
+              <span className="text-gray-500 group-hover:text-white/80 font-semibold text-xs sm:text-sm">
+                Glas & Rahmen
+              </span>
+            </Link>
+            <Link
+              href="/leistungen/tiefgaragenreinigung"
+              className="bg-[#f8f9fa] hover:bg-[#109387] rounded-[6px] p-4 sm:p-5 group transition-all duration-300"
+            >
+              <span className="text-[#012956] group-hover:text-white font-bold text-sm sm:text-base block mb-1">
+                Tiefgaragenreinigung
+              </span>
+              <span className="text-gray-500 group-hover:text-white/80 font-semibold text-xs sm:text-sm">
+                Parkhäuser & Garagen
+              </span>
+            </Link>
+            <Link
+              href="/leistungen/parkplatzreinigung"
+              className="bg-[#f8f9fa] hover:bg-[#109387] rounded-[6px] p-4 sm:p-5 group transition-all duration-300"
+            >
+              <span className="text-[#012956] group-hover:text-white font-bold text-sm sm:text-base block mb-1">
+                Parkplatzreinigung
+              </span>
+              <span className="text-gray-500 group-hover:text-white/80 font-semibold text-xs sm:text-sm">
+                Außenflächen
+              </span>
+            </Link>
+            <Link
+              href="/leistungen/baureinigung"
+              className="bg-[#f8f9fa] hover:bg-[#109387] rounded-[6px] p-4 sm:p-5 group transition-all duration-300"
+            >
+              <span className="text-[#012956] group-hover:text-white font-bold text-sm sm:text-base block mb-1">
+                Baureinigung
+              </span>
+              <span className="text-gray-500 group-hover:text-white/80 font-semibold text-xs sm:text-sm">
+                Nach Bauarbeiten
+              </span>
+            </Link>
+            <Link
+              href="/leistungen/industriereinigung"
+              className="bg-[#f8f9fa] hover:bg-[#109387] rounded-[6px] p-4 sm:p-5 group transition-all duration-300"
+            >
+              <span className="text-[#012956] group-hover:text-white font-bold text-sm sm:text-base block mb-1">
+                Industriereinigung
+              </span>
+              <span className="text-gray-500 group-hover:text-white/80 font-semibold text-xs sm:text-sm">
+                Produktion & Hallen
               </span>
             </Link>
           </div>
