@@ -243,7 +243,7 @@ export default function RegionenSection() {
             />
             <Link
               href="/ueber-uns"
-              className="inline-flex items-center gap-1.5 text-gray-500 hover:text-[#109387] font-semibold text-xs sm:text-sm mt-3 transition-colors group"
+              className="inline-flex items-center gap-1.5 bg-[#012956] hover:bg-[#01203d] text-white font-semibold text-xs sm:text-sm px-3 py-2 rounded-[6px] mt-3 transition-colors group"
             >
               Mehr über FIMI
               <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
