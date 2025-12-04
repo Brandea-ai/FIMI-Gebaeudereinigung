@@ -5,34 +5,34 @@ import Link from 'next/link'
 import { ArrowRight, Calendar, Clock } from 'lucide-react'
 import FadeIn from '@/components/FadeIn'
 
-// Relevante Blogartikel für Maschinenreinigung
+// Relevante Blogartikel für Maschinenreinigung (nur existierende Artikel)
 const blogPosts = [
   {
-    slug: 'maschinenreinigung-kosten-preise-ueberblick',
-    titel: 'Maschinenreinigung Kosten: Was kostet professionelle Reinigung?',
-    auszug: 'Ein transparenter Überblick über Preise, Faktoren und Einsparpotenziale bei der Maschinenreinigung. So kalkulieren Profis.',
-    bild: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop',
-    datum: '28. November 2024',
-    lesezeit: '7 Min',
+    slug: 'industriereinigung-arbeitssicherheit-dguv-gefahrstoffv',
+    titel: 'Industriereinigung: Arbeitssicherheit und Gefahrstoffmanagement',
+    auszug: 'Die Reinigung von Produktionsanlagen und Maschinen stellt hohe Anforderungen an die Arbeitssicherheit. Der Umgang mit spezialisierten Chemikalien erfordert strikte Einhaltung der DGUV-Vorschriften.',
+    bild: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop',
+    datum: '18. November 2024',
+    lesezeit: '9 Min',
+    kategorie: 'Ratgeber',
+  },
+  {
+    slug: 'digitalisierung-gebaeudereinigung-2025-ki-robotik-iot',
+    titel: 'Digitalisierung 2025: KI und Robotik in der Reinigung',
+    auszug: 'Die Gebäudereinigungsbranche steht 2025 im Zeichen tiefgreifender technologischer Veränderungen. Unternehmen setzen verstärkt auf digitale Lösungen für Effizienz und Qualität.',
+    bild: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800&auto=format&fit=crop',
+    datum: '25. November 2024',
+    lesezeit: '8 Min',
     kategorie: 'Wissen',
   },
   {
-    slug: 'cnc-maschine-reinigen-anleitung',
-    titel: 'CNC-Maschine reinigen: Anleitung für längere Lebensdauer',
-    auszug: 'Praktische Tipps für die Reinigung von CNC-Fräsen und Drehmaschinen. Was Sie selbst tun können und wann Profis ran sollten.',
-    bild: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=800&auto=format&fit=crop',
-    datum: '15. November 2024',
-    lesezeit: '8 Min',
+    slug: 'reinigungsintervalle-buero-schule-praxis-din-ral',
+    titel: 'Reinigungsintervalle: Wie oft muss gereinigt werden?',
+    auszug: 'Die Festlegung der richtigen Reinigungsintervalle ist entscheidend für Hygiene, Werterhalt und Kosteneffizienz. Frequenz individuell auf Basis von Nutzungsintensität ermitteln.',
+    bild: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop',
+    datum: '10. November 2024',
+    lesezeit: '7 Min',
     kategorie: 'Tipps',
-  },
-  {
-    slug: 'trockeneisreinigung-vorteile-einsatzgebiete',
-    titel: 'Trockeneisreinigung: Vorteile und Einsatzgebiete in der Industrie',
-    auszug: 'Warum Trockeneisreinigung die schonendste Methode für empfindliche Maschinen ist und wo sie eingesetzt wird.',
-    bild: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop',
-    datum: '5. November 2024',
-    lesezeit: '6 Min',
-    kategorie: 'Ratgeber',
   },
 ]
 
