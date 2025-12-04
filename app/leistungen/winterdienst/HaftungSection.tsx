@@ -45,16 +45,15 @@ export default function HaftungSection() {
             </p>
 
             {/* Warning Box */}
-            <div className="bg-red-500/20 border border-red-500/30 rounded-[8px] p-4 sm:p-5 lg:p-6 mb-6 sm:mb-8">
+            <div className="bg-slate-400/15 border border-slate-400/25 rounded-[8px] p-4 sm:p-5 lg:p-6 mb-6 sm:mb-8">
               <div className="flex items-start gap-3 sm:gap-4">
-                <AlertTriangle className="w-5 h-5 sm:w-6 sm:h-6 text-red-400 flex-shrink-0 mt-0.5" />
+                <AlertTriangle className="w-5 h-5 sm:w-6 sm:h-6 text-[#109387] flex-shrink-0 mt-0.5" />
                 <div>
                   <h4 className="text-white font-bold text-sm sm:text-base lg:text-lg mb-1 sm:mb-2">
                     Wussten Sie?
                   </h4>
                   <p className="text-white/80 font-semibold text-xs sm:text-sm lg:text-base leading-relaxed">
-                    Bei Verletzung der Räum- und Streupflicht drohen Bußgelder bis zu <span className="text-red-400 font-bold">50.000 Euro</span>.
-                    Hinzu kommen Schadensersatzansprüche bei Personenschäden.
+                    Bei Verletzung der Räum- und Streupflicht drohen Bußgelder bis zu <span className="text-[#109387] font-bold">50.000&nbsp;Euro</span>. Hinzu kommen Schadensersatzansprüche bei&nbsp;Personenschäden.
                   </p>
                 </div>
               </div>
