@@ -50,14 +50,14 @@ export default function FAQSection() {
     <section id="faq" className="py-12 sm:py-16 lg:py-28 bg-white">
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
 
-        <div className="grid lg:grid-cols-[350px_1fr] xl:grid-cols-[400px_1fr] gap-8 lg:gap-16 xl:gap-20">
+        <div className="grid lg:grid-cols-[400px_1fr] xl:grid-cols-[450px_1fr] gap-8 lg:gap-12 xl:gap-16">
 
           {/* Sticky Sidebar */}
           <aside className="lg:sticky lg:top-24 lg:self-start">
             <span className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3 block">
               Häufige Fragen
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-tight mb-4 sm:mb-6">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#109387] leading-tight mb-4 sm:mb-6">
               Fragen zur Tiefgaragenreinigung?
             </h2>
             <p className="text-base sm:text-lg text-gray-700 font-semibold leading-relaxed mb-6 sm:mb-8">

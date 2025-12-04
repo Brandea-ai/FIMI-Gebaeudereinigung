@@ -1,15 +1,15 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, Phone, CheckCircle, Home, Building2, Factory, Wrench, Building, Hotel } from 'lucide-react'
+import { ArrowRight, Phone, CheckCircle, Home, Building2, Factory, Truck, Car, Hotel } from 'lucide-react'
 
-// 6 relevante Branchen für Tiefgaragenreinigung
+// 6 relevante Branchen für Tiefgaragenreinigung (echte Branchen-Slugs)
 const branchen = [
   { slug: 'wohnungswirtschaft', name: 'Wohnungswirtschaft', icon: Home },
   { slug: 'buero-verwaltung', name: 'Büro & Verwaltung', icon: Building2 },
-  { slug: 'automotive', name: 'Automotive', icon: Factory },
-  { slug: 'facility-management', name: 'Facility Management', icon: Wrench },
-  { slug: 'gewerbeimmobilien', name: 'Gewerbeimmobilien', icon: Building },
+  { slug: 'industrie-produktion', name: 'Industrie & Produktion', icon: Factory },
+  { slug: 'logistik-lager', name: 'Logistik & Lager', icon: Truck },
+  { slug: 'automotive', name: 'Automotive', icon: Car },
   { slug: 'gastronomie-hotel', name: 'Gastronomie & Hotel', icon: Hotel },
 ]
 
