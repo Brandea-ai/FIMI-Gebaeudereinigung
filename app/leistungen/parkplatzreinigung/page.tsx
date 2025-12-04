@@ -2,9 +2,7 @@ import { Metadata } from 'next'
 import HeroSection from './HeroSection'
 import TrustBarSection from './TrustBarSection'
 import ProblemLoesungSection from './ProblemLoesungSection'
-import AnwendungsbereicheSection from './AnwendungsbereicheSection'
 import LeistungsumfangSection from './LeistungsumfangSection'
-import VerfahrenSection from './VerfahrenSection'
 import ProcessSection from './ProcessSection'
 import KundenLogosOnly from '@/components/KundenLogosOnly'
 import PartnerLogosSlider from '@/components/PartnerLogosSlider'
@@ -212,9 +210,7 @@ export default function ParkplatzreinigungPage() {
         <TrustBarSection />
         <KundenLogosOnly />
         <ProblemLoesungSection />
-        <AnwendungsbereicheSection />
         <LeistungsumfangSection />
-        <VerfahrenSection />
         <ProcessSection />
         <RegionenSection />
         <PartnerLogosSlider

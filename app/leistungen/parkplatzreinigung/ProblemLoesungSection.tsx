@@ -73,8 +73,8 @@ export default function ProblemLoesungSection() {
 
                 {/* Problem Badge */}
                 <div className="absolute bottom-4 left-4 right-4 flex items-center gap-3">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-red-500/90 rounded-[6px] flex items-center justify-center flex-shrink-0">
-                    <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" strokeWidth={1.5} />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 border-2 border-white/50 rounded-[6px] flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white/90" strokeWidth={1.5} />
                   </div>
                   <span className="text-white font-bold text-sm sm:text-base lg:text-lg leading-tight">
                     {item.problem}
