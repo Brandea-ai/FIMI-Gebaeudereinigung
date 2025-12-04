@@ -53,7 +53,9 @@ export default function HaftungSection() {
                     Wussten Sie?
                   </h4>
                   <p className="text-white/80 font-semibold text-xs sm:text-sm lg:text-base leading-relaxed">
-                    Bei Verletzung der Räum- und Streupflicht drohen Bußgelder bis zu <span className="text-[#109387] font-bold">50.000&nbsp;Euro</span>. Hinzu kommen Schadensersatzansprüche bei&nbsp;Personenschäden.
+                    Bei Verletzung der Räum- und Streupflicht drohen Bußgelder bis zu <span className="text-[#109387] font-bold">50.000&nbsp;Euro</span>.
+                    <br className="hidden sm:block" />
+                    <span className="sm:block">Hinzu kommen Schadensersatzansprüche bei&nbsp;Personenschäden.</span>
                   </p>
                 </div>
               </div>
