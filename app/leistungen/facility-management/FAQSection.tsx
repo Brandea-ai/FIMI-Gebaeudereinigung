@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { ChevronDown, HelpCircle } from 'lucide-react'
+import Image from 'next/image'
+import { ChevronDown, ArrowRight } from 'lucide-react'
 
 const faqs = [
   {
@@ -28,73 +29,91 @@ const faqs = [
     frage: 'Bekomme ich immer die gleichen Mitarbeiter für mein Objekt?',
     antwort: 'Ja, das ist unser Prinzip. Für jedes Objekt stellen wir ein festes Team zusammen, das Ihre Räumlichkeiten und Anforderungen kennt. Ihr persönlicher Ansprechpartner koordiniert dieses Team. Bei Urlaub oder Krankheit sorgen wir für eingearbeitete Vertretungen – Sie müssen sich um nichts kümmern.',
   },
+  {
+    frage: 'Welche Leistungen kann ich einzeln buchen?',
+    antwort: 'Sie können jede Leistung auch einzeln buchen: Unterhaltsreinigung, Hausmeisterservice, Winterdienst oder Außenanlagenpflege. Der Vorteil von Facility Management liegt aber in der Bündelung – ein Vertrag, ein Ansprechpartner, koordinierte Abläufe.',
+  },
+  {
+    frage: 'Wie flexibel sind die Vertragskonditionen?',
+    antwort: 'Wir bieten flexible Vertragslaufzeiten ab 12 Monaten. Die Leistungen können jederzeit erweitert oder angepasst werden. Bei Änderungen im Objektbestand (z.B. neue Flächen) passen wir das Angebot entsprechend an.',
+  },
 ]
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
-  const toggleFaq = (index: number) => {
+  const toggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)
   }
 
   return (
-    <section className="py-16 sm:py-20 lg:py-28 bg-[#f8f9fa]">
+    <section id="faq" className="py-12 sm:py-16 lg:py-28 bg-[#f8f9fa]">
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
+        <div className="grid lg:grid-cols-[350px_1fr] xl:grid-cols-[400px_1fr] gap-8 lg:gap-16 xl:gap-20">
 
-          {/* Left: Header */}
-          <div className="lg:sticky lg:top-24 lg:self-start">
-            <span className="text-[#109387] font-bold text-xs sm:text-sm uppercase tracking-wide mb-3 sm:mb-4 block">
+          {/* Sticky Sidebar - wie Büroreinigung */}
+          <aside className="lg:sticky lg:top-24 lg:self-start">
+            <span className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3 block">
               Häufige Fragen
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-4 sm:mb-6">
-              Ihre Fragen zu Facility Management
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-tight mb-4 sm:mb-6">
+              Haben Sie noch Fragen?
             </h2>
-            <p className="text-base sm:text-lg text-gray-600 font-semibold mb-6 sm:mb-8">
-              Alles, was Sie über gebündelte Gebäudedienstleistungen wissen sollten –
-              verständlich erklärt.
+            <p className="text-base sm:text-lg text-gray-700 font-semibold leading-relaxed mb-6 sm:mb-8">
+              Hier finden Sie Antworten auf die häufigsten Fragen zum Facility Management.
+              Falls Ihre Frage nicht dabei ist, kontaktieren Sie uns einfach direkt.
             </p>
 
-            {/* Trust Element */}
-            <div className="bg-white rounded-[6px] p-5 sm:p-6 border-l-4 border-[#109387]">
-              <div className="flex items-start gap-3 sm:gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#109387]/10 rounded-[6px] flex items-center justify-center flex-shrink-0">
-                  <HelpCircle className="w-5 h-5 sm:w-6 sm:h-6 text-[#109387]" />
-                </div>
-                <div>
-                  <h3 className="text-[#012956] font-bold text-base sm:text-lg mb-1">
-                    Noch Fragen?
-                  </h3>
-                  <p className="text-gray-600 font-semibold text-sm sm:text-base mb-3">
-                    Wir beraten Sie gerne persönlich.
-                  </p>
-                  <a
-                    href="tel:+4987143033460"
-                    className="text-[#109387] font-bold text-base sm:text-lg hover:text-[#012956] transition-colors"
-                  >
-                    0871 430 334 60
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+            {/* CTA Button */}
+            <a
+              href="#kontakt"
+              className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-[6px] transition-all duration-300 group w-full"
+            >
+              Kostenfreie Besichtigung
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
 
-          {/* Right: FAQ Accordion */}
+            {/* Kontakt-Info */}
+            <a
+              href="tel:+4987143033460"
+              className="mt-6 sm:mt-8 bg-white border-2 border-[#012956] hover:bg-[#012956] rounded-[6px] p-4 sm:p-6 block transition-all duration-300 group"
+            >
+              <p className="text-sm text-gray-500 group-hover:text-white/70 font-semibold mb-2 transition-colors">
+                Lieber persönlich sprechen?
+              </p>
+              <span className="text-lg sm:text-xl font-bold text-[#012956] group-hover:text-white transition-colors">
+                0871 430 334 60
+              </span>
+            </a>
+
+            {/* Bild - nur Desktop */}
+            <div className="relative mt-6 sm:mt-8 h-48 lg:h-64 rounded-[6px] overflow-hidden hidden lg:block">
+              <Image
+                src="https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?q=80&w=800&auto=format&fit=crop"
+                alt="Kundenservice FIMI Gebäudereinigung"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </aside>
+
+          {/* FAQ Accordion */}
           <div className="space-y-3 sm:space-y-4">
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-white rounded-[6px] overflow-hidden shadow-sm"
+                className={`bg-white rounded-[6px] overflow-hidden transition-shadow ${
+                  openIndex === index ? 'shadow-lg' : 'shadow-sm'
+                }`}
               >
                 <button
-                  onClick={() => toggleFaq(index)}
-                  className="w-full px-5 sm:px-6 py-4 sm:py-5 flex items-center justify-between gap-4 text-left hover:bg-gray-50 transition-colors"
-                  aria-expanded={openIndex === index}
+                  onClick={() => toggle(index)}
+                  className="w-full flex items-center justify-between p-4 sm:p-5 lg:p-6 text-left hover:bg-gray-50 transition-colors"
                 >
-                  <span className="text-[#012956] font-bold text-sm sm:text-base lg:text-lg pr-4">
+                  <h3 className="text-sm sm:text-base lg:text-lg font-bold text-[#012956] pr-2 sm:pr-4">
                     {faq.frage}
-                  </span>
+                  </h3>
                   <ChevronDown
                     className={`w-5 h-5 sm:w-6 sm:h-6 text-[#109387] flex-shrink-0 transition-transform duration-300 ${
                       openIndex === index ? 'rotate-180' : ''
@@ -104,10 +123,10 @@ export default function FAQSection() {
 
                 <div
                   className={`overflow-hidden transition-all duration-300 ${
-                    openIndex === index ? 'max-h-96' : 'max-h-0'
+                    openIndex === index ? 'max-h-[500px]' : 'max-h-0'
                   }`}
                 >
-                  <div className="px-5 sm:px-6 pb-5 sm:pb-6">
+                  <div className="px-4 sm:px-5 lg:px-6 pb-4 sm:pb-5 lg:pb-6">
                     <p className="text-gray-600 font-semibold leading-relaxed text-sm sm:text-base">
                       {faq.antwort}
                     </p>
