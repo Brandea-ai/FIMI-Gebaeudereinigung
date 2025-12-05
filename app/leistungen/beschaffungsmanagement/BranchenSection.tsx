@@ -23,7 +23,7 @@ const branchen = [
     beschreibung: 'Medizinprodukte, Laborartikel, Dienstleistungen unter Qualitätsanforderungen.',
   },
   {
-    slug: 'oeffentlicher-sektor',
+    slug: 'oeffentliche-einrichtungen',
     name: 'Öffentlicher Sektor',
     icon: Landmark,
     beschreibung: 'Vergabeverfahren nach VOL, VOB, VgV rechtssicher und effizient durchführen.',
@@ -35,7 +35,7 @@ const branchen = [
     beschreibung: 'Wareneinstand optimieren, Lieferantenkonditionen verhandeln, Margen sichern.',
   },
   {
-    slug: 'logistik-transport',
+    slug: 'logistik-lager',
     name: 'Logistik & Transport',
     icon: Truck,
     beschreibung: 'Fuhrpark, Speditionsverträge, Logistikdienstleister systematisch ausschreiben.',
