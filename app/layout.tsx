@@ -311,7 +311,7 @@ export default function RootLayout({
           />
         ))}
       </head>
-      <body className={`${inter.className} antialiased overflow-x-hidden`}>
+      <body className={`${inter.className} antialiased`}>
         <GoogleAnalytics />
         <Navigation />
         {children}
