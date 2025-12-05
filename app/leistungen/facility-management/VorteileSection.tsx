@@ -21,7 +21,7 @@ const vergleich = [
   {
     aspekt: 'Qualitätsstandard',
     einzeln: 'Unterschiedlich',
-    fimi: 'Einheitlich hoch (ISO)',
+    fimi: 'Einheitlich hoch',
   },
   {
     aspekt: 'Bei Notfällen',

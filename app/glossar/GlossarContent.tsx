@@ -67,7 +67,7 @@ const glossarData: GlossarItem[] = [
     highlights: [
       'Unterhaltsreinigung, Glasreinigung, Sonderreinigung u.v.m.',
       'Maßgeschneiderte Konzepte für jede Branche',
-      'ISO-konforme Prozesse für gleichbleibende Qualität',
+      'Dokumentierte Prozesse für gleichbleibende Qualität',
     ],
   },
   {
@@ -197,7 +197,7 @@ const glossarData: GlossarItem[] = [
     highlights: [
       'Flexible Intervalle: täglich, wöchentlich oder monatlich',
       'Feste Reinigungsteams für gleichbleibende Qualität',
-      'Dokumentierte Prozesse nach ISO-Standards',
+      'Dokumentierte Prozesse für Ihre Rechtssicherheit',
     ],
   },
   {

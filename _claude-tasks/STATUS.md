@@ -2,7 +2,7 @@
 
 **Quelle:** FIMI_Website_TODOs.md (HEILIGER GRAL - alle Tasks basieren darauf!)
 **Stand:** 2025-12-05
-**Letzter Report:** R0002
+**Letzter Report:** R0001
 **Aktueller Sprint:** Sprint 1 (P0 - Go-Live-Blocker)
 
 ---
@@ -23,8 +23,8 @@
 | Nr | Task (exakt aus TODO-Liste) | Status | Report | DoD |
 |----|----------------------------|--------|--------|-----|
 | 1 | NAP konsistent (Name/Adresse/Telefon/E-Mail) - Single Source of Truth | [ ] | - | Site-weit nur eine Telefonnummer/E-Mail/Adresse |
-| 2 | "Trusted by / Logos / grosse Kunden" komplett entfernen (bis Freigaben da) | [X] | R0002 | Keine Logos, keine Grosskundennamen |
-| 3 | ISO-Claims vollstandig entfernen (bis zertifiziert) | [X] | R0002 | Site-Suche nach "ISO" = 0 Treffer |
+| 2 | "Trusted by / Logos / grosse Kunden" komplett entfernen (bis Freigaben da) | [X] | R0001 | Keine Logos, keine Grosskundennamen |
+| 3 | ISO-Claims vollstandig entfernen (bis zertifiziert) | [X] | R0001 | Site-Suche nach "ISO" = 0 Treffer |
 | 4 | Unfertige Inhalte entfernen (z.B. "Beschreibung folgt") | [ ] | - | Keine Placeholder-Texte im Frontend |
 | 5 | Sonderleistungen/Personaldienstleistungen: Positionierung fix (AUG-Risiko) | [ ] | - | Keine "Personaldienstleistungen" ohne rechtliche Basis |
 | 6 | SLAs & Versprechen vereinheitlichen (z.B. "2h" vs "24h") | [ ] | - | Jede CTA-Sektion nutzt denselben SLA-Text |
@@ -125,6 +125,5 @@
 
 | Datum | Report | Was |
 |-------|--------|-----|
-| 2025-12-05 | R0001 | Task-System aufgesetzt |
-| 2025-12-05 | R0002 | D1: Kundenlogos von 19 Seiten entfernt |
-| 2025-12-05 | R0002 | D2: ISO-Claims von 25+ Dateien entfernt |
+| 2025-12-05 | R0001 | D1: Kundenlogos von 19 Seiten entfernt |
+| 2025-12-05 | R0001 | D2: ISO-Claims von 35+ Dateien entfernt (inkl. Nachbesserung) |

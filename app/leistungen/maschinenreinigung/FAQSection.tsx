@@ -35,7 +35,7 @@ const faqs = [
   },
   {
     frage: 'Erhalte ich eine Dokumentation der Reinigung?',
-    antwort: 'Ja, auf Wunsch dokumentieren wir alle Reinigungsarbeiten umfassend. Sie erhalten Reinigungsprotokolle mit Datum, Umfang und verwendeten Verfahren, Vorher-Nachher-Fotos für Ihre QM-Unterlagen, Checklisten für wiederkehrende Reinigungen und auf Wunsch auch Daten für Ihre Instandhaltungssoftware. Diese Dokumentation ist besonders wertvoll für ISO-Zertifizierungen und Kundenaudits.',
+    antwort: 'Ja, auf Wunsch dokumentieren wir alle Reinigungsarbeiten umfassend. Sie erhalten Reinigungsprotokolle mit Datum, Umfang und verwendeten Verfahren, Vorher-Nachher-Fotos für Ihre QM-Unterlagen, Checklisten für wiederkehrende Reinigungen und auf Wunsch auch Daten für Ihre Instandhaltungssoftware. Diese Dokumentation ist besonders wertvoll für Qualitätsaudits und Kundenaudits.',
   },
 ]
 

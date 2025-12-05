@@ -42,7 +42,7 @@ export default function AGBContent() {
     { id: 'streitbeilegung', label: 'Streitbeilegung' },
     { id: 'unternehmenshinweise', label: 'Unternehmenshinweise', main: true },
     { id: 'handelsregister', label: 'Handelsregister' },
-    { id: 'qualitaetsstandards', label: 'Qualität & ISO' }
+    { id: 'qualitaetsstandards', label: 'Qualitätsziele' }
   ]
 
   useEffect(() => {

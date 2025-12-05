@@ -23,9 +23,9 @@ const stats = [
   },
   {
     icon: Award,
-    value: 'ISO',
-    label: 'Standards',
-    sublabel: 'nach 9001 & 14001',
+    value: '8+',
+    label: 'Jahre Erfahrung',
+    sublabel: 'seit 2016',
   },
 ]
 

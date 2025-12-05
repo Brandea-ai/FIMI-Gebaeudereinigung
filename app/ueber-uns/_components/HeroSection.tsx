@@ -111,7 +111,7 @@ export default function HeroSection() {
               <div className="bg-[#109387] rounded-[6px] p-6">
                 <p className="text-5xl font-bold text-white mb-2">ISO</p>
                 <p className="text-white font-bold text-lg">Standards</p>
-                <p className="text-white/80 font-semibold text-sm">9001 & 14001</p>
+                <p className="text-white/80 font-semibold text-sm">in Bearbeitung</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-[6px] p-6">
                 <p className="text-5xl font-bold text-[#109387] mb-2">24/7</p>

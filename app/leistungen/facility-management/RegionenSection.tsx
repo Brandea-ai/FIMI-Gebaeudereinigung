@@ -53,7 +53,7 @@ const staedte = [
     beschreibung: 'Facility Management in Ingolstadt auf Industrieniveau. Ganzheitliche Betreuung für Zulieferer, Bürokomplexe und Gewerbeimmobilien. Ein Ansprechpartner koordiniert Reinigung, Winterdienst, Hausmeister und Außenanlagen.',
     vorteile: [
       'Automotive-Zulieferer Erfahrung',
-      'Industriestandards (ISO)',
+      'Industriestandards',
       'Flexible Schichtmodelle',
       'Werksgelände-Kompetenz',
     ],

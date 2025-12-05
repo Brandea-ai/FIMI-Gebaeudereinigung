@@ -56,7 +56,7 @@ const zielgruppen = [
       'Handwerklich geschultes Personal',
       'Flexible Einsatzzeiten',
       'Schnittstelle zu Fachfirmen',
-      'ISO-konforme Prozesse',
+      'Dokumentierte Prozesse',
     ],
     link: '/branchen/industrie-produktion',
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop',

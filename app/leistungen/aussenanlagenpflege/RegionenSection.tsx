@@ -36,7 +36,7 @@ const staedte = [
     headline: 'Außenanlagenpflege in Ingolstadt',
     beschreibung: 'Außenanlagenpflege auf Industrieniveau. Für Automotive-Zulieferer, Bürokomplexe und repräsentative Eingangsbereiche in Ingolstadt.',
     anfahrt: '< 50 Min',
-    vorteile: ['Erfahrung mit Automotive-Zulieferern', 'Großflächen bis 50.000 m²', 'ISO-konforme Dokumentation'],
+    vorteile: ['Erfahrung mit Automotive-Zulieferern', 'Großflächen bis 50.000 m²', 'Lückenlose Dokumentation'],
   },
   {
     id: 'freising',
