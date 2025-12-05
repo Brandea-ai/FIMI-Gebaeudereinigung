@@ -42,8 +42,8 @@ export default function ServicesContainer() {
 
         <div className="grid lg:grid-cols-[400px_1fr] xl:grid-cols-[450px_1fr] gap-12 lg:gap-20">
 
-          {/* Sticky Sidebar */}
-          <FadeIn direction="left" className="lg:sticky lg:top-32 lg:self-start">
+          {/* Linke Seite - statisch */}
+          <FadeIn direction="left">
             <aside>
               {/* Headline */}
               <h2
@@ -100,8 +100,8 @@ export default function ServicesContainer() {
             </aside>
           </FadeIn>
 
-          {/* Service Cards - Fokus auf Problem → Lösung */}
-          <div className="space-y-8" role="list" aria-label="Unsere Leistungsbereiche">
+          {/* Service Cards - Sticky rechte Seite */}
+          <div className="space-y-8 lg:sticky lg:top-32 lg:self-start" role="list" aria-label="Unsere Leistungsbereiche">
             {serviceKategorien.map((kategorie, index) => {
               const Icon = kategorie.icon
               return (
