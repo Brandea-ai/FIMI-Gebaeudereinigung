@@ -386,7 +386,7 @@ export default function ReferenzenPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/80"
+            className="fixed inset-0 z-50 bg-black/80 flex items-end md:items-center md:justify-center"
             onClick={closeModal}
           >
             {/* Close Button - Floating, immer sichtbar */}
@@ -404,7 +404,7 @@ export default function ReferenzenPage() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 100 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className="fixed bottom-0 left-0 right-0 md:bottom-auto md:top-1/2 md:left-1/2 md:right-auto md:-translate-x-1/2 md:-translate-y-1/2 bg-white rounded-t-[20px] md:rounded-[6px] max-h-[92vh] md:max-h-[90vh] md:max-w-5xl md:w-[95vw] overflow-hidden shadow-2xl"
+              className="w-full md:w-[95vw] md:max-w-5xl bg-white rounded-t-[20px] md:rounded-[6px] max-h-[92vh] md:max-h-[90vh] overflow-hidden shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Mobile Drag Handle */}
