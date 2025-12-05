@@ -889,18 +889,18 @@ export default function Navigation() {
         </div>
       </nav>
 
-      {/* Desktop Floating Home Button - LINKS */}
+      {/* Desktop Floating Home Button - LINKS, klebt oben */}
       {!isHomePage && (
       <div
-        className={`fixed top-5 left-6 xl:left-12 2xl:left-20 z-50 hidden lg:block transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        className={`fixed top-0 left-4 xl:left-8 z-50 hidden lg:block transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           !isNavVisible && isScrolled
             ? 'opacity-100 translate-y-0'
-            : 'opacity-0 -translate-y-4 pointer-events-none'
+            : 'opacity-0 -translate-y-full pointer-events-none'
         }`}
       >
         <Link
           href="/"
-          className="group flex items-center justify-center w-12 h-12 bg-[#012956] hover:bg-[#109387] rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+          className="group flex items-center justify-center w-12 h-12 bg-[#012956] hover:bg-[#109387] rounded-b-full shadow-lg hover:shadow-xl transition-all duration-300"
           aria-label="Zur Startseite"
         >
           <Home size={20} className="text-white transition-colors" />
@@ -908,10 +908,10 @@ export default function Navigation() {
       </div>
       )}
 
-      {/* Desktop Floating CTAs - RECHTS, klebt an Browser-Kante */}
+      {/* Desktop Floating CTAs - RECHTS, klebt oben */}
       {!isHomePage && (
       <div
-        className={`fixed top-0 right-0 z-50 hidden lg:flex items-stretch transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        className={`fixed top-0 right-4 xl:right-8 z-50 hidden lg:flex items-stretch transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           !isNavVisible && isScrolled
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 -translate-y-full pointer-events-none'
@@ -929,7 +929,7 @@ export default function Navigation() {
         {/* Telefon */}
         <a
           href="tel:+4987143033460"
-          className="group flex items-center gap-2.5 bg-[#012956] hover:bg-[#012956]/90 text-white px-6 py-4 transition-all duration-300"
+          className="group flex items-center gap-2.5 bg-[#012956] hover:bg-[#012956]/90 text-white px-6 py-4 rounded-br-[6px] transition-all duration-300"
         >
           <Phone size={16} />
           <span className="font-bold text-sm">0871 430 334 60</span>
