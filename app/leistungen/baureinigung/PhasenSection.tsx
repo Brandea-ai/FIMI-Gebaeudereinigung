@@ -80,7 +80,7 @@ export default function PhasenSection() {
   const [activePhase, setActivePhase] = useState(phasen[0])
 
   return (
-    <section id="phasen" className="py-12 sm:py-16 lg:py-28 bg-white">
+    <section id="phasen" className="py-12 sm:py-16 lg:py-28 bg-white overflow-hidden">
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
 
         {/* Header */}

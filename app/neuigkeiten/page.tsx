@@ -52,9 +52,9 @@ export default function NeuigkeitenPage() {
       </section>
 
       {/* Category Filter - Sticky, besser scrollbar auf Mobile */}
-      <section className="sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm">
+      <section className="sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm overflow-hidden">
         <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
-          <div className="flex gap-1.5 sm:gap-2 py-3 sm:py-4 overflow-x-auto scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div className="flex gap-1.5 sm:gap-2 py-3 sm:py-4 overflow-x-auto scrollbar-hide">
             <button
               onClick={() => setActiveCategory('all')}
               className={`px-3 sm:px-5 py-2 rounded-[6px] font-semibold text-xs sm:text-sm whitespace-nowrap transition-colors cursor-pointer ${
