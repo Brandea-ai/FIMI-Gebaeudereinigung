@@ -889,29 +889,29 @@ export default function Navigation() {
         </div>
       </nav>
 
-      {/* Desktop Floating Home Button - LINKS, klebt oben mit 3D Animation */}
+      {/* Desktop Floating Home Button - LINKS, klebt oben mit 3D Pop-Out Animation */}
       {!isHomePage && (
       <div
         className="fixed top-0 left-4 xl:left-8 z-50 hidden lg:block"
-        style={{ perspective: '600px' }}
+        style={{ perspective: '800px' }}
       >
         <div
-          className={`transition-all duration-700 ${
+          className={`${
             !isNavVisible && isScrolled
               ? 'opacity-100'
               : 'opacity-0 pointer-events-none'
           }`}
           style={{
             transform: !isNavVisible && isScrolled
-              ? 'rotateX(0deg) translateY(0) scale(1)'
-              : 'rotateX(-90deg) translateY(-20px) scale(0.5)',
-            transformOrigin: 'top center',
-            transition: 'transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.6s ease-out',
+              ? 'translateZ(0px) translateY(0) scale(1) rotateY(0deg)'
+              : 'translateZ(-80px) translateY(-10px) scale(0.6) rotateY(-15deg)',
+            transformOrigin: 'center center',
+            transition: 'transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease-out',
           }}
         >
           <Link
             href="/"
-            className="group relative flex items-center justify-center w-12 h-12 bg-[#012956] hover:bg-[#109387] rounded-b-[6px] shadow-lg hover:shadow-xl transition-all duration-300"
+            className="group relative flex items-center justify-center w-12 h-12 bg-[#012956] hover:bg-[#109387] rounded-b-[6px] shadow-[0_8px_30px_rgba(1,41,86,0.4)] hover:shadow-[0_12px_40px_rgba(16,147,135,0.5)] transition-all duration-300"
             aria-label="Zur Startseite"
           >
             <Home size={20} className="text-white group-hover:scale-110 transition-transform duration-300" />
