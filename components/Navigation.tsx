@@ -885,9 +885,54 @@ export default function Navigation() {
         </div>
       </nav>
 
-      {/* Floating Nav Toggle Button */}
+      {/* Desktop Mini Navigation - Elegant & Dezent */}
       <div
-        className={`fixed top-16 left-1/2 -translate-x-1/2 z-40 transition-opacity duration-300 ${
+        className={`fixed top-6 right-6 xl:right-12 2xl:right-20 z-40 hidden lg:flex items-center gap-3 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          !isNavVisible && lastScrollY > 100
+            ? 'opacity-100 translate-y-0'
+            : 'opacity-0 -translate-y-4 pointer-events-none'
+        }`}
+      >
+        {/* Home Button */}
+        <Link
+          href="/"
+          className="group flex items-center justify-center w-12 h-12 bg-white/95 backdrop-blur-md rounded-[6px] shadow-lg hover:shadow-xl hover:bg-white transition-all duration-300 border border-gray-100"
+          aria-label="Zur Startseite"
+        >
+          <Home size={20} className="text-[#012956] group-hover:text-[#109387] transition-colors" />
+        </Link>
+
+        {/* Telefon */}
+        <a
+          href="tel:+4987143033460"
+          className="group flex items-center gap-2.5 bg-white/95 backdrop-blur-md px-5 py-3 rounded-[6px] shadow-lg hover:shadow-xl hover:bg-white transition-all duration-300 border border-gray-100"
+        >
+          <Phone size={18} className="text-[#012956] group-hover:text-[#109387] transition-colors" />
+          <span className="text-[#012956] font-bold text-sm group-hover:text-[#109387] transition-colors">0871 430 334 60</span>
+        </a>
+
+        {/* CTA */}
+        <Link
+          href="/kontakt"
+          className="group flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm px-5 py-3 rounded-[6px] shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
+        >
+          <span>Jetzt anfragen</span>
+          <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
+        </Link>
+
+        {/* Menü öffnen Button */}
+        <button
+          onClick={handleShowNav}
+          className="group flex items-center justify-center w-12 h-12 bg-[#012956]/95 backdrop-blur-md rounded-[6px] shadow-lg hover:shadow-xl hover:bg-[#012956] transition-all duration-300"
+          aria-label="Navigation anzeigen"
+        >
+          <ChevronDown size={20} className="text-white" />
+        </button>
+      </div>
+
+      {/* Mobile Floating Nav Toggle Button */}
+      <div
+        className={`fixed top-16 left-1/2 -translate-x-1/2 z-40 lg:hidden transition-opacity duration-300 ${
           showNavToggle ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
       >
