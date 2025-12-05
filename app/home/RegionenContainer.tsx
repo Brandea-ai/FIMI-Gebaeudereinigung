@@ -129,8 +129,20 @@ export default function RegionenContainer() {
   const [activeStadt, setActiveStadt] = useState(staedte[0])
   const [expandedDescriptions, setExpandedDescriptions] = useState<Set<string>>(new Set())
   const tabsRef = useRef<HTMLDivElement>(null)
+  const sectionRef = useRef<HTMLElement>(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(true)
+
+  // Scroll to section top when changing city
+  const handleCityChange = (stadt: typeof staedte[0]) => {
+    setActiveStadt(stadt)
+    // Scroll to section with offset for sticky header
+    if (sectionRef.current) {
+      const headerHeight = 80 // Approximate sticky header height
+      const sectionTop = sectionRef.current.getBoundingClientRect().top + window.scrollY - headerHeight
+      window.scrollTo({ top: sectionTop, behavior: 'smooth' })
+    }
+  }
 
   const toggleDescription = (stadtId: string) => {
     setExpandedDescriptions(prev => {
@@ -172,6 +184,7 @@ export default function RegionenContainer() {
 
   return (
     <section
+      ref={sectionRef}
       id="regionen"
       className="bg-white"
       aria-labelledby="regionen-heading"
@@ -221,7 +234,7 @@ export default function RegionenContainer() {
                 {staedte.map((stadt) => (
                   <button
                     key={stadt.id}
-                    onClick={() => setActiveStadt(stadt)}
+                    onClick={() => handleCityChange(stadt)}
                     role="tab"
                     aria-selected={activeStadt.id === stadt.id}
                     aria-controls={`panel-${stadt.id}`}
@@ -272,20 +285,20 @@ export default function RegionenContainer() {
                 className="w-full h-auto rounded-[6px]"
                 priority
               />
-              {/* Desktop: Overlay Link auf dem Bild */}
+              {/* Desktop: Dezenter Link unten links */}
               <Link
-                href="/unternehmen"
-                className="hidden lg:flex absolute bottom-8 left-4 right-4 bg-[#012956] rounded-[6px] px-6 py-4 items-center justify-center gap-3 group hover:bg-[#01203d] transition-all"
+                href="/ueber-uns"
+                className="hidden lg:inline-flex absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-[6px] px-4 py-2.5 items-center gap-2 group hover:bg-white hover:border-[#109387] transition-all shadow-sm"
               >
-                <span className="text-white font-bold text-lg">
-                  Mehr über FIMI erfahren
+                <span className="text-[#012956] font-semibold text-sm">
+                  Mehr über FIMI
                 </span>
-                <ArrowRight size={20} className="text-white group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={14} className="text-[#109387] group-hover:translate-x-0.5 transition-transform" />
               </Link>
             </div>
             {/* Mobile: Button unter dem Bild */}
             <Link
-              href="/unternehmen"
+              href="/ueber-uns"
               className="lg:hidden flex mt-4 bg-[#012956] rounded-[6px] px-6 py-4 items-center justify-center gap-3 group hover:bg-[#01203d] transition-all"
             >
               <span className="text-white font-bold text-lg">
