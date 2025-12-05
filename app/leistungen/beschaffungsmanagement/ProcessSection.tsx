@@ -1,120 +1,111 @@
 'use client'
 
-import { Search, Target, Rocket, BarChart3, GraduationCap } from 'lucide-react'
+import { Search, Target, Rocket, BarChart3, GraduationCap, ArrowRight } from 'lucide-react'
 
-const steps = [
+const processSteps = [
   {
     number: '01',
     icon: Search,
     title: 'Analyse',
-    duration: '1-2 Wochen',
-    description: 'Wir analysieren Ihre Einkaufsdaten, Prozesse und Lieferantenstruktur. Die Spend-Analyse zeigt, wo die größten Potenziale liegen.',
-    deliverables: ['Spend-Analyse', 'Potenzialeinschätzung', 'Quick Wins identifiziert'],
+    description: 'Spend-Analyse, Lieferantenstruktur, Potenziale identifizieren.',
+    time: '1-2 Wochen',
   },
   {
     number: '02',
     icon: Target,
     title: 'Strategie',
-    duration: '1-2 Wochen',
-    description: 'Gemeinsam definieren wir Ziele, priorisieren Warengruppen und entwickeln den Maßnahmenplan. Sie entscheiden, was umgesetzt wird.',
-    deliverables: ['Maßnahmenplan', 'Priorisierung', 'Ressourcenplanung'],
+    description: 'Ziele definieren, Warengruppen priorisieren, Maßnahmenplan entwickeln.',
+    time: '1-2 Wochen',
   },
   {
     number: '03',
     icon: Rocket,
     title: 'Umsetzung',
-    duration: '2-6 Monate',
-    description: 'Wir setzen die vereinbarten Maßnahmen um: Ausschreibungen, Verhandlungen, Lieferantenwechsel, Prozessoptimierungen.',
-    deliverables: ['Neue Verträge', 'Optimierte Prozesse', 'Dokumentation'],
+    description: 'Ausschreibungen, Verhandlungen, Lieferantenwechsel, Prozesse optimieren.',
+    time: '2-6 Monate',
   },
   {
     number: '04',
     icon: BarChart3,
     title: 'Controlling',
-    duration: 'Laufend',
-    description: 'Transparentes Tracking der erzielten Einsparungen. Regelmäßiges Reporting zeigt den Fortschritt und den ROI.',
-    deliverables: ['Savings-Report', 'KPI-Dashboard', 'Abweichungsanalyse'],
+    description: 'Savings-Tracking, KPIs überwachen, Fortschritt dokumentieren.',
+    time: 'Laufend',
   },
   {
     number: '05',
     icon: GraduationCap,
     title: 'Transfer',
-    duration: 'Projektende',
-    description: 'Wissen bleibt in Ihrem Unternehmen. Wir schulen Ihr Team, übergeben Dokumentation und stellen nachhaltige Verankerung sicher.',
-    deliverables: ['Schulungen', 'Dokumentation', 'Übergabe'],
+    description: 'Schulungen, Dokumentation, nachhaltige Verankerung im Unternehmen.',
+    time: 'Projektende',
   },
 ]
 
 export default function ProcessSection() {
   return (
-    <section className="py-16 sm:py-20 lg:py-28 bg-white">
+    <section id="prozess" className="py-12 sm:py-16 lg:py-28 bg-[#f8f9fa]">
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
 
         {/* Header */}
-        <div className="max-w-3xl mb-10 sm:mb-12 lg:mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-16">
           <span className="text-[#109387] font-bold text-xs sm:text-sm uppercase tracking-wide mb-3 sm:mb-4 block">
             Unser Vorgehen
           </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#109387] mb-4 sm:mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight mb-4 sm:mb-6">
             So arbeiten wir zusammen
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 font-semibold leading-relaxed">
-            Strukturiert, transparent, ergebnisorientiert. Von der ersten Analyse bis zum
-            nachhaltigen Wissenstransfer begleiten wir Sie durch alle Projektphasen.
+          <p className="text-base sm:text-lg text-gray-600 font-semibold leading-relaxed">
+            Strukturiert, transparent, ergebnisorientiert – von der Analyse bis zum Wissenstransfer.
           </p>
         </div>
 
-        {/* Process Steps */}
-        <div className="space-y-4 sm:space-y-6">
-          {steps.map((step, index) => (
+        {/* Process Steps - Compact Grid with Outlined Icons */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5 lg:gap-6">
+          {processSteps.map((step, index) => (
             <div
               key={index}
-              className="group bg-[#f8f9fa] hover:bg-[#012956] rounded-[6px] p-5 sm:p-6 lg:p-8 transition-all duration-500"
+              className="relative bg-white rounded-[6px] p-5 sm:p-6 shadow-sm hover:shadow-lg transition-shadow group"
             >
-              <div className="flex flex-col lg:flex-row lg:items-start gap-4 sm:gap-6 lg:gap-8">
+              {/* Number Badge */}
+              <div className="absolute -top-3 sm:-top-4 left-5 sm:left-6 bg-[#109387] text-white text-xs sm:text-sm font-bold px-2.5 sm:px-3 py-1 rounded-[6px]">
+                {step.number}
+              </div>
 
-                {/* Number & Icon */}
-                <div className="flex items-center gap-4 lg:flex-col lg:items-center lg:w-24 flex-shrink-0">
-                  <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#109387]">
-                    {step.number}
-                  </span>
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-[6px] bg-[#109387]/10 group-hover:bg-[#109387] flex items-center justify-center transition-all duration-500">
-                    <step.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#109387] group-hover:text-white transition-colors duration-500" strokeWidth={1.5} />
-                  </div>
-                </div>
+              {/* Icon - Outlined Style */}
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-[6px] border-2 border-[#109387] group-hover:bg-[#109387] flex items-center justify-center mb-3 sm:mb-4 transition-all duration-300">
+                <step.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
+              </div>
 
-                {/* Content */}
-                <div className="flex-1">
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-2 sm:mb-3">
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-[#012956] group-hover:text-white transition-colors duration-500">
-                      {step.title}
-                    </h3>
-                    <span className="inline-flex items-center bg-[#109387]/10 group-hover:bg-[#109387]/30 text-[#109387] group-hover:text-white text-xs sm:text-sm font-bold px-3 py-1 rounded-[6px] transition-all duration-500 w-fit">
-                      {step.duration}
-                    </span>
-                  </div>
+              {/* Content */}
+              <h3 className="text-base sm:text-lg font-bold text-[#012956] mb-1.5 sm:mb-2">
+                {step.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-gray-600 font-semibold leading-relaxed mb-2 sm:mb-3">
+                {step.description}
+              </p>
 
-                  <p className="text-sm sm:text-base lg:text-lg text-gray-600 group-hover:text-white/80 font-semibold leading-relaxed mb-4 transition-colors duration-500">
-                    {step.description}
-                  </p>
-
-                  {/* Deliverables */}
-                  <div className="flex flex-wrap gap-2">
-                    {step.deliverables.map((item, idx) => (
-                      <span
-                        key={idx}
-                        className="inline-flex items-center bg-white group-hover:bg-white/10 text-[#012956] group-hover:text-white text-xs sm:text-sm font-semibold px-3 py-1.5 rounded-[6px] border border-gray-200 group-hover:border-white/20 transition-all duration-500"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
+              {/* Time Badge */}
+              <div className="inline-flex items-center bg-[#f8f9fa] rounded-[6px] px-2 sm:px-2.5 py-1">
+                <span className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wide">
+                  {step.time}
+                </span>
               </div>
             </div>
           ))}
         </div>
+
+        {/* Bottom CTA - Komplett klickbar */}
+        <a
+          href="#kontakt"
+          className="mt-10 sm:mt-12 lg:mt-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 bg-white hover:bg-gray-50 rounded-[6px] p-5 sm:p-6 lg:p-8 transition-colors group cursor-pointer"
+        >
+          <p className="text-sm sm:text-base lg:text-lg text-gray-600 font-semibold">
+            <strong className="text-[#012956]">Erste Ergebnisse:</strong> Potenzialanalyse bereits nach 2-3 Wochen. Messbare Einsparungen ab Monat 3.
+          </p>
+          <span className="inline-flex items-center justify-center gap-2 bg-[#109387] group-hover:bg-[#0d7d72] text-white font-bold px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-[6px] transition-colors text-sm sm:text-base whitespace-nowrap flex-shrink-0">
+            Kostenfreie Erstberatung
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+          </span>
+        </a>
 
       </div>
     </section>

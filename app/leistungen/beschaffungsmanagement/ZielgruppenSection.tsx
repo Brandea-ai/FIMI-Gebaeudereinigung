@@ -57,12 +57,12 @@ export default function ZielgruppenSection() {
           {personas.map((persona, index) => (
             <div
               key={index}
-              className="bg-white rounded-[6px] p-5 sm:p-6 lg:p-8 border-2 border-transparent hover:border-[#109387] transition-all duration-300 shadow-sm hover:shadow-lg"
+              className="group bg-white rounded-[6px] p-5 sm:p-6 lg:p-8 border-2 border-gray-100 hover:border-[#109387] transition-all duration-300 shadow-sm hover:shadow-lg"
             >
               <div className="flex items-start gap-4 sm:gap-5">
-                {/* Icon */}
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-[6px] bg-[#012956] flex items-center justify-center flex-shrink-0">
-                  <persona.icon className="w-7 h-7 sm:w-8 sm:h-8 text-[#109387]" strokeWidth={1.5} />
+                {/* Icon - Outlined Style */}
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-[6px] border-2 border-[#109387] group-hover:bg-[#109387] flex items-center justify-center flex-shrink-0 transition-all duration-300">
+                  <persona.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
                 </div>
 
                 <div className="flex-1">

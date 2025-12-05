@@ -71,9 +71,9 @@ export default function LeistungsumfangSection() {
               key={index}
               className="group bg-[#f8f9fa] hover:bg-[#012956] rounded-[6px] p-5 sm:p-6 transition-all duration-500"
             >
-              {/* Icon */}
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-[6px] bg-[#109387]/10 group-hover:bg-[#109387] flex items-center justify-center mb-4 sm:mb-5 transition-all duration-500">
-                <service.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#109387] group-hover:text-white transition-colors duration-500" strokeWidth={1.5} />
+              {/* Icon - Outlined Style */}
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-[6px] border-2 border-[#109387] group-hover:bg-[#109387] flex items-center justify-center mb-4 sm:mb-5 transition-all duration-300">
+                <service.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
               </div>
 
               {/* Title */}
@@ -89,26 +89,24 @@ export default function LeistungsumfangSection() {
           ))}
         </div>
 
-        {/* Bottom Note */}
-        <div className="mt-10 sm:mt-12 lg:mt-16 bg-[#012956] rounded-[6px] p-6 sm:p-8 lg:p-10">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 lg:gap-8">
-            <div>
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
-                Modularer Ansatz
-              </h3>
-              <p className="text-white/80 font-semibold text-sm sm:text-base lg:text-lg">
-                Sie benötigen nicht alles? Kein Problem. Wir arbeiten projektbasiert an einzelnen Themen
-                oder übernehmen Ihren gesamten strategischen Einkauf.
-              </p>
-            </div>
-            <a
-              href="#kontakt"
-              className="inline-flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm sm:text-base px-6 py-3 sm:py-4 rounded-[6px] transition-all whitespace-nowrap flex-shrink-0"
-            >
-              Beratung anfragen
-            </a>
+        {/* Bottom Note - Komplett klickbar */}
+        <a
+          href="#kontakt"
+          className="mt-10 sm:mt-12 lg:mt-16 bg-[#012956] hover:bg-[#01376e] rounded-[6px] p-6 sm:p-8 lg:p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 lg:gap-8 transition-colors group cursor-pointer block"
+        >
+          <div>
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
+              Modularer Ansatz
+            </h3>
+            <p className="text-white/80 font-semibold text-sm sm:text-base lg:text-lg">
+              Sie benötigen nicht alles? Kein Problem. Wir arbeiten projektbasiert an einzelnen Themen
+              oder übernehmen Ihren gesamten strategischen Einkauf.
+            </p>
           </div>
-        </div>
+          <span className="inline-flex items-center justify-center gap-2 bg-[#109387] group-hover:bg-[#0d7d72] text-white font-bold text-sm sm:text-base px-6 py-3 sm:py-4 rounded-[6px] transition-all whitespace-nowrap flex-shrink-0">
+            Beratung anfragen
+          </span>
+        </a>
 
       </div>
     </section>
