@@ -890,13 +890,13 @@ export default function Navigation() {
       </nav>
 
       {/* Desktop Floating CTAs - Links, nicht auf Startseite */}
+      {!isHomePage && (
       <div
         className={`fixed top-6 left-6 xl:left-12 2xl:left-20 z-50 hidden lg:flex items-center gap-3 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           !isNavVisible && isScrolled
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 -translate-y-4 pointer-events-none'
         }`}
-        style={{ display: typeof window !== 'undefined' && window.location.pathname === '/' ? 'none' : undefined }}
       >
         {/* CTA - Erste Position */}
         <Link
@@ -916,6 +916,7 @@ export default function Navigation() {
           <span className="font-bold text-sm">0871 430 334 60</span>
         </a>
       </div>
+      )}
 
       {/* Floating Nav Toggle Button - Mitte (Desktop & Mobile) */}
       <div
