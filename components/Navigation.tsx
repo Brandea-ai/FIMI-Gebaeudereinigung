@@ -284,7 +284,7 @@ export default function Navigation() {
   // Über FIMI Dropdown Links
   const ueberFimiLinks = [
     { label: 'Über uns', href: '/ueber-uns' },
-    { label: 'Referenzen', href: '/referenzen' },
+    { label: 'Projekte', href: '/referenzen' },
     { label: 'Karriere', href: '/karriere' },
   ]
 

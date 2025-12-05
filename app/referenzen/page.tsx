@@ -105,17 +105,17 @@ export default function ReferenzenPage() {
             {/* Content - Links */}
             <div>
               <p className="text-sm text-[#109387] font-semibold uppercase tracking-wide mb-3">
-                Unsere Referenzen
+                Unsere Projekte
               </p>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.15] mb-6">
-                Unsere erfolgreichen
-                <span className="block text-[#109387] mt-2">Projekte seit 2016</span>
+                So arbeiten wir
+                <span className="block text-[#109387] mt-2">für unsere Kunden</span>
               </h1>
 
               <p className="text-lg text-white/80 font-semibold leading-relaxed mb-10 max-w-xl">
-                Überzeugen Sie sich von unserer Arbeit. Hier finden Sie eine Auswahl
-                unserer erfolgreich abgeschlossenen Projekte aus verschiedenen Branchen.
+                Entdecken Sie anonymisierte Projektbeispiele aus verschiedenen Branchen.
+                Konkrete Referenzen mit Ansprechpartnern erhalten Sie auf Anfrage.
               </p>
 
               {/* Trust-Punkte */}
@@ -272,13 +272,20 @@ export default function ReferenzenPage() {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-4">
-              {hasActiveFilters ? 'Gefilterte Projekte' : 'Alle Projekte im Überblick'}
+              {hasActiveFilters ? 'Gefilterte Projekte' : 'Projektbeispiele im Überblick'}
             </h2>
-            <p className="text-lg text-gray-700 font-semibold leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg text-gray-700 font-semibold leading-relaxed max-w-2xl mx-auto mb-6">
               {hasActiveFilters
                 ? `${filteredReferenzen.length} Projekte gefunden`
-                : 'Entdecken Sie unsere erfolgreich abgeschlossenen Projekte aus verschiedenen Branchen.'}
+                : 'Aus Datenschutzgründen zeigen wir hier anonymisierte Projektbeispiele.'}
             </p>
+            {/* Referenzen auf Anfrage Hinweis */}
+            <div className="inline-flex items-center gap-3 bg-[#109387]/10 border border-[#109387]/20 rounded-[6px] px-5 py-3">
+              <CheckCircle size={20} className="text-[#109387] flex-shrink-0" />
+              <span className="text-[#012956] font-semibold text-sm md:text-base">
+                Konkrete Referenzen mit Ansprechpartnern erhalten Sie gerne auf Anfrage
+              </span>
+            </div>
           </div>
 
           {filteredReferenzen.length === 0 ? (

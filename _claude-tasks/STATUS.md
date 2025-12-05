@@ -2,7 +2,7 @@
 
 **Quelle:** FIMI_Website_TODOs.md (HEILIGER GRAL - alle Tasks basieren darauf!)
 **Stand:** 2025-12-05
-**Letzter Report:** R0001
+**Letzter Report:** R0002
 **Aktueller Sprint:** Sprint 1 (P0 - Go-Live-Blocker)
 
 ---
@@ -13,7 +13,7 @@
 |----|-------------------------------|--------|
 | D1 | Logos/Kundennamen entfernen, solange keine schriftliche Freigabe vorliegt | [OK] |
 | D2 | ISO-Zertifizierungs-Claims vollstandig entfernen (bis Zertifikat vorliegt) | [OK] |
-| D3 | Referenzen-Seite wird zu "Projekte & Qualitat" (anonymisierte Case-Cards) | [?] |
+| D3 | Referenzen-Seite wird zu "Projekte" (anonymisierte Case-Cards) | [OK] |
 | D4 | Sonderleistungen/Personal: (A) umbauen auf Reinigungs-Add-ons ODER (B) offline | [?] |
 
 ---
@@ -127,3 +127,4 @@
 |-------|--------|-----|
 | 2025-12-05 | R0001 | D1: Kundenlogos von 19 Seiten entfernt |
 | 2025-12-05 | R0001 | D2: ISO-Claims von 35+ Dateien entfernt (inkl. Nachbesserung) |
+| 2025-12-05 | R0002 | D3: Referenzen → Projekte (50 Einträge anonymisiert, Nav geändert) |
