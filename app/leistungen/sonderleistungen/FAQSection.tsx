@@ -6,36 +6,36 @@ import { ChevronDown, ArrowRight } from 'lucide-react'
 
 const faqs = [
   {
-    frage: 'Was kostet Empfangspersonal pro Stunde?',
-    antwort: 'Die Kosten für professionelles Empfangspersonal liegen je nach Qualifikation und Einsatzumfang zwischen 22 und 35 Euro pro Stunde. Für regelmäßige Einsätze bieten wir attraktive Pauschalpreise. Nach einer kostenfreien Bedarfsanalyse erhalten Sie von uns ein transparentes Festpreisangebot ohne versteckte Kosten.',
+    frage: 'Was kostet eine Event-Reinigung?',
+    antwort: 'Die Kosten hängen von Veranstaltungsgröße, Fläche und Leistungsumfang ab. Kleinere Events beginnen ab ca. 300€, größere Veranstaltungen werden individuell kalkuliert. Nach einer kostenfreien Besichtigung erhalten Sie von uns ein transparentes Festpreisangebot ohne versteckte Kosten.',
   },
   {
-    frage: 'Wie kurzfristig können Sie Personal stellen?',
-    antwort: 'Im Raum Landshut garantieren wir eine Reaktionszeit von 2 Stunden. In München und Umgebung sind wir innerhalb von 3 Stunden vor Ort, bayernweit in maximal 4 Stunden. Bei geplanten Einsätzen empfehlen wir eine Vorlaufzeit von 2-3 Werktagen, um die optimale Personalauswahl zu gewährleisten.',
+    frage: 'Wann sollte ich die Event-Reinigung buchen?',
+    antwort: 'Für optimale Planung empfehlen wir eine Buchung 1-2 Wochen vor dem Event. Bei kurzfristigen Anfragen sind wir oft auch innerhalb von 24-48 Stunden einsatzbereit. Für große Events oder Messen planen Sie bitte 3-4 Wochen Vorlauf ein.',
   },
   {
-    frage: 'Welche Qualifikationen hat Ihr Personal?',
-    antwort: 'Unser Personal ist speziell für den Kundenkontakt geschult. Empfangskräfte verfügen über Erfahrung in Kundenservice und Telefonzentrale, oft mit kaufmännischem Hintergrund. Housekeeping-Personal ist in Hotellerie-Standards ausgebildet. Alle Mitarbeiter werden sorgfältig ausgewählt und durchlaufen unsere internen Schulungsprogramme.',
+    frage: 'Reinigen Sie auch während der Veranstaltung?',
+    antwort: 'Ja, wir bieten Reinigung vor, während und nach Ihrer Veranstaltung. Während des Events sorgen unsere Teams diskret für saubere Sanitäranlagen, leeren Mülleimer und beseitigen Verschmutzungen – ohne Ihre Gäste zu stören.',
   },
   {
-    frage: 'Übernehmen Sie auch dauerhaften Empfangsdienst?',
-    antwort: 'Ja, viele unserer Kunden nutzen unseren Empfangsdienst dauerhaft. Sie sparen sich den Aufwand der Personalsuche, haben immer eine Vertretung bei Urlaub oder Krankheit und profitieren von unserer Qualitätsgarantie. Langfristige Partnerschaften belohnen wir mit Vorzugskonditionen.',
+    frage: 'Bieten Sie auch Hotelzimmer-Reinigung an?',
+    antwort: 'Ja, Hotelzimmer-Reinigung ist einer unserer Kernbereiche. Wir übernehmen die komplette Zimmerreinigung, Bettwäschewechsel und Etagenreinigung für Hotels und Pensionen – als dauerhafte Lösung oder zur Verstärkung in der Hochsaison.',
   },
   {
-    frage: 'Können Sie Servicekräfte für Events vermitteln?',
-    antwort: 'Absolut. Für Firmenevents, Messen, Hochzeiten und Caterings stellen wir erfahrene Servicekräfte. Von der Begrüßung der Gäste über Getränkeservice bis zum Abbau – unsere Teams kennen Events und sorgen für einen reibungslosen Ablauf. Auch größere Teams mit 10-20 Personen sind kurzfristig verfügbar.',
+    frage: 'Können Sie auch Messestände reinigen?',
+    antwort: 'Absolut. Messe-Reinigung gehört zu unseren Spezialitäten. Wir reinigen vor Messebeginn, halten Ihren Stand während der Messe sauber und übernehmen die Endreinigung nach Abbau. In ganz Bayern für Sie im Einsatz.',
   },
   {
-    frage: 'Wie funktioniert Housekeeping für Hotels?',
-    antwort: 'Unser Housekeeping-Personal ist in Hotellerie-Standards geschult und kennt die Abläufe in der Branche. Wir stellen Zimmermädchen, Etagenservice und Tagesdamen – als Verstärkung in der Hochsaison, bei Personalengpässen oder dauerhaft. Ihre Qualitätsstandards werden selbstverständlich eingehalten.',
+    frage: 'Was ist in der Endreinigung enthalten?',
+    antwort: 'Die Endreinigung umfasst die komplette Grundreinigung der Location: Böden wischen/saugen, Tische und Stühle reinigen, Sanitäranlagen gründlich desinfizieren, Müll entsorgen und Küchen-/Cateringbereiche säubern. Optional auch Fenster und Glasflächen.',
   },
   {
-    frage: 'Was passiert bei Krankheit Ihres Personals?',
-    antwort: 'Bei Krankheit unseres eingesetzten Personals stellen wir sofort qualifizierten Ersatz. Das ist einer der großen Vorteile gegenüber eigenem Personal: Sie haben immer einen besetzten Empfang, ein vollständiges Housekeeping-Team oder ausreichend Servicekräfte – garantiert.',
+    frage: 'Arbeiten Sie auch am Wochenende?',
+    antwort: 'Selbstverständlich. Events finden oft am Wochenende statt – wir sind dann für Sie da. Ob Samstagabend-Hochzeit oder Sonntags-Brunch: Unsere Teams sind flexibel und richten sich nach Ihrem Veranstaltungsplan.',
   },
   {
-    frage: 'Können Sie auch Pfortendienst übernehmen?',
-    antwort: 'Ja, wir stellen zuverlässiges Personal für Pfortendienst und Zugangskontrolle. Unsere Mitarbeiter übernehmen Besucheranmeldung, Schlüsselverwaltung und Wareneingang. Für sicherheitsrelevante Bereiche arbeiten wir eng mit unseren Security-Partnern zusammen.',
+    frage: 'Was ist VIP- oder Premium-Reinigung?',
+    antwort: 'VIP-Reinigung bedeutet höchste Ansprüche: Besonders gründliche Reinigung mit Premium-Reinigungsmitteln, erfahrene Fachkräfte und flexible Einsatzzeiten. Ideal für repräsentative Räume, Vorstandsetagen oder exklusive Veranstaltungen.',
   },
 ]
 
@@ -61,7 +61,7 @@ export default function FAQSection() {
               Haben Sie noch Fragen?
             </h2>
             <p className="text-base sm:text-lg text-gray-700 font-semibold leading-relaxed mb-6 sm:mb-8">
-              Hier finden Sie Antworten auf die häufigsten Fragen zu unseren Personaldienstleistungen.
+              Hier finden Sie Antworten auf die häufigsten Fragen zur Event- und Veranstaltungsreinigung.
               Falls Ihre Frage nicht dabei ist, kontaktieren Sie uns einfach direkt.
             </p>
 
@@ -70,7 +70,7 @@ export default function FAQSection() {
               href="#kontakt"
               className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-[6px] transition-all duration-300 group w-full"
             >
-              Personal anfragen
+              Jetzt anfragen
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
 
@@ -90,8 +90,8 @@ export default function FAQSection() {
             {/* Bild - nur Desktop */}
             <div className="relative mt-6 sm:mt-8 h-48 lg:h-64 rounded-[6px] overflow-hidden hidden lg:block">
               <Image
-                src="https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?q=80&w=800&auto=format&fit=crop"
-                alt="Kundenservice FIMI Personaldienstleistungen"
+                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop"
+                alt="Event-Reinigung FIMI Gebäudereinigung"
                 fill
                 className="object-cover"
               />

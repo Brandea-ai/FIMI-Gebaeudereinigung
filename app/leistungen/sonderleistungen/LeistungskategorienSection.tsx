@@ -5,64 +5,64 @@ import { ArrowRight, Users, Home, Calendar, Shield, Briefcase, UtensilsCrossed }
 
 const leistungen = [
   {
-    id: 'empfangsdienst',
-    icon: Users,
-    title: 'Empfangsdienst & Rezeption',
-    subtitle: 'Der erste Eindruck zählt',
-    description: 'Professioneller Empfangsservice für Ihr Unternehmen. Unsere geschulten Mitarbeiter begrüßen Ihre Gäste, verwalten Termine und sorgen für einen reibungslosen Ablauf an der Rezeption.',
-    features: ['Besucherempfang', 'Telefonzentrale', 'Terminverwaltung', 'Postbearbeitung'],
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop',
-    zielgruppe: 'Büros, Verwaltungen, Kanzleien',
+    id: 'event-reinigung',
+    icon: Calendar,
+    title: 'Event-Reinigung',
+    subtitle: 'Vor, während & nach dem Event',
+    description: 'Professionelle Reinigung für Firmenveranstaltungen, Hochzeiten, Jubiläen und Feiern. Wir sorgen für Sauberkeit von der Vorbereitung bis zur Endreinigung.',
+    features: ['Vorbereitung', 'Laufende Reinigung', 'Endreinigung', 'Sanitärbetreuung'],
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop',
+    zielgruppe: 'Eventlocations, Unternehmen, Privatveranstaltungen',
   },
   {
-    id: 'housekeeping',
+    id: 'messe-reinigung',
+    icon: Briefcase,
+    title: 'Messe-Reinigung',
+    subtitle: 'Ihr Messestand glänzt',
+    description: 'Saubere Messestände hinterlassen Eindruck. Wir reinigen vor Messebeginn, halten Ihren Stand während der Messe sauber und übernehmen die Endreinigung.',
+    features: ['Standvorbereitung', 'Tägliche Pflege', 'Endreinigung', 'Müllentsorgung'],
+    image: 'https://images.unsplash.com/photo-1591115765373-5207764f72e7?q=80&w=800&auto=format&fit=crop',
+    zielgruppe: 'Messeaussteller, Agenturen, Unternehmen',
+  },
+  {
+    id: 'hotel-reinigung',
     icon: Home,
-    title: 'Housekeeping',
+    title: 'Hotelzimmer-Reinigung',
     subtitle: 'Perfektion in jedem Zimmer',
-    description: 'Zimmermädchen und Etagenservice für Hotels und Pensionen. Professionell geschult in Hotellerie-Standards für makellose Sauberkeit und zufriedene Gäste.',
-    features: ['Zimmerreinigung', 'Bettenwechsel', 'Etagenservice', 'Wäscheservice'],
+    description: 'Professionelle Zimmerreinigung für Hotels und Pensionen. Wir übernehmen die komplette Reinigung nach Hotellerie-Standards – dauerhaft oder zur Hochsaison-Verstärkung.',
+    features: ['Zimmerreinigung', 'Bettwäschewechsel', 'Etagenreinigung', 'Bad-Desinfektion'],
     image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=800&auto=format&fit=crop',
     zielgruppe: 'Hotels, Pensionen, Ferienwohnungen',
   },
   {
-    id: 'hotelservice',
+    id: 'tagungsraum-reinigung',
+    icon: Users,
+    title: 'Tagungsraum-Reinigung',
+    subtitle: 'Für produktive Meetings',
+    description: 'Saubere Konferenz- und Tagungsräume für professionelle Meetings. Reinigung zwischen den Terminen, Tischdesinfektion und Bestuhlung auf Wunsch.',
+    features: ['Zwischenreinigung', 'Tischdesinfektion', 'Lüften', 'Müllleerung'],
+    image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=800&auto=format&fit=crop',
+    zielgruppe: 'Tagungshotels, Konferenzzentren, Unternehmen',
+  },
+  {
+    id: 'catering-reinigung',
     icon: UtensilsCrossed,
-    title: 'Hotelservice',
-    subtitle: 'Exzellenter Gästeservice',
-    description: 'Roomservice, Minibar-Betreuung und Lobby-Service für gehobene Hotellerie. Tagesdamen und Servicepersonal mit Erfahrung in 4- und 5-Sterne-Standards.',
-    features: ['Roomservice', 'Minibar-Service', 'Lobby-Service', 'Concierge-Hilfe'],
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop',
-    zielgruppe: 'Hotels, Resorts, Ferienwohnungen',
+    title: 'Catering-Bereich-Reinigung',
+    subtitle: 'Hygiene im Fokus',
+    description: 'Reinigung von Küchen, Ausgabebereichen und Spülstationen bei Events und in der Gastronomie. Hygienisch einwandfrei nach HACCP-Grundsätzen.',
+    features: ['Küchenreinigung', 'Ausgabebereich', 'Spülstation', 'Fettentfernung'],
+    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800&auto=format&fit=crop',
+    zielgruppe: 'Caterer, Eventlocations, Gastronomie',
   },
   {
-    id: 'eventservice',
-    icon: Calendar,
-    title: 'Servicekräfte für Events',
-    subtitle: 'Ihr Event in besten Händen',
-    description: 'Erfahrene Servicekräfte für Firmenveranstaltungen, Messen, Hochzeiten und Caterings. Von der Begrüßung bis zum Abbau – wir sorgen für zufriedene Gäste.',
-    features: ['Catering-Service', 'Gästebetreuung', 'Getränkeservice', 'Auf- & Abbau'],
-    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop',
-    zielgruppe: 'Eventmanager, Caterer, Unternehmen',
-  },
-  {
-    id: 'pfortendienst',
+    id: 'vip-reinigung',
     icon: Shield,
-    title: 'Pfortendienst',
-    subtitle: 'Kontrolle und Sicherheit',
-    description: 'Zuverlässiger Pfortendienst und Besuchermanagement. Zugangskontrolle, Schlüsselverwaltung und professionelle Anmeldung für Industrie und Gewerbe.',
-    features: ['Zugangskontrolle', 'Besucheranmeldung', 'Schlüsselverwaltung', 'Wareneingang'],
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297q=80&w=800&auto=format&fit=crop',
-    zielgruppe: 'Industrie, Gewerbe, Verwaltung',
-  },
-  {
-    id: 'bueroservice',
-    icon: Briefcase,
-    title: 'Büroservice',
-    subtitle: 'Entlastung im Alltag',
-    description: 'Unterstützung für Ihr Büro: Telefonservice, Postverteilung, Dokumentenmanagement und allgemeine Büroorganisation durch erfahrene Fachkräfte.',
-    features: ['Telefonservice', 'Postverteilung', 'Ablage & Archiv', 'Büroorganisation'],
-    image: 'https://images.unsplash.com/photo-1497215842964-222b430dc094?q=80&w=800&auto=format&fit=crop',
-    zielgruppe: 'Unternehmen, Kanzleien, Praxen',
+    title: 'VIP- & Premium-Reinigung',
+    subtitle: 'Höchste Ansprüche',
+    description: 'Besonders gründliche Reinigung für repräsentative Räume, Vorstandsetagen und exklusive Veranstaltungen. Premium-Service mit erfahrenen Fachkräften.',
+    features: ['Repräsentative Räume', 'Hochwertige Mittel', 'Flexible Zeiten', 'Diskretion'],
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop',
+    zielgruppe: 'Vorstände, Luxushotels, Exklusive Events',
   },
 ]
 
@@ -74,15 +74,15 @@ export default function LeistungskategorienSection() {
         {/* Section Header */}
         <div className="max-w-3xl mb-10 sm:mb-12 lg:mb-16">
           <span className="text-[#109387] font-bold text-xs sm:text-sm uppercase tracking-wide mb-3 sm:mb-4 block">
-            Unsere Personaldienstleistungen
+            Unsere Leistungen
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight mb-4 sm:mb-6">
-            Professionelles Personal für jeden Einsatz
+            Reinigung für jede Veranstaltung
           </h2>
           <p className="text-base sm:text-lg text-gray-600 font-semibold leading-relaxed">
-            Von Empfangsdienst bis Eventservice: Wir stellen Ihnen qualifizierte Mitarbeiter
-            für alle kaufmännischen und servicebezogenen Aufgaben. Kurzfristig verfügbar,
-            professionell geschult, zuverlässig im Einsatz.
+            Von der Event-Reinigung bis zur Hotelzimmer-Reinigung: Wir sorgen für
+            makellose Sauberkeit bei Ihren Veranstaltungen, in Hotels und Tagungsräumen.
+            Vor, während und nach dem Event – zuverlässig und diskret.
           </p>
         </div>
 

@@ -7,11 +7,11 @@ import { ArrowRight, Phone, CheckCircle, Clock, Users, Award } from 'lucide-reac
 export default function HeroSection() {
   return (
     <section id="hero" className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center">
-      {/* Background Image - 4K Unsplash - Professioneller Empfang */}
+      {/* Background Image - 4K Unsplash - Event/Veranstaltung */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=3840&auto=format&fit=crop"
-          alt="Professioneller Empfangsdienst und Personaldienstleistungen in Bayern"
+          src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=3840&auto=format&fit=crop"
+          alt="Professionelle Event- und Veranstaltungsreinigung in Bayern"
           fill
           className="object-cover"
           priority
@@ -48,28 +48,28 @@ export default function HeroSection() {
             {/* Category Badge */}
             <div className="inline-flex items-center bg-[#109387]/20 backdrop-blur-sm border border-[#109387]/30 rounded-[6px] px-3 sm:px-4 py-1.5 sm:py-2 mb-4 sm:mb-6">
               <span className="text-xs sm:text-sm font-bold text-[#109387] uppercase tracking-wide">
-                Personaldienstleistungen
+                Event- & Veranstaltungsreinigung
               </span>
             </div>
 
             {/* H1 - SEO optimiert */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.05] mb-4 sm:mb-6">
-              Sonderleistungen
+              Veranstaltungsreinigung
               <span className="block text-white">in Bayern</span>
             </h1>
 
             {/* Subheadline - Kundennutzen */}
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#109387] mb-4 sm:mb-6">
-              Empfangsdienst, Housekeeping, Servicekräfte<br className="hidden sm:block" />
-              – zuverlässig und kurzfristig verfügbar
+              Event, Messe, Hotel, Tagung<br className="hidden sm:block" />
+              – vor, während und nach Ihrer Veranstaltung
             </p>
 
             {/* Description - SEO Content */}
             <p className="text-sm sm:text-base lg:text-xl text-white/80 font-semibold leading-relaxed mb-6 sm:mb-8 lg:mb-10 max-w-3xl">
-              Sie brauchen professionelles Personal für Empfang, Hotel oder Event?
-              Wir stellen Ihnen qualifizierte Mitarbeiter – ob kurzfristig als Vertretung
-              oder dauerhaft als zuverlässiger Partner. Fokussieren Sie sich auf Ihr
-              Kerngeschäft, wir kümmern uns um den Rest.
+              Sie planen ein Event, eine Messe oder eine Tagung? Wir sorgen für
+              makellose Sauberkeit – von der Vorbereitung über die laufende Betreuung
+              bis zur Endreinigung. Auch Hotelzimmer und Tagungsräume reinigen wir
+              professionell und zuverlässig.
             </p>
 
             {/* Trust Points - 3 Säulen */}
@@ -77,22 +77,22 @@ export default function HeroSection() {
               <div className="flex items-center gap-2.5 sm:gap-3 bg-white/10 backdrop-blur-sm rounded-[6px] px-3 sm:px-4 py-2.5 sm:py-3">
                 <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-[#109387] flex-shrink-0" />
                 <div>
-                  <span className="text-white font-bold block text-sm sm:text-base">2h Reaktionszeit</span>
-                  <span className="text-white/60 text-xs sm:text-sm font-semibold">Kurzfristig verfügbar</span>
+                  <span className="text-white font-bold block text-sm sm:text-base">Vor & Während & Nach</span>
+                  <span className="text-white/60 text-xs sm:text-sm font-semibold">Rundum-Service</span>
                 </div>
               </div>
               <div className="flex items-center gap-2.5 sm:gap-3 bg-white/10 backdrop-blur-sm rounded-[6px] px-3 sm:px-4 py-2.5 sm:py-3">
                 <Users className="w-5 h-5 sm:w-6 sm:h-6 text-[#109387] flex-shrink-0" />
                 <div>
-                  <span className="text-white font-bold block text-sm sm:text-base">Geschultes Personal</span>
-                  <span className="text-white/60 text-xs sm:text-sm font-semibold">Serviceorientiert</span>
+                  <span className="text-white font-bold block text-sm sm:text-base">Erfahrene Teams</span>
+                  <span className="text-white/60 text-xs sm:text-sm font-semibold">Diskret & zuverlässig</span>
                 </div>
               </div>
               <div className="flex items-center gap-2.5 sm:gap-3 bg-white/10 backdrop-blur-sm rounded-[6px] px-3 sm:px-4 py-2.5 sm:py-3">
                 <Award className="w-5 h-5 sm:w-6 sm:h-6 text-[#109387] flex-shrink-0" />
                 <div>
-                  <span className="text-white font-bold block text-sm sm:text-base">Flexible Einsätze</span>
-                  <span className="text-white/60 text-xs sm:text-sm font-semibold">Stunden bis Monate</span>
+                  <span className="text-white font-bold block text-sm sm:text-base">Flexible Planung</span>
+                  <span className="text-white/60 text-xs sm:text-sm font-semibold">Auch kurzfristig</span>
                 </div>
               </div>
             </div>
@@ -103,7 +103,7 @@ export default function HeroSection() {
                 href="#kontakt"
                 className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm sm:text-base lg:text-lg px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-[6px] transition-all duration-300 group shadow-lg hover:shadow-xl"
               >
-                Personal anfragen
+                Jetzt anfragen
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <a

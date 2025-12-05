@@ -6,44 +6,44 @@ import { ArrowRight, Clock, CheckCircle, AlertCircle } from 'lucide-react'
 
 const szenarien = [
   {
-    id: 'rezeption-krank',
-    problem: 'Ihre Rezeptionistin ist krank',
-    loesung: 'Wir sind in 2 Stunden da',
-    beschreibung: 'Montagmorgen, 8 Uhr: Ihre Empfangsmitarbeiterin meldet sich krank. In einer Stunde kommen die ersten Kunden und Geschäftspartner. Kein Grund zur Panik.',
-    unsereAntwort: 'Ein Anruf genügt. Innerhalb von 2 Stunden steht eine geschulte Empfangskraft bei Ihnen – professionell gekleidet, serviceorientiert und sofort einsatzbereit. Wir übernehmen Besucherempfang, Telefon und alle anfallenden Aufgaben.',
-    vorteile: ['2h Reaktionszeit garantiert', 'Geschultes Empfangspersonal', 'Nahtlose Übernahme'],
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop',
-    persona: 'Büro- & Praxismanager',
+    id: 'firmenevent',
+    problem: 'Großes Firmenevent steht an',
+    loesung: 'Rundum-Reinigung vor, während & nach dem Event',
+    beschreibung: 'Sie planen ein wichtiges Firmenevent mit 200 Gästen. Die Location ist gebucht, das Catering steht – aber wer sorgt für Sauberkeit während der Veranstaltung und räumt danach auf?',
+    unsereAntwort: 'Wir übernehmen die komplette Reinigung: Vorbereitung der Location, laufende Sanitärbetreuung während des Events und gründliche Endreinigung. Diskret und professionell, damit Sie sich auf Ihre Gäste konzentrieren können.',
+    vorteile: ['Komplette Event-Begleitung', 'Diskrete Reinigung', 'Endreinigung inklusive'],
+    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop',
+    persona: 'Eventmanager',
   },
   {
-    id: 'event-servicekraefte',
-    problem: 'Großes Firmenevent am Wochenende',
-    loesung: '10 Servicekräfte – professionell und zuverlässig',
-    beschreibung: 'Sie planen ein wichtiges Firmenevent mit 200 Gästen. Das Catering steht, die Location ist gebucht – aber wer kümmert sich um den Service, die Gästebetreuung und den reibungslosen Ablauf?',
-    unsereAntwort: 'Wir stellen Ihnen erfahrene Servicekräfte, die Events kennen. Von der Begrüßung am Eingang über den Getränkeservice bis zum Abbau – Ihr Team ist eingespielt, professionell gekleidet und sorgt dafür, dass Sie sich auf Ihre Gäste konzentrieren können.',
-    vorteile: ['Erfahrene Event-Teams', 'Einheitliches Auftreten', 'Komplettservice'],
-    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop',
-    persona: 'Eventmanager & Unternehmer',
+    id: 'messe',
+    problem: 'Messestand muss 5 Tage glänzen',
+    loesung: 'Tägliche Messe-Reinigung – morgens sauber starten',
+    beschreibung: 'Eine wichtige Messe steht an. Ihr Stand soll jeden Tag makellos aussehen, aber nach einem langen Messetag sieht es entsprechend aus.',
+    unsereAntwort: 'Wir reinigen Ihren Messestand täglich vor Messebeginn, halten ihn während der Öffnungszeiten sauber und übernehmen die Endreinigung nach Abbau. Ihr Stand hinterlässt jeden Tag den besten Eindruck.',
+    vorteile: ['Tägliche Morgenreinigung', 'Zwischenreinigung möglich', 'Endreinigung nach Abbau'],
+    image: 'https://images.unsplash.com/photo-1591115765373-5207764f72e7?q=80&w=1200&auto=format&fit=crop',
+    persona: 'Messeaussteller',
   },
   {
     id: 'hotel-hochsaison',
-    problem: 'Hochsaison im Hotel – Personal fehlt',
-    loesung: 'Housekeeping-Verstärkung auf Zeit',
-    beschreibung: 'Die Buchungen explodieren, aber Ihr Housekeeping-Team ist am Limit. Neue Mitarbeiter einzustellen dauert Wochen. Ihre Stammgäste erwarten aber den gewohnten Standard.',
-    unsereAntwort: 'Unsere Housekeeping-Profis sind in Hotellerie-Standards geschult und kennen die Abläufe. Ob für vier Wochen Hochsaison oder dauerhaft – sie integrieren sich nahtlos in Ihr Team und halten Ihre Qualitätsstandards.',
-    vorteile: ['Hotellerie-geschult', 'Flexible Einsatzdauer', 'Schnelle Integration'],
+    problem: 'Hochsaison im Hotel – Team am Limit',
+    loesung: 'Zimmerreinigung als Verstärkung',
+    beschreibung: 'Die Buchungen explodieren, aber Ihr Reinigungsteam ist am Limit. Neue Mitarbeiter einzustellen dauert Wochen. Ihre Gäste erwarten aber den gewohnten Standard.',
+    unsereAntwort: 'Wir übernehmen die Zimmerreinigung nach Ihren Standards. Ob für vier Wochen Hochsaison oder dauerhaft – unsere Teams kennen Hotellerie-Anforderungen und integrieren sich nahtlos in Ihre Abläufe.',
+    vorteile: ['Hotellerie-Standards', 'Flexible Einsatzdauer', 'Schnelle Verfügbarkeit'],
     image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1200&auto=format&fit=crop',
-    persona: 'Hoteliers & Pensionsbetreiber',
+    persona: 'Hoteliers',
   },
   {
-    id: 'neues-buero',
-    problem: 'Neues Bürogebäude – kein Empfangspersonal',
-    loesung: 'Professioneller Empfangsdienst ab Tag 1',
-    beschreibung: 'Sie beziehen neue Geschäftsräume und brauchen ab sofort einen besetzten Empfang. Eigenes Personal einzustellen ist zeitaufwendig und bindet Ressourcen.',
-    unsereAntwort: 'Wir übernehmen Ihren kompletten Empfangsdienst – dauerhaft oder als Übergangslösung. Unsere Mitarbeiter werden auf Ihr Unternehmen eingearbeitet, kennen Ihre Abläufe und repräsentieren Sie professionell nach außen.',
-    vorteile: ['Dauerhafte Lösung möglich', 'Einarbeitung auf Ihr Unternehmen', 'Volle Flexibilität'],
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop',
-    persona: 'Geschäftsführer & Facility Manager',
+    id: 'tagung',
+    problem: 'Ganztägige Tagung mit 3 Pausen',
+    loesung: 'Zwischenreinigung der Tagungsräume',
+    beschreibung: 'Eine wichtige Tagung mit 100 Teilnehmern. Nach jeder Kaffeepause sehen die Tische entsprechend aus – aber die nächste Session startet in 15 Minuten.',
+    unsereAntwort: 'Unser Team steht bereit und reinigt in den Pausen blitzschnell die Tagungsräume: Tische wischen, Müll entsorgen, Sanitäranlagen kontrollieren. Ihre Teilnehmer kehren in einen frischen Raum zurück.',
+    vorteile: ['Blitzschnelle Zwischenreinigung', 'Diskret im Hintergrund', 'Sanitär-Check inklusive'],
+    image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200&auto=format&fit=crop',
+    persona: 'Tagungsplaner',
   },
 ]
 
@@ -64,8 +64,8 @@ export default function EinsatzszenarienSection() {
             Kennen Sie diese Situationen?
           </h2>
           <p className="text-base sm:text-lg text-gray-600 font-semibold leading-relaxed">
-            Personalengpässe kommen oft unerwartet. Wir haben die Lösung – schnell,
-            professionell und unkompliziert. Sehen Sie, wie wir typische Herausforderungen lösen.
+            Events, Messen, Tagungen – Sauberkeit ist entscheidend für den Erfolg.
+            Sehen Sie, wie wir typische Herausforderungen lösen.
           </p>
         </div>
 
@@ -158,7 +158,7 @@ export default function EinsatzszenarienSection() {
                   href="#kontakt"
                   className="inline-flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-base px-6 py-3 rounded-[6px] transition-all duration-300 group"
                 >
-                  Jetzt Personal anfragen
+                  Jetzt anfragen
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a

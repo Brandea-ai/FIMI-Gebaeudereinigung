@@ -1,7 +1,7 @@
 # FIMI Website Tasks - Status-Tracker
 
 **Quelle:** FIMI_Website_TODOs.md (HEILIGER GRAL - alle Tasks basieren darauf!)
-**Stand:** 2025-12-05
+**Stand:** 2025-12-06
 **Letzter Report:** R0002
 **Aktueller Sprint:** Sprint 1 (P0 - Go-Live-Blocker)
 
@@ -14,7 +14,7 @@
 | D1 | Logos/Kundennamen entfernen, solange keine schriftliche Freigabe vorliegt | [OK] |
 | D2 | ISO-Zertifizierungs-Claims vollstandig entfernen (bis Zertifikat vorliegt) | [OK] |
 | D3 | Referenzen-Seite wird zu "Projekte" (anonymisierte Case-Cards) | [OK] |
-| D4 | Sonderleistungen/Personal: (A) umbauen auf Reinigungs-Add-ons ODER (B) offline | [?] |
+| D4 | Sonderleistungen: umgebaut zu Event- & Veranstaltungsreinigung (AUG-Risiko beseitigt) | [OK] |
 
 ---
 
@@ -26,7 +26,7 @@
 | 2 | "Trusted by / Logos / grosse Kunden" komplett entfernen (bis Freigaben da) | [X] | R0001 | Keine Logos, keine Grosskundennamen |
 | 3 | ISO-Claims vollstandig entfernen (bis zertifiziert) | [X] | R0001 | Site-Suche nach "ISO" = 0 Treffer |
 | 4 | Unfertige Inhalte entfernen (z.B. "Beschreibung folgt") | [ ] | - | Keine Placeholder-Texte im Frontend |
-| 5 | Sonderleistungen/Personaldienstleistungen: Positionierung fix (AUG-Risiko) | [ ] | - | Keine "Personaldienstleistungen" ohne rechtliche Basis |
+| 5 | Sonderleistungen/Personaldienstleistungen: Positionierung fix (AUG-Risiko) | [X] | R0002 | Keine "Personaldienstleistungen" ohne rechtliche Basis |
 | 6 | SLAs & Versprechen vereinheitlichen (z.B. "2h" vs "24h") | [ ] | - | Jede CTA-Sektion nutzt denselben SLA-Text |
 | 7 | Rechtliches auditieren: Impressum, Datenschutz, AGB | [ ] | - | Checkliste abgehakt (Anhang B) |
 | 8 | Consent/Tracking: nichts tracken vor Zustimmung | [ ] | - | Vor Consent keine Tracking-Requests |
@@ -43,7 +43,7 @@
 | 19 | Doppelte DOM-Inhalte durch Slider/Marquee korrigieren | [ ] | - | Screenreader liest keine doppelten Listen |
 | 20 | Core Web Vitals absichern (LCP/INP/CLS) | [ ] | - | Lighthouse Performance > 85 |
 
-**Sprint 1 Fortschritt:** 2/20 (10%)
+**Sprint 1 Fortschritt:** 3/20 (15%)
 
 ---
 
@@ -114,10 +114,10 @@
 
 | Sprint | Tasks | Erledigt | Prozent |
 |--------|-------|----------|---------|
-| P0 | 20 | 2 | 10% |
+| P0 | 20 | 3 | 15% |
 | P1 | 30 | 0 | 0% |
 | P2 | 15 | 0 | 0% |
-| **TOTAL** | **65** | **2** | **3%** |
+| **TOTAL** | **65** | **3** | **5%** |
 
 ---
 
@@ -128,3 +128,4 @@
 | 2025-12-05 | R0001 | D1: Kundenlogos von 19 Seiten entfernt |
 | 2025-12-05 | R0001 | D2: ISO-Claims von 35+ Dateien entfernt (inkl. Nachbesserung) |
 | 2025-12-05 | R0002 | D3: Referenzen → Projekte (50 Einträge anonymisiert, Nav geändert) |
+| 2025-12-06 | R0002 | D4: Sonderleistungen → Event-Reinigung (AUG-Risiko beseitigt, 6 Dateien) |

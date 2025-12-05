@@ -6,33 +6,33 @@ import { ArrowRight, Clock, Users, Shield, Award, HeartHandshake, FileCheck } fr
 const vorteile = [
   {
     icon: Clock,
-    title: '2h Reaktionszeit',
-    description: 'Bei kurzfristigem Personalbedarf sind wir innerhalb von 2 Stunden vor Ort. Keine langen Wartezeiten, keine Ausfälle.',
+    title: 'Vor, während & nach',
+    description: 'Wir begleiten Ihr Event von Anfang bis Ende. Vorbereitung, laufende Betreuung und gründliche Endreinigung – alles aus einer Hand.',
   },
   {
     icon: Users,
-    title: 'Geschultes Personal',
-    description: 'Alle Mitarbeiter durchlaufen interne Schulungen. Serviceorientiert, professionell im Auftreten, zuverlässig im Einsatz.',
+    title: 'Erfahrene Teams',
+    description: 'Unsere Reinigungsteams kennen Events, Messen und Hotels. Diskret, schnell und gründlich – ohne Ihre Gäste zu stören.',
   },
   {
     icon: Shield,
     title: 'Ein Ansprechpartner',
-    description: 'Ihr fester Ansprechpartner kennt Ihre Anforderungen und koordiniert alle Einsätze. One-Face-to-Customer für maximale Effizienz.',
+    description: 'Ihr fester Ansprechpartner kennt Ihre Veranstaltung und koordiniert alle Einsätze. Klare Kommunikation, keine Missverständnisse.',
   },
   {
     icon: Award,
     title: 'Qualitätsgarantie',
-    description: 'Nicht zufrieden? Wir bessern nach – ohne Diskussion. Regelmäßige Feedbackgespräche sichern gleichbleibende Qualität.',
+    description: 'Nicht zufrieden? Wir bessern sofort nach – ohne Diskussion. Ihr Event verdient makellose Sauberkeit.',
   },
   {
     icon: HeartHandshake,
-    title: 'Flexible Modelle',
-    description: 'Stundenweise, tageweise oder dauerhaft – wir passen uns Ihrem Bedarf an. Keine starren Verträge, keine Mindestlaufzeiten.',
+    title: 'Flexible Planung',
+    description: 'Kurzfristige Änderungen? Kein Problem. Wir passen uns Ihrem Zeitplan an – auch am Wochenende und an Feiertagen.',
   },
   {
     icon: FileCheck,
     title: 'Alles aus einer Hand',
-    description: 'Personaldienstleistungen kombiniert mit unseren Reinigungsservices. Ein Partner für alle Facility-Anforderungen.',
+    description: 'Event-Reinigung kombiniert mit unseren weiteren Reinigungsservices. Ein Partner für alle Ihre Anforderungen.',
   },
 ]
 
@@ -48,8 +48,8 @@ export default function VorteileSection() {
             {/* Main Image */}
             <div className="relative h-[350px] sm:h-[450px] lg:h-[550px] rounded-[8px] overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1600&auto=format&fit=crop"
-                alt="FIMI Personaldienstleistungen Team"
+                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1600&auto=format&fit=crop"
+                alt="FIMI Event-Reinigung Team"
                 fill
                 className="object-cover"
               />
@@ -64,11 +64,11 @@ export default function VorteileSection() {
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-[#012956]">500+</div>
-                  <div className="text-gray-600 font-semibold text-sm">Erfolgreiche Einsätze</div>
+                  <div className="text-gray-600 font-semibold text-sm">Events betreut</div>
                 </div>
               </div>
               <p className="text-gray-600 font-semibold text-sm">
-                Jährlich vermitteln wir Personal für Empfang, Hotels und Events in ganz Bayern.
+                Jährlich reinigen wir Events, Messen und Hotels in ganz Bayern.
               </p>
             </div>
           </div>
@@ -80,12 +80,12 @@ export default function VorteileSection() {
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4 sm:mb-6">
               Ihr Vorteil bei
-              <span className="block text-[#109387]">Personaldienstleistungen</span>
+              <span className="block text-[#109387]">Veranstaltungsreinigung</span>
             </h2>
             <p className="text-base sm:text-lg text-white/80 font-semibold leading-relaxed mb-8 sm:mb-10">
-              Als etabliertes Facility-Unternehmen verstehen wir, worauf es ankommt:
-              Zuverlässigkeit, Professionalität und Flexibilität. Unsere Mitarbeiter sind
-              nicht nur qualifiziert – sie repräsentieren Ihr Unternehmen.
+              Als etabliertes Reinigungsunternehmen verstehen wir, worauf es ankommt:
+              Zuverlässigkeit, Diskretion und Gründlichkeit. Ihre Veranstaltung verdient
+              makellose Sauberkeit – wir liefern.
             </p>
 
             {/* Benefits Grid */}
