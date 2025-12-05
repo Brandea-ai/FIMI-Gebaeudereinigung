@@ -889,24 +889,34 @@ export default function Navigation() {
         </div>
       </nav>
 
-      {/* Desktop Floating Home Button - LINKS, klebt oben */}
+      {/* Desktop Floating Home Button - LINKS, klebt oben mit 3D Animation */}
       {!isHomePage && (
       <div
-        className={`fixed top-0 left-4 xl:left-8 z-50 hidden lg:block transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${
-          !isNavVisible && isScrolled
-            ? 'opacity-100 translate-y-0 scale-100'
-            : 'opacity-0 -translate-y-8 scale-75 pointer-events-none'
-        }`}
+        className="fixed top-0 left-4 xl:left-8 z-50 hidden lg:block"
+        style={{ perspective: '600px' }}
       >
-        <Link
-          href="/"
-          className="group relative flex items-center justify-center w-12 h-12 bg-[#012956] hover:bg-[#109387] rounded-b-[6px] shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
-          aria-label="Zur Startseite"
+        <div
+          className={`transition-all duration-700 ${
+            !isNavVisible && isScrolled
+              ? 'opacity-100'
+              : 'opacity-0 pointer-events-none'
+          }`}
+          style={{
+            transform: !isNavVisible && isScrolled
+              ? 'rotateX(0deg) translateY(0) scale(1)'
+              : 'rotateX(-90deg) translateY(-20px) scale(0.5)',
+            transformOrigin: 'top center',
+            transition: 'transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.6s ease-out',
+          }}
         >
-          {/* Shine effect on hover */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
-          <Home size={20} className="text-white relative z-10 group-hover:scale-110 transition-transform duration-300" />
-        </Link>
+          <Link
+            href="/"
+            className="group relative flex items-center justify-center w-12 h-12 bg-[#012956] hover:bg-[#109387] rounded-b-[6px] shadow-lg hover:shadow-xl transition-all duration-300"
+            aria-label="Zur Startseite"
+          >
+            <Home size={20} className="text-white group-hover:scale-110 transition-transform duration-300" />
+          </Link>
+        </div>
       </div>
       )}
 

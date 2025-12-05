@@ -1,14 +1,27 @@
 # FIMI Tasks - Prompts
 
-## Start-Prompt (jede neue Session)
+## Start-Prompt (JEDE neue Session - PFLICHT)
 
 ```
-Lies zuerst:
-1. /_claude-tasks/RULES.md
-2. /_claude-tasks/STATUS.md
-3. Letzten Report in /_claude-tasks/reports/
+FIMI Website Task-System aktiv.
 
-Bestatige den Stand und welcher Task dran ist.
+SCHRITT 1 - Task-System einlesen:
+- Lies /_claude-tasks/RULES.md
+- Lies /_claude-tasks/STATUS.md
+- Lies ALLE Reports in /_claude-tasks/reports/ (chronologisch)
+
+SCHRITT 2 - Projekt vollstandig verstehen:
+- Lies /FIMI-STANDARDS.md
+- Lies /MASTERPLAN-WEBSITE-REDESIGN.md
+- Verschaffe dir Uberblick uber alle Seiten/Komponenten
+- Verstehe die Projektstruktur
+
+SCHRITT 3 - Bestatigung:
+- Fasse zusammen was bereits erledigt wurde
+- Nenne den nachsten offenen Task
+- Warte auf meine Bestatigung bevor du arbeitest
+
+WICHTIG: Keine Arbeit ohne vollstandigen Projektuberblick!
 ```
 
 ---
