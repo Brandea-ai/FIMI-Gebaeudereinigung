@@ -28,6 +28,7 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
@@ -36,6 +37,8 @@
     background: var(--white);
     line-height: 1.7;
     font-weight: 400;
+    overflow-x: hidden;
+    position: relative;
   }
 
   /* Smooth scrolling for parallax */
