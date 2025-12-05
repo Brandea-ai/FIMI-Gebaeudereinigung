@@ -889,31 +889,50 @@ export default function Navigation() {
         </div>
       </nav>
 
-      {/* Desktop Floating CTAs - Links, nicht auf Startseite */}
+      {/* Desktop Floating Home Button - LINKS */}
       {!isHomePage && (
       <div
-        className={`fixed top-6 left-6 xl:left-12 2xl:left-20 z-50 hidden lg:flex items-center gap-3 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        className={`fixed top-5 left-6 xl:left-12 2xl:left-20 z-50 hidden lg:block transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           !isNavVisible && isScrolled
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 -translate-y-4 pointer-events-none'
         }`}
       >
-        {/* CTA - Erste Position */}
+        <Link
+          href="/"
+          className="group flex items-center justify-center w-11 h-11 bg-white/90 backdrop-blur-sm rounded-full shadow-md hover:shadow-lg hover:bg-white transition-all duration-300"
+          aria-label="Zur Startseite"
+        >
+          <Home size={18} className="text-[#012956] group-hover:text-[#109387] transition-colors" />
+        </Link>
+      </div>
+      )}
+
+      {/* Desktop Floating CTAs - RECHTS */}
+      {!isHomePage && (
+      <div
+        className={`fixed top-5 right-6 xl:right-12 2xl:right-20 z-50 hidden lg:flex items-center gap-2 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          !isNavVisible && isScrolled
+            ? 'opacity-100 translate-y-0'
+            : 'opacity-0 -translate-y-4 pointer-events-none'
+        }`}
+      >
+        {/* CTA */}
         <Link
           href="/kontakt"
-          className="group flex items-center gap-2.5 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm px-6 py-3.5 rounded-full shadow-[0_8px_30px_rgba(16,147,135,0.4)] hover:shadow-[0_12px_40px_rgba(16,147,135,0.5)] transition-all duration-300 hover:-translate-y-1"
+          className="group flex items-center gap-2 bg-[#109387]/90 hover:bg-[#109387] text-white font-semibold text-xs px-4 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-300"
         >
-          <span>Jetzt anfragen</span>
-          <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
+          <span>Anfragen</span>
+          <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
         </Link>
 
-        {/* Telefon - Zweite Position */}
+        {/* Telefon */}
         <a
           href="tel:+4987143033460"
-          className="group flex items-center gap-2.5 bg-[#012956] hover:bg-[#012956]/90 text-white px-5 py-3.5 rounded-full shadow-[0_8px_30px_rgba(1,41,86,0.35)] hover:shadow-[0_12px_40px_rgba(1,41,86,0.45)] transition-all duration-300 hover:-translate-y-1"
+          className="group flex items-center gap-2 bg-white/90 backdrop-blur-sm hover:bg-white text-[#012956] px-4 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-300"
         >
-          <Phone size={18} />
-          <span className="font-bold text-sm">0871 430 334 60</span>
+          <Phone size={14} />
+          <span className="font-semibold text-xs">0871 430 334 60</span>
         </a>
       </div>
       )}
