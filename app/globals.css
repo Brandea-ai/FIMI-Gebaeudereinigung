@@ -312,39 +312,61 @@
   .prose div[style*="grid-template-columns:repeat(3"],
   .prose div[style*="grid-template-columns:repeat(2"] {
     grid-template-columns: 1fr !important;
-    gap: 10px !important;
+    gap: 8px !important;
   }
 
-  /* Padding reduzieren */
+  /* Alle Card-Container - kompakteres Padding */
+  .prose div[style*="padding: 24px 28px"],
   .prose div[style*="padding: 24px"],
+  .prose div[style*="padding: 20px 16px"],
   .prose div[style*="padding: 20px"] {
-    padding: 16px !important;
+    padding: 12px 14px !important;
   }
 
-  .prose div[style*="padding: 24px 28px"] {
-    padding: 16px !important;
-  }
-
-  /* Große Schriftgrößen reduzieren */
+  /* Große Headlines reduzieren */
   .prose p[style*="font-size: 24px"],
   .prose span[style*="font-size: 24px"] {
-    font-size: 18px !important;
+    font-size: 16px !important;
+    line-height: 1.3 !important;
   }
 
   .prose p[style*="font-size: 20px"],
   .prose span[style*="font-size: 20px"],
   .prose h3[style*="font-size: 20px"] {
-    font-size: 16px !important;
+    font-size: 15px !important;
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
   }
 
   .prose p[style*="font-size: 17px"],
-  .prose span[style*="font-size: 17px"] {
-    font-size: 14px !important;
-  }
-
+  .prose span[style*="font-size: 17px"],
   .prose p[style*="font-size: 16px"],
   .prose span[style*="font-size: 16px"] {
-    font-size: 14px !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Card Content Text - der Beschreibungstext */
+  .prose p[style*="font-size: 14px"] {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    font-weight: 600 !important;
+  }
+
+  /* Labels in Cards (Nutzungsintensität, etc.) */
+  .prose p[style*="font-size: 11px"],
+  .prose p[style*="font-size: 12px"],
+  .prose p[style*="font-size: 13px"] {
+    font-size: 10px !important;
+    letter-spacing: 0.3px !important;
+    margin-bottom: 4px !important;
+  }
+
+  /* Kleine Beschreibungstexte unter Headlines */
+  .prose p[style*="rgba(255,255,255,0.7)"],
+  .prose p[style*="rgba(255, 255, 255, 0.7)"] {
+    font-size: 10px !important;
+    line-height: 1.3 !important;
   }
 
   /* Tabellen responsive */
@@ -357,33 +379,46 @@
 
   .prose table th,
   .prose table td {
-    font-size: 12px !important;
-    padding: 8px 10px !important;
-    white-space: nowrap !important;
+    font-size: 11px !important;
+    padding: 8px !important;
+    white-space: normal !important;
+    word-break: break-word !important;
   }
 
-  /* Key Facts Box - kompakter */
+  /* Margins kompakter */
   .prose div[style*="margin-bottom: 32px"] {
-    margin-bottom: 20px !important;
+    margin-bottom: 16px !important;
   }
 
   .prose div[style*="margin: 28px 0"],
   .prose div[style*="margin: 24px 0"],
   .prose div[style*="margin: 20px 0"] {
-    margin: 16px 0 !important;
+    margin: 12px 0 !important;
   }
 
-  /* Grid Items zentrieren auf Mobile */
+  .prose div[style*="margin-bottom: 16px"],
+  .prose p[style*="margin-bottom: 16px"] {
+    margin-bottom: 10px !important;
+  }
+
+  .prose p[style*="margin-bottom: 8px"] {
+    margin-bottom: 4px !important;
+  }
+
+  /* Grid Items - Text linksbündig auf Mobile */
   .prose div[style*="text-align: center"] {
     text-align: left !important;
-    padding: 12px !important;
   }
 
-  /* Kleine Labels */
-  .prose p[style*="font-size: 11px"],
-  .prose p[style*="font-size: 12px"],
-  .prose p[style*="font-size: 13px"] {
-    font-size: 11px !important;
+  /* Body Text in Artikeln */
+  .prose p[style*="line-height: 1.8"] {
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Highlight Boxes - weniger prominent */
+  .prose div[style*="linear-gradient"] {
+    border-radius: 6px !important;
   }
 }
 
