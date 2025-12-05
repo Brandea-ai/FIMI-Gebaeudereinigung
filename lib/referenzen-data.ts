@@ -131,7 +131,7 @@ export const referenzen: Referenz[] = [
     kurzbeschreibung: 'Hygienereinigung nach HACCP-Standards',
     beschreibung: 'Tägliche Hygienereinigung der Produktionsräume nach HACCP-Standards. Spezielle Desinfektionsverfahren für Lebensmittelbetriebe.',
     bilder: [
-      'https://images.unsplash.com/photo-1556911220-bda9f7f7597e?q=80&w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop',
     ],
@@ -430,7 +430,7 @@ export const referenzen: Referenz[] = [
     kurzbeschreibung: 'Indoor-Tennishalle und Clubhaus',
     beschreibung: 'Reinigung der 6 Hallenplätze, Umkleiden, Gastronomiebereich und Clubräume. Regelmäßige Grundreinigung der Hallenböden.',
     bilder: [
-      'https://images.unsplash.com/photo-1551773188-d63e5e268a29?q=80&w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?q=80&w=800&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop',
     ],
