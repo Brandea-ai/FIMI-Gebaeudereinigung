@@ -313,8 +313,9 @@ export default function ReferenzenPage() {
                         src={referenz.bilder[0]}
                         alt={referenz.projektName}
                         fill
-                        unoptimized
+                        sizes="(max-width: 768px) 100vw, 33vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        quality={75}
                       />
 
                       {/* Year Badge */}
@@ -403,8 +404,9 @@ export default function ReferenzenPage() {
                     src={selectedReferenz.bilder[currentImageIndex]}
                     alt={selectedReferenz.projektName}
                     fill
-                    unoptimized
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover"
+                    quality={80}
                   />
 
                   {/* Image Navigation */}

@@ -1,7 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { motion, useAnimationControls } from 'framer-motion'
+import { useState } from 'react'
 import Image from 'next/image'
 
 // Kunden/Referenzen mit URLs, Beschreibungen und Logos
@@ -105,7 +104,7 @@ const kunden = [
 ]
 
 // Kunden Card mit Hover-Effekt
-function KundeCard({ item, onHover }: { item: typeof kunden[0]; onHover: (hovering: boolean) => void }) {
+function KundeCard({ item }: { item: typeof kunden[0] }) {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
@@ -114,14 +113,8 @@ function KundeCard({ item, onHover }: { item: typeof kunden[0]; onHover: (hoveri
       target="_blank"
       rel="noopener noreferrer"
       className="flex-shrink-0 w-44 sm:w-56 lg:w-64 h-36 sm:h-44 lg:h-48 relative group"
-      onMouseEnter={() => {
-        setIsHovered(true)
-        onHover(true)
-      }}
-      onMouseLeave={() => {
-        setIsHovered(false)
-        onHover(false)
-      }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <div className="absolute inset-0 bg-white rounded-[6px] shadow-sm transition-shadow duration-500 group-hover:shadow-md">
         {/* Default Content - Logo */}
@@ -136,6 +129,7 @@ function KundeCard({ item, onHover }: { item: typeof kunden[0]; onHover: (hoveri
                 fill
                 className="object-contain"
                 sizes="(max-width: 640px) 112px, (max-width: 1024px) 144px, 160px"
+                loading="lazy"
               />
             </picture>
           </div>
@@ -173,31 +167,6 @@ interface KundenLogosOnlyProps {
 export default function KundenLogosOnly({
   className = ''
 }: KundenLogosOnlyProps) {
-  const controls = useAnimationControls()
-  const [isPaused, setIsPaused] = useState(false)
-
-  const cardWidth = 256 + 24 // w-64 (256px) + gap-6 (24px)
-  const totalWidth = kunden.length * cardWidth
-
-  useEffect(() => {
-    if (!isPaused) {
-      controls.start({
-        x: 0,
-        transition: {
-          duration: 70,
-          repeat: Infinity,
-          ease: 'linear',
-          repeatType: 'loop',
-        },
-      })
-    } else {
-      controls.stop()
-    }
-  }, [isPaused, controls, totalWidth])
-
-  const handleCardHover = (hovering: boolean) => {
-    setIsPaused(hovering)
-  }
 
   return (
     <section className={`py-5 lg:py-6 overflow-hidden bg-[#012956]/[0.04] ${className}`}>
@@ -212,20 +181,49 @@ export default function KundenLogosOnly({
           style={{ background: 'linear-gradient(to left, rgba(1,41,86,0.04), transparent)' }}
         />
 
-        <motion.div
-          initial={{ x: -totalWidth }}
-          animate={controls}
-          className="flex gap-4 sm:gap-6 py-4"
-        >
-          {[...kunden, ...kunden, ...kunden].map((item, index) => (
-            <KundeCard
-              key={`${item.name}-${index}`}
-              item={item}
-              onHover={handleCardHover}
-            />
-          ))}
-        </motion.div>
+        {/* Slider Container */}
+        <div className="kunden-only-slider-container py-4">
+          <div className="kunden-only-slider-track flex gap-4 sm:gap-6">
+            {/* Duplizieren für seamless loop */}
+            {[...kunden, ...kunden].map((item, index) => (
+              <KundeCard
+                key={`${item.name}-${index}`}
+                item={item}
+              />
+            ))}
+          </div>
+        </div>
       </div>
+
+      {/* CSS Animation - GPU-beschleunigt mit will-change und transform */}
+      <style jsx>{`
+        .kunden-only-slider-container {
+          overflow: hidden;
+          width: 100%;
+        }
+        .kunden-only-slider-track {
+          display: flex;
+          width: max-content;
+          animation: kunden-only-scroll 45s linear infinite;
+          will-change: transform;
+        }
+        .kunden-only-slider-track:hover {
+          animation-play-state: paused;
+        }
+        @keyframes kunden-only-scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .kunden-only-slider-track {
+            animation: none;
+          }
+        }
+      `}</style>
     </section>
   )
 }

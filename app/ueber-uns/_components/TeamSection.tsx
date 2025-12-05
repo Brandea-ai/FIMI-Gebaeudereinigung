@@ -144,8 +144,9 @@ export default function TeamSection() {
                         src={person.bild}
                         alt={person.name}
                         fill
-                        unoptimized
+                        sizes="(max-width: 768px) 50vw, 20vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        quality={75}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 

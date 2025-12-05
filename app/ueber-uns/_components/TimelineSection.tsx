@@ -141,8 +141,9 @@ export default function TimelineSection() {
                       src={item.image}
                       alt={item.title}
                       fill
-                      unoptimized
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover"
+                      quality={75}
                     />
                   </div>
 

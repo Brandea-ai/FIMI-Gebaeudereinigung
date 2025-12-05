@@ -132,7 +132,7 @@ export default function Footer() {
                 height={94}
                 className="mb-6"
               />
-              <p className="text-white/50 font-semibold text-sm leading-relaxed">
+              <p className="text-white/70 font-semibold text-sm leading-relaxed">
                 Professionelle Gebäudereinigung in Bayern.
               </p>
             </div>
@@ -141,10 +141,10 @@ export default function Footer() {
             <div>
               <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-6">Leistungen</h4>
               <ul className="space-y-3">
-                <li><Link href="/leistungen/unterhaltsreinigung" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Unterhaltsreinigung</Link></li>
-                <li><Link href="/leistungen/bueroreinigung" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Büroreinigung</Link></li>
-                <li><Link href="/leistungen/industriereinigung" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Industriereinigung</Link></li>
-                <li><Link href="/leistungen/facility-management" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Facility Management</Link></li>
+                <li><Link href="/leistungen/unterhaltsreinigung" className="text-white/70 font-semibold text-sm hover:text-[#109387] transition-colors">Unterhaltsreinigung</Link></li>
+                <li><Link href="/leistungen/bueroreinigung" className="text-white/70 font-semibold text-sm hover:text-[#109387] transition-colors">Büroreinigung</Link></li>
+                <li><Link href="/leistungen/industriereinigung" className="text-white/70 font-semibold text-sm hover:text-[#109387] transition-colors">Industriereinigung</Link></li>
+                <li><Link href="/leistungen/facility-management" className="text-white/70 font-semibold text-sm hover:text-[#109387] transition-colors">Facility Management</Link></li>
                 <li><Link href="/leistungen" className="text-[#109387] font-semibold text-sm hover:text-white transition-colors">Alle Leistungen →</Link></li>
               </ul>
             </div>
@@ -153,10 +153,10 @@ export default function Footer() {
             <div>
               <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-6">Branchen</h4>
               <ul className="space-y-3">
-                <li><Link href="/branchen/buero-verwaltung" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Büro & Verwaltung</Link></li>
-                <li><Link href="/branchen/industrie-produktion" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Industrie & Produktion</Link></li>
-                <li><Link href="/branchen/gesundheitswesen" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Gesundheitswesen</Link></li>
-                <li><Link href="/branchen/gastronomie-hotel" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Gastronomie & Hotel</Link></li>
+                <li><Link href="/branchen/buero-verwaltung" className="text-white/70 font-semibold text-sm hover:text-[#109387] transition-colors">Büro & Verwaltung</Link></li>
+                <li><Link href="/branchen/industrie-produktion" className="text-white/70 font-semibold text-sm hover:text-[#109387] transition-colors">Industrie & Produktion</Link></li>
+                <li><Link href="/branchen/gesundheitswesen" className="text-white/70 font-semibold text-sm hover:text-[#109387] transition-colors">Gesundheitswesen</Link></li>
+                <li><Link href="/branchen/gastronomie-hotel" className="text-white/70 font-semibold text-sm hover:text-[#109387] transition-colors">Gastronomie & Hotel</Link></li>
                 <li><Link href="/branchen" className="text-[#109387] font-semibold text-sm hover:text-white transition-colors">Alle Branchen →</Link></li>
               </ul>
             </div>
@@ -165,11 +165,11 @@ export default function Footer() {
             <div>
               <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-6">Unternehmen</h4>
               <ul className="space-y-3">
-                <li><Link href="/ueber-uns" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Über FIMI</Link></li>
-                <li><Link href="/karriere" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Karriere</Link></li>
-                <li><Link href="/referenzen" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Referenzen</Link></li>
-                <li><Link href="/neuigkeiten" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Neuigkeiten</Link></li>
-                <li><Link href="/kontakt" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Kontakt</Link></li>
+                <li><Link href="/ueber-uns" className="text-white/70 font-semibold text-sm hover:text-[#109387] transition-colors">Über FIMI</Link></li>
+                <li><Link href="/karriere" className="text-white/70 font-semibold text-sm hover:text-[#109387] transition-colors">Karriere</Link></li>
+                <li><Link href="/referenzen" className="text-white/70 font-semibold text-sm hover:text-[#109387] transition-colors">Referenzen</Link></li>
+                <li><Link href="/neuigkeiten" className="text-white/70 font-semibold text-sm hover:text-[#109387] transition-colors">Neuigkeiten</Link></li>
+                <li><Link href="/kontakt" className="text-white/70 font-semibold text-sm hover:text-[#109387] transition-colors">Kontakt</Link></li>
               </ul>
             </div>
 
@@ -177,11 +177,11 @@ export default function Footer() {
             <div>
               <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-6">Rechtliches</h4>
               <ul className="space-y-3">
-                <li><Link href="/impressum" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Impressum</Link></li>
-                <li><Link href="/datenschutz" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Datenschutz</Link></li>
-                <li><Link href="/agb" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">AGB</Link></li>
-                <li><Link href="/sitemap" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Sitemap</Link></li>
-                <li><Link href="/glossar" className="text-white/50 font-semibold text-sm hover:text-[#109387] transition-colors">Glossar</Link></li>
+                <li><Link href="/impressum" className="text-white/70 font-semibold text-sm hover:text-[#109387] transition-colors">Impressum</Link></li>
+                <li><Link href="/datenschutz" className="text-white/70 font-semibold text-sm hover:text-[#109387] transition-colors">Datenschutz</Link></li>
+                <li><Link href="/agb" className="text-white/70 font-semibold text-sm hover:text-[#109387] transition-colors">AGB</Link></li>
+                <li><Link href="/sitemap" className="text-white/70 font-semibold text-sm hover:text-[#109387] transition-colors">Sitemap</Link></li>
+                <li><Link href="/glossar" className="text-white/70 font-semibold text-sm hover:text-[#109387] transition-colors">Glossar</Link></li>
               </ul>
             </div>
 
@@ -192,13 +192,13 @@ export default function Footer() {
 
           {/* Bottom Row */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white/40 text-sm font-semibold">
+            <p className="text-white/60 text-sm font-semibold">
               © {currentYear} FIMI Gebäudereinigung. Alle Rechte vorbehalten.
             </p>
             <div className="flex items-center gap-4">
               <CookieSettingsButton />
               <span className="text-white/20">|</span>
-              <p className="text-white/40 text-sm font-semibold">
+              <p className="text-white/60 text-sm font-semibold">
                 Landshut · München · Regensburg · Bayern
               </p>
             </div>

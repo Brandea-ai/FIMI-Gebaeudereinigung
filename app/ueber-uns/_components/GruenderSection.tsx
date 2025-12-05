@@ -65,8 +65,9 @@ export default function GruenderSection() {
                     src={person.bild}
                     alt={person.name}
                     fill
-                    unoptimized
+                    sizes="(max-width: 768px) 100vw, 40vw"
                     className="object-cover"
+                    quality={75}
                   />
                 </div>
 
