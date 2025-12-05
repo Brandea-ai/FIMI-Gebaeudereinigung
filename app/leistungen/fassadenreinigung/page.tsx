@@ -13,6 +13,7 @@ import BlogPreviewSection from './BlogPreviewSection'
 import CTASection from './CTASection'
 import KundenLogosOnly from '@/components/KundenLogosOnly'
 import PartnerLogosSlider from '@/components/PartnerLogosSlider'
+import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
   title: 'Fassadenreinigung Bayern | Algen & Moos entfernen | FIMI',
@@ -206,6 +207,7 @@ export default function FassadenreinigungPage() {
       />
 
       <main className="min-h-screen bg-white">
+        <LeistungFloatingNav />
         {/* Hero + Trust + Social Proof */}
         <HeroSection />
         <TrustBarSection />

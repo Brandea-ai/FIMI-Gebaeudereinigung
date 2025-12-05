@@ -12,6 +12,7 @@ import BlogPreviewSection from './BlogPreviewSection'
 import CTASection from './CTASection'
 import KundenLogosOnly from '@/components/KundenLogosOnly'
 import PartnerLogosSlider from '@/components/PartnerLogosSlider'
+import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
   title: 'Tiefgaragenreinigung Bayern | Ölflecken & Reifenabrieb entfernen | FIMI',
@@ -204,6 +205,7 @@ export default function TiefgaragenreinigungPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <main className="min-h-screen bg-white">
+        <LeistungFloatingNav />
         <HeroSection />
         <TrustBarSection />
         <KundenLogosOnly />

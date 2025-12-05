@@ -10,6 +10,7 @@ import RegionenSection from './RegionenSection'
 import FAQSection from './FAQSection'
 import BlogPreviewSection from './BlogPreviewSection'
 import CTASection from './CTASection'
+import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
   title: 'Unterhaltsreinigung Bayern | Regelmäßige Gebäudereinigung',
@@ -143,6 +144,7 @@ export default function UnterhaltsreinigungPage() {
       />
 
       <main className="min-h-screen bg-white">
+        <LeistungFloatingNav />
         <HeroSection />
         <TrustBarSection />
         <KundenLogosOnly />

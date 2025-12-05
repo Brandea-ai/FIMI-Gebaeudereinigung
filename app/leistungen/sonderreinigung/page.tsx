@@ -14,6 +14,7 @@ import PartnerLogosSlider from '@/components/PartnerLogosSlider'
 import FAQSection from './FAQSection'
 import BlogPreviewSection from './BlogPreviewSection'
 import CTASection from './CTASection'
+import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
   title: 'Sonderreinigung Bayern | Wasserschaden, Brandschaden, Messie, Notfall 24/7 | FIMI',
@@ -187,6 +188,7 @@ export default function SonderreinigungPage() {
       />
 
       <main className="min-h-screen bg-white">
+        <LeistungFloatingNav />
         <HeroSection />
         <TrustBarSection />
         <KundenLogosOnly />

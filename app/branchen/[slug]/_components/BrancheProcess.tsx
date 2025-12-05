@@ -9,7 +9,7 @@ export function BrancheProcess({ branche }: BrancheProcessProps) {
   if (!branche.processSteps || branche.processSteps.length === 0) return null
 
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-gray-50">
+    <section id="prozess" className="py-16 md:py-24 lg:py-32 bg-gray-50">
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
 
         {/* Section Header */}

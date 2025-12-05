@@ -13,6 +13,7 @@ import RegionenSection from './RegionenSection'
 import FAQSection from './FAQSection'
 import BranchenSection from './BranchenSection'
 import CTASection from './CTASection'
+import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
   title: 'Beschaffungsmanagement Bayern | Einkaufsoptimierung & Strategischer Einkauf',
@@ -202,6 +203,7 @@ export default function BeschaffungsmanagementPage() {
       />
 
       <main className="min-h-screen bg-white">
+        <LeistungFloatingNav />
         <HeroSection />
         <TrustBarSection />
         <KundenLogosOnly />

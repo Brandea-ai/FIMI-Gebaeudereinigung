@@ -11,6 +11,7 @@ import PartnerLogosSlider from '@/components/PartnerLogosSlider'
 import FAQSection from './FAQSection'
 import BlogPreviewSection from './BlogPreviewSection'
 import CTASection from './CTASection'
+import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
   title: 'Personaldienstleistungen Bayern | Empfangsdienst, Housekeeping, Servicekräfte | FIMI',
@@ -189,6 +190,7 @@ export default function SonderleistungenPage() {
       />
 
       <main className="min-h-screen bg-white">
+        <LeistungFloatingNav />
         <HeroSection />
         <TrustBarSection />
         <KundenLogosOnly />

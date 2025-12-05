@@ -12,6 +12,7 @@ import VorteileTabelleSection from './VorteileTabelleSection'
 import FAQSection from './FAQSection'
 import BlogPreviewSection from './BlogPreviewSection'
 import CTASection from './CTASection'
+import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
   title: 'Hausmeisterservice Bayern | Objektbetreuung & Kleinreparaturen | FIMI',
@@ -222,6 +223,7 @@ export default function HausmeisterservicePage() {
       />
 
       <main className="min-h-screen bg-white">
+        <LeistungFloatingNav />
         {/* Hero + Trust + Social Proof */}
         <HeroSection />
         <TrustBarSection />

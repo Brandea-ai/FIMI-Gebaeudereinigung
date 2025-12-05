@@ -10,6 +10,7 @@ import RegionenSection from './RegionenSection'
 import FAQSection from './FAQSection'
 import BlogPreviewSection from './BlogPreviewSection'
 import CTASection from './CTASection'
+import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
   title: 'Industriereinigung Bayern | Produktionshallen & Maschinen professionell gereinigt',
@@ -139,6 +140,7 @@ export default function IndustriereinigungPage() {
       />
 
       <main className="min-h-screen bg-white">
+        <LeistungFloatingNav />
         <HeroSection />
         <TrustBarSection />
         <KundenLogosOnly />

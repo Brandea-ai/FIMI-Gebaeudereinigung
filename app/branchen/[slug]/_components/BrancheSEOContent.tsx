@@ -43,7 +43,7 @@ export function BrancheSEOContent({ branche }: BrancheSEOContentProps) {
   const htmlContent = parseMarkdown(branche.seoContent.trim())
 
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-white">
+    <section id="seo-content" className="py-16 md:py-24 lg:py-32 bg-white">
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
 
         <div className="flex flex-col lg:flex-row lg:items-start gap-6 sm:gap-8 lg:gap-16">

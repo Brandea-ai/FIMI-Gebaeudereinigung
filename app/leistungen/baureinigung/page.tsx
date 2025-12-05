@@ -11,6 +11,7 @@ import PartnerLogosSlider from '@/components/PartnerLogosSlider'
 import RegionenSection from './RegionenSection'
 import FAQSection from './FAQSection'
 import CTASection from './CTASection'
+import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
   title: 'Baureinigung Bayern | Bauendreinigung & Bauschlussreinigung | FIMI',
@@ -185,6 +186,7 @@ export default function BaureinigungPage() {
       />
 
       <main className="min-h-screen bg-white">
+        <LeistungFloatingNav />
         <HeroSection />
         <TrustBarSection />
         <KundenLogosOnly />

@@ -12,6 +12,7 @@ import { BrancheRegionen } from './_components/BrancheRegionen'
 import { BrancheProcess } from './_components/BrancheProcess'
 import { BrancheFAQ } from './_components/BrancheFAQ'
 import { BrancheCTA } from './_components/BrancheCTA'
+import { BrancheFloatingNav } from './_components/BrancheFloatingNav'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -48,6 +49,7 @@ export default async function BranchePage({ params }: PageProps) {
 
   return (
     <main className="min-h-screen bg-white">
+      <BrancheFloatingNav />
       {/* Hero mit Headline, Subheadline, Benefits */}
       <BrancheHero branche={branche} />
 

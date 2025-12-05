@@ -12,6 +12,7 @@ import RegionenSection from './RegionenSection'
 import FAQSection from './FAQSection'
 import BlogPreviewSection from './BlogPreviewSection'
 import CTASection from './CTASection'
+import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
   title: 'Winterdienst Bayern | Professionelle Schneeräumung & Streudienst',
@@ -217,6 +218,7 @@ export default function WinterdienstPage() {
       />
 
       <main className="min-h-screen bg-white">
+        <LeistungFloatingNav />
         {/* Hero + Trust + Social Proof */}
         <HeroSection />
         <TrustBarSection />

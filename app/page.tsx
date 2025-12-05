@@ -7,6 +7,16 @@ import ProcessContainer from './home/ProcessContainer'
 import FAQContainer from './home/FAQContainer'
 import KundenLogosSlider from '@/components/KundenLogosSlider'
 import PartnerLogosSlider from '@/components/PartnerLogosSlider'
+import FloatingNav from '@/components/FloatingNav'
+
+const navItems = [
+  { id: 'hero', label: 'Start' },
+  { id: 'trust', label: 'Warum FIMI' },
+  { id: 'leistungen', label: 'Leistungen' },
+  { id: 'regionen', label: 'Regionen' },
+  { id: 'prozess', label: 'Ablauf' },
+  { id: 'faq', label: 'FAQ' },
+]
 
 export const metadata: Metadata = {
   title: 'Gebaeudereinigung Bayern | FIMI - Professionelle Reinigung fuer Unternehmen',
@@ -52,6 +62,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main>
+      <FloatingNav items={navItems} />
       <HeroContainer />
       <TrustContainer />
       <ServicesContainer />

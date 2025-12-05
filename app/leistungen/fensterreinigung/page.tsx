@@ -10,6 +10,7 @@ import RegionenSection from './RegionenSection'
 import FAQSection from './FAQSection'
 import BlogPreviewSection from './BlogPreviewSection'
 import CTASection from './CTASection'
+import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
   title: 'Fensterreinigung Bayern | Professionelle Glasreinigung für Gewerbe',
@@ -172,6 +173,7 @@ export default function FensterreinigungPage() {
       />
 
       <main className="min-h-screen bg-white">
+        <LeistungFloatingNav />
         <HeroSection />
         <TrustBarSection />
         <KundenLogosOnly />
