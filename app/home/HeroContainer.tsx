@@ -59,10 +59,6 @@ export default function HeroContainer() {
               >
                 {städte[currentStadt]}
               </span>
-              {/* SEO: Alle Städte für Google crawlbar (visuell versteckt) */}
-              <span className="sr-only">
-                {städte.join(', ')} und ganz Bayern
-              </span>
             </h1>
 
             {/* Subheadline */}
