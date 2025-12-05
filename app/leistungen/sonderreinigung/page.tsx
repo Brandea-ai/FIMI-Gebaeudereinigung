@@ -9,7 +9,6 @@ import VersicherungSection from './VersicherungSection'
 import ProcessSection from './ProcessSection'
 import RegionenSection from './RegionenSection'
 import BranchenSection from './BranchenSection'
-import KundenLogosOnly from '@/components/KundenLogosOnly'
 import PartnerLogosSlider from '@/components/PartnerLogosSlider'
 import FAQSection from './FAQSection'
 import BlogPreviewSection from './BlogPreviewSection'
@@ -191,7 +190,6 @@ export default function SonderreinigungPage() {
         <LeistungFloatingNav />
         <HeroSection />
         <TrustBarSection />
-        <KundenLogosOnly />
         <NotfallSzenarienSection />
         <LeistungskategorienSection />
         <ProblemLoesungSection />

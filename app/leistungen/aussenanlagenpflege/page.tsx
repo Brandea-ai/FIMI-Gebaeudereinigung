@@ -5,7 +5,6 @@ import ProblemLoesungSection from './ProblemLoesungSection'
 import LeistungsumfangSection from './LeistungsumfangSection'
 import JahreszeitenSection from './JahreszeitenSection'
 import ProcessSection from './ProcessSection'
-import KundenLogosOnly from '@/components/KundenLogosOnly'
 import PartnerLogosSlider from '@/components/PartnerLogosSlider'
 import RegionenSection from './RegionenSection'
 import FAQSection from './FAQSection'
@@ -214,7 +213,6 @@ export default function AussenanlagenpflegePage() {
         {/* Hero + Trust + Social Proof */}
         <HeroSection />
         <TrustBarSection />
-        <KundenLogosOnly />
 
         {/* Problem → Lösung */}
         <ProblemLoesungSection />

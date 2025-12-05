@@ -7,7 +7,6 @@ import VerfahrenSection from './VerfahrenSection'
 import LeistungsumfangSection from './LeistungsumfangSection'
 import ProcessSection from './ProcessSection'
 import BranchenSection from './BranchenSection'
-import KundenLogosOnly from '@/components/KundenLogosOnly'
 import PartnerLogosSlider from '@/components/PartnerLogosSlider'
 import RegionenSection from './RegionenSection'
 import FAQSection from './FAQSection'
@@ -165,7 +164,6 @@ export default function MaschinenreinigungPage() {
         <LeistungFloatingNav />
         <HeroSection />
         <TrustBarSection />
-        <KundenLogosOnly />
         <ProblemLoesungSection />
         <MaschinentypenSection />
         <VerfahrenSection />

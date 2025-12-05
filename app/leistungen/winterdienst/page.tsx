@@ -6,7 +6,6 @@ import LeistungsumfangSection from './LeistungsumfangSection'
 import HaftungSection from './HaftungSection'
 import EinsatzgebieteSection from './EinsatzgebieteSection'
 import ProcessSection from './ProcessSection'
-import KundenLogosOnly from '@/components/KundenLogosOnly'
 import PartnerLogosSlider from '@/components/PartnerLogosSlider'
 import RegionenSection from './RegionenSection'
 import FAQSection from './FAQSection'
@@ -222,7 +221,6 @@ export default function WinterdienstPage() {
         {/* Hero + Trust + Social Proof */}
         <HeroSection />
         <TrustBarSection />
-        <KundenLogosOnly />
 
         {/* Problem → Lösung */}
         <ProblemLoesungSection />

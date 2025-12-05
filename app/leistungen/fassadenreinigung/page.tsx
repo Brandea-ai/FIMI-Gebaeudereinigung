@@ -11,7 +11,6 @@ import ProcessSection from './ProcessSection'
 import FAQSection from './FAQSection'
 import BlogPreviewSection from './BlogPreviewSection'
 import CTASection from './CTASection'
-import KundenLogosOnly from '@/components/KundenLogosOnly'
 import PartnerLogosSlider from '@/components/PartnerLogosSlider'
 import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
@@ -211,7 +210,6 @@ export default function FassadenreinigungPage() {
         {/* Hero + Trust + Social Proof */}
         <HeroSection />
         <TrustBarSection />
-        <KundenLogosOnly />
 
         {/* Problem → Lösung → Beweis */}
         <ProblemLoesungSection />

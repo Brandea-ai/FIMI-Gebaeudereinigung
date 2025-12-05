@@ -6,7 +6,6 @@ import PhasenSection from './PhasenSection'
 import LeistungsumfangSection from './LeistungsumfangSection'
 import ProcessSection from './ProcessSection'
 import AnwendungsfelderSection from './AnwendungsfelderSection'
-import KundenLogosOnly from '@/components/KundenLogosOnly'
 import PartnerLogosSlider from '@/components/PartnerLogosSlider'
 import RegionenSection from './RegionenSection'
 import FAQSection from './FAQSection'
@@ -189,7 +188,6 @@ export default function BaureinigungPage() {
         <LeistungFloatingNav />
         <HeroSection />
         <TrustBarSection />
-        <KundenLogosOnly />
         <ProblemLoesungSection />
         <PhasenSection />
         <LeistungsumfangSection />

@@ -5,7 +5,6 @@ import ServicesContainer from './home/ServicesContainer'
 import RegionenContainer from './home/RegionenContainer'
 import ProcessContainer from './home/ProcessContainer'
 import FAQContainer from './home/FAQContainer'
-import KundenLogosSlider from '@/components/KundenLogosSlider'
 import PartnerLogosSlider from '@/components/PartnerLogosSlider'
 import FloatingNav from '@/components/FloatingNav'
 
@@ -73,11 +72,6 @@ export default function HomePage() {
       />
       <RegionenContainer />
       <ProcessContainer />
-      <KundenLogosSlider
-        showHeader={true}
-        showStats={false}
-        bgColor="#f8f9fa"
-      />
       <FAQContainer />
     </main>
   )

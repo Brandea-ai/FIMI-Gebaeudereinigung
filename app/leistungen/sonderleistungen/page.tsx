@@ -6,7 +6,6 @@ import EinsatzszenarienSection from './EinsatzszenarienSection'
 import VorteileSection from './VorteileSection'
 import ProcessSection from './ProcessSection'
 import RegionenSection from './RegionenSection'
-import KundenLogosOnly from '@/components/KundenLogosOnly'
 import PartnerLogosSlider from '@/components/PartnerLogosSlider'
 import FAQSection from './FAQSection'
 import BlogPreviewSection from './BlogPreviewSection'
@@ -193,7 +192,6 @@ export default function SonderleistungenPage() {
         <LeistungFloatingNav />
         <HeroSection />
         <TrustBarSection />
-        <KundenLogosOnly />
         <LeistungskategorienSection />
         <EinsatzszenarienSection />
         <VorteileSection />

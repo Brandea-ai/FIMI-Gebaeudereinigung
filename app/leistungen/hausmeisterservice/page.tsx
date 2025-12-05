@@ -5,7 +5,6 @@ import ProblemLoesungSection from './ProblemLoesungSection'
 import LeistungsumfangSection from './LeistungsumfangSection'
 import ZielgruppenSection from './ZielgruppenSection'
 import ProcessSection from './ProcessSection'
-import KundenLogosOnly from '@/components/KundenLogosOnly'
 import PartnerLogosSlider from '@/components/PartnerLogosSlider'
 import RegionenSection from './RegionenSection'
 import VorteileTabelleSection from './VorteileTabelleSection'
@@ -227,7 +226,6 @@ export default function HausmeisterservicePage() {
         {/* Hero + Trust + Social Proof */}
         <HeroSection />
         <TrustBarSection />
-        <KundenLogosOnly />
 
         {/* Problem → Lösung */}
         <ProblemLoesungSection />

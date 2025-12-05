@@ -5,7 +5,6 @@ import ProblemLoesungSection from './ProblemLoesungSection'
 import HallentypenSection from './HallentypenSection'
 import LeistungsumfangSection from './LeistungsumfangSection'
 import ProcessSection from './ProcessSection'
-import KundenLogosOnly from '@/components/KundenLogosOnly'
 import PartnerLogosSlider from '@/components/PartnerLogosSlider'
 import RegionenSection from './RegionenSection'
 import FAQSection from './FAQSection'
@@ -161,7 +160,6 @@ export default function HallenreinigungPage() {
         <LeistungFloatingNav />
         <HeroSection />
         <TrustBarSection />
-        <KundenLogosOnly />
         <ProblemLoesungSection />
         <HallentypenSection />
         <LeistungsumfangSection />

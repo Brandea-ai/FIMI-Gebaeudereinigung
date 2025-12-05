@@ -7,7 +7,6 @@ import LeistungsumfangSection from './LeistungsumfangSection'
 import ZielgruppenSection from './ZielgruppenSection'
 import ProcessSection from './ProcessSection'
 import VorteileSection from './VorteileSection'
-import KundenLogosOnly from '@/components/KundenLogosOnly'
 import PartnerLogosSlider from '@/components/PartnerLogosSlider'
 import RegionenSection from './RegionenSection'
 import FAQSection from './FAQSection'
@@ -206,7 +205,6 @@ export default function BeschaffungsmanagementPage() {
         <LeistungFloatingNav />
         <HeroSection />
         <TrustBarSection />
-        <KundenLogosOnly />
         <ProblemSection />
         <LoesungSection />
         <LeistungsumfangSection />

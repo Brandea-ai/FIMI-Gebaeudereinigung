@@ -10,7 +10,6 @@ import RegionenSection from './RegionenSection'
 import FAQSection from './FAQSection'
 import BlogPreviewSection from './BlogPreviewSection'
 import CTASection from './CTASection'
-import KundenLogosOnly from '@/components/KundenLogosOnly'
 import PartnerLogosSlider from '@/components/PartnerLogosSlider'
 import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
@@ -208,7 +207,6 @@ export default function TiefgaragenreinigungPage() {
         <LeistungFloatingNav />
         <HeroSection />
         <TrustBarSection />
-        <KundenLogosOnly />
         <ProblemLoesungSection />
         <VerschmutzungsartenSection />
         <LeistungsumfangSection />

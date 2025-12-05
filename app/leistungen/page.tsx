@@ -7,7 +7,6 @@ import { ArrowRight, Check, Building2, Factory, Wrench, Sparkles, Search, X } fr
 import { leistungen, categories, getAllCategories } from '@/lib/leistungen-data'
 import FadeIn from '@/components/FadeIn'
 import PartnerLogosSlider from '@/components/PartnerLogosSlider'
-import KundenLogosSlider from '@/components/KundenLogosSlider'
 
 const categoryIcons = {
   gewerblich: Building2,
@@ -536,12 +535,6 @@ export default function LeistungenPage() {
         </div>
       </section>
 
-      {/* Kunden Trust - Social Proof vor CTA */}
-      <KundenLogosSlider
-        showHeader={true}
-        showStats={false}
-        bgColor="#ffffff"
-      />
 
       {/* CTA Section */}
       <section className="py-20 lg:py-28 bg-[#012956]">

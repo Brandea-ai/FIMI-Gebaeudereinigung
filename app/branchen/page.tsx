@@ -7,7 +7,6 @@ import { ArrowRight, Building2, Factory, Stethoscope, ShoppingBag, UtensilsCross
 import { branchen } from '@/lib/branchen-data'
 import FadeIn from '@/components/FadeIn'
 import PartnerLogosSlider from '@/components/PartnerLogosSlider'
-import KundenLogosSlider from '@/components/KundenLogosSlider'
 
 const branchenIcons: Record<string, any> = {
   Building2, Factory, Stethoscope, ShoppingBag, UtensilsCrossed, GraduationCap,
@@ -658,13 +657,6 @@ export default function BranchenPage() {
         showHeader={true}
         showStats={false}
         bgColor="#ffffff"
-      />
-
-      {/* Kunden Trust - Social Proof vor CTA */}
-      <KundenLogosSlider
-        showHeader={true}
-        showStats={false}
-        bgColor="#f8f9fa"
       />
 
       {/* CTA Section */}

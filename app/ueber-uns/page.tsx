@@ -8,7 +8,6 @@ import {
   PartnerSection,
   RegionenSection,
 } from './_components'
-import KundenLogosSlider from '@/components/KundenLogosSlider'
 import FloatingNav from '@/components/FloatingNav'
 
 const navItems = [
@@ -16,7 +15,6 @@ const navItems = [
   { id: 'timeline', label: 'Geschichte' },
   { id: 'team', label: 'Team' },
   { id: 'philosophie', label: 'Philosophie' },
-  { id: 'kunden', label: 'Kunden' },
   { id: 'gruender', label: 'Gründer' },
   { id: 'partner', label: 'Partner' },
   { id: 'regionen', label: 'Regionen' },
@@ -42,13 +40,6 @@ export default function UeberUnsPage() {
       <TimelineSection />
       <TeamSection />
       <PhilosophieSection />
-      <div id="kunden">
-        <KundenLogosSlider
-          showHeader={true}
-          showStats={false}
-          bgColor="#ffffff"
-        />
-      </div>
       <GruenderSection />
       <PartnerSection />
       <RegionenSection />

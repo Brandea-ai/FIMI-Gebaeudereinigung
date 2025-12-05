@@ -4,7 +4,6 @@ import TrustBarSection from './TrustBarSection'
 import ProblemLoesungSection from './ProblemLoesungSection'
 import LeistungsumfangSection from './LeistungsumfangSection'
 import ProcessSection from './ProcessSection'
-import KundenLogosOnly from '@/components/KundenLogosOnly'
 import PartnerLogosSlider from '@/components/PartnerLogosSlider'
 import RegionenSection from './RegionenSection'
 import FAQSection from './FAQSection'
@@ -210,7 +209,6 @@ export default function ParkplatzreinigungPage() {
         <LeistungFloatingNav />
         <HeroSection />
         <TrustBarSection />
-        <KundenLogosOnly />
         <ProblemLoesungSection />
         <LeistungsumfangSection />
         <ProcessSection />
