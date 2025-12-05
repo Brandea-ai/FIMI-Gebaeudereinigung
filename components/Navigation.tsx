@@ -900,39 +900,39 @@ export default function Navigation() {
       >
         <Link
           href="/"
-          className="group flex items-center justify-center w-11 h-11 bg-white/90 backdrop-blur-sm rounded-full shadow-md hover:shadow-lg hover:bg-white transition-all duration-300"
+          className="group flex items-center justify-center w-12 h-12 bg-[#012956] hover:bg-[#109387] rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
           aria-label="Zur Startseite"
         >
-          <Home size={18} className="text-[#012956] group-hover:text-[#109387] transition-colors" />
+          <Home size={20} className="text-white transition-colors" />
         </Link>
       </div>
       )}
 
-      {/* Desktop Floating CTAs - RECHTS */}
+      {/* Desktop Floating CTAs - RECHTS, klebt an Browser-Kante */}
       {!isHomePage && (
       <div
-        className={`fixed top-5 right-6 xl:right-12 2xl:right-20 z-50 hidden lg:flex items-center gap-2 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        className={`fixed top-0 right-0 z-50 hidden lg:flex items-stretch transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           !isNavVisible && isScrolled
             ? 'opacity-100 translate-y-0'
-            : 'opacity-0 -translate-y-4 pointer-events-none'
+            : 'opacity-0 -translate-y-full pointer-events-none'
         }`}
       >
         {/* CTA */}
         <Link
           href="/kontakt"
-          className="group flex items-center gap-2 bg-[#109387]/90 hover:bg-[#109387] text-white font-semibold text-xs px-4 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-300"
+          className="group flex items-center gap-2.5 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm px-6 py-4 rounded-bl-[6px] transition-all duration-300"
         >
-          <span>Anfragen</span>
-          <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+          <span>Jetzt anfragen</span>
+          <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
         </Link>
 
         {/* Telefon */}
         <a
           href="tel:+4987143033460"
-          className="group flex items-center gap-2 bg-white/90 backdrop-blur-sm hover:bg-white text-[#012956] px-4 py-2.5 rounded-full shadow-md hover:shadow-lg transition-all duration-300"
+          className="group flex items-center gap-2.5 bg-[#012956] hover:bg-[#012956]/90 text-white px-6 py-4 transition-all duration-300"
         >
-          <Phone size={14} />
-          <span className="font-semibold text-xs">0871 430 334 60</span>
+          <Phone size={16} />
+          <span className="font-bold text-sm">0871 430 334 60</span>
         </a>
       </div>
       )}
