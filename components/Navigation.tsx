@@ -887,8 +887,8 @@ export default function Navigation() {
 
       {/* Desktop Mini Navigation - Elegant & Dezent */}
       <div
-        className={`fixed top-6 right-6 xl:right-12 2xl:right-20 z-40 hidden lg:flex items-center gap-3 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-          !isNavVisible && lastScrollY > 100
+        className={`fixed top-6 right-6 xl:right-12 2xl:right-20 z-50 hidden lg:flex items-center gap-3 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          !isNavVisible && isScrolled
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 -translate-y-4 pointer-events-none'
         }`}
