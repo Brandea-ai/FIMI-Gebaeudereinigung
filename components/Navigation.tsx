@@ -893,7 +893,7 @@ export default function Navigation() {
       {!isHomePage && (
       <div
         className="fixed top-0 left-4 xl:left-8 z-50 hidden lg:block"
-        style={{ perspective: '800px' }}
+        style={{ perspective: '800px', transformStyle: 'preserve-3d' }}
       >
         <div
           className={`${
@@ -903,15 +903,17 @@ export default function Navigation() {
           }`}
           style={{
             transform: !isNavVisible && isScrolled
-              ? 'translateZ(0px) translateY(0) scale(1) rotateY(0deg)'
-              : 'translateZ(-80px) translateY(-10px) scale(0.6) rotateY(-15deg)',
-            transformOrigin: 'center center',
-            transition: 'transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease-out',
+              ? 'translateZ(20px) translateY(0) scale(1) rotateX(0deg)'
+              : 'translateZ(-100px) translateY(-30px) scale(0.3) rotateX(-45deg)',
+            transformStyle: 'preserve-3d',
+            transformOrigin: 'top center',
+            transition: 'transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.4), opacity 0.5s ease-out',
           }}
         >
           <Link
             href="/"
             className="group relative flex items-center justify-center w-12 h-12 bg-[#012956] hover:bg-[#109387] rounded-b-[6px] shadow-[0_8px_30px_rgba(1,41,86,0.4)] hover:shadow-[0_12px_40px_rgba(16,147,135,0.5)] transition-all duration-300"
+            style={{ transformStyle: 'preserve-3d' }}
             aria-label="Zur Startseite"
           >
             <Home size={20} className="text-white group-hover:scale-110 transition-transform duration-300" />
