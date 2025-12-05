@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { ArrowRight, Phone, CheckCircle, Building2, UtensilsCrossed, Calendar, Shield, Briefcase, Home } from 'lucide-react'
 
-// Relevante Branchen für Personaldienstleistungen
+// Relevante Branchen für Event-Reinigung
 const branchen = [
   { slug: 'gastronomie-hotel', name: 'Hotel & Gastronomie', icon: UtensilsCrossed },
   { slug: 'buero-verwaltung', name: 'Büro & Verwaltung', icon: Building2 },
@@ -33,7 +33,7 @@ export default function CTASection() {
             {/* Branchen */}
             <div className="mb-8 sm:mb-10">
               <span className="text-[#109387] font-bold text-xs sm:text-sm uppercase tracking-wide mb-3 sm:mb-4 block">
-                Personaldienstleistungen für Ihre Branche
+                Event-Reinigung für Ihre Branche
               </span>
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-4 sm:mb-6">
                 Wir kennen Ihre Anforderungen
@@ -94,7 +94,7 @@ export default function CTASection() {
           {/* RECHTS: CTA - Lead abholen */}
           <div className="bg-white rounded-[6px] p-5 sm:p-6 lg:p-10">
             <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#012956] mb-3 sm:mb-4">
-              Jetzt Personal anfragen
+              Jetzt Event-Reinigung anfragen
             </h3>
             <p className="text-sm sm:text-base text-gray-600 font-semibold leading-relaxed mb-5 sm:mb-6">
               Kostenfreie Bedarfsanalyse, transparentes Angebot, schneller Einsatzstart.

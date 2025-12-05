@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Clock, Calendar } from 'lucide-react'
 
-// Thematisch passende Artikel für Personaldienstleistungen
+// Thematisch passende Artikel für Event-Reinigung
 const relatedPosts = [
   {
     slug: 'tariflohn-gebaeudereinigung-2025-2026',
@@ -47,10 +47,10 @@ export default function BlogPreviewSection() {
               Neuigkeiten & Tipps
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight mb-3 sm:mb-4">
-              Wissen rund um Personaldienstleistungen
+              Wissen rund um Event-Reinigung
             </h2>
             <p className="text-sm sm:text-base lg:text-lg text-gray-600 font-semibold leading-relaxed">
-              Aktuelle Branchennews, praktische Tipps und Einblicke in professionelle Personalservices.
+              Aktuelle Branchennews, praktische Tipps und Einblicke in professionelle Veranstaltungsreinigung.
             </p>
           </div>
 

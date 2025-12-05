@@ -7,28 +7,28 @@ const processSteps = [
     number: '01',
     icon: Phone,
     title: 'Anfrage',
-    description: 'Sie rufen an oder füllen das Formular aus. Schildern Sie uns Ihren Personalbedarf – ob kurzfristig oder geplant.',
+    description: 'Sie rufen an oder füllen das Formular aus. Schildern Sie uns Ihr Event, Ihre Messe oder Ihren Reinigungsbedarf.',
     time: '5 Minuten',
   },
   {
     number: '02',
     icon: FileText,
     title: 'Bedarfsanalyse',
-    description: 'Wir klären alle Details: Einsatzort, Zeitraum, Anforderungen, Qualifikationen. Auf Wunsch besuchen wir Sie vor Ort.',
+    description: 'Wir klären alle Details: Veranstaltungsort, Zeitraum, Umfang. Auf Wunsch besichtigen wir die Location vorab.',
     time: 'Innerhalb 2h',
   },
   {
     number: '03',
     icon: Users,
-    title: 'Personalauswahl',
-    description: 'Wir wählen die passenden Mitarbeiter aus unserem Pool. Geschult, zuverlässig und auf Ihre Anforderungen abgestimmt.',
+    title: 'Teamplanung',
+    description: 'Wir stellen das passende Reinigungsteam zusammen. Erfahren, zuverlässig und auf Ihre Veranstaltung abgestimmt.',
     time: '2-24h',
   },
   {
     number: '04',
     icon: Sparkles,
     title: 'Einsatzstart',
-    description: 'Unser Personal beginnt pünktlich mit der Arbeit. Einweisung vor Ort, professionelles Auftreten, sofort einsatzbereit.',
+    description: 'Unser Team ist pünktlich vor Ort. Professionelle Reinigung vor, während und nach Ihrer Veranstaltung.',
     time: 'Nach Vereinbarung',
   },
 ]
@@ -44,7 +44,7 @@ export default function ProcessSection() {
             Unser Prozess
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight mb-4 sm:mb-6">
-            In 4 Schritten zu Ihrem Personal
+            In 4 Schritten zur sauberen Veranstaltung
           </h2>
           <p className="text-base sm:text-lg text-gray-600 font-semibold leading-relaxed">
             Von der ersten Anfrage bis zum Einsatzstart –
@@ -103,10 +103,10 @@ export default function ProcessSection() {
           className="mt-10 sm:mt-12 lg:mt-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6 bg-white hover:bg-gray-50 rounded-[6px] p-5 sm:p-6 lg:p-8 transition-colors group cursor-pointer"
         >
           <p className="text-sm sm:text-base lg:text-lg text-gray-600 font-semibold">
-            <strong className="text-[#012956]">Kurzfristig verfügbar:</strong> Bei dringendem Bedarf stellen wir Personal innerhalb von 2-4 Stunden.
+            <strong className="text-[#012956]">Kurzfristig verfügbar:</strong> Bei dringendem Bedarf sind wir innerhalb von 2-4 Stunden einsatzbereit.
           </p>
           <span className="inline-flex items-center justify-center gap-2 bg-[#109387] group-hover:bg-[#0d7d72] text-white font-bold px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-[6px] transition-colors text-sm sm:text-base whitespace-nowrap flex-shrink-0">
-            Jetzt Personal anfragen
+            Jetzt Event-Reinigung anfragen
             <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
           </span>
         </a>

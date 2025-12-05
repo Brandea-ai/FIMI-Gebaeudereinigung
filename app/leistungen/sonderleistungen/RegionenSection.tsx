@@ -9,65 +9,65 @@ const regionen = [
     id: 'landshut',
     name: 'Landshut',
     image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1600&auto=format&fit=crop',
-    headline: 'Personaldienstleistungen in Landshut',
-    beschreibung: 'Als Landshuter Unternehmen stellen wir Personal für Hotels, Büros und Events in der Region. Kurze Wege, schnelle Reaktion – innerhalb von 2 Stunden vor Ort.',
-    vorteile: ['2h Reaktionszeit', 'Lokales Personal', 'Persönliche Betreuung'],
+    headline: 'Event-Reinigung in Landshut',
+    beschreibung: 'Als Landshuter Unternehmen reinigen wir Events, Hotels und Tagungen in der Region. Kurze Wege, schnelle Reaktion – innerhalb von 2 Stunden vor Ort.',
+    vorteile: ['2h Reaktionszeit', 'Lokale Teams', 'Persönliche Betreuung'],
   },
   {
     id: 'muenchen',
     name: 'München',
     image: 'https://images.unsplash.com/photo-1595867818082-083862f3d630?q=80&w=1600&auto=format&fit=crop',
-    headline: 'Personaldienstleistungen in München',
-    beschreibung: 'Professionelles Personal für die Landeshauptstadt. Empfangsdienst für Konzerne, Housekeeping für Hotels, Servicekräfte für Events – wir bedienen alle Stadtteile.',
-    vorteile: ['Alle Stadtteile', 'Großevent-Erfahrung', 'Premium-Hotels'],
+    headline: 'Event-Reinigung in München',
+    beschreibung: 'Professionelle Veranstaltungsreinigung für die Landeshauptstadt. Messen, Kongresse, Firmenevents und Hotelreinigung – wir bedienen alle Stadtteile.',
+    vorteile: ['Alle Stadtteile', 'Messe-Erfahrung', 'Premium-Hotels'],
   },
   {
     id: 'regensburg',
     name: 'Regensburg',
     image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1600&auto=format&fit=crop',
-    headline: 'Personaldienstleistungen in Regensburg',
-    beschreibung: 'Von der Altstadt bis zum Gewerbepark: Empfangspersonal, Housekeeping und Eventservice für Regensburg und Umgebung. Flexibel und zuverlässig.',
+    headline: 'Event-Reinigung in Regensburg',
+    beschreibung: 'Von der Altstadt bis zum Gewerbepark: Event-Reinigung, Hotelreinigung und Tagungsraum-Service für Regensburg und Umgebung.',
     vorteile: ['UNESCO-Altstadt', 'Gewerbepark', 'Schnelle Anbindung'],
   },
   {
     id: 'ingolstadt',
     name: 'Ingolstadt',
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop',
-    headline: 'Personaldienstleistungen in Ingolstadt',
-    beschreibung: 'Am Automobilstandort zählt Professionalität. Wir stellen Empfangspersonal und Servicekräfte für Zulieferer, Büros und Veranstaltungen.',
+    headline: 'Event-Reinigung in Ingolstadt',
+    beschreibung: 'Am Automobilstandort zählt Professionalität. Wir reinigen Firmenevents, Tagungen und Messen für Zulieferer und Unternehmen.',
     vorteile: ['Automotive-Erfahrung', 'Business-Events', 'Hoher Standard'],
   },
   {
     id: 'freising',
     name: 'Freising',
     image: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?q=80&w=1600&auto=format&fit=crop',
-    headline: 'Personaldienstleistungen in Freising',
-    beschreibung: 'Zwischen Flughafen München und Weihenstephan. Personaldienstleistungen für Hotels, Forschungseinrichtungen und Unternehmen im Landkreis.',
-    vorteile: ['Flughafen-Nähe', 'Hotel-Personal', 'Flexible Zeiten'],
+    headline: 'Event-Reinigung in Freising',
+    beschreibung: 'Zwischen Flughafen München und Weihenstephan. Event- und Hotelreinigung für Hotels, Tagungszentren und Unternehmen im Landkreis.',
+    vorteile: ['Flughafen-Nähe', 'Hotel-Reinigung', 'Flexible Zeiten'],
   },
   {
     id: 'erding',
     name: 'Erding',
     image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1600&auto=format&fit=crop',
-    headline: 'Personaldienstleistungen in Erding',
-    beschreibung: 'Im wachsenden Landkreis Erding betreuen wir Hotels, Therme-Betriebe und Unternehmen mit zuverlässigem Personal für alle Servicebereiche.',
+    headline: 'Event-Reinigung in Erding',
+    beschreibung: 'Im wachsenden Landkreis Erding reinigen wir Hotels, Therme-Veranstaltungen und Firmenevents – zuverlässig und gründlich.',
     vorteile: ['Therme-Region', 'Hotel-Expertise', 'Wachstumsregion'],
   },
   {
     id: 'straubing',
     name: 'Straubing',
     image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1600&auto=format&fit=crop',
-    headline: 'Personaldienstleistungen in Straubing',
-    beschreibung: 'Im Herzen Niederbayerns: Empfangsdienst, Housekeeping und Eventpersonal für Straubing und die gesamte Region Gäuboden.',
+    headline: 'Event-Reinigung in Straubing',
+    beschreibung: 'Im Herzen Niederbayerns: Event-Reinigung, Hotelreinigung und Messe-Service für Straubing und die gesamte Region Gäuboden.',
     vorteile: ['Niederbayern-Fokus', 'Messe-Erfahrung', 'Regionale Teams'],
   },
   {
     id: 'passau',
     name: 'Passau',
     image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop',
-    headline: 'Personaldienstleistungen in Passau',
-    beschreibung: 'Die Dreiflüssestadt lebt vom Tourismus. Wir stellen Personal für Hotels, Kreuzfahrt-Empfänge und Veranstaltungen – auch mehrsprachig.',
-    vorteile: ['Tourismus-Erfahrung', 'Mehrsprachig', 'Kreuzfahrt-Events'],
+    headline: 'Event-Reinigung in Passau',
+    beschreibung: 'Die Dreiflüssestadt lebt vom Tourismus. Wir reinigen Hotels, Kreuzfahrt-Events und Veranstaltungen – professionell und diskret.',
+    vorteile: ['Tourismus-Erfahrung', 'Hotel-Reinigung', 'Kreuzfahrt-Events'],
   },
 ]
 
@@ -88,10 +88,10 @@ export default function RegionenSection() {
             Ihre Region
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight mb-4 sm:mb-6">
-            Personaldienstleistungen in der Nähe
+            Event-Reinigung in Ihrer Nähe
           </h2>
           <p className="text-base sm:text-lg text-gray-600 font-semibold leading-relaxed">
-            Wir stellen Personal in ganz Bayern. Kurze Wege, schnelle Reaktionszeiten, lokale Teams die Ihre Region kennen.
+            Wir reinigen Events in ganz Bayern. Kurze Wege, schnelle Reaktionszeiten, lokale Teams die Ihre Region kennen.
           </p>
         </div>
 
@@ -175,7 +175,7 @@ export default function RegionenSection() {
               href="#kontakt"
               className="inline-flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-4 sm:px-6 py-2.5 sm:py-3 rounded-[6px] transition-colors w-fit group text-sm sm:text-base"
             >
-              Personal in {active.name} anfragen
+              Event-Reinigung in {active.name} anfragen
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
