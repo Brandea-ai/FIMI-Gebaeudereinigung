@@ -379,148 +379,169 @@ export default function ReferenzenPage() {
         </div>
       </section>
 
-      {/* Modal */}
+      {/* Modal - Mobile: Full-Screen Bottom Sheet, Desktop: Centered */}
       <AnimatePresence>
         {selectedReferenz && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
+            className="fixed inset-0 z-50 bg-black/80"
             onClick={closeModal}
           >
+            {/* Close Button - Floating, immer sichtbar */}
+            <button
+              onClick={closeModal}
+              className="fixed top-4 right-4 z-[60] bg-[#109387] hover:bg-[#0d7d72] text-white p-3 rounded-full shadow-lg transition-all"
+              aria-label="Schließen"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            {/* Modal Container */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              transition={{ duration: 0.3 }}
-              className="bg-white rounded-[6px] max-w-5xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
+              initial={{ opacity: 0, y: '100%' }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+              className="absolute inset-x-0 bottom-0 md:inset-auto md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 bg-white rounded-t-[20px] md:rounded-[6px] max-h-[92vh] md:max-h-[90vh] md:max-w-5xl md:w-[95%] overflow-hidden shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="grid md:grid-cols-2">
-                {/* Image Gallery */}
-                <div className="relative h-72 md:h-full min-h-[400px] bg-gray-900">
-                  <Image
-                    src={selectedReferenz.bilder[currentImageIndex]}
-                    alt={selectedReferenz.projektName}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover"
-                    quality={80}
-                  />
+              {/* Mobile Drag Handle */}
+              <div className="md:hidden flex justify-center py-3 bg-white sticky top-0 z-10">
+                <div className="w-12 h-1.5 bg-gray-300 rounded-full" />
+              </div>
 
-                  {/* Image Navigation */}
-                  {selectedReferenz.bilder.length > 1 && (
-                    <>
-                      <button
-                        onClick={prevImage}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-100 text-[#012956] p-2 rounded-[6px] shadow-lg transition-colors"
-                      >
-                        <ChevronLeft className="w-6 h-6" />
-                      </button>
-                      <button
-                        onClick={nextImage}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white hover:bg-gray-100 text-[#012956] p-2 rounded-[6px] shadow-lg transition-colors"
-                      >
-                        <ChevronRight className="w-6 h-6" />
-                      </button>
+              {/* Scrollable Content Container */}
+              <div className="overflow-y-auto max-h-[calc(92vh-20px)] md:max-h-[90vh]">
+                <div className="md:grid md:grid-cols-2">
+                  {/* Image Gallery */}
+                  <div className="relative aspect-[4/3] md:aspect-auto md:h-full md:min-h-[500px] bg-gray-900 md:sticky md:top-0">
+                    <Image
+                      src={selectedReferenz.bilder[currentImageIndex]}
+                      alt={selectedReferenz.projektName}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover"
+                      quality={80}
+                    />
 
-                      {/* Dots */}
-                      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                        {selectedReferenz.bilder.map((_, index) => (
-                          <button
-                            key={index}
-                            onClick={() => setCurrentImageIndex(index)}
-                            className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                              index === currentImageIndex ? 'bg-white' : 'bg-white/50'
-                            }`}
-                          />
+                    {/* Image Counter Badge - Mobile */}
+                    <div className="absolute top-4 left-4 bg-black/60 text-white text-sm font-bold px-3 py-1.5 rounded-full md:hidden">
+                      {currentImageIndex + 1} / {selectedReferenz.bilder.length}
+                    </div>
+
+                    {/* Image Navigation */}
+                    {selectedReferenz.bilder.length > 1 && (
+                      <>
+                        <button
+                          onClick={prevImage}
+                          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#012956] p-2.5 rounded-full shadow-lg transition-colors"
+                          aria-label="Vorheriges Bild"
+                        >
+                          <ChevronLeft className="w-5 h-5" />
+                        </button>
+                        <button
+                          onClick={nextImage}
+                          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#012956] p-2.5 rounded-full shadow-lg transition-colors"
+                          aria-label="Nächstes Bild"
+                        >
+                          <ChevronRight className="w-5 h-5" />
+                        </button>
+
+                        {/* Dots - Desktop only */}
+                        <div className="hidden md:flex absolute bottom-4 left-1/2 -translate-x-1/2 gap-2">
+                          {selectedReferenz.bilder.map((_, index) => (
+                            <button
+                              key={index}
+                              onClick={() => setCurrentImageIndex(index)}
+                              className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                                index === currentImageIndex ? 'bg-white' : 'bg-white/50'
+                              }`}
+                              aria-label={`Bild ${index + 1}`}
+                            />
+                          ))}
+                        </div>
+                      </>
+                    )}
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-6 md:p-10">
+                    {/* Header */}
+                    <div className="mb-6">
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="bg-[#109387] text-white text-sm font-bold px-3 py-1 rounded-[6px]">
+                          {selectedReferenz.jahr}
+                        </span>
+                        <span className="text-[#012956] font-semibold">
+                          {getBrancheName(selectedReferenz.branche)}
+                        </span>
+                      </div>
+
+                      <h2 className="text-xl md:text-3xl font-bold text-[#012956] mb-2">
+                        {selectedReferenz.projektName}
+                      </h2>
+
+                      <p className="text-gray-600 font-semibold text-base md:text-lg">
+                        {selectedReferenz.firma}
+                      </p>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-gray-700 font-semibold leading-relaxed mb-6 md:mb-8 text-sm md:text-base">
+                      {selectedReferenz.beschreibung}
+                    </p>
+
+                    {/* Meta Grid */}
+                    <div className="grid grid-cols-2 gap-3 md:gap-4 mb-6 md:mb-8">
+                      <div className="bg-[#f8f9fa] rounded-[6px] p-3 md:p-4">
+                        <div className="flex items-center gap-2 text-gray-500 text-xs md:text-sm font-semibold mb-1">
+                          <MapPin className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                          Standort
+                        </div>
+                        <div className="font-bold text-[#012956] text-sm md:text-base">{selectedReferenz.standort}</div>
+                      </div>
+
+                      {selectedReferenz.flaeche && (
+                        <div className="bg-[#f8f9fa] rounded-[6px] p-3 md:p-4">
+                          <div className="flex items-center gap-2 text-gray-500 text-xs md:text-sm font-semibold mb-1">
+                            <Maximize2 className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                            Fläche
+                          </div>
+                          <div className="font-bold text-[#012956] text-sm md:text-base">{selectedReferenz.flaeche}</div>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Leistungen */}
+                    <div className="mb-6 md:mb-8">
+                      <h3 className="font-bold text-[#012956] mb-3 text-sm md:text-base">Erbrachte Leistungen</h3>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedReferenz.leistungen.map((leistungSlug) => (
+                          <span
+                            key={leistungSlug}
+                            className="bg-[#109387]/10 text-[#109387] font-semibold px-2.5 md:px-3 py-1 md:py-1.5 rounded-[6px] text-xs md:text-sm"
+                          >
+                            {getLeistungName(leistungSlug)}
+                          </span>
                         ))}
                       </div>
-                    </>
-                  )}
-                </div>
-
-                {/* Content */}
-                <div className="p-8 md:p-10 overflow-y-auto max-h-[90vh] md:max-h-none relative">
-                  {/* Close Button */}
-                  <button
-                    onClick={closeModal}
-                    className="absolute top-4 right-4 bg-[#f8f9fa] hover:bg-gray-200 text-gray-700 p-2 rounded-[6px] transition-colors"
-                  >
-                    <X className="w-5 h-5" />
-                  </button>
-
-                  {/* Header */}
-                  <div className="mb-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="bg-[#109387] text-white text-sm font-bold px-3 py-1 rounded-[6px]">
-                        {selectedReferenz.jahr}
-                      </span>
-                      <span className="text-[#012956] font-semibold">
-                        {getBrancheName(selectedReferenz.branche)}
-                      </span>
                     </div>
 
-                    <h2 className="text-2xl md:text-3xl font-bold text-[#012956] mb-2">
-                      {selectedReferenz.projektName}
-                    </h2>
+                    {/* CTA */}
+                    <Link
+                      href="/kontakt"
+                      onClick={closeModal}
+                      className="inline-flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-5 md:px-6 py-3 rounded-[6px] transition-colors text-sm md:text-base w-full md:w-auto justify-center"
+                    >
+                      Ähnliches Projekt anfragen
+                      <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
+                    </Link>
 
-                    <p className="text-gray-600 font-semibold text-lg">
-                      {selectedReferenz.firma}
-                    </p>
+                    {/* Safe Area Spacing for Mobile */}
+                    <div className="h-6 md:hidden" />
                   </div>
-
-                  {/* Description */}
-                  <p className="text-gray-700 font-semibold leading-relaxed mb-8">
-                    {selectedReferenz.beschreibung}
-                  </p>
-
-                  {/* Meta Grid */}
-                  <div className="grid grid-cols-2 gap-4 mb-8">
-                    <div className="bg-[#f8f9fa] rounded-[6px] p-4">
-                      <div className="flex items-center gap-2 text-gray-500 text-sm font-semibold mb-1">
-                        <MapPin className="w-4 h-4" />
-                        Standort
-                      </div>
-                      <div className="font-bold text-[#012956]">{selectedReferenz.standort}</div>
-                    </div>
-
-                    {selectedReferenz.flaeche && (
-                      <div className="bg-[#f8f9fa] rounded-[6px] p-4">
-                        <div className="flex items-center gap-2 text-gray-500 text-sm font-semibold mb-1">
-                          <Maximize2 className="w-4 h-4" />
-                          Fläche
-                        </div>
-                        <div className="font-bold text-[#012956]">{selectedReferenz.flaeche}</div>
-                      </div>
-                    )}
-
-                                      </div>
-
-                  {/* Leistungen */}
-                  <div className="mb-8">
-                    <h3 className="font-bold text-[#012956] mb-3">Erbrachte Leistungen</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedReferenz.leistungen.map((leistungSlug) => (
-                        <span
-                          key={leistungSlug}
-                          className="bg-[#109387]/10 text-[#109387] font-semibold px-3 py-1.5 rounded-[6px] text-sm"
-                        >
-                          {getLeistungName(leistungSlug)}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* CTA */}
-                  <Link
-                    href="/kontakt"
-                    className="inline-flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-6 py-3 rounded-[6px] transition-colors"
-                  >
-                    Ähnliches Projekt anfragen
-                    <ArrowRight className="w-5 h-5" />
-                  </Link>
                 </div>
               </div>
             </motion.div>
