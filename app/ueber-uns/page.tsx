@@ -22,8 +22,8 @@ const navItems = [
 
 export const metadata: Metadata = {
   title: 'Über uns - FIMI Gebäudereinigung | Seit 2016 Ihr Partner für Sauberkeit',
-  description: 'Lernen Sie FIMI kennen: 8+ Jahre Erfahrung, 90+ Mitarbeiter, 8 Standorte in Bayern. Wir arbeiten nach ISO 9001 & 14001 Standards. Von der kleinen GbR zum regionalen Marktführer.',
-  keywords: 'Gebäudereinigung, Über uns, FIMI, Landshut, Bayern, Team, Geschäftsführung, ISO 9001, ISO 14001',
+  description: 'Lernen Sie FIMI kennen: 8+ Jahre Erfahrung, 90+ Mitarbeiter, 8 Standorte in Bayern. Von der kleinen GbR zum regionalen Marktführer.',
+  keywords: 'Gebäudereinigung, Über uns, FIMI, Landshut, Bayern, Team, Geschäftsführung',
   openGraph: {
     title: 'Über FIMI Gebäudereinigung - Ihr Partner für professionelle Sauberkeit',
     description: 'Seit 2016: 90+ Mitarbeiter, 120+ zufriedene Kunden, 8 Standorte in Bayern. Keine Lösung zu haben ist keine Option.',

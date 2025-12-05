@@ -1,6 +1,6 @@
 'use client'
 
-import { Shield, Award } from 'lucide-react'
+import { Shield, Leaf } from 'lucide-react'
 
 export default function LeistungenCTAContainer() {
   const scrollToContact = () => {
@@ -14,14 +14,14 @@ export default function LeistungenCTAContainer() {
     <section className="py-24 md:py-32 bg-gray-50">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left: ISO Info */}
+          {/* Left: Qualitätsversprechen */}
           <div>
             <div className="inline-block px-4 py-2 bg-fimi-turquoise/10 text-fimi-turquoise font-semibold mb-6" style={{ borderRadius: '4px' }}>
-              Zertifizierte Qualität
+              Qualitätsversprechen
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold text-fimi-navy mb-6">
-              ISO-zertifizierte Exzellenz
+              So sichern wir Qualität
             </h2>
 
             <p className="text-xl text-gray-600 mb-12">
@@ -34,7 +34,7 @@ export default function LeistungenCTAContainer() {
                   <Shield size={24} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-fimi-navy text-lg mb-2">ISO 9001 Zertifiziert</h3>
+                  <h3 className="font-bold text-fimi-navy text-lg mb-2">Dokumentierte Prozesse</h3>
                   <p className="text-gray-600">
                     Qualitätsmanagement für gleichbleibend höchste Standards und Kundenzufriedenheit
                   </p>
@@ -43,12 +43,12 @@ export default function LeistungenCTAContainer() {
 
               <div className="flex items-start gap-4 bg-white p-6" style={{ borderRadius: '4px' }}>
                 <div className="bg-fimi-turquoise text-white w-12 h-12 flex items-center justify-center flex-shrink-0" style={{ borderRadius: '4px' }}>
-                  <Award size={24} />
+                  <Leaf size={24} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-fimi-navy text-lg mb-2">ISO 14001 Zertifiziert</h3>
+                  <h3 className="font-bold text-fimi-navy text-lg mb-2">Umweltbewusstes Arbeiten</h3>
                   <p className="text-gray-600">
-                    Umweltmanagement mit nachhaltigen Reinigungsverfahren und ökologischer Verantwortung
+                    Nachhaltige Reinigungsverfahren und ökologische Verantwortung
                   </p>
                 </div>
               </div>

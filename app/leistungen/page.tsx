@@ -498,7 +498,7 @@ export default function LeistungenPage() {
                 <div className="space-y-6">
                   {[
                     { title: 'Geschultes Stammpersonal', desc: 'Feste Teams, die Ihr Objekt kennen' },
-                    { title: 'Umweltfreundliche Reinigung', desc: 'ISO 14001 zertifiziert' },
+                    { title: 'Umweltfreundliche Reinigung', desc: 'Nachhaltige Verfahren' },
                     { title: 'Flexible Verträge', desc: 'Monatlich kündbar' },
                     { title: 'Persönlicher Ansprechpartner', desc: 'Direkter Draht zu Ihrem Objektleiter' },
                   ].map((item, i) => (

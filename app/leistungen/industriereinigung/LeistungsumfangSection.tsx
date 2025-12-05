@@ -96,9 +96,8 @@ export default function LeistungsumfangSection() {
                 gelten besondere Anforderungen an Sauberkeit, Sicherheit und Hygiene.
               </p>
               <p>
-                Wir arbeiten nach den Standards von <strong className="text-[#012956]">ISO 9001</strong> und
-                <strong className="text-[#012956]"> ISO 14001</strong> – ohne selbst zertifiziert zu sein.
-                Das heißt: Dokumentierte Prozesse, Qualitätskontrollen und umweltbewusstes Arbeiten.
+                Wir setzen auf <strong className="text-[#012956]">dokumentierte Prozesse</strong>,
+                regelmäßige <strong className="text-[#012956]">Qualitätskontrollen</strong> und umweltbewusstes Arbeiten.
               </p>
               <p>
                 Ob regelmäßige Unterhaltsreinigung oder Intensivreinigung vor dem Audit –

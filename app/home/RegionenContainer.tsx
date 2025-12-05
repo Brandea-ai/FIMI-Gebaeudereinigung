@@ -56,7 +56,7 @@ const staedte = [
       'Automotive-Zulieferer Erfahrung',
       'Reinraum nach Industriestandard',
       'Flexible Schichtmodelle',
-      'Prozesse nach ISO-Standards',
+      'Dokumentierte Qualitätsprozesse',
     ],
   },
   {

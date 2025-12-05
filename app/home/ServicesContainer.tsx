@@ -88,13 +88,13 @@ export default function ServicesContainer() {
                 </Link>
               </div>
 
-              {/* ISO Standards - prominent in Navy */}
+              {/* Qualitätsversprechen */}
               <div className="mt-10 bg-[#012956] rounded-[6px] p-6">
                 <p className="text-sm text-white/70 font-semibold uppercase tracking-wide mb-1">
-                  Qualitätsstandards
+                  Unser Versprechen
                 </p>
                 <p className="text-2xl text-white font-bold">
-                  ISO 9001 & 14001
+                  Geprüfte Qualität
                 </p>
               </div>
             </aside>

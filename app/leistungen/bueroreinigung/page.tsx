@@ -13,7 +13,7 @@ import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
   title: 'Büroreinigung Bayern | Professionelle Reinigung für Ihr Büro',
-  description: 'Professionelle Büroreinigung in Landshut, München, Regensburg und ganz Bayern. Festes Personal, 2h Reaktionszeit, ISO-Standards. Jetzt kostenfreie Besichtigung anfragen.',
+  description: 'Professionelle Büroreinigung in Landshut, München, Regensburg und ganz Bayern. Festes Personal, 2h Reaktionszeit, geprüfte Qualität. Jetzt kostenfreie Besichtigung anfragen.',
   keywords: [
     'Büroreinigung Bayern',
     'Büroreinigung Landshut',

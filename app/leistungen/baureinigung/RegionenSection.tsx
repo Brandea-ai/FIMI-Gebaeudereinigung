@@ -32,7 +32,7 @@ const regionen = [
     name: 'Ingolstadt',
     headline: 'Baureinigung in Ingolstadt',
     beschreibung: 'Baureinigung auf Industrieniveau für den Automobilstandort Ingolstadt. Wir arbeiten nach den hohen Standards, die hier erwartet werden – für Zulieferer, Bürokomplexe und Wohnprojekte.',
-    vorteile: ['Automotive-Erfahrung', 'ISO-Standards', 'Schichtbetrieb möglich'],
+    vorteile: ['Automotive-Erfahrung', 'Qualitätsprozesse', 'Schichtbetrieb möglich'],
   },
   {
     id: 'freising',

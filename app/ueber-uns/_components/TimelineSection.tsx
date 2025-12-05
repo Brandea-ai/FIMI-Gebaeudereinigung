@@ -54,9 +54,9 @@ const timeline = [
   },
   {
     year: '2026',
-    title: 'ISO-Zertifizierung',
+    title: 'Weitere Expansion',
     subtitle: 'Coming Soon',
-    description: 'Wir arbeiten bereits nach ISO 9001 und ISO 14001 Standards. Die offizielle Zertifizierung ist unser nächstes Ziel für höchste Qualitäts- und Umweltstandards.',
+    description: 'Ausbau unseres Standortnetzwerks und Erweiterung unserer Dienstleistungspalette für noch mehr Kunden in Bayern.',
     image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop',
     highlight: false,
   },

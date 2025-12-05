@@ -35,7 +35,7 @@ const regionen = [
     image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1600&auto=format&fit=crop',
     headline: 'Hallenreinigung in Ingolstadt',
     beschreibung: 'Der Automobilstandort verlangt Präzision. Für Audi-Zulieferer, Logistikunternehmen und Produktionsbetriebe arbeiten wir nach den hohen Standards der Branche – auch im Schichtbetrieb.',
-    vorteile: ['Automotive-Standards', 'Schichtbetrieb', 'ISO-zertifiziert'],
+    vorteile: ['Automotive-Standards', 'Schichtbetrieb', 'Qualitätsprozesse'],
   },
   {
     id: 'freising',

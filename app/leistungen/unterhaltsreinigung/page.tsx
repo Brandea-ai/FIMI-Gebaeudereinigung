@@ -13,7 +13,7 @@ import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
   title: 'Unterhaltsreinigung Bayern | Regelmäßige Gebäudereinigung',
-  description: 'Professionelle Unterhaltsreinigung in Landshut, München, Regensburg und ganz Bayern. Festes Personal, 2h Reaktionszeit, ISO-Standards. Jetzt kostenfreie Besichtigung anfragen.',
+  description: 'Professionelle Unterhaltsreinigung in Landshut, München, Regensburg und ganz Bayern. Festes Personal, 2h Reaktionszeit, geprüfte Qualität. Jetzt kostenfreie Besichtigung anfragen.',
   keywords: [
     'Unterhaltsreinigung Bayern',
     'Unterhaltsreinigung Landshut',

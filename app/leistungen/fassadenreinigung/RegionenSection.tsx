@@ -35,7 +35,7 @@ const regionen = [
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop',
     headline: 'Fassadenreinigung in Ingolstadt',
     beschreibung: 'Der Automobilstandort verlangt Präzision. Für Zulieferer, Bürogebäude und Gewerbeobjekte arbeiten wir nach höchsten Standards und flexiblen Zeitmodellen.',
-    vorteile: ['Automotive-Erfahrung', 'ISO-Standards', 'Schichtmodelle'],
+    vorteile: ['Automotive-Erfahrung', 'Qualitätsprozesse', 'Schichtmodelle'],
   },
   {
     id: 'freising',

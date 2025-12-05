@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     frage: 'Nach welchen Standards arbeiten Sie?',
-    antwort: 'Wir arbeiten nach den Qualitätsstandards von ISO 9001 und ISO 14001 – ohne selbst zertifiziert zu sein. Das bedeutet: dokumentierte Prozesse, regelmäßige Qualitätskontrollen und umweltbewusstes Arbeiten. Unser Personal ist geschult in Arbeitssicherheit, Gefahrstoffen und branchenspezifischen Anforderungen wie HACCP für Lebensmittelbetriebe. Auf Wunsch dokumentieren wir alle Reinigungsarbeiten mit Protokollen und Fotos für Ihr QM-System.',
+    antwort: 'Wir setzen auf dokumentierte Prozesse, regelmäßige Qualitätskontrollen und umweltbewusstes Arbeiten. Unser Personal ist geschult in Arbeitssicherheit, Gefahrstoffen und branchenspezifischen Anforderungen wie HACCP für Lebensmittelbetriebe. Auf Wunsch dokumentieren wir alle Reinigungsarbeiten mit Protokollen und Fotos für Ihr QM-System.',
   },
   {
     frage: 'Was ist in der Industriereinigung enthalten?',

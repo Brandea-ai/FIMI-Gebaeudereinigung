@@ -12,7 +12,7 @@
 | ID | Beschreibung (aus TODO-Liste) | Status |
 |----|-------------------------------|--------|
 | D1 | Logos/Kundennamen entfernen, solange keine schriftliche Freigabe vorliegt | [OK] |
-| D2 | ISO-Zertifizierungs-Claims vollstandig entfernen (bis Zertifikat vorliegt) | [?] |
+| D2 | ISO-Zertifizierungs-Claims vollstandig entfernen (bis Zertifikat vorliegt) | [OK] |
 | D3 | Referenzen-Seite wird zu "Projekte & Qualitat" (anonymisierte Case-Cards) | [?] |
 | D4 | Sonderleistungen/Personal: (A) umbauen auf Reinigungs-Add-ons ODER (B) offline | [?] |
 
@@ -24,7 +24,7 @@
 |----|----------------------------|--------|--------|-----|
 | 1 | NAP konsistent (Name/Adresse/Telefon/E-Mail) - Single Source of Truth | [ ] | - | Site-weit nur eine Telefonnummer/E-Mail/Adresse |
 | 2 | "Trusted by / Logos / grosse Kunden" komplett entfernen (bis Freigaben da) | [X] | R0002 | Keine Logos, keine Grosskundennamen |
-| 3 | ISO-Claims vollstandig entfernen (bis zertifiziert) | [ ] | - | Site-Suche nach "ISO" = 0 Treffer |
+| 3 | ISO-Claims vollstandig entfernen (bis zertifiziert) | [X] | R0002 | Site-Suche nach "ISO" = 0 Treffer |
 | 4 | Unfertige Inhalte entfernen (z.B. "Beschreibung folgt") | [ ] | - | Keine Placeholder-Texte im Frontend |
 | 5 | Sonderleistungen/Personaldienstleistungen: Positionierung fix (AUG-Risiko) | [ ] | - | Keine "Personaldienstleistungen" ohne rechtliche Basis |
 | 6 | SLAs & Versprechen vereinheitlichen (z.B. "2h" vs "24h") | [ ] | - | Jede CTA-Sektion nutzt denselben SLA-Text |
@@ -43,7 +43,7 @@
 | 19 | Doppelte DOM-Inhalte durch Slider/Marquee korrigieren | [ ] | - | Screenreader liest keine doppelten Listen |
 | 20 | Core Web Vitals absichern (LCP/INP/CLS) | [ ] | - | Lighthouse Performance > 85 |
 
-**Sprint 1 Fortschritt:** 1/20 (5%)
+**Sprint 1 Fortschritt:** 2/20 (10%)
 
 ---
 
@@ -114,10 +114,10 @@
 
 | Sprint | Tasks | Erledigt | Prozent |
 |--------|-------|----------|---------|
-| P0 | 20 | 1 | 5% |
+| P0 | 20 | 2 | 10% |
 | P1 | 30 | 0 | 0% |
 | P2 | 15 | 0 | 0% |
-| **TOTAL** | **65** | **1** | **1.5%** |
+| **TOTAL** | **65** | **2** | **3%** |
 
 ---
 
@@ -127,3 +127,4 @@
 |-------|--------|-----|
 | 2025-12-05 | R0001 | Task-System aufgesetzt |
 | 2025-12-05 | R0002 | D1: Kundenlogos von 19 Seiten entfernt |
+| 2025-12-05 | R0002 | D2: ISO-Claims von 25+ Dateien entfernt |

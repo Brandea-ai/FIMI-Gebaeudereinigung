@@ -36,7 +36,7 @@ const regionen = [
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop',
     headline: 'Hausmeisterservice in Ingolstadt',
     beschreibung: 'Der Automobilstandort verlangt Präzision. Für Wohnanlagen, Bürokomplexe und Zulieferer-Gebäude arbeiten wir nach höchsten Standards.',
-    vorteile: ['Automotive-Erfahrung', 'ISO-Standards', 'Flexible Zeiten'],
+    vorteile: ['Automotive-Erfahrung', 'Qualitätsprozesse', 'Flexible Zeiten'],
   },
   {
     id: 'freising',

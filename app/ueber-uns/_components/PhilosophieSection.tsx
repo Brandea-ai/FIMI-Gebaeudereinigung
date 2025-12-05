@@ -7,12 +7,12 @@ const werte = [
   {
     icon: Shield,
     titel: 'Qualität ohne Kompromisse',
-    beschreibung: 'Wir arbeiten nach ISO 9001 Standards. Jeder Reinigungsauftrag wird nach standardisierten Prozessen durchgeführt und regelmäßig kontrolliert. Gleichbleibende Qualität ist unser Versprechen.',
+    beschreibung: 'Jeder Reinigungsauftrag wird nach standardisierten Prozessen durchgeführt und regelmäßig kontrolliert. Gleichbleibende Qualität ist unser Versprechen.',
   },
   {
     icon: Leaf,
     titel: 'Nachhaltigkeit',
-    beschreibung: 'Wir arbeiten nach ISO 14001 Standards. Wir setzen auf umweltschonende Reinigungsmittel, ressourcensparende Verfahren und recycelbare Materialien. Sauberkeit muss nicht auf Kosten der Umwelt gehen.',
+    beschreibung: 'Wir setzen auf umweltschonende Reinigungsmittel, ressourcensparende Verfahren und recycelbare Materialien. Sauberkeit muss nicht auf Kosten der Umwelt gehen.',
   },
   {
     icon: Users,

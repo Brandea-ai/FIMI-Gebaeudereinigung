@@ -36,7 +36,7 @@ const staedte = [
     headline: 'Fensterreinigung in Ingolstadt',
     beschreibung: 'Fensterreinigung auf Industrieniveau. Für Automotive-Zulieferer, Bürokomplexe und den Einzelhandel in Ingolstadt.',
     anfahrt: '< 50 Min',
-    vorteile: ['Automotive-Erfahrung', 'Flexible Schichten', 'ISO-Standards'],
+    vorteile: ['Automotive-Erfahrung', 'Flexible Schichten', 'Qualitätsprozesse'],
   },
   {
     id: 'freising',

@@ -89,8 +89,8 @@ export default function HeroSection() {
               <div className="flex items-center gap-2.5 sm:gap-3 bg-white/10 backdrop-blur-sm rounded-[6px] px-3 sm:px-4 py-2.5 sm:py-3">
                 <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-[#109387] flex-shrink-0" />
                 <div>
-                  <span className="text-white font-bold block text-sm sm:text-base">ISO-zertifiziert</span>
-                  <span className="text-white/60 text-xs sm:text-sm font-semibold">9001 & 14001</span>
+                  <span className="text-white font-bold block text-sm sm:text-base">Geprüfte Qualität</span>
+                  <span className="text-white/60 text-xs sm:text-sm font-semibold">Dokumentiert</span>
                 </div>
               </div>
             </div>

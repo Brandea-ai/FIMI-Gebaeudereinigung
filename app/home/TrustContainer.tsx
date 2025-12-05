@@ -29,7 +29,7 @@ const trustFaktoren = [
 
 const stats = [
   { zahl: '8+', label: 'Jahre', sublabel: 'Erfahrung' },
-  { zahl: 'ISO', label: '9001 & 14001', sublabel: 'Standards' },
+  { zahl: '90+', label: 'Mitarbeiter', sublabel: 'im Team' },
   { zahl: '2h', label: 'Reaktionszeit', sublabel: 'garantiert' },
   { zahl: '100%', label: 'Zufriedenheit', sublabel: 'oder nochmal' },
 ]

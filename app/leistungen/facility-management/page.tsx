@@ -15,7 +15,7 @@ import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
   title: 'Facility Management Bayern | Gebäudeservice aus einer Hand | FIMI',
-  description: 'Professionelles Facility Management in Landshut, München, Regensburg und ganz Bayern. Reinigung, Hausmeister, Winterdienst, Grünpflege – ein Ansprechpartner, ein Vertrag. ✓ 2h Reaktionszeit ✓ ISO-zertifiziert ✓ Kostenfreie Beratung',
+  description: 'Professionelles Facility Management in Landshut, München, Regensburg und ganz Bayern. Reinigung, Hausmeister, Winterdienst, Grünpflege – ein Ansprechpartner, ein Vertrag. ✓ 2h Reaktionszeit ✓ Geprüfte Qualität ✓ Kostenfreie Beratung',
   keywords: [
     'Facility Management Bayern',
     'Facility Management Landshut',

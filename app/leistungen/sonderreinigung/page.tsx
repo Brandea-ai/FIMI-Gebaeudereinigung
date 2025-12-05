@@ -167,7 +167,7 @@ const faqSchema = {
       name: 'Welche Qualifikationen haben Ihre Mitarbeiter?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Unsere Spezialteams bestehen aus staatlich geprüften Desinfektoren und ausgebildeten Fachkräften. Wir arbeiten nach den Standards von ISO 9001 und ISO 14001. Alle Mitarbeiter sind geschult im Umgang mit Gefahrstoffen.',
+        text: 'Unsere Spezialteams bestehen aus staatlich geprüften Desinfektoren und ausgebildeten Fachkräften. Alle Mitarbeiter sind geschult im Umgang mit Gefahrstoffen.',
       },
     },
   ],

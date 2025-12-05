@@ -7,7 +7,7 @@ import { ArrowRight, Phone, ArrowLeft, Clock, Shield, Users } from 'lucide-react
 const trustPoints = [
   { icon: Clock, text: '2h Reaktionszeit' },
   { icon: Users, text: 'Festes Personal' },
-  { icon: Shield, text: 'ISO-Standards' },
+  { icon: Shield, text: 'Geprüfte Qualität' },
 ]
 
 export default function HeroSection() {

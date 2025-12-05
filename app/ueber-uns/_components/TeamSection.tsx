@@ -66,7 +66,7 @@ const teamBereiche = [
   },
   {
     titel: 'Qualitätsmanagement',
-    beschreibung: 'Kontinuierliche Verbesserung und Einhaltung unserer ISO-Standards.',
+    beschreibung: 'Kontinuierliche Verbesserung und Einhaltung unserer Qualitätsstandards.',
     mitglieder: [
       {
         name: 'Petra Hoffmann',

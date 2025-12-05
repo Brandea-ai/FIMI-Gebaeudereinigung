@@ -13,6 +13,7 @@ import { BrancheProcess } from './_components/BrancheProcess'
 import { BrancheFAQ } from './_components/BrancheFAQ'
 import { BrancheCTA } from './_components/BrancheCTA'
 import { BrancheFloatingNav } from './_components/BrancheFloatingNav'
+import PartnerLogosSlider from '@/components/PartnerLogosSlider'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -61,6 +62,13 @@ export default async function BranchePage({ params }: PageProps) {
 
       {/* Services Grid */}
       <BrancheServices branche={branche} />
+
+      {/* Partner Logos - Professionelle Ausrüstung */}
+      <PartnerLogosSlider
+        showHeader={true}
+        showStats={false}
+        bgColor="#f8f9fa"
+      />
 
       {/* SEO Content (500+ Wörter) */}
       <BrancheSEOContent branche={branche} />
