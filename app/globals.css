@@ -293,3 +293,116 @@
     }
   }
 }
+
+/* ===========================================
+   Blog Content - Mobile Responsive Overrides
+   Überschreibt inline-Styles im Blog-Content
+   =========================================== */
+
+/* Blog Content Container */
+.prose div[style*="grid-template-columns"] {
+  gap: 8px !important;
+}
+
+/* Mobile: Alle Grids auf 1 Spalte */
+@media (max-width: 640px) {
+  /* Grid Layouts auf 1 Spalte */
+  .prose div[style*="grid-template-columns: repeat(3"],
+  .prose div[style*="grid-template-columns: repeat(2"],
+  .prose div[style*="grid-template-columns:repeat(3"],
+  .prose div[style*="grid-template-columns:repeat(2"] {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  /* Padding reduzieren */
+  .prose div[style*="padding: 24px"],
+  .prose div[style*="padding: 20px"] {
+    padding: 16px !important;
+  }
+
+  .prose div[style*="padding: 24px 28px"] {
+    padding: 16px !important;
+  }
+
+  /* Große Schriftgrößen reduzieren */
+  .prose p[style*="font-size: 24px"],
+  .prose span[style*="font-size: 24px"] {
+    font-size: 18px !important;
+  }
+
+  .prose p[style*="font-size: 20px"],
+  .prose span[style*="font-size: 20px"],
+  .prose h3[style*="font-size: 20px"] {
+    font-size: 16px !important;
+  }
+
+  .prose p[style*="font-size: 17px"],
+  .prose span[style*="font-size: 17px"] {
+    font-size: 14px !important;
+  }
+
+  .prose p[style*="font-size: 16px"],
+  .prose span[style*="font-size: 16px"] {
+    font-size: 14px !important;
+  }
+
+  /* Tabellen responsive */
+  .prose table {
+    display: block !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    width: 100% !important;
+  }
+
+  .prose table th,
+  .prose table td {
+    font-size: 12px !important;
+    padding: 8px 10px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Key Facts Box - kompakter */
+  .prose div[style*="margin-bottom: 32px"] {
+    margin-bottom: 20px !important;
+  }
+
+  .prose div[style*="margin: 28px 0"],
+  .prose div[style*="margin: 24px 0"],
+  .prose div[style*="margin: 20px 0"] {
+    margin: 16px 0 !important;
+  }
+
+  /* Grid Items zentrieren auf Mobile */
+  .prose div[style*="text-align: center"] {
+    text-align: left !important;
+    padding: 12px !important;
+  }
+
+  /* Kleine Labels */
+  .prose p[style*="font-size: 11px"],
+  .prose p[style*="font-size: 12px"],
+  .prose p[style*="font-size: 13px"] {
+    font-size: 11px !important;
+  }
+}
+
+/* Tablet: 2 Spalten für 3er-Grids */
+@media (min-width: 641px) and (max-width: 900px) {
+  .prose div[style*="grid-template-columns: repeat(3"],
+  .prose div[style*="grid-template-columns:repeat(3"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Alle Viewports: Overflow verhindern */
+.prose {
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+}
+
+.prose div,
+.prose table {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
