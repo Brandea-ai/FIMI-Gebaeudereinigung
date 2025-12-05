@@ -7,6 +7,7 @@ FIMI Website Task-System aktiv.
 
 SCHRITT 1 - Task-System einlesen:
 - Lies /_claude-tasks/RULES.md
+- Lies /_claude-tasks/FIMI_Website_TODOs.md (DER HEILIGE GRAL!)
 - Lies /_claude-tasks/STATUS.md
 - Lies ALLE Reports in /_claude-tasks/reports/ (chronologisch)
 
@@ -17,11 +18,14 @@ SCHRITT 2 - Projekt vollstandig verstehen:
 - Verstehe die Projektstruktur
 
 SCHRITT 3 - Bestatigung:
-- Fasse zusammen was bereits erledigt wurde
-- Nenne den nachsten offenen Task
+- Fasse zusammen was bereits erledigt wurde (aus Reports)
+- Nenne den nachsten offenen Task (aus STATUS.md)
+- Bei Unklarheiten: Details in FIMI_Website_TODOs.md nachschlagen
 - Warte auf meine Bestatigung bevor du arbeitest
 
-WICHTIG: Keine Arbeit ohne vollstandigen Projektuberblick!
+WICHTIG:
+- FIMI_Website_TODOs.md ist die einzige Quelle der Wahrheit!
+- Keine Arbeit ohne vollstandigen Projektuberblick!
 ```
 
 ---

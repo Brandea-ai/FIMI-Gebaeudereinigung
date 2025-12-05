@@ -889,36 +889,20 @@ export default function Navigation() {
         </div>
       </nav>
 
-      {/* Desktop Floating Home Button - LINKS, klebt oben mit 3D Pop-Out Animation */}
+      {/* Desktop Floating Home Button - LINKS, klebt oben mit Pop-Out Animation */}
       {!isHomePage && (
-      <div
-        className="fixed top-0 left-4 xl:left-8 z-50 hidden lg:block"
-        style={{ perspective: '800px', transformStyle: 'preserve-3d' }}
-      >
-        <div
-          className={`${
+      <div className="fixed top-0 left-4 xl:left-8 z-50 hidden lg:block">
+        <Link
+          href="/"
+          className={`group relative flex items-center justify-center w-12 h-12 bg-[#012956] hover:bg-[#109387] rounded-b-[6px] shadow-[0_8px_30px_rgba(1,41,86,0.4)] hover:shadow-[0_12px_40px_rgba(16,147,135,0.5)] transition-all duration-300 ${
             !isNavVisible && isScrolled
-              ? 'opacity-100'
-              : 'opacity-0 pointer-events-none'
+              ? 'animate-[popIn_0.6s_cubic-bezier(0.175,0.885,0.32,1.275)_forwards]'
+              : 'opacity-0 scale-0 -translate-y-4 pointer-events-none'
           }`}
-          style={{
-            transform: !isNavVisible && isScrolled
-              ? 'translateZ(20px) translateY(0) scale(1) rotateX(0deg)'
-              : 'translateZ(-100px) translateY(-30px) scale(0.3) rotateX(-45deg)',
-            transformStyle: 'preserve-3d',
-            transformOrigin: 'top center',
-            transition: 'transform 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.4), opacity 0.5s ease-out',
-          }}
+          aria-label="Zur Startseite"
         >
-          <Link
-            href="/"
-            className="group relative flex items-center justify-center w-12 h-12 bg-[#012956] hover:bg-[#109387] rounded-b-[6px] shadow-[0_8px_30px_rgba(1,41,86,0.4)] hover:shadow-[0_12px_40px_rgba(16,147,135,0.5)] transition-all duration-300"
-            style={{ transformStyle: 'preserve-3d' }}
-            aria-label="Zur Startseite"
-          >
-            <Home size={20} className="text-white group-hover:scale-110 transition-transform duration-300" />
-          </Link>
-        </div>
+          <Home size={20} className="text-white group-hover:scale-110 transition-transform duration-300" />
+        </Link>
       </div>
       )}
 

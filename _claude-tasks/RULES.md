@@ -4,22 +4,33 @@
 
 ---
 
+## DER HEILIGE GRAL
+
+**FIMI_Website_TODOs.md** ist die EINZIGE Quelle der Wahrheit!
+- Alle 65 Tasks kommen aus dieser Datei
+- Alle Beschreibungen, DoDs und Details stehen dort
+- STATUS.md ist nur der Tracker - TODOs.md ist die Referenz
+- Bei Unklarheiten: IMMER in TODOs.md nachschlagen
+
+---
+
 ## WICHTIG: Lies das ZUERST (OBERSTE PRIORITAT)
 
 ### Schritt 1: Task-System verstehen
 1. Lies diese RULES.md komplett
-2. Lies STATUS.md fur den aktuellen Stand
-3. Lies ALLE Reports in /reports/ (neueste zuletzt)
+2. Lies **FIMI_Website_TODOs.md** (der heilige Gral!)
+3. Lies STATUS.md fur den aktuellen Stand
+4. Lies ALLE Reports in /reports/ (neueste zuletzt)
 
 ### Schritt 2: Projekt vollstandig verstehen
-4. Lies FIMI-STANDARDS.md
-5. Lies MASTERPLAN-WEBSITE-REDESIGN.md
-6. Verschaffe dir Uberblick uber Projektstruktur
-7. Verstehe welche Seiten/Komponenten existieren
+5. Lies FIMI-STANDARDS.md
+6. Lies MASTERPLAN-WEBSITE-REDESIGN.md
+7. Verschaffe dir Uberblick uber Projektstruktur
+8. Verstehe welche Seiten/Komponenten existieren
 
 ### Schritt 3: Erst DANN arbeiten
-8. Bestatige dem User deinen Wissensstand
-9. Beginne mit dem nachsten Task
+9. Bestatige dem User deinen Wissensstand
+10. Beginne mit dem nachsten Task
 
 ---
 
