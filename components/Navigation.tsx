@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { ArrowRight, Phone, ChevronDown, Building2, Factory, Wrench, Sparkles, Stethoscope, ShoppingBag, GraduationCap, UtensilsCrossed, Dumbbell, Warehouse, Home, Landmark, Banknote, Car } from 'lucide-react'
 
 // Type für Dropdown States
@@ -78,6 +79,9 @@ const branchenData = [
 ]
 
 export default function Navigation() {
+  const pathname = usePathname()
+  const isHomePage = pathname === '/'
+
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isNavVisible, setIsNavVisible] = useState(true)
@@ -885,55 +889,38 @@ export default function Navigation() {
         </div>
       </nav>
 
-      {/* Desktop Mini Navigation - Elegant & Dezent */}
+      {/* Desktop Floating CTAs - Links, nicht auf Startseite */}
       <div
-        className={`fixed top-6 right-6 xl:right-12 2xl:right-20 z-50 hidden lg:flex items-center gap-3 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        className={`fixed top-6 left-6 xl:left-12 2xl:left-20 z-50 hidden lg:flex items-center gap-3 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           !isNavVisible && isScrolled
             ? 'opacity-100 translate-y-0'
             : 'opacity-0 -translate-y-4 pointer-events-none'
         }`}
+        style={{ display: typeof window !== 'undefined' && window.location.pathname === '/' ? 'none' : undefined }}
       >
-        {/* Home Button */}
-        <Link
-          href="/"
-          className="group flex items-center justify-center w-12 h-12 bg-white/95 backdrop-blur-md rounded-[6px] shadow-lg hover:shadow-xl hover:bg-white transition-all duration-300 border border-gray-100"
-          aria-label="Zur Startseite"
-        >
-          <Home size={20} className="text-[#012956] group-hover:text-[#109387] transition-colors" />
-        </Link>
-
-        {/* Telefon */}
-        <a
-          href="tel:+4987143033460"
-          className="group flex items-center gap-2.5 bg-white/95 backdrop-blur-md px-5 py-3 rounded-[6px] shadow-lg hover:shadow-xl hover:bg-white transition-all duration-300 border border-gray-100"
-        >
-          <Phone size={18} className="text-[#012956] group-hover:text-[#109387] transition-colors" />
-          <span className="text-[#012956] font-bold text-sm group-hover:text-[#109387] transition-colors">0871 430 334 60</span>
-        </a>
-
-        {/* CTA */}
+        {/* CTA - Erste Position */}
         <Link
           href="/kontakt"
-          className="group flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm px-5 py-3 rounded-[6px] shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
+          className="group flex items-center gap-2.5 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm px-6 py-3.5 rounded-full shadow-[0_8px_30px_rgba(16,147,135,0.4)] hover:shadow-[0_12px_40px_rgba(16,147,135,0.5)] transition-all duration-300 hover:-translate-y-1"
         >
           <span>Jetzt anfragen</span>
           <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
         </Link>
 
-        {/* Menü öffnen Button */}
-        <button
-          onClick={handleShowNav}
-          className="group flex items-center justify-center w-12 h-12 bg-[#012956]/95 backdrop-blur-md rounded-[6px] shadow-lg hover:shadow-xl hover:bg-[#012956] transition-all duration-300"
-          aria-label="Navigation anzeigen"
+        {/* Telefon - Zweite Position */}
+        <a
+          href="tel:+4987143033460"
+          className="group flex items-center gap-2.5 bg-[#012956] hover:bg-[#012956]/90 text-white px-5 py-3.5 rounded-full shadow-[0_8px_30px_rgba(1,41,86,0.35)] hover:shadow-[0_12px_40px_rgba(1,41,86,0.45)] transition-all duration-300 hover:-translate-y-1"
         >
-          <ChevronDown size={20} className="text-white" />
-        </button>
+          <Phone size={18} />
+          <span className="font-bold text-sm">0871 430 334 60</span>
+        </a>
       </div>
 
-      {/* Mobile Floating Nav Toggle Button */}
+      {/* Floating Nav Toggle Button - Mitte (Desktop & Mobile) */}
       <div
-        className={`fixed top-16 left-1/2 -translate-x-1/2 z-40 lg:hidden transition-opacity duration-300 ${
-          showNavToggle ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        className={`fixed top-6 lg:top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
+          !isNavVisible && isScrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'
         }`}
       >
         <button

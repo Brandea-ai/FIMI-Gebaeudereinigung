@@ -159,7 +159,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       {/* Article Content */}
       <article className="py-8 sm:py-10 lg:py-16">
         <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
-          <div className="lg:grid lg:grid-cols-[70%_30%] lg:gap-12 xl:gap-16">
+          <div className="lg:grid lg:grid-cols-[60%_40%] lg:gap-12 xl:gap-16">
             {/* Main Content */}
             <div>
               {/* Meta */}
