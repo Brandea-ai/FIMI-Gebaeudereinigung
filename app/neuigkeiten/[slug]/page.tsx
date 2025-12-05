@@ -159,9 +159,9 @@ export default async function BlogPostPage({ params }: PageProps) {
       {/* Article Content */}
       <article className="py-8 sm:py-10 lg:py-16">
         <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
-          <div className="lg:grid lg:grid-cols-[1fr_320px] xl:grid-cols-[1fr_350px] lg:gap-12 xl:gap-20">
+          <div className="lg:grid lg:grid-cols-[70%_30%] lg:gap-12 xl:gap-16">
             {/* Main Content */}
-            <div className="max-w-3xl">
+            <div>
               {/* Meta */}
               <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-gray-500 text-xs sm:text-sm pb-6 sm:pb-8 border-b border-gray-200 mb-6 sm:mb-8">
                 <span className="flex items-center gap-1 sm:gap-1.5">
