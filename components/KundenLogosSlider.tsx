@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { motion, useAnimationControls } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
@@ -105,8 +106,8 @@ const kunden = [
   },
 ]
 
-// Kunden Card Komponente - mit Hover-Effekt
-function KundeCard({ item }: { item: typeof kunden[0] }) {
+// Kunden Card Komponente - wie PartnerCard mit Hover-Effekt
+function KundeCard({ item, onHover }: { item: typeof kunden[0]; onHover: (hovering: boolean) => void }) {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
@@ -115,8 +116,14 @@ function KundeCard({ item }: { item: typeof kunden[0] }) {
       target="_blank"
       rel="noopener noreferrer"
       className="flex-shrink-0 w-44 sm:w-56 lg:w-64 h-36 sm:h-44 lg:h-48 relative group"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => {
+        setIsHovered(true)
+        onHover(true)
+      }}
+      onMouseLeave={() => {
+        setIsHovered(false)
+        onHover(false)
+      }}
     >
       <div className="absolute inset-0 bg-white rounded-[6px] shadow-sm transition-shadow duration-500 group-hover:shadow-md">
         {/* Default Content - Logo */}
@@ -131,7 +138,6 @@ function KundeCard({ item }: { item: typeof kunden[0] }) {
                 fill
                 className="object-contain"
                 sizes="(max-width: 640px) 112px, (max-width: 1024px) 144px, 160px"
-                loading="lazy"
               />
             </picture>
           </div>
@@ -140,7 +146,7 @@ function KundeCard({ item }: { item: typeof kunden[0] }) {
           </p>
         </div>
 
-        {/* Hover Content */}
+        {/* Hover Content - Subtle fade in */}
         <div className={`absolute inset-0 flex flex-col justify-between p-3 sm:p-5 transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
           <div>
             <p className="text-[10px] sm:text-xs text-[#109387] font-semibold uppercase tracking-wide mb-1 sm:mb-2">
@@ -175,12 +181,43 @@ export default function KundenLogosSlider({
   bgColor = '#ffffff',
   className = ''
 }: KundenLogosSliderProps) {
+  const controls = useAnimationControls()
+  const [isPaused, setIsPaused] = useState(false)
+
+  const cardWidth = 256 + 24 // w-64 (256px) + gap-6 (24px)
+  const totalWidth = kunden.length * cardWidth
+
+  useEffect(() => {
+    if (!isPaused) {
+      controls.start({
+        x: 0,
+        transition: {
+          duration: 70,
+          repeat: Infinity,
+          ease: 'linear',
+          repeatType: 'loop',
+        },
+      })
+    } else {
+      controls.stop()
+    }
+  }, [isPaused, controls, totalWidth])
+
+  const handleCardHover = (hovering: boolean) => {
+    setIsPaused(hovering)
+  }
 
   return (
     <section className={`py-16 lg:py-24 overflow-hidden ${className}`} style={{ backgroundColor: bgColor }}>
       {showHeader && (
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 mb-10 lg:mb-14">
-          <div className="text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-6">
               Für diese Unternehmen waren wir
               <span className="text-[#109387]"> im Einsatz</span>
@@ -188,13 +225,12 @@ export default function KundenLogosSlider({
             <p className="text-lg text-gray-700 font-semibold max-w-2xl mx-auto">
               Von lokalen Betrieben bis zu internationalen Konzernen – unsere Arbeit spricht für sich.
             </p>
-          </div>
+          </motion.div>
         </div>
       )}
 
-      {/* CSS-basierter Infinite Slider - GPU-beschleunigt */}
+      {/* Infinite Slider */}
       <div className="relative">
-        {/* Fade edges */}
         <div
           className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 lg:w-32 z-10 pointer-events-none"
           style={{ background: `linear-gradient(to right, ${bgColor}, transparent)` }}
@@ -204,18 +240,19 @@ export default function KundenLogosSlider({
           style={{ background: `linear-gradient(to left, ${bgColor}, transparent)` }}
         />
 
-        {/* Slider Container */}
-        <div className="slider-container py-4">
-          <div className="slider-track flex gap-4 sm:gap-6">
-            {/* Duplizieren für seamless loop */}
-            {[...kunden, ...kunden].map((item, index) => (
-              <KundeCard
-                key={`${item.name}-${index}`}
-                item={item}
-              />
-            ))}
-          </div>
-        </div>
+        <motion.div
+          initial={{ x: -totalWidth }}
+          animate={controls}
+          className="flex gap-4 sm:gap-6 py-4"
+        >
+          {[...kunden, ...kunden, ...kunden].map((item, index) => (
+            <KundeCard
+              key={`${item.name}-${index}`}
+              item={item}
+              onHover={handleCardHover}
+            />
+          ))}
+        </motion.div>
       </div>
 
       {showStats && (
@@ -251,36 +288,6 @@ export default function KundenLogosSlider({
           </Link>
         </div>
       </div>
-
-      {/* CSS Animation - GPU-beschleunigt mit will-change und transform */}
-      <style jsx>{`
-        .slider-container {
-          overflow: hidden;
-          width: 100%;
-        }
-        .slider-track {
-          display: flex;
-          width: max-content;
-          animation: scroll 50s linear infinite;
-          will-change: transform;
-        }
-        .slider-track:hover {
-          animation-play-state: paused;
-        }
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .slider-track {
-            animation: none;
-          }
-        }
-      `}</style>
     </section>
   )
 }

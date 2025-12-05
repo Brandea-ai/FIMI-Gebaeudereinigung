@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { motion, useAnimationControls } from 'framer-motion'
 import Image from 'next/image'
 
 // Partner/Hersteller mit URLs, Beschreibungen und Logos
@@ -111,8 +112,8 @@ const partner = [
   },
 ]
 
-// Partner Card Komponente - mit Hover-Effekt
-function PartnerCard({ item }: { item: typeof partner[0] }) {
+// Partner Card Komponente
+function PartnerCard({ item, onHover }: { item: typeof partner[0]; onHover: (hovering: boolean) => void }) {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
@@ -121,8 +122,14 @@ function PartnerCard({ item }: { item: typeof partner[0] }) {
       target="_blank"
       rel="noopener noreferrer"
       className="flex-shrink-0 w-44 sm:w-56 lg:w-64 h-36 sm:h-44 lg:h-48 relative group"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => {
+        setIsHovered(true)
+        onHover(true)
+      }}
+      onMouseLeave={() => {
+        setIsHovered(false)
+        onHover(false)
+      }}
     >
       <div className="absolute inset-0 bg-white rounded-[6px] shadow-sm transition-shadow duration-500 group-hover:shadow-md">
         {/* Default Content - Logo */}
@@ -137,7 +144,6 @@ function PartnerCard({ item }: { item: typeof partner[0] }) {
                 fill
                 className="object-contain"
                 sizes="(max-width: 640px) 112px, (max-width: 1024px) 144px, 160px"
-                loading="lazy"
               />
             </picture>
           </div>
@@ -181,12 +187,43 @@ export default function PartnerLogosSlider({
   bgColor = '#f8f9fa',
   className = ''
 }: PartnerLogosSliderProps) {
+  const controls = useAnimationControls()
+  const [isPaused, setIsPaused] = useState(false)
+
+  const cardWidth = 256 + 24
+  const totalWidth = partner.length * cardWidth
+
+  useEffect(() => {
+    if (!isPaused) {
+      controls.start({
+        x: -totalWidth,
+        transition: {
+          duration: 80,
+          repeat: Infinity,
+          ease: 'linear',
+          repeatType: 'loop',
+        },
+      })
+    } else {
+      controls.stop()
+    }
+  }, [isPaused, controls, totalWidth])
+
+  const handleCardHover = (hovering: boolean) => {
+    setIsPaused(hovering)
+  }
 
   return (
     <section className={`py-12 lg:py-16 overflow-hidden ${className}`} style={{ backgroundColor: bgColor }}>
       {showHeader && (
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 mb-8 lg:mb-12">
-          <div className="text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center"
+          >
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#012956] leading-[1.1] mb-4">
               Ausgestattet mit den
               <span className="text-[#109387]"> Besten</span>
@@ -194,13 +231,12 @@ export default function PartnerLogosSlider({
             <p className="text-base lg:text-lg text-gray-700 font-semibold max-w-2xl mx-auto">
               Professionelle Ausrüstung ist die Grundlage für professionelle Ergebnisse.
             </p>
-          </div>
+          </motion.div>
         </div>
       )}
 
-      {/* CSS-basierter Infinite Slider - GPU-beschleunigt */}
+      {/* Infinite Slider */}
       <div className="relative">
-        {/* Fade edges */}
         <div
           className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 lg:w-32 z-10 pointer-events-none"
           style={{ background: `linear-gradient(to right, ${bgColor}, transparent)` }}
@@ -210,18 +246,18 @@ export default function PartnerLogosSlider({
           style={{ background: `linear-gradient(to left, ${bgColor}, transparent)` }}
         />
 
-        {/* Slider Container */}
-        <div className="partner-slider-container py-4">
-          <div className="partner-slider-track flex gap-4 sm:gap-6">
-            {/* Duplizieren für seamless loop */}
-            {[...partner, ...partner].map((item, index) => (
-              <PartnerCard
-                key={`${item.name}-${index}`}
-                item={item}
-              />
-            ))}
-          </div>
-        </div>
+        <motion.div
+          animate={controls}
+          className="flex gap-4 sm:gap-6 py-4"
+        >
+          {[...partner, ...partner, ...partner].map((item, index) => (
+            <PartnerCard
+              key={`${item.name}-${index}`}
+              item={item}
+              onHover={handleCardHover}
+            />
+          ))}
+        </motion.div>
       </div>
 
       {showStats && (
@@ -244,36 +280,6 @@ export default function PartnerLogosSlider({
           </div>
         </div>
       )}
-
-      {/* CSS Animation - GPU-beschleunigt mit will-change und transform */}
-      <style jsx>{`
-        .partner-slider-container {
-          overflow: hidden;
-          width: 100%;
-        }
-        .partner-slider-track {
-          display: flex;
-          width: max-content;
-          animation: partner-scroll 60s linear infinite;
-          will-change: transform;
-        }
-        .partner-slider-track:hover {
-          animation-play-state: paused;
-        }
-        @keyframes partner-scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          .partner-slider-track {
-            animation: none;
-          }
-        }
-      `}</style>
     </section>
   )
 }
