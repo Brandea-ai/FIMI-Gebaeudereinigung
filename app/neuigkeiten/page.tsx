@@ -174,28 +174,19 @@ export default function NeuigkeitenPage() {
 
                   {/* Content */}
                   <div className="p-3 sm:p-5 lg:p-6 flex flex-col justify-center sm:justify-start flex-1 min-w-0">
-                    <div className="hidden sm:flex items-center gap-3 text-gray-400 text-xs mb-2 sm:mb-3">
-                      <span className="flex items-center gap-1">
-                        <Calendar size={12} />
-                        {formatDate(post.date)}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <Clock size={12} />
-                        {post.readTime} Min.
-                      </span>
-                    </div>
 
                     <h3 className="text-sm sm:text-base lg:text-lg font-bold text-[#012956] mb-1 sm:mb-2 group-hover:text-[#109387] transition-colors line-clamp-2 leading-tight">
                       {post.title}
                     </h3>
 
-                    <p className="hidden sm:block text-gray-600 text-sm font-medium line-clamp-2 mb-3 sm:mb-4">
+                    {/* Excerpt - auf Mobile gekürzt, aber sichtbar für SEO */}
+                    <p className="text-gray-600 text-xs sm:text-sm font-medium line-clamp-1 sm:line-clamp-2 mb-1 sm:mb-3">
                       {post.excerpt}
                     </p>
 
-                    {/* Mobile: Datum klein */}
-                    <p className="sm:hidden text-gray-400 text-[10px] mb-1">
-                      {formatDate(post.date)}
+                    {/* Meta: Datum */}
+                    <p className="text-gray-400 text-[10px] sm:text-xs mb-1 sm:mb-0">
+                      {formatDate(post.date)} · {post.readTime} Min.
                     </p>
 
                     <span className="inline-flex items-center gap-1 sm:gap-1.5 text-[#109387] font-semibold text-xs sm:text-sm group-hover:gap-2 sm:group-hover:gap-2.5 transition-all">
