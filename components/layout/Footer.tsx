@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer>
       {/* Kontaktformular Section */}
-      <section id="contact-form" className="bg-[#f8f9fa] py-20 lg:py-28">
+      <section id="contact-form" className="bg-[#f8f9fa] py-20 lg:py-28 scroll-mt-20">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
 
