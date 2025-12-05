@@ -72,16 +72,16 @@ export default function KontaktPage() {
             </div>
 
             {/* Right Image - Responsive */}
-            <div className="relative order-1 lg:order-2 h-56 sm:h-72 lg:h-auto">
+            <div className="relative order-1 lg:order-2 h-72 sm:h-80 md:h-96 lg:h-auto">
               <Image
                 src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1200&auto=format&fit=crop"
                 alt="FIMI Gebäudereinigung - Professionelle Beratung"
                 fill
-                className="object-cover object-center lg:object-center"
+                className="object-cover object-[center_15%] lg:object-center"
                 priority
               />
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#012956] via-[#012956]/20 to-transparent lg:bg-gradient-to-t lg:from-[#012956] lg:via-[#012956]/60 lg:to-transparent" />
+              {/* Gradient Overlay - Sanft */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#012956]/80 to-transparent lg:from-[#012956] lg:via-[#012956]/50 lg:to-transparent" />
 
               {/* Quote - Desktop only */}
               <div className="hidden lg:flex absolute bottom-0 right-0 left-0 z-10 p-8 items-end justify-end">
