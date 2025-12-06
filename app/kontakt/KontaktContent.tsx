@@ -29,7 +29,7 @@ export default function KontaktContent() {
               </FadeIn>
 
               <FadeIn direction="left" delay={0.3}>
-                <p className="text-white/70 font-medium text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed mb-6 sm:mb-10 lg:mb-12 max-w-lg">
+                <p className="text-white/90 font-medium text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed mb-6 sm:mb-10 lg:mb-12 max-w-lg">
                   In nur 4 Schritten zu Ihrer maßgeschneiderten Reinigungslösung.
                   Wir beraten Sie persönlich und unverbindlich.
                 </p>
@@ -50,7 +50,7 @@ export default function KontaktContent() {
                       </div>
                       <div className="h-0.5 w-6 sm:w-8 bg-[#109387] mb-2 sm:mb-3 group-hover:w-10 sm:group-hover:w-12 transition-all" aria-hidden="true" />
                       <span className="block font-bold text-white text-sm sm:text-sm lg:text-base">{step.title}</span>
-                      <span className="block text-white/70 text-xs sm:text-xs lg:text-sm">{step.sub}</span>
+                      <span className="block text-white/90 text-xs sm:text-xs lg:text-sm">{step.sub}</span>
                     </div>
                   </FadeInItem>
                 ))}
@@ -89,11 +89,12 @@ export default function KontaktContent() {
               transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
             >
               <Image
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=60&w=500&auto=format&fit=crop"
                 alt="FIMI Gebäudereinigung - Professionelle Beratung"
                 fill
                 className="object-cover object-[center_15%] lg:object-center"
                 sizes="(max-width: 768px) 100vw, 50vw"
+                quality={60}
                 priority
               />
               {/* Gradient Overlay - Sanft */}
@@ -135,7 +136,7 @@ export default function KontaktContent() {
                   <Phone size={22} className="text-white" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-[#012956] group-hover:text-white/60 text-xs font-semibold uppercase tracking-wider mb-1 transition-colors">Telefon</p>
+                  <p className="text-[#012956] group-hover:text-white/80 text-xs font-semibold uppercase tracking-wider mb-1 transition-colors">Telefon</p>
                   <p className="text-[#012956] group-hover:text-white font-bold text-base sm:text-lg transition-colors">0871 430 334 60</p>
                 </div>
               </motion.a>
@@ -152,7 +153,7 @@ export default function KontaktContent() {
                   <Mail size={22} className="text-white" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-[#012956] group-hover:text-white/60 text-xs font-semibold uppercase tracking-wider mb-1 transition-colors">E-Mail</p>
+                  <p className="text-[#012956] group-hover:text-white/80 text-xs font-semibold uppercase tracking-wider mb-1 transition-colors">E-Mail</p>
                   <p className="text-[#012956] group-hover:text-white font-bold text-base sm:text-lg transition-colors">info@fimi-service.de</p>
                 </div>
               </motion.a>
@@ -171,7 +172,7 @@ export default function KontaktContent() {
                   <MapPin size={22} className="text-white" aria-hidden="true" />
                 </div>
                 <div>
-                  <p className="text-[#012956] group-hover:text-white/60 text-xs font-semibold uppercase tracking-wider mb-1 transition-colors">Adresse</p>
+                  <p className="text-[#012956] group-hover:text-white/80 text-xs font-semibold uppercase tracking-wider mb-1 transition-colors">Adresse</p>
                   <p className="text-[#012956] group-hover:text-white font-bold text-base sm:text-lg transition-colors">Kellerstr. 39, Landshut</p>
                 </div>
               </motion.a>
@@ -214,7 +215,7 @@ export default function KontaktContent() {
               </FadeIn>
 
               <FadeIn direction="left" delay={0.3}>
-                <p className="text-white/80 font-medium text-sm sm:text-base lg:text-lg leading-relaxed mb-6 sm:mb-8">
+                <p className="text-white/90 font-medium text-sm sm:text-base lg:text-lg leading-relaxed mb-6 sm:mb-8">
                   Von Landshut aus betreuen wir Kunden in ganz Bayern.
                   Kurze Wege, schnelle Reaktionszeiten, persönlicher Service.
                 </p>
@@ -232,7 +233,7 @@ export default function KontaktContent() {
                       >
                         <CheckCircle2 size={18} className="text-[#109387] flex-shrink-0" aria-hidden="true" />
                       </motion.div>
-                      <span className="text-white/80 font-medium text-sm sm:text-base">{item}</span>
+                      <span className="text-white/90 font-medium text-sm sm:text-base">{item}</span>
                     </div>
                   </FadeInItem>
                 ))}
