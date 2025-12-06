@@ -37,6 +37,7 @@ export default function NotFound() {
       name: 'Kontakt',
       href: '/kontakt',
       icon: Mail,
+      fullWidth: true,
     },
   ]
 
@@ -53,34 +54,37 @@ export default function NotFound() {
 
       {/* Content - Centered */}
       <div className="relative z-10 min-h-screen flex items-center justify-center px-6 py-12">
+        {/* Outer Teal Gradient Container */}
         <div
-          className={`text-center transition-all duration-700 ${
+          className={`bg-gradient-to-br from-[#109387] to-[#0d7d72] rounded-[6px] p-4 sm:p-5 shadow-2xl transition-all duration-700 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          {/* Big 404 */}
-          <h1 className="text-[120px] sm:text-[180px] md:text-[220px] lg:text-[280px] font-black text-[#012956] leading-none mb-0 drop-shadow-lg">
-            404
-          </h1>
+          <div className="text-center">
+            {/* Big 404 */}
+            <h1 className="text-[80px] sm:text-[100px] md:text-[140px] lg:text-[180px] font-black text-white leading-none mb-0 drop-shadow-lg">
+              404
+            </h1>
 
-          {/* Title */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] mb-2 -mt-4 sm:-mt-6 md:-mt-8">
-            Seite nicht gefunden
-          </h2>
+            {/* Title */}
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 -mt-2 sm:-mt-4">
+              Seite nicht gefunden
+            </h2>
 
-          {/* Subtitle */}
-          <p className="text-base sm:text-lg md:text-xl text-[#012956]/70 font-semibold mb-6 max-w-md mx-auto">
-            Diese Seite wurde so gründlich gereinigt, dass sie verschwunden ist!
-          </p>
+            {/* Subtitle */}
+            <p className="text-sm sm:text-base md:text-lg text-white/80 font-semibold mb-5 max-w-sm mx-auto">
+              Diese Seite wurde so gründlich gereinigt, dass sie verschwunden ist!
+            </p>
 
-          {/* CTA Box with Gradient Background */}
-          <div className="bg-gradient-to-br from-[#012956] to-[#01203d] rounded-[6px] p-5 sm:p-6 max-w-md mx-auto shadow-2xl">
+            {/* CTA Box with Dark Background */}
+            <div className="bg-gradient-to-br from-[#012956] to-[#01203d] rounded-[6px] p-4 sm:p-5 max-w-sm mx-auto">
             {/* Navigation Buttons */}
             <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-4">
               {navigationButtons.map((button) => {
                 const IconComponent = button.icon
                 const isHovered = hoveredButton === button.id
                 const isPrimary = button.primary
+                const isFullWidth = button.primary || button.fullWidth
 
                 return (
                   <Link
@@ -89,8 +93,10 @@ export default function NotFound() {
                     onMouseEnter={() => setHoveredButton(button.id)}
                     onMouseLeave={() => setHoveredButton(null)}
                     className={`group flex items-center justify-center gap-2 font-bold px-4 py-3 rounded-[6px] transition-all duration-300 text-sm sm:text-base ${
+                      isFullWidth ? 'col-span-2' : ''
+                    } ${
                       isPrimary
-                        ? 'col-span-2 bg-[#109387] hover:bg-[#0d7d72] text-white'
+                        ? 'bg-[#109387] hover:bg-[#0d7d72] text-white'
                         : 'bg-white hover:bg-gray-100 text-[#012956]'
                     }`}
                   >
@@ -112,14 +118,15 @@ export default function NotFound() {
               })}
             </div>
 
-            {/* Phone */}
-            <a
-              href="tel:+4987143033460"
-              className="flex items-center justify-center gap-2 text-white/80 hover:text-white font-semibold text-sm transition-colors"
-            >
-              <Phone size={16} />
-              0871 430 334 60
-            </a>
+              {/* Phone */}
+              <a
+                href="tel:+4987143033460"
+                className="flex items-center justify-center gap-2 text-white/80 hover:text-white font-semibold text-sm transition-colors"
+              >
+                <Phone size={16} />
+                0871 430 334 60
+              </a>
+            </div>
           </div>
         </div>
       </div>
