@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Home, Phone, ArrowRight, Building2, Briefcase, Mail } from 'lucide-react'
+import { Home, Phone, ArrowRight, Mail } from 'lucide-react'
 
 export default function NotFound() {
   const [mounted, setMounted] = useState(false)
@@ -24,13 +24,13 @@ export default function NotFound() {
       id: 'branchen',
       name: 'Alle Branchen',
       href: '/branchen',
-      icon: Building2,
+      icon: null,
     },
     {
       id: 'leistungen',
       name: 'Alle Leistungen',
       href: '/leistungen',
-      icon: Briefcase,
+      icon: null,
     },
     {
       id: 'kontakt',
@@ -56,7 +56,7 @@ export default function NotFound() {
       <div className="relative z-10 min-h-screen flex items-center justify-center px-6 py-12">
         {/* Outer Teal Gradient Container - Transparent */}
         <div
-          className={`bg-gradient-to-br from-[#109387]/70 to-[#0d7d72]/70 backdrop-blur-sm rounded-[6px] p-4 sm:p-5 shadow-2xl transition-all duration-700 ${
+          className={`bg-gradient-to-br from-[#109387]/40 to-[#0d7d72]/40 backdrop-blur-sm rounded-[6px] p-4 sm:p-5 shadow-2xl transition-all duration-700 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
@@ -72,7 +72,7 @@ export default function NotFound() {
             </h2>
 
             {/* Subtitle */}
-            <p className="text-sm sm:text-base md:text-lg text-white/80 font-semibold mb-5 max-w-sm mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-white font-semibold mb-5 max-w-sm mx-auto">
               Diese Seite wurde so gründlich gereinigt, dass sie verschwunden ist!
             </p>
 
@@ -100,12 +100,14 @@ export default function NotFound() {
                         : 'bg-white hover:bg-gray-100 text-[#012956]'
                     }`}
                   >
-                    <IconComponent
-                      size={18}
-                      className={`transition-transform duration-300 ${isHovered ? 'scale-110' : ''} ${
-                        isPrimary ? 'text-white' : 'text-[#109387]'
-                      }`}
-                    />
+                    {IconComponent && (
+                      <IconComponent
+                        size={18}
+                        className={`transition-transform duration-300 ${isHovered ? 'scale-110' : ''} ${
+                          isPrimary ? 'text-white' : 'text-[#109387]'
+                        }`}
+                      />
+                    )}
                     <span>{button.name}</span>
                     <ArrowRight
                       size={16}
