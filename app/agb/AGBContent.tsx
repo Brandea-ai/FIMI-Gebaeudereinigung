@@ -210,9 +210,9 @@ export default function AGBContent() {
         <div className="scroll-progress-bar" style={{ width: `${scrollProgress}%` }} />
       </div>
 
-      <section className="agb-header">
+      <section className="agb-header" aria-labelledby="agb-page-title">
         <div className="agb-container">
-          <h1 className="agb-header-title">Allgemeine Geschäftsbedingungen & Rechtliche Hinweise</h1>
+          <h1 id="agb-page-title" className="agb-header-title">Allgemeine Geschäftsbedingungen & Rechtliche Hinweise</h1>
           <p className="agb-header-subtitle">der FIMI Gebäudereinigung GmbH i.Gr.</p>
         </div>
       </section>
@@ -225,10 +225,10 @@ export default function AGBContent() {
 
         <div className="agb-container">
           <div className="agb-layout">
-            <aside className="agb-sidebar">
-              <nav>
-                <h3 className="sidebar-title">Inhaltsverzeichnis</h3>
-                <ul className="sidebar-nav">
+            <aside className="agb-sidebar" aria-label="Seitennavigation">
+              <nav aria-label="Inhaltsverzeichnis AGB">
+                <h3 className="sidebar-title" id="sidebar-nav-title">Inhaltsverzeichnis</h3>
+                <ul className="sidebar-nav" role="list" aria-labelledby="sidebar-nav-title">
                   {navItems.map((item) => {
                     const labelParts = item.label.split(' ')
                     const hasSection = labelParts[0].startsWith('§')
@@ -257,8 +257,8 @@ export default function AGBContent() {
             </aside>
 
             <div className="agb-content">
-              <section id="agb-hauptteil" className="section-tracked content-block">
-                <h2 className="section-title">Teil A: Allgemeine Geschäftsbedingungen</h2>
+              <section id="agb-hauptteil" className="section-tracked content-block" aria-labelledby="agb-hauptteil-heading">
+                <h2 id="agb-hauptteil-heading" className="section-title">Teil A: Allgemeine Geschäftsbedingungen</h2>
 
                 <article id="agb-p1" className="section-tracked">
                   <h3 className="subsection-title">1. Geltungsbereich</h3>
@@ -268,12 +268,12 @@ export default function AGBContent() {
 
                   <div className="info-box">
                     <p className="text-body"><strong>Unsere Leistungsbereiche:</strong></p>
-                    <ul className="standard-list">
-                      <li><strong>Unterhaltsreinigung:</strong> Regelmäßige Reinigung von Büros, Praxen, Geschäftsräumen</li>
-                      <li><strong>Industriereinigung:</strong> Reinigung von Produktionshallen, Lagern, Werkstätten</li>
-                      <li><strong>Büroreinigung:</strong> Professionelle Reinigung von Büro- und Verwaltungsgebäuden</li>
-                      <li><strong>Sonderreinigungen:</strong> Baureinigung, Grundreinigung, Fensterreinigung</li>
-                      <li><strong>Facility Management:</strong> Hausmeisterservice, Winterdienst, Grünpflege</li>
+                    <ul className="standard-list" role="list" aria-label="Leistungsbereiche">
+                      <li role="listitem"><strong>Unterhaltsreinigung:</strong> Regelmäßige Reinigung von Büros, Praxen, Geschäftsräumen</li>
+                      <li role="listitem"><strong>Industriereinigung:</strong> Reinigung von Produktionshallen, Lagern, Werkstätten</li>
+                      <li role="listitem"><strong>Büroreinigung:</strong> Professionelle Reinigung von Büro- und Verwaltungsgebäuden</li>
+                      <li role="listitem"><strong>Sonderreinigungen:</strong> Baureinigung, Grundreinigung, Fensterreinigung</li>
+                      <li role="listitem"><strong>Facility Management:</strong> Hausmeisterservice, Winterdienst, Grünpflege</li>
                     </ul>
                   </div>
 
@@ -295,10 +295,10 @@ export default function AGBContent() {
                   <p className="text-body">
                     (2) Die Bestellung der Leistung durch den Kunden gilt als verbindliches Vertragsangebot. Der Vertrag kommt zustande durch:
                   </p>
-                  <ul className="standard-list">
-                    <li>Schriftliche Auftragsbestätigung unsererseits</li>
-                    <li>Beginn der Leistungserbringung</li>
-                    <li>Unterzeichnung eines Reinigungsvertrages</li>
+                  <ul className="standard-list" role="list" aria-label="Vertragsschluss-Optionen">
+                    <li role="listitem">Schriftliche Auftragsbestätigung unsererseits</li>
+                    <li role="listitem">Beginn der Leistungserbringung</li>
+                    <li role="listitem">Unterzeichnung eines Reinigungsvertrages</li>
                   </ul>
 
                   <p className="text-body">
@@ -315,12 +315,12 @@ export default function AGBContent() {
                   <p className="text-body">
                     (2) Regelmäßige Unterhaltsreinigung umfasst typischerweise:
                   </p>
-                  <ul className="standard-list">
-                    <li>Staubwischen aller erreichbaren Oberflächen</li>
-                    <li>Bodenreinigung (Saugen, Wischen)</li>
-                    <li>Entleerung und Reinigung der Papierkörbe</li>
-                    <li>Reinigung der Sanitäranlagen</li>
-                    <li>Reinigung der Küchen- und Pausenbereiche</li>
+                  <ul className="standard-list" role="list" aria-label="Unterhaltsreinigung Umfang">
+                    <li role="listitem">Staubwischen aller erreichbaren Oberflächen</li>
+                    <li role="listitem">Bodenreinigung (Saugen, Wischen)</li>
+                    <li role="listitem">Entleerung und Reinigung der Papierkörbe</li>
+                    <li role="listitem">Reinigung der Sanitäranlagen</li>
+                    <li role="listitem">Reinigung der Küchen- und Pausenbereiche</li>
                   </ul>
 
                   <p className="text-body">
@@ -352,12 +352,12 @@ export default function AGBContent() {
                   <p className="text-body">
                     (1) Der Auftraggeber unterstützt uns bei der Erbringung unserer Leistungen, indem er insbesondere:
                   </p>
-                  <ul className="standard-list">
-                    <li>Rechtzeitigen Zugang zu den zu reinigenden Räumlichkeiten gewährleistet</li>
-                    <li>Notwendige Schlüssel oder Zugangscodes bereitstellt</li>
-                    <li>Wasser- und Stromanschlüsse zur Verfügung stellt</li>
-                    <li>Auf besondere Gefahrenquellen oder empfindliche Oberflächen hinweist</li>
-                    <li>Einen Ansprechpartner für Rückfragen benennt</li>
+                  <ul className="standard-list" role="list" aria-label="Mitwirkungspflichten">
+                    <li role="listitem">Rechtzeitigen Zugang zu den zu reinigenden Räumlichkeiten gewährleistet</li>
+                    <li role="listitem">Notwendige Schlüssel oder Zugangscodes bereitstellt</li>
+                    <li role="listitem">Wasser- und Stromanschlüsse zur Verfügung stellt</li>
+                    <li role="listitem">Auf besondere Gefahrenquellen oder empfindliche Oberflächen hinweist</li>
+                    <li role="listitem">Einen Ansprechpartner für Rückfragen benennt</li>
                   </ul>
 
                   <p className="text-body">
@@ -373,11 +373,11 @@ export default function AGBContent() {
 
                   <div className="info-box">
                     <p className="text-body"><strong>Vergütungsmodelle:</strong></p>
-                    <ul className="standard-list">
-                      <li><strong>Pauschalpreis:</strong> Monatliche Pauschale für regelmäßige Unterhaltsreinigung</li>
-                      <li><strong>Quadratmeterpreis:</strong> Abrechnung nach gereinigter Fläche</li>
-                      <li><strong>Stundenpreis:</strong> Abrechnung nach tatsächlichem Zeitaufwand</li>
-                      <li><strong>Festpreis:</strong> Einmaliger Festpreis für definierte Sonderleistungen</li>
+                    <ul className="standard-list" role="list" aria-label="Vergütungsmodelle">
+                      <li role="listitem"><strong>Pauschalpreis:</strong> Monatliche Pauschale für regelmäßige Unterhaltsreinigung</li>
+                      <li role="listitem"><strong>Quadratmeterpreis:</strong> Abrechnung nach gereinigter Fläche</li>
+                      <li role="listitem"><strong>Stundenpreis:</strong> Abrechnung nach tatsächlichem Zeitaufwand</li>
+                      <li role="listitem"><strong>Festpreis:</strong> Einmaliger Festpreis für definierte Sonderleistungen</li>
                     </ul>
                   </div>
 
@@ -452,10 +452,10 @@ export default function AGBContent() {
                   <p className="text-body">
                     (2) Das Recht zur außerordentlichen Kündigung aus wichtigem Grund bleibt unberührt. Ein wichtiger Grund liegt insbesondere vor bei:
                   </p>
-                  <ul className="standard-list">
-                    <li>Zahlungsverzug von mehr als 30 Tagen</li>
-                    <li>Wiederholter Verletzung wesentlicher Vertragspflichten</li>
-                    <li>Insolvenzantrag einer Partei</li>
+                  <ul className="standard-list" role="list" aria-label="Kündigungsgründe">
+                    <li role="listitem">Zahlungsverzug von mehr als 30 Tagen</li>
+                    <li role="listitem">Wiederholter Verletzung wesentlicher Vertragspflichten</li>
+                    <li role="listitem">Insolvenzantrag einer Partei</li>
                   </ul>
 
                   <p className="text-body">
@@ -499,8 +499,8 @@ export default function AGBContent() {
                 </article>
               </section>
 
-              <section id="rechtliche-hinweise" className="section-tracked content-block">
-                <h2 className="section-title">Teil B: Rechtliche Hinweise für die Webseitennutzung</h2>
+              <section id="rechtliche-hinweise" className="section-tracked content-block" aria-labelledby="rechtliche-hinweise-heading">
+                <h2 id="rechtliche-hinweise-heading" className="section-title">Teil B: Rechtliche Hinweise für die Webseitennutzung</h2>
 
                 <article id="haftung-inhalte" className="section-tracked">
                   <h3 className="subsection-title">Haftung für Inhalte</h3>
@@ -550,8 +550,8 @@ export default function AGBContent() {
                 </article>
               </section>
 
-              <section id="unternehmenshinweise" className="section-tracked content-block">
-                <h2 className="section-title">Teil C: Unternehmenshinweise</h2>
+              <section id="unternehmenshinweise" className="section-tracked content-block" aria-labelledby="unternehmenshinweise-heading">
+                <h2 id="unternehmenshinweise-heading" className="section-title">Teil C: Unternehmenshinweise</h2>
 
                 <article id="handelsregister" className="section-tracked">
                   <h3 className="subsection-title">Handelsregistereintragung</h3>
@@ -561,11 +561,11 @@ export default function AGBContent() {
 
                   <div className="info-box">
                     <p className="text-body"><strong>Aktueller Status:</strong></p>
-                    <ul className="standard-list">
-                      <li><strong>Rechtsform:</strong> GmbH in Gründung (i.Gr.)</li>
-                      <li><strong>Zuständiges Amtsgericht:</strong> Landshut</li>
-                      <li><strong>Geplante Eintragung:</strong> Januar 2026</li>
-                      <li><strong>HRB-Nummer:</strong> Wird nach erfolgreicher Eintragung hier veröffentlicht</li>
+                    <ul className="standard-list" role="list" aria-label="Handelsregisterstatus">
+                      <li role="listitem"><strong>Rechtsform:</strong> GmbH in Gründung (i.Gr.)</li>
+                      <li role="listitem"><strong>Zuständiges Amtsgericht:</strong> Landshut</li>
+                      <li role="listitem"><strong>Geplante Eintragung:</strong> Januar 2026</li>
+                      <li role="listitem"><strong>HRB-Nummer:</strong> Wird nach erfolgreicher Eintragung hier veröffentlicht</li>
                     </ul>
                   </div>
 
@@ -582,9 +582,9 @@ export default function AGBContent() {
 
                   <div className="info-box">
                     <p className="text-body"><strong>Geplante Zertifizierungen:</strong></p>
-                    <ul className="standard-list">
-                      <li><strong>ISO 9001:2015</strong> Qualitätsmanagementsystem - Ziel: 2026</li>
-                      <li><strong>ISO 14001:2015</strong> Umweltmanagementsystem - Ziel: 2026</li>
+                    <ul className="standard-list" role="list" aria-label="Geplante Zertifizierungen">
+                      <li role="listitem"><strong>ISO 9001:2015</strong> Qualitätsmanagementsystem - Ziel: 2026</li>
+                      <li role="listitem"><strong>ISO 14001:2015</strong> Umweltmanagementsystem - Ziel: 2026</li>
                     </ul>
                   </div>
 
@@ -595,12 +595,12 @@ export default function AGBContent() {
                   <p className="text-body">
                     <strong>Unsere Qualitätsgrundsätze:</strong>
                   </p>
-                  <ul className="standard-list">
-                    <li>Verwendung umweltfreundlicher Reinigungsmittel</li>
-                    <li>Regelmäßige Qualitätskontrollen</li>
-                    <li>Kontinuierliche Mitarbeiterschulungen</li>
-                    <li>Transparente Dokumentation aller Leistungen</li>
-                    <li>Schnelle Reaktion auf Kundenfeedback</li>
+                  <ul className="standard-list" role="list" aria-label="Qualitätsgrundsätze">
+                    <li role="listitem">Verwendung umweltfreundlicher Reinigungsmittel</li>
+                    <li role="listitem">Regelmäßige Qualitätskontrollen</li>
+                    <li role="listitem">Kontinuierliche Mitarbeiterschulungen</li>
+                    <li role="listitem">Transparente Dokumentation aller Leistungen</li>
+                    <li role="listitem">Schnelle Reaktion auf Kundenfeedback</li>
                   </ul>
                 </article>
               </section>
@@ -617,17 +617,24 @@ export default function AGBContent() {
         className={`mobile-nav-trigger ${!isNavButtonVisible ? 'hidden' : ''}`}
         onClick={openMobileNav}
         aria-label="Inhaltsverzeichnis öffnen"
+        aria-expanded={isMobileNavOpen}
+        aria-controls="mobile-nav-dialog"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
         </svg>
       </button>
 
       <div
+        id="mobile-nav-dialog"
         className={`mobile-nav-modal ${isMobileNavOpen ? 'is-open' : ''}`}
         onClick={(e) => {
           if (e.target === e.currentTarget) closeMobileNav()
         }}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="mobile-nav-title"
+        aria-hidden={!isMobileNavOpen}
       >
         <div
           className="mobile-nav-content"
@@ -637,19 +644,19 @@ export default function AGBContent() {
           onTouchEnd={handleTouchEnd}
         >
           <div className="mobile-nav-header">
-            <h3>Inhaltsverzeichnis</h3>
+            <h3 id="mobile-nav-title">Inhaltsverzeichnis</h3>
             <button
               className="mobile-nav-close"
               onClick={closeMobileNav}
               aria-label="Inhaltsverzeichnis schließen"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
               </svg>
             </button>
           </div>
-          <nav className="mobile-nav-menu">
-            <ul>
+          <nav className="mobile-nav-menu" aria-label="Inhaltsverzeichnis Navigation">
+            <ul role="list">
               {navItems.map((item) => {
                 const labelParts = item.label.split(' ')
                 const hasSection = labelParts[0].startsWith('§')
@@ -683,7 +690,7 @@ export default function AGBContent() {
         onClick={scrollToTop}
         aria-label="Nach oben scrollen"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
           <path d="M18 15l-6-6-6 6" />
         </svg>
       </button>
@@ -693,7 +700,7 @@ export default function AGBContent() {
         onClick={scrollToBottom}
         aria-label="Nach unten scrollen"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
           <path d="M6 9l6 6 6-6" />
         </svg>
       </button>

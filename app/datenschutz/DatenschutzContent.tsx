@@ -261,9 +261,9 @@ Mit freundlichen Gruessen
       </div>
 
       {/* Header */}
-      <section className="datenschutz-header">
+      <section className="datenschutz-header" aria-labelledby="datenschutz-page-title">
         <div className="datenschutz-header-content">
-          <h1 className="datenschutz-header-title">Datenschutzerklaerung</h1>
+          <h1 id="datenschutz-page-title" className="datenschutz-header-title">Datenschutzerklaerung</h1>
           <p className="datenschutz-header-subtitle">der FIMI Gebäudereinigung GmbH i.Gr.</p>
         </div>
       </section>
@@ -278,10 +278,10 @@ Mit freundlichen Gruessen
           <div className="datenschutz-layout">
 
             {/* Sticky Sidebar */}
-            <aside className="datenschutz-sidebar">
-              <nav>
-                <h3 className="sidebar-title">Inhaltsverzeichnis</h3>
-                <ul className="sidebar-nav">
+            <aside className="datenschutz-sidebar" aria-label="Seitennavigation">
+              <nav aria-label="Inhaltsverzeichnis Datenschutz">
+                <h3 className="sidebar-title" id="sidebar-nav-title">Inhaltsverzeichnis</h3>
+                <ul className="sidebar-nav" role="list" aria-labelledby="sidebar-nav-title">
                   {navItems.map((item) => {
                     const labelParts = item.label.split(' ');
                     const hasSection = labelParts[0].startsWith('§');
@@ -310,16 +310,16 @@ Mit freundlichen Gruessen
             <div className="datenschutz-content">
 
               {/* Einleitung */}
-              <section id="datenschutz-hauptteil" className="section-tracked content-block">
-                <h2 className="section-title">Datenschutzerklaerung</h2>
+              <section id="datenschutz-hauptteil" className="section-tracked content-block" aria-labelledby="datenschutz-hauptteil-heading">
+                <h2 id="datenschutz-hauptteil-heading" className="section-title">Datenschutzerklaerung</h2>
                 <p className="text-body">
                   Die folgenden Hinweise geben einen einfachen Ueberblick darueber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persoenlich identifiziert werden koennen. Ausfuehrliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgefuehrten Datenschutzerklaerung.
                 </p>
               </section>
 
               {/* 1. Auf einen Blick */}
-              <section id="ueberblick" className="section-tracked content-block">
-                <h2 className="section-title">1. Datenschutz auf einen Blick</h2>
+              <section id="ueberblick" className="section-tracked content-block" aria-labelledby="ueberblick-heading">
+                <h2 id="ueberblick-heading" className="section-title">1. Datenschutz auf einen Blick</h2>
 
                 <h3 className="subsection-title">Datenerfassung auf dieser Website</h3>
                 <p className="text-body"><strong>Wer ist verantwortlich fuer die Datenerfassung auf dieser Website?</strong></p>
@@ -347,8 +347,8 @@ Mit freundlichen Gruessen
               </section>
 
               {/* 2. Hosting */}
-              <section id="hosting" className="section-tracked content-block">
-                <h2 className="section-title">2. Hosting</h2>
+              <section id="hosting" className="section-tracked content-block" aria-labelledby="hosting-heading">
+                <h2 id="hosting-heading" className="section-title">2. Hosting</h2>
                 <p className="text-body">Wir hosten die Inhalte unserer Website bei folgendem Anbieter:</p>
 
                 <h3 className="subsection-title">Vercel</h3>
@@ -383,8 +383,8 @@ Mit freundlichen Gruessen
               </section>
 
               {/* 3. Allgemeine Hinweise */}
-              <section id="allgemeine-hinweise" className="section-tracked content-block">
-                <h2 className="section-title">3. Allgemeine Hinweise und Pflichtinformationen</h2>
+              <section id="allgemeine-hinweise" className="section-tracked content-block" aria-labelledby="allgemeine-hinweise-heading">
+                <h2 id="allgemeine-hinweise-heading" className="section-title">3. Allgemeine Hinweise und Pflichtinformationen</h2>
 
                 <h3 className="subsection-title">Datenschutz</h3>
                 <p className="text-body">
@@ -447,11 +447,11 @@ Mit freundlichen Gruessen
 
                 <h3 className="subsection-title">Rechtsgrundlagen der Datenverarbeitung</h3>
                 <div className="info-box">
-                  <ul className="standard-list">
-                    <li><strong>Art. 6 Abs. 1 lit. a DSGVO</strong> - Einwilligung der betroffenen Person</li>
-                    <li><strong>Art. 6 Abs. 1 lit. b DSGVO</strong> - Vertragserfuellung oder vorvertragliche Massnahmen</li>
-                    <li><strong>Art. 6 Abs. 1 lit. c DSGVO</strong> - Erfuellung rechtlicher Verpflichtungen</li>
-                    <li><strong>Art. 6 Abs. 1 lit. f DSGVO</strong> - Berechtigte Interessen des Verantwortlichen</li>
+                  <ul className="standard-list" role="list" aria-label="Rechtsgrundlagen der Datenverarbeitung">
+                    <li role="listitem"><strong>Art. 6 Abs. 1 lit. a DSGVO</strong> - Einwilligung der betroffenen Person</li>
+                    <li role="listitem"><strong>Art. 6 Abs. 1 lit. b DSGVO</strong> - Vertragserfuellung oder vorvertragliche Massnahmen</li>
+                    <li role="listitem"><strong>Art. 6 Abs. 1 lit. c DSGVO</strong> - Erfuellung rechtlicher Verpflichtungen</li>
+                    <li role="listitem"><strong>Art. 6 Abs. 1 lit. f DSGVO</strong> - Berechtigte Interessen des Verantwortlichen</li>
                   </ul>
                 </div>
 
@@ -479,20 +479,20 @@ Mit freundlichen Gruessen
               </section>
 
               {/* 4. Datenerfassung */}
-              <section id="datenerfassung" className="section-tracked content-block">
-                <h2 className="section-title">4. Datenerfassung auf dieser Website</h2>
+              <section id="datenerfassung" className="section-tracked content-block" aria-labelledby="datenerfassung-heading">
+                <h2 id="datenerfassung-heading" className="section-title">4. Datenerfassung auf dieser Website</h2>
 
                 <h3 className="subsection-title">Server-Log-Dateien</h3>
                 <p className="text-body">
                   Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns uebermittelt. Dies sind:
                 </p>
-                <ul className="standard-list">
-                  <li>Browsertyp und Browserversion</li>
-                  <li>verwendetes Betriebssystem</li>
-                  <li>Referrer URL</li>
-                  <li>Hostname des zugreifenden Rechners</li>
-                  <li>Uhrzeit der Serveranfrage</li>
-                  <li>IP-Adresse</li>
+                <ul className="standard-list" role="list" aria-label="Erfasste Server-Log-Daten">
+                  <li role="listitem">Browsertyp und Browserversion</li>
+                  <li role="listitem">verwendetes Betriebssystem</li>
+                  <li role="listitem">Referrer URL</li>
+                  <li role="listitem">Hostname des zugreifenden Rechners</li>
+                  <li role="listitem">Uhrzeit der Serveranfrage</li>
+                  <li role="listitem">IP-Adresse</li>
                 </ul>
                 <p className="text-body">
                   Eine Zusammenfuehrung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und der Optimierung seiner Website.
@@ -500,8 +500,8 @@ Mit freundlichen Gruessen
               </section>
 
               {/* 5. Cookies */}
-              <section id="cookies" className="section-tracked content-block">
-                <h2 className="section-title">5. Cookies und Cookie-Einstellungen</h2>
+              <section id="cookies" className="section-tracked content-block" aria-labelledby="cookies-heading">
+                <h2 id="cookies-heading" className="section-title">5. Cookies und Cookie-Einstellungen</h2>
                 <p className="text-body">
                   Unsere Internetseiten verwenden so genannte „Cookies". Cookies sind kleine Datenpakete und richten auf Ihrem Endgeraet keinen Schaden an. Sie werden entweder voruebergehend fuer die Dauer einer Sitzung (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem Endgeraet gespeichert. Session-Cookies werden nach Ende Ihres Besuchs automatisch geloescht. Permanente Cookies bleiben auf Ihrem Endgeraet gespeichert, bis Sie diese selbst loeschen oder eine automatische Loeschung durch Ihren Webbrowser erfolgt.
                 </p>
@@ -585,8 +585,8 @@ Mit freundlichen Gruessen
               </section>
 
               {/* 6. Kontaktaufnahme */}
-              <section id="kontaktformular" className="section-tracked content-block">
-                <h2 className="section-title">6. Kontaktaufnahme</h2>
+              <section id="kontaktformular" className="section-tracked content-block" aria-labelledby="kontaktformular-heading">
+                <h2 id="kontaktformular-heading" className="section-title">6. Kontaktaufnahme</h2>
 
                 <h3 className="subsection-title">Kontaktformular</h3>
                 <p className="text-body">
@@ -614,8 +614,8 @@ Mit freundlichen Gruessen
               </section>
 
               {/* 7. Soziale Medien */}
-              <section id="soziale-medien" className="section-tracked content-block">
-                <h2 className="section-title">7. Soziale Medien</h2>
+              <section id="soziale-medien" className="section-tracked content-block" aria-labelledby="soziale-medien-heading">
+                <h2 id="soziale-medien-heading" className="section-title">7. Soziale Medien</h2>
 
                 <h3 className="subsection-title">Facebook</h3>
                 <p className="text-body">
@@ -639,8 +639,8 @@ Mit freundlichen Gruessen
               </section>
 
               {/* 8. Analyse-Tools */}
-              <section id="analyse-tools" className="section-tracked content-block">
-                <h2 className="section-title">8. Analyse-Tools und Werbung</h2>
+              <section id="analyse-tools" className="section-tracked content-block" aria-labelledby="analyse-tools-heading">
+                <h2 id="analyse-tools-heading" className="section-title">8. Analyse-Tools und Werbung</h2>
 
                 <h3 className="subsection-title">Google Analytics</h3>
                 <p className="text-body">
@@ -674,8 +674,8 @@ Mit freundlichen Gruessen
               </section>
 
               {/* 9. Newsletter */}
-              <section id="newsletter" className="section-tracked content-block">
-                <h2 className="section-title">9. Newsletter</h2>
+              <section id="newsletter" className="section-tracked content-block" aria-labelledby="newsletter-heading">
+                <h2 id="newsletter-heading" className="section-title">9. Newsletter</h2>
                 <p className="text-body">
                   Wenn Sie den auf der Website angebotenen Newsletter beziehen moechten, benoetigen wir von Ihnen eine E-Mail-Adresse sowie Informationen, welche uns die Ueberpruefung gestatten, dass Sie der Inhaber der angegebenen E-Mail-Adresse sind und mit dem Empfang des Newsletters einverstanden sind. Weitere Daten werden nicht bzw. nur auf freiwilliger Basis erhoben.
                 </p>
@@ -685,8 +685,8 @@ Mit freundlichen Gruessen
               </section>
 
               {/* 10. Plugins und Tools */}
-              <section id="plugins" className="section-tracked content-block">
-                <h2 className="section-title">10. Plugins und Tools</h2>
+              <section id="plugins" className="section-tracked content-block" aria-labelledby="plugins-heading">
+                <h2 id="plugins-heading" className="section-title">10. Plugins und Tools</h2>
 
                 <h3 className="subsection-title">Google Maps</h3>
                 <p className="text-body">
@@ -714,18 +714,18 @@ Mit freundlichen Gruessen
               </section>
 
               {/* 11. Kunden- und Vertragsdaten */}
-              <section id="kundendaten" className="section-tracked content-block">
-                <h2 className="section-title">11. Kunden- und Vertragsdaten</h2>
+              <section id="kundendaten" className="section-tracked content-block" aria-labelledby="kundendaten-heading">
+                <h2 id="kundendaten-heading" className="section-title">11. Kunden- und Vertragsdaten</h2>
                 <p className="text-body">
                   Wir erheben, verarbeiten und nutzen personenbezogene Kunden- und Vertragsdaten zur Begruendung, inhaltlichen Ausgestaltung und Aenderung unserer Vertragsbeziehungen. Personenbezogene Daten ueber die Inanspruchnahme dieser Website (Nutzungsdaten) erheben, verarbeiten und nutzen wir nur, soweit dies erforderlich ist, um dem Nutzer die Inanspruchnahme des Dienstes zu ermoeglichen oder abzurechnen.
                 </p>
 
                 <h3 className="subsection-title">Verarbeitete Daten im Rahmen von Reinigungsdienstleistungen</h3>
-                <ul className="standard-list">
-                  <li>Kontaktdaten (Name, Adresse, Telefon, E-Mail)</li>
-                  <li>Vertragsdaten (Leistungsumfang, Reinigungsintervalle, Objektadressen)</li>
-                  <li>Zahlungsdaten (Bankverbindung, Rechnungsanschrift)</li>
-                  <li>Kommunikationsdaten (Korrespondenz, Reklamationen, Terminabsprachen)</li>
+                <ul className="standard-list" role="list" aria-label="Verarbeitete Kundendaten">
+                  <li role="listitem">Kontaktdaten (Name, Adresse, Telefon, E-Mail)</li>
+                  <li role="listitem">Vertragsdaten (Leistungsumfang, Reinigungsintervalle, Objektadressen)</li>
+                  <li role="listitem">Zahlungsdaten (Bankverbindung, Rechnungsanschrift)</li>
+                  <li role="listitem">Kommunikationsdaten (Korrespondenz, Reklamationen, Terminabsprachen)</li>
                 </ul>
 
                 <div className="info-box">
@@ -764,8 +764,8 @@ Mit freundlichen Gruessen
               </section>
 
               {/* 12. Bewerberdaten */}
-              <section id="bewerberdaten" className="section-tracked content-block">
-                <h2 className="section-title">12. Bewerberdaten</h2>
+              <section id="bewerberdaten" className="section-tracked content-block" aria-labelledby="bewerberdaten-heading">
+                <h2 id="bewerberdaten-heading" className="section-title">12. Bewerberdaten</h2>
                 <p className="text-body">
                   Wir bieten Ihnen die Moeglichkeit, sich bei uns zu bewerben (z.B. per E-Mail, postalisch oder via Online-Bewerberformular). Im Folgenden informieren wir Sie ueber Umfang, Zweck und Verwendung Ihrer im Rahmen des Bewerbungsprozesses erhobenen personenbezogenen Daten.
                 </p>
@@ -786,19 +786,19 @@ Mit freundlichen Gruessen
               </section>
 
               {/* 13. Betroffenenrechte */}
-              <section id="betroffenenrechte" className="section-tracked content-block">
-                <h2 className="section-title">13. Rechte der betroffenen Personen</h2>
+              <section id="betroffenenrechte" className="section-tracked content-block" aria-labelledby="betroffenenrechte-heading">
+                <h2 id="betroffenenrechte-heading" className="section-title">13. Rechte der betroffenen Personen</h2>
                 <p className="text-body">
                   Ihnen stehen als Betroffene nach der DSGVO verschiedene Rechte zu:
                 </p>
 
-                <ul className="standard-list">
-                  <li><strong>Recht auf Auskunft (Art. 15 DSGVO):</strong> Sie haben das Recht, Auskunft ueber Ihre von uns verarbeiteten personenbezogenen Daten zu verlangen.</li>
-                  <li><strong>Recht auf Berichtigung (Art. 16 DSGVO):</strong> Sie haben das Recht, unverzueglich die Berichtigung unrichtiger Daten zu verlangen.</li>
-                  <li><strong>Recht auf Loeschung (Art. 17 DSGVO):</strong> Sie haben das Recht, die Loeschung Ihrer Daten zu verlangen.</li>
-                  <li><strong>Recht auf Einschraenkung (Art. 18 DSGVO):</strong> Sie haben das Recht, die Einschraenkung der Verarbeitung zu verlangen.</li>
-                  <li><strong>Recht auf Datenuebertragbarkeit (Art. 20 DSGVO):</strong> Sie haben das Recht, Ihre Daten in einem strukturierten, gaengigen und maschinenlesbaren Format zu erhalten.</li>
-                  <li><strong>Widerspruchsrecht (Art. 21 DSGVO):</strong> Sie haben das Recht, der Verarbeitung zu widersprechen.</li>
+                <ul className="standard-list" role="list" aria-label="Ihre Rechte nach DSGVO">
+                  <li role="listitem"><strong>Recht auf Auskunft (Art. 15 DSGVO):</strong> Sie haben das Recht, Auskunft ueber Ihre von uns verarbeiteten personenbezogenen Daten zu verlangen.</li>
+                  <li role="listitem"><strong>Recht auf Berichtigung (Art. 16 DSGVO):</strong> Sie haben das Recht, unverzueglich die Berichtigung unrichtiger Daten zu verlangen.</li>
+                  <li role="listitem"><strong>Recht auf Loeschung (Art. 17 DSGVO):</strong> Sie haben das Recht, die Loeschung Ihrer Daten zu verlangen.</li>
+                  <li role="listitem"><strong>Recht auf Einschraenkung (Art. 18 DSGVO):</strong> Sie haben das Recht, die Einschraenkung der Verarbeitung zu verlangen.</li>
+                  <li role="listitem"><strong>Recht auf Datenuebertragbarkeit (Art. 20 DSGVO):</strong> Sie haben das Recht, Ihre Daten in einem strukturierten, gaengigen und maschinenlesbaren Format zu erhalten.</li>
+                  <li role="listitem"><strong>Widerspruchsrecht (Art. 21 DSGVO):</strong> Sie haben das Recht, der Verarbeitung zu widersprechen.</li>
                 </ul>
 
                 <h3 className="subsection-title">Musterschreiben zum Download</h3>
@@ -808,7 +808,7 @@ Mit freundlichen Gruessen
 
                 <div className="download-section">
                   <button onClick={generateDeleteRequest} className="download-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                       <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                       <polyline points="7 10 12 15 17 10"/>
                       <line x1="12" y1="15" x2="12" y2="3"/>
@@ -816,7 +816,7 @@ Mit freundlichen Gruessen
                     Loeschantrag herunterladen
                   </button>
                   <button onClick={generateRevokeRequest} className="download-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                       <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
                       <polyline points="7 10 12 15 17 10"/>
                       <line x1="12" y1="15" x2="12" y2="3"/>
@@ -827,8 +827,8 @@ Mit freundlichen Gruessen
               </section>
 
               {/* 14. Aenderungen */}
-              <section id="aenderungen" className="section-tracked content-block">
-                <h2 className="section-title">14. Aenderungen und Aktualisierung</h2>
+              <section id="aenderungen" className="section-tracked content-block" aria-labelledby="aenderungen-heading">
+                <h2 id="aenderungen-heading" className="section-title">14. Aenderungen und Aktualisierung</h2>
                 <p className="text-body">
                   Wir bitten Sie, sich regelmaessig ueber den Inhalt unserer Datenschutzerklaerung zu informieren. Wir passen die Datenschutzerklaerung an, sobald die Aenderungen der von uns durchgefuehrten Datenverarbeitungen dies erforderlich machen. Wir informieren Sie, sobald durch die Aenderungen eine Mitwirkungshandlung Ihrerseits (z.B. Einwilligung) oder eine sonstige individuelle Benachrichtigung erforderlich wird.
                 </p>
@@ -848,16 +848,23 @@ Mit freundlichen Gruessen
         className={`mobile-nav-trigger ${!isNavButtonVisible ? 'hidden' : ''}`}
         onClick={openMobileNav}
         aria-label="Inhaltsverzeichnis oeffnen"
+        aria-expanded={isMobileNavOpen}
+        aria-controls="mobile-nav-dialog"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
         </svg>
       </button>
 
       {/* Mobile Navigation Modal */}
       <div
+        id="mobile-nav-dialog"
         className={`mobile-nav-modal ${isMobileNavOpen ? 'is-open' : ''}`}
         onClick={(e) => { if (e.target === e.currentTarget) closeMobileNav(); }}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="mobile-nav-title"
+        aria-hidden={!isMobileNavOpen}
       >
         <div
           className="mobile-nav-content"
@@ -867,15 +874,15 @@ Mit freundlichen Gruessen
           onTouchEnd={handleTouchEnd}
         >
           <div className="mobile-nav-header">
-            <h3>Inhaltsverzeichnis</h3>
+            <h3 id="mobile-nav-title">Inhaltsverzeichnis</h3>
             <button className="mobile-nav-close" onClick={closeMobileNav} aria-label="Schliessen">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
               </svg>
             </button>
           </div>
-          <nav className="mobile-nav-menu">
-            <ul>
+          <nav className="mobile-nav-menu" aria-label="Inhaltsverzeichnis Navigation">
+            <ul role="list">
               {navItems.map((item) => {
                 const labelParts = item.label.split(' ');
                 const hasSection = labelParts[0].startsWith('§');
@@ -907,7 +914,7 @@ Mit freundlichen Gruessen
         onClick={scrollToTop}
         aria-label="Nach oben scrollen"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
           <path d="M18 15l-6-6-6 6" />
         </svg>
       </button>
@@ -917,7 +924,7 @@ Mit freundlichen Gruessen
         onClick={scrollToBottom}
         aria-label="Nach unten scrollen"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
           <path d="M6 9l6 6 6-6" />
         </svg>
       </button>
