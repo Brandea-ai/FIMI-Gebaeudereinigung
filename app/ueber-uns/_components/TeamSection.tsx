@@ -79,7 +79,7 @@ const teamBereiche = [
 
 export default function TeamSection() {
   return (
-    <section id="team" className="py-20 lg:py-32 bg-[#012956]">
+    <section id="team" className="py-20 lg:py-32 bg-[#012956]" aria-labelledby="team-heading">
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
         {/* Header */}
@@ -93,7 +93,7 @@ export default function TeamSection() {
           <p className="text-[#109387] font-bold text-sm uppercase tracking-[0.2em] mb-4">
             Unser Team
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.1] mb-6">
+          <h2 id="team-heading" className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.1] mb-6">
             90+ Mitarbeiter für
             <span className="block text-[#109387]">Ihren Erfolg</span>
           </h2>
@@ -164,7 +164,7 @@ export default function TeamSection() {
                 ))}
 
                 {/* Placeholder für weitere Mitarbeiter */}
-                <Link href="/karriere">
+                <Link href="/karriere" aria-label="Karriere bei FIMI - Jetzt bewerben">
                   <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}

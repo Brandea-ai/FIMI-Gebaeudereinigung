@@ -18,7 +18,7 @@ const standorte = [
 
 export default function RegionenSection() {
   return (
-    <section id="regionen" className="py-20 lg:py-32 bg-white">
+    <section id="regionen" className="py-20 lg:py-32 bg-white" aria-labelledby="regionen-heading">
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -46,7 +46,7 @@ export default function RegionenSection() {
             <div className="bg-[#012956] rounded-b-[6px] lg:rounded-[6px] lg:absolute lg:-bottom-3 lg:left-4 lg:right-4 p-2 sm:p-2.5 lg:shadow-lg">
               <div className="flex items-center gap-2">
                 <div className="w-8 h-8 bg-[#109387] rounded-[4px] flex items-center justify-center flex-shrink-0">
-                  <MapPin size={16} className="text-white" />
+                  <MapPin size={16} className="text-white" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="text-white font-bold text-xs sm:text-sm">
@@ -70,7 +70,7 @@ export default function RegionenSection() {
             <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3">
               Unsere Einsatzgebiete
             </p>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-6">
+            <h2 id="regionen-heading" className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-6">
               Regional verwurzelt,
               <span className="block text-[#109387]">professionell aufgestellt</span>
             </h2>

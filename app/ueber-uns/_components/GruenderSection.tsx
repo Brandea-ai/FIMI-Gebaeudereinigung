@@ -25,7 +25,7 @@ const gruender = [
 
 export default function GruenderSection() {
   return (
-    <section id="gruender" className="py-20 lg:py-32 bg-white">
+    <section id="gruender" className="py-20 lg:py-32 bg-white" aria-labelledby="gruender-heading">
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
         {/* Header */}
@@ -39,7 +39,7 @@ export default function GruenderSection() {
           <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3">
             Die Köpfe hinter FIMI
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-6">
+          <h2 id="gruender-heading" className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-6">
             Unsere Geschäftsführung
           </h2>
           <p className="text-lg text-gray-700 font-semibold max-w-2xl mx-auto">
@@ -87,7 +87,7 @@ export default function GruenderSection() {
 
                   {/* Quote */}
                   <div className="flex-1 relative">
-                    <Quote size={32} className="text-[#109387]/20 absolute -top-2 -left-1" />
+                    <Quote size={32} className="text-[#109387]/20 absolute -top-2 -left-1" aria-hidden="true" />
                     <p className="text-gray-700 font-semibold leading-relaxed pl-6 italic">
                       &ldquo;{person.zitat}&rdquo;
                     </p>

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 export default function PartnerSection() {
   return (
-    <section id="partner" className="py-20 lg:py-28 bg-[#f8f9fa] overflow-hidden">
+    <section id="partner" className="py-20 lg:py-28 bg-[#f8f9fa] overflow-hidden" aria-labelledby="partner-heading">
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
         {/* Header */}
         <motion.div
@@ -15,7 +15,7 @@ export default function PartnerSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-6">
+          <h2 id="partner-heading" className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-6">
             Ausgestattet mit den
             <span className="text-[#109387]"> Besten</span>
           </h2>

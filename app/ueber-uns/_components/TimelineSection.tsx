@@ -64,7 +64,7 @@ const timeline = [
 
 export default function TimelineSection() {
   return (
-    <section id="timeline" className="py-20 lg:py-32 bg-[#f8f9fa]">
+    <section id="timeline" className="py-20 lg:py-32 bg-[#f8f9fa]" aria-labelledby="timeline-heading">
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
         {/* Header */}
@@ -78,7 +78,7 @@ export default function TimelineSection() {
           <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3">
             Unsere Geschichte
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-6">
+          <h2 id="timeline-heading" className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-6">
             Von der kleinen GbR zum
             <span className="block text-[#109387]">regionalen Marktführer</span>
           </h2>
@@ -88,7 +88,7 @@ export default function TimelineSection() {
         </motion.div>
 
         {/* Timeline */}
-        <div className="relative">
+        <div className="relative" role="list" aria-label="Firmengeschichte">
           {/* Center Line - Desktop */}
           <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[#109387] via-[#012956] to-[#109387] transform -translate-x-1/2" />
 

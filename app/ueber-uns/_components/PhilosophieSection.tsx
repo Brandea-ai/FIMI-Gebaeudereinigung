@@ -38,7 +38,7 @@ const werte = [
 
 export default function PhilosophieSection() {
   return (
-    <section id="philosophie" className="py-20 lg:py-32 bg-[#109387]/5">
+    <section id="philosophie" className="py-20 lg:py-32 bg-[#109387]/5" aria-labelledby="philosophie-heading">
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
 
         {/* Header */}
@@ -52,7 +52,7 @@ export default function PhilosophieSection() {
           <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3">
             Unsere Philosophie
           </p>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-6">
+          <h2 id="philosophie-heading" className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-6">
             Werte, die uns
             <span className="text-[#109387]"> antreiben</span>
           </h2>
@@ -78,7 +78,7 @@ export default function PhilosophieSection() {
               >
                 {/* Icon */}
                 <div className="w-14 h-14 border-2 border-[#109387] group-hover:bg-[#109387] rounded-[6px] flex items-center justify-center mb-6 transition-colors duration-500">
-                  <IconComponent size={28} className="text-[#109387] group-hover:text-white transition-colors duration-500" strokeWidth={1.5} />
+                  <IconComponent size={28} className="text-[#109387] group-hover:text-white transition-colors duration-500" strokeWidth={1.5} aria-hidden="true" />
                 </div>
 
                 <h3 className="text-xl font-bold text-[#012956] group-hover:text-white mb-4 transition-colors duration-500">
