@@ -117,7 +117,7 @@ export default function NotFound() {
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#012956]/5 rounded-full blur-3xl animate-pulse-slow animation-delay-2000" />
       </div>
 
-      <div className="relative max-w-4xl mx-auto text-center">
+      <div className="relative w-full max-w-6xl mx-auto text-center px-4">
         {/* 404 Badge */}
         <div
           className={`inline-flex items-center gap-2 bg-[#012956]/10 text-[#012956] px-5 py-2.5 rounded-full text-sm font-bold mb-6 transition-all duration-700 ${
@@ -128,9 +128,9 @@ export default function NotFound() {
           Fehler 404 - Seite nicht gefunden
         </div>
 
-        {/* Animated Illustration */}
+        {/* Animated Illustration - Full Width Stretched */}
         <div
-          className={`relative w-full max-w-2xl mx-auto mb-8 transition-all duration-1000 delay-200 ${
+          className={`relative w-full mb-8 transition-all duration-1000 delay-200 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
@@ -138,14 +138,15 @@ export default function NotFound() {
             <Image
               src="/images/404 cover Bild.png"
               alt="Freundliche Reinigungsutensilien - Seite nicht gefunden"
-              width={800}
-              height={400}
-              className="w-full h-auto drop-shadow-2xl"
+              width={1920}
+              height={600}
+              className="w-full h-auto drop-shadow-2xl object-cover"
+              style={{ width: '100%', height: 'auto' }}
               priority
             />
 
             {/* Glow Effect Under Image */}
-            <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-3/4 h-8 bg-[#109387]/20 blur-2xl rounded-full" />
+            <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-full h-12 bg-[#109387]/20 blur-3xl rounded-full" />
           </div>
         </div>
 
