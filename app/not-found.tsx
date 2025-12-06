@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Home, Phone, ArrowRight, Mail } from 'lucide-react'
 
@@ -45,10 +46,14 @@ export default function NotFound() {
     <section className="relative min-h-screen">
       {/* Background Image - Full Screen, Fully Visible */}
       <div className="absolute inset-0">
-        <img
-          src="/images/404 cover Bild.png"
+        <Image
+          src="/images/404-cover.avif"
           alt="Freundliche Reinigungsutensilien"
-          className="w-full h-full object-cover"
+          fill
+          priority
+          quality={80}
+          sizes="100vw"
+          className="object-cover"
         />
       </div>
 
@@ -67,7 +72,7 @@ export default function NotFound() {
             </h1>
 
             {/* Title */}
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#012956] mb-5 -mt-2 sm:-mt-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-5 -mt-2 sm:-mt-4">
               Seite nicht gefunden
             </h2>
 
