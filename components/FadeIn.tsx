@@ -72,15 +72,18 @@ export default function FadeIn({
  * FadeInStagger - Container für gestaffelte Kind-Animationen
  * Jedes direkte Kind wird nacheinander animiert.
  */
+interface FadeInStaggerProps extends Omit<HTMLMotionProps<'div'>, 'initial' | 'whileInView' | 'viewport' | 'variants'> {
+  children: ReactNode
+  staggerDelay?: number
+  className?: string
+}
+
 export function FadeInStagger({
   children,
   staggerDelay = 0.1,
   className = '',
-}: {
-  children: ReactNode
-  staggerDelay?: number
-  className?: string
-}) {
+  ...props
+}: FadeInStaggerProps) {
   return (
     <motion.div
       initial="hidden"
@@ -95,6 +98,7 @@ export function FadeInStagger({
         },
       }}
       className={className}
+      {...props}
     >
       {children}
     </motion.div>
