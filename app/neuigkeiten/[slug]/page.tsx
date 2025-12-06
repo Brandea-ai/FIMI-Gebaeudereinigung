@@ -91,13 +91,14 @@ export default async function BlogPostPage({ params }: PageProps) {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Image - responsive Höhe */}
-      <section className="relative min-h-[50vh] sm:min-h-[45vh] lg:min-h-[50vh] flex flex-col">
+      <section className="relative min-h-[50vh] sm:min-h-[45vh] lg:min-h-[50vh] flex flex-col" aria-labelledby="article-title">
         <Image
           src={post.image}
           alt={post.title}
           fill
           className="object-cover"
           priority
+          sizes="100vw"
         />
         {/* Stronger gradient for better text contrast */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#012956] via-[#012956]/70 to-[#012956]/30" />
@@ -107,9 +108,9 @@ export default async function BlogPostPage({ params }: PageProps) {
           <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
             <Link
               href="/neuigkeiten"
-              className="inline-flex items-center gap-1.5 sm:gap-2 text-white/80 hover:text-white font-semibold text-xs sm:text-sm transition-colors bg-black/20 backdrop-blur-sm px-3 py-1.5 rounded-full"
+              className="inline-flex items-center gap-1.5 sm:gap-2 text-white/90 hover:text-white font-semibold text-xs sm:text-sm transition-colors bg-black/20 backdrop-blur-sm px-3 py-1.5 rounded-full"
             >
-              <ArrowLeft size={14} className="sm:w-4 sm:h-4" />
+              <ArrowLeft size={14} className="sm:w-4 sm:h-4" aria-hidden="true" />
               <span className="hidden sm:inline">Zurück zu Neuigkeiten</span>
               <span className="sm:hidden">Zurück</span>
             </Link>
@@ -125,7 +126,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             >
               {blogCategories[post.category].label}
             </span>
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-[1.2] sm:leading-[1.15]">
+            <h1 id="article-title" className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-[1.2] sm:leading-[1.15]">
               {highlight ? (
                 <>
                   <span className="block text-[#109387] mb-0.5 sm:mb-1">{highlight}</span>
@@ -144,14 +145,14 @@ export default async function BlogPostPage({ params }: PageProps) {
         <div className="w-full max-w-[1800px] mx-auto flex items-center justify-between gap-4">
           <div>
             <p className="text-white font-bold text-sm">Kostenfreie Beratung</p>
-            <p className="text-white/60 text-xs">Wir beraten Sie gerne!</p>
+            <p className="text-white/80 text-xs">Wir beraten Sie gerne!</p>
           </div>
           <a
             href="#contact-form"
             className="flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-xs px-4 py-2.5 rounded-[6px] transition-all whitespace-nowrap"
           >
             Kontakt
-            <ArrowRight size={14} />
+            <ArrowRight size={14} aria-hidden="true" />
           </a>
         </div>
       </div>
@@ -163,17 +164,17 @@ export default async function BlogPostPage({ params }: PageProps) {
             {/* Main Content */}
             <div>
               {/* Meta */}
-              <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-gray-500 text-xs sm:text-sm pb-6 sm:pb-8 border-b border-gray-200 mb-6 sm:mb-8">
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-gray-600 text-xs sm:text-sm pb-6 sm:pb-8 border-b border-gray-200 mb-6 sm:mb-8">
                 <span className="flex items-center gap-1 sm:gap-1.5">
-                  <User size={14} className="sm:w-4 sm:h-4" />
+                  <User size={14} className="sm:w-4 sm:h-4" aria-hidden="true" />
                   {post.author}
                 </span>
                 <span className="flex items-center gap-1 sm:gap-1.5">
-                  <Calendar size={14} className="sm:w-4 sm:h-4" />
+                  <Calendar size={14} className="sm:w-4 sm:h-4" aria-hidden="true" />
                   {formatDate(post.date)}
                 </span>
                 <span className="flex items-center gap-1 sm:gap-1.5">
-                  <Clock size={14} className="sm:w-4 sm:h-4" />
+                  <Clock size={14} className="sm:w-4 sm:h-4" aria-hidden="true" />
                   {post.readTime} Min.
                 </span>
               </div>
@@ -199,7 +200,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               {/* Share */}
               <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-200">
                 <div className="flex items-center gap-3 sm:gap-4">
-                  <span className="text-gray-500 font-semibold text-xs sm:text-sm">Teilen:</span>
+                  <span className="text-gray-600 font-semibold text-xs sm:text-sm">Teilen:</span>
                   <ShareButton title={post.title} />
                 </div>
               </div>
@@ -212,7 +213,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 <h3 className="text-white font-bold text-base xl:text-lg mb-2 xl:mb-3">
                   Kostenfreie Beratung
                 </h3>
-                <p className="text-white/70 font-medium text-xs xl:text-sm mb-4 xl:mb-6">
+                <p className="text-white/80 font-medium text-xs xl:text-sm mb-4 xl:mb-6">
                   Haben Sie Fragen zu unseren Leistungen? Wir beraten Sie gerne!
                 </p>
                 <a
@@ -220,7 +221,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                   className="flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-xs xl:text-sm px-4 xl:px-5 py-2.5 xl:py-3 rounded-[6px] transition-all group w-full"
                 >
                   <span>Kontakt aufnehmen</span>
-                  <ArrowRight size={14} className="xl:w-4 xl:h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight size={14} className="xl:w-4 xl:h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </a>
               </div>
 
@@ -243,6 +244,8 @@ export default async function BlogPostPage({ params }: PageProps) {
                             alt={relatedPost.title}
                             fill
                             className="object-cover"
+                            sizes="80px"
+                            loading="lazy"
                           />
                         </div>
                         <div className="flex-1 min-w-0">
@@ -255,7 +258,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                           <p className="text-[#012956] font-bold text-xs xl:text-sm line-clamp-2 group-hover:text-[#109387] transition-colors leading-tight">
                             {relatedPost.title}
                           </p>
-                          <p className="text-gray-400 text-[10px] xl:text-xs mt-1">
+                          <p className="text-gray-500 text-[10px] xl:text-xs mt-1">
                             {formatDate(relatedPost.date)}
                           </p>
                         </div>
@@ -286,6 +289,8 @@ export default async function BlogPostPage({ params }: PageProps) {
                         alt={relatedPost.title}
                         fill
                         className="object-cover"
+                        sizes="(max-width: 640px) 80px, 96px"
+                        loading="lazy"
                       />
                     </div>
                     <div className="flex-1 min-w-0 flex flex-col justify-center">
@@ -298,7 +303,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                       <p className="text-[#012956] font-bold text-sm sm:text-base line-clamp-2 group-hover:text-[#109387] transition-colors leading-tight">
                         {relatedPost.title}
                       </p>
-                      <p className="text-gray-400 text-xs mt-1">
+                      <p className="text-gray-500 text-xs mt-1">
                         {formatDate(relatedPost.date)}
                       </p>
                     </div>

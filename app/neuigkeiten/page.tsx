@@ -34,16 +34,16 @@ export default function NeuigkeitenPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero - kompakter auf Mobile */}
-      <section className="bg-[#012956] py-12 sm:py-16 lg:py-28">
+      <section className="bg-[#012956] py-12 sm:py-16 lg:py-28" aria-labelledby="hero-heading">
         <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
           <FadeIn direction="left">
             <p className="text-[#109387] font-semibold text-xs sm:text-sm uppercase tracking-wider mb-2 sm:mb-4">
               Blog
             </p>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-4 sm:mb-6">
+            <h1 id="hero-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-4 sm:mb-6">
               Neuigkeiten
             </h1>
-            <p className="text-white/70 font-semibold text-base sm:text-lg max-w-2xl">
+            <p className="text-white/80 font-semibold text-base sm:text-lg max-w-2xl">
               Aktuelles aus der Welt der professionellen Gebäudereinigung.
               Tipps, Projekte und Einblicke hinter die Kulissen.
             </p>
@@ -52,7 +52,7 @@ export default function NeuigkeitenPage() {
       </section>
 
       {/* Category Filter - Sticky, besser scrollbar auf Mobile */}
-      <section className="sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm overflow-hidden">
+      <section className="sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm overflow-hidden" aria-label="Kategorie-Filter">
         <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
           <div className="flex gap-1.5 sm:gap-2 py-3 sm:py-4 overflow-x-auto scrollbar-hide">
             <button
@@ -97,6 +97,8 @@ export default function NeuigkeitenPage() {
                   alt={featuredPost.title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
                   <span
@@ -110,13 +112,13 @@ export default function NeuigkeitenPage() {
 
               {/* Content */}
               <div>
-                <div className="flex items-center gap-3 sm:gap-4 text-gray-500 text-xs sm:text-sm mb-2 sm:mb-4">
+                <div className="flex items-center gap-3 sm:gap-4 text-gray-600 text-xs sm:text-sm mb-2 sm:mb-4">
                   <span className="flex items-center gap-1 sm:gap-1.5">
-                    <Calendar size={12} className="sm:w-3.5 sm:h-3.5" />
+                    <Calendar size={12} className="sm:w-3.5 sm:h-3.5" aria-hidden="true" />
                     {formatDate(featuredPost.date)}
                   </span>
                   <span className="flex items-center gap-1 sm:gap-1.5">
-                    <Clock size={12} className="sm:w-3.5 sm:h-3.5" />
+                    <Clock size={12} className="sm:w-3.5 sm:h-3.5" aria-hidden="true" />
                     {featuredPost.readTime} Min.
                   </span>
                 </div>
@@ -131,7 +133,7 @@ export default function NeuigkeitenPage() {
 
                 <span className="inline-flex items-center gap-2 text-[#109387] font-bold text-sm sm:text-base group-hover:gap-3 transition-all">
                   Weiterlesen
-                  <ArrowRight size={16} className="sm:w-[18px] sm:h-[18px]" />
+                  <ArrowRight size={16} className="sm:w-[18px] sm:h-[18px]" aria-hidden="true" />
                 </span>
               </div>
             </Link>
@@ -141,9 +143,9 @@ export default function NeuigkeitenPage() {
 
       {/* All Posts Grid - 1 Spalte Mobile, 2 Tablet, 3 Desktop */}
       {otherPosts.length > 0 && (
-        <section className="py-8 sm:py-12 lg:py-20 bg-[#f8f9fa]">
+        <section className="py-8 sm:py-12 lg:py-20 bg-[#f8f9fa]" aria-labelledby="weitere-beitraege-heading">
           <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
-            <h2 className="text-xl sm:text-2xl font-bold text-[#012956] mb-6 sm:mb-10">
+            <h2 id="weitere-beitraege-heading" className="text-xl sm:text-2xl font-bold text-[#012956] mb-6 sm:mb-10">
               Weitere Beiträge
             </h2>
 
@@ -161,6 +163,8 @@ export default function NeuigkeitenPage() {
                       alt={post.title}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 640px) 112px, (max-width: 1024px) 50vw, 33vw"
+                      loading="lazy"
                     />
                     <div className="absolute top-2 left-2 sm:top-3 sm:left-3">
                       <span
@@ -185,13 +189,13 @@ export default function NeuigkeitenPage() {
                     </p>
 
                     {/* Meta: Datum */}
-                    <p className="text-gray-400 text-[10px] sm:text-xs mb-1 sm:mb-0">
+                    <p className="text-gray-500 text-[10px] sm:text-xs mb-1 sm:mb-0">
                       {formatDate(post.date)} · {post.readTime} Min.
                     </p>
 
                     <span className="inline-flex items-center gap-1 sm:gap-1.5 text-[#109387] font-semibold text-xs sm:text-sm group-hover:gap-2 sm:group-hover:gap-2.5 transition-all">
                       Lesen
-                      <ArrowRight size={12} className="sm:w-3.5 sm:h-3.5" />
+                      <ArrowRight size={12} className="sm:w-3.5 sm:h-3.5" aria-hidden="true" />
                     </span>
                   </div>
                 </Link>
@@ -202,13 +206,13 @@ export default function NeuigkeitenPage() {
       )}
 
       {/* Newsletter CTA */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-[#012956]">
+      <section className="py-12 sm:py-16 lg:py-20 bg-[#012956]" aria-labelledby="newsletter-heading">
         <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20 text-center">
           <FadeIn>
-            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4">
+            <h2 id="newsletter-heading" className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4">
               Keine Neuigkeit verpassen
             </h2>
-            <p className="text-white/60 font-semibold text-sm sm:text-base mb-6 sm:mb-8 max-w-xl mx-auto">
+            <p className="text-white/80 font-semibold text-sm sm:text-base mb-6 sm:mb-8 max-w-xl mx-auto">
               Erhalten Sie regelmäßig Tipps und Neuigkeiten rund um professionelle Gebäudereinigung.
             </p>
             <a
@@ -216,7 +220,7 @@ export default function NeuigkeitenPage() {
               className="inline-flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-[6px] transition-all group text-sm sm:text-base"
             >
               <span>Kontakt aufnehmen</span>
-              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform sm:w-[18px] sm:h-[18px]" />
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform sm:w-[18px] sm:h-[18px]" aria-hidden="true" />
             </a>
           </FadeIn>
         </div>
