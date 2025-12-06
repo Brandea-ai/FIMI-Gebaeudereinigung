@@ -19,6 +19,10 @@ export default function ReferenzenPage() {
   const [selectedReferenz, setSelectedReferenz] = useState<Referenz | null>(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
+  // Pagination State - initial 12 Projekte laden
+  const ITEMS_PER_PAGE = 12
+  const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE)
+
   // Get filter options
   const jahre = getAllJahre()
   const stats = getReferenzStatistiken()
@@ -87,14 +91,24 @@ export default function ReferenzenPage() {
     setSelectedJahr(null)
     setSelectedBranche(null)
     setSelectedLeistung(null)
+    setVisibleCount(ITEMS_PER_PAGE)
   }
+
+  // Load more projects
+  const loadMore = () => {
+    setVisibleCount(prev => prev + ITEMS_PER_PAGE)
+  }
+
+  // Visible referenzen (paginated)
+  const visibleReferenzen = filteredReferenzen.slice(0, visibleCount)
+  const hasMoreToLoad = visibleCount < filteredReferenzen.length
 
   const hasActiveFilters = selectedJahr || selectedBranche || selectedLeistung
 
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section - Einfarbig wie Startseite */}
-      <section className="relative bg-[#012956] py-16 md:py-24 lg:py-32 overflow-hidden">
+      <section className="relative bg-[#012956] py-16 md:py-24 lg:py-32 overflow-hidden" aria-labelledby="hero-heading">
         {/* Background Pattern */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#109387]/10 to-transparent" />
@@ -108,7 +122,7 @@ export default function ReferenzenPage() {
                 Unsere Projekte
               </p>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.15] mb-6">
+              <h1 id="hero-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.15] mb-6">
                 So arbeiten wir
                 <span className="block text-[#109387] mt-2">für unsere Kunden</span>
               </h1>
@@ -121,15 +135,15 @@ export default function ReferenzenPage() {
               {/* Trust-Punkte */}
               <div className="flex flex-wrap gap-8 mb-12">
                 <div className="flex items-center gap-2">
-                  <CheckCircle size={22} className="text-[#109387]" />
+                  <CheckCircle size={22} className="text-[#109387]" aria-hidden="true" />
                   <span className="text-white font-semibold text-lg">Seit 2016</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle size={22} className="text-[#109387]" />
+                  <CheckCircle size={22} className="text-[#109387]" aria-hidden="true" />
                   <span className="text-white font-semibold text-lg">8 Einsatzorte</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <CheckCircle size={22} className="text-[#109387]" />
+                  <CheckCircle size={22} className="text-[#109387]" aria-hidden="true" />
                   <span className="text-white font-semibold text-lg">{Math.round(stats.flaeche / 1000)}k m² betreut</span>
                 </div>
               </div>
@@ -140,7 +154,7 @@ export default function ReferenzenPage() {
                 className="inline-flex items-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
               >
                 Kostenfreie Besichtigung
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </a>
             </div>
 
@@ -158,7 +172,7 @@ export default function ReferenzenPage() {
               >
                 <div className="flex items-start gap-5">
                   <div className="w-14 h-14 bg-[#109387]/20 rounded-[6px] flex items-center justify-center flex-shrink-0">
-                    <Building2 size={28} className="text-[#109387]" />
+                    <Building2 size={28} className="text-[#109387]" aria-hidden="true" />
                   </div>
                   <div className="flex-1">
                     <h3 className="text-white font-bold text-xl mb-2">Alle Branchen</h3>
@@ -167,7 +181,7 @@ export default function ReferenzenPage() {
                     </p>
                     <span className="inline-flex items-center gap-2 text-[#109387] font-bold group-hover:gap-3 transition-all">
                       {stats.branchen} Branchen entdecken
-                      <ArrowRight size={18} />
+                      <ArrowRight size={18} aria-hidden="true" />
                     </span>
                   </div>
                 </div>
@@ -180,7 +194,7 @@ export default function ReferenzenPage() {
               >
                 <div className="flex items-start gap-5">
                   <div className="w-14 h-14 bg-[#109387]/20 rounded-[6px] flex items-center justify-center flex-shrink-0">
-                    <Award size={28} className="text-[#109387]" />
+                    <Award size={28} className="text-[#109387]" aria-hidden="true" />
                   </div>
                   <div className="flex-1">
                     <h3 className="text-white font-bold text-xl mb-2">Alle Leistungen</h3>
@@ -189,7 +203,7 @@ export default function ReferenzenPage() {
                     </p>
                     <span className="inline-flex items-center gap-2 text-[#109387] font-bold group-hover:gap-3 transition-all">
                       18 Leistungen ansehen
-                      <ArrowRight size={18} />
+                      <ArrowRight size={18} aria-hidden="true" />
                     </span>
                   </div>
                 </div>
@@ -200,11 +214,11 @@ export default function ReferenzenPage() {
       </section>
 
       {/* Filter Section - Sticky top-0 wie Leistungen */}
-      <section className="sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm">
+      <section className="sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm" aria-label="Projektfilter">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="flex flex-col md:flex-row md:items-center gap-4 py-4">
             {/* Filter Buttons - kleiner auf Mobile damit man sieht dass es scrollbar ist */}
-            <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto scrollbar-hide">
+            <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto scrollbar-hide" role="group" aria-label="Projektfilter-Optionen">
               <button
                 onClick={resetFilters}
                 className={`px-3 sm:px-5 py-2 sm:py-2.5 rounded-[6px] font-bold text-sm sm:text-base whitespace-nowrap transition-all ${
@@ -217,9 +231,11 @@ export default function ReferenzenPage() {
               </button>
 
               {/* Jahr Filter */}
+              <label htmlFor="filter-jahr" className="sr-only">Nach Jahr filtern</label>
               <select
+                id="filter-jahr"
                 value={selectedJahr || ''}
-                onChange={(e) => setSelectedJahr(e.target.value ? Number(e.target.value) : null)}
+                onChange={(e) => { setSelectedJahr(e.target.value ? Number(e.target.value) : null); setVisibleCount(ITEMS_PER_PAGE); }}
                 className="appearance-none bg-[#f8f9fa] hover:bg-[#012956] hover:text-white text-[#012956] font-bold text-sm sm:text-base px-3 sm:px-5 py-2 sm:py-2.5 pr-7 sm:pr-10 rounded-[6px] cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-[#109387]/20"
               >
                 <option value="">Jahr</option>
@@ -229,9 +245,11 @@ export default function ReferenzenPage() {
               </select>
 
               {/* Branche Filter */}
+              <label htmlFor="filter-branche" className="sr-only">Nach Branche filtern</label>
               <select
+                id="filter-branche"
                 value={selectedBranche || ''}
-                onChange={(e) => setSelectedBranche(e.target.value || null)}
+                onChange={(e) => { setSelectedBranche(e.target.value || null); setVisibleCount(ITEMS_PER_PAGE); }}
                 className="appearance-none bg-[#f8f9fa] hover:bg-[#012956] hover:text-white text-[#012956] font-bold text-sm sm:text-base px-3 sm:px-5 py-2 sm:py-2.5 pr-7 sm:pr-10 rounded-[6px] cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-[#109387]/20"
               >
                 <option value="">Branche</option>
@@ -241,9 +259,11 @@ export default function ReferenzenPage() {
               </select>
 
               {/* Leistung Filter */}
+              <label htmlFor="filter-leistung" className="sr-only">Nach Leistung filtern</label>
               <select
+                id="filter-leistung"
                 value={selectedLeistung || ''}
-                onChange={(e) => setSelectedLeistung(e.target.value || null)}
+                onChange={(e) => { setSelectedLeistung(e.target.value || null); setVisibleCount(ITEMS_PER_PAGE); }}
                 className="appearance-none bg-[#f8f9fa] hover:bg-[#012956] hover:text-white text-[#012956] font-bold text-sm sm:text-base px-3 sm:px-5 py-2 sm:py-2.5 pr-7 sm:pr-10 rounded-[6px] cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-[#109387]/20"
               >
                 <option value="">Leistung</option>
@@ -267,11 +287,11 @@ export default function ReferenzenPage() {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-16 lg:py-28 bg-[#f8f9fa]">
+      <section className="py-16 lg:py-28 bg-[#f8f9fa]" aria-labelledby="projekte-heading">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-4">
+            <h2 id="projekte-heading" className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-4">
               {hasActiveFilters ? 'Gefilterte Projekte' : 'Projektbeispiele im Überblick'}
             </h2>
             <p className="text-lg text-gray-700 font-semibold leading-relaxed max-w-2xl mx-auto mb-6">
@@ -281,7 +301,7 @@ export default function ReferenzenPage() {
             </p>
             {/* Referenzen auf Anfrage Hinweis */}
             <div className="inline-flex items-center gap-3 bg-[#109387]/10 border border-[#109387]/20 rounded-[6px] px-5 py-3">
-              <CheckCircle size={20} className="text-[#109387] flex-shrink-0" />
+              <CheckCircle size={20} className="text-[#109387] flex-shrink-0" aria-hidden="true" />
               <span className="text-[#012956] font-semibold text-sm md:text-base">
                 Konkrete Referenzen mit Ansprechpartnern erhalten Sie gerne auf Anfrage
               </span>
@@ -303,13 +323,13 @@ export default function ReferenzenPage() {
           ) : (
             <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-8">
               <AnimatePresence mode="popLayout">
-                {filteredReferenzen.map((referenz, index) => (
+                {visibleReferenzen.map((referenz, index) => (
                   <motion.div
                     key={referenz.id}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{ duration: 0.3, delay: index * 0.03 }}
+                    transition={{ duration: 0.2 }}
                     layout
                     className="group bg-white rounded-[6px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
                     onClick={() => openModal(referenz)}
@@ -317,12 +337,14 @@ export default function ReferenzenPage() {
                     {/* Image */}
                     <div className="relative aspect-square sm:aspect-[4/3] overflow-hidden">
                       <Image
-                        src={referenz.bilder[0]}
+                        src={referenz.bilder[0].replace('w=800', 'w=400')}
                         alt={referenz.projektName}
                         fill
-                        sizes="(max-width: 768px) 100vw, 33vw"
+                        sizes="(max-width: 768px) 50vw, 33vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        quality={75}
+                        quality={60}
+                        priority={index < 6}
+                        loading={index < 6 ? undefined : 'lazy'}
                       />
 
                       {/* Year Badge */}
@@ -331,7 +353,7 @@ export default function ReferenzenPage() {
                       </div>
 
                       {/* Expand Icon - Desktop only */}
-                      <div className="absolute top-4 right-4 bg-white text-[#012956] p-2 rounded-[6px] opacity-0 group-hover:opacity-100 transition-opacity hidden sm:block">
+                      <div className="absolute top-4 right-4 bg-white text-[#012956] p-2 rounded-[6px] opacity-0 group-hover:opacity-100 transition-opacity hidden sm:block" aria-hidden="true">
                         <Maximize2 className="w-4 h-4" />
                       </div>
                     </div>
@@ -356,7 +378,7 @@ export default function ReferenzenPage() {
                       {/* Meta Info - nur Desktop */}
                       <div className="hidden sm:flex items-center gap-4 text-sm text-gray-500 font-semibold">
                         <div className="flex items-center gap-1">
-                          <MapPin className="w-4 h-4" />
+                          <MapPin className="w-4 h-4" aria-hidden="true" />
                           <span className="truncate">{referenz.standort}</span>
                         </div>
                       </div>
@@ -383,6 +405,21 @@ export default function ReferenzenPage() {
               </AnimatePresence>
             </div>
           )}
+
+          {/* Mehr laden Button */}
+          {hasMoreToLoad && filteredReferenzen.length > 0 && (
+            <div className="text-center mt-12">
+              <button
+                onClick={loadMore}
+                className="inline-flex items-center gap-3 bg-[#012956] hover:bg-[#01203d] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"
+              >
+                Weitere Projekte laden
+                <span className="text-white/70 font-semibold">
+                  ({filteredReferenzen.length - visibleCount} weitere)
+                </span>
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
@@ -395,6 +432,9 @@ export default function ReferenzenPage() {
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 bg-black/80 flex items-end md:items-center md:justify-center"
             onClick={closeModal}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
           >
             {/* Close Button - Floating, immer sichtbar */}
             <button
@@ -425,12 +465,13 @@ export default function ReferenzenPage() {
                   {/* Image Gallery */}
                   <div className="relative aspect-[4/3] md:aspect-auto md:h-full md:min-h-[500px] bg-gray-900 md:sticky md:top-0">
                     <Image
-                      src={selectedReferenz.bilder[currentImageIndex]}
+                      src={selectedReferenz.bilder[currentImageIndex].replace('w=800', 'w=600')}
                       alt={selectedReferenz.projektName}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-cover"
-                      quality={80}
+                      quality={75}
+                      loading="eager"
                     />
 
                     {/* Image Counter Badge - Mobile */}
@@ -486,7 +527,7 @@ export default function ReferenzenPage() {
                         </span>
                       </div>
 
-                      <h2 className="text-xl md:text-3xl font-bold text-[#012956] mb-2">
+                      <h2 id="modal-title" className="text-xl md:text-3xl font-bold text-[#012956] mb-2">
                         {selectedReferenz.projektName}
                       </h2>
 
@@ -504,7 +545,7 @@ export default function ReferenzenPage() {
                     <div className="grid grid-cols-2 gap-3 md:gap-4 mb-6 md:mb-8">
                       <div className="bg-[#f8f9fa] rounded-[6px] p-3 md:p-4">
                         <div className="flex items-center gap-2 text-gray-500 text-xs md:text-sm font-semibold mb-1">
-                          <MapPin className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                          <MapPin className="w-3.5 h-3.5 md:w-4 md:h-4" aria-hidden="true" />
                           Standort
                         </div>
                         <div className="font-bold text-[#012956] text-sm md:text-base">{selectedReferenz.standort}</div>
@@ -513,7 +554,7 @@ export default function ReferenzenPage() {
                       {selectedReferenz.flaeche && (
                         <div className="bg-[#f8f9fa] rounded-[6px] p-3 md:p-4">
                           <div className="flex items-center gap-2 text-gray-500 text-xs md:text-sm font-semibold mb-1">
-                            <Maximize2 className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                            <Maximize2 className="w-3.5 h-3.5 md:w-4 md:h-4" aria-hidden="true" />
                             Fläche
                           </div>
                           <div className="font-bold text-[#012956] text-sm md:text-base">{selectedReferenz.flaeche}</div>
@@ -543,7 +584,7 @@ export default function ReferenzenPage() {
                       className="inline-flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-5 md:px-6 py-3 rounded-[6px] transition-colors text-sm md:text-base w-full md:w-auto justify-center"
                     >
                       Ähnliches Projekt anfragen
-                      <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
+                      <ArrowRight className="w-4 h-4 md:w-5 md:h-5" aria-hidden="true" />
                     </Link>
 
                     {/* Safe Area Spacing for Mobile */}
@@ -557,12 +598,12 @@ export default function ReferenzenPage() {
       </AnimatePresence>
 
       {/* Premium CTA Section - Bento Layout */}
-      <section className="py-20 lg:py-28 bg-[#012956]">
+      <section className="py-20 lg:py-28 bg-[#012956]" aria-labelledby="cta-heading">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 xl:gap-24 lg:items-center">
             {/* Content - Links */}
             <div className="mb-12 lg:mb-0">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] mb-6">
+              <h2 id="cta-heading" className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] mb-6">
                 Ihr nächstes Projekt
                 <span className="block text-[#109387] mt-2">verdient Qualität</span>
               </h2>
@@ -579,7 +620,7 @@ export default function ReferenzenPage() {
                   className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
                 >
                   Jetzt Besichtigung anfragen
-                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </a>
                 <a
                   href="tel:+4987143033460"
