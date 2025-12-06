@@ -168,13 +168,12 @@ export default function FloatingNav({ items, scrollOffset = 80 }: FloatingNavPro
       <nav
         className={`
           absolute top-0 right-20
-          max-md:fixed max-md:top-auto max-md:bottom-[90px] max-md:left-5 max-md:right-5 max-md:w-auto
-          w-[300px] bg-white rounded-[6px]
-          shadow-[0_24px_72px_-12px_rgba(0,0,0,0.18),0_8px_24px_-6px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.04)]
+          max-md:fixed max-md:top-auto max-md:bottom-[90px] max-md:left-4 max-md:right-4 max-md:w-auto
+          w-[300px] rounded-[6px]
           transition-all duration-300 ease-out
           ${isOpen
-            ? 'max-h-[680px] opacity-100 translate-x-0 pointer-events-auto'
-            : 'max-h-0 opacity-0 translate-x-3 max-md:translate-x-0 max-md:translate-y-3 pointer-events-none overflow-hidden'
+            ? 'bg-white shadow-[0_24px_72px_-12px_rgba(0,0,0,0.18),0_8px_24px_-6px_rgba(0,0,0,0.1),0_0_0_1px_rgba(0,0,0,0.04)] opacity-100 translate-x-0 pointer-events-auto scale-100'
+            : 'bg-transparent shadow-none opacity-0 translate-x-3 max-md:translate-x-0 max-md:translate-y-4 pointer-events-none scale-95 max-md:scale-100'
           }
         `}
         aria-label="Seitennavigation"
