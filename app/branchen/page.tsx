@@ -335,7 +335,7 @@ export default function BranchenPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section ref={heroRef} className="relative bg-[#012956] py-12 md:py-16 lg:py-20 xl:py-28 overflow-hidden">
+      <section ref={heroRef} className="relative bg-[#012956] py-12 md:py-16 lg:py-20 xl:py-28 overflow-hidden" aria-labelledby="branchen-hero-title">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#109387]/10 to-transparent" />
         </div>
@@ -348,7 +348,7 @@ export default function BranchenPage() {
                 Unsere Branchen
               </p>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-white leading-[1.15] mb-4 lg:mb-5">
+              <h1 id="branchen-hero-title" className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-white leading-[1.15] mb-4 lg:mb-5">
                 Branchenspezifische
                 <span className="block text-[#109387] mt-1 lg:mt-2">Reinigungslösungen</span>
               </h1>
@@ -376,7 +376,7 @@ export default function BranchenPage() {
                 className="inline-flex items-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4 rounded-[6px] transition-all duration-300 group"
               >
                 Branche anfragen
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </a>
             </div>
 
@@ -389,34 +389,37 @@ export default function BranchenPage() {
                 </p>
 
                 {/* Search Input */}
-                <div className="relative">
-                  <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                <div className="relative" role="search">
+                  <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" aria-hidden="true" />
                   <input
                     type="text"
                     placeholder="z.B. Physiotherapie, Autohaus, Schule..."
                     value={searchQuery}
                     onChange={(e) => handleSearch(e.target.value)}
                     onKeyDown={handleKeyDown}
+                    aria-label="Branche suchen"
                     className="w-full pl-12 pr-10 py-3 xl:py-4 rounded-[8px] border-2 border-transparent bg-white font-semibold text-base xl:text-lg text-[#012956] placeholder:text-gray-400 focus:outline-none focus:border-[#109387] transition-all"
                   />
                   {searchQuery && (
                     <button
                       onClick={() => setSearchQuery('')}
+                      aria-label="Suche zurücksetzen"
                       className="absolute right-3 top-1/2 -translate-y-1/2 w-7 h-7 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors"
                     >
-                      <X size={14} className="text-gray-500" />
+                      <X size={14} className="text-gray-500" aria-hidden="true" />
                     </button>
                   )}
                 </div>
 
                 {/* Quick Suggestions */}
                 <div className="mt-4 xl:mt-6">
-                  <p className="text-white/50 font-semibold text-xs xl:text-sm mb-2 xl:mb-3">Beliebte Suchen:</p>
-                  <div className="flex flex-wrap gap-1.5 xl:gap-2">
+                  <p id="beliebte-suchen-label" className="text-white/50 font-semibold text-xs xl:text-sm mb-2 xl:mb-3">Beliebte Suchen:</p>
+                  <div className="flex flex-wrap gap-1.5 xl:gap-2" role="group" aria-labelledby="beliebte-suchen-label">
                     {['Arztpraxis', 'Hotel', 'Fitnessstudio', 'Autohaus', 'Schule', 'Büro'].map((term) => (
                       <button
                         key={term}
                         onClick={() => handleSearch(term)}
+                        aria-pressed={searchQuery === term}
                         className="px-3 xl:px-4 py-1.5 xl:py-2 bg-white/10 hover:bg-white/20 text-white font-semibold text-xs xl:text-sm rounded-[6px] transition-all"
                       >
                         {term}
@@ -427,7 +430,7 @@ export default function BranchenPage() {
 
                 {/* Result Count */}
                 {searchQuery && (
-                  <div className="mt-4 xl:mt-6 pt-4 xl:pt-6 border-t border-white/10">
+                  <div className="mt-4 xl:mt-6 pt-4 xl:pt-6 border-t border-white/10" aria-live="polite" aria-atomic="true">
                     <p className="text-white font-semibold text-sm xl:text-base">
                       {filteredBranchen.length === 0 ? (
                         <span className="text-red-400">Keine Ergebnisse für „{searchQuery}"</span>
@@ -443,27 +446,29 @@ export default function BranchenPage() {
 
           {/* Mobile Search */}
           <div className="lg:hidden mt-10">
-            <div className="relative">
-              <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+            <div className="relative" role="search">
+              <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" aria-hidden="true" />
               <input
                 type="text"
                 placeholder="Branche suchen... z.B. Arzt, Hotel"
                 value={searchQuery}
                 onChange={(e) => handleSearch(e.target.value)}
                 onKeyDown={handleKeyDown}
+                aria-label="Branche suchen"
                 className="w-full pl-12 pr-10 py-4 rounded-[8px] bg-white font-semibold text-[#012956] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#109387] transition-all"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
+                  aria-label="Suche zurücksetzen"
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
                 >
-                  <X size={18} />
+                  <X size={18} aria-hidden="true" />
                 </button>
               )}
             </div>
             {searchQuery && (
-              <p className="mt-3 text-center text-white/80 font-semibold">
+              <p className="mt-3 text-center text-white/80 font-semibold" aria-live="polite">
                 {filteredBranchen.length} Ergebnis{filteredBranchen.length !== 1 ? 'se' : ''}
               </p>
             )}
@@ -478,37 +483,41 @@ export default function BranchenPage() {
             ? 'translate-y-0 opacity-100'
             : '-translate-y-full opacity-0 pointer-events-none'
         }`}
+        aria-hidden={!showStickySearch}
       >
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="py-3 lg:py-4">
             <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-4">
               {/* Search Input */}
-              <div className="relative flex-1 max-w-xl">
-                <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+              <div className="relative flex-1 max-w-xl" role="search">
+                <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" aria-hidden="true" />
                 <input
                   type="text"
                   placeholder="Branche suchen... z.B. Arzt, Hotel, Werkstatt"
                   value={searchQuery}
                   onChange={(e) => handleSearch(e.target.value)}
                   onKeyDown={handleKeyDown}
+                  aria-label="Branche suchen"
                   className="w-full pl-12 pr-10 py-3 rounded-[6px] border border-gray-200 bg-[#f8f9fa] font-semibold text-[#012956] placeholder:text-gray-400 focus:outline-none focus:border-[#109387] focus:ring-2 focus:ring-[#109387]/20 transition-all"
                 />
                 {searchQuery && (
                   <button
                     onClick={() => setSearchQuery('')}
+                    aria-label="Suche zurücksetzen"
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
                   >
-                    <X size={18} />
+                    <X size={18} aria-hidden="true" />
                   </button>
                 )}
               </div>
 
               {/* Quick Tags - nur Desktop */}
-              <div className="hidden lg:flex items-center gap-2">
+              <div className="hidden lg:flex items-center gap-2" role="group" aria-label="Schnellsuche nach Branche">
                 {['Arztpraxis', 'Hotel', 'Büro', 'Autohaus'].map((term) => (
                   <button
                     key={term}
                     onClick={() => handleSearch(term)}
+                    aria-pressed={searchQuery === term}
                     className={`px-4 py-2 rounded-[6px] font-semibold text-sm whitespace-nowrap transition-all ${
                       searchQuery === term
                         ? 'bg-[#012956] text-white'
@@ -551,11 +560,11 @@ export default function BranchenPage() {
       </div>
 
       {/* Branchen Grid */}
-      <section ref={gridSectionRef} id="branchen-grid" className="py-16 lg:py-28 bg-[#f8f9fa]">
+      <section ref={gridSectionRef} id="branchen-grid" className="py-16 lg:py-28 bg-[#f8f9fa]" aria-labelledby="branchen-grid-title">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-4">
+            <h2 id="branchen-grid-title" className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-4">
               {searchQuery ? 'Suchergebnisse' : 'Alle Branchen im Überblick'}
             </h2>
             <p className="text-lg text-gray-700 font-semibold leading-relaxed max-w-2xl mx-auto">
@@ -568,8 +577,8 @@ export default function BranchenPage() {
 
           {/* Grid oder Keine Ergebnisse */}
           {filteredBranchen.length === 0 ? (
-            <div className="text-center py-16">
-              <div className="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="text-center py-16" role="status" aria-live="polite">
+              <div className="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6" aria-hidden="true">
                 <Search size={32} className="text-gray-400" />
               </div>
               <h3 className="text-2xl font-bold text-[#012956] mb-3">Keine Ergebnisse gefunden</h3>
@@ -584,13 +593,14 @@ export default function BranchenPage() {
               </button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8" role="list" aria-label="Branchen">
               {filteredBranchen.map((branche) => {
                 const IconComponent = branchenIcons[branche.icon] || Building2
                 return (
                   <Link
                     key={branche.id}
                     href={`/branchen/${branche.slug}`}
+                    role="listitem"
                     className="group bg-white rounded-[8px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 active:scale-[0.98]"
                   >
                     {/* Image */}
@@ -610,7 +620,7 @@ export default function BranchenPage() {
                       {/* Icon & Title Container */}
                       <div className="absolute bottom-0 left-0 right-0 p-5">
                         {/* Icon Box */}
-                        <div className="w-14 h-14 bg-[#109387] rounded-[8px] flex items-center justify-center mb-3 shadow-lg transition-all duration-500 group-hover:bg-[#012956]">
+                        <div className="w-14 h-14 bg-[#109387] rounded-[8px] flex items-center justify-center mb-3 shadow-lg transition-all duration-500 group-hover:bg-[#012956]" aria-hidden="true">
                           <IconComponent size={26} strokeWidth={1.5} className="text-white" />
                         </div>
 
@@ -641,6 +651,7 @@ export default function BranchenPage() {
                           size={18}
                           strokeWidth={2}
                           className="text-[#109387] group-hover:translate-x-1 transition-transform duration-300"
+                          aria-hidden="true"
                         />
                       </div>
                     </div>
@@ -660,14 +671,14 @@ export default function BranchenPage() {
       />
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-28 bg-[#012956]">
+      <section className="py-20 lg:py-28 bg-[#012956]" aria-labelledby="branchen-cta-title">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <FadeIn>
             <div className="text-center max-w-3xl mx-auto">
               <p className="text-sm text-gray-400 font-semibold uppercase tracking-wide mb-3">
                 Ihre Branche nicht dabei?
               </p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-6">
+              <h2 id="branchen-cta-title" className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-6">
                 Wir finden die passende
                 <span className="block text-white mt-2">Lösung für Sie</span>
               </h2>
@@ -682,7 +693,7 @@ export default function BranchenPage() {
                   className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group"
                 >
                   Kostenfreie Beratung
-                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </a>
                 <a
                   href="tel:+4987143033460"
