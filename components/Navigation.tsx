@@ -503,7 +503,6 @@ export default function Navigation() {
             }}
             onTouchStart={(e) => e.stopPropagation()}
             onTouchMove={(e) => e.stopPropagation()}
-            role="menu"
             aria-label="Hauptnavigation"
           >
             <div className="pt-6 pb-32 border-t border-gray-100">
@@ -545,13 +544,12 @@ export default function Navigation() {
                     className={`overflow-hidden transition-[max-height,opacity] duration-250 ease-out ${
                       mobileLeistungenOpen ? 'max-h-[1200px] opacity-100' : 'max-h-0 opacity-0'
                     }`}
-                    role="menu"
                   >
                     <div className="px-5 pb-5 space-y-4">
                       {leistungenCategories.map((category) => (
                         <div key={category.id} className="bg-white rounded-[6px] p-4">
                           <div className="flex items-center gap-2 mb-3">
-                            <category.icon size={16} className="text-[#109387]" strokeWidth={2} />
+                            <category.icon size={16} className="text-[#109387]" strokeWidth={2} aria-hidden="true" />
                             <p className="text-[#109387] font-bold text-[14px]">{category.title}</p>
                           </div>
                           <div className="space-y-1">
@@ -561,9 +559,8 @@ export default function Navigation() {
                                 href={service.href}
                                 className="flex items-center gap-2 text-gray-600 text-[15px] py-2.5 px-3 -mx-1 rounded-[6px] font-medium active:bg-[#f8f9fa] active:text-[#109387] touch-manipulation"
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                role="menuitem"
                               >
-                                <ArrowRight size={14} className="text-gray-300" />
+                                <ArrowRight size={14} className="text-gray-300" aria-hidden="true" />
                                 {service.name}
                               </Link>
                             ))}
@@ -574,10 +571,9 @@ export default function Navigation() {
                         href="/leistungen"
                         className="flex items-center justify-center gap-2 w-full text-white font-bold text-[15px] py-3.5 bg-[#109387] rounded-[6px] active:bg-[#0d7d72] touch-manipulation"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        role="menuitem"
                       >
                         Alle Leistungen ansehen
-                        <ArrowRight size={16} strokeWidth={2.5} />
+                        <ArrowRight size={16} strokeWidth={2.5} aria-hidden="true" />
                       </Link>
                     </div>
                   </div>
@@ -617,7 +613,6 @@ export default function Navigation() {
                     className={`overflow-hidden transition-[max-height,opacity] duration-250 ease-out ${
                       mobileBranchenOpen ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
                     }`}
-                    role="menu"
                   >
                     <div className="px-5 pb-5">
                       <div className="bg-white rounded-[6px] p-4 space-y-1">
@@ -629,9 +624,8 @@ export default function Navigation() {
                               href={branche.href}
                               className="flex items-center gap-3 text-gray-600 text-[15px] py-2.5 px-3 -mx-1 rounded-[6px] font-medium active:bg-[#f8f9fa] active:text-[#109387] touch-manipulation"
                               onClick={() => setIsMobileMenuOpen(false)}
-                              role="menuitem"
                             >
-                              <BrancheIcon size={16} className="text-gray-400" />
+                              <BrancheIcon size={16} className="text-gray-400" aria-hidden="true" />
                               {branche.name}
                             </Link>
                           )
@@ -641,10 +635,9 @@ export default function Navigation() {
                         href="/branchen"
                         className="flex items-center justify-center gap-2 w-full text-white font-bold text-[15px] py-3.5 bg-[#109387] rounded-[6px] mt-4 active:bg-[#0d7d72] touch-manipulation"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        role="menuitem"
                       >
                         Alle Branchen ansehen
-                        <ArrowRight size={16} strokeWidth={2.5} />
+                        <ArrowRight size={16} strokeWidth={2.5} aria-hidden="true" />
                       </Link>
                     </div>
                   </div>
@@ -674,7 +667,6 @@ export default function Navigation() {
                     className={`overflow-hidden transition-[max-height,opacity] duration-250 ease-out ${
                       mobileUeberFimiOpen ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0'
                     }`}
-                    role="menu"
                   >
                     <div className="px-5 pb-5">
                       <div className="bg-white rounded-[6px] p-4 space-y-1">
@@ -684,9 +676,8 @@ export default function Navigation() {
                             href={link.href}
                             className="flex items-center gap-2 text-gray-600 text-[15px] py-2.5 px-3 -mx-1 rounded-[6px] font-medium active:bg-[#f8f9fa] active:text-[#109387] touch-manipulation"
                             onClick={() => setIsMobileMenuOpen(false)}
-                            role="menuitem"
                           >
-                            <ArrowRight size={14} className="text-gray-300" />
+                            <ArrowRight size={14} className="text-gray-300" aria-hidden="true" />
                             {link.label}
                           </Link>
                         ))}
@@ -704,7 +695,6 @@ export default function Navigation() {
                     href={link.href}
                     className="flex-1 flex items-center justify-center text-[#012956] font-bold text-[15px] py-4 bg-[#f8f9fa] rounded-[8px] active:bg-gray-200 touch-manipulation"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    role="menuitem"
                   >
                     {link.label}
                   </Link>
@@ -714,24 +704,22 @@ export default function Navigation() {
               {/* CTA Bereich - Premium */}
               <div className="bg-[#012956] rounded-[8px] p-5 space-y-4">
                 <div className="text-center mb-2">
-                  <p className="text-white/70 text-[13px] font-semibold uppercase tracking-wide mb-1">Jetzt Kontakt aufnehmen</p>
+                  <p className="text-white/80 text-[13px] font-semibold uppercase tracking-wide mb-1">Jetzt Kontakt aufnehmen</p>
                   <p className="text-white font-bold text-[18px]">Kostenfreie Beratung</p>
                 </div>
                 <a
                   href="tel:+4987143033460"
                   className="flex items-center justify-center gap-3 w-full text-white py-4 font-bold text-[16px] bg-white/10 rounded-[6px] active:bg-white/20 touch-manipulation"
-                  role="menuitem"
                 >
-                  <Phone size={20} strokeWidth={2} />
+                  <Phone size={20} strokeWidth={2} aria-hidden="true" />
                   <span>0871 430 334 60</span>
                 </a>
                 <button
                   onClick={scrollToContact}
                   className="flex items-center justify-center gap-2 w-full bg-[#109387] active:bg-[#0d7d72] text-white font-bold text-[16px] py-4 rounded-[6px] touch-manipulation"
-                  role="menuitem"
                 >
                   <span>Besichtigung vereinbaren</span>
-                  <ArrowRight size={18} strokeWidth={2.5} />
+                  <ArrowRight size={18} strokeWidth={2.5} aria-hidden="true" />
                 </button>
               </div>
 

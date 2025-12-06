@@ -57,7 +57,7 @@ export default function NeuigkeitenPage() {
           <div className="flex gap-1.5 sm:gap-2 py-3 sm:py-4 overflow-x-auto scrollbar-hide">
             <button
               onClick={() => setActiveCategory('all')}
-              className={`px-3 sm:px-5 py-2 rounded-[6px] font-semibold text-xs sm:text-sm whitespace-nowrap transition-colors cursor-pointer ${
+              className={`min-h-[48px] px-4 sm:px-5 py-3 rounded-[6px] font-semibold text-sm whitespace-nowrap transition-colors cursor-pointer ${
                 activeCategory === 'all'
                   ? 'bg-[#012956] text-white'
                   : 'bg-[#f8f9fa] text-[#012956] hover:bg-[#012956] hover:text-white'
@@ -69,7 +69,7 @@ export default function NeuigkeitenPage() {
               <button
                 key={key}
                 onClick={() => setActiveCategory(key)}
-                className={`px-3 sm:px-5 py-2 rounded-[6px] font-semibold text-xs sm:text-sm whitespace-nowrap transition-colors cursor-pointer ${
+                className={`min-h-[48px] px-4 sm:px-5 py-3 rounded-[6px] font-semibold text-sm whitespace-nowrap transition-colors cursor-pointer ${
                   activeCategory === key
                     ? 'bg-[#012956] text-white'
                     : 'bg-[#f8f9fa] text-[#012956] hover:bg-[#012956] hover:text-white'
