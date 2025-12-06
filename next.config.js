@@ -30,6 +30,17 @@ const nextConfig = {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
 
+  // Redirects für Tippfehler und alte URLs
+  async redirects() {
+    return [
+      {
+        source: '/karri',
+        destination: '/karriere',
+        permanent: true,
+      },
+    ]
+  },
+
   // Headers für Caching und Security
   async headers() {
     // Security Headers für alle Seiten

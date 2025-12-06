@@ -176,7 +176,7 @@ export default function ReferenzenPage() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-white font-bold text-xl mb-2">Alle Branchen</h3>
-                    <p className="text-white/60 font-semibold mb-3">
+                    <p className="text-white/80 font-semibold mb-3">
                       Von Büro & Verwaltung über Industrie bis Gesundheitswesen – wir kennen die Anforderungen Ihrer Branche.
                     </p>
                     <span className="inline-flex items-center gap-2 text-[#109387] font-bold group-hover:gap-3 transition-all">
@@ -198,7 +198,7 @@ export default function ReferenzenPage() {
                   </div>
                   <div className="flex-1">
                     <h3 className="text-white font-bold text-xl mb-2">Alle Leistungen</h3>
-                    <p className="text-white/60 font-semibold mb-3">
+                    <p className="text-white/80 font-semibold mb-3">
                       Unterhaltsreinigung, Industriereinigung, Facility Management und vieles mehr – alles aus einer Hand.
                     </p>
                     <span className="inline-flex items-center gap-2 text-[#109387] font-bold group-hover:gap-3 transition-all">
@@ -218,7 +218,7 @@ export default function ReferenzenPage() {
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="flex flex-col md:flex-row md:items-center gap-4 py-4">
             {/* Filter Buttons - kleiner auf Mobile damit man sieht dass es scrollbar ist */}
-            <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto scrollbar-hide" role="group" aria-label="Projektfilter-Optionen">
+            <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto scrollbar-hide">
               <button
                 onClick={resetFilters}
                 className={`px-3 sm:px-5 py-2 sm:py-2.5 rounded-[6px] font-bold text-sm sm:text-base whitespace-nowrap transition-all ${
@@ -337,14 +337,14 @@ export default function ReferenzenPage() {
                     {/* Image */}
                     <div className="relative aspect-square sm:aspect-[4/3] overflow-hidden">
                       <Image
-                        src={referenz.bilder[0].replace('w=800', 'w=400')}
+                        src={referenz.bilder[0].replace('w=800', 'w=300')}
                         alt={referenz.projektName}
                         fill
-                        sizes="(max-width: 768px) 50vw, 33vw"
+                        sizes="(max-width: 768px) 45vw, 30vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        quality={60}
-                        priority={index < 6}
-                        loading={index < 6 ? undefined : 'lazy'}
+                        quality={50}
+                        priority={index < 3}
+                        loading={index < 3 ? undefined : 'lazy'}
                       />
 
                       {/* Year Badge */}
@@ -376,7 +376,7 @@ export default function ReferenzenPage() {
                       </p>
 
                       {/* Meta Info - nur Desktop */}
-                      <div className="hidden sm:flex items-center gap-4 text-sm text-gray-500 font-semibold">
+                      <div className="hidden sm:flex items-center gap-4 text-sm text-gray-600 font-semibold">
                         <div className="flex items-center gap-1">
                           <MapPin className="w-4 h-4" aria-hidden="true" />
                           <span className="truncate">{referenz.standort}</span>
@@ -394,7 +394,7 @@ export default function ReferenzenPage() {
                           </span>
                         ))}
                         {referenz.leistungen.length > 2 && (
-                          <span className="text-gray-500 text-xs font-semibold px-2.5 py-1">
+                          <span className="text-gray-600 text-xs font-semibold px-2.5 py-1">
                             +{referenz.leistungen.length - 2}
                           </span>
                         )}
@@ -544,7 +544,7 @@ export default function ReferenzenPage() {
                     {/* Meta Grid */}
                     <div className="grid grid-cols-2 gap-3 md:gap-4 mb-6 md:mb-8">
                       <div className="bg-[#f8f9fa] rounded-[6px] p-3 md:p-4">
-                        <div className="flex items-center gap-2 text-gray-500 text-xs md:text-sm font-semibold mb-1">
+                        <div className="flex items-center gap-2 text-gray-600 text-xs md:text-sm font-semibold mb-1">
                           <MapPin className="w-3.5 h-3.5 md:w-4 md:h-4" aria-hidden="true" />
                           Standort
                         </div>
@@ -553,7 +553,7 @@ export default function ReferenzenPage() {
 
                       {selectedReferenz.flaeche && (
                         <div className="bg-[#f8f9fa] rounded-[6px] p-3 md:p-4">
-                          <div className="flex items-center gap-2 text-gray-500 text-xs md:text-sm font-semibold mb-1">
+                          <div className="flex items-center gap-2 text-gray-600 text-xs md:text-sm font-semibold mb-1">
                             <Maximize2 className="w-3.5 h-3.5 md:w-4 md:h-4" aria-hidden="true" />
                             Fläche
                           </div>
@@ -637,7 +637,7 @@ export default function ReferenzenPage() {
               <div className="col-span-2 bg-white/5 border border-white/10 rounded-[6px] p-8">
                 <p className="text-[#109387] text-5xl font-bold mb-2">2h</p>
                 <p className="text-white font-bold text-lg">Antwortzeit</p>
-                <p className="text-white/60 font-semibold">Garantierte Reaktion auf Ihre Anfrage</p>
+                <p className="text-white/80 font-semibold">Garantierte Reaktion auf Ihre Anfrage</p>
               </div>
 
               {/* Kleine Karte unten links */}
@@ -651,7 +651,7 @@ export default function ReferenzenPage() {
               <div className="bg-white/10 border border-white/20 rounded-[6px] p-6">
                 <p className="text-white text-3xl font-bold mb-1">8+</p>
                 <p className="text-white font-bold">Jahre</p>
-                <p className="text-white/60 text-sm font-semibold">Erfahrung in Bayern</p>
+                <p className="text-white/80 text-sm font-semibold">Erfahrung in Bayern</p>
               </div>
             </div>
           </div>
