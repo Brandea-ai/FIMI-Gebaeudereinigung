@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { Home, Phone, ArrowRight, Mail } from 'lucide-react'
 
@@ -46,14 +45,10 @@ export default function NotFound() {
     <section className="relative min-h-screen">
       {/* Background Image - Full Screen, Fully Visible */}
       <div className="absolute inset-0">
-        <Image
+        <img
           src="/images/404-cover.avif"
           alt="Freundliche Reinigungsutensilien"
-          fill
-          priority
-          quality={80}
-          sizes="100vw"
-          className="object-cover"
+          className="w-full h-full object-cover"
         />
       </div>
 
