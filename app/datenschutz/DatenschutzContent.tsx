@@ -264,7 +264,7 @@ Mit freundlichen Gruessen
       <section className="datenschutz-header">
         <div className="datenschutz-header-content">
           <h1 className="datenschutz-header-title">Datenschutzerklaerung</h1>
-          <p className="datenschutz-header-subtitle">der FIMI Gebaeudereinigung GmbH</p>
+          <p className="datenschutz-header-subtitle">der FIMI Gebäudereinigung GmbH i.Gr.</p>
         </div>
       </section>
 
@@ -402,7 +402,7 @@ Mit freundlichen Gruessen
                     <tbody>
                       <tr>
                         <td className="info-table-label">Firma:</td>
-                        <td className="info-table-value"><strong>FIMI Gebaeudereinigung GmbH</strong></td>
+                        <td className="info-table-value"><strong>FIMI Gebäudereinigung GmbH i.Gr.</strong></td>
                       </tr>
                       <tr>
                         <td className="info-table-label">Vertretung:</td>

@@ -117,7 +117,7 @@ export default function HeroSection() {
             {/* Micro-Trust */}
             <p className="mt-4 sm:mt-6 text-white/60 font-semibold text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2">
               <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#109387]" />
-              Unverbindlich & kostenfrei – Angebot innerhalb von 24 Stunden
+              Unverbindlich & kostenfrei – Angebot innerhalb von 48 Stunden
             </p>
           </div>
 

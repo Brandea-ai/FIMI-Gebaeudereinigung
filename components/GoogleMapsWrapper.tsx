@@ -111,7 +111,7 @@ export default function GoogleMapsWrapper({
               className="rounded"
             />
             <div className="text-left">
-              <p className="text-white font-bold">FIMI Gebaeudereinigung GmbH</p>
+              <p className="text-white font-bold">FIMI Gebäudereinigung GmbH i.Gr.</p>
               <p className="text-white/60 text-sm">Kellerstr. 39, 84036 Landshut</p>
             </div>
           </div>

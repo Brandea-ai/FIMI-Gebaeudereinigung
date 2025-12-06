@@ -78,7 +78,7 @@ export default function CTASection() {
               Kostenfreie Erstberatung anfragen
             </h3>
             <p className="text-sm sm:text-base text-gray-600 font-semibold leading-relaxed mb-5 sm:mb-6">
-              Wir melden uns innerhalb von 24 Stunden bei Ihnen, um einen Termin zu vereinbaren.
+              Wir melden uns innerhalb von 2 Stunden bei Ihnen, um einen Termin zu vereinbaren.
             </p>
 
             {/* CTA Button - Kontaktformular */}

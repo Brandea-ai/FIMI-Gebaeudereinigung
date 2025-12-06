@@ -76,7 +76,7 @@ export default function ImpressumContent() {
             Impressum
           </h1>
           <p className="mt-6 text-white/60 font-semibold text-lg max-w-2xl">
-            Rechtliche Informationen zur FIMI Gebäudereinigung GmbH
+            Rechtliche Informationen zur FIMI Gebäudereinigung GmbH i.Gr.
           </p>
         </div>
       </section>
@@ -160,12 +160,12 @@ export default function ImpressumContent() {
                 <div className="space-y-4">
                   <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
                     <div className="text-gray-500 font-bold w-40 flex-shrink-0">Firma</div>
-                    <div className="text-[#012956] font-extrabold text-lg">FIMI Gebäudereinigung GmbH</div>
+                    <div className="text-[#012956] font-extrabold text-lg">FIMI Gebäudereinigung GmbH i.Gr.</div>
                   </div>
 
                   <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
                     <div className="text-gray-500 font-bold w-40 flex-shrink-0">Webseite</div>
-                    <div className="text-[#109387] font-bold">www.fimi-gebaeudereinigung.de</div>
+                    <div className="text-[#109387] font-bold">www.fimi-service.de</div>
                   </div>
 
                   <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
@@ -270,7 +270,7 @@ export default function ImpressumContent() {
 
                   <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
                     <div className="text-gray-500 font-bold w-40 flex-shrink-0">Antwortzeit</div>
-                    <div className="text-[#012956] font-bold">Innerhalb von 24 Stunden</div>
+                    <div className="text-[#012956] font-bold">Innerhalb von 2 Stunden</div>
                   </div>
                 </div>
               </section>
@@ -309,7 +309,7 @@ export default function ImpressumContent() {
                         height={40}
                         className="flex-shrink-0 rounded-[6px]"
                       />
-                      <h3 className="font-extrabold text-[#012956] text-lg leading-tight">FIMI Gebäudereinigung GmbH</h3>
+                      <h3 className="font-extrabold text-[#012956] text-lg leading-tight">FIMI Gebäudereinigung GmbH i.Gr.</h3>
                     </div>
                     <p className="text-gray-600 font-semibold mb-4">
                       Kellerstr. 39<br />

@@ -213,14 +213,14 @@ export default function AGBContent() {
       <section className="agb-header">
         <div className="agb-container">
           <h1 className="agb-header-title">Allgemeine Geschäftsbedingungen & Rechtliche Hinweise</h1>
-          <p className="agb-header-subtitle">der FIMI Gebäudereinigung GmbH</p>
+          <p className="agb-header-subtitle">der FIMI Gebäudereinigung GmbH i.Gr.</p>
         </div>
       </section>
 
       <main className="agb-main">
         <div className="important-notice">
           <strong>Gültigkeitserklärung</strong>
-          <p>Diese Allgemeinen Geschäftsbedingungen gelten für alle Geschäftsbeziehungen zwischen der FIMI Gebäudereinigung GmbH und ihren Kunden. Mit der Beauftragung unserer Reinigungsleistungen erkennen Sie diese Bedingungen an.</p>
+          <p>Diese Allgemeinen Geschäftsbedingungen gelten für alle Geschäftsbeziehungen zwischen der FIMI Gebäudereinigung GmbH i.Gr. und ihren Kunden. Mit der Beauftragung unserer Reinigungsleistungen erkennen Sie diese Bedingungen an.</p>
         </div>
 
         <div className="agb-container">
@@ -263,7 +263,7 @@ export default function AGBContent() {
                 <article id="agb-p1" className="section-tracked">
                   <h3 className="subsection-title">1. Geltungsbereich</h3>
                   <p className="text-body">
-                    (1) Diese Allgemeinen Geschäftsbedingungen (nachfolgend &quot;AGB&quot;) der FIMI Gebäudereinigung GmbH (nachfolgend &quot;FIMI&quot;, &quot;wir&quot; oder &quot;uns&quot;) gelten für sämtliche Angebote, Lieferungen und Leistungen im Bereich der Gebäudereinigung und des Facility Managements.
+                    (1) Diese Allgemeinen Geschäftsbedingungen (nachfolgend &quot;AGB&quot;) der FIMI Gebäudereinigung GmbH i.Gr. (nachfolgend &quot;FIMI&quot;, &quot;wir&quot; oder &quot;uns&quot;) gelten für sämtliche Angebote, Lieferungen und Leistungen im Bereich der Gebäudereinigung und des Facility Managements.
                   </p>
 
                   <div className="info-box">
@@ -475,7 +475,7 @@ export default function AGBContent() {
 
                   <p className="text-body">
                     (3) Nähere Informationen finden Sie in unserer Datenschutzerklärung unter{' '}
-                    <a href="/datenschutz" className="text-link">fimi-reinigung.ch/datenschutz</a>.
+                    <a href="/datenschutz" className="text-link">fimi-service.de/datenschutz</a>.
                   </p>
                 </article>
 
@@ -556,7 +556,7 @@ export default function AGBContent() {
                 <article id="handelsregister" className="section-tracked">
                   <h3 className="subsection-title">Handelsregistereintragung</h3>
                   <p className="text-body">
-                    Die FIMI Gebäudereinigung GmbH befindet sich derzeit im Gründungsprozess. Die Eintragung in das Handelsregister beim Amtsgericht Landshut ist für <strong>Januar 2026</strong> vorgesehen.
+                    Die FIMI Gebäudereinigung GmbH i.Gr. befindet sich derzeit im Gründungsprozess. Die Eintragung in das Handelsregister beim Amtsgericht Landshut ist für <strong>Januar 2026</strong> vorgesehen.
                   </p>
 
                   <div className="info-box">

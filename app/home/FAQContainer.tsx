@@ -8,7 +8,7 @@ import FadeIn from '@/components/FadeIn'
 const faqs = [
   {
     frage: 'Wie schnell können Sie mit der Reinigung beginnen?',
-    antwort: 'Nach der kostenlosen Besichtigung erstellen wir Ihnen innerhalb von 24 Stunden ein Angebot. Bei Zusage können wir in der Regel innerhalb einer Woche starten. Bei dringenden Anfragen bieten wir auch einen Notfallservice mit Reaktionszeit von 2 Stunden.',
+    antwort: 'Nach der kostenlosen Besichtigung erstellen wir Ihnen innerhalb von 48 Stunden ein Angebot. Bei Zusage können wir in der Regel innerhalb einer Woche starten. Bei dringenden Anfragen bieten wir auch einen Notfallservice mit Reaktionszeit von 2 Stunden.',
   },
   {
     frage: 'Arbeiten immer dieselben Reinigungskräfte in meinem Gebäude?',

@@ -29,7 +29,7 @@ export function BrancheCTA({ branche }: BrancheCTAProps) {
             </div>
             <div className="flex items-center justify-center gap-2">
               <CheckCircle size={18} className="text-[#109387] sm:w-5 sm:h-5" />
-              <span className="text-white font-semibold text-sm sm:text-base">Rückmeldung in 24h</span>
+              <span className="text-white font-semibold text-sm sm:text-base">Rückmeldung in 2h</span>
             </div>
             <div className="flex items-center justify-center gap-2">
               <CheckCircle size={18} className="text-[#109387] sm:w-5 sm:h-5" />

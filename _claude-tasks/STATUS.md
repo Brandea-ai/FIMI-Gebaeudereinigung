@@ -2,7 +2,7 @@
 
 **Quelle:** FIMI_Website_TODOs.md (HEILIGER GRAL - alle Tasks basieren darauf!)
 **Stand:** 2025-12-06
-**Letzter Report:** R0003
+**Letzter Report:** R0004
 **Aktueller Sprint:** Sprint 1 (P0 - Go-Live-Blocker)
 
 ---
@@ -25,13 +25,13 @@
 | 1 | NAP konsistent (Name/Adresse/Telefon/E-Mail) - Single Source of Truth | [X] | R0003 | Site-weit nur eine Telefonnummer/E-Mail/Adresse |
 | 2 | "Trusted by / Logos / grosse Kunden" komplett entfernen (bis Freigaben da) | [X] | R0001 | Keine Logos, keine Grosskundennamen |
 | 3 | ISO-Claims vollstandig entfernen (bis zertifiziert) | [X] | R0001 | Site-Suche nach "ISO" = 0 Treffer |
-| 4 | Unfertige Inhalte entfernen (z.B. "Beschreibung folgt") | [ ] | - | Keine Placeholder-Texte im Frontend |
+| 4 | Unfertige Inhalte entfernen (z.B. "Beschreibung folgt") | [X] | R0003 | Keine Placeholder-Texte im Frontend |
 | 5 | Sonderleistungen/Personaldienstleistungen: Positionierung fix (AUG-Risiko) | [X] | R0002 | Keine "Personaldienstleistungen" ohne rechtliche Basis |
-| 6 | SLAs & Versprechen vereinheitlichen (z.B. "2h" vs "24h") | [ ] | - | Jede CTA-Sektion nutzt denselben SLA-Text |
-| 7 | Rechtliches auditieren: Impressum, Datenschutz, AGB | [ ] | - | Checkliste abgehakt (Anhang B) |
-| 8 | Consent/Tracking: nichts tracken vor Zustimmung | [ ] | - | Vor Consent keine Tracking-Requests |
-| 9 | Kontaktformulare: Validiere sauber + klare Success-UX | [ ] | - | Formular-Flow getestet (Mobile/Desktop) |
-| 10 | Spam-Schutz (ohne UX zu zerstoren) | [ ] | - | Spam-Tests werden geblockt, echte User nicht |
+| 6 | SLAs & Versprechen vereinheitlichen (z.B. "2h" vs "24h") | [X] | R0004 | Jede CTA-Sektion nutzt denselben SLA-Text |
+| 7 | Rechtliches auditieren: Impressum, Datenschutz, AGB | [X] | R0004 | Checkliste abgehakt (Anhang B) |
+| 8 | Consent/Tracking: nichts tracken vor Zustimmung | [X] | R0004 | Vor Consent keine Tracking-Requests |
+| 9 | Kontaktformulare: Validiere sauber + klare Success-UX | [X] | R0004 | Formular-Flow getestet (Mobile/Desktop) |
+| 10 | Spam-Schutz (ohne UX zu zerstoren) | [X] | R0004 | Spam-Tests werden geblockt, echte User nicht |
 | 11 | HTML-Sitemap/Navigation: Vollstandigkeit & keine toten Links | [ ] | - | Kein 404 aus Sitemap |
 | 12 | XML-Sitemap + robots.txt + Search Console Setup | [ ] | - | Search Console zeigt Sitemap "Success" |
 | 13 | Canonicals pro Seite | [ ] | - | Crawl zeigt korrektes rel=canonical |
@@ -43,7 +43,7 @@
 | 19 | Doppelte DOM-Inhalte durch Slider/Marquee korrigieren | [ ] | - | Screenreader liest keine doppelten Listen |
 | 20 | Core Web Vitals absichern (LCP/INP/CLS) | [ ] | - | Lighthouse Performance > 85 |
 
-**Sprint 1 Fortschritt:** 4/20 (20%)
+**Sprint 1 Fortschritt:** 10/20 (50%)
 
 ---
 
@@ -114,10 +114,10 @@
 
 | Sprint | Tasks | Erledigt | Prozent |
 |--------|-------|----------|---------|
-| P0 | 20 | 4 | 20% |
+| P0 | 20 | 10 | 50% |
 | P1 | 30 | 0 | 0% |
 | P2 | 15 | 0 | 0% |
-| **TOTAL** | **65** | **4** | **6%** |
+| **TOTAL** | **65** | **10** | **15%** |
 
 ---
 
@@ -130,3 +130,5 @@
 | 2025-12-05 | R0002 | D3: Referenzen → Projekte (50 Einträge anonymisiert, Nav geändert) |
 | 2025-12-06 | R0002 | D4: Sonderleistungen → Event-Reinigung (AUG-Risiko beseitigt, 6 Dateien) |
 | 2025-12-06 | R0003 | P0-01: NAP konsistent - Telefonnummer vereinheitlicht (10 Dateien, 19 Ersetzungen) |
+| 2025-12-06 | R0003 | P0-04: Placeholder entfernt - 11 unbenutzte Dateien gelöscht |
+| 2025-12-06 | R0004 | P0-06 bis P0-10: SLAs, Rechtliches, Consent, Formular, Spam-Schutz + Re-Audit P0-07 (9 Dateien, Lieferanten-Disclaimer) |

@@ -30,7 +30,7 @@ export default function BueroreinigungProcess() {
       number: '3',
       title: 'Individuelles Angebot',
       description: 'Sie erhalten ein transparentes Festpreis-Angebot ohne versteckte Kosten. Nach Ihrer Zustimmung erstellen wir den Reinigungsplan.',
-      duration: '24 Stunden'
+      duration: '48 Stunden'
     },
     {
       icon: Sparkles,
@@ -104,7 +104,7 @@ export default function BueroreinigungProcess() {
           </h3>
 
           <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
-            Fordern Sie jetzt Ihr kostenloses und unverbindliches Angebot an. Innerhalb von 24 Stunden erhalten Sie einen detaillierten Kostenvoranschlag.
+            Fordern Sie jetzt Ihr kostenloses und unverbindliches Angebot an. Innerhalb von 48 Stunden erhalten Sie einen detaillierten Kostenvoranschlag.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

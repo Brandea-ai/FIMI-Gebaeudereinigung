@@ -83,7 +83,7 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
                         </td>
                         <td style="vertical-align: top;">
                           <p style="margin: 0; color: #012956; font-size: 15px; font-weight: 600;">Wir prüfen Ihre Anfrage</p>
-                          <p style="margin: 5px 0 0; color: #666; font-size: 14px;">Innerhalb von 24 Stunden</p>
+                          <p style="margin: 5px 0 0; color: #666; font-size: 14px;">Innerhalb von 2 Stunden</p>
                         </td>
                       </tr>
                     </table>

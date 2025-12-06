@@ -23,7 +23,7 @@ const processSteps = [
     icon: FileText,
     title: 'Angebot',
     description: 'Sie erhalten ein detailliertes Festpreisangebot – transparent, ohne versteckte Kosten, inklusive aller vereinbarten Leistungen.',
-    time: '24 Stunden',
+    time: '48 Stunden',
   },
   {
     number: '04',

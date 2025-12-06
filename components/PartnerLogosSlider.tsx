@@ -280,6 +280,13 @@ export default function PartnerLogosSlider({
           </div>
         </div>
       )}
+
+      {/* Rechtlicher Hinweis zu Marken */}
+      <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 mt-6 lg:mt-8">
+        <p className="text-xs text-gray-400 text-center leading-relaxed max-w-4xl mx-auto">
+          Hinweis: Die aufgeführten Marken und Hersteller dienen ausschließlich der Information über von uns eingesetzte oder potenziell einsetzbare Produkte und Geräte. Es besteht keine Geschäftspartnerschaft, Kooperation oder Exklusivvereinbarung mit den genannten Unternehmen. Der Einsatz erfolgt projektbezogen je nach Anforderung und Verfügbarkeit.
+        </p>
+      </div>
     </section>
   )
 }
