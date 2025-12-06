@@ -43,7 +43,7 @@ export default function NeuigkeitenPage() {
             <h1 id="hero-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-4 sm:mb-6">
               Neuigkeiten
             </h1>
-            <p className="text-white/80 font-semibold text-base sm:text-lg max-w-2xl">
+            <p className="text-white/90 font-semibold text-base sm:text-lg max-w-2xl">
               Aktuelles aus der Welt der professionellen Gebäudereinigung.
               Tipps, Projekte und Einblicke hinter die Kulissen.
             </p>
@@ -93,13 +93,13 @@ export default function NeuigkeitenPage() {
               {/* Image */}
               <div className="relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/3] rounded-[6px] overflow-hidden mb-4 sm:mb-6 lg:mb-0">
                 <Image
-                  src={featuredPost.image.replace('w=800', 'w=600')}
+                  src={featuredPost.image.replace('w=800', 'w=480')}
                   alt={featuredPost.title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   priority
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  quality={75}
+                  quality={60}
                 />
                 <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
                   <span
@@ -214,7 +214,7 @@ export default function NeuigkeitenPage() {
             <h2 id="newsletter-heading" className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-3 sm:mb-4">
               Keine Neuigkeit verpassen
             </h2>
-            <p className="text-white/80 font-semibold text-sm sm:text-base mb-6 sm:mb-8 max-w-xl mx-auto">
+            <p className="text-white/90 font-semibold text-sm sm:text-base mb-6 sm:mb-8 max-w-xl mx-auto">
               Erhalten Sie regelmäßig Tipps und Neuigkeiten rund um professionelle Gebäudereinigung.
             </p>
             <a
