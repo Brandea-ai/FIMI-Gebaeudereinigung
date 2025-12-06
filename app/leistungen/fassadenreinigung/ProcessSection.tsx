@@ -72,7 +72,7 @@ export default function ProcessSection() {
               {/* Icon + Content horizontal layout */}
               <div className="flex items-start gap-3 sm:gap-4">
                 {/* Icon - Outlined Style with 6px corners */}
-                <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-[6px] border-2 border-[#109387] group-hover:bg-[#109387] flex items-center justify-center flex-shrink-0 transition-all duration-300">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 rounded-[6px] border-2 border-[#109387] group-hover:bg-[#109387] flex items-center justify-center flex-shrink-0 transition-all duration-300" aria-hidden="true">
                   <step.icon className="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
                 </div>
 
@@ -87,7 +87,7 @@ export default function ProcessSection() {
 
                   {/* Time Badge */}
                   <div className="inline-flex items-center bg-[#f8f9fa] rounded-[6px] px-2 sm:px-2.5 py-1">
-                    <span className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wide">
+                    <span className="text-[10px] sm:text-xs font-bold text-gray-600 uppercase tracking-wide">
                       Dauer: {step.time}
                     </span>
                   </div>
@@ -108,7 +108,7 @@ export default function ProcessSection() {
             </p>
             <div className="inline-flex items-center justify-center gap-2 bg-[#109387] group-hover:bg-white text-white group-hover:text-[#012956] font-bold px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-[6px] transition-colors whitespace-nowrap flex-shrink-0 text-sm sm:text-base">
               Jetzt Schritt 1 starten
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </div>
           </div>
         </a>

@@ -50,7 +50,7 @@ export default function FAQSection() {
 
           {/* Sticky Sidebar - wie Startseite */}
           <aside className="lg:sticky lg:top-24 lg:self-start">
-            <span className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3 block">
+            <span className="text-sm text-gray-600 font-semibold uppercase tracking-wide mb-3 block">
               Häufige Fragen
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-tight mb-4 sm:mb-6">
@@ -67,7 +67,7 @@ export default function FAQSection() {
               className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-[6px] transition-all duration-300 group w-full"
             >
               Kostenfreie Besichtigung
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </a>
 
             {/* Kontakt-Info */}
@@ -75,7 +75,7 @@ export default function FAQSection() {
               href="tel:+4987143033460"
               className="mt-6 sm:mt-8 bg-white border-2 border-[#012956] hover:bg-[#012956] rounded-[6px] p-4 sm:p-6 block transition-all duration-300 group"
             >
-              <p className="text-sm text-gray-500 group-hover:text-white/70 font-semibold mb-2 transition-colors">
+              <p className="text-sm text-gray-600 group-hover:text-white/80 font-semibold mb-2 transition-colors">
                 Lieber persönlich sprechen?
               </p>
               <span className="text-lg sm:text-xl font-bold text-[#012956] group-hover:text-white transition-colors">
@@ -95,14 +95,16 @@ export default function FAQSection() {
           </aside>
 
           {/* Rechte Seite - FAQ Akkordeon */}
-          <div className="space-y-3 sm:space-y-4">
+          <div className="space-y-3 sm:space-y-4" role="list" aria-label="Häufig gestellte Fragen">
             {faqs.map((faq, index) => (
               <div
                 key={index}
                 className="bg-white rounded-[6px] shadow-sm overflow-hidden"
+                role="listitem"
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                  aria-expanded={openIndex === index}
                   className="w-full flex items-center justify-between p-4 sm:p-5 lg:p-6 text-left hover:bg-gray-50 transition-colors"
                 >
                   <span className="text-[#012956] font-bold text-sm sm:text-base lg:text-lg pr-4">
@@ -112,6 +114,7 @@ export default function FAQSection() {
                     className={`w-5 h-5 lg:w-6 lg:h-6 text-[#109387] flex-shrink-0 transition-transform ${
                       openIndex === index ? 'rotate-180' : ''
                     }`}
+                    aria-hidden="true"
                   />
                 </button>
                 <div

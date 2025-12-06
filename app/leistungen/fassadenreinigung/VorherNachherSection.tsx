@@ -119,6 +119,7 @@ export default function VorherNachherSection() {
               <div
                 className="absolute top-0 bottom-0 w-1 bg-white shadow-lg cursor-ew-resize"
                 style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
+                aria-hidden="true"
               >
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-[6px] shadow-xl flex items-center justify-center">
                   <ChevronLeft className="w-4 h-4 text-[#012956] -mr-1" />
@@ -139,37 +140,47 @@ export default function VorherNachherSection() {
             <div className="flex items-center justify-between mt-4 bg-[#f8f9fa] rounded-[6px] p-3 sm:p-4">
               <button
                 onClick={() => goTo(activeIndex - 1)}
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-[6px] border-2 border-[#012956] flex items-center justify-center hover:bg-[#012956] hover:text-white text-[#012956] transition-all"
+                aria-label="Vorheriges Beispiel"
+                className="w-11 h-11 sm:w-12 sm:h-12 rounded-[6px] border-2 border-[#012956] flex items-center justify-center hover:bg-[#012956] hover:text-white text-[#012956] transition-all"
               >
-                <ChevronLeft className="w-5 h-5" />
+                <ChevronLeft className="w-5 h-5" aria-hidden="true" />
               </button>
 
               <div className="text-center">
                 <div className="text-[#012956] font-bold text-sm sm:text-base">{beispiel.typ}</div>
-                <div className="text-gray-500 font-semibold text-xs sm:text-sm">{beispiel.beschreibung}</div>
+                <div className="text-gray-600 font-semibold text-xs sm:text-sm">{beispiel.beschreibung}</div>
               </div>
 
               <button
                 onClick={() => goTo(activeIndex + 1)}
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-[6px] border-2 border-[#012956] flex items-center justify-center hover:bg-[#012956] hover:text-white text-[#012956] transition-all"
+                aria-label="Nächstes Beispiel"
+                className="w-11 h-11 sm:w-12 sm:h-12 rounded-[6px] border-2 border-[#012956] flex items-center justify-center hover:bg-[#012956] hover:text-white text-[#012956] transition-all"
               >
-                <ChevronRight className="w-5 h-5" />
+                <ChevronRight className="w-5 h-5" aria-hidden="true" />
               </button>
             </div>
 
             {/* Dots */}
-            <div className="flex items-center justify-center gap-2 mt-3">
+            <div className="flex items-center justify-center gap-3 mt-3" role="tablist" aria-label="Beispiel-Navigation">
               {beispiele.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goTo(index)}
-                  className={`h-2 rounded-full transition-all ${
+                  role="tab"
+                  aria-selected={index === activeIndex}
+                  aria-label={`Beispiel ${index + 1}: ${beispiele[index].typ}`}
+                  className={`min-w-[44px] min-h-[44px] flex items-center justify-center transition-all ${
                     index === activeIndex
-                      ? 'bg-[#109387] w-6'
-                      : 'bg-gray-300 hover:bg-gray-400 w-2'
+                      ? ''
+                      : ''
                   }`}
-                  aria-label={`Beispiel ${index + 1}`}
-                />
+                >
+                  <span className={`h-2.5 rounded-full transition-all ${
+                    index === activeIndex
+                      ? 'bg-[#109387] w-7'
+                      : 'bg-gray-300 hover:bg-gray-400 w-2.5'
+                  }`} aria-hidden="true" />
+                </button>
               ))}
             </div>
           </div>
@@ -179,7 +190,7 @@ export default function VorherNachherSection() {
             <div className="bg-[#f8f9fa] rounded-[6px] p-5 sm:p-6 lg:p-8 flex-1">
               {/* Icon + Headline */}
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-[6px] bg-[#109387]/10 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-[6px] bg-[#109387]/10 flex items-center justify-center" aria-hidden="true">
                   <Sparkles className="w-6 h-6 text-[#109387]" />
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-[#012956]">
@@ -193,10 +204,10 @@ export default function VorherNachherSection() {
               </p>
 
               {/* Vorteile Liste */}
-              <div className="space-y-3 mb-6">
+              <div className="space-y-3 mb-6" role="list" aria-label="Vorteile der Fassadenreinigung">
                 {seoContent.vorteile.map((vorteil, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-[4px] bg-[#109387] flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div key={index} className="flex items-start gap-3" role="listitem">
+                    <div className="w-5 h-5 rounded-[4px] bg-[#109387] flex items-center justify-center flex-shrink-0 mt-0.5" aria-hidden="true">
                       <Check className="w-3 h-3 text-white" strokeWidth={3} />
                     </div>
                     <span className="text-gray-700 font-semibold text-sm">{vorteil}</span>
@@ -210,7 +221,7 @@ export default function VorherNachherSection() {
                 className="flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-6 py-3 rounded-[6px] transition-colors group w-full"
               >
                 {seoContent.cta}
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </a>
             </div>
           </div>
