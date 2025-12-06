@@ -415,6 +415,8 @@ export default function LeistungenPage() {
                         src={leistung.image}
                         alt={leistung.name}
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        loading="lazy"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#012956]/80 via-transparent to-transparent" />
@@ -488,7 +490,7 @@ export default function LeistungenPage() {
             {/* Content */}
             <FadeIn direction="left" className="order-2 lg:order-1">
               <div>
-                <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3">
+                <p className="text-sm text-gray-600 font-semibold uppercase tracking-wide mb-3">
                   Warum FIMI
                 </p>
                 <h2 id="warum-fimi-title" className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-6">
@@ -525,6 +527,8 @@ export default function LeistungenPage() {
                   src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop"
                   alt="FIMI Team bei der Arbeit"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="lazy"
                   className="object-cover"
                 />
               </div>
@@ -545,7 +549,7 @@ export default function LeistungenPage() {
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <FadeIn>
             <div className="text-center max-w-3xl mx-auto">
-              <p className="text-sm text-gray-400 font-semibold uppercase tracking-wide mb-3">
+              <p className="text-sm text-gray-300 font-semibold uppercase tracking-wide mb-3">
                 Jetzt starten
               </p>
               <h2 id="leistungen-cta-title" className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-6">
