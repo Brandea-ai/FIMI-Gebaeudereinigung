@@ -2,8 +2,8 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Sitemap',
-  description: 'Übersicht aller Seiten von FIMI Gebäudereinigung',
+  title: 'Sitemap - Alle Seiten im Überblick | FIMI',
+  description: 'Übersicht aller Seiten von FIMI Gebäudereinigung - Leistungen, Branchen, Kontakt und mehr.',
 }
 
 const sitemapData = {
@@ -11,7 +11,7 @@ const sitemapData = {
     { name: 'Startseite', href: '/' },
     { name: 'Über FIMI', href: '/ueber-uns' },
     { name: 'Karriere', href: '/karriere' },
-    { name: 'Referenzen', href: '/referenzen' },
+    { name: 'Projekte', href: '/referenzen' },
     { name: 'Neuigkeiten', href: '/neuigkeiten' },
     { name: 'Kontakt', href: '/kontakt' },
   ],
@@ -32,6 +32,8 @@ const sitemapData = {
     { name: 'Sonderreinigung', href: '/leistungen/sonderreinigung' },
     { name: 'Tiefgaragenreinigung', href: '/leistungen/tiefgaragenreinigung' },
     { name: 'Parkplatzreinigung', href: '/leistungen/parkplatzreinigung' },
+    { name: 'Sonderleistungen', href: '/leistungen/sonderleistungen' },
+    { name: 'Beschaffungsmanagement', href: '/leistungen/beschaffungsmanagement' },
   ],
   branchen: [
     { name: 'Alle Branchen', href: '/branchen', isMain: true },

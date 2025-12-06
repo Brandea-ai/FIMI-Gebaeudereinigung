@@ -2,7 +2,7 @@
 
 **Quelle:** FIMI_Website_TODOs.md (HEILIGER GRAL - alle Tasks basieren darauf!)
 **Stand:** 2025-12-06
-**Letzter Report:** R0004
+**Letzter Report:** R0005
 **Aktueller Sprint:** Sprint 1 (P0 - Go-Live-Blocker)
 
 ---
@@ -32,10 +32,10 @@
 | 8 | Consent/Tracking: nichts tracken vor Zustimmung | [X] | R0004 | Vor Consent keine Tracking-Requests |
 | 9 | Kontaktformulare: Validiere sauber + klare Success-UX | [X] | R0004 | Formular-Flow getestet (Mobile/Desktop) |
 | 10 | Spam-Schutz (ohne UX zu zerstoren) | [X] | R0004 | Spam-Tests werden geblockt, echte User nicht |
-| 11 | HTML-Sitemap/Navigation: Vollstandigkeit & keine toten Links | [ ] | - | Kein 404 aus Sitemap |
-| 12 | XML-Sitemap + robots.txt + Search Console Setup | [ ] | - | Search Console zeigt Sitemap "Success" |
-| 13 | Canonicals pro Seite | [ ] | - | Crawl zeigt korrektes rel=canonical |
-| 14 | Title/Meta unique je Seite (kein generisches Pattern) | [ ] | - | 0 doppelte Titles |
+| 11 | HTML-Sitemap/Navigation: Vollstandigkeit & keine toten Links | [X] | R0005 | Kein 404 aus Sitemap |
+| 12 | XML-Sitemap + robots.txt + Search Console Setup | [X] | R0005 | Technisch fertig, SC manuell |
+| 13 | Canonicals pro Seite | [X] | R0005 | metadataBase gesetzt, auto-canonicals |
+| 14 | Title/Meta unique je Seite (kein generisches Pattern) | [X] | R0005 | 0 doppelte Titles |
 | 15 | OG/Twitter + Favicons | [ ] | - | Social share preview sieht sauber aus |
 | 16 | 404/500 UX + Logging | [ ] | - | 404 Seite mit funktionierender Navigation |
 | 17 | Security-Headers Basis | [ ] | - | Securityheaders-Check grun |
@@ -43,7 +43,7 @@
 | 19 | Doppelte DOM-Inhalte durch Slider/Marquee korrigieren | [ ] | - | Screenreader liest keine doppelten Listen |
 | 20 | Core Web Vitals absichern (LCP/INP/CLS) | [ ] | - | Lighthouse Performance > 85 |
 
-**Sprint 1 Fortschritt:** 10/20 (50%)
+**Sprint 1 Fortschritt:** 12/20 (60%)
 
 ---
 
@@ -114,10 +114,10 @@
 
 | Sprint | Tasks | Erledigt | Prozent |
 |--------|-------|----------|---------|
-| P0 | 20 | 10 | 50% |
+| P0 | 20 | 12 | 60% |
 | P1 | 30 | 0 | 0% |
 | P2 | 15 | 0 | 0% |
-| **TOTAL** | **65** | **10** | **15%** |
+| **TOTAL** | **65** | **12** | **18%** |
 
 ---
 
@@ -132,3 +132,7 @@
 | 2025-12-06 | R0003 | P0-01: NAP konsistent - Telefonnummer vereinheitlicht (10 Dateien, 19 Ersetzungen) |
 | 2025-12-06 | R0003 | P0-04: Placeholder entfernt - 11 unbenutzte Dateien gelöscht |
 | 2025-12-06 | R0004 | P0-06 bis P0-10: SLAs, Rechtliches, Consent, Formular, Spam-Schutz + Re-Audit P0-07 (9 Dateien, Lieferanten-Disclaimer) |
+| 2025-12-06 | R0005 | P0-11: HTML-Sitemap vollständig (2 Leistungen ergänzt, Referenzen → Projekte) |
+| 2025-12-06 | R0005 | P0-12: XML-Sitemap + robots.txt bereits korrekt |
+| 2025-12-06 | R0005 | P0-13: Canonicals via metadataBase bereits korrekt |
+| 2025-12-06 | R0005 | P0-14: Title/Meta unique - 4 layout.tsx erstellt, 2 Titles verbessert |
