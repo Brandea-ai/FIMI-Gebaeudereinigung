@@ -493,9 +493,9 @@ function JobModal({ job, onClose }: JobModalProps) {
   if (!job) return null
 
   return (
-    <div className="fixed inset-0 z-50 lg:hidden">
+    <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true" aria-labelledby="job-modal-title">
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/50" onClick={onClose} />
+      <div className="absolute inset-0 bg-black/50" onClick={onClose} aria-hidden="true" />
 
       {/* Modal Content */}
       <div className="absolute inset-0 bg-white overflow-y-auto">
@@ -516,7 +516,7 @@ function JobModal({ job, onClose }: JobModalProps) {
               {job.bereich}
             </span>
           </div>
-          <h2 className="text-xl font-bold text-[#012956]">{job.titel}</h2>
+          <h2 id="job-modal-title" className="text-xl font-bold text-[#012956]">{job.titel}</h2>
         </div>
 
         {/* Content */}
@@ -524,15 +524,15 @@ function JobModal({ job, onClose }: JobModalProps) {
           {/* Meta Info */}
           <div className="space-y-3 mb-6">
             <div className="flex items-center gap-2 text-gray-600">
-              <MapPin size={18} className="text-[#109387]" />
+              <MapPin size={18} className="text-[#109387]" aria-hidden="true" />
               <span className="font-medium">{job.standorte.join(', ')}</span>
             </div>
             <div className="flex items-center gap-2 text-gray-600">
-              <Clock size={18} className="text-[#109387]" />
+              <Clock size={18} className="text-[#109387]" aria-hidden="true" />
               <span className="font-medium">{job.arbeitszeit}</span>
             </div>
             <div className="flex items-center gap-2 text-gray-600">
-              <Euro size={18} className="text-[#109387]" />
+              <Euro size={18} className="text-[#109387]" aria-hidden="true" />
               <span className="font-medium">{job.gehalt}</span>
             </div>
             <div className="flex items-center gap-2 text-gray-500 text-sm">
@@ -547,13 +547,13 @@ function JobModal({ job, onClose }: JobModalProps) {
           {/* Aufgaben */}
           <div className="mb-6">
             <h3 className="font-bold text-[#012956] mb-3 flex items-center gap-2">
-              <Briefcase size={18} className="text-[#109387]" />
+              <Briefcase size={18} className="text-[#109387]" aria-hidden="true" />
               Ihre Aufgaben
             </h3>
             <ul className="space-y-2">
               {job.aufgaben.map((aufgabe, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                  <CheckCircle2 size={16} className="text-[#109387] shrink-0 mt-0.5" />
+                  <CheckCircle2 size={16} className="text-[#109387] shrink-0 mt-0.5" aria-hidden="true" />
                   <span>{aufgabe}</span>
                 </li>
               ))}
@@ -563,13 +563,13 @@ function JobModal({ job, onClose }: JobModalProps) {
           {/* Anforderungen */}
           <div className="mb-6">
             <h3 className="font-bold text-[#012956] mb-3 flex items-center gap-2">
-              <Star size={18} className="text-[#109387]" />
+              <Star size={18} className="text-[#109387]" aria-hidden="true" />
               Ihr Profil
             </h3>
             <ul className="space-y-2">
               {job.anforderungen.map((anforderung, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                  <CheckCircle2 size={16} className="text-[#109387] shrink-0 mt-0.5" />
+                  <CheckCircle2 size={16} className="text-[#109387] shrink-0 mt-0.5" aria-hidden="true" />
                   <span>{anforderung}</span>
                 </li>
               ))}
@@ -579,7 +579,7 @@ function JobModal({ job, onClose }: JobModalProps) {
           {/* Benefits */}
           <div className="mb-6">
             <h3 className="font-bold text-[#012956] mb-3 flex items-center gap-2">
-              <Heart size={18} className="text-[#109387]" />
+              <Heart size={18} className="text-[#109387]" aria-hidden="true" />
               Das bieten wir
             </h3>
             <div className="flex flex-wrap gap-2">
@@ -640,6 +640,7 @@ function MobileJobCard({ job, onClick }: MobileJobCardProps) {
     <button
       onClick={onClick}
       className="w-full text-left bg-white border border-gray-200 rounded-[6px] p-4 hover:border-[#109387]/50 hover:shadow-md transition-all"
+      aria-label={`${job.titel} - ${job.standorte.join(', ')} - ${job.gehalt}`}
     >
       {/* Tags */}
       <div className="flex items-center gap-2 mb-2">
@@ -664,15 +665,15 @@ function MobileJobCard({ job, onClick }: MobileJobCardProps) {
       {/* Key Facts */}
       <div className="space-y-2 mb-3">
         <div className="flex items-center gap-2 text-sm text-gray-600">
-          <MapPin size={14} className="text-[#109387] shrink-0" />
+          <MapPin size={14} className="text-[#109387] shrink-0" aria-hidden="true" />
           <span>{job.standorte.join(', ')}</span>
         </div>
         <div className="flex items-center gap-2 text-sm text-gray-600">
-          <Euro size={14} className="text-[#109387] shrink-0" />
+          <Euro size={14} className="text-[#109387] shrink-0" aria-hidden="true" />
           <span className="font-semibold text-[#012956]">{job.gehalt}</span>
         </div>
         <div className="flex items-center gap-2 text-sm text-gray-600">
-          <Clock size={14} className="text-[#109387] shrink-0" />
+          <Clock size={14} className="text-[#109387] shrink-0" aria-hidden="true" />
           <span>{job.arbeitszeit}</span>
         </div>
       </div>
@@ -768,7 +769,7 @@ export default function KarrierePage() {
       {/* ================================================================== */}
       {/* HERO SECTION */}
       {/* ================================================================== */}
-      <section id="hero" className="relative py-16 lg:py-28 bg-[#012956] overflow-hidden">
+      <section id="hero" className="relative py-16 lg:py-28 bg-[#012956] overflow-hidden" aria-labelledby="karriere-hero-heading">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#109387]/10 to-transparent" />
           <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-gradient-to-t from-[#109387]/5 to-transparent" />
@@ -788,7 +789,7 @@ export default function KarrierePage() {
               Karriere bei FIMI
             </p>
 
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-4 lg:mb-6">
+            <h1 id="karriere-hero-heading" className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-4 lg:mb-6">
               Ihre Karriere in der
               <span className="block text-[#109387]">Gebäudereinigung</span>
             </h1>
@@ -821,13 +822,13 @@ export default function KarrierePage() {
       {/* ================================================================== */}
       {/* STELLENANGEBOTE */}
       {/* ================================================================== */}
-      <section id="stellenangebote" className="py-12 lg:py-24 bg-white scroll-mt-24">
+      <section id="stellenangebote" className="py-12 lg:py-24 bg-white scroll-mt-24" aria-labelledby="stellenangebote-heading">
         <div className="w-full max-w-[1800px] mx-auto px-4 lg:px-12 xl:px-20">
           <div className="mb-8 lg:mb-12">
             <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-2 lg:mb-3">
               Aktuelle Stellenangebote
             </p>
-            <h2 className="text-2xl md:text-4xl font-bold text-[#012956] leading-tight mb-3 lg:mb-4">
+            <h2 id="stellenangebote-heading" className="text-2xl md:text-4xl font-bold text-[#012956] leading-tight mb-3 lg:mb-4">
               {stellenangebote.length} offene Positionen
             </h2>
             <p className="text-gray-600 font-medium text-sm lg:text-base max-w-2xl">
@@ -853,10 +854,11 @@ export default function KarrierePage() {
             <aside
               ref={sidebarRef}
               className="lg:w-80 xl:w-96 shrink-0"
+              aria-label="Stellenangebote Navigation"
             >
               <div className={`bg-[#f8f9fa] rounded-[6px] p-6 ${isSidebarSticky ? 'lg:sticky lg:top-28' : ''}`}>
                 <h3 className="text-lg font-bold text-[#012956] mb-4 flex items-center gap-2">
-                  <FileText size={20} className="text-[#109387]" />
+                  <FileText size={20} className="text-[#109387]" aria-hidden="true" />
                   Offene Stellen
                 </h3>
 
@@ -970,15 +972,15 @@ export default function KarrierePage() {
                     {/* Job Meta */}
                     <div className="flex flex-wrap gap-4 text-sm">
                       <div className="flex items-center gap-2 text-gray-600">
-                        <MapPin size={16} className="text-[#109387]" />
+                        <MapPin size={16} className="text-[#109387]" aria-hidden="true" />
                         <span className="font-medium">{job.standorte.join(', ')}</span>
                       </div>
                       <div className="flex items-center gap-2 text-gray-600">
-                        <Clock size={16} className="text-[#109387]" />
+                        <Clock size={16} className="text-[#109387]" aria-hidden="true" />
                         <span className="font-medium">{job.arbeitszeit}</span>
                       </div>
                       <div className="flex items-center gap-2 text-gray-600">
-                        <Euro size={16} className="text-[#109387]" />
+                        <Euro size={16} className="text-[#109387]" aria-hidden="true" />
                         <span className="font-medium">{job.gehalt}</span>
                       </div>
                     </div>
@@ -994,13 +996,13 @@ export default function KarrierePage() {
                       {/* Aufgaben */}
                       <div>
                         <h4 className="font-bold text-[#012956] mb-3 flex items-center gap-2">
-                          <Briefcase size={18} className="text-[#109387]" />
+                          <Briefcase size={18} className="text-[#109387]" aria-hidden="true" />
                           Ihre Aufgaben
                         </h4>
                         <ul className="space-y-2">
                           {job.aufgaben.map((aufgabe, i) => (
                             <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                              <CheckCircle2 size={16} className="text-[#109387] shrink-0 mt-0.5" />
+                              <CheckCircle2 size={16} className="text-[#109387] shrink-0 mt-0.5" aria-hidden="true" />
                               <span>{aufgabe}</span>
                             </li>
                           ))}
@@ -1010,13 +1012,13 @@ export default function KarrierePage() {
                       {/* Anforderungen */}
                       <div>
                         <h4 className="font-bold text-[#012956] mb-3 flex items-center gap-2">
-                          <Star size={18} className="text-[#109387]" />
+                          <Star size={18} className="text-[#109387]" aria-hidden="true" />
                           Ihr Profil
                         </h4>
                         <ul className="space-y-2">
                           {job.anforderungen.map((anforderung, i) => (
                             <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                              <CheckCircle2 size={16} className="text-[#109387] shrink-0 mt-0.5" />
+                              <CheckCircle2 size={16} className="text-[#109387] shrink-0 mt-0.5" aria-hidden="true" />
                               <span>{anforderung}</span>
                             </li>
                           ))}
@@ -1027,7 +1029,7 @@ export default function KarrierePage() {
                     {/* Benefits */}
                     <div className="mt-6 pt-6 border-t border-gray-100">
                       <h4 className="font-bold text-[#012956] mb-3 flex items-center gap-2">
-                        <Heart size={18} className="text-[#109387]" />
+                        <Heart size={18} className="text-[#109387]" aria-hidden="true" />
                         Das bieten wir
                       </h4>
                       <div className="flex flex-wrap gap-2">
@@ -1076,7 +1078,7 @@ export default function KarrierePage() {
       {/* ================================================================== */}
       {/* INITIATIVBEWERBUNG + VORTEILE - Gleiche Höhe */}
       {/* ================================================================== */}
-      <section id="initiativbewerbung" className="py-12 lg:py-24 bg-[#012956] scroll-mt-24">
+      <section id="initiativbewerbung" className="py-12 lg:py-24 bg-[#012956] scroll-mt-24" aria-labelledby="initiativ-heading">
         <div className="w-full max-w-[1800px] mx-auto px-4 lg:px-12 xl:px-20">
           <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
 
@@ -1086,7 +1088,7 @@ export default function KarrierePage() {
                 <p className="text-sm lg:text-base text-[#109387] font-extrabold uppercase tracking-wide mb-2">
                   Initiativbewerbung
                 </p>
-                <h2 className="text-2xl lg:text-3xl font-extrabold text-white leading-tight">
+                <h2 id="initiativ-heading" className="text-2xl lg:text-3xl font-extrabold text-white leading-tight">
                   Keine passende Stelle dabei?
                 </h2>
               </div>
@@ -1141,7 +1143,7 @@ export default function KarrierePage() {
                         ] : [])
                       ].map((item, i) => (
                         <li key={i} className="flex items-center gap-3 text-white text-base lg:text-lg font-medium">
-                          <CheckCircle2 size={20} className="text-[#109387] shrink-0" />
+                          <CheckCircle2 size={20} className="text-[#109387] shrink-0" aria-hidden="true" />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -1194,7 +1196,7 @@ export default function KarrierePage() {
                       className="bg-white/5 rounded-[6px] p-4 lg:p-5 flex items-start gap-3"
                     >
                       <div className="w-10 h-10 lg:w-11 lg:h-11 bg-[#109387]/20 rounded-[6px] flex items-center justify-center shrink-0">
-                        <IconComponent size={20} className="text-[#109387]" />
+                        <IconComponent size={20} className="text-[#109387]" aria-hidden="true" />
                       </div>
                       <div className="min-w-0">
                         <h3 className="text-sm lg:text-base font-extrabold text-white mb-0.5 leading-tight">{vorteil.titel}</h3>
@@ -1213,14 +1215,14 @@ export default function KarrierePage() {
       {/* ================================================================== */}
       {/* BEWERBUNGSPROZESS - FIMI HR */}
       {/* ================================================================== */}
-      <section id="bewerbung" className="py-12 lg:py-20 bg-white">
+      <section id="bewerbung" className="py-12 lg:py-20 bg-white" aria-labelledby="bewerbung-heading">
         <div className="w-full max-w-[1800px] mx-auto px-4 lg:px-12 xl:px-20">
           <FadeIn>
             <div className="mb-8 lg:mb-12">
               <p className="text-sm lg:text-base text-[#109387] font-extrabold uppercase tracking-wide mb-2 lg:mb-3">
                 FIMI HR-Prozess
               </p>
-              <h2 className="text-2xl md:text-4xl font-extrabold text-[#012956] leading-tight mb-4">
+              <h2 id="bewerbung-heading" className="text-2xl md:text-4xl font-extrabold text-[#012956] leading-tight mb-4">
                 Ihr Weg zu uns
               </h2>
               <p className="text-gray-600 font-medium text-base lg:text-lg max-w-3xl">
@@ -1325,14 +1327,14 @@ export default function KarrierePage() {
       {/* ================================================================== */}
       {/* STANDORTE */}
       {/* ================================================================== */}
-      <section id="standorte" className="py-12 lg:py-20 bg-[#f8f9fa]">
+      <section id="standorte" className="py-12 lg:py-20 bg-[#f8f9fa]" aria-labelledby="standorte-heading">
         <div className="w-full max-w-[1800px] mx-auto px-4 lg:px-12 xl:px-20">
           <FadeIn>
             <div className="mb-8 lg:mb-12">
               <p className="text-sm text-[#109387] font-bold uppercase tracking-wide mb-2 lg:mb-3">
                 Unsere Einsatzgebiete
               </p>
-              <h2 className="text-2xl md:text-4xl font-bold text-[#012956] leading-tight">
+              <h2 id="standorte-heading" className="text-2xl md:text-4xl font-bold text-[#012956] leading-tight">
                 Arbeiten in Ihrer Nähe
               </h2>
             </div>
@@ -1350,7 +1352,7 @@ export default function KarrierePage() {
                 }}
                 className="bg-white rounded-[6px] p-4 lg:p-5 flex items-center gap-3 lg:gap-4 shadow-sm hover:shadow-md hover:border-[#109387]/30 border border-transparent transition-all group cursor-pointer"
               >
-                <MapPin size={20} className="text-[#109387] shrink-0 lg:w-6 lg:h-6" />
+                <MapPin size={20} className="text-[#109387] shrink-0 lg:w-6 lg:h-6" aria-hidden="true" />
                 <h3 className="font-extrabold text-[#012956] group-hover:text-[#109387] text-base lg:text-lg transition-colors">{stadt}</h3>
               </button>
             ))}
@@ -1361,10 +1363,10 @@ export default function KarrierePage() {
       {/* ================================================================== */}
       {/* FINAL CTA */}
       {/* ================================================================== */}
-      <section id="kontakt" className="py-12 lg:py-20 bg-[#012956]">
+      <section id="kontakt" className="py-12 lg:py-20 bg-[#012956]" aria-labelledby="kontakt-heading">
         <div className="w-full max-w-[1800px] mx-auto px-4 lg:px-12 xl:px-20">
           <FadeIn className="max-w-2xl">
-            <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-white mb-3 lg:mb-4">
+            <h2 id="kontakt-heading" className="text-xl md:text-3xl lg:text-4xl font-bold text-white mb-3 lg:mb-4">
               Bereit für den nächsten Schritt?
             </h2>
             <p className="text-white/70 font-medium text-base lg:text-lg mb-6 lg:mb-8">

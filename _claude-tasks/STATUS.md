@@ -141,3 +141,4 @@
 | 2025-12-06 | R0006 | P0-17: Security-Headers in next.config.js (8 Header inkl. CSP) |
 | 2025-12-06 | R0007 | P0-18/19/20: Startseite A11y-Fixes (PartnerLogosSlider, ProcessContainer, HeroContainer) |
 | 2025-12-06 | R0007 | P0-18/19/20: Über-uns A11y-Fixes (7 Komponenten: aria-labelledby, aria-hidden) |
+| 2025-12-06 | R0007 | P0-18: Karriere A11y-Fixes (JobModal, 6 Sections, ~20 Icons, Sidebar) |
