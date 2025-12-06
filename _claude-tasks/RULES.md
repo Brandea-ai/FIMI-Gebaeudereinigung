@@ -162,3 +162,33 @@ Status: Erledigt | Blockiert
 - Kontaktdaten andern
 - Rechtliche Texte
 - Unklare Anforderungen
+
+---
+
+## R7: Performance/Accessibility Testing (WICHTIG!)
+
+**NIEMALS localhost oder dev-Server testen!**
+
+### Korrektes Vorgehen:
+1. Code andern (lokal)
+2. Commit & Push zu GitHub
+3. Vercel Deployment abwarten (~1-2 min)
+4. **PageSpeed Insights** auf Live-URL testen:
+   ```
+   https://pagespeed.web.dev/?url=https://fimi-gebaeudereinigung.vercel.app/
+   ```
+
+### VERBOTEN:
+```
+FALSCH: lighthouse http://localhost:3000/
+FALSCH: lighthouse http://127.0.0.1:3000/
+FALSCH: npm run dev && lighthouse testen
+```
+
+### Warum?
+Localhost-Ergebnisse sind 30-40% schlechter als Live weil:
+- Kein CDN/Edge-Caching
+- Keine Bildoptimierung
+- Langsame Server Response
+
+**Siehe Report R0008 fur Details.**

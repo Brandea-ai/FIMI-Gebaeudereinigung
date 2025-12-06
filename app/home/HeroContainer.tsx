@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { ArrowRight, Phone, CheckCircle, MapPin } from 'lucide-react'
 
 const städte = [
@@ -34,10 +35,14 @@ export default function HeroContainer() {
 
       {/* Background - Professionelles Reinigungsteam */}
       <div className="absolute inset-0">
-        <img
-          src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=2000&auto=format&fit=crop"
+        <Image
+          src="/images/home/hero-team.avif"
           alt="Professionelles Reinigungsteam von FIMI"
-          className="w-full h-full object-cover"
+          fill
+          priority
+          quality={80}
+          sizes="100vw"
+          className="object-cover"
         />
         {/* Overlay für besseren Kontrast */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#012956]/90 via-[#012956]/70 to-[#012956]/40" />

@@ -129,7 +129,7 @@ export default function TrustContainer() {
               {/* Bild */}
               <div className="relative hidden lg:block h-64 lg:h-auto">
                 <Image
-                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop"
+                  src="/images/home/trust-team.avif"
                   alt="FIMI Team bei der Arbeit"
                   fill
                   className="object-cover"

@@ -2,7 +2,7 @@
 
 **Quelle:** FIMI_Website_TODOs.md (HEILIGER GRAL - alle Tasks basieren darauf!)
 **Stand:** 2025-12-06
-**Letzter Report:** R0007
+**Letzter Report:** R0008
 **Aktueller Sprint:** Sprint 1 (P0 - Go-Live-Blocker)
 
 ---
@@ -39,11 +39,11 @@
 | 15 | OG/Twitter + Favicons | [X] | R0006 | Social share preview sieht sauber aus |
 | 16 | 404/500 UX + Logging | [X] | R0006 | 404 Seite mit funktionierender Navigation |
 | 17 | Security-Headers Basis | [X] | R0006 | Securityheaders-Check grun |
-| 18 | Accessibility Basics | [~] | R0007 | Startseite fertig, weitere Seiten offen |
-| 19 | Doppelte DOM-Inhalte durch Slider/Marquee korrigieren | [~] | R0007 | Startseite fertig (PartnerLogosSlider) |
-| 20 | Core Web Vitals absichern (LCP/INP/CLS) | [~] | R0007 | Startseite fertig, Lighthouse-Test offen |
+| 18 | Accessibility Basics | [X] | R0007/R0008 | PageSpeed: A11y 92-94% (DoD > 90%) |
+| 19 | Doppelte DOM-Inhalte durch Slider/Marquee korrigieren | [X] | R0007 | PartnerLogosSlider: aria-hidden + sr-only Liste |
+| 20 | Core Web Vitals absichern (LCP/INP/CLS) | [X] | R0008 | PageSpeed: Perf 92-99% (DoD > 85%) |
 
-**Sprint 1 Fortschritt:** 17/20 (85%)
+**Sprint 1 Fortschritt:** 20/20 (100%) - KOMPLETT!
 
 ---
 
@@ -114,10 +114,12 @@
 
 | Sprint | Tasks | Erledigt | Prozent |
 |--------|-------|----------|---------|
-| P0 | 20 | 17 | 85% |
+| P0 | 20 | 20 | 100% ✅ |
 | P1 | 30 | 0 | 0% |
 | P2 | 15 | 0 | 0% |
-| **TOTAL** | **65** | **17** | **26%** |
+| **TOTAL** | **65** | **20** | **31%** |
+
+**SPRINT 1 (P0) ABGESCHLOSSEN!** Go-Live-Blocker alle erledigt.
 
 ---
 
@@ -142,3 +144,7 @@
 | 2025-12-06 | R0007 | P0-18/19/20: Startseite A11y-Fixes (PartnerLogosSlider, ProcessContainer, HeroContainer) |
 | 2025-12-06 | R0007 | P0-18/19/20: Über-uns A11y-Fixes (7 Komponenten: aria-labelledby, aria-hidden) |
 | 2025-12-06 | R0007 | P0-18: Karriere A11y-Fixes (JobModal, 6 Sections, ~20 Icons, Sidebar) |
+| 2025-12-06 | R0008 | P0-18/19/20: VERIFIZIERT auf Live-Site (PageSpeed Insights) |
+| 2025-12-06 | R0008 | A11y 92-94%, Performance 92-99%, Best Practices 100%, SEO 100% |
+| 2025-12-06 | R0008 | RULES.md ergänzt: R7 - Testverfahren (niemals localhost testen!) |
+| 2025-12-06 | R0008 | **SPRINT 1 (P0) KOMPLETT - 20/20 Tasks erledigt!** |

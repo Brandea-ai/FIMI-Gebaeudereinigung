@@ -1,12 +1,15 @@
 import { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 import HeroContainer from './home/HeroContainer'
-import TrustContainer from './home/TrustContainer'
-import ServicesContainer from './home/ServicesContainer'
-import RegionenContainer from './home/RegionenContainer'
-import ProcessContainer from './home/ProcessContainer'
-import FAQContainer from './home/FAQContainer'
-import PartnerLogosSlider from '@/components/PartnerLogosSlider'
-import FloatingNav from '@/components/FloatingNav'
+
+// Lazy load all non-critical components to improve initial load performance
+const FloatingNav = dynamic(() => import('@/components/FloatingNav'), { ssr: false })
+const TrustContainer = dynamic(() => import('./home/TrustContainer'))
+const ServicesContainer = dynamic(() => import('./home/ServicesContainer'))
+const RegionenContainer = dynamic(() => import('./home/RegionenContainer'))
+const ProcessContainer = dynamic(() => import('./home/ProcessContainer'))
+const FAQContainer = dynamic(() => import('./home/FAQContainer'))
+const PartnerLogosSlider = dynamic(() => import('@/components/PartnerLogosSlider'))
 
 const navItems = [
   { id: 'hero', label: 'Start' },
