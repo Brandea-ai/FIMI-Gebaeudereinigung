@@ -63,15 +63,15 @@ export default function ProcessContainer() {
             </FadeIn>
 
             {/* 4 Schritte */}
-            <div className="space-y-6 mb-10">
+            <div className="space-y-6 mb-10" role="list" aria-label="Ablauf in 4 Schritten">
               {schritte.map((schritt, index) => {
                 const Icon = schritt.icon
                 return (
                   <FadeIn key={schritt.nummer} delay={index * 0.1} direction="left">
-                    <div className="flex gap-4 items-start">
+                    <div className="flex gap-4 items-start" role="listitem">
                       {/* Nummer + Icon */}
                       <div className="flex-shrink-0 w-14 h-14 bg-[#012956] rounded-[6px] flex items-center justify-center relative">
-                        <Icon size={24} className="text-white" strokeWidth={1.5} />
+                        <Icon size={24} className="text-white" strokeWidth={1.5} aria-hidden="true" />
                         <span className="absolute -top-2 -right-2 w-6 h-6 bg-[#109387] rounded-full text-white text-xs font-bold flex items-center justify-center">
                           {schritt.nummer}
                         </span>

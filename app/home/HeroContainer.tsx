@@ -116,8 +116,8 @@ export default function HeroContainer() {
 
               {/* Desktop: Dots */}
               <div className="hidden sm:flex items-center gap-4">
-                <span className="text-white/70 font-semibold">Standorte:</span>
-                <div className="flex items-center gap-2">
+                <span className="text-white/70 font-semibold" id="standorte-label">Standorte:</span>
+                <div className="flex items-center gap-2" role="group" aria-labelledby="standorte-label">
                   {städte.map((stadt, index) => (
                     <button
                       key={stadt}

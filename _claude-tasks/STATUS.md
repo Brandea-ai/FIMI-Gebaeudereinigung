@@ -2,7 +2,7 @@
 
 **Quelle:** FIMI_Website_TODOs.md (HEILIGER GRAL - alle Tasks basieren darauf!)
 **Stand:** 2025-12-06
-**Letzter Report:** R0006
+**Letzter Report:** R0007
 **Aktueller Sprint:** Sprint 1 (P0 - Go-Live-Blocker)
 
 ---
@@ -39,9 +39,9 @@
 | 15 | OG/Twitter + Favicons | [X] | R0006 | Social share preview sieht sauber aus |
 | 16 | 404/500 UX + Logging | [X] | R0006 | 404 Seite mit funktionierender Navigation |
 | 17 | Security-Headers Basis | [X] | R0006 | Securityheaders-Check grun |
-| 18 | Accessibility Basics | [ ] | - | Lighthouse Accessibility > 90 |
-| 19 | Doppelte DOM-Inhalte durch Slider/Marquee korrigieren | [ ] | - | Screenreader liest keine doppelten Listen |
-| 20 | Core Web Vitals absichern (LCP/INP/CLS) | [ ] | - | Lighthouse Performance > 85 |
+| 18 | Accessibility Basics | [~] | R0007 | Startseite fertig, weitere Seiten offen |
+| 19 | Doppelte DOM-Inhalte durch Slider/Marquee korrigieren | [~] | R0007 | Startseite fertig (PartnerLogosSlider) |
+| 20 | Core Web Vitals absichern (LCP/INP/CLS) | [~] | R0007 | Startseite fertig, Lighthouse-Test offen |
 
 **Sprint 1 Fortschritt:** 17/20 (85%)
 
@@ -139,3 +139,4 @@
 | 2025-12-06 | R0006 | P0-15: OG/Twitter + Favicons - Logo als temp. OG-Image, 20 Dateien korrigiert |
 | 2025-12-06 | R0006 | P0-16: 404/500 Error-Seiten erstellt (3 neue Dateien) |
 | 2025-12-06 | R0006 | P0-17: Security-Headers in next.config.js (8 Header inkl. CSP) |
+| 2025-12-06 | R0007 | P0-18/19/20: Startseite A11y-Fixes (PartnerLogosSlider, ProcessContainer, HeroContainer) |

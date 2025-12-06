@@ -214,7 +214,7 @@ export default function PartnerLogosSlider({
   }
 
   return (
-    <section className={`py-12 lg:py-16 overflow-hidden ${className}`} style={{ backgroundColor: bgColor }}>
+    <section className={`py-12 lg:py-16 overflow-hidden ${className}`} style={{ backgroundColor: bgColor }} aria-label="Partner und Hersteller">
       {showHeader && (
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 mb-8 lg:mb-12">
           <motion.div
@@ -249,6 +249,7 @@ export default function PartnerLogosSlider({
         <motion.div
           animate={controls}
           className="flex gap-4 sm:gap-6 py-4"
+          aria-hidden="true"
         >
           {[...partner, ...partner, ...partner].map((item, index) => (
             <PartnerCard
@@ -258,6 +259,12 @@ export default function PartnerLogosSlider({
             />
           ))}
         </motion.div>
+        {/* Screenreader-only: Liste ohne Duplikate */}
+        <ul className="sr-only" role="list">
+          {partner.map((item) => (
+            <li key={item.name}>{item.name} - {item.kategorie}</li>
+          ))}
+        </ul>
       </div>
 
       {showStats && (
