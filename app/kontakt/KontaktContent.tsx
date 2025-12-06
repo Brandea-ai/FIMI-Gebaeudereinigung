@@ -9,7 +9,7 @@ export default function KontaktContent() {
   return (
     <main className="min-h-screen bg-white overflow-hidden">
       {/* Hero Section - Premium & Animated */}
-      <section className="relative bg-[#012956] overflow-hidden">
+      <section className="relative bg-[#012956] overflow-hidden" aria-labelledby="kontakt-hero-heading">
         <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-0 min-h-[auto] lg:min-h-[90vh]">
 
@@ -22,7 +22,7 @@ export default function KontaktContent() {
               </FadeIn>
 
               <FadeIn direction="left" delay={0.2}>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] sm:leading-[1.05] mb-4 sm:mb-8">
+                <h1 id="kontakt-hero-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.1] sm:leading-[1.05] mb-4 sm:mb-8">
                   Lassen Sie uns
                   <span className="block text-[#109387]">gemeinsam starten</span>
                 </h1>
@@ -36,7 +36,7 @@ export default function KontaktContent() {
               </FadeIn>
 
               {/* Process Steps - Staggered Animation */}
-              <FadeInStagger staggerDelay={0.1} className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 mb-8 sm:mb-10 lg:mb-12">
+              <FadeInStagger staggerDelay={0.1} className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5 lg:gap-6 mb-8 sm:mb-10 lg:mb-12" role="list" aria-label="4 Schritte zur Reinigungslösung">
                 {[
                   { num: '01', title: 'Anfrage', sub: 'Formular / Anruf' },
                   { num: '02', title: 'Besichtigung', sub: 'Kostenfrei vor Ort' },
@@ -45,12 +45,12 @@ export default function KontaktContent() {
                 ].map((step, i) => (
                   <FadeInItem key={i}>
                     <div className="group" role="listitem">
-                      <div className="text-[#109387] font-bold text-2xl sm:text-2xl lg:text-3xl mb-1.5 sm:mb-2">
+                      <div className="text-[#109387] font-bold text-2xl sm:text-2xl lg:text-3xl mb-1.5 sm:mb-2" aria-hidden="true">
                         {step.num}
                       </div>
-                      <div className="h-0.5 w-6 sm:w-8 bg-[#109387] mb-2 sm:mb-3 group-hover:w-10 sm:group-hover:w-12 transition-all" />
-                      <h3 className="font-bold text-white text-sm sm:text-sm lg:text-base">{step.title}</h3>
-                      <p className="text-white/40 text-xs sm:text-xs lg:text-sm">{step.sub}</p>
+                      <div className="h-0.5 w-6 sm:w-8 bg-[#109387] mb-2 sm:mb-3 group-hover:w-10 sm:group-hover:w-12 transition-all" aria-hidden="true" />
+                      <span className="block font-bold text-white text-sm sm:text-sm lg:text-base">{step.title}</span>
+                      <span className="block text-white/70 text-xs sm:text-xs lg:text-sm">{step.sub}</span>
                     </div>
                   </FadeInItem>
                 ))}
@@ -66,7 +66,7 @@ export default function KontaktContent() {
                     whileTap={{ scale: 0.98 }}
                   >
                     <span>Kostenfreie Besichtigung</span>
-                    <ArrowRight size={18} className="sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight size={18} className="sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </motion.a>
                   <motion.a
                     href="tel:+4987143033460"
@@ -74,7 +74,7 @@ export default function KontaktContent() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <Phone size={18} className="sm:w-5 sm:h-5" />
+                    <Phone size={18} className="sm:w-5 sm:h-5" aria-hidden="true" />
                     <span>0871 430 334 60</span>
                   </motion.a>
                 </div>
@@ -89,10 +89,11 @@ export default function KontaktContent() {
               transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
             >
               <Image
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1200&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop"
                 alt="FIMI Gebäudereinigung - Professionelle Beratung"
                 fill
                 className="object-cover object-[center_15%] lg:object-center"
+                sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />
               {/* Gradient Overlay - Sanft */}
@@ -120,7 +121,7 @@ export default function KontaktContent() {
       </section>
 
       {/* Kontakt-Info Cards - Staggered */}
-      <section className="py-10 sm:py-14 lg:py-20 bg-white">
+      <section className="py-10 sm:py-14 lg:py-20 bg-white" aria-label="Kontaktinformationen">
         <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
           <FadeInStagger staggerDelay={0.1} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {/* Telefon */}
@@ -131,7 +132,7 @@ export default function KontaktContent() {
                 whileHover={{ y: -4 }}
               >
                 <div className="w-12 h-12 bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-colors">
-                  <Phone size={22} className="text-white" />
+                  <Phone size={22} className="text-white" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="text-[#012956] group-hover:text-white/60 text-xs font-semibold uppercase tracking-wider mb-1 transition-colors">Telefon</p>
@@ -148,7 +149,7 @@ export default function KontaktContent() {
                 whileHover={{ y: -4 }}
               >
                 <div className="w-12 h-12 bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-colors">
-                  <Mail size={22} className="text-white" />
+                  <Mail size={22} className="text-white" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="text-[#012956] group-hover:text-white/60 text-xs font-semibold uppercase tracking-wider mb-1 transition-colors">E-Mail</p>
@@ -167,7 +168,7 @@ export default function KontaktContent() {
                 whileHover={{ y: -4 }}
               >
                 <div className="w-12 h-12 bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0 group-hover:bg-white/20 transition-colors">
-                  <MapPin size={22} className="text-white" />
+                  <MapPin size={22} className="text-white" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="text-[#012956] group-hover:text-white/60 text-xs font-semibold uppercase tracking-wider mb-1 transition-colors">Adresse</p>
@@ -183,7 +184,7 @@ export default function KontaktContent() {
                 whileHover={{ y: -4 }}
               >
                 <div className="w-12 h-12 bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0">
-                  <Clock size={22} className="text-white" />
+                  <Clock size={22} className="text-white" aria-hidden="true" />
                 </div>
                 <div>
                   <p className="text-[#012956] text-xs font-semibold uppercase tracking-wider mb-1">Erreichbar</p>
@@ -196,7 +197,7 @@ export default function KontaktContent() {
       </section>
 
       {/* Service Areas - Premium with Animations */}
-      <section className="py-10 sm:py-14 lg:py-24 bg-[#012956]">
+      <section className="py-10 sm:py-14 lg:py-24 bg-[#012956]" aria-labelledby="einzugsgebiet-heading">
         <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-20 items-center">
             <div>
@@ -207,13 +208,13 @@ export default function KontaktContent() {
               </FadeIn>
 
               <FadeIn direction="left" delay={0.2}>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
+                <h2 id="einzugsgebiet-heading" className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
                   Professionelle Reinigung in ganz Bayern
                 </h2>
               </FadeIn>
 
               <FadeIn direction="left" delay={0.3}>
-                <p className="text-white/60 font-medium text-sm sm:text-base lg:text-lg leading-relaxed mb-6 sm:mb-8">
+                <p className="text-white/80 font-medium text-sm sm:text-base lg:text-lg leading-relaxed mb-6 sm:mb-8">
                   Von Landshut aus betreuen wir Kunden in ganz Bayern.
                   Kurze Wege, schnelle Reaktionszeiten, persönlicher Service.
                 </p>
@@ -229,7 +230,7 @@ export default function KontaktContent() {
                         whileInView={{ scale: 1 }}
                         transition={{ delay: 0.3 + i * 0.1, type: 'spring', stiffness: 200 }}
                       >
-                        <CheckCircle2 size={18} className="text-[#109387] flex-shrink-0" />
+                        <CheckCircle2 size={18} className="text-[#109387] flex-shrink-0" aria-hidden="true" />
                       </motion.div>
                       <span className="text-white/80 font-medium text-sm sm:text-base">{item}</span>
                     </div>
@@ -243,7 +244,7 @@ export default function KontaktContent() {
                   className="inline-flex items-center gap-2 text-[#109387] font-bold text-sm sm:text-base hover:gap-3 transition-all"
                 >
                   <span>Standort anfragen</span>
-                  <ArrowRight size={16} className="sm:w-[18px] sm:h-[18px]" />
+                  <ArrowRight size={16} className="sm:w-[18px] sm:h-[18px]" aria-hidden="true" />
                 </a>
               </FadeIn>
             </div>
