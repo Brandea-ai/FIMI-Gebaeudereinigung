@@ -103,11 +103,11 @@ export default function BueroreinigungFAQ() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:01747225473"
+              href="tel:+4987143033460"
               className="inline-flex items-center justify-center px-8 py-4 bg-fimi-turquoise text-white font-bold hover:opacity-90 transition-opacity"
               style={{ borderRadius: '4px' }}
             >
-              Jetzt anrufen: 01747225473
+              Jetzt anrufen: 0871 430 334 60
             </a>
             <a
               href="mailto:info@fimi-service.de"

@@ -2,7 +2,7 @@
 
 **Quelle:** FIMI_Website_TODOs.md (HEILIGER GRAL - alle Tasks basieren darauf!)
 **Stand:** 2025-12-06
-**Letzter Report:** R0002
+**Letzter Report:** R0003
 **Aktueller Sprint:** Sprint 1 (P0 - Go-Live-Blocker)
 
 ---
@@ -22,7 +22,7 @@
 
 | Nr | Task (exakt aus TODO-Liste) | Status | Report | DoD |
 |----|----------------------------|--------|--------|-----|
-| 1 | NAP konsistent (Name/Adresse/Telefon/E-Mail) - Single Source of Truth | [ ] | - | Site-weit nur eine Telefonnummer/E-Mail/Adresse |
+| 1 | NAP konsistent (Name/Adresse/Telefon/E-Mail) - Single Source of Truth | [X] | R0003 | Site-weit nur eine Telefonnummer/E-Mail/Adresse |
 | 2 | "Trusted by / Logos / grosse Kunden" komplett entfernen (bis Freigaben da) | [X] | R0001 | Keine Logos, keine Grosskundennamen |
 | 3 | ISO-Claims vollstandig entfernen (bis zertifiziert) | [X] | R0001 | Site-Suche nach "ISO" = 0 Treffer |
 | 4 | Unfertige Inhalte entfernen (z.B. "Beschreibung folgt") | [ ] | - | Keine Placeholder-Texte im Frontend |
@@ -43,7 +43,7 @@
 | 19 | Doppelte DOM-Inhalte durch Slider/Marquee korrigieren | [ ] | - | Screenreader liest keine doppelten Listen |
 | 20 | Core Web Vitals absichern (LCP/INP/CLS) | [ ] | - | Lighthouse Performance > 85 |
 
-**Sprint 1 Fortschritt:** 3/20 (15%)
+**Sprint 1 Fortschritt:** 4/20 (20%)
 
 ---
 
@@ -114,10 +114,10 @@
 
 | Sprint | Tasks | Erledigt | Prozent |
 |--------|-------|----------|---------|
-| P0 | 20 | 3 | 15% |
+| P0 | 20 | 4 | 20% |
 | P1 | 30 | 0 | 0% |
 | P2 | 15 | 0 | 0% |
-| **TOTAL** | **65** | **3** | **5%** |
+| **TOTAL** | **65** | **4** | **6%** |
 
 ---
 
@@ -129,3 +129,4 @@
 | 2025-12-05 | R0001 | D2: ISO-Claims von 35+ Dateien entfernt (inkl. Nachbesserung) |
 | 2025-12-05 | R0002 | D3: Referenzen → Projekte (50 Einträge anonymisiert, Nav geändert) |
 | 2025-12-06 | R0002 | D4: Sonderleistungen → Event-Reinigung (AUG-Risiko beseitigt, 6 Dateien) |
+| 2025-12-06 | R0003 | P0-01: NAP konsistent - Telefonnummer vereinheitlicht (10 Dateien, 19 Ersetzungen) |

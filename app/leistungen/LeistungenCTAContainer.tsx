@@ -91,11 +91,11 @@ export default function LeistungenCTAContainer() {
               </button>
 
               <a
-                href="tel:01747225473"
+                href="tel:+4987143033460"
                 className="block w-full text-center border-2 border-white text-white px-8 py-4 font-bold text-lg hover:bg-white hover:text-fimi-navy transition-all"
                 style={{ borderRadius: '4px' }}
               >
-                Oder anrufen: 01747225473
+                Oder anrufen: 0871 430 334 60
               </a>
             </div>
           </div>

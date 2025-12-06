@@ -149,7 +149,7 @@ const organizationSchema = {
     },
     {
       '@type': 'ContactPoint',
-      telephone: '+4917472254773',
+      telephone: '+4987143033460',
       contactType: 'sales',
       availableLanguage: ['German'],
       areaServed: 'DE',

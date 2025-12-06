@@ -1,0 +1,93 @@
+/**
+ * FIMI Gebäudereinigung - Zentrale Konfiguration
+ *
+ * SINGLE SOURCE OF TRUTH für alle Kontaktdaten
+ * Alle Komponenten sollen diese Config importieren
+ *
+ * @see P0-01 NAP konsistent
+ */
+
+export const siteConfig = {
+  // Firmenname
+  company: {
+    name: 'FIMI Gebäudereinigung GmbH',
+    shortName: 'FIMI',
+    legalName: 'FIMI Gebäudereinigung GmbH',
+    slogan: 'Professionelle Gebäudereinigung in Bayern',
+  },
+
+  // Kontaktdaten (NAP = Name, Address, Phone)
+  contact: {
+    phone: {
+      display: '0871 430 334 60',
+      href: 'tel:+4987143033460',
+      international: '+49 871 430 334 60',
+    },
+    email: {
+      display: 'info@fimi-service.de',
+      href: 'mailto:info@fimi-service.de',
+    },
+    address: {
+      street: 'Kellerstr. 39',
+      zip: '84036',
+      city: 'Landshut',
+      region: 'Bayern',
+      country: 'Deutschland',
+      countryCode: 'DE',
+      full: 'Kellerstr. 39, 84036 Landshut',
+      multiline: 'Kellerstr. 39\n84036 Landshut',
+    },
+    geo: {
+      latitude: 48.5369,
+      longitude: 12.1522,
+    },
+  },
+
+  // Öffnungszeiten
+  hours: {
+    display: 'Mo-Fr: 08:00-18:00',
+    days: 'Monday-Friday',
+    open: '08:00',
+    close: '18:00',
+    emergency: '2h Reaktionszeit',
+  },
+
+  // URLs
+  urls: {
+    website: 'https://fimi-service.de',
+    mapsDirection: 'https://www.google.com/maps/dir/?api=1&destination=Kellerstr.+39,+84036+Landshut',
+    mapsEmbed: 'https://maps.google.com/maps?q=Kellerstra%C3%9Fe+39,+84036+Landshut,+Germany&t=&z=15&ie=UTF8&iwloc=&output=embed',
+  },
+
+  // Registerdaten
+  legal: {
+    registergericht: 'Amtsgericht Landshut',
+    handelsregister: 'In Bearbeitung',
+    ustId: 'DE347549925',
+    geschaeftsfuehrer: 'Ntonalnt Tzoutzis & Ergest Qiraj',
+  },
+
+  // Servicegebiet
+  serviceAreas: [
+    'Landshut',
+    'München',
+    'Regensburg',
+    'Ingolstadt',
+    'Freising',
+    'Erding',
+    'Straubing',
+    'Passau',
+  ],
+
+  // Statistiken
+  stats: {
+    yearsExperience: '8+',
+    customerProjects: '120+',
+    serviceLocations: 8,
+    services: 18,
+    industries: 12,
+  },
+} as const
+
+// Type Export
+export type SiteConfig = typeof siteConfig

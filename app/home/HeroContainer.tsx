@@ -95,12 +95,12 @@ export default function HeroContainer() {
                 <ArrowRight size={18} className="sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="tel:+4917472254773"
+                href="tel:+4987143033460"
                 className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-white hover:bg-gray-100 text-[#012956] font-bold text-base sm:text-lg px-6 sm:px-8 py-3.5 sm:py-4 rounded-[6px] transition-all duration-300"
               >
                 <Phone size={18} className="sm:w-5 sm:h-5" />
                 <span className="sm:hidden">Jetzt anrufen</span>
-                <span className="hidden sm:inline">0174 722 54 773</span>
+                <span className="hidden sm:inline">0871 430 334 60</span>
               </a>
             </div>
 

@@ -20,7 +20,7 @@ export default function HeroSection() {
             <p className="text-lg lg:text-xl text-white/80 font-semibold leading-relaxed mb-10 max-w-3xl">Beschreibung folgt.</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#contact-form" className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300 group shadow-lg">Kostenfreie Besichtigung<ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" /></a>
-              <a href="tel:+4917472254773" className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-[#012956] font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"><Phone size={20} />0174 722 54 773</a>
+              <a href="tel:+4987143033460" className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-[#012956] font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"><Phone size={20} />0871 430 334 60</a>
             </div>
           </div>
         </div>

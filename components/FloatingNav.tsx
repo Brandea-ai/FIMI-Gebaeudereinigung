@@ -128,11 +128,12 @@ export default function FloatingNav({ items, scrollOffset = 80 }: FloatingNavPro
 
   return (
     <>
-      {/* Mobile Overlay - nur auf Mobile sichtbar wenn offen */}
+      {/* Mobile Overlay - dezent, nur leicht abgedunkelt */}
       {isOpen && (
         <div
-          className="md:hidden fixed inset-0 bg-black/50 z-[9998]"
+          className="md:hidden fixed inset-0 bg-black/30 z-[9998]"
           onClick={() => setIsOpen(false)}
+          aria-hidden="true"
         />
       )}
 
@@ -201,73 +202,67 @@ export default function FloatingNav({ items, scrollOffset = 80 }: FloatingNavPro
         </nav>
       </div>
 
-      {/* Mobile: Bottom Button + Bottom Sheet Menu */}
-      <div className="md:hidden fixed z-[9999] bottom-6 left-1/2 -translate-x-1/2">
-        {/* Toggle Button - Mobile */}
+      {/* Mobile: Bottom Button */}
+      <div className="md:hidden fixed z-[10000] bottom-6 left-1/2 -translate-x-1/2">
         <button
-          className="relative w-[60px] h-[60px] rounded-[6px] bg-[#109387] border-none cursor-pointer flex items-center justify-center shadow-[0_12px_40px_-8px_rgba(16,147,135,0.35),0_4px_16px_-4px_rgba(0,0,0,0.12),0_0_0_1px_rgba(16,147,135,0.15)] transition-all duration-300 ease-out active:scale-95"
+          className="relative w-14 h-14 rounded-xl bg-[#109387] border-none cursor-pointer flex items-center justify-center shadow-lg transition-all duration-200 active:scale-95"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Navigation öffnen/schließen"
+          aria-label={isOpen ? 'Navigation schließen' : 'Navigation öffnen'}
+          aria-expanded={isOpen}
+          aria-controls="mobile-nav"
         >
           {isOpen ? (
-            <X size={22} className="text-white" strokeWidth={2} />
+            <X size={20} className="text-white" strokeWidth={2} />
           ) : (
-            <Menu size={22} className="text-white" strokeWidth={1.5} />
+            <Menu size={20} className="text-white" strokeWidth={1.5} />
           )}
           {!isOpen && (
-            <span className="absolute -top-2 -right-2 w-6 h-6 bg-white text-[#109387] rounded-[6px] flex items-center justify-center text-xs font-bold border-[1.5px] border-[#109387] shadow-[0_4px_12px_-2px_rgba(0,0,0,0.15)] tabular-nums">
+            <span
+              className="absolute -top-1.5 -right-1.5 w-5 h-5 bg-white text-[#109387] rounded-md flex items-center justify-center text-[10px] font-bold border border-[#109387]/30 shadow-sm tabular-nums"
+              aria-label={`Aktuelle Sektion: ${badgeNumber}`}
+            >
               {badgeNumber}
             </span>
           )}
         </button>
       </div>
 
-      {/* Mobile Menu - Bottom Sheet */}
+      {/* Mobile Menu - Kompaktes Popup über dem Button */}
       <nav
-        className={`md:hidden fixed z-[9999] bottom-0 left-0 right-0 bg-white rounded-t-[20px] shadow-[0_-10px_40px_-10px_rgba(0,0,0,0.2)] transition-transform duration-300 ease-out ${
-          isOpen ? 'translate-y-0' : 'translate-y-full'
+        id="mobile-nav"
+        className={`md:hidden fixed z-[9999] bottom-24 left-4 right-4 bg-white rounded-2xl shadow-[0_8px_30px_-5px_rgba(0,0,0,0.15)] transition-all duration-300 ease-out ${
+          isOpen
+            ? 'opacity-100 translate-y-0 pointer-events-auto'
+            : 'opacity-0 translate-y-4 pointer-events-none'
         }`}
-        aria-label="Seitennavigation"
+        aria-label="Schnellnavigation"
+        role="menu"
+        aria-hidden={!isOpen}
       >
-        {/* Handle Bar */}
-        <div className="flex justify-center pt-3 pb-2">
-          <div className="w-10 h-1 bg-gray-300 rounded-full" />
-        </div>
-
-        {/* Menu Header */}
-        <div className="flex justify-between items-center px-5 py-3 border-b border-gray-100">
-          <span className="text-base font-semibold text-[#012956]">Navigation</span>
-          <button
-            className="w-8 h-8 flex items-center justify-center bg-gray-100 border-none cursor-pointer rounded-full"
-            onClick={() => setIsOpen(false)}
-            aria-label="Schließen"
-          >
-            <X size={18} className="text-gray-600" strokeWidth={2.5} />
-          </button>
-        </div>
-
-        {/* Menu Items */}
-        <div className="p-3 pb-8 max-h-[60vh] overflow-y-auto">
+        {/* Menu Items - Kompakt */}
+        <div className="p-2 max-h-[50vh] overflow-y-auto">
           {items.map((item, index) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`flex items-center gap-3 w-full px-4 py-4 bg-transparent border-none rounded-xl cursor-pointer text-left transition-all duration-200 ${
-                activeSection === item.id ? 'bg-[#109387]/10' : 'active:bg-gray-100'
+              className={`flex items-center gap-2.5 w-full px-3 py-2.5 bg-transparent border-none rounded-lg cursor-pointer text-left transition-colors duration-150 ${
+                activeSection === item.id ? 'bg-[#109387]/10' : 'active:bg-gray-50'
               }`}
+              role="menuitem"
+              aria-current={activeSection === item.id ? 'true' : undefined}
             >
-              <span className={`text-sm font-bold min-w-[28px] tabular-nums ${
-                activeSection === item.id ? 'text-[#109387]' : 'text-[#109387]/70'
+              <span className={`text-xs font-bold min-w-[24px] tabular-nums ${
+                activeSection === item.id ? 'text-[#109387]' : 'text-gray-400'
               }`}>
                 {String(index + 1).padStart(2, '0')}
               </span>
-              <span className={`flex-1 text-base ${
+              <span className={`flex-1 text-sm ${
                 activeSection === item.id ? 'text-[#109387] font-semibold' : 'text-[#012956] font-medium'
               }`}>
                 {item.label}
               </span>
               {activeSection === item.id && (
-                <span className="w-2 h-2 bg-[#109387] rounded-full" />
+                <span className="w-1.5 h-1.5 bg-[#109387] rounded-full" aria-hidden="true" />
               )}
             </button>
           ))}
