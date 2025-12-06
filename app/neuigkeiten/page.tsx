@@ -84,7 +84,7 @@ export default function NeuigkeitenPage() {
 
       {/* Featured Post - Mobile optimiert */}
       {featuredPost && (
-        <section className="py-8 sm:py-12 lg:py-20">
+        <section className="py-8 sm:py-12 lg:py-20" aria-label="Aktueller Beitrag">
           <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 xl:px-20">
             <Link
               href={`/neuigkeiten/${featuredPost.slug}`}
@@ -93,12 +93,13 @@ export default function NeuigkeitenPage() {
               {/* Image */}
               <div className="relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-[4/3] rounded-[6px] overflow-hidden mb-4 sm:mb-6 lg:mb-0">
                 <Image
-                  src={featuredPost.image}
+                  src={featuredPost.image.replace('w=800', 'w=600')}
                   alt={featuredPost.title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  quality={75}
                 />
                 <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
                   <span
@@ -159,12 +160,13 @@ export default function NeuigkeitenPage() {
                   {/* Image - kleiner auf Mobile (horizontal Card) */}
                   <div className="relative w-28 sm:w-full aspect-square sm:aspect-[16/10] flex-shrink-0 overflow-hidden">
                     <Image
-                      src={post.image}
+                      src={post.image.replace('w=800', 'w=400')}
                       alt={post.title}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                       sizes="(max-width: 640px) 112px, (max-width: 1024px) 50vw, 33vw"
                       loading="lazy"
+                      quality={60}
                     />
                     <div className="absolute top-2 left-2 sm:top-3 sm:left-3">
                       <span
