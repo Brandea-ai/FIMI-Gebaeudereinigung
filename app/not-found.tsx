@@ -67,17 +67,12 @@ export default function NotFound() {
             </h1>
 
             {/* Title */}
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#012956] mb-2 -mt-2 sm:-mt-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#012956] mb-5 -mt-2 sm:-mt-4">
               Seite nicht gefunden
             </h2>
 
-            {/* Subtitle */}
-            <p className="text-sm sm:text-base md:text-lg text-[#012956] font-semibold mb-5 max-w-sm mx-auto">
-              Diese Seite wurde so gründlich gereinigt, dass sie verschwunden ist!
-            </p>
-
             {/* CTA Box with Dark Background */}
-            <div className="bg-gradient-to-br from-[#012956] to-[#01203d] rounded-[6px] p-4 sm:p-5 max-w-sm mx-auto">
+            <div className="bg-gradient-to-br from-[#012956] to-[#01203d] rounded-[6px] p-4 sm:p-5 max-w-md mx-auto">
             {/* Navigation Buttons */}
             <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-4">
               {navigationButtons.map((button) => {
