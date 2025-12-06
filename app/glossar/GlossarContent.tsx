@@ -273,7 +273,7 @@ export default function GlossarContent() {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.1] mb-4">
             Glossar
           </h1>
-          <p className="text-white/70 font-semibold text-base lg:text-lg max-w-xl">
+          <p className="text-white/90 font-semibold text-base lg:text-lg max-w-xl">
             Fachbegriffe der professionellen Gebäudereinigung - von A bis W.
           </p>
         </div>
@@ -325,7 +325,7 @@ export default function GlossarContent() {
                         className={`w-10 h-10 flex items-center justify-center font-bold text-sm rounded-[6px] transition-all duration-300 ${
                           active
                             ? 'bg-[#109387] text-white'
-                            : 'text-[#012956]/60 hover:text-[#109387] hover:bg-white'
+                            : 'text-[#012956]/80 hover:text-[#109387] hover:bg-white'
                         }`}
                       >
                         {letter}
@@ -401,7 +401,7 @@ export default function GlossarContent() {
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Haben Sie Fragen zu unseren Leistungen?
           </h2>
-          <p className="text-white/70 font-semibold mb-8 max-w-xl mx-auto">
+          <p className="text-white/90 font-semibold mb-8 max-w-xl mx-auto">
             Wir beraten Sie gerne persönlich und erstellen Ihnen ein individuelles Angebot.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">

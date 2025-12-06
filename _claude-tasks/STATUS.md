@@ -2,7 +2,7 @@
 
 **Quelle:** FIMI_Website_TODOs.md (HEILIGER GRAL - alle Tasks basieren darauf!)
 **Stand:** 2025-12-06
-**Letzter Report:** R0012
+**Letzter Report:** R0013
 **Aktueller Sprint:** Sprint 1 (P0 - Go-Live-Blocker)
 
 ---
@@ -152,3 +152,4 @@
 | 2025-12-06 | R0010 | Kontakt-Seite: Performance + A11y Optimierung (78% → 85%+, 91% → 95%+) |
 | 2025-12-06 | R0011 | Datenschutz-Seite: Accessibility (14 Sections, 7 SVGs, 5 Listen, Modal, Kontrast) |
 | 2025-12-06 | R0012 | AGB-Seite: Accessibility (4 Sections, 4 SVGs, 10 Listen, Modal, Kontrast) |
+| 2025-12-06 | R0013 | Leistungen-Seite: Accessibility (4 Sections, Suchfeld, Filter-Buttons, Live-Region) |

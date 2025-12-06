@@ -185,7 +185,7 @@ export default function LeistungenPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section ref={heroRef} className="relative bg-[#012956] py-12 md:py-16 lg:py-20 xl:py-28 overflow-hidden">
+      <section ref={heroRef} className="relative bg-[#012956] py-12 md:py-16 lg:py-20 xl:py-28 overflow-hidden" aria-labelledby="leistungen-hero-title">
         {/* Background Pattern */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#109387]/10 to-transparent" />
@@ -200,7 +200,7 @@ export default function LeistungenPage() {
                 Unsere Leistungen
               </p>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-white leading-[1.15] mb-4 lg:mb-5">
+              <h1 id="leistungen-hero-title" className="text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold text-white leading-[1.15] mb-4 lg:mb-5">
                 18 professionelle
                 <span className="block text-[#109387] mt-1 lg:mt-2">Reinigungsservices</span>
               </h1>
@@ -293,27 +293,29 @@ export default function LeistungenPage() {
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="flex flex-col md:flex-row md:items-center gap-4 py-4">
             {/* Suchfeld */}
-            <div className="relative flex-1 max-w-md">
-              <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+            <div className="relative flex-1 max-w-md" role="search">
+              <Search size={20} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" aria-hidden="true" />
               <input
                 type="text"
                 placeholder="Suchen... z.B. Büro, Fenster, Industrie"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
+                aria-label="Leistungen durchsuchen"
                 className="w-full pl-12 pr-10 py-3 rounded-[6px] border border-gray-200 bg-[#f8f9fa] font-semibold text-[#012956] placeholder:text-gray-400 focus:outline-none focus:border-[#109387] focus:ring-2 focus:ring-[#109387]/20 transition-all"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                  aria-label="Suche zurücksetzen"
                 >
-                  <X size={18} />
+                  <X size={18} aria-hidden="true" />
                 </button>
               )}
             </div>
 
             {/* Filter Buttons - kompakter auf Mobile */}
-            <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto scrollbar-hide">
+            <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto scrollbar-hide" role="group" aria-label="Leistungen nach Kategorie filtern">
               <button
                 onClick={() => { setActiveFilter('alle'); setSearchQuery(''); }}
                 className={`px-3 sm:px-5 py-2 sm:py-2.5 rounded-[6px] font-bold text-sm sm:text-base whitespace-nowrap transition-all ${
@@ -321,6 +323,7 @@ export default function LeistungenPage() {
                     ? 'bg-[#012956] text-white'
                     : 'bg-[#f8f9fa] text-[#012956] hover:bg-[#012956] hover:text-white'
                 }`}
+                aria-pressed={activeFilter === 'alle' && !searchQuery}
               >
                 Alle
               </button>
@@ -333,6 +336,7 @@ export default function LeistungenPage() {
                       ? 'bg-[#012956] text-white'
                       : 'bg-[#f8f9fa] text-[#012956] hover:bg-[#012956] hover:text-white'
                   }`}
+                  aria-pressed={activeFilter === cat.id && !searchQuery}
                 >
                   {categoryShortLabels[cat.id]}
                 </button>
@@ -342,7 +346,7 @@ export default function LeistungenPage() {
 
           {/* Suchergebnis Info */}
           {searchQuery && (
-            <div className="pb-4 -mt-2">
+            <div className="pb-4 -mt-2" aria-live="polite" aria-atomic="true">
               <p className="text-gray-600 font-semibold">
                 {filteredLeistungen.length === 0 ? (
                   <span>Keine Ergebnisse für „{searchQuery}"</span>
@@ -356,11 +360,11 @@ export default function LeistungenPage() {
       </div>
 
       {/* Leistungen Grid */}
-      <section ref={gridSectionRef} id="leistungen-grid" className="py-16 lg:py-28 bg-[#f8f9fa]">
+      <section ref={gridSectionRef} id="leistungen-grid" className="py-16 lg:py-28 bg-[#f8f9fa]" aria-labelledby="leistungen-grid-title">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-4">
+            <h2 id="leistungen-grid-title" className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-4">
               {searchQuery
                 ? 'Suchergebnisse'
                 : activeFilter === 'alle'
@@ -478,7 +482,7 @@ export default function LeistungenPage() {
       />
 
       {/* Why Choose Us */}
-      <section className="py-20 lg:py-28 bg-[#f8f9fa]">
+      <section className="py-20 lg:py-28 bg-[#f8f9fa]" aria-labelledby="warum-fimi-title">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Content */}
@@ -487,7 +491,7 @@ export default function LeistungenPage() {
                 <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3">
                   Warum FIMI
                 </p>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-6">
+                <h2 id="warum-fimi-title" className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-6">
                   Qualität, die Sie überzeugt
                 </h2>
                 <p className="text-lg text-gray-700 font-semibold leading-relaxed mb-10">
@@ -537,14 +541,14 @@ export default function LeistungenPage() {
 
 
       {/* CTA Section */}
-      <section className="py-20 lg:py-28 bg-[#012956]">
+      <section className="py-20 lg:py-28 bg-[#012956]" aria-labelledby="leistungen-cta-title">
         <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
           <FadeIn>
             <div className="text-center max-w-3xl mx-auto">
               <p className="text-sm text-gray-400 font-semibold uppercase tracking-wide mb-3">
                 Jetzt starten
               </p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-6">
+              <h2 id="leistungen-cta-title" className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#109387] leading-[1.1] mb-6">
                 Kostenfreie Besichtigung in 48 Stunden
               </h2>
               <p className="text-lg text-white/80 font-semibold leading-relaxed mb-10">
