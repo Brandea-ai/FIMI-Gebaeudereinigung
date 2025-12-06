@@ -189,7 +189,7 @@ export default function NeuigkeitenPage() {
                     </p>
 
                     {/* Meta: Datum */}
-                    <p className="text-gray-500 text-[10px] sm:text-xs mb-1 sm:mb-0">
+                    <p className="text-gray-600 text-[10px] sm:text-xs mb-1 sm:mb-0">
                       {formatDate(post.date)} · {post.readTime} Min.
                     </p>
 

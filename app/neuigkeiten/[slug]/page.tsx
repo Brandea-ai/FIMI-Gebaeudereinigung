@@ -258,7 +258,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                           <p className="text-[#012956] font-bold text-xs xl:text-sm line-clamp-2 group-hover:text-[#109387] transition-colors leading-tight">
                             {relatedPost.title}
                           </p>
-                          <p className="text-gray-500 text-[10px] xl:text-xs mt-1">
+                          <p className="text-gray-600 text-[10px] xl:text-xs mt-1">
                             {formatDate(relatedPost.date)}
                           </p>
                         </div>
@@ -303,7 +303,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                       <p className="text-[#012956] font-bold text-sm sm:text-base line-clamp-2 group-hover:text-[#109387] transition-colors leading-tight">
                         {relatedPost.title}
                       </p>
-                      <p className="text-gray-500 text-xs mt-1">
+                      <p className="text-gray-600 text-xs mt-1">
                         {formatDate(relatedPost.date)}
                       </p>
                     </div>
