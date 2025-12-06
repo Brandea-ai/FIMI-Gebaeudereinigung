@@ -54,9 +54,9 @@ export default function NotFound() {
 
       {/* Content - Centered */}
       <div className="relative z-10 min-h-screen flex items-center justify-center px-6 py-12">
-        {/* Outer Teal Gradient Container */}
+        {/* Outer Teal Gradient Container - Transparent */}
         <div
-          className={`bg-gradient-to-br from-[#109387] to-[#0d7d72] rounded-[6px] p-4 sm:p-5 shadow-2xl transition-all duration-700 ${
+          className={`bg-gradient-to-br from-[#109387]/70 to-[#0d7d72]/70 backdrop-blur-sm rounded-[6px] p-4 sm:p-5 shadow-2xl transition-all duration-700 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
