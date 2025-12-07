@@ -51,7 +51,7 @@ export default function BlogPreviewSection() {
             className="inline-flex items-center gap-2 text-[#109387] font-bold hover:text-[#012956] transition-colors group text-sm sm:text-base"
           >
             Alle Artikel
-            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </Link>
         </div>
 
@@ -69,6 +69,7 @@ export default function BlogPreviewSection() {
                   alt={artikel.titel}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <div className="absolute top-3 left-3">
                   <span className="bg-[#109387] text-white text-[10px] sm:text-xs font-bold px-2.5 py-1 rounded-[4px]">
@@ -89,7 +90,7 @@ export default function BlogPreviewSection() {
                 {/* Meta */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1.5 text-gray-400">
-                    <Clock className="w-3.5 h-3.5" />
+                    <Clock className="w-3.5 h-3.5" aria-hidden="true" />
                     <span className="text-xs font-semibold">{artikel.lesezeit}</span>
                   </div>
                   <Link
@@ -97,7 +98,7 @@ export default function BlogPreviewSection() {
                     className="inline-flex items-center gap-1 text-[#109387] font-bold text-xs sm:text-sm hover:text-[#012956] transition-colors group/link"
                   >
                     Lesen
-                    <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" aria-hidden="true" />
                   </Link>
                 </div>
               </div>

@@ -84,12 +84,13 @@ export default function HallentypenSection() {
                     alt={`${halle.titel} reinigen`}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#012956]/60 to-transparent" />
 
                   {/* Icon Badge */}
                   <div className="absolute bottom-3 left-3 w-10 h-10 sm:w-12 sm:h-12 bg-[#109387] rounded-[6px] flex items-center justify-center">
-                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" strokeWidth={1.5} />
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" strokeWidth={1.5} aria-hidden="true" />
                   </div>
                 </div>
 
@@ -126,7 +127,7 @@ export default function HallentypenSection() {
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">
                 Ihr Hallentyp nicht dabei?
               </h3>
-              <p className="text-white/70 font-semibold text-sm sm:text-base">
+              <p className="text-white/80 font-semibold text-sm sm:text-base">
                 Wir reinigen jede Art von Halle – sprechen Sie uns an für eine individuelle Lösung.
               </p>
             </div>
@@ -135,7 +136,7 @@ export default function HallentypenSection() {
               className="inline-flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-6 sm:px-8 py-3 sm:py-4 rounded-[6px] transition-colors group whitespace-nowrap"
             >
               Individuelle Anfrage
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </a>
           </div>
         </div>

@@ -71,7 +71,7 @@ export default function FAQSection() {
               className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-[6px] transition-all duration-300 group w-full"
             >
               Kostenfreie Besichtigung
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </a>
 
             {/* Kontakt-Info */}
@@ -94,6 +94,7 @@ export default function FAQSection() {
                 alt="Kundenberatung FIMI Hallenreinigung"
                 fill
                 className="object-cover"
+                sizes="400px"
               />
             </div>
           </aside>
@@ -110,6 +111,8 @@ export default function FAQSection() {
                 <button
                   onClick={() => toggle(index)}
                   className="w-full flex items-center justify-between p-4 sm:p-5 lg:p-6 text-left hover:bg-gray-100 transition-colors"
+                  aria-expanded={openIndex === index}
+                  aria-controls={`faq-answer-${index}`}
                 >
                   <h3 className="text-sm sm:text-base lg:text-lg font-bold text-[#012956] pr-2 sm:pr-4">
                     {faq.frage}
@@ -118,10 +121,12 @@ export default function FAQSection() {
                     className={`w-5 h-5 sm:w-6 sm:h-6 text-[#109387] flex-shrink-0 transition-transform duration-300 ${
                       openIndex === index ? 'rotate-180' : ''
                     }`}
+                    aria-hidden="true"
                   />
                 </button>
 
                 <div
+                  id={`faq-answer-${index}`}
                   className={`overflow-hidden transition-all duration-300 ${
                     openIndex === index ? 'max-h-[500px]' : 'max-h-0'
                   }`}

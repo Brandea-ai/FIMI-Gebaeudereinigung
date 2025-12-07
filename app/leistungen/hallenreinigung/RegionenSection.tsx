@@ -100,8 +100,9 @@ export default function RegionenSection() {
           <button
             onClick={prev}
             className="w-9 h-9 sm:w-10 sm:h-10 rounded-[6px] bg-white flex items-center justify-center hover:bg-[#012956] hover:text-white transition-colors"
+            aria-label="Vorherige Region anzeigen"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-5 h-5" aria-hidden="true" />
           </button>
           <div className="flex-1 text-center">
             <span className="text-lg sm:text-xl font-bold text-[#012956]">{active.name}</span>
@@ -109,8 +110,9 @@ export default function RegionenSection() {
           <button
             onClick={next}
             className="w-9 h-9 sm:w-10 sm:h-10 rounded-[6px] bg-white flex items-center justify-center hover:bg-[#012956] hover:text-white transition-colors"
+            aria-label="Nächste Region anzeigen"
           >
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-5 h-5" aria-hidden="true" />
           </button>
         </div>
 
@@ -136,14 +138,15 @@ export default function RegionenSection() {
           {/* Image */}
           <div className="relative h-[220px] sm:h-[280px] md:h-[350px] lg:h-[450px] rounded-[6px] overflow-hidden">
             <Image
-              src={active.image}
+              src={active.image.replace('w=1600', 'w=800')}
               alt={active.headline}
               fill
               className="object-cover transition-all duration-500"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#012956]/60 to-transparent" />
             <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 flex items-center gap-2">
-              <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[#109387]" />
+              <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[#109387]" aria-hidden="true" />
               <span className="text-white font-bold text-base sm:text-lg">{active.name}</span>
             </div>
           </div>
@@ -164,7 +167,7 @@ export default function RegionenSection() {
                   key={index}
                   className="flex items-center gap-1.5 sm:gap-2 bg-white rounded-[6px] px-2.5 sm:px-4 py-1.5 sm:py-2"
                 >
-                  <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#109387]" />
+                  <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#109387]" aria-hidden="true" />
                   <span className="text-xs sm:text-sm font-bold text-gray-700">{vorteil}</span>
                 </div>
               ))}
@@ -176,7 +179,7 @@ export default function RegionenSection() {
               className="inline-flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-4 sm:px-6 py-2.5 sm:py-3 rounded-[6px] transition-colors w-fit group text-sm sm:text-base"
             >
               Hallenreinigung in {active.name} anfragen
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </a>
           </div>
         </div>
@@ -197,7 +200,7 @@ export default function RegionenSection() {
             </div>
             <span className="inline-flex items-center justify-center gap-2 bg-[#109387] group-hover:bg-[#0d7d72] text-white font-bold px-5 sm:px-8 py-3 sm:py-4 rounded-[6px] transition-colors whitespace-nowrap text-sm sm:text-base">
               Standort anfragen
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </span>
           </div>
         </a>
