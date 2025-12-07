@@ -23,7 +23,7 @@ export default function LoesungSection() {
           <div className="relative order-2 lg:order-1">
             <div className="relative aspect-[4/3] rounded-[6px] overflow-hidden shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=1600&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=800&auto=format&fit=crop"
                 alt="Professionelle Einkaufsberatung und strategisches Beschaffungsmanagement"
                 fill
                 className="object-cover"
@@ -38,7 +38,7 @@ export default function LoesungSection() {
               <div className="text-white font-semibold text-sm sm:text-base">
                 Einsparpotenzial
               </div>
-              <div className="text-white/60 text-xs sm:text-sm font-semibold">
+              <div className="text-white/80 text-xs sm:text-sm font-semibold">
                 direkt im Gewinn
               </div>
             </div>
@@ -63,7 +63,7 @@ export default function LoesungSection() {
             <ul className="space-y-3 sm:space-y-4 mb-8 sm:mb-10">
               {benefits.map((benefit, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-[#109387] flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-[#109387] flex-shrink-0 mt-0.5" aria-hidden="true" />
                   <span className="text-sm sm:text-base lg:text-lg text-gray-700 font-semibold">
                     {benefit}
                   </span>
@@ -77,7 +77,7 @@ export default function LoesungSection() {
               className="inline-flex items-center gap-2 sm:gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm sm:text-base lg:text-lg px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-[6px] transition-all duration-300 group shadow-lg hover:shadow-xl"
             >
               Potenziale aufdecken
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </a>
           </div>
 

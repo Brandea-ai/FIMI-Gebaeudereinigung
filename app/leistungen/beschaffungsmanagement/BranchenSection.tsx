@@ -73,7 +73,7 @@ export default function BranchenSection() {
               >
                 {/* Icon */}
                 <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-[6px] border-2 border-[#109387] group-hover:bg-[#109387] flex items-center justify-center mb-4 sm:mb-5 transition-all duration-500">
-                  <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#109387] group-hover:text-white transition-colors duration-500" strokeWidth={1.5} />
+                  <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#109387] group-hover:text-white transition-colors duration-500" strokeWidth={1.5} aria-hidden="true" />
                 </div>
 
                 {/* Title */}
@@ -89,7 +89,7 @@ export default function BranchenSection() {
                 {/* Link */}
                 <span className="inline-flex items-center gap-2 text-[#109387] group-hover:text-white font-bold text-sm transition-colors duration-500">
                   Mehr erfahren
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </span>
               </Link>
             )
@@ -103,7 +103,7 @@ export default function BranchenSection() {
             className="inline-flex items-center gap-2 bg-[#012956] hover:bg-[#109387] text-white font-bold text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4 rounded-[6px] transition-all group"
           >
             Alle Branchen entdecken
-            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </Link>
         </div>
 

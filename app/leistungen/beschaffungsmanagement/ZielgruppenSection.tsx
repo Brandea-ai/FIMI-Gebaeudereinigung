@@ -62,7 +62,7 @@ export default function ZielgruppenSection() {
               <div className="flex items-start gap-4 sm:gap-5">
                 {/* Icon - Outlined Style */}
                 <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-[6px] border-2 border-[#109387] group-hover:bg-[#109387] flex items-center justify-center flex-shrink-0 transition-all duration-300">
-                  <persona.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
+                  <persona.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} aria-hidden="true" />
                 </div>
 
                 <div className="flex-1">

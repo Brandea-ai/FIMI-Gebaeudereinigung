@@ -48,7 +48,7 @@ export default function VorteileSection() {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 sm:mb-6">
             Ihre Vorteile mit FIMI Beschaffungsmanagement
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-white/70 font-semibold leading-relaxed">
+          <p className="text-base sm:text-lg lg:text-xl text-white/80 font-semibold leading-relaxed">
             Wir sind nicht die größte Beratung. Aber vielleicht die richtige für Sie.
             Regional verankert, pragmatisch orientiert, erfolgsfokussiert.
           </p>
@@ -63,7 +63,7 @@ export default function VorteileSection() {
             >
               {/* Icon */}
               <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-[6px] border-2 border-[#109387] group-hover:bg-[#109387] flex items-center justify-center mb-4 sm:mb-5 transition-all duration-300">
-                <advantage.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
+                <advantage.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#109387] group-hover:text-white transition-colors duration-300" strokeWidth={1.5} aria-hidden="true" />
               </div>
 
               {/* Title */}
@@ -72,7 +72,7 @@ export default function VorteileSection() {
               </h3>
 
               {/* Description */}
-              <p className="text-sm sm:text-base text-white/70 font-semibold leading-relaxed">
+              <p className="text-sm sm:text-base text-white/80 font-semibold leading-relaxed">
                 {advantage.description}
               </p>
             </div>

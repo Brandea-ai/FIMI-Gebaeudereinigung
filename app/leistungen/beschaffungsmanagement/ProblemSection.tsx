@@ -58,7 +58,7 @@ export default function ProblemSection() {
               <div className="flex items-start gap-4 sm:gap-5">
                 {/* Icon */}
                 <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-[6px] bg-[#109387]/10 group-hover:bg-[#109387] flex items-center justify-center flex-shrink-0 transition-all duration-500">
-                  <item.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#109387] group-hover:text-white transition-colors duration-500" strokeWidth={1.5} />
+                  <item.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#109387] group-hover:text-white transition-colors duration-500" strokeWidth={1.5} aria-hidden="true" />
                 </div>
 
                 <div className="flex-1">

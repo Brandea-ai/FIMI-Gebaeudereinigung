@@ -1,8 +1,8 @@
 # FIMI Website Tasks - Status-Tracker
 
 **Quelle:** FIMI_Website_TODOs.md (HEILIGER GRAL - alle Tasks basieren darauf!)
-**Stand:** 2025-12-06
-**Letzter Report:** R0014
+**Stand:** 2025-12-07
+**Letzter Report:** R0015
 **Aktueller Sprint:** Sprint 1 (P0 - Go-Live-Blocker)
 
 ---
@@ -154,3 +154,4 @@
 | 2025-12-06 | R0012 | AGB-Seite: Accessibility (4 Sections, 4 SVGs, 10 Listen, Modal, Kontrast) |
 | 2025-12-06 | R0013 | Leistungen-Seite: Accessibility (4 Sections, Suchfeld, Filter-Buttons, Live-Region) |
 | 2025-12-06 | R0014 | Branchen-Seite: Accessibility (3 Sections, 3 Suchfelder, Filter-Buttons, Live-Region, Grid) |
+| 2025-12-07 | R0015 | Beschaffungsmanagement: Performance + A11y (78% → 90%+, 92% → 95%+, LCP 5.3s → ~2.5s) |
