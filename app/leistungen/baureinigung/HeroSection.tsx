@@ -60,7 +60,7 @@ export default function HeroSection() {
 
             {/* Subheadline - Problem-orientiert */}
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#109387] mb-4 sm:mb-6">
-              Vom Rohbau zur bezugsfertigen Immobilie
+              Neubau oder Sanierung – bezugsfertig übergeben
             </p>
 
             {/* Description - SEO + Überzeugung */}

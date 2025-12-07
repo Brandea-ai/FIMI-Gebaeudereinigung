@@ -27,18 +27,12 @@ const qualityPoints = [
 
 interface QualityTrustBarProps {
   className?: string
-  variant?: 'dark' | 'light'
 }
 
-export default function QualityTrustBar({
-  className = '',
-  variant = 'dark'
-}: QualityTrustBarProps) {
-  const isDark = variant === 'dark'
-
+export default function QualityTrustBar({ className = '' }: QualityTrustBarProps) {
   return (
     <section
-      className={`py-8 lg:py-12 ${isDark ? 'bg-[#012956]' : 'bg-[#f8f9fa]'} ${className}`}
+      className={`py-8 lg:py-12 bg-[#109387] ${className}`}
       aria-label="Qualitätssicherung"
     >
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20">
@@ -53,28 +47,22 @@ export default function QualityTrustBar({
               className="flex flex-col items-center text-center lg:flex-row lg:items-start lg:text-left gap-3 lg:gap-4"
               role="listitem"
             >
-              {/* Icon */}
-              <div className={`flex-shrink-0 w-12 h-12 rounded-[6px] flex items-center justify-center ${
-                isDark ? 'bg-[#109387]/20' : 'bg-[#109387]/10'
-              }`}>
+              {/* Icon - Weiß */}
+              <div className="flex-shrink-0 w-12 h-12 rounded-[6px] flex items-center justify-center bg-white/20">
                 <point.icon
                   size={24}
-                  className="text-[#109387]"
+                  className="text-white"
                   strokeWidth={1.5}
                   aria-hidden="true"
                 />
               </div>
 
-              {/* Text */}
+              {/* Text - Weiß */}
               <div>
-                <h3 className={`font-bold text-sm lg:text-base mb-1 ${
-                  isDark ? 'text-white' : 'text-[#012956]'
-                }`}>
+                <h3 className="font-bold text-sm lg:text-base mb-1 text-white">
                   {point.titel}
                 </h3>
-                <p className={`text-xs lg:text-sm font-semibold leading-snug ${
-                  isDark ? 'text-white/70' : 'text-gray-600'
-                }`}>
+                <p className="text-xs lg:text-sm font-semibold leading-snug text-white/80">
                   {point.beschreibung}
                 </p>
               </div>

@@ -215,7 +215,7 @@ export default function ReferenzenPage() {
       </section>
 
       {/* Quality Trust Bar */}
-      <QualityTrustBar variant="dark" />
+      <QualityTrustBar />
 
       {/* Filter Section - Sticky top-0 wie Leistungen */}
       <section className="sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm" aria-label="Projektfilter">
