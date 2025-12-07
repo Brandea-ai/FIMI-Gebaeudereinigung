@@ -10,10 +10,12 @@ export interface BlogPost {
   image: string
   category: 'news' | 'tipps' | 'projekt' | 'team'
   author: string
-  date: string // ISO format
+  authorRole?: string // E-E-A-T: Rolle/Position des Autors
+  date: string // ISO format (Veröffentlichungsdatum)
+  lastUpdated?: string // ISO format (zuletzt aktualisiert)
   readTime: number // minutes
   featured?: boolean
-  sources?: string[] // Quellen-URLs
+  sources?: string[] // Quellen-URLs für E-E-A-T
 }
 
 export const blogCategories = {
@@ -140,7 +142,9 @@ export const blogPosts: BlogPost[] = [
     image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
     category: 'news',
     author: 'FIMI Team',
+    authorRole: 'Redaktion Gebäudereinigung',
     date: '2025-08-18',
+    lastUpdated: '2025-01-15',
     readTime: 4,
     featured: true,
     sources: [
@@ -259,7 +263,9 @@ export const blogPosts: BlogPost[] = [
     image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=800&auto=format&fit=crop',
     category: 'news',
     author: 'FIMI Team',
+    authorRole: 'Redaktion Gebäudereinigung',
     date: '2024-10-15',
+    lastUpdated: '2025-01-10',
     readTime: 4,
     sources: [
       'https://commission.europa.eu/energy-climate-change-environment/standards-tools-and-labels/products-labelling-rules-and-standards/ecodesign-and-energy-labelling/ecodesign-sustainable-products-regulation_de',
@@ -378,7 +384,9 @@ export const blogPosts: BlogPost[] = [
     image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800&auto=format&fit=crop',
     category: 'news',
     author: 'FIMI Team',
+    authorRole: 'Redaktion Gebäudereinigung',
     date: '2025-06-04',
+    lastUpdated: '2025-01-12',
     readTime: 4,
     sources: [
       'https://www.die-gebaeudedienstleister.de/unser-handwerk/zahlen-fakten',
@@ -509,6 +517,7 @@ export const blogPosts: BlogPost[] = [
     image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop',
     category: 'tipps',
     author: 'FIMI Team',
+    authorRole: 'Reinigungsexperten',
     date: '2024-08-22',
     readTime: 4,
     sources: [
@@ -662,6 +671,7 @@ export const blogPosts: BlogPost[] = [
     image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop',
     category: 'tipps',
     author: 'FIMI Team',
+    authorRole: 'Reinigungsexperten',
     date: '2023-10-18',
     readTime: 3,
     sources: [
@@ -779,6 +789,7 @@ export const blogPosts: BlogPost[] = [
     image: 'https://images.unsplash.com/photo-1516912481808-3406841bd33c?q=80&w=800&auto=format&fit=crop',
     category: 'tipps',
     author: 'FIMI Team',
+    authorRole: 'Reinigungsexperten',
     date: '2023-12-05',
     readTime: 4,
     sources: [
@@ -893,6 +904,7 @@ export const blogPosts: BlogPost[] = [
     image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop',
     category: 'projekt',
     author: 'FIMI Team',
+    authorRole: 'Projektleitung',
     date: '2024-07-12',
     readTime: 5,
     sources: [
@@ -1010,6 +1022,7 @@ export const blogPosts: BlogPost[] = [
     image: 'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?q=80&w=800&auto=format&fit=crop',
     category: 'projekt',
     author: 'FIMI Team',
+    authorRole: 'Projektleitung',
     date: '2024-05-15',
     readTime: 4,
     sources: [
@@ -1135,6 +1148,7 @@ export const blogPosts: BlogPost[] = [
     image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=800&auto=format&fit=crop',
     category: 'projekt',
     author: 'FIMI Team',
+    authorRole: 'Projektleitung',
     date: '2023-11-08',
     readTime: 4,
     sources: [
@@ -1272,6 +1286,7 @@ export const blogPosts: BlogPost[] = [
     image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop',
     category: 'team',
     author: 'FIMI Team',
+    authorRole: 'Personalabteilung',
     date: '2025-01-15',
     readTime: 4,
     sources: [
@@ -1376,6 +1391,7 @@ export const blogPosts: BlogPost[] = [
     image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop',
     category: 'team',
     author: 'FIMI Team',
+    authorRole: 'Personalabteilung',
     date: '2025-03-04',
     readTime: 4,
     sources: [
@@ -1491,6 +1507,7 @@ export const blogPosts: BlogPost[] = [
     image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop',
     category: 'team',
     author: 'FIMI Team',
+    authorRole: 'Personalabteilung',
     date: '2024-09-20',
     readTime: 4,
     sources: [

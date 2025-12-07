@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ArrowLeft, ArrowRight, Calendar, Clock, User } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Calendar, Clock, User, RefreshCw, ExternalLink, BookOpen } from 'lucide-react'
 import ShareButton from './ShareButton'
 import { blogPosts, blogCategories, getPostBySlug, getRecentPosts, formatDate } from '@/lib/blog-data'
 
@@ -163,16 +163,27 @@ export default async function BlogPostPage({ params }: PageProps) {
           <div className="lg:grid lg:grid-cols-[60%_40%] lg:gap-12 xl:gap-16">
             {/* Main Content */}
             <div>
-              {/* Meta */}
+              {/* Meta - E-E-A-T optimiert */}
               <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-gray-600 text-xs sm:text-sm pb-6 sm:pb-8 border-b border-gray-200 mb-6 sm:mb-8">
                 <span className="flex items-center gap-1 sm:gap-1.5">
                   <User size={14} className="sm:w-4 sm:h-4" aria-hidden="true" />
-                  {post.author}
+                  <span>
+                    {post.author}
+                    {post.authorRole && (
+                      <span className="text-gray-400 ml-1">({post.authorRole})</span>
+                    )}
+                  </span>
                 </span>
                 <span className="flex items-center gap-1 sm:gap-1.5">
                   <Calendar size={14} className="sm:w-4 sm:h-4" aria-hidden="true" />
                   {formatDate(post.date)}
                 </span>
+                {post.lastUpdated && post.lastUpdated !== post.date && (
+                  <span className="flex items-center gap-1 sm:gap-1.5 text-[#109387]">
+                    <RefreshCw size={14} className="sm:w-4 sm:h-4" aria-hidden="true" />
+                    Aktualisiert: {formatDate(post.lastUpdated)}
+                  </span>
+                )}
                 <span className="flex items-center gap-1 sm:gap-1.5">
                   <Clock size={14} className="sm:w-4 sm:h-4" aria-hidden="true" />
                   {post.readTime} Min.
@@ -202,6 +213,63 @@ export default async function BlogPostPage({ params }: PageProps) {
                 <div className="flex items-center gap-3 sm:gap-4">
                   <span className="text-gray-600 font-semibold text-xs sm:text-sm">Teilen:</span>
                   <ShareButton title={post.title} />
+                </div>
+              </div>
+
+              {/* Sources - E-E-A-T */}
+              {post.sources && post.sources.length > 0 && (
+                <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-gray-200">
+                  <div className="bg-[#f8f9fa] rounded-[6px] p-4 sm:p-5">
+                    <div className="flex items-center gap-2 mb-3 sm:mb-4">
+                      <BookOpen size={16} className="text-[#012956]" aria-hidden="true" />
+                      <h4 className="text-[#012956] font-bold text-sm sm:text-base">
+                        Quellen & Weiterführende Informationen
+                      </h4>
+                    </div>
+                    <ul className="space-y-2 sm:space-y-3">
+                      {post.sources.map((source, idx) => {
+                        // Extract domain for display
+                        const url = new URL(source)
+                        const domain = url.hostname.replace('www.', '')
+                        return (
+                          <li key={idx}>
+                            <a
+                              href={source}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group flex items-start gap-2 text-xs sm:text-sm text-gray-600 hover:text-[#109387] transition-colors"
+                            >
+                              <ExternalLink size={14} className="flex-shrink-0 mt-0.5" aria-hidden="true" />
+                              <span className="break-all">
+                                <span className="font-semibold text-[#012956] group-hover:text-[#109387]">{domain}</span>
+                                <span className="text-gray-400 ml-1 hidden sm:inline">– {url.pathname.slice(0, 50)}{url.pathname.length > 50 ? '...' : ''}</span>
+                              </span>
+                            </a>
+                          </li>
+                        )
+                      })}
+                    </ul>
+                  </div>
+                </div>
+              )}
+
+              {/* E-E-A-T Author Box */}
+              <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-gray-200">
+                <div className="bg-[#012956] rounded-[6px] p-4 sm:p-5">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#109387] flex items-center justify-center flex-shrink-0">
+                      <User size={24} className="text-white" aria-hidden="true" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-white font-bold text-sm sm:text-base">{post.author}</p>
+                      {post.authorRole && (
+                        <p className="text-white/70 text-xs sm:text-sm">{post.authorRole}</p>
+                      )}
+                      <p className="text-white/60 text-xs sm:text-sm mt-2 leading-relaxed">
+                        Dieser Artikel wurde vom FIMI Team erstellt. Wir verfügen über langjährige Erfahrung in der professionellen Gebäudereinigung in Bayern.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
