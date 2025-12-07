@@ -48,10 +48,11 @@ export default function VorteileSection() {
             {/* Main Image */}
             <div className="relative h-[350px] sm:h-[450px] lg:h-[550px] rounded-[8px] overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1600&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop"
                 alt="FIMI Event-Reinigung Team"
                 fill
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#012956]/60 to-transparent" />
             </div>
@@ -60,7 +61,7 @@ export default function VorteileSection() {
             <div className="absolute -bottom-6 -right-4 sm:right-6 bg-white rounded-[8px] p-5 sm:p-6 shadow-2xl max-w-[280px]">
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-14 h-14 bg-[#109387]/10 rounded-[6px] flex items-center justify-center">
-                  <Users className="w-7 h-7 text-[#109387]" />
+                  <Users className="w-7 h-7 text-[#109387]" aria-hidden="true" />
                 </div>
                 <div>
                   <div className="text-3xl font-bold text-[#012956]">500+</div>
@@ -99,13 +100,13 @@ export default function VorteileSection() {
                   >
                     <div className="flex items-start gap-3">
                       <div className="w-10 h-10 bg-[#109387]/20 rounded-[6px] flex items-center justify-center flex-shrink-0">
-                        <Icon className="w-5 h-5 text-[#109387]" strokeWidth={1.5} />
+                        <Icon className="w-5 h-5 text-[#109387]" strokeWidth={1.5} aria-hidden="true" />
                       </div>
                       <div>
                         <h3 className="text-white font-bold text-base sm:text-lg mb-1">
                           {vorteil.title}
                         </h3>
-                        <p className="text-white/70 font-semibold text-sm leading-relaxed">
+                        <p className="text-white/80 font-semibold text-sm leading-relaxed">
                           {vorteil.description}
                         </p>
                       </div>
@@ -121,7 +122,7 @@ export default function VorteileSection() {
               className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-[6px] transition-all duration-300 group"
             >
               Jetzt unverbindlich anfragen
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
             </a>
           </div>
 

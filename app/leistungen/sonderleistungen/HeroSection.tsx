@@ -10,7 +10,7 @@ export default function HeroSection() {
       {/* Background Image - 4K Unsplash - Event/Veranstaltung */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=3840&auto=format&fit=crop"
+          src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1920&auto=format&fit=crop"
           alt="Professionelle Event- und Veranstaltungsreinigung in Bayern"
           fill
           className="object-cover"
@@ -29,17 +29,17 @@ export default function HeroSection() {
           <nav className="mb-6 sm:mb-8" aria-label="Breadcrumb">
             <ol className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold">
               <li>
-                <Link href="/" className="text-white/60 hover:text-white transition-colors">
+                <Link href="/" className="text-white/80 hover:text-white transition-colors">
                   Home
                 </Link>
               </li>
-              <li className="text-white/40">/</li>
+              <li className="text-white/60" aria-hidden="true">/</li>
               <li>
-                <Link href="/leistungen" className="text-white/60 hover:text-white transition-colors">
+                <Link href="/leistungen" className="text-white/80 hover:text-white transition-colors">
                   Leistungen
                 </Link>
               </li>
-              <li className="text-white/40">/</li>
+              <li className="text-white/60" aria-hidden="true">/</li>
               <li className="text-[#109387]">Sonderleistungen</li>
             </ol>
           </nav>
@@ -75,24 +75,24 @@ export default function HeroSection() {
             {/* Trust Points - 3 Säulen */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8 lg:mb-10">
               <div className="flex items-center gap-2.5 sm:gap-3 bg-white/10 backdrop-blur-sm rounded-[6px] px-3 sm:px-4 py-2.5 sm:py-3">
-                <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-[#109387] flex-shrink-0" />
+                <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-[#109387] flex-shrink-0" aria-hidden="true" />
                 <div>
                   <span className="text-white font-bold block text-sm sm:text-base">Vor & Während & Nach</span>
-                  <span className="text-white/60 text-xs sm:text-sm font-semibold">Rundum-Service</span>
+                  <span className="text-white/80 text-xs sm:text-sm font-semibold">Rundum-Service</span>
                 </div>
               </div>
               <div className="flex items-center gap-2.5 sm:gap-3 bg-white/10 backdrop-blur-sm rounded-[6px] px-3 sm:px-4 py-2.5 sm:py-3">
-                <Users className="w-5 h-5 sm:w-6 sm:h-6 text-[#109387] flex-shrink-0" />
+                <Users className="w-5 h-5 sm:w-6 sm:h-6 text-[#109387] flex-shrink-0" aria-hidden="true" />
                 <div>
                   <span className="text-white font-bold block text-sm sm:text-base">Erfahrene Teams</span>
-                  <span className="text-white/60 text-xs sm:text-sm font-semibold">Diskret & zuverlässig</span>
+                  <span className="text-white/80 text-xs sm:text-sm font-semibold">Diskret & zuverlässig</span>
                 </div>
               </div>
               <div className="flex items-center gap-2.5 sm:gap-3 bg-white/10 backdrop-blur-sm rounded-[6px] px-3 sm:px-4 py-2.5 sm:py-3">
-                <Award className="w-5 h-5 sm:w-6 sm:h-6 text-[#109387] flex-shrink-0" />
+                <Award className="w-5 h-5 sm:w-6 sm:h-6 text-[#109387] flex-shrink-0" aria-hidden="true" />
                 <div>
                   <span className="text-white font-bold block text-sm sm:text-base">Flexible Planung</span>
-                  <span className="text-white/60 text-xs sm:text-sm font-semibold">Auch kurzfristig</span>
+                  <span className="text-white/80 text-xs sm:text-sm font-semibold">Auch kurzfristig</span>
                 </div>
               </div>
             </div>
@@ -104,20 +104,20 @@ export default function HeroSection() {
                 className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm sm:text-base lg:text-lg px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-[6px] transition-all duration-300 group shadow-lg hover:shadow-xl"
               >
                 Jetzt anfragen
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </a>
               <a
                 href="tel:+4987143033460"
                 className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-white hover:bg-gray-100 text-[#012956] font-bold text-sm sm:text-base lg:text-lg px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-[6px] transition-all duration-300 shadow-lg"
               >
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
                 0871 430 334 60
               </a>
             </div>
 
             {/* Micro-Trust */}
-            <p className="mt-4 sm:mt-6 text-white/60 font-semibold text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2">
-              <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#109387]" />
+            <p className="mt-4 sm:mt-6 text-white/80 font-semibold text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2">
+              <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#109387]" aria-hidden="true" />
               Unverbindlich & kostenfrei – Wir melden uns innerhalb von 2 Stunden
             </p>
           </div>

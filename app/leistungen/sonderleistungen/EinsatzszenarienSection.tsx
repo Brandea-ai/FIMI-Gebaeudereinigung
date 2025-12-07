@@ -92,17 +92,18 @@ export default function EinsatzszenarienSection() {
           {/* Left: Image */}
           <div className="relative h-[300px] sm:h-[400px] lg:h-full min-h-[400px] rounded-[8px] overflow-hidden">
             <Image
-              src={active.image}
+              src={active.image.replace('w=1200', 'w=800')}
               alt={active.problem}
               fill
               className="object-cover transition-all duration-500"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#012956]/80 via-[#012956]/20 to-transparent" />
 
             {/* Overlay Content */}
             <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
               <div className="flex items-center gap-2 mb-3">
-                <AlertCircle className="w-5 h-5 text-[#109387]" />
+                <AlertCircle className="w-5 h-5 text-[#109387]" aria-hidden="true" />
                 <span className="text-[#109387] font-bold text-sm uppercase tracking-wide">Die Situation</span>
               </div>
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
@@ -116,7 +117,7 @@ export default function EinsatzszenarienSection() {
 
             {/* Solution Header */}
             <div className="flex items-center gap-2 mb-4">
-              <CheckCircle className="w-5 h-5 text-[#109387]" />
+              <CheckCircle className="w-5 h-5 text-[#109387]" aria-hidden="true" />
               <span className="text-[#109387] font-bold text-sm uppercase tracking-wide">Unsere Lösung</span>
             </div>
 
@@ -143,7 +144,7 @@ export default function EinsatzszenarienSection() {
                 {active.vorteile.map((vorteil, index) => (
                   <li key={index} className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full bg-[#109387]/10 flex items-center justify-center flex-shrink-0">
-                      <CheckCircle className="w-4 h-4 text-[#109387]" />
+                      <CheckCircle className="w-4 h-4 text-[#109387]" aria-hidden="true" />
                     </div>
                     <span className="text-gray-700 font-semibold">{vorteil}</span>
                   </li>
@@ -159,13 +160,13 @@ export default function EinsatzszenarienSection() {
                   className="inline-flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-base px-6 py-3 rounded-[6px] transition-all duration-300 group"
                 >
                   Jetzt anfragen
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </a>
                 <a
                   href="tel:+4987143033460"
                   className="inline-flex items-center justify-center gap-2 bg-white hover:bg-[#012956] text-[#012956] hover:text-white font-bold text-base px-6 py-3 rounded-[6px] border-2 border-[#012956] transition-all duration-300"
                 >
-                  <Clock className="w-5 h-5" />
+                  <Clock className="w-5 h-5" aria-hidden="true" />
                   Sofort anrufen
                 </a>
               </div>

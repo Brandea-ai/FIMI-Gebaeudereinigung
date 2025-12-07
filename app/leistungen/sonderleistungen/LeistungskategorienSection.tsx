@@ -103,6 +103,7 @@ export default function LeistungskategorienSection() {
                     alt={leistung.title}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                   {/* Default dark gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#012956]/90 via-[#012956]/40 to-transparent transition-opacity duration-500 group-hover:opacity-0" />
@@ -114,7 +115,7 @@ export default function LeistungskategorienSection() {
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     {/* Icon Box */}
                     <div className="w-12 h-12 sm:w-14 sm:h-14 bg-[#109387] rounded-[8px] flex items-center justify-center mb-3 shadow-lg transition-all duration-500 group-hover:bg-[#012956]">
-                      <Icon size={24} strokeWidth={1.5} className="text-white" />
+                      <Icon size={24} strokeWidth={1.5} className="text-white" aria-hidden="true" />
                     </div>
 
                     {/* Subtitle */}
@@ -162,6 +163,7 @@ export default function LeistungskategorienSection() {
                       size={18}
                       strokeWidth={2}
                       className="text-[#109387] group-hover:translate-x-1 group-hover:text-[#012956] transition-all duration-300"
+                      aria-hidden="true"
                     />
                   </div>
                 </div>
@@ -180,7 +182,7 @@ export default function LeistungskategorienSection() {
             className="inline-flex items-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-[6px] transition-all duration-300 group"
           >
             Individuelles Angebot anfragen
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
           </a>
         </div>
 
