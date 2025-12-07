@@ -7,6 +7,7 @@ import { ArrowRight, Building2, Factory, Stethoscope, ShoppingBag, UtensilsCross
 import { branchen } from '@/lib/branchen-data'
 import FadeIn from '@/components/FadeIn'
 import PartnerLogosSlider from '@/components/PartnerLogosSlider'
+import QualityTrustBar from '@/components/QualityTrustBar'
 
 const branchenIcons: Record<string, any> = {
   Building2, Factory, Stethoscope, ShoppingBag, UtensilsCrossed, GraduationCap,
@@ -558,6 +559,9 @@ export default function BranchenPage() {
           </div>
         </div>
       </div>
+
+      {/* Quality Trust Bar */}
+      <QualityTrustBar />
 
       {/* Branchen Grid */}
       <section ref={gridSectionRef} id="branchen-grid" className="py-16 lg:py-28 bg-[#f8f9fa]" aria-labelledby="branchen-grid-title">

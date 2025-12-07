@@ -7,6 +7,7 @@ import { ArrowRight, Check, Building2, Factory, Wrench, Sparkles, Search, X } fr
 import { leistungen, categories, getAllCategories } from '@/lib/leistungen-data'
 import FadeIn from '@/components/FadeIn'
 import PartnerLogosSlider from '@/components/PartnerLogosSlider'
+import QualityTrustBar from '@/components/QualityTrustBar'
 
 const categoryIcons = {
   gewerblich: Building2,
@@ -358,6 +359,9 @@ export default function LeistungenPage() {
           )}
         </div>
       </div>
+
+      {/* Quality Trust Bar */}
+      <QualityTrustBar />
 
       {/* Leistungen Grid */}
       <section ref={gridSectionRef} id="leistungen-grid" className="py-16 lg:py-28 bg-[#f8f9fa]" aria-labelledby="leistungen-grid-title">

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowRight, Phone, Mail, MapPin, Clock, CheckCircle2 } from 'lucide-react'
 import FadeIn, { FadeInStagger, FadeInItem } from '@/components/FadeIn'
+import QualityTrustBar from '@/components/QualityTrustBar'
 
 export default function KontaktContent() {
   return (
@@ -120,6 +121,9 @@ export default function KontaktContent() {
           </div>
         </div>
       </section>
+
+      {/* Quality Trust Bar */}
+      <QualityTrustBar />
 
       {/* Kontakt-Info Cards - Staggered */}
       <section className="py-10 sm:py-14 lg:py-20 bg-white" aria-label="Kontaktinformationen">
