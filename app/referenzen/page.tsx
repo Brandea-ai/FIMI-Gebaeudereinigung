@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Award, Building2, MapPin, Maximize2, ChevronLeft, ChevronRight, X, Calendar, Tag, ArrowRight, CheckCircle } from 'lucide-react'
+import QualityTrustBar from '@/components/QualityTrustBar'
 import { referenzen, getAllJahre, getReferenzStatistiken, type Referenz } from '@/lib/referenzen-data'
 import { leistungen } from '@/lib/leistungen-data'
 import { branchen } from '@/lib/branchen-data'
@@ -212,6 +213,9 @@ export default function ReferenzenPage() {
           </div>
         </div>
       </section>
+
+      {/* Quality Trust Bar */}
+      <QualityTrustBar variant="dark" />
 
       {/* Filter Section - Sticky top-0 wie Leistungen */}
       <section className="sticky top-0 z-20 bg-white border-b border-gray-200 shadow-sm" aria-label="Projektfilter">
