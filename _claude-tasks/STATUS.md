@@ -2,7 +2,7 @@
 
 **Quelle:** FIMI_Website_TODOs.md (HEILIGER GRAL - alle Tasks basieren darauf!)
 **Stand:** 2025-12-07
-**Letzter Report:** R0016
+**Letzter Report:** R0017
 **Aktueller Sprint:** Sprint 1 (P0 - Go-Live-Blocker)
 
 ---
@@ -51,7 +51,7 @@
 
 | Nr | Task (exakt aus TODO-Liste) | Status |
 |----|----------------------------|--------|
-| 21 | Startseite: 1 primarer CTA + glasklare Value Prop | [ ] |
+| 21 | Startseite: 1 primarer CTA + glasklare Value Prop | [X] |
 | 22 | "Warum wir?" von Behauptung zu Beleg | [ ] |
 | 23 | Referenzseite umbauen zu "Projekte & Qualitat" | [ ] |
 | 24 | Jede Leistungseite: Scope-Box (drin/nicht drin/Intervalle) | [ ] |
@@ -82,7 +82,7 @@
 | 49 | Lead-Qualifizierung light (3-5 Pflichtfragen) | [ ] |
 | 50 | Content-Design: Tabellen/Checklisten statt Fliesstext | [ ] |
 
-**Sprint 2 Fortschritt:** 0/30 (0%)
+**Sprint 2 Fortschritt:** 1/30 (3%)
 
 ---
 
@@ -115,9 +115,9 @@
 | Sprint | Tasks | Erledigt | Prozent |
 |--------|-------|----------|---------|
 | P0 | 20 | 20 | 100% ✅ |
-| P1 | 30 | 0 | 0% |
+| P1 | 30 | 1 | 3% |
 | P2 | 15 | 0 | 0% |
-| **TOTAL** | **65** | **20** | **31%** |
+| **TOTAL** | **65** | **21** | **32%** |
 
 **SPRINT 1 (P0) ABGESCHLOSSEN!** Go-Live-Blocker alle erledigt.
 
@@ -157,3 +157,4 @@
 | 2025-12-07 | R0015 | Beschaffungsmanagement: Performance + A11y (78% → 90%+, 92% → 95%+, LCP 5.3s → ~2.5s) |
 | 2025-12-07 | R0016 | Hallenreinigung: Performance + A11y (86% → 90%+, 92% → 95%+, 222 KiB Bilder optimiert) |
 | 2025-12-07 | R0016 | Sonderleistungen: A11y Nachbesserung (89% → 90%+, 93% → 95%+, Icons + Kontrast) |
+| 2025-12-07 | R0017 | Task 21: Value Prop präzisiert (5 Hero-Subheadlines mit Zielgruppe) |
