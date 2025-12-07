@@ -103,42 +103,70 @@ const glossarData: GlossarItem[] = [
       'Maßgeschneiderte Konzepte für jede Branche',
       'Dokumentierte Prozesse für gleichbleibende Qualität',
     ],
+    relatedLinks: [
+      { label: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
+      { label: 'Facility Management', href: '/leistungen/facility-management' },
+    ],
   },
   {
     begriff: 'Glasreinigung',
     definition: 'Professionelle Reinigung aller Glasflächen wie Fenster, Glasfassaden, Schaufenster und Glastrennwände. Für optimale Transparenz und Lichtdurchlässigkeit.',
     link: '/leistungen/fensterreinigung',
     ctaLabel: 'Mehr zur Fensterreinigung',
+    relatedLinks: [
+      { label: 'Fassadenreinigung', href: '/leistungen/fassadenreinigung' },
+      { label: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
+    ],
   },
   {
     begriff: 'Grundreinigung',
     definition: 'Intensive Tiefenreinigung von Böden und Oberflächen. Entfernt hartnäckige Verschmutzungen und alte Pflegeschichten. Bildet die Basis für nachfolgende Unterhaltsreinigung.',
     link: '/leistungen/sonderreinigung',
     ctaLabel: 'Mehr zur Sonderreinigung',
+    relatedLinks: [
+      { label: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
+      { label: 'Baureinigung', href: '/leistungen/baureinigung' },
+    ],
   },
   {
     begriff: 'Hallenreinigung',
     definition: 'Reinigung großer Hallen in Industrie, Logistik und Produktion. Erfordert spezielle Maschinen und Techniken für große Flächen und industrielle Verschmutzungen.',
     link: '/leistungen/hallenreinigung',
     ctaLabel: 'Mehr zur Hallenreinigung',
+    relatedLinks: [
+      { label: 'Industriereinigung', href: '/leistungen/industriereinigung' },
+      { label: 'Maschinenreinigung', href: '/leistungen/maschinenreinigung' },
+    ],
   },
   {
     begriff: 'Hausmeisterservice',
     definition: 'Umfassende Betreuung von Immobilien durch geschultes Personal. Beinhaltet kleinere Reparaturen, Kontrollgänge, Müllentsorgung und Ansprechpartner für Mieter.',
     link: '/leistungen/hausmeisterservice',
     ctaLabel: 'Mehr zum Hausmeisterservice',
+    relatedLinks: [
+      { label: 'Facility Management', href: '/leistungen/facility-management' },
+      { label: 'Winterdienst', href: '/leistungen/winterdienst' },
+    ],
   },
   {
     begriff: 'Hygieneplan',
     definition: 'Schriftlich fixierte Reinigungs- und Desinfektionsabläufe für Betriebe mit erhöhten Hygieneanforderungen. Definiert wer, was, wie oft und womit reinigt – unverzichtbar in Gesundheitswesen, Gastronomie und lebensmittelverarbeitenden Betrieben.',
     link: '/branchen/gesundheitswesen',
     ctaLabel: 'Mehr zum Gesundheitswesen',
+    relatedLinks: [
+      { label: 'Sonderreinigung', href: '/leistungen/sonderreinigung' },
+      { label: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
+    ],
   },
   {
     begriff: 'Hygienereinigung',
     definition: 'Reinigung mit besonderem Fokus auf Hygiene und Keimfreiheit. Wichtig in sensiblen Bereichen wie Sanitäranlagen, Küchen und medizinischen Einrichtungen.',
     link: '/branchen/gesundheitswesen',
     ctaLabel: 'Mehr zum Gesundheitswesen',
+    relatedLinks: [
+      { label: 'Sonderreinigung', href: '/leistungen/sonderreinigung' },
+      { label: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
+    ],
   },
   {
     begriff: 'Industriereinigung',
@@ -150,78 +178,130 @@ const glossarData: GlossarItem[] = [
       'Einhaltung von Arbeitsschutz- und Hygienestandards',
       'Minimierung von Produktionsausfällen durch geplante Reinigung',
     ],
+    relatedLinks: [
+      { label: 'Hallenreinigung', href: '/leistungen/hallenreinigung' },
+      { label: 'Maschinenreinigung', href: '/leistungen/maschinenreinigung' },
+    ],
   },
   {
     begriff: 'ISO 9001',
     definition: 'Internationaler Standard für Qualitätsmanagementsysteme. Unternehmen, die nach ISO 9001 arbeiten, erfüllen definierte Qualitätsstandards und setzen auf kontinuierliche Verbesserungsprozesse.',
     link: '/ueber-uns',
     ctaLabel: 'Mehr zu unseren Qualitätsstandards',
+    relatedLinks: [
+      { label: 'Facility Management', href: '/leistungen/facility-management' },
+      { label: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
+    ],
   },
   {
     begriff: 'ISO 14001',
     definition: 'Internationaler Standard für Umweltmanagementsysteme. Unternehmen, die nach ISO 14001 arbeiten, setzen auf umweltschonende Prinzipien und reduzieren systematisch ihre Umweltauswirkungen.',
     link: '/ueber-uns',
     ctaLabel: 'Mehr zu unseren Umweltstandards',
+    relatedLinks: [
+      { label: 'Facility Management', href: '/leistungen/facility-management' },
+      { label: 'Außenanlagenpflege', href: '/leistungen/aussenanlagenpflege' },
+    ],
   },
   {
     begriff: 'Leistungsverzeichnis',
     definition: 'Detaillierte Auflistung aller vereinbarten Reinigungsleistungen mit Angaben zu Intervallen, Flächen, Methoden und Qualitätsstandards. Bildet die vertragliche Grundlage für gewerbliche Reinigungsaufträge und Ausschreibungen.',
     link: '/leistungen',
     ctaLabel: 'Alle Leistungen entdecken',
+    relatedLinks: [
+      { label: 'Facility Management', href: '/leistungen/facility-management' },
+      { label: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
+    ],
   },
   {
     begriff: 'Maschinenreinigung',
     definition: 'Fachgerechte Reinigung von Produktionsmaschinen und Anlagen. Wichtig für Wartung, Hygiene und Arbeitssicherheit in der Industrie.',
     link: '/leistungen/maschinenreinigung',
     ctaLabel: 'Mehr zur Maschinenreinigung',
+    relatedLinks: [
+      { label: 'Industriereinigung', href: '/leistungen/industriereinigung' },
+      { label: 'Hallenreinigung', href: '/leistungen/hallenreinigung' },
+    ],
   },
   {
     begriff: 'Objektbegehung',
     definition: 'Vor-Ort-Besichtigung eines Gebäudes oder einer Fläche vor Vertragsabschluss. Dient der genauen Bestandsaufnahme von Flächen, Materialien und Verschmutzungsgrad – Grundlage für ein passgenaues Angebot.',
     link: '/kontakt',
     ctaLabel: 'Kostenfreie Besichtigung anfragen',
+    relatedLinks: [
+      { label: 'Facility Management', href: '/leistungen/facility-management' },
+      { label: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
+    ],
   },
   {
     begriff: 'Objektleiter',
     definition: 'Verantwortliche Ansprechperson für ein Reinigungsobjekt. Koordiniert das Reinigungsteam, überwacht die Qualität und ist Schnittstelle zum Kunden.',
     link: '/karriere',
     ctaLabel: 'Karriere bei FIMI',
+    relatedLinks: [
+      { label: 'Facility Management', href: '/leistungen/facility-management' },
+      { label: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
+    ],
   },
   {
     begriff: 'Parkplatzreinigung',
     definition: 'Reinigung und Pflege von Parkflächen, Parkhäusern und Tiefgaragen. Umfasst Kehren, Nassreinigung und Entfernung von Öl- und Reifenspuren.',
     link: '/leistungen/parkplatzreinigung',
     ctaLabel: 'Mehr zur Parkplatzreinigung',
+    relatedLinks: [
+      { label: 'Außenanlagenpflege', href: '/leistungen/aussenanlagenpflege' },
+      { label: 'Winterdienst', href: '/leistungen/winterdienst' },
+    ],
   },
   {
     begriff: 'Reinigungsfachkraft',
     definition: 'Ausgebildetes Personal für professionelle Gebäudereinigung. Beherrscht verschiedene Reinigungstechniken, Materialkunde und den sicheren Umgang mit Reinigungsmitteln.',
     link: '/karriere',
     ctaLabel: 'Karriere bei FIMI',
+    relatedLinks: [
+      { label: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
+      { label: 'Industriereinigung', href: '/leistungen/industriereinigung' },
+    ],
   },
   {
     begriff: 'Sicherheitsdatenblatt',
     definition: 'Dokument mit Informationen zu Gefahrstoffen, sicherer Handhabung und Erste-Hilfe-Maßnahmen für Reinigungsmittel. Gesetzlich vorgeschrieben für den professionellen Umgang mit Chemikalien.',
     link: '/ueber-uns',
     ctaLabel: 'Mehr zu unseren Standards',
+    relatedLinks: [
+      { label: 'Industriereinigung', href: '/leistungen/industriereinigung' },
+      { label: 'Sonderreinigung', href: '/leistungen/sonderreinigung' },
+    ],
   },
   {
     begriff: 'SLA (Service Level Agreement)',
     definition: 'Vertragliche Vereinbarung über Qualitätsstandards, Reaktionszeiten und Leistungskennzahlen zwischen Dienstleister und Kunde. Garantiert messbare Servicequalität und definiert Eskalationswege.',
     link: '/leistungen',
     ctaLabel: 'Unsere Leistungsgarantie',
+    relatedLinks: [
+      { label: 'Facility Management', href: '/leistungen/facility-management' },
+      { label: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
+    ],
   },
   {
     begriff: 'Sonderreinigung',
     definition: 'Spezielle Reinigungsleistungen außerhalb der regulären Unterhaltsreinigung. Umfasst Grundreinigungen, Teppichreinigung, Polsterreinigung und Spezialanwendungen.',
     link: '/leistungen/sonderreinigung',
     ctaLabel: 'Mehr zur Sonderreinigung',
+    relatedLinks: [
+      { label: 'Baureinigung', href: '/leistungen/baureinigung' },
+      { label: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
+    ],
   },
   {
     begriff: 'Tiefgaragenreinigung',
     definition: 'Professionelle Reinigung von Tiefgaragen und Parkhäusern. Entfernt Staub, Reifenabrieb, Ölflecken und sorgt für Sicherheit und Sauberkeit.',
     link: '/leistungen/tiefgaragenreinigung',
     ctaLabel: 'Mehr zur Tiefgaragenreinigung',
+    relatedLinks: [
+      { label: 'Parkplatzreinigung', href: '/leistungen/parkplatzreinigung' },
+      { label: 'Winterdienst', href: '/leistungen/winterdienst' },
+    ],
   },
   {
     begriff: 'Unterhaltsreinigung',
@@ -233,6 +313,10 @@ const glossarData: GlossarItem[] = [
       'Feste Reinigungsteams für gleichbleibende Qualität',
       'Dokumentierte Prozesse für Ihre Rechtssicherheit',
     ],
+    relatedLinks: [
+      { label: 'Fensterreinigung', href: '/leistungen/fensterreinigung' },
+      { label: 'Sonderreinigung', href: '/leistungen/sonderreinigung' },
+    ],
   },
   {
     begriff: 'Winterdienst',
@@ -243,6 +327,10 @@ const glossarData: GlossarItem[] = [
       'Erfüllung der Verkehrssicherungspflicht',
       'Schnelle Reaktionszeiten bei Schneefall',
       'Dokumentierte Einsätze für Ihre Rechtssicherheit',
+    ],
+    relatedLinks: [
+      { label: 'Außenanlagenpflege', href: '/leistungen/aussenanlagenpflege' },
+      { label: 'Hausmeisterservice', href: '/leistungen/hausmeisterservice' },
     ],
   },
 ]
@@ -409,6 +497,26 @@ export default function GlossarContent() {
                                 </li>
                               ))}
                             </ul>
+                          )}
+
+                          {/* Related Links - "In der Praxis..." */}
+                          {item.relatedLinks && item.relatedLinks.length > 0 && (
+                            <div className="mb-4 pt-3 border-t border-gray-200">
+                              <p className="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">
+                                In der Praxis:
+                              </p>
+                              <div className="flex flex-wrap gap-2">
+                                {item.relatedLinks.map((related, idx) => (
+                                  <Link
+                                    key={idx}
+                                    href={related.href}
+                                    className="inline-flex items-center text-xs font-semibold text-[#012956] bg-white border border-gray-200 hover:border-[#109387] hover:text-[#109387] px-3 py-1.5 rounded-[4px] transition-colors"
+                                  >
+                                    {related.label}
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
                           )}
 
                           <Link
