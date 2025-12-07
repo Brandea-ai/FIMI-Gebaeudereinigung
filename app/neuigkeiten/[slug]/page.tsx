@@ -278,9 +278,9 @@ export default async function BlogPostPage({ params }: PageProps) {
             <aside className="hidden lg:block lg:sticky lg:top-24 lg:self-start">
               {/* CTA Box */}
               <div className="bg-[#012956] rounded-[6px] p-5 xl:p-6 mb-6 xl:mb-8">
-                <h3 className="text-white font-bold text-base xl:text-lg mb-2 xl:mb-3">
+                <h2 className="text-white font-bold text-base xl:text-lg mb-2 xl:mb-3">
                   Kostenfreie Beratung
-                </h3>
+                </h2>
                 <p className="text-white/80 font-medium text-xs xl:text-sm mb-4 xl:mb-6">
                   Haben Sie Fragen zu unseren Leistungen? Wir beraten Sie gerne!
                 </p>
@@ -296,9 +296,9 @@ export default async function BlogPostPage({ params }: PageProps) {
               {/* Related Posts */}
               {relatedPosts.length > 0 && (
                 <div>
-                  <h3 className="text-[#012956] font-bold text-base xl:text-lg mb-3 xl:mb-4">
+                  <h2 className="text-[#012956] font-bold text-base xl:text-lg mb-3 xl:mb-4">
                     Weitere Beiträge
-                  </h3>
+                  </h2>
                   <div className="space-y-3 xl:space-y-4">
                     {relatedPosts.map((relatedPost) => (
                       <Link
@@ -341,9 +341,9 @@ export default async function BlogPostPage({ params }: PageProps) {
           {/* Mobile: Verwandte Beiträge unten */}
           {relatedPosts.length > 0 && (
             <div className="lg:hidden mt-10 sm:mt-12 pt-8 sm:pt-10 border-t border-gray-200">
-              <h3 className="text-[#012956] font-bold text-lg sm:text-xl mb-4 sm:mb-6">
+              <h2 className="text-[#012956] font-bold text-lg sm:text-xl mb-4 sm:mb-6">
                 Weitere Beiträge
-              </h3>
+              </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {relatedPosts.map((relatedPost) => (
                   <Link
