@@ -10,7 +10,7 @@ const szenarien = [
     situation: 'Der Keller steht unter Wasser',
     beschreibung: 'Ein Rohrbruch über Nacht, die Waschmaschine ist ausgelaufen oder Hochwasser hat zugeschlagen. Jetzt muss es schnell gehen: Wasser absaugen, trocknen, Schimmel verhindern.',
     suchbegriff: 'Wasserschaden Reinigung',
-    image: 'https://images.unsplash.com/photo-1525438160292-a4a860951f44?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?q=80&w=800&auto=format&fit=crop',
   },
   {
     icon: Flame,
@@ -26,7 +26,7 @@ const szenarien = [
     situation: 'Der Vormieter hat Chaos hinterlassen',
     beschreibung: 'Jahre der Verwahrlosung, Müllberge, Ungeziefer. Als Vermieter oder Erbe stehen Sie vor einer schier unlösbaren Aufgabe. Wir entrümpeln, reinigen und desinfizieren – diskret und gründlich.',
     suchbegriff: 'Messie Wohnung räumen',
-    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop',
   },
   {
     icon: Bird,

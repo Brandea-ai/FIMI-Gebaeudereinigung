@@ -41,7 +41,7 @@ const leistungen = [
       'Geruchsbeseitigung',
       'Renovierungsvorbereitung',
     ],
-    image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop',
   },
   {
     icon: Heart,
