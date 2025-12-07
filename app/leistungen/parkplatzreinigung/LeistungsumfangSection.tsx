@@ -3,6 +3,29 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Truck, Droplets, CircleDot, Candy, Leaf, Trash2, CornerDownRight, PaintBucket } from 'lucide-react'
+import ScopeBox from '@/components/ScopeBox'
+
+const scopeData = {
+  inklusive: [
+    'Maschinelle Kehrreinigung',
+    'Müllbeseitigung',
+    'Bordstein- & Randreinigung',
+    'Grobe Verschmutzungen',
+    'Sichtprüfung Markierungen',
+  ],
+  optional: [
+    'Hochdruckreinigung',
+    'Ölflecken-Entfernung',
+    'Kaugummi-Entfernung',
+    'Laubbeseitigung intensiv',
+    'Grünbelag entfernen',
+  ],
+  intervalle: [
+    { name: 'Wöchentlich', beschreibung: 'Supermärkte, Einkaufszentren' },
+    { name: '14-tägig', beschreibung: 'Firmenparkplätze' },
+    { name: 'Monatlich', beschreibung: 'Wohnanlagen' },
+  ],
+}
 
 const leistungen = [
   {
@@ -89,6 +112,14 @@ export default function LeistungsumfangSection() {
             was Ihre Außenflächen sauber und gepflegt hält.
           </p>
         </div>
+
+        {/* Scope Box - Was ist im Preis enthalten? */}
+        <ScopeBox
+          inklusive={scopeData.inklusive}
+          optional={scopeData.optional}
+          intervalle={scopeData.intervalle}
+          className="mb-12 sm:mb-16 lg:mb-20"
+        />
 
         {/* Two Column Layout */}
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-start mb-12 sm:mb-16 lg:mb-28">

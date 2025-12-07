@@ -3,6 +3,29 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Wrench, Eye, Lightbulb, Trash2, Snowflake, Trees, ClipboardCheck, Key } from 'lucide-react'
+import ScopeBox from '@/components/ScopeBox'
+
+const scopeData = {
+  inklusive: [
+    'Kontrollgänge & Sichtprüfung',
+    'Kleinreparaturen (30 Min/Monat)',
+    'Mülltonnen-Management',
+    'Schlüsselübergaben',
+    'Mängeldokumentation',
+  ],
+  optional: [
+    'Winterdienst',
+    'Grünpflege Light',
+    'Treppenhausreinigung',
+    'Handwerker-Koordination',
+    'Zusätzliche Reparaturstunden',
+  ],
+  intervalle: [
+    { name: '3x pro Woche', beschreibung: 'Große Wohnanlagen' },
+    { name: '1x pro Woche', beschreibung: 'Standard-Objekte' },
+    { name: 'Nach Bedarf', beschreibung: 'Rufbereitschaft' },
+  ],
+}
 
 const kernleistungen = [
   {
@@ -73,6 +96,14 @@ export default function LeistungsumfangSection() {
             auf Wunsch auch kurzfristig.
           </p>
         </div>
+
+        {/* Scope Box - Was ist im Preis enthalten? */}
+        <ScopeBox
+          inklusive={scopeData.inklusive}
+          optional={scopeData.optional}
+          intervalle={scopeData.intervalle}
+          className="mb-12 sm:mb-16 lg:mb-20"
+        />
 
         {/* Two Column: Image + Info */}
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center mb-12 sm:mb-16 lg:mb-20">

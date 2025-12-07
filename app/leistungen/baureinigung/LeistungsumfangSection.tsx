@@ -3,6 +3,29 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, LayoutGrid, Bath, DoorOpen, Layers, PanelTop, Warehouse, TreeDeciduous, FileCheck } from 'lucide-react'
+import ScopeBox from '@/components/ScopeBox'
+
+const scopeData = {
+  inklusive: [
+    'Grobreinigung (Bauschutt)',
+    'Fenster innen & außen',
+    'Böden komplett',
+    'Sanitäranlagen',
+    'Türen & Zargen',
+  ],
+  optional: [
+    'Feinreinigung Premium',
+    'Fassadenreinigung',
+    'Außenanlagen',
+    'Fotodokumentation',
+    'Abnahmeprotokoll',
+  ],
+  intervalle: [
+    { name: 'Grobreinigung', beschreibung: 'Vor Montagearbeiten' },
+    { name: 'Feinreinigung', beschreibung: 'Vor Übergabe' },
+    { name: 'Einzugsreinigung', beschreibung: 'Bei Mieterwechsel' },
+  ],
+}
 
 const reinigungsbereiche = [
   {
@@ -85,6 +108,14 @@ export default function LeistungsumfangSection() {
             Mietern und Käufern gerecht wird – bis ins kleinste Detail.
           </p>
         </div>
+
+        {/* Scope Box - Was ist im Preis enthalten? */}
+        <ScopeBox
+          inklusive={scopeData.inklusive}
+          optional={scopeData.optional}
+          intervalle={scopeData.intervalle}
+          className="mb-12 sm:mb-16 lg:mb-20"
+        />
 
         {/* Two Column: Image + Text */}
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center mb-12 sm:mb-16 lg:mb-28">

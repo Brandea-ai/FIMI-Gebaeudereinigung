@@ -3,6 +3,29 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Droplets, Cog, Wind, Trash2, FileText, Shield, Sparkles, Wrench } from 'lucide-react'
+import ScopeBox from '@/components/ScopeBox'
+
+const scopeData = {
+  inklusive: [
+    'Maschinengehäuse außen',
+    'Arbeitsraum Grobreinigung',
+    'Späne & Produktionsreste',
+    'Bedienpulte & Displays',
+    'Dokumentation',
+  ],
+  optional: [
+    'KSS-Tank-Reinigung',
+    'Filterreinigung/-wechsel',
+    'Elektronik-Entstaubung',
+    'Führungsbahnen reinigen',
+    'Vorher-Nachher-Fotos',
+  ],
+  intervalle: [
+    { name: 'Monatlich', beschreibung: 'Standard-Empfehlung' },
+    { name: 'Quartalsweise', beschreibung: 'Bei geringerer Nutzung' },
+    { name: 'Wartungsbegleitend', beschreibung: 'Abgestimmt auf Hersteller' },
+  ],
+}
 
 const reinigungsbereiche = [
   {
@@ -83,6 +106,14 @@ export default function LeistungsumfangSection() {
             Produktionsmaschinen. Gründlich, fachgerecht und dokumentiert.
           </p>
         </div>
+
+        {/* Scope Box - Was ist im Preis enthalten? */}
+        <ScopeBox
+          inklusive={scopeData.inklusive}
+          optional={scopeData.optional}
+          intervalle={scopeData.intervalle}
+          className="mb-12 sm:mb-16 lg:mb-20"
+        />
 
         {/* Two Column: Image + Text */}
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center mb-12 sm:mb-16 lg:mb-28">

@@ -3,6 +3,29 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Scissors, TreeDeciduous, Flower2, Wind, Shrub, TreePine, Snowflake, Wrench } from 'lucide-react'
+import ScopeBox from '@/components/ScopeBox'
+
+const scopeData = {
+  inklusive: [
+    'Rasenmähen (saisonal)',
+    'Heckenschnitt (2x/Jahr)',
+    'Laubbeseitigung Herbst',
+    'Unkrautentfernung',
+    'Wegesäuberung',
+  ],
+  optional: [
+    'Beetpflege & Bepflanzung',
+    'Baumpflege & Kontrolle',
+    'Winterdienst',
+    'Bewässerung',
+    'Pflanzenschutz',
+  ],
+  intervalle: [
+    { name: 'Wöchentlich', beschreibung: 'Repräsentative Objekte' },
+    { name: '14-tägig', beschreibung: 'Standard-Gewerbeobjekte' },
+    { name: 'Monatlich', beschreibung: 'Grundpflege + Saison' },
+  ],
+}
 
 const leistungsbereiche = [
   {
@@ -75,6 +98,14 @@ export default function LeistungsumfangSection() {
             jährlichen Baumpflege. Mit einem individuellen Pflegeplan, der zu Ihrer Anlage passt.
           </p>
         </div>
+
+        {/* Scope Box - Was ist im Preis enthalten? */}
+        <ScopeBox
+          inklusive={scopeData.inklusive}
+          optional={scopeData.optional}
+          intervalle={scopeData.intervalle}
+          className="mb-12 sm:mb-16 lg:mb-20"
+        />
 
         {/* Two Column: Image + Text */}
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center mb-12 sm:mb-16 lg:mb-28">

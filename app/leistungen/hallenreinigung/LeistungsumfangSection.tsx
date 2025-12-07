@@ -3,6 +3,29 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Layers, Grid3X3, Lightbulb, Wind, Sparkles, Droplets, Trash2, PaintBucket } from 'lucide-react'
+import ScopeBox from '@/components/ScopeBox'
+
+const scopeData = {
+  inklusive: [
+    'Hallenböden maschinell',
+    'Verkehrswege freihalten',
+    'Müllentsorgung',
+    'Bodenmarkierungen reinigen',
+    'Entstaubung Arbeitsbereiche',
+  ],
+  optional: [
+    'Hochregal-Reinigung',
+    'Decken & Beleuchtung',
+    'Fenster & Oberlichter',
+    'Lüftungskanäle',
+    'Wochenend-Intensivreinigung',
+  ],
+  intervalle: [
+    { name: 'Täglich', beschreibung: 'Hochfrequenz-Produktion' },
+    { name: 'Wöchentlich', beschreibung: 'Standard-Lagerhallen' },
+    { name: 'Monatlich', beschreibung: 'Selten genutzte Flächen' },
+  ],
+}
 
 const reinigungsbereiche = [
   {
@@ -90,6 +113,14 @@ export default function LeistungsumfangSection() {
             für jede Oberfläche.
           </p>
         </div>
+
+        {/* Scope Box - Was ist im Preis enthalten? */}
+        <ScopeBox
+          inklusive={scopeData.inklusive}
+          optional={scopeData.optional}
+          intervalle={scopeData.intervalle}
+          className="mb-12 sm:mb-16 lg:mb-20"
+        />
 
         {/* Two Column: Image + Text */}
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center mb-12 sm:mb-16 lg:mb-28">

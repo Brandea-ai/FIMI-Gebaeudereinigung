@@ -3,6 +3,29 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, LayoutGrid, Droplets, Wind, Lightbulb, PaintBucket, Trash2, ShieldCheck, FileText } from 'lucide-react'
+import ScopeBox from '@/components/ScopeBox'
+
+const scopeData = {
+  inklusive: [
+    'Parkflächen maschinell',
+    'Fahrgassen & Rampen',
+    'Müllbeseitigung',
+    'Bodenabläufe reinigen',
+    'Dokumentation (Fotos)',
+  ],
+  optional: [
+    'Ölflecken-Entfernung',
+    'Wand- & Deckenreinigung',
+    'Beleuchtung reinigen',
+    'Markierungsreinigung',
+    'Graffiti-Entfernung',
+  ],
+  intervalle: [
+    { name: '1x jährlich', beschreibung: 'Grundreinigung nach Winter' },
+    { name: 'Quartalsweise', beschreibung: 'Unterhaltsreinigung' },
+    { name: 'Nach Bedarf', beschreibung: 'Sonderreinigungen' },
+  ],
+}
 
 const reinigungsbereiche = [
   {
@@ -86,6 +109,14 @@ export default function LeistungsumfangSection() {
             Professionell, gründlich und mit vollständiger Dokumentation für Ihre Unterlagen.
           </p>
         </div>
+
+        {/* Scope Box - Was ist im Preis enthalten? */}
+        <ScopeBox
+          inklusive={scopeData.inklusive}
+          optional={scopeData.optional}
+          intervalle={scopeData.intervalle}
+          className="mb-12 sm:mb-16 lg:mb-20"
+        />
 
         {/* Two Column: Image + Text */}
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center mb-12 sm:mb-16 lg:mb-28">

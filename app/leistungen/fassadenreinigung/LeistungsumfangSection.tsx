@@ -2,6 +2,29 @@
 
 import { Check, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import ScopeBox from '@/components/ScopeBox'
+
+const scopeData = {
+  inklusive: [
+    'Fassadenfläche komplett',
+    'Algen- & Moosentfernung',
+    'Grünbelag beseitigen',
+    'Vogelkot entfernen',
+    'Sockelbereich',
+  ],
+  optional: [
+    'Langzeit-Imprägnierung',
+    'Graffiti-Entfernung',
+    'Dachrinnenreinigung',
+    'Fensterreinigung',
+    'Hydrophobierung',
+  ],
+  intervalle: [
+    { name: 'Jährlich', beschreibung: 'Empfohlen für Werterhalt' },
+    { name: 'Alle 2-3 Jahre', beschreibung: 'Bei geringer Verschmutzung' },
+    { name: 'Nach Bedarf', beschreibung: 'Bei akuter Verschmutzung' },
+  ],
+}
 
 const leistungen = [
   {
@@ -75,6 +98,14 @@ export default function LeistungsumfangSection() {
             schützen sie langfristig vor erneutem Befall.
           </p>
         </div>
+
+        {/* Scope Box - Was ist im Preis enthalten? */}
+        <ScopeBox
+          inklusive={scopeData.inklusive}
+          optional={scopeData.optional}
+          intervalle={scopeData.intervalle}
+          className="mb-12 sm:mb-16 lg:mb-20"
+        />
 
         {/* Leistungen Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-10 sm:mb-12 lg:mb-16">

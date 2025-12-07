@@ -3,6 +3,29 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Factory, Cog, Droplets, Wind, Trash2, Sparkles, Building2, Wrench } from 'lucide-react'
+import ScopeBox from '@/components/ScopeBox'
+
+const scopeData = {
+  inklusive: [
+    'Hallenböden maschinell reinigen',
+    'Maschinen-Umfeld säubern',
+    'Sozialräume & Sanitär',
+    'Müllentsorgung & Trennung',
+    'Oberflächen entstauben',
+  ],
+  optional: [
+    'Maschinenreinigung (intensiv)',
+    'Hochregal-Entstaubung',
+    'Lüftungsreinigung',
+    'Trockeneisstrahlen',
+    'Wochenend-Reinigung',
+  ],
+  intervalle: [
+    { name: 'Täglich', beschreibung: 'Schichtbetrieb, Lebensmittel' },
+    { name: 'Wöchentlich', beschreibung: 'Standard-Produktion' },
+    { name: 'Monatlich', beschreibung: 'Lager, Logistik' },
+  ],
+}
 
 const reinigungsbereiche = [
   {
@@ -72,6 +95,14 @@ export default function LeistungsumfangSection() {
             Reinigungsaufgaben in Ihrem Industriebetrieb – regelmäßig oder als Einzelauftrag.
           </p>
         </div>
+
+        {/* Scope Box - Was ist im Preis enthalten? */}
+        <ScopeBox
+          inklusive={scopeData.inklusive}
+          optional={scopeData.optional}
+          intervalle={scopeData.intervalle}
+          className="mb-12 sm:mb-16 lg:mb-20"
+        />
 
         {/* Two Column: Image + Text */}
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center mb-12 sm:mb-16 lg:mb-28">

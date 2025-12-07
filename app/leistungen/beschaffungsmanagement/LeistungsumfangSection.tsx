@@ -1,6 +1,29 @@
 'use client'
 
 import { Search, FileText, Users, TrendingDown, ShieldCheck, Cog, BarChart3, FileCheck } from 'lucide-react'
+import ScopeBox from '@/components/ScopeBox'
+
+const scopeData = {
+  inklusive: [
+    'Spend-Analyse',
+    'Lieferantenbewertung',
+    'Angebotsvergleiche',
+    'Vertragsmanagement',
+    'Reporting (quartalsweise)',
+  ],
+  optional: [
+    'Ausschreibungsmanagement',
+    'Vergabeberatung (öffentl.)',
+    'Prozessoptimierung',
+    'Lieferanten-Audits',
+    'Einkaufscontrolling',
+  ],
+  intervalle: [
+    { name: 'Projektbasiert', beschreibung: 'Einzelthemen bearbeiten' },
+    { name: 'Retainer', beschreibung: 'Laufende Betreuung' },
+    { name: 'Full-Service', beschreibung: 'Kompletter Einkauf' },
+  ],
+}
 
 const services = [
   {
@@ -63,6 +86,14 @@ export default function LeistungsumfangSection() {
             Wir unterstützen modular – Sie entscheiden, welche Bausteine Sie benötigen.
           </p>
         </div>
+
+        {/* Scope Box - Was ist im Preis enthalten? */}
+        <ScopeBox
+          inklusive={scopeData.inklusive}
+          optional={scopeData.optional}
+          intervalle={scopeData.intervalle}
+          className="mb-12 sm:mb-16 lg:mb-20"
+        />
 
         {/* Services Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">

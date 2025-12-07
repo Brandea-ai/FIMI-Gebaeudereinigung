@@ -2,6 +2,29 @@
 
 import Image from 'next/image'
 import { Check, Snowflake, Truck, FileCheck, Leaf } from 'lucide-react'
+import ScopeBox from '@/components/ScopeBox'
+
+const scopeData = {
+  inklusive: [
+    'Schneeräumung ab 5:30 Uhr',
+    'Streudienst bei Glätte',
+    'Gehwege & Zufahrten',
+    'Digitale Einsatzprotokolle',
+    'Fotodokumentation',
+  ],
+  optional: [
+    'Parkplatzräumung',
+    'Dach-Schneeräumung',
+    'Eiszapfenentfernung',
+    '24/7-Bereitschaft',
+    'Mehrere Standorte',
+  ],
+  intervalle: [
+    { name: 'Saison-Vertrag', beschreibung: 'Nov. bis März pauschal' },
+    { name: 'Nach Einsatz', beschreibung: 'Abrechnung pro Räumung' },
+    { name: 'Kombi-Vertrag', beschreibung: 'Mit Hausmeisterservice' },
+  ],
+}
 
 const leistungen = [
   {
@@ -54,6 +77,14 @@ export default function LeistungsumfangSection() {
   return (
     <section id="leistungen" className="py-12 sm:py-16 lg:py-28 bg-[#f8f9fa]">
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
+
+        {/* Scope Box - Was ist im Preis enthalten? */}
+        <ScopeBox
+          inklusive={scopeData.inklusive}
+          optional={scopeData.optional}
+          intervalle={scopeData.intervalle}
+          className="mb-12 sm:mb-16 lg:mb-20"
+        />
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 xl:gap-20 items-start">
 

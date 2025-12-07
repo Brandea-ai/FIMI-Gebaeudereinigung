@@ -3,6 +3,30 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Sparkles, Building2, Sofa, Coffee, Bath, Footprints, Trash2, DoorOpen } from 'lucide-react'
+import ScopeBox from '@/components/ScopeBox'
+
+const scopeData = {
+  inklusive: [
+    'Arbeitsplätze & Schreibtische',
+    'Sanitäranlagen desinfizieren',
+    'Böden saugen & wischen',
+    'Müllentsorgung & Trennung',
+    'Teeküche & Pausenraum',
+    'Kontaktflächen desinfizieren',
+  ],
+  optional: [
+    'Fensterreinigung',
+    'Teppichtiefenreinigung',
+    'EDV-/Bildschirmreinigung',
+    'Polster & Bürostühle',
+    'Kühlschrank innen',
+  ],
+  intervalle: [
+    { name: 'Täglich', beschreibung: 'Großraumbüros, Call-Center' },
+    { name: '3x pro Woche', beschreibung: 'Standard-Büros, Agenturen' },
+    { name: 'Wöchentlich', beschreibung: 'Kleine Büros, Home-Offices' },
+  ],
+}
 
 const reinigungsbereiche = [
   {
@@ -73,6 +97,14 @@ export default function LeistungsumfangSection() {
             sauber bleibt – mit einem festen Team, das Ihre Räume kennt und weiß, worauf es ankommt.
           </p>
         </div>
+
+        {/* Scope Box - Was ist im Preis enthalten? */}
+        <ScopeBox
+          inklusive={scopeData.inklusive}
+          optional={scopeData.optional}
+          intervalle={scopeData.intervalle}
+          className="mb-12 sm:mb-16 lg:mb-20"
+        />
 
         {/* Two Column: Image + Text */}
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center mb-12 sm:mb-16 lg:mb-28">

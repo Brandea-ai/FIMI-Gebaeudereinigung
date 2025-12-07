@@ -3,6 +3,29 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Sparkles, Layers, GlassWater, Building2, Store, Droplets, Sun, Grid3X3, Frame } from 'lucide-react'
+import ScopeBox from '@/components/ScopeBox'
+
+const scopeData = {
+  inklusive: [
+    'Glasflächen innen & außen',
+    'Fensterrahmen & Dichtungen',
+    'Fensterbänke',
+    'Glastrennwände',
+    'Eingangstüren (Glas)',
+  ],
+  optional: [
+    'Rollläden & Jalousien',
+    'Oberlichter & Dachfenster',
+    'Wintergärten',
+    'Solaranlagen/Photovoltaik',
+    'Glasgeländer',
+  ],
+  intervalle: [
+    { name: 'Wöchentlich', beschreibung: 'Schaufenster, Gastronomie' },
+    { name: '14-tägig', beschreibung: 'Büros, Praxen' },
+    { name: 'Monatlich', beschreibung: 'Verwaltung, Kanzleien' },
+  ],
+}
 
 const reinigungsbereiche = [
   {
@@ -73,6 +96,14 @@ export default function LeistungsumfangSection() {
             Glasfassade. Mit der richtigen Technik für jede Anforderung.
           </p>
         </div>
+
+        {/* Scope Box - Was ist im Preis enthalten? */}
+        <ScopeBox
+          inklusive={scopeData.inklusive}
+          optional={scopeData.optional}
+          intervalle={scopeData.intervalle}
+          className="mb-12 sm:mb-16 lg:mb-20"
+        />
 
         {/* Two Column: Image + Text */}
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center mb-12 sm:mb-16 lg:mb-28">
