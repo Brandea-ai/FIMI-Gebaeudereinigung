@@ -3,12 +3,18 @@
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 
+interface RelatedLink {
+  label: string
+  href: string
+}
+
 interface GlossarItem {
   begriff: string
   definition: string
   link: string
   ctaLabel?: string
   highlights?: string[]
+  relatedLinks?: RelatedLink[]
 }
 
 const glossarData: GlossarItem[] = [
@@ -17,24 +23,40 @@ const glossarData: GlossarItem[] = [
     definition: 'Professionelle Pflege und Instandhaltung von Außenbereichen wie Grünflächen, Wegen, Parkplätzen und Eingangsbereichen. Umfasst Rasenpflege, Laubbeseitigung und allgemeine Sauberkeit.',
     link: '/leistungen/aussenanlagenpflege',
     ctaLabel: 'Mehr zur Außenanlagenpflege',
+    relatedLinks: [
+      { label: 'Winterdienst', href: '/leistungen/winterdienst' },
+      { label: 'Hausmeisterservice', href: '/leistungen/hausmeisterservice' },
+    ],
   },
   {
     begriff: 'Baureinigung',
     definition: 'Spezielle Reinigung nach Bau- oder Renovierungsarbeiten. Entfernt Baustaub, Mörtelreste, Farbspritzer und andere baubedingte Verschmutzungen für eine bezugsfertige Übergabe.',
     link: '/leistungen/baureinigung',
     ctaLabel: 'Mehr zur Baureinigung',
+    relatedLinks: [
+      { label: 'Sonderreinigung', href: '/leistungen/sonderreinigung' },
+      { label: 'Fensterreinigung', href: '/leistungen/fensterreinigung' },
+    ],
   },
   {
     begriff: 'Büroreinigung',
     definition: 'Regelmäßige professionelle Reinigung von Büroflächen, Arbeitsplätzen, Konferenzräumen und Gemeinschaftsbereichen. Sorgt für ein hygienisches und produktives Arbeitsumfeld.',
     link: '/leistungen/bueroreinigung',
     ctaLabel: 'Mehr zur Büroreinigung',
+    relatedLinks: [
+      { label: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
+      { label: 'Fensterreinigung', href: '/leistungen/fensterreinigung' },
+    ],
   },
   {
     begriff: 'Desinfektionsreinigung',
     definition: 'Reinigungsverfahren mit desinfizierenden Mitteln zur Abtötung von Keimen, Bakterien und Viren. Besonders wichtig in Gesundheitseinrichtungen und bei erhöhten Hygieneanforderungen.',
     link: '/branchen/gesundheitswesen',
     ctaLabel: 'Mehr zum Gesundheitswesen',
+    relatedLinks: [
+      { label: 'Sonderreinigung', href: '/leistungen/sonderreinigung' },
+      { label: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
+    ],
   },
   {
     begriff: 'Facility Management',
@@ -46,18 +68,30 @@ const glossarData: GlossarItem[] = [
       'Kostenoptimierung durch gebündelte Dienstleistungen',
       'Professionelle Koordination von Wartung, Reinigung und Pflege',
     ],
+    relatedLinks: [
+      { label: 'Hausmeisterservice', href: '/leistungen/hausmeisterservice' },
+      { label: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
+    ],
   },
   {
     begriff: 'Fassadenreinigung',
     definition: 'Professionelle Reinigung von Gebäudefassaden verschiedener Materialien wie Glas, Stein, Metall oder Putz. Erhält das Erscheinungsbild und den Wert der Immobilie.',
     link: '/leistungen/fassadenreinigung',
     ctaLabel: 'Mehr zur Fassadenreinigung',
+    relatedLinks: [
+      { label: 'Fensterreinigung', href: '/leistungen/fensterreinigung' },
+      { label: 'Sonderreinigung', href: '/leistungen/sonderreinigung' },
+    ],
   },
   {
     begriff: 'Fensterreinigung',
     definition: 'Streifenfreie Reinigung von Fenstern, Glasflächen und Rahmen. Wird mit speziellen Werkzeugen und Techniken durchgeführt, auch in großen Höhen.',
     link: '/leistungen/fensterreinigung',
     ctaLabel: 'Mehr zur Fensterreinigung',
+    relatedLinks: [
+      { label: 'Fassadenreinigung', href: '/leistungen/fassadenreinigung' },
+      { label: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
+    ],
   },
   {
     begriff: 'Gebäudereinigung',

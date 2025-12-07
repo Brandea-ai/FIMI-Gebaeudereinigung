@@ -3,6 +3,31 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Sparkles, Building2, Sofa, Coffee, Bath, Footprints, Trash2, DoorOpen } from 'lucide-react'
+import ScopeBox from '@/components/ScopeBox'
+
+// Scope-Box Daten
+const scopeData = {
+  inklusive: [
+    'Böden saugen & wischen',
+    'Sanitäranlagen reinigen & desinfizieren',
+    'Müllentsorgung & Mülltrennung',
+    'Oberflächen abstauben',
+    'Teeküche & Pausenraum',
+    'Türklinken & Kontaktflächen',
+  ],
+  optional: [
+    'Fensterreinigung (eigener Turnus)',
+    'Teppichtiefenreinigung',
+    'Polster- & Stuhlreinigung',
+    'Grundreinigung',
+    'Kühlschrank innen',
+  ],
+  intervalle: [
+    { name: 'Täglich', beschreibung: 'Praxen, Gastro, Einzelhandel' },
+    { name: '3x pro Woche', beschreibung: 'Büros, Agenturen, Kanzleien' },
+    { name: 'Wöchentlich', beschreibung: 'Lager, Archiv, Nebenflächen' },
+  ],
+}
 
 const reinigungsbereiche = [
   {
@@ -73,6 +98,14 @@ export default function LeistungsumfangSection() {
             kein Thema mehr ist, sondern Standard.
           </p>
         </div>
+
+        {/* Scope Box - Was ist im Preis enthalten? */}
+        <ScopeBox
+          inklusive={scopeData.inklusive}
+          optional={scopeData.optional}
+          intervalle={scopeData.intervalle}
+          className="mb-12 sm:mb-16 lg:mb-20"
+        />
 
         {/* Two Column: Image + Text */}
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center mb-12 sm:mb-16 lg:mb-28">
