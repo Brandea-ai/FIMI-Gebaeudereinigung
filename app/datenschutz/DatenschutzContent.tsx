@@ -23,7 +23,7 @@ export default function DatenschutzContent() {
 
   // Navigation items - angepasst fuer Gebaeudereinigung
   const navItems = [
-    { id: 'datenschutz-hauptteil', label: 'Datenschutzerklärung', main: true },
+    { id: 'datenschutz-hauptteil', label: 'Datenschutzerklaerung', main: true },
     { id: 'ueberblick', label: '§ 1 Auf einen Blick' },
     { id: 'hosting', label: '§ 2 Hosting' },
     { id: 'allgemeine-hinweise', label: '§ 3 Allgemeine Hinweise' },
@@ -37,7 +37,7 @@ export default function DatenschutzContent() {
     { id: 'kundendaten', label: '§ 11 Kunden- & Vertragsdaten' },
     { id: 'bewerberdaten', label: '§ 12 Bewerberdaten' },
     { id: 'betroffenenrechte', label: '§ 13 Ihre Rechte' },
-    { id: 'aenderungen', label: '§ 14 Änderungen' }
+    { id: 'aenderungen', label: '§ 14 Aenderungen' }
   ];
 
   // Footer IntersectionObserver
@@ -176,10 +176,10 @@ export default function DatenschutzContent() {
   };
 
   const generateDeleteRequest = () => {
-    const text = `Antrag auf Löschung personenbezogener Daten gemäß Art. 17 DSGVO
+    const text = `Antrag auf Loeschung personenbezogener Daten gemaess Art. 17 DSGVO
 
 An
-FIMI Gebäudereinigung GmbH
+FIMI Gebaeudereinigung GmbH
 Kellerstr. 39
 84036 Landshut
 Deutschland
@@ -188,20 +188,20 @@ Deutschland
 [Ihre Adresse]
 [Datum]
 
-Betreff: Antrag auf Löschung personenbezogener Daten gemäß Art. 17 DSGVO
+Betreff: Antrag auf Loeschung personenbezogener Daten gemaess Art. 17 DSGVO
 
 Sehr geehrte Damen und Herren,
 
-hiermit beantrage ich gemäß Art. 17 DSGVO die unverzügliche Löschung aller mich betreffenden personenbezogenen Daten, die Sie über mich gespeichert haben.
+hiermit beantrage ich gemaess Art. 17 DSGVO die unverzuegliche Loeschung aller mich betreffenden personenbezogenen Daten, die Sie ueber mich gespeichert haben.
 
 Folgende Daten sind mir bekannt:
 - Referenznummer (falls vorhanden): _______________
 - E-Mail-Adresse: _______________
 - Name: _______________
 
-Ich bitte um schriftliche Bestätigung der Löschung innerhalb der gesetzlichen Frist von einem Monat.
+Ich bitte um schriftliche Bestaetigung der Loeschung innerhalb der gesetzlichen Frist von einem Monat.
 
-Mit freundlichen Grüßen
+Mit freundlichen Gruessen
 [Unterschrift]`;
 
     const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
@@ -216,10 +216,10 @@ Mit freundlichen Grüßen
   };
 
   const generateRevokeRequest = () => {
-    const text = `Widerruf der Einwilligung gemäß Art. 7 Abs. 3 DSGVO
+    const text = `Widerruf der Einwilligung gemaess Art. 7 Abs. 3 DSGVO
 
 An
-FIMI Gebäudereinigung GmbH
+FIMI Gebaeudereinigung GmbH
 Kellerstr. 39
 84036 Landshut
 Deutschland
@@ -232,14 +232,14 @@ Betreff: Widerruf der Einwilligung zur Datenverarbeitung
 
 Sehr geehrte Damen und Herren,
 
-hiermit widerrufe ich meine erteilte Einwilligung zur Verarbeitung meiner personenbezogenen Daten gemäß Art. 7 Abs. 3 DSGVO mit sofortiger Wirkung.
+hiermit widerrufe ich meine erteilte Einwilligung zur Verarbeitung meiner personenbezogenen Daten gemaess Art. 7 Abs. 3 DSGVO mit sofortiger Wirkung.
 
 Der Widerruf betrifft folgende Verarbeitung(en):
 [Bitte spezifizieren Sie, z.B.: Newsletter, Marketing, etc.]
 
-Ich fordere Sie auf, die Verarbeitung meiner Daten auf Grundlage der widerrufenen Einwilligung unverzüglich einzustellen und mich schriftlich über die ergriffenen Maßnahmen zu informieren.
+Ich fordere Sie auf, die Verarbeitung meiner Daten auf Grundlage der widerrufenen Einwilligung unverzueglich einzustellen und mich schriftlich ueber die ergriffenen Massnahmen zu informieren.
 
-Mit freundlichen Grüßen
+Mit freundlichen Gruessen
 [Unterschrift]`;
 
     const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
@@ -263,7 +263,7 @@ Mit freundlichen Grüßen
       {/* Header */}
       <section className="datenschutz-header" aria-labelledby="datenschutz-page-title">
         <div className="datenschutz-header-content">
-          <h1 id="datenschutz-page-title" className="datenschutz-header-title">Datenschutzerklärung</h1>
+          <h1 id="datenschutz-page-title" className="datenschutz-header-title">Datenschutzerklaerung</h1>
           <p className="datenschutz-header-subtitle">der FIMI Gebäudereinigung GmbH i.Gr.</p>
         </div>
       </section>
@@ -271,7 +271,7 @@ Mit freundlichen Grüßen
       <main className="datenschutz-main">
         <div className="important-notice">
           <strong>Datenschutz ist Vertrauenssache</strong>
-          <p>Der Schutz Ihrer persönlichen Daten hat für uns höchste Priorität. Diese Datenschutzerklärung informiert Sie umfassend über Art, Umfang und Zweck der Datenverarbeitung.</p>
+          <p>Der Schutz Ihrer persoenlichen Daten hat fuer uns hoechste Prioritaet. Diese Datenschutzerklaerung informiert Sie umfassend ueber Art, Umfang und Zweck der Datenverarbeitung.</p>
         </div>
 
         <div className="datenschutz-container">
@@ -311,9 +311,9 @@ Mit freundlichen Grüßen
 
               {/* Einleitung */}
               <section id="datenschutz-hauptteil" className="section-tracked content-block" aria-labelledby="datenschutz-hauptteil-heading">
-                <h2 id="datenschutz-hauptteil-heading" className="section-title">Datenschutzerklärung</h2>
+                <h2 id="datenschutz-hauptteil-heading" className="section-title">Datenschutzerklaerung</h2>
                 <p className="text-body">
-                  Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.
+                  Die folgenden Hinweise geben einen einfachen Ueberblick darueber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persoenlich identifiziert werden koennen. Ausfuehrliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgefuehrten Datenschutzerklaerung.
                 </p>
               </section>
 
@@ -322,9 +322,9 @@ Mit freundlichen Grüßen
                 <h2 id="ueberblick-heading" className="section-title">1. Datenschutz auf einen Blick</h2>
 
                 <h3 className="subsection-title">Datenerfassung auf dieser Website</h3>
-                <p className="text-body"><strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong></p>
+                <p className="text-body"><strong>Wer ist verantwortlich fuer die Datenerfassung auf dieser Website?</strong></p>
                 <p className="text-body">
-                  Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt „Hinweis zur Verantwortlichen Stelle" in dieser Datenschutzerklärung entnehmen.
+                  Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten koennen Sie dem Abschnitt „Hinweis zur Verantwortlichen Stelle" in dieser Datenschutzerklaerung entnehmen.
                 </p>
 
                 <p className="text-body"><strong>Wie erfassen wir Ihre Daten?</strong></p>
@@ -335,14 +335,14 @@ Mit freundlichen Grüßen
                   Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z.B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.
                 </p>
 
-                <p className="text-body"><strong>Wofür nutzen wir Ihre Daten?</strong></p>
+                <p className="text-body"><strong>Wofuer nutzen wir Ihre Daten?</strong></p>
                 <p className="text-body">
-                  Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.
+                  Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewaehrleisten. Andere Daten koennen zur Analyse Ihres Nutzerverhaltens verwendet werden.
                 </p>
 
-                <p className="text-body"><strong>Welche Rechte haben Sie bezüglich Ihrer Daten?</strong></p>
+                <p className="text-body"><strong>Welche Rechte haben Sie bezueglich Ihrer Daten?</strong></p>
                 <p className="text-body">
-                  Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen. Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.
+                  Sie haben jederzeit das Recht, unentgeltlich Auskunft ueber Herkunft, Empfaenger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben ausserdem ein Recht, die Berichtigung oder Loeschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, koennen Sie diese Einwilligung jederzeit fuer die Zukunft widerrufen. Ausserdem haben Sie das Recht, unter bestimmten Umstaenden die Einschraenkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.
                 </p>
               </section>
 
@@ -353,7 +353,7 @@ Mit freundlichen Grüßen
 
                 <h3 className="subsection-title">Vercel</h3>
                 <p className="text-body">
-                  Diese Website wird extern bei Vercel Inc. gehostet. Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Hierbei kann es sich v.a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige Daten, die über eine Website generiert werden, handeln.
+                  Diese Website wird extern bei Vercel Inc. gehostet. Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Hierbei kann es sich v.a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige Daten, die ueber eine Website generiert werden, handeln.
                 </p>
 
                 <div className="info-box">
@@ -378,7 +378,7 @@ Mit freundlichen Grüßen
                 </div>
 
                 <p className="text-body">
-                  Das externe Hosting erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO).
+                  Das externe Hosting erfolgt zum Zwecke der Vertragserfuellung gegenueber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO).
                 </p>
               </section>
 
@@ -388,14 +388,14 @@ Mit freundlichen Grüßen
 
                 <h3 className="subsection-title">Datenschutz</h3>
                 <p className="text-body">
-                  Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
+                  Die Betreiber dieser Seiten nehmen den Schutz Ihrer persoenlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklaerung.
                 </p>
                 <p className="text-body">
-                  Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
+                  Wir weisen darauf hin, dass die Datenuebertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitsluecken aufweisen kann. Ein lueckenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht moeglich.
                 </p>
 
                 <h3 className="subsection-title">Hinweis zur verantwortlichen Stelle</h3>
-                <p className="text-body">Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
+                <p className="text-body">Die verantwortliche Stelle fuer die Datenverarbeitung auf dieser Website ist:</p>
 
                 <div className="info-box">
                   <table className="info-table">
@@ -406,7 +406,7 @@ Mit freundlichen Grüßen
                       </tr>
                       <tr>
                         <td className="info-table-label">Vertretung:</td>
-                        <td className="info-table-value">Ntonalnt Tzoutzis & Ergest Qiraj (Geschäftsführer)</td>
+                        <td className="info-table-value">Ntonalnt Tzoutzis & Ergest Qiraj (Geschaeftsfuehrer)</td>
                       </tr>
                       <tr>
                         <td className="info-table-label">Anschrift:</td>
@@ -437,44 +437,44 @@ Mit freundlichen Grüßen
                 </div>
 
                 <p className="text-body">
-                  Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, E-Mail-Adressen o.Ä.) entscheidet.
+                  Verantwortliche Stelle ist die natuerliche oder juristische Person, die allein oder gemeinsam mit anderen ueber die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z.B. Namen, E-Mail-Adressen o.Ae.) entscheidet.
                 </p>
 
                 <h3 className="subsection-title">Speicherdauer</h3>
                 <p className="text-body">
-                  Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung Ihrer personenbezogenen Daten haben (z.B. steuer- oder handelsrechtliche Aufbewahrungsfristen).
+                  Soweit innerhalb dieser Datenschutzerklaerung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck fuer die Datenverarbeitung entfaellt. Wenn Sie ein berechtigtes Loeschersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten geloescht, sofern wir keine anderen rechtlich zulaessigen Gruende fuer die Speicherung Ihrer personenbezogenen Daten haben (z.B. steuer- oder handelsrechtliche Aufbewahrungsfristen).
                 </p>
 
                 <h3 className="subsection-title">Rechtsgrundlagen der Datenverarbeitung</h3>
                 <div className="info-box">
                   <ul className="standard-list" role="list" aria-label="Rechtsgrundlagen der Datenverarbeitung">
                     <li role="listitem"><strong>Art. 6 Abs. 1 lit. a DSGVO</strong> - Einwilligung der betroffenen Person</li>
-                    <li role="listitem"><strong>Art. 6 Abs. 1 lit. b DSGVO</strong> - Vertragserfüllung oder vorvertragliche Maßnahmen</li>
-                    <li role="listitem"><strong>Art. 6 Abs. 1 lit. c DSGVO</strong> - Erfüllung rechtlicher Verpflichtungen</li>
+                    <li role="listitem"><strong>Art. 6 Abs. 1 lit. b DSGVO</strong> - Vertragserfuellung oder vorvertragliche Massnahmen</li>
+                    <li role="listitem"><strong>Art. 6 Abs. 1 lit. c DSGVO</strong> - Erfuellung rechtlicher Verpflichtungen</li>
                     <li role="listitem"><strong>Art. 6 Abs. 1 lit. f DSGVO</strong> - Berechtigte Interessen des Verantwortlichen</li>
                   </ul>
                 </div>
 
                 <h3 className="subsection-title">Widerruf Ihrer Einwilligung</h3>
                 <p className="text-body">
-                  Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.
+                  Viele Datenverarbeitungsvorgaenge sind nur mit Ihrer ausdruecklichen Einwilligung moeglich. Sie koennen eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtmaessigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberuehrt.
                 </p>
 
                 <h3 className="subsection-title">Widerspruchsrecht (Art. 21 DSGVO)</h3>
                 <div className="info-box" style={{ background: 'rgba(16, 147, 135, 0.05)' }}>
                   <p className="text-body" style={{ marginBottom: 0 }}>
-                    <strong>WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E ODER F DSGVO ERFOLGT, HABEN SIE JEDERZEIT DAS RECHT, AUS GRÜNDEN, DIE SICH AUS IHRER BESONDEREN SITUATION ERGEBEN, GEGEN DIE VERARBEITUNG IHRER PERSONENBEZOGENEN DATEN WIDERSPRUCH EINZULEGEN. WERDEN IHRE PERSONENBEZOGENEN DATEN VERARBEITET, UM DIREKTWERBUNG ZU BETREIBEN, SO HABEN SIE DAS RECHT, JEDERZEIT WIDERSPRUCH GEGEN DIE VERARBEITUNG EINZULEGEN.</strong>
+                    <strong>WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E ODER F DSGVO ERFOLGT, HABEN SIE JEDERZEIT DAS RECHT, AUS GRUENDEN, DIE SICH AUS IHRER BESONDEREN SITUATION ERGEBEN, GEGEN DIE VERARBEITUNG IHRER PERSONENBEZOGENEN DATEN WIDERSPRUCH EINZULEGEN. WERDEN IHRE PERSONENBEZOGENEN DATEN VERARBEITET, UM DIREKTWERBUNG ZU BETREIBEN, SO HABEN SIE DAS RECHT, JEDERZEIT WIDERSPRUCH GEGEN DIE VERARBEITUNG EINZULEGEN.</strong>
                   </p>
                 </div>
 
-                <h3 className="subsection-title">Beschwerderecht bei der Aufsichtsbehörde</h3>
+                <h3 className="subsection-title">Beschwerderecht bei der Aufsichtsbehoerde</h3>
                 <p className="text-body">
-                  Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes zu.
+                  Im Falle von Verstoessen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehoerde, insbesondere in dem Mitgliedstaat ihres gewoehnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmasslichen Verstosses zu.
                 </p>
 
-                <h3 className="subsection-title">SSL- bzw. TLS-Verschlüsselung</h3>
+                <h3 className="subsection-title">SSL- bzw. TLS-Verschluesselung</h3>
                 <p className="text-body">
-                  Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte, wie zum Beispiel Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.
+                  Diese Seite nutzt aus Sicherheitsgruenden und zum Schutz der Uebertragung vertraulicher Inhalte, wie zum Beispiel Anfragen, die Sie an uns als Seitenbetreiber senden, eine SSL- bzw. TLS-Verschluesselung. Eine verschluesselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.
                 </p>
               </section>
 
@@ -484,7 +484,7 @@ Mit freundlichen Grüßen
 
                 <h3 className="subsection-title">Server-Log-Dateien</h3>
                 <p className="text-body">
-                  Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:
+                  Der Provider der Seiten erhebt und speichert automatisch Informationen in so genannten Server-Log-Dateien, die Ihr Browser automatisch an uns uebermittelt. Dies sind:
                 </p>
                 <ul className="standard-list" role="list" aria-label="Erfasste Server-Log-Daten">
                   <li role="listitem">Browsertyp und Browserversion</li>
@@ -495,7 +495,7 @@ Mit freundlichen Grüßen
                   <li role="listitem">IP-Adresse</li>
                 </ul>
                 <p className="text-body">
-                  Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und der Optimierung seiner Website.
+                  Eine Zusammenfuehrung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und der Optimierung seiner Website.
                 </p>
               </section>
 
@@ -503,16 +503,16 @@ Mit freundlichen Grüßen
               <section id="cookies" className="section-tracked content-block" aria-labelledby="cookies-heading">
                 <h2 id="cookies-heading" className="section-title">5. Cookies und Cookie-Einstellungen</h2>
                 <p className="text-body">
-                  Unsere Internetseiten verwenden so genannte „Cookies". Cookies sind kleine Datenpakete und richten auf Ihrem Endgerät keinen Schaden an. Sie werden entweder vorübergehend für die Dauer einer Sitzung (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem Endgerät gespeichert. Session-Cookies werden nach Ende Ihres Besuchs automatisch gelöscht. Permanente Cookies bleiben auf Ihrem Endgerät gespeichert, bis Sie diese selbst löschen oder eine automatische Löschung durch Ihren Webbrowser erfolgt.
+                  Unsere Internetseiten verwenden so genannte „Cookies". Cookies sind kleine Datenpakete und richten auf Ihrem Endgeraet keinen Schaden an. Sie werden entweder voruebergehend fuer die Dauer einer Sitzung (Session-Cookies) oder dauerhaft (permanente Cookies) auf Ihrem Endgeraet gespeichert. Session-Cookies werden nach Ende Ihres Besuchs automatisch geloescht. Permanente Cookies bleiben auf Ihrem Endgeraet gespeichert, bis Sie diese selbst loeschen oder eine automatische Loeschung durch Ihren Webbrowser erfolgt.
                 </p>
 
                 <h3 className="subsection-title">Cookie-Banner und Ihre Einwilligung</h3>
                 <p className="text-body">
-                  Beim ersten Besuch unserer Website wird Ihnen ein Cookie-Banner angezeigt, über den Sie Ihre Einwilligung zu verschiedenen Cookie-Kategorien erteilen oder verweigern können. Ihre Auswahl wird in Ihrem Browser gespeichert (localStorage) und bei jedem weiteren Besuch berücksichtigt.
+                  Beim ersten Besuch unserer Website wird Ihnen ein Cookie-Banner angezeigt, ueber den Sie Ihre Einwilligung zu verschiedenen Cookie-Kategorien erteilen oder verweigern koennen. Ihre Auswahl wird in Ihrem Browser gespeichert (localStorage) und bei jedem weiteren Besuch beruecksichtigt.
                 </p>
 
                 <div className="info-box" style={{ background: 'rgba(16, 147, 135, 0.05)' }}>
-                  <strong>Cookie-Einstellungen ändern:</strong> Sie können Ihre Cookie-Einstellungen jederzeit über den Link &quot;Cookie-Einstellungen&quot; im Footer unserer Website ändern oder widerrufen.
+                  <strong>Cookie-Einstellungen aendern:</strong> Sie koennen Ihre Cookie-Einstellungen jederzeit ueber den Link &quot;Cookie-Einstellungen&quot; im Footer unserer Website aendern oder widerrufen.
                 </div>
 
                 <h3 className="subsection-title">Arten von Cookies auf unserer Website</h3>
@@ -533,7 +533,7 @@ Mit freundlichen Grüßen
                       </tr>
                       <tr>
                         <td data-label="Kategorie"><strong>Funktional</strong></td>
-                        <td data-label="Beschreibung">Speichern Ihrer Präferenzen und Einstellungen</td>
+                        <td data-label="Beschreibung">Speichern Ihrer Praeferenzen und Einstellungen</td>
                         <td data-label="Erforderlich">Nein</td>
                       </tr>
                       <tr>
@@ -564,23 +564,23 @@ Mit freundlichen Grüßen
                         <td className="info-table-value">localStorage (Browser)</td>
                       </tr>
                       <tr>
-                        <td className="info-table-label">Speicherschlüssel:</td>
+                        <td className="info-table-label">Speicherschluessel:</td>
                         <td className="info-table-value">fimi_cookie_consent</td>
                       </tr>
                       <tr>
                         <td className="info-table-label">Speicherdauer:</td>
-                        <td className="info-table-value">Bis zur manuellen Löschung oder Browserbereinigung</td>
+                        <td className="info-table-value">Bis zur manuellen Loeschung oder Browserbereinigung</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
 
                 <p className="text-body">
-                  Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle oder generell ausschließen sowie das automatische Löschen der Cookies beim Schließen des Browsers aktivieren.
+                  Sie koennen Ihren Browser so einstellen, dass Sie ueber das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies fuer bestimmte Faelle oder generell ausschliessen sowie das automatische Loeschen der Cookies beim Schliessen des Browsers aktivieren.
                 </p>
 
                 <div className="info-box">
-                  <strong>Rechtsgrundlage:</strong> Cookies, die zur Durchführung des elektronischen Kommunikationsvorgangs oder zur Bereitstellung bestimmter Funktionen erforderlich sind, werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gespeichert. Sofern eine Einwilligung abgefragt wurde, erfolgt die Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TTDSG.
+                  <strong>Rechtsgrundlage:</strong> Cookies, die zur Durchfuehrung des elektronischen Kommunikationsvorgangs oder zur Bereitstellung bestimmter Funktionen erforderlich sind, werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gespeichert. Sofern eine Einwilligung abgefragt wurde, erfolgt die Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TTDSG.
                 </div>
               </section>
 
@@ -590,10 +590,10 @@ Mit freundlichen Grüßen
 
                 <h3 className="subsection-title">Kontaktformular</h3>
                 <p className="text-body">
-                  Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+                  Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und fuer den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
                 </p>
                 <p className="text-body">
-                  Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO).
+                  Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfuellung eines Vertrags zusammenhaengt oder zur Durchfuehrung vorvertraglicher Massnahmen erforderlich ist. In allen uebrigen Faellen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO).
                 </p>
 
                 <h3 className="subsection-title">Anfrage per E-Mail, Telefon oder Telefax</h3>
@@ -603,13 +603,13 @@ Mit freundlichen Grüßen
 
                 <h3 className="subsection-title">Kommunikation via WhatsApp</h3>
                 <p className="text-body">
-                  Für die Kommunikation mit unseren Kunden und sonstigen Dritten nutzen wir unter anderem den Instant-Messaging-Dienst WhatsApp. Anbieter ist die WhatsApp Ireland Limited, 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland.
+                  Fuer die Kommunikation mit unseren Kunden und sonstigen Dritten nutzen wir unter anderem den Instant-Messaging-Dienst WhatsApp. Anbieter ist die WhatsApp Ireland Limited, 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland.
                 </p>
                 <p className="text-body">
-                  Die Kommunikation erfolgt über eine Ende-zu-Ende-Verschlüsselung (Peer-to-Peer), die verhindert, dass WhatsApp oder sonstige Dritte Zugriff auf die Kommunikationsinhalte erlangen können. WhatsApp erhält jedoch Zugriff auf Metadaten, die im Zuge des Kommunikationsvorgangs entstehen (z.B. Absender, Empfänger und Zeitpunkt).
+                  Die Kommunikation erfolgt ueber eine Ende-zu-Ende-Verschluesselung (Peer-to-Peer), die verhindert, dass WhatsApp oder sonstige Dritte Zugriff auf die Kommunikationsinhalte erlangen koennen. WhatsApp erhaelt jedoch Zugriff auf Metadaten, die im Zuge des Kommunikationsvorgangs entstehen (z.B. Absender, Empfaenger und Zeitpunkt).
                 </p>
                 <div className="info-box">
-                  <strong>Rechtsgrundlage:</strong> Der Einsatz von WhatsApp erfolgt auf Grundlage unseres berechtigten Interesses an einer möglichst schnellen und effektiven Kommunikation mit Kunden, Interessenten und sonstigen Geschäfts- und Vertragspartnern (Art. 6 Abs. 1 lit. f DSGVO).
+                  <strong>Rechtsgrundlage:</strong> Der Einsatz von WhatsApp erfolgt auf Grundlage unseres berechtigten Interesses an einer moeglichst schnellen und effektiven Kommunikation mit Kunden, Interessenten und sonstigen Geschaefts- und Vertragspartnern (Art. 6 Abs. 1 lit. f DSGVO).
                 </div>
               </section>
 
@@ -619,10 +619,10 @@ Mit freundlichen Grüßen
 
                 <h3 className="subsection-title">Facebook</h3>
                 <p className="text-body">
-                  Auf dieser Website sind Elemente des sozialen Netzwerks Facebook integriert. Anbieter dieses Dienstes ist die Meta Platforms Ireland Limited, 4 Grand Canal Square, Dublin 2, Irland. Die erfassten Daten werden nach Aussage von Facebook jedoch auch in die USA und in andere Drittländer übertragen.
+                  Auf dieser Website sind Elemente des sozialen Netzwerks Facebook integriert. Anbieter dieses Dienstes ist die Meta Platforms Ireland Limited, 4 Grand Canal Square, Dublin 2, Irland. Die erfassten Daten werden nach Aussage von Facebook jedoch auch in die USA und in andere Drittlaender uebertragen.
                 </p>
                 <p className="text-body">
-                  Wenn das Social-Media-Element aktiv ist, wird eine direkte Verbindung zwischen Ihrem Endgerät und dem Facebook-Server hergestellt. Facebook erhält dadurch die Information, dass Sie mit Ihrer IP-Adresse diese Website besucht haben.
+                  Wenn das Social-Media-Element aktiv ist, wird eine direkte Verbindung zwischen Ihrem Endgeraet und dem Facebook-Server hergestellt. Facebook erhaelt dadurch die Information, dass Sie mit Ihrer IP-Adresse diese Website besucht haben.
                 </p>
 
                 <h3 className="subsection-title">Instagram</h3>
@@ -630,11 +630,11 @@ Mit freundlichen Grüßen
                   Auf dieser Website sind Funktionen des Dienstes Instagram eingebunden. Diese Funktionen werden angeboten durch die Meta Platforms Ireland Limited, 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland.
                 </p>
                 <p className="text-body">
-                  Wenn das Social-Media-Element aktiv ist, wird eine direkte Verbindung zwischen Ihrem Endgerät und dem Instagram-Server hergestellt. Instagram erhält dadurch Informationen über den Besuch dieser Website durch Sie.
+                  Wenn das Social-Media-Element aktiv ist, wird eine direkte Verbindung zwischen Ihrem Endgeraet und dem Instagram-Server hergestellt. Instagram erhaelt dadurch Informationen ueber den Besuch dieser Website durch Sie.
                 </p>
 
                 <div className="info-box">
-                  <strong>Rechtsgrundlage:</strong> Soweit eine Einwilligung (Consent) eingeholt wurde, erfolgt der Einsatz auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 TTDSG. Die Einwilligung ist jederzeit widerrufbar. Die Datenübertragung in die USA wird auf die Standardvertragsklauseln der EU-Kommission gestützt.
+                  <strong>Rechtsgrundlage:</strong> Soweit eine Einwilligung (Consent) eingeholt wurde, erfolgt der Einsatz auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 TTDSG. Die Einwilligung ist jederzeit widerrufbar. Die Datenuebertragung in die USA wird auf die Standardvertragsklauseln der EU-Kommission gestuetzt.
                 </div>
               </section>
 
@@ -647,10 +647,10 @@ Mit freundlichen Grüßen
                   Diese Website nutzt Funktionen des Webanalysedienstes Google Analytics. Anbieter ist die Google Ireland Limited („Google"), Gordon House, Barrow Street, Dublin 4, Irland.
                 </p>
                 <p className="text-body">
-                  Google Analytics ermöglicht es dem Websitebetreiber, das Verhalten der Websitebesucher zu analysieren. Hierbei erhält der Websitebetreiber verschiedene Nutzungsdaten, wie z.B. Seitenaufrufe, Verweildauer, verwendete Betriebssysteme und Herkunft des Nutzers.
+                  Google Analytics ermoeglicht es dem Websitebetreiber, das Verhalten der Websitebesucher zu analysieren. Hierbei erhaelt der Websitebetreiber verschiedene Nutzungsdaten, wie z.B. Seitenaufrufe, Verweildauer, verwendete Betriebssysteme und Herkunft des Nutzers.
                 </p>
                 <p className="text-body">
-                  Google Analytics verwendet Technologien, die die Wiedererkennung des Nutzers zum Zwecke der Analyse des Nutzerverhaltens ermöglichen (z.B. Cookies oder Device-Fingerprinting). Die von Google erfassten Informationen über die Benutzung dieser Website werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert.
+                  Google Analytics verwendet Technologien, die die Wiedererkennung des Nutzers zum Zwecke der Analyse des Nutzerverhaltens ermoeglichen (z.B. Cookies oder Device-Fingerprinting). Die von Google erfassten Informationen ueber die Benutzung dieser Website werden in der Regel an einen Server von Google in den USA uebertragen und dort gespeichert.
                 </p>
                 <div className="info-box">
                   <strong>Rechtsgrundlage:</strong> Die Nutzung dieses Dienstes erfolgt auf Grundlage Ihrer Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TTDSG. Die Einwilligung ist jederzeit widerrufbar.
@@ -661,7 +661,7 @@ Mit freundlichen Grüßen
                   Der Websitebetreiber verwendet Google Ads. Google Ads ist ein Online-Werbeprogramm der Google Ireland Limited („Google"), Gordon House, Barrow Street, Dublin 4, Irland.
                 </p>
                 <p className="text-body">
-                  Google Ads ermöglicht es uns Werbeanzeigen in der Google-Suchmaschine oder auf Drittwebseiten auszuspielen, wenn der Nutzer bestimmte Suchbegriffe bei Google eingibt (Keyword-Targeting). Ferner können zielgerichtete Werbeanzeigen anhand der bei Google vorhandenen Nutzerdaten (z.B. Standortdaten und Interessen) ausgespielt werden.
+                  Google Ads ermoeglicht es uns Werbeanzeigen in der Google-Suchmaschine oder auf Drittwebseiten auszuspielen, wenn der Nutzer bestimmte Suchbegriffe bei Google eingibt (Keyword-Targeting). Ferner koennen zielgerichtete Werbeanzeigen anhand der bei Google vorhandenen Nutzerdaten (z.B. Standortdaten und Interessen) ausgespielt werden.
                 </p>
 
                 <h3 className="subsection-title">Meta-Pixel (Facebook Pixel)</h3>
@@ -669,7 +669,7 @@ Mit freundlichen Grüßen
                   Diese Website nutzt zur Konversionsmessung der Besucheraktions-Pixel von Facebook/Meta. Anbieter dieses Dienstes ist die Meta Platforms Ireland Limited, 4 Grand Canal Square, Dublin 2, Irland.
                 </p>
                 <p className="text-body">
-                  So kann das Verhalten der Seitenbesucher nachverfolgt werden, nachdem diese durch Klick auf eine Facebook-Werbeanzeige auf die Website des Anbieters weitergeleitet wurden. Dadurch können die Wirksamkeit der Facebook-Werbeanzeigen für statistische und Marktforschungszwecke ausgewertet werden.
+                  So kann das Verhalten der Seitenbesucher nachverfolgt werden, nachdem diese durch Klick auf eine Facebook-Werbeanzeige auf die Website des Anbieters weitergeleitet wurden. Dadurch koennen die Wirksamkeit der Facebook-Werbeanzeigen fuer statistische und Marktforschungszwecke ausgewertet werden.
                 </p>
               </section>
 
@@ -677,10 +677,10 @@ Mit freundlichen Grüßen
               <section id="newsletter" className="section-tracked content-block" aria-labelledby="newsletter-heading">
                 <h2 id="newsletter-heading" className="section-title">9. Newsletter</h2>
                 <p className="text-body">
-                  Wenn Sie den auf der Website angebotenen Newsletter beziehen möchten, benötigen wir von Ihnen eine E-Mail-Adresse sowie Informationen, welche uns die Überprüfung gestatten, dass Sie der Inhaber der angegebenen E-Mail-Adresse sind und mit dem Empfang des Newsletters einverstanden sind. Weitere Daten werden nicht bzw. nur auf freiwilliger Basis erhoben.
+                  Wenn Sie den auf der Website angebotenen Newsletter beziehen moechten, benoetigen wir von Ihnen eine E-Mail-Adresse sowie Informationen, welche uns die Ueberpruefung gestatten, dass Sie der Inhaber der angegebenen E-Mail-Adresse sind und mit dem Empfang des Newsletters einverstanden sind. Weitere Daten werden nicht bzw. nur auf freiwilliger Basis erhoben.
                 </p>
                 <p className="text-body">
-                  Die Verarbeitung der in das Newsletteranmeldeformular eingegebenen Daten erfolgt ausschließlich auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Die erteilte Einwilligung zur Speicherung der Daten, der E-Mail-Adresse sowie deren Nutzung zum Versand des Newsletters können Sie jederzeit widerrufen, etwa über den „Austragen"-Link im Newsletter.
+                  Die Verarbeitung der in das Newsletteranmeldeformular eingegebenen Daten erfolgt ausschliesslich auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Die erteilte Einwilligung zur Speicherung der Daten, der E-Mail-Adresse sowie deren Nutzung zum Versand des Newsletters koennen Sie jederzeit widerrufen, etwa ueber den „Austragen"-Link im Newsletter.
                 </p>
               </section>
 
@@ -693,7 +693,7 @@ Mit freundlichen Grüßen
                   Diese Seite nutzt den Kartendienst Google Maps. Anbieter ist die Google Ireland Limited („Google"), Gordon House, Barrow Street, Dublin 4, Irland.
                 </p>
                 <p className="text-body">
-                  Zur Nutzung der Funktionen von Google Maps ist es notwendig, Ihre IP-Adresse zu speichern. Diese Informationen werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert.
+                  Zur Nutzung der Funktionen von Google Maps ist es notwendig, Ihre IP-Adresse zu speichern. Diese Informationen werden in der Regel an einen Server von Google in den USA uebertragen und dort gespeichert.
                 </p>
                 <div className="info-box">
                   <strong>Rechtsgrundlage:</strong> Die Nutzung von Google Maps erfolgt im Interesse einer ansprechenden Darstellung unserer Online-Angebote und an einer leichten Auffindbarkeit der von uns auf der Website angegebenen Orte. Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar.
@@ -709,7 +709,7 @@ Mit freundlichen Grüßen
                   Wir nutzen „Google reCAPTCHA" auf dieser Website. Anbieter ist die Google Ireland Limited („Google"), Gordon House, Barrow Street, Dublin 4, Irland.
                 </p>
                 <p className="text-body">
-                  Mit reCAPTCHA soll überprüft werden, ob die Dateneingabe auf dieser Website (z.B. in einem Kontaktformular) durch einen Menschen oder durch ein automatisiertes Programm erfolgt.
+                  Mit reCAPTCHA soll ueberprueft werden, ob die Dateneingabe auf dieser Website (z.B. in einem Kontaktformular) durch einen Menschen oder durch ein automatisiertes Programm erfolgt.
                 </p>
               </section>
 
@@ -717,7 +717,7 @@ Mit freundlichen Grüßen
               <section id="kundendaten" className="section-tracked content-block" aria-labelledby="kundendaten-heading">
                 <h2 id="kundendaten-heading" className="section-title">11. Kunden- und Vertragsdaten</h2>
                 <p className="text-body">
-                  Wir erheben, verarbeiten und nutzen personenbezogene Kunden- und Vertragsdaten zur Begründung, inhaltlichen Ausgestaltung und Änderung unserer Vertragsbeziehungen. Personenbezogene Daten über die Inanspruchnahme dieser Website (Nutzungsdaten) erheben, verarbeiten und nutzen wir nur, soweit dies erforderlich ist, um dem Nutzer die Inanspruchnahme des Dienstes zu ermöglichen oder abzurechnen.
+                  Wir erheben, verarbeiten und nutzen personenbezogene Kunden- und Vertragsdaten zur Begruendung, inhaltlichen Ausgestaltung und Aenderung unserer Vertragsbeziehungen. Personenbezogene Daten ueber die Inanspruchnahme dieser Website (Nutzungsdaten) erheben, verarbeiten und nutzen wir nur, soweit dies erforderlich ist, um dem Nutzer die Inanspruchnahme des Dienstes zu ermoeglichen oder abzurechnen.
                 </p>
 
                 <h3 className="subsection-title">Verarbeitete Daten im Rahmen von Reinigungsdienstleistungen</h3>
@@ -729,7 +729,7 @@ Mit freundlichen Grüßen
                 </ul>
 
                 <div className="info-box">
-                  <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO. Die erhobenen Kundendaten werden nach Abschluss des Auftrags oder Beendigung der Geschäftsbeziehung und Ablauf der ggf. bestehenden gesetzlichen Aufbewahrungsfristen gelöscht.
+                  <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO. Die erhobenen Kundendaten werden nach Abschluss des Auftrags oder Beendigung der Geschaeftsbeziehung und Ablauf der ggf. bestehenden gesetzlichen Aufbewahrungsfristen geloescht.
                 </div>
 
                 <h3 className="subsection-title">Gesetzliche Aufbewahrungsfristen</h3>
@@ -744,7 +744,7 @@ Mit freundlichen Grüßen
                     </thead>
                     <tbody>
                       <tr>
-                        <td data-label="Datenart">Geschäftsbriefe</td>
+                        <td data-label="Datenart">Geschaeftsbriefe</td>
                         <td data-label="Frist">6 Jahre</td>
                         <td data-label="Rechtsgrundlage">§ 257 HGB</td>
                       </tr>
@@ -754,7 +754,7 @@ Mit freundlichen Grüßen
                         <td data-label="Rechtsgrundlage">§ 147 AO</td>
                       </tr>
                       <tr>
-                        <td data-label="Datenart">Verträge</td>
+                        <td data-label="Datenart">Vertraege</td>
                         <td data-label="Frist">10 Jahre</td>
                         <td data-label="Rechtsgrundlage">§ 147 AO</td>
                       </tr>
@@ -767,21 +767,21 @@ Mit freundlichen Grüßen
               <section id="bewerberdaten" className="section-tracked content-block" aria-labelledby="bewerberdaten-heading">
                 <h2 id="bewerberdaten-heading" className="section-title">12. Bewerberdaten</h2>
                 <p className="text-body">
-                  Wir bieten Ihnen die Möglichkeit, sich bei uns zu bewerben (z.B. per E-Mail, postalisch oder via Online-Bewerberformular). Im Folgenden informieren wir Sie über Umfang, Zweck und Verwendung Ihrer im Rahmen des Bewerbungsprozesses erhobenen personenbezogenen Daten.
+                  Wir bieten Ihnen die Moeglichkeit, sich bei uns zu bewerben (z.B. per E-Mail, postalisch oder via Online-Bewerberformular). Im Folgenden informieren wir Sie ueber Umfang, Zweck und Verwendung Ihrer im Rahmen des Bewerbungsprozesses erhobenen personenbezogenen Daten.
                 </p>
 
                 <h3 className="subsection-title">Umfang und Zweck der Datenerhebung</h3>
                 <p className="text-body">
-                  Wenn Sie uns eine Bewerbung zukommen lassen, verarbeiten wir Ihre damit verbundenen personenbezogenen Daten (z.B. Kontakt- und Kommunikationsdaten, Bewerbungsunterlagen, Notizen im Rahmen von Bewerbungsgesprächen etc.), soweit dies zur Entscheidung über die Begründung eines Beschäftigungsverhältnisses erforderlich ist.
+                  Wenn Sie uns eine Bewerbung zukommen lassen, verarbeiten wir Ihre damit verbundenen personenbezogenen Daten (z.B. Kontakt- und Kommunikationsdaten, Bewerbungsunterlagen, Notizen im Rahmen von Bewerbungsgespraechen etc.), soweit dies zur Entscheidung ueber die Begruendung eines Beschaeftigungsverhaeltnisses erforderlich ist.
                 </p>
 
                 <div className="info-box">
-                  <strong>Rechtsgrundlage:</strong> § 26 BDSG nach deutschem Recht (Anbahnung eines Beschäftigungsverhältnisses), Art. 6 Abs. 1 lit. b DSGVO (allgemeine Vertragsanbahnung).
+                  <strong>Rechtsgrundlage:</strong> § 26 BDSG nach deutschem Recht (Anbahnung eines Beschaeftigungsverhaeltnisses), Art. 6 Abs. 1 lit. b DSGVO (allgemeine Vertragsanbahnung).
                 </div>
 
                 <h3 className="subsection-title">Aufbewahrungsdauer</h3>
                 <p className="text-body">
-                  Sofern wir Ihnen kein Stellenangebot machen können, Sie ein Stellenangebot ablehnen oder Ihre Bewerbung zurückziehen, behalten wir uns das Recht vor, die von Ihnen übermittelten Daten auf Grundlage unserer berechtigten Interessen (Art. 6 Abs. 1 lit. f DSGVO) bis zu <strong>6 Monate</strong> ab der Beendigung des Bewerbungsverfahrens bei uns aufzubewahren. Anschließend werden die Daten gelöscht und die physischen Bewerbungsunterlagen vernichtet.
+                  Sofern wir Ihnen kein Stellenangebot machen koennen, Sie ein Stellenangebot ablehnen oder Ihre Bewerbung zurueckziehen, behalten wir uns das Recht vor, die von Ihnen uebermittelten Daten auf Grundlage unserer berechtigten Interessen (Art. 6 Abs. 1 lit. f DSGVO) bis zu <strong>6 Monate</strong> ab der Beendigung des Bewerbungsverfahrens bei uns aufzubewahren. Anschliessend werden die Daten geloescht und die physischen Bewerbungsunterlagen vernichtet.
                 </p>
               </section>
 
@@ -793,17 +793,17 @@ Mit freundlichen Grüßen
                 </p>
 
                 <ul className="standard-list" role="list" aria-label="Ihre Rechte nach DSGVO">
-                  <li role="listitem"><strong>Recht auf Auskunft (Art. 15 DSGVO):</strong> Sie haben das Recht, Auskunft über Ihre von uns verarbeiteten personenbezogenen Daten zu verlangen.</li>
-                  <li role="listitem"><strong>Recht auf Berichtigung (Art. 16 DSGVO):</strong> Sie haben das Recht, unverzüglich die Berichtigung unrichtiger Daten zu verlangen.</li>
-                  <li role="listitem"><strong>Recht auf Löschung (Art. 17 DSGVO):</strong> Sie haben das Recht, die Löschung Ihrer Daten zu verlangen.</li>
-                  <li role="listitem"><strong>Recht auf Einschränkung (Art. 18 DSGVO):</strong> Sie haben das Recht, die Einschränkung der Verarbeitung zu verlangen.</li>
-                  <li role="listitem"><strong>Recht auf Datenübertragbarkeit (Art. 20 DSGVO):</strong> Sie haben das Recht, Ihre Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten.</li>
+                  <li role="listitem"><strong>Recht auf Auskunft (Art. 15 DSGVO):</strong> Sie haben das Recht, Auskunft ueber Ihre von uns verarbeiteten personenbezogenen Daten zu verlangen.</li>
+                  <li role="listitem"><strong>Recht auf Berichtigung (Art. 16 DSGVO):</strong> Sie haben das Recht, unverzueglich die Berichtigung unrichtiger Daten zu verlangen.</li>
+                  <li role="listitem"><strong>Recht auf Loeschung (Art. 17 DSGVO):</strong> Sie haben das Recht, die Loeschung Ihrer Daten zu verlangen.</li>
+                  <li role="listitem"><strong>Recht auf Einschraenkung (Art. 18 DSGVO):</strong> Sie haben das Recht, die Einschraenkung der Verarbeitung zu verlangen.</li>
+                  <li role="listitem"><strong>Recht auf Datenuebertragbarkeit (Art. 20 DSGVO):</strong> Sie haben das Recht, Ihre Daten in einem strukturierten, gaengigen und maschinenlesbaren Format zu erhalten.</li>
                   <li role="listitem"><strong>Widerspruchsrecht (Art. 21 DSGVO):</strong> Sie haben das Recht, der Verarbeitung zu widersprechen.</li>
                 </ul>
 
                 <h3 className="subsection-title">Musterschreiben zum Download</h3>
                 <p className="text-body">
-                  Zur Erleichterung der Ausübung Ihrer Rechte stellen wir Ihnen folgende Musterschreiben zur Verfügung:
+                  Zur Erleichterung der Ausuebung Ihrer Rechte stellen wir Ihnen folgende Musterschreiben zur Verfuegung:
                 </p>
 
                 <div className="download-section">
@@ -813,7 +813,7 @@ Mit freundlichen Grüßen
                       <polyline points="7 10 12 15 17 10"/>
                       <line x1="12" y1="15" x2="12" y2="3"/>
                     </svg>
-                    Löschantrag herunterladen
+                    Loeschantrag herunterladen
                   </button>
                   <button onClick={generateRevokeRequest} className="download-btn">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
@@ -828,13 +828,13 @@ Mit freundlichen Grüßen
 
               {/* 14. Aenderungen */}
               <section id="aenderungen" className="section-tracked content-block" aria-labelledby="aenderungen-heading">
-                <h2 id="aenderungen-heading" className="section-title">14. Änderungen und Aktualisierung</h2>
+                <h2 id="aenderungen-heading" className="section-title">14. Aenderungen und Aktualisierung</h2>
                 <p className="text-body">
-                  Wir bitten Sie, sich regelmäßig über den Inhalt unserer Datenschutzerklärung zu informieren. Wir passen die Datenschutzerklärung an, sobald die Änderungen der von uns durchgeführten Datenverarbeitungen dies erforderlich machen. Wir informieren Sie, sobald durch die Änderungen eine Mitwirkungshandlung Ihrerseits (z.B. Einwilligung) oder eine sonstige individuelle Benachrichtigung erforderlich wird.
+                  Wir bitten Sie, sich regelmaessig ueber den Inhalt unserer Datenschutzerklaerung zu informieren. Wir passen die Datenschutzerklaerung an, sobald die Aenderungen der von uns durchgefuehrten Datenverarbeitungen dies erforderlich machen. Wir informieren Sie, sobald durch die Aenderungen eine Mitwirkungshandlung Ihrerseits (z.B. Einwilligung) oder eine sonstige individuelle Benachrichtigung erforderlich wird.
                 </p>
 
                 <div className="version-info">
-                  <p className="text-body"><strong>Stand der Datenschutzerklärung:</strong> November 2025 | <strong>Version:</strong> 1.0</p>
+                  <p className="text-body"><strong>Stand der Datenschutzerklaerung:</strong> November 2025 | <strong>Version:</strong> 1.0</p>
                 </div>
               </section>
 
@@ -847,7 +847,7 @@ Mit freundlichen Grüßen
       <button
         className={`mobile-nav-trigger ${!isNavButtonVisible ? 'hidden' : ''}`}
         onClick={openMobileNav}
-        aria-label="Inhaltsverzeichnis öffnen"
+        aria-label="Inhaltsverzeichnis oeffnen"
         aria-expanded={isMobileNavOpen}
         aria-controls="mobile-nav-dialog"
       >
@@ -875,7 +875,7 @@ Mit freundlichen Grüßen
         >
           <div className="mobile-nav-header">
             <h3 id="mobile-nav-title">Inhaltsverzeichnis</h3>
-            <button className="mobile-nav-close" onClick={closeMobileNav} aria-label="Schließen">
+            <button className="mobile-nav-close" onClick={closeMobileNav} aria-label="Schliessen">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
               </svg>
