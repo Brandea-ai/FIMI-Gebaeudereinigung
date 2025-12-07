@@ -2,7 +2,7 @@
 
 **Quelle:** FIMI_Website_TODOs.md (HEILIGER GRAL - alle Tasks basieren darauf!)
 **Stand:** 2025-12-07
-**Letzter Report:** R0015
+**Letzter Report:** R0016
 **Aktueller Sprint:** Sprint 1 (P0 - Go-Live-Blocker)
 
 ---
@@ -155,3 +155,5 @@
 | 2025-12-06 | R0013 | Leistungen-Seite: Accessibility (4 Sections, Suchfeld, Filter-Buttons, Live-Region) |
 | 2025-12-06 | R0014 | Branchen-Seite: Accessibility (3 Sections, 3 Suchfelder, Filter-Buttons, Live-Region, Grid) |
 | 2025-12-07 | R0015 | Beschaffungsmanagement: Performance + A11y (78% → 90%+, 92% → 95%+, LCP 5.3s → ~2.5s) |
+| 2025-12-07 | R0016 | Hallenreinigung: Performance + A11y (86% → 90%+, 92% → 95%+, 222 KiB Bilder optimiert) |
+| 2025-12-07 | R0016 | Sonderleistungen: A11y Nachbesserung (89% → 90%+, 93% → 95%+, Icons + Kontrast) |
