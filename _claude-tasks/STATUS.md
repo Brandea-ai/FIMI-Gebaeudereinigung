@@ -2,7 +2,7 @@
 
 **Quelle:** FIMI_Website_TODOs.md (HEILIGER GRAL - alle Tasks basieren darauf!)
 **Stand:** 2025-12-07
-**Letzter Report:** R0021
+**Letzter Report:** R0022
 **Aktueller Sprint:** Sprint 2 (P1 - Wachstum)
 
 ---
@@ -59,18 +59,18 @@
 | 26 | Interne Verlinkung: Branche → Leistungen → Kontakt | [X] |
 | 27 | Glossar: Related Services/Artikel | [X] |
 | 28 | News: E-E-A-T (Autor, Datum, Quellen, Updates) | [X] |
-| 29 | Stil/Orthografie: einheitlich (Sie/Du, aa/ae etc.) | [ ] |
-| 30 | Navigation nach Umsatzwahrscheinlichkeit sortieren | [ ] |
+| 29 | Stil/Orthografie: einheitlich (Sie/Du, aa/ae etc.) | [X] |
+| 30 | Navigation nach Umsatzwahrscheinlichkeit sortieren | [-] |
 | 31 | Mobile Sticky CTA (Anrufen/Angebot) | [-] |
 | 32 | Kontaktseite: "Ruckrufzeitfenster" + Upload optional | [X] |
-| 33 | Notfall-Claims nur, wenn operativ garantiert | [ ] |
+| 33 | Notfall-Claims nur, wenn operativ garantiert | [X] |
 | 34 | Bild-Shotlist pro Seite | [ ] |
 | 35 | Vertrauen: Versicherungen/Arbeitsschutz/Schulungen | [ ] |
 | 36 | Google Business Profile (GBP) + NAP anpassen | [ ] |
 | 37 | Service Area klar (ohne Keyword-Spam) | [ ] |
 | 38 | Schema.org: LocalBusiness/Service/FAQ/Article/Breadcrumb | [ ] |
 | 39 | Breadcrumb UI + Schema | [ ] |
-| 40 | Heading Audit (1xH1, logisch H2/H3) | [ ] |
+| 40 | Heading Audit (1xH1, logisch H2/H3) | [X] |
 | 41 | "18 Services" Claim nur, wenn uberall wahr | [ ] |
 | 42 | Template-Nahe reduzieren: 10-20% Unique Proof je Seite | [ ] |
 | 43 | Fonts optimieren (self-host/subset) | [ ] |
@@ -82,7 +82,7 @@
 | 49 | Lead-Qualifizierung light (3-5 Pflichtfragen) | [ ] |
 | 50 | Content-Design: Tabellen/Checklisten statt Fliesstext | [ ] |
 
-**Sprint 2 Fortschritt:** 9/30 (30%)
+**Sprint 2 Fortschritt:** 12/30 (40%)
 
 ---
 
@@ -115,9 +115,9 @@
 | Sprint | Tasks | Erledigt | Prozent |
 |--------|-------|----------|---------|
 | P0 | 20 | 20 | 100% ✅ |
-| P1 | 30 | 9 | 30% |
+| P1 | 30 | 12 | 40% |
 | P2 | 15 | 0 | 0% |
-| **TOTAL** | **65** | **29** | **45%** |
+| **TOTAL** | **65** | **32** | **49%** |
 
 **SPRINT 1 (P0) ABGESCHLOSSEN!** Go-Live-Blocker alle erledigt.
 
@@ -164,3 +164,6 @@
 | 2025-12-07 | R0019 | Task 23: QualityTrustBar Komponente (4 QM-Punkte auf /referenzen, /kontakt, /leistungen, /branchen) |
 | 2025-12-07 | R0020 | Task 28: E-E-A-T für News (authorRole, lastUpdated, Sources-Box, Autorenbox) |
 | 2025-12-07 | R0021 | Task 32: Rückrufzeitfenster im Kontaktformular (nur Zeit, kein Upload - User-Entscheidung) |
+| 2025-12-07 | R0022 | Task 29: Umlaute korrigiert (4 Dateien, ~70 Korrekturen ae/ue/oe → ä/ü/ö) |
+| 2025-12-07 | R0022 | Task 33: Notfall-Claims geprüft und akzeptiert (keine Änderung nötig) |
+| 2025-12-07 | R0022 | Task 40: Heading-Audit (H3→H2 auf News-Artikel-Seite) |
