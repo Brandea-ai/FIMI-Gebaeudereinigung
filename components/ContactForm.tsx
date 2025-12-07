@@ -12,6 +12,7 @@ interface FormData {
   company: string
   service: string
   branche: string
+  callbackTime: string
   message: string
   privacy: boolean
 }
@@ -54,6 +55,13 @@ const BRANCHEN = [
   'Sonstiges'
 ]
 
+const CALLBACK_TIMES = [
+  'Vormittags (9-12 Uhr)',
+  'Mittags (12-15 Uhr)',
+  'Nachmittags (15-18 Uhr)',
+  'Jederzeit erreichbar'
+]
+
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
     name: '',
@@ -62,6 +70,7 @@ export default function ContactForm() {
     company: '',
     service: '',
     branche: '',
+    callbackTime: '',
     message: '',
     privacy: false
   })
@@ -152,6 +161,7 @@ export default function ContactForm() {
           company: '',
           service: '',
           branche: '',
+          callbackTime: '',
           message: '',
           privacy: false
         })
@@ -307,25 +317,48 @@ export default function ContactForm() {
               </div>
             </div>
 
-            {/* Gewünschte Leistung - volle Breite */}
-            <div>
-              <label htmlFor="cf-service" className="block text-[11px] sm:text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5 sm:mb-2">
-                Gewünschte Leistung <span className="text-gray-400 normal-case">(optional)</span>
-              </label>
-              <select
-                id="cf-service"
-                name="service"
-                value={formData.service}
-                onChange={handleChange}
-                onFocus={() => formTracking.onFieldFocus('service')}
-                onBlur={() => formTracking.onFieldComplete('service', formData.service.length > 0)}
-                className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border-2 border-gray-200 rounded-[6px] text-gray-900 font-semibold text-sm sm:text-base transition-all focus:outline-none focus:border-[#109387] focus:ring-2 focus:ring-[#109387]/20 bg-white"
-              >
-                <option value="">Bitte wählen...</option>
-                {SERVICES.map(service => (
-                  <option key={service} value={service}>{service}</option>
-                ))}
-              </select>
+            {/* Gewünschte Leistung + Rückrufzeit */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <div>
+                <label htmlFor="cf-service" className="block text-[11px] sm:text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5 sm:mb-2">
+                  Gewünschte Leistung <span className="text-gray-400 normal-case">(optional)</span>
+                </label>
+                <select
+                  id="cf-service"
+                  name="service"
+                  value={formData.service}
+                  onChange={handleChange}
+                  onFocus={() => formTracking.onFieldFocus('service')}
+                  onBlur={() => formTracking.onFieldComplete('service', formData.service.length > 0)}
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border-2 border-gray-200 rounded-[6px] text-gray-900 font-semibold text-sm sm:text-base transition-all focus:outline-none focus:border-[#109387] focus:ring-2 focus:ring-[#109387]/20 bg-white"
+                >
+                  <option value="">Bitte wählen...</option>
+                  {SERVICES.map(service => (
+                    <option key={service} value={service}>{service}</option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Rückrufzeitfenster */}
+              <div>
+                <label htmlFor="cf-callbackTime" className="block text-[11px] sm:text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5 sm:mb-2">
+                  Rückruf gewünscht <span className="text-gray-400 normal-case">(optional)</span>
+                </label>
+                <select
+                  id="cf-callbackTime"
+                  name="callbackTime"
+                  value={formData.callbackTime}
+                  onChange={handleChange}
+                  onFocus={() => formTracking.onFieldFocus('callbackTime')}
+                  onBlur={() => formTracking.onFieldComplete('callbackTime', formData.callbackTime.length > 0)}
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border-2 border-gray-200 rounded-[6px] text-gray-900 font-semibold text-sm sm:text-base transition-all focus:outline-none focus:border-[#109387] focus:ring-2 focus:ring-[#109387]/20 bg-white"
+                >
+                  <option value="">Bitte wählen...</option>
+                  {CALLBACK_TIMES.map(time => (
+                    <option key={time} value={time}>{time}</option>
+                  ))}
+                </select>
+              </div>
             </div>
 
             {/* Nachricht */}
