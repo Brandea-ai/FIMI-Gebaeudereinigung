@@ -2,7 +2,7 @@
 
 **Quelle:** FIMI_Website_TODOs.md (HEILIGER GRAL - alle Tasks basieren darauf!)
 **Stand:** 2025-12-07
-**Letzter Report:** R0018
+**Letzter Report:** R0019
 **Aktueller Sprint:** Sprint 2 (P1 - Wachstum)
 
 ---
@@ -53,7 +53,7 @@
 |----|----------------------------|--------|
 | 21 | Startseite: 1 primarer CTA + glasklare Value Prop | [X] |
 | 22 | "Warum wir?" von Behauptung zu Beleg | [X] |
-| 23 | Referenzseite umbauen zu "Projekte & Qualitat" | [ ] |
+| 23 | Referenzseite umbauen zu "Projekte & Qualitat" | [X] |
 | 24 | Jede Leistungseite: Scope-Box (drin/nicht drin/Intervalle) | [ ] |
 | 25 | Jede Branchenseite: 1-2 branchenspezifische Proofs | [ ] |
 | 26 | Interne Verlinkung: Branche → Leistungen → Kontakt | [ ] |
@@ -82,7 +82,7 @@
 | 49 | Lead-Qualifizierung light (3-5 Pflichtfragen) | [ ] |
 | 50 | Content-Design: Tabellen/Checklisten statt Fliesstext | [ ] |
 
-**Sprint 2 Fortschritt:** 2/30 (7%)
+**Sprint 2 Fortschritt:** 3/30 (10%)
 
 ---
 
@@ -115,9 +115,9 @@
 | Sprint | Tasks | Erledigt | Prozent |
 |--------|-------|----------|---------|
 | P0 | 20 | 20 | 100% ✅ |
-| P1 | 30 | 2 | 7% |
+| P1 | 30 | 3 | 10% |
 | P2 | 15 | 0 | 0% |
-| **TOTAL** | **65** | **22** | **34%** |
+| **TOTAL** | **65** | **23** | **35%** |
 
 **SPRINT 1 (P0) ABGESCHLOSSEN!** Go-Live-Blocker alle erledigt.
 
@@ -159,3 +159,4 @@
 | 2025-12-07 | R0016 | Sonderleistungen: A11y Nachbesserung (89% → 90%+, 93% → 95%+, Icons + Kontrast) |
 | 2025-12-07 | R0017 | Task 21: Value Prop präzisiert (5 Hero-Subheadlines mit Zielgruppe) |
 | 2025-12-07 | R0018 | Task 22: TrustContainer Behauptung → Beleg (4 Kacheln mit konkreten Nachweisen) |
+| 2025-12-07 | R0019 | Task 23: QualityTrustBar Komponente (4 QM-Punkte auf /referenzen, /kontakt, /leistungen, /branchen) |
