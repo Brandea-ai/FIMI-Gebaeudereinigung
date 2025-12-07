@@ -59,7 +59,7 @@ export default function BlogPreviewSection() {
             className="inline-flex items-center gap-2 text-[#109387] font-bold hover:gap-3 transition-all whitespace-nowrap text-sm sm:text-base"
           >
             Alle Artikel
-            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
           </Link>
         </div>
 
@@ -78,6 +78,7 @@ export default function BlogPreviewSection() {
                   alt={post.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
                 <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
                   <span className="bg-[#109387] text-white text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-[6px]">
@@ -91,7 +92,7 @@ export default function BlogPreviewSection() {
                 {/* Meta */}
                 <div className="flex items-center gap-3 sm:gap-4 text-gray-500 text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
                   <span className="flex items-center gap-1 sm:gap-1.5">
-                    <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                    <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5" aria-hidden="true" />
                     {new Date(post.date).toLocaleDateString('de-DE', {
                       day: '2-digit',
                       month: '2-digit',
@@ -99,7 +100,7 @@ export default function BlogPreviewSection() {
                     })}
                   </span>
                   <span className="flex items-center gap-1 sm:gap-1.5">
-                    <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                    <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5" aria-hidden="true" />
                     {post.readTime} Min.
                   </span>
                 </div>
@@ -117,7 +118,7 @@ export default function BlogPreviewSection() {
                 {/* Read More */}
                 <span className="inline-flex items-center gap-1.5 sm:gap-2 text-[#109387] font-bold text-xs sm:text-sm group-hover:gap-3 transition-all">
                   Weiterlesen
-                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" aria-hidden="true" />
                 </span>
               </div>
             </Link>
@@ -138,11 +139,11 @@ export default function BlogPreviewSection() {
               <h3 className="text-base sm:text-lg lg:text-xl font-bold text-white mb-1.5 sm:mb-2">
                 Werden Sie Teil unseres Teams
               </h3>
-              <p className="text-white/70 font-semibold text-xs sm:text-sm">
+              <p className="text-white/80 font-semibold text-xs sm:text-sm">
                 Faire Bezahlung, flexible Arbeitszeiten, gutes Teamklima.
               </p>
             </div>
-            <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:translate-x-2 transition-transform flex-shrink-0 ml-3 sm:ml-4" />
+            <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 text-white group-hover:translate-x-2 transition-transform flex-shrink-0 ml-3 sm:ml-4" aria-hidden="true" />
           </Link>
 
           {/* Über uns Link */}
@@ -161,7 +162,7 @@ export default function BlogPreviewSection() {
                 Lernen Sie uns und unsere Werte kennen.
               </p>
             </div>
-            <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 text-[#012956] group-hover:translate-x-2 transition-transform flex-shrink-0 ml-3 sm:ml-4" />
+            <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6 text-[#012956] group-hover:translate-x-2 transition-transform flex-shrink-0 ml-3 sm:ml-4" aria-hidden="true" />
           </Link>
         </div>
 
