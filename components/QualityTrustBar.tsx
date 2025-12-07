@@ -47,11 +47,11 @@ export default function QualityTrustBar({ className = '' }: QualityTrustBarProps
               className="flex flex-col items-center text-center lg:flex-row lg:items-start lg:text-left gap-3 lg:gap-4"
               role="listitem"
             >
-              {/* Icon - Türkis */}
-              <div className="flex-shrink-0 w-12 h-12 rounded-[6px] flex items-center justify-center bg-[#109387]/20">
+              {/* Icon - Türkis-Box mit weißem Icon */}
+              <div className="flex-shrink-0 w-12 h-12 rounded-[6px] flex items-center justify-center bg-[#109387]">
                 <point.icon
                   size={24}
-                  className="text-[#109387]"
+                  className="text-white"
                   strokeWidth={1.5}
                   aria-hidden="true"
                 />
