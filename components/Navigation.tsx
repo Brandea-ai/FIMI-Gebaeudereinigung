@@ -4,78 +4,29 @@ import React, { useState, useEffect, useRef, useCallback } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { ArrowRight, Phone, ChevronDown, Building2, Factory, Wrench, Sparkles, Stethoscope, ShoppingBag, GraduationCap, UtensilsCrossed, Dumbbell, Warehouse, Home, Landmark, Banknote, Car } from 'lucide-react'
+import { ArrowRight, Phone, ChevronDown, Building2, Factory, Wrench, Sparkles, Stethoscope, ShoppingBag, GraduationCap, Warehouse, Home } from 'lucide-react'
 
 // Type für Dropdown States
 type DropdownType = 'leistungen' | 'branchen' | 'ueberfimi' | null
 
-// Mega Menu - Leistungen (ALLE 18 Services)
-const leistungenCategories = [
-  {
-    id: 'gewerblich',
-    title: 'Gewerbliche Reinigung',
-    icon: Building2,
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=400&auto=format&fit=crop',
-    services: [
-      { name: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
-      { name: 'Büroreinigung', href: '/leistungen/bueroreinigung' },
-      { name: 'Fensterreinigung', href: '/leistungen/fensterreinigung' },
-      { name: 'Fassadenreinigung', href: '/leistungen/fassadenreinigung' },
-    ],
-  },
-  {
-    id: 'industrie',
-    title: 'Industriereinigung',
-    icon: Factory,
-    image: 'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?q=80&w=400&auto=format&fit=crop',
-    services: [
-      { name: 'Industriereinigung', href: '/leistungen/industriereinigung' },
-      { name: 'Hallenreinigung', href: '/leistungen/hallenreinigung' },
-      { name: 'Maschinenreinigung', href: '/leistungen/maschinenreinigung' },
-      { name: 'Tiefgaragenreinigung', href: '/leistungen/tiefgaragenreinigung' },
-      { name: 'Parkplatzreinigung', href: '/leistungen/parkplatzreinigung' },
-    ],
-  },
-  {
-    id: 'facility',
-    title: 'Facility Management',
-    icon: Wrench,
-    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=400&auto=format&fit=crop',
-    services: [
-      { name: 'Facility Management', href: '/leistungen/facility-management' },
-      { name: 'Hausmeisterservice', href: '/leistungen/hausmeisterservice' },
-      { name: 'Winterdienst', href: '/leistungen/winterdienst' },
-      { name: 'Außenanlagenpflege', href: '/leistungen/aussenanlagenpflege' },
-    ],
-  },
-  {
-    id: 'spezial',
-    title: 'Spezialreinigung',
-    icon: Sparkles,
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=400&auto=format&fit=crop',
-    services: [
-      { name: 'Baureinigung', href: '/leistungen/baureinigung' },
-      { name: 'Sonderreinigung', href: '/leistungen/sonderreinigung' },
-      { name: 'Sonderleistungen', href: '/leistungen/sonderleistungen' },
-      { name: 'Beschaffungsmanagement', href: '/leistungen/beschaffungsmanagement' },
-    ],
-  },
+// Mega Menu - Leistungen (Top 6 Services - Rest über Hub /leistungen)
+const topLeistungen = [
+  { name: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung', icon: Building2 },
+  { name: 'Büroreinigung', href: '/leistungen/bueroreinigung', icon: Building2 },
+  { name: 'Industriereinigung', href: '/leistungen/industriereinigung', icon: Factory },
+  { name: 'Fensterreinigung', href: '/leistungen/fensterreinigung', icon: Sparkles },
+  { name: 'Facility Management', href: '/leistungen/facility-management', icon: Wrench },
+  { name: 'Außenanlagenpflege', href: '/leistungen/aussenanlagenpflege', icon: Wrench },
 ]
 
-// Mega Menu - Branchen (12 Branchen)
-const branchenData = [
+// Mega Menu - Branchen (Top 6 - Rest über Hub /branchen)
+const topBranchen = [
   { name: 'Büro & Verwaltung', href: '/branchen/buero-verwaltung', icon: Building2 },
   { name: 'Industrie & Produktion', href: '/branchen/industrie-produktion', icon: Factory },
   { name: 'Gesundheitswesen', href: '/branchen/gesundheitswesen', icon: Stethoscope },
   { name: 'Einzelhandel', href: '/branchen/einzelhandel', icon: ShoppingBag },
-  { name: 'Gastronomie & Hotellerie', href: '/branchen/gastronomie-hotel', icon: UtensilsCrossed },
   { name: 'Bildung & Schulen', href: '/branchen/bildung-schulen', icon: GraduationCap },
-  { name: 'Fitness & Sport', href: '/branchen/fitness-sport', icon: Dumbbell },
   { name: 'Logistik & Lager', href: '/branchen/logistik-lager', icon: Warehouse },
-  { name: 'Wohnungswirtschaft', href: '/branchen/wohnungswirtschaft', icon: Home },
-  { name: 'Öffentliche Einrichtungen', href: '/branchen/oeffentliche-einrichtungen', icon: Landmark },
-  { name: 'Banken & Versicherungen', href: '/branchen/banken-versicherungen', icon: Banknote },
-  { name: 'Automotive', href: '/branchen/automotive', icon: Car },
 ]
 
 export default function Navigation() {
@@ -521,7 +472,7 @@ export default function Navigation() {
                     >
                       <div className="text-left">
                         <p className="text-[#012956] font-bold text-[16px]">Leistungen</p>
-                        <p className="text-gray-500 text-[13px] font-medium">18 Services</p>
+                        <p className="text-gray-500 text-[13px] font-medium">Top Services</p>
                       </div>
                       <ChevronDown
                         size={22}
@@ -534,7 +485,7 @@ export default function Navigation() {
                       className="flex items-center gap-1.5 text-white font-bold text-[13px] px-4 py-2.5 bg-[#109387] rounded-[6px] active:bg-[#0d7d72] touch-manipulation"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      Übersicht
+                      Alle
                       <ArrowRight size={14} strokeWidth={2.5} />
                     </Link>
                   </div>
@@ -542,34 +493,29 @@ export default function Navigation() {
                   <div
                     id="mobile-leistungen"
                     className={`overflow-hidden transition-[max-height,opacity] duration-250 ease-out ${
-                      mobileLeistungenOpen ? 'max-h-[1200px] opacity-100' : 'max-h-0 opacity-0'
+                      mobileLeistungenOpen ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
-                    <div className="px-5 pb-5 space-y-4">
-                      {leistungenCategories.map((category) => (
-                        <div key={category.id} className="bg-white rounded-[6px] p-4">
-                          <div className="flex items-center gap-2 mb-3">
-                            <category.icon size={16} className="text-[#109387]" strokeWidth={2} aria-hidden="true" />
-                            <p className="text-[#109387] font-bold text-[14px]">{category.title}</p>
-                          </div>
-                          <div className="space-y-1">
-                            {category.services.map((service) => (
-                              <Link
-                                key={service.href}
-                                href={service.href}
-                                className="flex items-center gap-2 text-gray-600 text-[15px] py-2.5 px-3 -mx-1 rounded-[6px] font-medium active:bg-[#f8f9fa] active:text-[#109387] touch-manipulation"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                              >
-                                <ArrowRight size={14} className="text-gray-300" aria-hidden="true" />
-                                {service.name}
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
+                    <div className="px-5 pb-5">
+                      <div className="bg-white rounded-[6px] p-4 space-y-1">
+                        {topLeistungen.map((leistung) => {
+                          const LeistungIcon = leistung.icon
+                          return (
+                            <Link
+                              key={leistung.href}
+                              href={leistung.href}
+                              className="flex items-center gap-3 text-gray-600 text-[15px] py-2.5 px-3 -mx-1 rounded-[6px] font-medium active:bg-[#f8f9fa] active:text-[#109387] touch-manipulation"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              <LeistungIcon size={16} className="text-gray-400" aria-hidden="true" />
+                              {leistung.name}
+                            </Link>
+                          )
+                        })}
+                      </div>
                       <Link
                         href="/leistungen"
-                        className="flex items-center justify-center gap-2 w-full text-white font-bold text-[15px] py-3.5 bg-[#109387] rounded-[6px] active:bg-[#0d7d72] touch-manipulation"
+                        className="flex items-center justify-center gap-2 w-full text-white font-bold text-[15px] py-3.5 bg-[#109387] rounded-[6px] mt-4 active:bg-[#0d7d72] touch-manipulation"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         Alle Leistungen ansehen
@@ -590,7 +536,7 @@ export default function Navigation() {
                     >
                       <div className="text-left">
                         <p className="text-[#012956] font-bold text-[16px]">Branchen</p>
-                        <p className="text-gray-500 text-[13px] font-medium">12 Spezialisierungen</p>
+                        <p className="text-gray-500 text-[13px] font-medium">Top Branchen</p>
                       </div>
                       <ChevronDown
                         size={22}
@@ -603,7 +549,7 @@ export default function Navigation() {
                       className="flex items-center gap-1.5 text-white font-bold text-[13px] px-4 py-2.5 bg-[#109387] rounded-[6px] active:bg-[#0d7d72] touch-manipulation"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      Übersicht
+                      Alle
                       <ArrowRight size={14} strokeWidth={2.5} />
                     </Link>
                   </div>
@@ -611,12 +557,12 @@ export default function Navigation() {
                   <div
                     id="mobile-branchen"
                     className={`overflow-hidden transition-[max-height,opacity] duration-250 ease-out ${
-                      mobileBranchenOpen ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'
+                      mobileBranchenOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
                     <div className="px-5 pb-5">
                       <div className="bg-white rounded-[6px] p-4 space-y-1">
-                        {branchenData.map((branche) => {
+                        {topBranchen.map((branche) => {
                           const BrancheIcon = branche.icon
                           return (
                             <Link
@@ -739,7 +685,7 @@ export default function Navigation() {
           </div>
         </div>
 
-        {/* Leistungen Mega Menu - Premium mit Bridge */}
+        {/* Leistungen Mega Menu - Top 6 Services */}
         <div
           className={`absolute left-0 right-0 transition-all duration-200 ${
             activeDropdown === 'leistungen'
@@ -752,49 +698,28 @@ export default function Navigation() {
           {/* Invisible Bridge für smooth hovering */}
           <div className="h-2 bg-transparent" />
           <div className="bg-white shadow-2xl border-t border-gray-100">
-          <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-12">
-            <div className="grid grid-cols-4 gap-12">
-              {leistungenCategories.map((category) => {
-                const IconComponent = category.icon
+          <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-10">
+            <div className="grid grid-cols-3 xl:grid-cols-6 gap-4">
+              {topLeistungen.map((leistung) => {
+                const IconComponent = leistung.icon
                 return (
-                  <div key={category.id} className="group">
-                    {/* Category Header Card */}
-                    <div className="relative h-36 mb-6 rounded-[8px] overflow-hidden">
-                      <Image
-                        src={category.image}
-                        alt={category.title}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  <Link
+                    key={leistung.href}
+                    href={leistung.href}
+                    className="group p-5 bg-[#f8f9fa] rounded-[8px] hover:bg-[#012956] transition-all duration-300 text-center min-h-[110px] flex flex-col items-center justify-center"
+                    onClick={() => setActiveDropdown(null)}
+                  >
+                    <div className="w-11 h-11 bg-white rounded-[6px] flex items-center justify-center mb-3 group-hover:bg-[#109387] transition-all shadow-sm">
+                      <IconComponent
+                        size={22}
+                        strokeWidth={1.5}
+                        className="text-[#109387] group-hover:text-white transition-colors"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#012956]/90 via-[#012956]/40 to-transparent" />
-                      <div className="absolute bottom-4 left-4 flex items-center gap-3">
-                        <div className="w-10 h-10 bg-[#109387] rounded-[6px] flex items-center justify-center">
-                          <IconComponent size={20} strokeWidth={2} className="text-white" />
-                        </div>
-                        <span className="text-white font-bold text-base">{category.title}</span>
-                      </div>
                     </div>
-
-                    {/* Service Links - Premium Spacing */}
-                    <ul className="space-y-1">
-                      {category.services.map((service) => (
-                        <li key={service.href}>
-                          <Link
-                            href={service.href}
-                            className="flex items-center gap-3 px-4 py-3.5 -mx-4 rounded-[6px] text-gray-600 hover:text-[#109387] hover:bg-[#f8f9fa] transition-all text-[15px] font-semibold group/link"
-                            onClick={() => setActiveDropdown(null)}
-                          >
-                            <ArrowRight
-                              size={14}
-                              strokeWidth={2.5}
-                              className="text-gray-300 group-hover/link:text-[#109387] group-hover/link:translate-x-1 transition-all"
-                            />
-                            {service.name}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                    <p className="text-[#012956] group-hover:text-white font-bold text-[13px] xl:text-[14px] transition-colors leading-tight">
+                      {leistung.name}
+                    </p>
+                  </Link>
                 )
               })}
             </div>
@@ -803,22 +728,22 @@ export default function Navigation() {
             <Link
               href="/leistungen"
               onClick={() => setActiveDropdown(null)}
-              className="mt-10 pt-8 border-t border-gray-100 flex items-center justify-between group cursor-pointer hover:bg-[#f8f9fa] -mx-6 px-6 py-5 rounded-[8px] transition-all"
+              className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between group cursor-pointer hover:bg-[#f8f9fa] -mx-6 px-6 py-4 rounded-[8px] transition-all"
             >
               <div>
-                <p className="text-[#012956] font-bold text-lg group-hover:text-[#109387] transition-colors">Alle Leistungen entdecken</p>
-                <p className="text-gray-500 text-[15px] mt-1">18 professionelle Reinigungsservices im Überblick</p>
+                <p className="text-[#012956] font-bold text-base group-hover:text-[#109387] transition-colors">Alle Leistungen entdecken</p>
+                <p className="text-gray-500 text-[14px] mt-0.5">Weitere Services auf unserer Übersichtsseite</p>
               </div>
-              <div className="flex items-center gap-3 bg-[#012956] group-hover:bg-[#109387] text-white font-bold text-[15px] px-8 py-4 rounded-[6px] transition-all">
+              <div className="flex items-center gap-2 bg-[#012956] group-hover:bg-[#109387] text-white font-bold text-[14px] px-6 py-3 rounded-[6px] transition-all">
                 <span>Zur Übersicht</span>
-                <ArrowRight size={18} strokeWidth={2.5} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={16} strokeWidth={2.5} className="group-hover:translate-x-1 transition-transform" />
               </div>
             </Link>
           </div>
           </div>
         </div>
 
-        {/* Branchen Mega Menu - Premium mit Bridge */}
+        {/* Branchen Mega Menu - Top 6 Branchen */}
         <div
           className={`absolute left-0 right-0 transition-all duration-200 ${
             activeDropdown === 'branchen'
@@ -831,25 +756,25 @@ export default function Navigation() {
           {/* Invisible Bridge für smooth hovering */}
           <div className="h-2 bg-transparent" />
           <div className="bg-white shadow-2xl border-t border-gray-100">
-          <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-12">
-            <div className="grid grid-cols-4 xl:grid-cols-6 gap-5">
-              {branchenData.map((branche) => {
+          <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-10">
+            <div className="grid grid-cols-3 xl:grid-cols-6 gap-4">
+              {topBranchen.map((branche) => {
                 const IconComponent = branche.icon
                 return (
                   <Link
                     key={branche.href}
                     href={branche.href}
-                    className="group p-6 bg-[#f8f9fa] rounded-[8px] hover:bg-[#012956] transition-all duration-300 text-center min-h-[120px] flex flex-col items-center justify-center"
+                    className="group p-5 bg-[#f8f9fa] rounded-[8px] hover:bg-[#012956] transition-all duration-300 text-center min-h-[110px] flex flex-col items-center justify-center"
                     onClick={() => setActiveDropdown(null)}
                   >
-                    <div className="w-12 h-12 bg-white rounded-[6px] flex items-center justify-center mb-4 group-hover:bg-[#109387] transition-all shadow-sm">
+                    <div className="w-11 h-11 bg-white rounded-[6px] flex items-center justify-center mb-3 group-hover:bg-[#109387] transition-all shadow-sm">
                       <IconComponent
-                        size={24}
+                        size={22}
                         strokeWidth={1.5}
                         className="text-[#109387] group-hover:text-white transition-colors"
                       />
                     </div>
-                    <p className="text-[#012956] group-hover:text-white font-bold text-[14px] transition-colors leading-tight">
+                    <p className="text-[#012956] group-hover:text-white font-bold text-[13px] xl:text-[14px] transition-colors leading-tight">
                       {branche.name}
                     </p>
                   </Link>
@@ -861,15 +786,15 @@ export default function Navigation() {
             <Link
               href="/branchen"
               onClick={() => setActiveDropdown(null)}
-              className="mt-10 pt-8 border-t border-gray-100 flex items-center justify-between group cursor-pointer hover:bg-[#f8f9fa] -mx-6 px-6 py-5 rounded-[8px] transition-all"
+              className="mt-8 pt-6 border-t border-gray-100 flex items-center justify-between group cursor-pointer hover:bg-[#f8f9fa] -mx-6 px-6 py-4 rounded-[8px] transition-all"
             >
               <div>
-                <p className="text-[#012956] font-bold text-lg group-hover:text-[#109387] transition-colors">Branchenspezifische Lösungen</p>
-                <p className="text-gray-500 text-[15px] mt-1">12 spezialisierte Reinigungskonzepte für Ihre Branche</p>
+                <p className="text-[#012956] font-bold text-base group-hover:text-[#109387] transition-colors">Alle Branchen entdecken</p>
+                <p className="text-gray-500 text-[14px] mt-0.5">Weitere Spezialisierungen auf unserer Übersichtsseite</p>
               </div>
-              <div className="flex items-center gap-3 bg-[#109387] group-hover:bg-[#0d7d72] text-white font-bold text-[15px] px-8 py-4 rounded-[6px] transition-all">
-                <span>Alle Branchen</span>
-                <ArrowRight size={18} strokeWidth={2.5} className="group-hover:translate-x-1 transition-transform" />
+              <div className="flex items-center gap-2 bg-[#109387] group-hover:bg-[#0d7d72] text-white font-bold text-[14px] px-6 py-3 rounded-[6px] transition-all">
+                <span>Zur Übersicht</span>
+                <ArrowRight size={16} strokeWidth={2.5} className="group-hover:translate-x-1 transition-transform" />
               </div>
             </Link>
           </div>

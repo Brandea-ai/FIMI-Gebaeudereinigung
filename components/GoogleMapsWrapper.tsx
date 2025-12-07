@@ -76,8 +76,8 @@ export default function GoogleMapsWrapper({
         <h3 className="text-white font-bold text-lg mb-2">Google Maps ist deaktiviert</h3>
 
         <p className="text-white/70 font-medium text-sm max-w-md mb-6">
-          Um die Karte anzuzeigen, muessen Sie der Nutzung externer Dienste zustimmen.
-          Google Maps laedt Inhalte von externen Servern, die Daten ueber Ihr Nutzungsverhalten sammeln koennen.
+          Um die Karte anzuzeigen, müssen Sie der Nutzung externer Dienste zustimmen.
+          Google Maps lädt Inhalte von externen Servern, die Daten über Ihr Nutzungsverhalten sammeln können.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3">
@@ -86,7 +86,7 @@ export default function GoogleMapsWrapper({
             className="flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-6 py-3 rounded-[6px] transition-colors"
           >
             <Cookie size={18} />
-            Cookie-Einstellungen oeffnen
+            Cookie-Einstellungen öffnen
           </button>
 
           <a
@@ -95,7 +95,7 @@ export default function GoogleMapsWrapper({
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold px-6 py-3 rounded-[6px] transition-colors"
           >
-            In Google Maps oeffnen
+            In Google Maps öffnen
             <ExternalLink size={16} />
           </a>
         </div>

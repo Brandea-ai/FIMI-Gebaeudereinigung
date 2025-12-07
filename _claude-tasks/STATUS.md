@@ -2,7 +2,7 @@
 
 **Quelle:** FIMI_Website_TODOs.md (HEILIGER GRAL - alle Tasks basieren darauf!)
 **Stand:** 2025-12-07
-**Letzter Report:** R0020
+**Letzter Report:** R0021
 **Aktueller Sprint:** Sprint 2 (P1 - Wachstum)
 
 ---
@@ -59,7 +59,7 @@
 | 26 | Interne Verlinkung: Branche → Leistungen → Kontakt | [X] |
 | 27 | Glossar: Related Services/Artikel | [X] |
 | 28 | News: E-E-A-T (Autor, Datum, Quellen, Updates) | [X] |
-| 29 | Stil/Orthografie: einheitlich (Sie/Du, aa/ae etc.) | [ ] |
+| 29 | Stil/Orthografie: einheitlich (Sie/Du, aa/ae etc.) | [X] |
 | 30 | Navigation nach Umsatzwahrscheinlichkeit sortieren | [ ] |
 | 31 | Mobile Sticky CTA (Anrufen/Angebot) | [ ] |
 | 32 | Kontaktseite: "Ruckrufzeitfenster" + Upload optional | [ ] |
@@ -82,7 +82,7 @@
 | 49 | Lead-Qualifizierung light (3-5 Pflichtfragen) | [ ] |
 | 50 | Content-Design: Tabellen/Checklisten statt Fliesstext | [ ] |
 
-**Sprint 2 Fortschritt:** 8/30 (27%)
+**Sprint 2 Fortschritt:** 9/30 (30%)
 
 ---
 
@@ -115,9 +115,9 @@
 | Sprint | Tasks | Erledigt | Prozent |
 |--------|-------|----------|---------|
 | P0 | 20 | 20 | 100% ✅ |
-| P1 | 30 | 8 | 27% |
+| P1 | 30 | 9 | 30% |
 | P2 | 15 | 0 | 0% |
-| **TOTAL** | **65** | **28** | **43%** |
+| **TOTAL** | **65** | **29** | **45%** |
 
 **SPRINT 1 (P0) ABGESCHLOSSEN!** Go-Live-Blocker alle erledigt.
 
@@ -163,3 +163,4 @@
 | 2025-12-07 | - | Task 27: Glossar Related Links (29 Begriffe mit je 2 verwandten Leistungen) |
 | 2025-12-07 | R0019 | Task 23: QualityTrustBar Komponente (4 QM-Punkte auf /referenzen, /kontakt, /leistungen, /branchen) |
 | 2025-12-07 | R0020 | Task 28: E-E-A-T für News (authorRole, lastUpdated, Sources-Box, Autorenbox) |
+| 2025-12-07 | R0021 | Task 29: Stil/Orthografie - ~71 ae/ue/oe Artefakte korrigiert (4 Dateien) |

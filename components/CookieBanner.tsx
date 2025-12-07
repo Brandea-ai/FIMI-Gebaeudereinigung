@@ -202,7 +202,7 @@ export default function CookieBanner() {
                   </h2>
                 </div>
                 <p className="text-gray-600 font-medium text-sm sm:text-base">
-                  Wir respektieren Ihre Privatsphaere. Waehlen Sie, welche Cookies Sie zulassen moechten.
+                  Wir respektieren Ihre Privatsphäre. Wählen Sie, welche Cookies Sie zulassen möchten.
                 </p>
               </div>
             </div>
@@ -213,13 +213,13 @@ export default function CookieBanner() {
                 <Shield size={20} className="text-[#109387] flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="text-[#012956] font-semibold text-sm sm:text-base">
-                    Wir verwenden Cookies und aehnliche Technologien, um unsere Webseite optimal zu gestalten und kontinuierlich zu verbessern. Einige Cookies sind technisch notwendig, andere helfen uns, externe Inhalte wie Google Maps anzuzeigen.
+                    Wir verwenden Cookies und ähnliche Technologien, um unsere Webseite optimal zu gestalten und kontinuierlich zu verbessern. Einige Cookies sind technisch notwendig, andere helfen uns, externe Inhalte wie Google Maps anzuzeigen.
                   </p>
                   <Link
                     href="/datenschutz"
                     className="inline-flex items-center gap-1 text-[#109387] hover:text-[#012956] font-bold text-sm mt-2 transition-colors"
                   >
-                    Mehr erfahren in unserer Datenschutzerklaerung
+                    Mehr erfahren in unserer Datenschutzerklärung
                     <ExternalLink size={14} />
                   </Link>
                 </div>
@@ -249,7 +249,7 @@ export default function CookieBanner() {
                           <span className="text-xs bg-[#109387] text-white px-2 py-0.5 rounded font-bold">Erforderlich</span>
                         </div>
                         <p className="text-gray-600 text-sm font-medium">
-                          Diese Cookies sind fuer den Betrieb der Webseite unbedingt erforderlich (z.B. Cookie-Einstellungen speichern).
+                          Diese Cookies sind für den Betrieb der Webseite unbedingt erforderlich (z.B. Cookie-Einstellungen speichern).
                         </p>
                       </div>
                       <div className="flex-shrink-0">
@@ -268,7 +268,7 @@ export default function CookieBanner() {
                       <div className="flex-1">
                         <h3 className="font-bold text-[#012956] mb-1">Funktional</h3>
                         <p className="text-gray-600 text-sm font-medium">
-                          Speichert Ihre Praeferenzen wie Spracheinstellungen oder zuletzt besuchte Seiten.
+                          Speichert Ihre Präferenzen wie Spracheinstellungen oder zuletzt besuchte Seiten.
                         </p>
                       </div>
                       <button
@@ -295,7 +295,7 @@ export default function CookieBanner() {
                       <div className="flex-1">
                         <h3 className="font-bold text-[#012956] mb-1">Externe Dienste</h3>
                         <p className="text-gray-600 text-sm font-medium">
-                          Ermoeglicht das Laden externer Inhalte wie Google Maps fuer unsere Standortkarte im Impressum.
+                          Ermöglicht das Laden externer Inhalte wie Google Maps für unsere Standortkarte im Impressum.
                         </p>
                       </div>
                       <button
@@ -355,14 +355,14 @@ export default function CookieBanner() {
                           <span className="text-xs bg-gray-400 text-white px-2 py-0.5 rounded font-bold">Derzeit nicht aktiv</span>
                         </div>
                         <p className="text-gray-600 text-sm font-medium">
-                          Ermoeglicht personalisierte Werbung und Angebote basierend auf Ihrem Interesse.
+                          Ermöglicht personalisierte Werbung und Angebote basierend auf Ihrem Interesse.
                         </p>
                       </div>
                       <button
                         onClick={() => toggleConsent('marketing')}
                         disabled
                         className="flex-shrink-0 w-12 h-7 bg-gray-200 rounded-full flex items-center justify-start px-1 cursor-not-allowed"
-                        aria-label="Marketing-Cookies (derzeit nicht verfuegbar)"
+                        aria-label="Marketing-Cookies (derzeit nicht verfügbar)"
                       >
                         <div className="w-5 h-5 bg-white rounded-full shadow flex items-center justify-center">
                           <X size={12} className="text-gray-400" />
@@ -479,7 +479,7 @@ export function CookieSettingsButton() {
     <button
       onClick={handleOpenSettings}
       className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors font-semibold"
-      aria-label="Cookie-Einstellungen oeffnen"
+      aria-label="Cookie-Einstellungen öffnen"
     >
       <Cookie size={16} />
       Cookie-Einstellungen
