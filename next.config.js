@@ -82,6 +82,7 @@ const nextConfig = {
           "img-src 'self' data: blob: https://images.unsplash.com https://www.google-analytics.com https://www.googletagmanager.com",
           "font-src 'self' https://fonts.gstatic.com",
           "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com",
+          "frame-src https://maps.google.com https://www.google.com",
           "frame-ancestors 'none'",
           "base-uri 'self'",
           "form-action 'self'",
