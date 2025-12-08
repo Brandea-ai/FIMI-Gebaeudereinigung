@@ -146,8 +146,8 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
                   </tr>
                   <tr>
                     <td style="padding: 8px 0;">
-                      <a href="mailto:info@fimi-gebaeudereinigung.de" style="color: rgba(255,255,255,0.8); font-size: 15px; text-decoration: none;">
-                        info@fimi-gebaeudereinigung.de
+                      <a href="mailto:kontakt@fimi-gebaeudereinigung.de" style="color: rgba(255,255,255,0.8); font-size: 15px; text-decoration: none;">
+                        kontakt@fimi-gebaeudereinigung.de
                       </a>
                     </td>
                   </tr>
@@ -176,10 +176,22 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
 
         </table>
 
-        <!-- Unsubscribe Notice -->
-        <p style="margin: 20px 0 0; color: #999; font-size: 11px; text-align: center;">
-          Diese E-Mail wurde automatisch versendet, weil Sie eine Anfrage über unser Kontaktformular gestellt haben.<br>
-          © ${new Date().getFullYear()} FIMI Gebäudereinigung GmbH • Alle Rechte vorbehalten
+        <!-- Legal Disclaimer -->
+        <div style="margin: 25px 0 0; padding: 20px; background-color: #f8f9fa; border-radius: 6px;">
+          <p style="margin: 0 0 10px; color: #666; font-size: 11px; text-align: left; line-height: 1.6;">
+            <strong style="color: #012956;">Datenschutzhinweis:</strong> Ihre Daten werden gemäß DSGVO verarbeitet und ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Eine Weitergabe an Dritte erfolgt nicht. Weitere Informationen finden Sie in unserer <a href="https://fimi-gebaeudereinigung.de/datenschutz" style="color: #109387; text-decoration: none;">Datenschutzerklärung</a>.
+          </p>
+          <p style="margin: 0 0 10px; color: #666; font-size: 11px; text-align: left; line-height: 1.6;">
+            <strong style="color: #012956;">Vertraulichkeit:</strong> Diese E-Mail und eventuelle Anhänge sind ausschließlich für den bezeichneten Adressaten bestimmt. Sollten Sie diese E-Mail irrtümlich erhalten haben, informieren Sie uns bitte umgehend und löschen Sie die Nachricht.
+          </p>
+          <p style="margin: 0; color: #666; font-size: 11px; text-align: left; line-height: 1.6;">
+            <strong style="color: #012956;">Rechtlicher Hinweis:</strong> Diese automatische Bestätigung stellt kein verbindliches Angebot dar. Ein Vertrag kommt erst durch eine gesonderte schriftliche Vereinbarung zustande.
+          </p>
+        </div>
+
+        <!-- Footer Notice -->
+        <p style="margin: 15px 0 0; color: #999; font-size: 10px; text-align: center;">
+          © ${new Date().getFullYear()} FIMI Gebäudereinigung GmbH • Kellerstr. 39 • 84036 Landshut • <a href="https://fimi-gebaeudereinigung.de/impressum" style="color: #999; text-decoration: none;">Impressum</a>
         </p>
 
       </td>
