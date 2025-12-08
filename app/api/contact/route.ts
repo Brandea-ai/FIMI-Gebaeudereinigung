@@ -31,21 +31,17 @@ function checkRateLimit(ip: string): boolean {
   return true
 }
 
-// Reference Number Generator
-let dailyCounter = 0
-let lastDate = ''
+// Reference Number Generator - Obfuscated format
+// Format: FIMI-{year}{counter}{daymonth}-{service}
+// Counter is based on time to create unique, non-sequential looking IDs
+const serviceCounters: Record<string, { count: number; lastDate: string }> = {}
 
 function generateRequestId(service?: string): string {
   const now = new Date()
-  const dateStr = now.toISOString().slice(0, 10).replace(/-/g, '')
-
-  // Reset counter at midnight
-  if (dateStr !== lastDate) {
-    dailyCounter = 0
-    lastDate = dateStr
-  }
-
-  dailyCounter++
+  const year = now.getFullYear()
+  const month = String(now.getMonth() + 1).padStart(2, '0')
+  const day = String(now.getDate()).padStart(2, '0')
+  const dateKey = `${year}${month}${day}`
 
   // Service abbreviation
   const serviceMap: Record<string, string> = {
@@ -69,9 +65,20 @@ function generateRequestId(service?: string): string {
   }
 
   const serviceCode = service ? (serviceMap[service] || 'AN') : 'AN'
-  const counter = String(dailyCounter).padStart(3, '0')
 
-  return `FIMI-${dateStr}-${serviceCode}-${counter}`
+  // Separate counter per service, resets daily
+  const counterKey = `${serviceCode}-${dateKey}`
+  if (!serviceCounters[counterKey] || serviceCounters[counterKey].lastDate !== dateKey) {
+    serviceCounters[counterKey] = { count: 0, lastDate: dateKey }
+  }
+  serviceCounters[counterKey].count++
+
+  // 4-digit counter (0001-9999)
+  const counter = String(serviceCounters[counterKey].count).padStart(4, '0')
+
+  // Obfuscated format: FIMI-{year}{counter}{daymonth}-{service}
+  // Example: FIMI-202500011208-BR (looks like one big number)
+  return `FIMI-${year}${counter}${day}${month}-${serviceCode}`
 }
 
 // Validation
