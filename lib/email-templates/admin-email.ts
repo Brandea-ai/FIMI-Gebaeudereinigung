@@ -5,6 +5,7 @@ interface AdminEmailData {
   company?: string
   branche?: string
   service?: string
+  callbackTime?: string
   message?: string
   requestId: string
   submittedAt: string
@@ -18,6 +19,7 @@ export function generateAdminEmail(data: AdminEmailData): string {
     company,
     branche,
     service,
+    callbackTime,
     message,
     requestId,
     submittedAt
@@ -103,7 +105,7 @@ export function generateAdminEmail(data: AdminEmailData): string {
               </table>
 
               <!-- Details Section -->
-              ${(branche || service) ? `
+              ${(branche || service || callbackTime) ? `
               <h2 style="margin: 0 0 20px; color: #012956; font-size: 18px; font-weight: 700; border-bottom: 2px solid #109387; padding-bottom: 10px;">
                 Anfrage-Details
               </h2>
@@ -122,6 +124,14 @@ export function generateAdminEmail(data: AdminEmailData): string {
                   <td style="padding: 10px 0; border-bottom: 1px solid #eee;">
                     <span style="color: #666; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Gewünschte Leistung</span><br>
                     <span style="color: #012956; font-size: 16px; font-weight: 600;">${service}</span>
+                  </td>
+                </tr>
+                ` : ''}
+                ${callbackTime ? `
+                <tr>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #eee;">
+                    <span style="color: #666; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Gewünschtes Rückrufzeitfenster</span><br>
+                    <span style="color: #109387; font-size: 16px; font-weight: 700;">${callbackTime}</span>
                   </td>
                 </tr>
                 ` : ''}

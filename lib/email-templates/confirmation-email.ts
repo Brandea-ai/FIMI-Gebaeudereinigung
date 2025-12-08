@@ -112,7 +112,7 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
                           <div style="width: 28px; height: 28px; background-color: #109387; border-radius: 50%; text-align: center; line-height: 28px; color: #fff; font-weight: 700; font-size: 14px;">3</div>
                         </td>
                         <td style="vertical-align: top;">
-                          <p style="margin: 0; color: #012956; font-size: 15px; font-weight: 600;">Kostenlose Besichtigung</p>
+                          <p style="margin: 0; color: #012956; font-size: 15px; font-weight: 600;">Kostenfreie Besichtigung</p>
                           <p style="margin: 5px 0 0; color: #666; font-size: 14px;">Vor Ort bei Ihnen im Unternehmen</p>
                         </td>
                       </tr>
@@ -122,9 +122,9 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
               </table>
 
               <!-- Reply Hint -->
-              <div style="background-color: #e8f5f3; border-radius: 6px; padding: 20px; margin-top: 30px; border-left: 4px solid #109387;">
+              <div style="background-color: #e8f5f3; border-radius: 6px; padding: 20px; margin-top: 30px;">
                 <p style="margin: 0; color: #012956; font-size: 15px; font-weight: 600;">
-                  💬 Sie können direkt auf diese E-Mail antworten
+                  Sie können direkt auf diese E-Mail antworten
                 </p>
                 <p style="margin: 8px 0 0; color: #666; font-size: 14px; line-height: 1.6;">
                   Bei weiteren Fragen oder Ergänzungen zu Ihrer Anfrage antworten Sie einfach auf diese E-Mail – wir erhalten Ihre Nachricht direkt.
