@@ -235,6 +235,10 @@ export async function POST(request: NextRequest) {
           to: [sanitizedData.email],
           replyTo: 'kontakt@fimi-gebaeudereinigung.de',
           subject: `Ihre Anfrage bei FIMI Gebäudereinigung - ${requestId}`,
+          headers: {
+            'List-Unsubscribe': '<mailto:kontakt@fimi-gebaeudereinigung.de?subject=Abmelden>',
+            'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click',
+          },
           html: generateConfirmationEmail({
             name: sanitizedData.name,
             requestId,
