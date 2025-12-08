@@ -165,7 +165,16 @@ export default function ImpressumContent() {
 
                   <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
                     <div className="text-gray-500 font-bold w-40 flex-shrink-0">Webseite</div>
-                    <div className="text-[#109387] font-bold">www.fimi-gebaeudereinigung.de</div>
+                    <div className="flex items-center gap-3">
+                      <a href="https://fimi-gebaeudereinigung.de" className="text-[#109387] font-bold hover:text-[#012956] transition-colors">www.fimi-gebaeudereinigung.de</a>
+                      <button
+                        onClick={() => copyToClipboard('fimi-gebaeudereinigung.de', 'domain')}
+                        className="p-2 rounded-[6px] bg-[#f8f9fa] hover:bg-[#109387] hover:text-white text-gray-500 transition-all"
+                        title="Domain kopieren"
+                      >
+                        {copiedItem === 'domain' ? <Check size={16} /> : <Copy size={16} />}
+                      </button>
+                    </div>
                   </div>
 
                   <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
@@ -210,7 +219,16 @@ export default function ImpressumContent() {
 
                   <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
                     <div className="text-gray-500 font-bold w-40 flex-shrink-0">Handelsregister</div>
-                    <div className="text-[#012956] font-bold">In Bearbeitung</div>
+                    <div className="flex items-center gap-3">
+                      <div className="text-[#012956] font-extrabold font-mono text-lg">In Bearbeitung</div>
+                      <button
+                        onClick={() => copyToClipboard('In Bearbeitung', 'hrb')}
+                        className="p-2 rounded-[6px] bg-[#f8f9fa] hover:bg-[#109387] hover:text-white text-gray-500 transition-all"
+                        title="HRB-Nummer kopieren"
+                      >
+                        {copiedItem === 'hrb' ? <Check size={16} /> : <Copy size={16} />}
+                      </button>
+                    </div>
                   </div>
 
                   <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
