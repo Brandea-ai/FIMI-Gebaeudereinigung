@@ -519,46 +519,38 @@ export default function ContactForm() {
       {/* Success Modal */}
       {showModal && (
         <div
-          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-end sm:items-center justify-center p-0 sm:p-4"
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[60] flex items-center justify-center p-4"
           onClick={() => setShowModal(false)}
           role="dialog"
           aria-modal="true"
           aria-labelledby="success-modal-title"
         >
           <div
-            className="bg-white rounded-t-[20px] sm:rounded-[6px] p-6 sm:p-8 md:p-12 max-w-lg w-full text-center shadow-2xl animate-fadeIn"
+            className="bg-white rounded-[6px] p-5 sm:p-6 md:p-8 max-w-md w-full text-center shadow-2xl animate-fadeIn"
             onClick={e => e.stopPropagation()}
           >
-            {/* Mobile Drag Handle */}
-            <div className="sm:hidden flex justify-center mb-4">
-              <div className="w-12 h-1.5 bg-gray-300 rounded-full" />
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#109387] rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
+              <CheckCircle size={24} className="sm:w-8 sm:h-8 text-white" aria-hidden="true" />
             </div>
-
-            <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-[#109387] rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-lg">
-              <CheckCircle size={32} className="sm:w-10 sm:h-10 md:w-12 md:h-12 text-white" aria-hidden="true" />
-            </div>
-            <h3 id="success-modal-title" className="text-xl sm:text-2xl md:text-3xl font-bold text-[#012956] mb-3 sm:mb-4">
+            <h3 id="success-modal-title" className="text-lg sm:text-xl md:text-2xl font-bold text-[#012956] mb-2 sm:mb-3">
               Vielen Dank{userName ? `, ${userName}` : ''}!
             </h3>
-            <p className="text-gray-700 font-semibold mb-4 text-sm sm:text-base md:text-lg">
+            <p className="text-gray-700 font-semibold mb-3 text-sm sm:text-base">
               Ihre Anfrage wurde erfolgreich versendet. Wir melden uns schnellstmöglich bei Ihnen.
             </p>
             {requestId && (
-              <div className="bg-[#f8f9fa] border-2 border-[#109387] rounded-[6px] px-4 sm:px-6 py-2 sm:py-3 mb-4 sm:mb-6 inline-block">
-                <p className="text-[10px] sm:text-xs text-gray-500 font-semibold uppercase tracking-wide mb-0.5 sm:mb-1">Referenznummer</p>
-                <p className="text-sm sm:text-base md:text-lg font-bold text-[#012956] font-mono tracking-wider">{requestId}</p>
+              <div className="bg-[#f8f9fa] border-2 border-[#109387] rounded-[6px] px-3 sm:px-4 py-2 mb-3 sm:mb-4 inline-block">
+                <p className="text-[10px] sm:text-xs text-gray-500 font-semibold uppercase tracking-wide mb-0.5">Referenznummer</p>
+                <p className="text-xs sm:text-sm font-bold text-[#012956] font-mono tracking-wider">{requestId}</p>
               </div>
             )}
             <button
               onClick={() => setShowModal(false)}
-              className="w-full sm:w-auto bg-[#012956] hover:bg-[#01203d] text-white font-bold px-8 sm:px-10 py-3 sm:py-4 rounded-[6px] transition-all text-sm sm:text-base md:text-lg"
+              className="w-full bg-[#012956] hover:bg-[#01203d] text-white font-bold px-6 py-2.5 sm:py-3 rounded-[6px] transition-all text-sm sm:text-base"
               autoFocus
             >
               Schließen
             </button>
-
-            {/* Safe Area für iPhone */}
-            <div className="h-4 sm:hidden" />
           </div>
         </div>
       )}

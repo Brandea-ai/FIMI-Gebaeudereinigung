@@ -181,81 +181,78 @@ export default function CookieBanner() {
         }`}
       >
         <div className="bg-white shadow-2xl border-t-4 border-[#109387]">
-          <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 py-6 lg:py-8">
+          <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-10 py-4 lg:py-5">
 
             {/* Header */}
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-14 h-14 bg-[#012956] rounded-[6px] flex items-center justify-center shadow-lg">
+            <div className="flex items-start gap-3 mb-4">
+              <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-[#012956] rounded-[6px] flex items-center justify-center shadow-lg">
                 <Image
                   src="/FIMI-LOGO/Fimi-Favicon.png"
                   alt="FIMI"
-                  width={40}
-                  height={40}
-                  className="rounded"
+                  width={28}
+                  height={28}
+                  className="rounded sm:w-8 sm:h-8"
                 />
               </div>
               <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 mb-1">
-                  <Cookie size={20} className="text-[#109387]" />
-                  <h2 className="text-xl sm:text-2xl font-bold text-[#012956]">
+                <div className="flex items-center gap-1.5 mb-0.5">
+                  <Cookie size={16} className="text-[#109387]" />
+                  <h2 className="text-base sm:text-lg font-bold text-[#012956]">
                     Cookie-Einstellungen
                   </h2>
                 </div>
-                <p className="text-gray-600 font-medium text-sm sm:text-base">
-                  Wir respektieren Ihre Privatsphäre. Wählen Sie, welche Cookies Sie zulassen möchten.
+                <p className="text-gray-600 font-medium text-xs sm:text-sm">
+                  Wir respektieren Ihre Privatsphäre.
                 </p>
               </div>
             </div>
 
             {/* Main Info */}
-            <div className="bg-[#f8f9fa] rounded-[6px] p-4 mb-6">
-              <div className="flex items-start gap-3">
-                <Shield size={20} className="text-[#109387] flex-shrink-0 mt-0.5" />
+            <div className="bg-[#f8f9fa] rounded-[6px] p-3 mb-4">
+              <div className="flex items-start gap-2">
+                <Shield size={16} className="text-[#109387] flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-[#012956] font-semibold text-sm sm:text-base">
-                    Wir verwenden Cookies und ähnliche Technologien, um unsere Webseite optimal zu gestalten und kontinuierlich zu verbessern. Einige Cookies sind technisch notwendig, andere helfen uns, externe Inhalte wie Google Maps anzuzeigen.
+                  <p className="text-[#012956] font-semibold text-xs sm:text-sm">
+                    Wir verwenden Cookies für den Betrieb der Webseite und externe Inhalte wie Google Maps.
                   </p>
                   <Link
                     href="/datenschutz"
-                    className="inline-flex items-center gap-1 text-[#109387] hover:text-[#012956] font-bold text-sm mt-2 transition-colors"
+                    className="inline-flex items-center gap-1 text-[#109387] hover:text-[#012956] font-bold text-xs mt-1 transition-colors"
                   >
-                    Mehr erfahren in unserer Datenschutzerklärung
-                    <ExternalLink size={14} />
+                    Datenschutzerklärung
+                    <ExternalLink size={12} />
                   </Link>
                 </div>
               </div>
             </div>
 
             {/* Cookie Categories (Expandable) */}
-            <div className="mb-6">
+            <div className="mb-4">
               <button
                 onClick={() => setShowDetails(!showDetails)}
-                className="flex items-center gap-2 text-[#012956] font-bold hover:text-[#109387] transition-colors"
+                className="flex items-center gap-1.5 text-[#012956] font-bold hover:text-[#109387] transition-colors text-xs sm:text-sm"
               >
-                <Settings size={18} />
-                <span>Cookie-Einstellungen anpassen</span>
-                {showDetails ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                <Settings size={14} />
+                <span>Einstellungen anpassen</span>
+                {showDetails ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
               </button>
 
               {showDetails && (
-                <div className="mt-4 space-y-3 animate-fadeIn">
+                <div className="mt-3 space-y-2 animate-fadeIn">
 
                   {/* Essential Cookies */}
-                  <div className="bg-white border-2 border-[#109387] rounded-[6px] p-4">
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1">
-                          <h3 className="font-bold text-[#012956]">Technisch notwendig</h3>
-                          <span className="text-xs bg-[#109387] text-white px-2 py-0.5 rounded font-bold">Erforderlich</span>
+                  <div className="bg-white border border-[#109387] rounded-[6px] p-2.5 sm:p-3">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          <h3 className="font-bold text-[#012956] text-xs sm:text-sm">Notwendig</h3>
+                          <span className="text-[10px] bg-[#109387] text-white px-1.5 py-0.5 rounded font-bold">Erforderlich</span>
                         </div>
-                        <p className="text-gray-600 text-sm font-medium">
-                          Diese Cookies sind für den Betrieb der Webseite unbedingt erforderlich (z.B. Cookie-Einstellungen speichern).
-                        </p>
                       </div>
                       <div className="flex-shrink-0">
-                        <div className="w-12 h-7 bg-[#109387] rounded-full flex items-center justify-end px-1 cursor-not-allowed">
-                          <div className="w-5 h-5 bg-white rounded-full shadow flex items-center justify-center">
-                            <Check size={12} className="text-[#109387]" />
+                        <div className="w-10 h-5 bg-[#109387] rounded-full flex items-center justify-end px-0.5 cursor-not-allowed">
+                          <div className="w-4 h-4 bg-white rounded-full shadow flex items-center justify-center">
+                            <Check size={10} className="text-[#109387]" />
                           </div>
                         </div>
                       </div>
@@ -263,109 +260,63 @@ export default function CookieBanner() {
                   </div>
 
                   {/* Functional Cookies */}
-                  <div className="bg-white border-2 border-gray-200 rounded-[6px] p-4 hover:border-[#109387] transition-colors">
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <h3 className="font-bold text-[#012956] mb-1">Funktional</h3>
-                        <p className="text-gray-600 text-sm font-medium">
-                          Speichert Ihre Präferenzen wie Spracheinstellungen oder zuletzt besuchte Seiten.
-                        </p>
+                  <div className="bg-white border border-gray-200 rounded-[6px] p-2.5 sm:p-3 hover:border-[#109387] transition-colors">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-bold text-[#012956] text-xs sm:text-sm">Funktional</h3>
                       </div>
                       <button
                         onClick={() => toggleConsent('functional')}
-                        className={`flex-shrink-0 w-12 h-7 rounded-full flex items-center px-1 transition-colors ${
+                        className={`flex-shrink-0 w-10 h-5 rounded-full flex items-center px-0.5 transition-colors ${
                           consent.functional ? 'bg-[#109387] justify-end' : 'bg-gray-300 justify-start'
                         }`}
-                        aria-label={consent.functional ? 'Funktionale Cookies deaktivieren' : 'Funktionale Cookies aktivieren'}
+                        aria-label={consent.functional ? 'Deaktivieren' : 'Aktivieren'}
                       >
-                        <div className="w-5 h-5 bg-white rounded-full shadow flex items-center justify-center">
-                          {consent.functional ? (
-                            <Check size={12} className="text-[#109387]" />
-                          ) : (
-                            <X size={12} className="text-gray-400" />
-                          )}
+                        <div className="w-4 h-4 bg-white rounded-full shadow flex items-center justify-center">
+                          {consent.functional ? <Check size={10} className="text-[#109387]" /> : <X size={10} className="text-gray-400" />}
                         </div>
                       </button>
                     </div>
                   </div>
 
                   {/* External Services */}
-                  <div className="bg-white border-2 border-gray-200 rounded-[6px] p-4 hover:border-[#109387] transition-colors">
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <h3 className="font-bold text-[#012956] mb-1">Externe Dienste</h3>
-                        <p className="text-gray-600 text-sm font-medium">
-                          Ermöglicht das Laden externer Inhalte wie Google Maps für unsere Standortkarte im Impressum.
-                        </p>
+                  <div className="bg-white border border-gray-200 rounded-[6px] p-2.5 sm:p-3 hover:border-[#109387] transition-colors">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-bold text-[#012956] text-xs sm:text-sm">Externe Dienste (Maps)</h3>
                       </div>
                       <button
                         onClick={() => toggleConsent('external')}
-                        className={`flex-shrink-0 w-12 h-7 rounded-full flex items-center px-1 transition-colors ${
+                        className={`flex-shrink-0 w-10 h-5 rounded-full flex items-center px-0.5 transition-colors ${
                           consent.external ? 'bg-[#109387] justify-end' : 'bg-gray-300 justify-start'
                         }`}
-                        aria-label={consent.external ? 'Externe Dienste deaktivieren' : 'Externe Dienste aktivieren'}
+                        aria-label={consent.external ? 'Deaktivieren' : 'Aktivieren'}
                       >
-                        <div className="w-5 h-5 bg-white rounded-full shadow flex items-center justify-center">
-                          {consent.external ? (
-                            <Check size={12} className="text-[#109387]" />
-                          ) : (
-                            <X size={12} className="text-gray-400" />
-                          )}
+                        <div className="w-4 h-4 bg-white rounded-full shadow flex items-center justify-center">
+                          {consent.external ? <Check size={10} className="text-[#109387]" /> : <X size={10} className="text-gray-400" />}
                         </div>
                       </button>
                     </div>
                   </div>
 
                   {/* Analytics */}
-                  <div className="bg-white border-2 border-gray-200 rounded-[6px] p-4 hover:border-[#109387] transition-colors">
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1">
-                          <h3 className="font-bold text-[#012956]">Analyse</h3>
-                          <span className="text-xs bg-[#109387] text-white px-2 py-0.5 rounded font-bold">Google Analytics</span>
+                  <div className="bg-white border border-gray-200 rounded-[6px] p-2.5 sm:p-3 hover:border-[#109387] transition-colors">
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          <h3 className="font-bold text-[#012956] text-xs sm:text-sm">Analyse</h3>
+                          <span className="text-[10px] bg-[#109387] text-white px-1.5 py-0.5 rounded font-bold">Analytics</span>
                         </div>
-                        <p className="text-gray-600 text-sm font-medium">
-                          Hilft uns zu verstehen, wie Besucher unsere Webseite nutzen, um sie zu verbessern. Anonymisierte Daten.
-                        </p>
                       </div>
                       <button
                         onClick={() => toggleConsent('analytics')}
-                        className={`flex-shrink-0 w-12 h-7 rounded-full flex items-center px-1 transition-colors ${
+                        className={`flex-shrink-0 w-10 h-5 rounded-full flex items-center px-0.5 transition-colors ${
                           consent.analytics ? 'bg-[#109387] justify-end' : 'bg-gray-300 justify-start'
                         }`}
-                        aria-label={consent.analytics ? 'Analyse-Cookies deaktivieren' : 'Analyse-Cookies aktivieren'}
+                        aria-label={consent.analytics ? 'Deaktivieren' : 'Aktivieren'}
                       >
-                        <div className="w-5 h-5 bg-white rounded-full shadow flex items-center justify-center">
-                          {consent.analytics ? (
-                            <Check size={12} className="text-[#109387]" />
-                          ) : (
-                            <X size={12} className="text-gray-400" />
-                          )}
-                        </div>
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Marketing (Future) */}
-                  <div className="bg-white border-2 border-gray-200 rounded-[6px] p-4 hover:border-[#109387] transition-colors opacity-60">
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-1">
-                          <h3 className="font-bold text-[#012956]">Marketing</h3>
-                          <span className="text-xs bg-gray-400 text-white px-2 py-0.5 rounded font-bold">Derzeit nicht aktiv</span>
-                        </div>
-                        <p className="text-gray-600 text-sm font-medium">
-                          Ermöglicht personalisierte Werbung und Angebote basierend auf Ihrem Interesse.
-                        </p>
-                      </div>
-                      <button
-                        onClick={() => toggleConsent('marketing')}
-                        disabled
-                        className="flex-shrink-0 w-12 h-7 bg-gray-200 rounded-full flex items-center justify-start px-1 cursor-not-allowed"
-                        aria-label="Marketing-Cookies (derzeit nicht verfügbar)"
-                      >
-                        <div className="w-5 h-5 bg-white rounded-full shadow flex items-center justify-center">
-                          <X size={12} className="text-gray-400" />
+                        <div className="w-4 h-4 bg-white rounded-full shadow flex items-center justify-center">
+                          {consent.analytics ? <Check size={10} className="text-[#109387]" /> : <X size={10} className="text-gray-400" />}
                         </div>
                       </button>
                     </div>
@@ -376,25 +327,25 @@ export default function CookieBanner() {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col sm:flex-row gap-2">
               {showDetails ? (
                 <>
                   <button
                     onClick={handleSaveSelection}
-                    className="flex-1 flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-6 py-3.5 rounded-[6px] transition-all shadow-lg hover:shadow-xl"
+                    className="flex-1 flex items-center justify-center gap-1.5 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-4 py-2.5 rounded-[6px] transition-all shadow-lg text-xs sm:text-sm"
                   >
-                    <Check size={20} />
+                    <Check size={16} />
                     Auswahl speichern
                   </button>
                   <button
                     onClick={handleAcceptAll}
-                    className="flex-1 flex items-center justify-center gap-2 bg-[#012956] hover:bg-[#01203d] text-white font-bold px-6 py-3.5 rounded-[6px] transition-all"
+                    className="flex-1 flex items-center justify-center gap-1.5 bg-[#012956] hover:bg-[#01203d] text-white font-bold px-4 py-2.5 rounded-[6px] transition-all text-xs sm:text-sm"
                   >
                     Alle akzeptieren
                   </button>
                   <button
                     onClick={handleRejectAll}
-                    className="flex-1 flex items-center justify-center gap-2 bg-gray-200 hover:bg-gray-300 text-[#012956] font-bold px-6 py-3.5 rounded-[6px] transition-all"
+                    className="flex-1 flex items-center justify-center gap-1.5 bg-gray-200 hover:bg-gray-300 text-[#012956] font-bold px-4 py-2.5 rounded-[6px] transition-all text-xs sm:text-sm"
                   >
                     Nur notwendige
                   </button>
@@ -403,22 +354,22 @@ export default function CookieBanner() {
                 <>
                   <button
                     onClick={handleAcceptAll}
-                    className="flex-1 flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-6 py-3.5 rounded-[6px] transition-all shadow-lg hover:shadow-xl"
+                    className="flex-1 flex items-center justify-center gap-1.5 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-4 py-2.5 rounded-[6px] transition-all shadow-lg text-xs sm:text-sm"
                   >
-                    <Check size={20} />
-                    Alle Cookies akzeptieren
+                    <Check size={16} />
+                    Alle akzeptieren
                   </button>
                   <button
                     onClick={handleRejectAll}
-                    className="flex-1 flex items-center justify-center gap-2 bg-[#012956] hover:bg-[#01203d] text-white font-bold px-6 py-3.5 rounded-[6px] transition-all"
+                    className="flex-1 flex items-center justify-center gap-1.5 bg-[#012956] hover:bg-[#01203d] text-white font-bold px-4 py-2.5 rounded-[6px] transition-all text-xs sm:text-sm"
                   >
-                    Nur notwendige Cookies
+                    Nur notwendige
                   </button>
                   <button
                     onClick={() => setShowDetails(true)}
-                    className="flex-1 flex items-center justify-center gap-2 bg-gray-200 hover:bg-gray-300 text-[#012956] font-bold px-6 py-3.5 rounded-[6px] transition-all"
+                    className="flex-1 flex items-center justify-center gap-1.5 bg-gray-200 hover:bg-gray-300 text-[#012956] font-bold px-4 py-2.5 rounded-[6px] transition-all text-xs sm:text-sm"
                   >
-                    <Settings size={18} />
+                    <Settings size={14} />
                     Einstellungen
                   </button>
                 </>
@@ -426,16 +377,16 @@ export default function CookieBanner() {
             </div>
 
             {/* Footer Links */}
-            <div className="flex flex-wrap items-center justify-center gap-4 mt-4 pt-4 border-t border-gray-200">
-              <Link href="/datenschutz" className="text-sm text-gray-600 hover:text-[#109387] font-semibold transition-colors">
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-3 pt-3 border-t border-gray-200">
+              <Link href="/datenschutz" className="text-xs text-gray-500 hover:text-[#109387] font-semibold transition-colors">
                 Datenschutz
               </Link>
               <span className="text-gray-300">|</span>
-              <Link href="/impressum" className="text-sm text-gray-600 hover:text-[#109387] font-semibold transition-colors">
+              <Link href="/impressum" className="text-xs text-gray-500 hover:text-[#109387] font-semibold transition-colors">
                 Impressum
               </Link>
               <span className="text-gray-300">|</span>
-              <Link href="/agb" className="text-sm text-gray-600 hover:text-[#109387] font-semibold transition-colors">
+              <Link href="/agb" className="text-xs text-gray-500 hover:text-[#109387] font-semibold transition-colors">
                 AGB
               </Link>
             </div>
