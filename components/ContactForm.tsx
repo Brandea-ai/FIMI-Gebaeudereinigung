@@ -10,6 +10,9 @@ interface FormData {
   email: string
   phone: string
   company: string
+  postalCode: string
+  website: string
+  employeeCount: string
   service: string
   branche: string
   callbackTime: string
@@ -68,6 +71,9 @@ export default function ContactForm() {
     email: '',
     phone: '',
     company: '',
+    postalCode: '',
+    website: '',
+    employeeCount: '',
     service: '',
     branche: '',
     callbackTime: '',
@@ -159,6 +165,9 @@ export default function ContactForm() {
           email: '',
           phone: '',
           company: '',
+          postalCode: '',
+          website: '',
+          employeeCount: '',
           service: '',
           branche: '',
           callbackTime: '',
@@ -313,6 +322,66 @@ export default function ContactForm() {
                   {BRANCHEN.map(branche => (
                     <option key={branche} value={branche}>{branche}</option>
                   ))}
+                </select>
+              </div>
+            </div>
+
+            {/* PLZ, Website, Mitarbeiter */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+              {/* PLZ */}
+              <div>
+                <label htmlFor="cf-postalCode" className="block text-[11px] sm:text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5 sm:mb-2">
+                  PLZ <span className="text-gray-400 normal-case">(optional)</span>
+                </label>
+                <input
+                  type="text"
+                  id="cf-postalCode"
+                  name="postalCode"
+                  value={formData.postalCode}
+                  onChange={handleChange}
+                  placeholder="84036"
+                  maxLength={10}
+                  autoComplete="postal-code"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border-2 border-gray-200 rounded-[6px] text-gray-900 font-semibold text-sm sm:text-base transition-all focus:outline-none focus:border-[#109387] focus:ring-2 focus:ring-[#109387]/20"
+                />
+              </div>
+
+              {/* Website */}
+              <div>
+                <label htmlFor="cf-website" className="block text-[11px] sm:text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5 sm:mb-2">
+                  Website <span className="text-gray-400 normal-case">(optional)</span>
+                </label>
+                <input
+                  type="url"
+                  id="cf-website"
+                  name="website"
+                  value={formData.website}
+                  onChange={handleChange}
+                  placeholder="www.beispiel.de"
+                  maxLength={100}
+                  autoComplete="url"
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border-2 border-gray-200 rounded-[6px] text-gray-900 font-semibold text-sm sm:text-base transition-all focus:outline-none focus:border-[#109387] focus:ring-2 focus:ring-[#109387]/20"
+                />
+              </div>
+
+              {/* Mitarbeiteranzahl */}
+              <div>
+                <label htmlFor="cf-employeeCount" className="block text-[11px] sm:text-xs font-bold text-gray-500 uppercase tracking-wide mb-1.5 sm:mb-2">
+                  Mitarbeiter <span className="text-gray-400 normal-case">(optional)</span>
+                </label>
+                <select
+                  id="cf-employeeCount"
+                  name="employeeCount"
+                  value={formData.employeeCount}
+                  onChange={handleChange}
+                  className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border-2 border-gray-200 rounded-[6px] text-gray-900 font-semibold text-sm sm:text-base transition-all focus:outline-none focus:border-[#109387] focus:ring-2 focus:ring-[#109387]/20 bg-white"
+                >
+                  <option value="">Bitte wählen...</option>
+                  <option value="1-10">1-10</option>
+                  <option value="11-50">11-50</option>
+                  <option value="51-200">51-200</option>
+                  <option value="201-500">201-500</option>
+                  <option value="500+">500+</option>
                 </select>
               </div>
             </div>

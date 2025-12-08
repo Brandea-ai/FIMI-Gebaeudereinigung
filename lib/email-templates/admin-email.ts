@@ -3,6 +3,9 @@ interface AdminEmailData {
   email: string
   phone: string
   company?: string
+  postalCode?: string
+  website?: string
+  employeeCount?: string
   branche?: string
   service?: string
   callbackTime?: string
@@ -17,6 +20,9 @@ export function generateAdminEmail(data: AdminEmailData): string {
     email,
     phone,
     company,
+    postalCode,
+    website,
+    employeeCount,
     branche,
     service,
     callbackTime,
@@ -105,7 +111,7 @@ export function generateAdminEmail(data: AdminEmailData): string {
               </table>
 
               <!-- Details Section -->
-              ${(branche || service || callbackTime) ? `
+              ${(branche || service || callbackTime || postalCode || website || employeeCount) ? `
               <h2 style="margin: 0 0 20px; color: #012956; font-size: 18px; font-weight: 700; border-bottom: 2px solid #109387; padding-bottom: 10px;">
                 Anfrage-Details
               </h2>
@@ -124,6 +130,30 @@ export function generateAdminEmail(data: AdminEmailData): string {
                   <td style="padding: 10px 0; border-bottom: 1px solid #eee;">
                     <span style="color: #666; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Gewünschte Leistung</span><br>
                     <span style="color: #012956; font-size: 16px; font-weight: 600;">${service}</span>
+                  </td>
+                </tr>
+                ` : ''}
+                ${postalCode ? `
+                <tr>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #eee;">
+                    <span style="color: #666; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Postleitzahl</span><br>
+                    <span style="color: #012956; font-size: 16px; font-weight: 600;">${postalCode}</span>
+                  </td>
+                </tr>
+                ` : ''}
+                ${website ? `
+                <tr>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #eee;">
+                    <span style="color: #666; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Website</span><br>
+                    <a href="${website.startsWith('http') ? website : 'https://' + website}" style="color: #109387; font-size: 16px; font-weight: 600; text-decoration: none;">${website}</a>
+                  </td>
+                </tr>
+                ` : ''}
+                ${employeeCount ? `
+                <tr>
+                  <td style="padding: 10px 0; border-bottom: 1px solid #eee;">
+                    <span style="color: #666; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px;">Mitarbeiteranzahl</span><br>
+                    <span style="color: #012956; font-size: 16px; font-weight: 600;">${employeeCount}</span>
                   </td>
                 </tr>
                 ` : ''}
