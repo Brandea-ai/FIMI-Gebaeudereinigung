@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
-import { kv } from '@vercel/kv'
+import { createClient } from 'redis'
 import { generateAdminEmail } from '@/lib/email-templates/admin-email'
 import { generateConfirmationEmail } from '@/lib/email-templates/confirmation-email'
 
@@ -53,7 +53,7 @@ const serviceMap: Record<string, string> = {
   'Sonstiges': 'SO',
 }
 
-// Reference Number Generator - Persistent counters with Vercel KV
+// Reference Number Generator - Persistent counters with Redis
 // Format: FIMI-{year}{counter}{daymonth}-{service}
 // Each service has its own counter that never resets
 async function generateRequestId(service?: string): Promise<string> {
@@ -64,16 +64,26 @@ async function generateRequestId(service?: string): Promise<string> {
 
   const serviceCode = service ? (serviceMap[service] || 'AN') : 'AN'
 
-  // Persistent counter per service using Vercel KV
+  // Persistent counter per service using Redis
   // Key: fimi:counter:{serviceCode} - Value increments forever
   const counterKey = `fimi:counter:${serviceCode}`
 
   let counter = 1
   try {
-    // Increment counter in KV (atomic operation)
-    counter = await kv.incr(counterKey)
+    // Connect to Redis
+    const redisUrl = process.env.KV_REDIS_URL || process.env.REDIS_URL
+    if (redisUrl) {
+      const redis = createClient({ url: redisUrl })
+      await redis.connect()
+      // Increment counter in Redis (atomic operation)
+      counter = await redis.incr(counterKey)
+      await redis.disconnect()
+    } else {
+      // Fallback if Redis not available
+      counter = Math.floor(Math.random() * 9000) + 1000
+    }
   } catch {
-    // Fallback if KV not available (dev environment)
+    // Fallback if Redis not available (dev environment)
     counter = Math.floor(Math.random() * 9000) + 1000
   }
 
