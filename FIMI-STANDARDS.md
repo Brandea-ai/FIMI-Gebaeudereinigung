@@ -292,4 +292,76 @@ className={`grid md:grid-cols-2 ${index % 2 === 1 ? 'md:grid-flow-dense' : ''}`}
 
 ---
 
-**Letzte Aktualisierung:** November 2025.25
+## Backend & Services
+
+### E-Mail (Resend)
+
+- **Service:** Resend (resend.com)
+- **Domain:** fimi-gebaeudereinigung.de (verifiziert)
+- **Absender:** kontakt@fimi-gebaeudereinigung.de
+- **Datenschutz:** datenschutz@fimi-gebaeudereinigung.de
+
+**E-Mail-Templates:**
+- `lib/email-templates/admin-email.ts` - Interne Benachrichtigung
+- `lib/email-templates/confirmation-email.ts` - Kundenbestätigung
+
+**Environment Variable:**
+```
+RESEND_API_KEY=re_xxx...
+```
+
+### Redis (Vercel Storage)
+
+- **Service:** Redis by Redis (Vercel Integration)
+- **Datenbank:** `fimi-counters-contact-form`
+- **Region:** Frankfurt (fra1)
+- **Plan:** Free (30 MB)
+
+**Verwendung:** Persistente Referenznummern für Kontaktanfragen
+
+**Environment Variable:**
+```
+KV_REDIS_URL=redis://default:xxx@redis-xxx.ec2.cloud.redislabs.com:12620
+```
+
+### Referenznummern-System
+
+**Format:** `FIMI-{Jahr}{Counter}{TagMonat}-{Service}`
+
+**Beispiele:**
+- `FIMI-202500010812-BR` = Büroreinigung, Counter 0001, 08.12.2025
+- `FIMI-202500020812-FR` = Fensterreinigung, Counter 0002, 08.12.2025
+
+**Service-Codes:**
+| Service | Code |
+|---------|------|
+| Unterhaltsreinigung | UR |
+| Büroreinigung | BR |
+| Industriereinigung | IR |
+| Fensterreinigung | FR |
+| Glasreinigung | GR |
+| Fassadenreinigung | FA |
+| Hallenreinigung | HR |
+| Maschinenreinigung | MR |
+| Facility Management | FM |
+| Winterdienst | WD |
+| Hausmeisterservice | HS |
+| Außenanlagenpflege | AP |
+| Baureinigung | BA |
+| Sonderreinigung | SR |
+| Tiefgaragenreinigung | TG |
+| Parkplatzreinigung | PP |
+| Sonstiges | SO |
+| Ohne Service | AN |
+
+**Wichtig:**
+- Jede Leistung hat einen eigenen Counter
+- Counter läuft fortlaufend (0001, 0002, ...) und setzt niemals zurück
+- Counter wird in Redis gespeichert (persistent)
+- Format ist obfuskiert damit Konkurrenz Anfragevolumen nicht erkennt
+
+**Code:** `app/api/contact/route.ts` - Funktion `generateRequestId()`
+
+---
+
+**Letzte Aktualisierung:** Dezember 2025
