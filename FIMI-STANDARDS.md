@@ -1,7 +1,7 @@
 # FIMI Gebäudereinigung - Design & Content Standards
 
 **Stand:** November 2025
-**Website:** https://fimi-service.de
+**Website:** https://fimi-gebaeudereinigung.de
 
 ---
 
@@ -274,7 +274,7 @@ className={`grid md:grid-cols-2 ${index % 2 === 1 ? 'md:grid-flow-dense' : ''}`}
 
 - Repository: `github.com/Brandea-ai/FIMI-Gebaeudereinigung`
 - Branch: `main` → Auto-Deploy zu Vercel
-- Domain: fimi-service.de
+- Domain: fimi-gebaeudereinigung.de
 
 ---
 

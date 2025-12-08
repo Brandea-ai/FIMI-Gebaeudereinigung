@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: 'Regelmäßige Reinigung für Büros, Praxen, Einzelhandel und mehr. Festes Personal, 2h Reaktionszeit garantiert.',
     type: 'website',
     locale: 'de_DE',
-    url: 'https://fimi-service.de/leistungen/unterhaltsreinigung',
+    url: 'https://fimi-gebaeudereinigung.de/leistungen/unterhaltsreinigung',
     siteName: 'FIMI Gebäudereinigung',
     images: [
       {
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     description: 'Professionelle regelmäßige Reinigung mit festem Personal. 2h Reaktionszeit garantiert.',
   },
   alternates: {
-    canonical: 'https://fimi-service.de/leistungen/unterhaltsreinigung',
+    canonical: 'https://fimi-gebaeudereinigung.de/leistungen/unterhaltsreinigung',
   },
   robots: {
     index: true,
@@ -65,9 +65,9 @@ const jsonLd = {
   provider: {
     '@type': 'LocalBusiness',
     name: 'FIMI Gebäudereinigung',
-    image: 'https://fimi-service.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
+    image: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
     telephone: '+4987143033460',
-    email: 'info@fimi-service.de',
+    email: 'info@fimi-gebaeudereinigung.de',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Kellerstr. 39',

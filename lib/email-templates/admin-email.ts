@@ -162,7 +162,7 @@ export function generateAdminEmail(data: AdminEmailData): string {
           <tr>
             <td style="background-color: #01203d; padding: 25px 40px; border-radius: 0 0 6px 6px;">
               <p style="margin: 0; color: rgba(255,255,255,0.6); font-size: 12px; text-align: center;">
-                Diese E-Mail wurde automatisch vom Kontaktformular auf fimi-service.de generiert.
+                Diese E-Mail wurde automatisch vom Kontaktformular auf fimi-gebaeudereinigung.de generiert.
               </p>
             </td>
           </tr>

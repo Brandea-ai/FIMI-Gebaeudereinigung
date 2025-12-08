@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     description: 'Einkaufskosten senken, Prozesse optimieren, Lieferanten managen. Professionelles Beschaffungsmanagement mit 5-15% Einsparpotenzial.',
     type: 'website',
     locale: 'de_DE',
-    url: 'https://fimi-service.de/leistungen/beschaffungsmanagement',
+    url: 'https://fimi-gebaeudereinigung.de/leistungen/beschaffungsmanagement',
     siteName: 'FIMI Gebäudereinigung',
     images: [
       {
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     description: 'Einkaufskosten senken mit professionellem Beschaffungsmanagement. 5-15% Einsparpotenzial.',
   },
   alternates: {
-    canonical: 'https://fimi-service.de/leistungen/beschaffungsmanagement',
+    canonical: 'https://fimi-gebaeudereinigung.de/leistungen/beschaffungsmanagement',
   },
   robots: {
     index: true,
@@ -73,9 +73,9 @@ const serviceSchema = {
   provider: {
     '@type': 'LocalBusiness',
     name: 'FIMI Gebäudereinigung',
-    image: 'https://fimi-service.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
+    image: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
     telephone: '+4987143033460',
-    email: 'info@fimi-service.de',
+    email: 'info@fimi-gebaeudereinigung.de',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Kellerstr. 39',

@@ -4,7 +4,7 @@ Professionelle Gebäudereinigung in Bayern - Landshut, München, Regensburg
 
 ## Website
 
-**Live:** https://fimi-service.de
+**Live:** https://fimi-gebaeudereinigung.de
 
 ## Tech Stack
 

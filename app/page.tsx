@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description: 'Professionelle Gebaeudereinigung in Landshut und ganz Bayern. 8+ Jahre Erfahrung. 120+ zufriedene Unternehmen. 24/7 Notfallservice.',
     type: 'website',
     locale: 'de_DE',
-    url: 'https://fimi-service.de',
+    url: 'https://fimi-gebaeudereinigung.de',
     siteName: 'FIMI Gebaeudereinigung',
     images: [
       {
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     description: 'Professionelle Gebaeudereinigung in Landshut und ganz Bayern. 8+ Jahre Erfahrung.',
   },
   alternates: {
-    canonical: 'https://fimi-service.de',
+    canonical: 'https://fimi-gebaeudereinigung.de',
   },
   robots: {
     index: true,

@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     description: 'Gepflegte Außenanlagen für Gewerbe und Wohnanlagen. Rasenpflege, Heckenschnitt, Laubbeseitigung – alles aus einer Hand. Festes Team, keine Sorgen.',
     type: 'website',
     locale: 'de_DE',
-    url: 'https://fimi-service.de/leistungen/aussenanlagenpflege',
+    url: 'https://fimi-gebaeudereinigung.de/leistungen/aussenanlagenpflege',
     siteName: 'FIMI Gebäudereinigung',
     images: [
       {
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     description: 'Gepflegte Grünflächen für Gewerbe und Wohnanlagen. Alles aus einer Hand.',
   },
   alternates: {
-    canonical: 'https://fimi-service.de/leistungen/aussenanlagenpflege',
+    canonical: 'https://fimi-gebaeudereinigung.de/leistungen/aussenanlagenpflege',
   },
   robots: {
     index: true,
@@ -68,9 +68,9 @@ const serviceSchema = {
   provider: {
     '@type': 'LocalBusiness',
     name: 'FIMI Gebäudereinigung',
-    image: 'https://fimi-service.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
+    image: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
     telephone: '+4987143033460',
-    email: 'info@fimi-service.de',
+    email: 'info@fimi-gebaeudereinigung.de',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Kellerstr. 39',

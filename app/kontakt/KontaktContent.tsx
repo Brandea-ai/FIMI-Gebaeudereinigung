@@ -149,7 +149,7 @@ export default function KontaktContent() {
             {/* E-Mail */}
             <FadeInItem>
               <motion.a
-                href="mailto:info@fimi-service.de"
+                href="mailto:info@fimi-gebaeudereinigung.de"
                 className="group flex items-start gap-4 p-5 sm:p-6 bg-[#f8f9fa] hover:bg-[#012956] rounded-[6px] transition-all duration-300 h-full"
                 whileHover={{ y: -4 }}
               >
@@ -158,7 +158,7 @@ export default function KontaktContent() {
                 </div>
                 <div>
                   <p className="text-[#012956] group-hover:text-white/80 text-xs font-semibold uppercase tracking-wider mb-1 transition-colors">E-Mail</p>
-                  <p className="text-[#012956] group-hover:text-white font-bold text-base sm:text-lg transition-colors">info@fimi-service.de</p>
+                  <p className="text-[#012956] group-hover:text-white font-bold text-base sm:text-lg transition-colors">info@fimi-gebaeudereinigung.de</p>
                 </div>
               </motion.a>
             </FadeInItem>

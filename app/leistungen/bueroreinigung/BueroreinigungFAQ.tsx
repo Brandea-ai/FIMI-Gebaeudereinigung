@@ -110,7 +110,7 @@ export default function BueroreinigungFAQ() {
               Jetzt anrufen: 0871 430 334 60
             </a>
             <a
-              href="mailto:info@fimi-service.de"
+              href="mailto:info@fimi-gebaeudereinigung.de"
               className="inline-flex items-center justify-center px-8 py-4 border-2 border-fimi-navy text-fimi-navy font-bold hover:bg-fimi-navy hover:text-white transition-all"
               style={{ borderRadius: '4px' }}
             >

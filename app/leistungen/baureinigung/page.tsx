@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description: 'Vom Rohbau zur bezugsfertigen Immobilie. Baugrobreinigung, Baufeinreinigung, Bauschlussreinigung – termingerecht und mit Qualitätsgarantie.',
     type: 'website',
     locale: 'de_DE',
-    url: 'https://fimi-service.de/leistungen/baureinigung',
+    url: 'https://fimi-gebaeudereinigung.de/leistungen/baureinigung',
     siteName: 'FIMI Gebäudereinigung',
     images: [
       {
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     description: 'Bauendreinigung & Bauschlussreinigung. Bezugsfertig garantiert. 24h Notfall-Service.',
   },
   alternates: {
-    canonical: 'https://fimi-service.de/leistungen/baureinigung',
+    canonical: 'https://fimi-gebaeudereinigung.de/leistungen/baureinigung',
   },
   robots: {
     index: true,
@@ -75,9 +75,9 @@ const serviceSchema = {
   provider: {
     '@type': 'LocalBusiness',
     name: 'FIMI Gebäudereinigung',
-    image: 'https://fimi-service.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
+    image: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
     telephone: '+4987143033460',
-    email: 'info@fimi-service.de',
+    email: 'info@fimi-gebaeudereinigung.de',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Kellerstr. 39',

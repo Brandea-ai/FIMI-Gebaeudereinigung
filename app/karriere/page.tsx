@@ -596,7 +596,7 @@ function JobModal({ job, onClose }: JobModalProps) {
 
           {/* CTA */}
           <a
-            href={`mailto:bewerbung@fimi-reinigung.ch?subject=Bewerbung: ${job.titel}&body=Sehr geehrtes FIMI-Team,%0D%0A%0D%0Aich interessiere mich für die Stelle "${job.titel}".%0D%0A%0D%0AMit freundlichen Grüßen`}
+            href={`mailto:bewerbung@fimi-gebaeudereinigung.de?subject=Bewerbung: ${job.titel}&body=Sehr geehrtes FIMI-Team,%0D%0A%0D%0Aich interessiere mich für die Stelle "${job.titel}".%0D%0A%0D%0AMit freundlichen Grüßen`}
             className="block w-full bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-center py-4 rounded-[6px] mb-4"
           >
             Jetzt bewerben
@@ -921,11 +921,11 @@ export default function KarrierePage() {
                     0871 430 334 60
                   </a>
                   <a
-                    href="mailto:bewerbung@fimi-reinigung.ch"
+                    href="mailto:bewerbung@fimi-gebaeudereinigung.de"
                     className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#109387] font-medium"
                   >
                     <Mail size={14} />
-                    bewerbung@fimi-reinigung.ch
+                    bewerbung@fimi-gebaeudereinigung.de
                   </a>
                 </div>
               </div>
@@ -961,7 +961,7 @@ export default function KarrierePage() {
                         <h3 className="text-2xl font-bold text-[#012956]">{job.titel}</h3>
                       </div>
                       <a
-                        href={`mailto:bewerbung@fimi-reinigung.ch?subject=Bewerbung: ${job.titel}&body=Sehr geehrtes FIMI-Team,%0D%0A%0D%0Aich interessiere mich für die Stelle "${job.titel}".%0D%0A%0D%0AMit freundlichen Grüßen`}
+                        href={`mailto:bewerbung@fimi-gebaeudereinigung.de?subject=Bewerbung: ${job.titel}&body=Sehr geehrtes FIMI-Team,%0D%0A%0D%0Aich interessiere mich für die Stelle "${job.titel}".%0D%0A%0D%0AMit freundlichen Grüßen`}
                         className="inline-flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-6 py-3 rounded-[6px] transition-colors shrink-0"
                       >
                         Jetzt bewerben
@@ -1053,7 +1053,7 @@ export default function KarrierePage() {
                     </p>
                     <div className="flex gap-3">
                       <a
-                        href={`mailto:bewerbung@fimi-reinigung.ch?subject=Bewerbung: ${job.titel}`}
+                        href={`mailto:bewerbung@fimi-gebaeudereinigung.de?subject=Bewerbung: ${job.titel}`}
                         className="inline-flex items-center gap-2 text-[#109387] hover:text-[#0d7d72] font-bold text-sm"
                       >
                         <Mail size={16} />
@@ -1102,7 +1102,7 @@ export default function KarrierePage() {
                         <span className="w-9 h-9 bg-[#109387] text-white rounded-full flex items-center justify-center font-extrabold text-sm shrink-0">1</span>
                         <div>
                           <p className="text-white font-bold text-base lg:text-lg">E-Mail senden</p>
-                          <p className="text-white/70 text-sm font-medium">bewerbung@fimi-reinigung.ch</p>
+                          <p className="text-white/70 text-sm font-medium">bewerbung@fimi-gebaeudereinigung.de</p>
                         </div>
                       </li>
                       <li className="flex items-start gap-4">
@@ -1160,7 +1160,7 @@ export default function KarrierePage() {
 
               <div className="mt-6 pt-6 border-t border-white/10 flex flex-col sm:flex-row gap-3">
                 <a
-                  href="mailto:bewerbung@fimi-reinigung.ch?subject=Initiativbewerbung&body=Sehr geehrtes FIMI-Team,%0D%0A%0D%0Ahiermit möchte ich mich initiativ bei Ihnen bewerben.%0D%0A%0D%0AÜber mich:%0D%0A-%20Name:%0D%0A-%20Wohnort:%0D%0A-%20Gewünschte Tätigkeit:%0D%0A-%20Verfügbarkeit:%0D%0A%0D%0AMit freundlichen Grüßen"
+                  href="mailto:bewerbung@fimi-gebaeudereinigung.de?subject=Initiativbewerbung&body=Sehr geehrtes FIMI-Team,%0D%0A%0D%0Ahiermit möchte ich mich initiativ bei Ihnen bewerben.%0D%0A%0D%0AÜber mich:%0D%0A-%20Name:%0D%0A-%20Wohnort:%0D%0A-%20Gewünschte Tätigkeit:%0D%0A-%20Verfügbarkeit:%0D%0A%0D%0AMit freundlichen Grüßen"
                   className="inline-flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-sm lg:text-base px-5 lg:px-6 py-3 rounded-[6px] transition-all duration-300"
                 >
                   <Mail size={18} />
@@ -1375,11 +1375,11 @@ export default function KarrierePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 lg:gap-4">
               <a
-                href="mailto:bewerbung@fimi-reinigung.ch"
+                href="mailto:bewerbung@fimi-gebaeudereinigung.de"
                 className="inline-flex items-center justify-center gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4 rounded-[6px] transition-all duration-300"
               >
                 <Mail size={20} />
-                <span className="hidden sm:inline">bewerbung@fimi-reinigung.ch</span>
+                <span className="hidden sm:inline">bewerbung@fimi-gebaeudereinigung.de</span>
                 <span className="sm:hidden">E-Mail senden</span>
               </a>
               <a

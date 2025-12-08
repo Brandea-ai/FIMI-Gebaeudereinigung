@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     description: 'Gepflegte Parkplätze sind Ihre Visitenkarte. Professionelle Parkplatzreinigung mit Kehrmaschinen und Hochdruckreinigung. 2h Reaktionszeit garantiert.',
     type: 'website',
     locale: 'de_DE',
-    url: 'https://fimi-service.de/leistungen/parkplatzreinigung',
+    url: 'https://fimi-gebaeudereinigung.de/leistungen/parkplatzreinigung',
     siteName: 'FIMI Gebäudereinigung',
     images: [
       {
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     description: 'Professionelle Parkplatzreinigung mit Kehrmaschinen und Hochdruckreinigung. 2h Reaktionszeit garantiert.',
   },
   alternates: {
-    canonical: 'https://fimi-service.de/leistungen/parkplatzreinigung',
+    canonical: 'https://fimi-gebaeudereinigung.de/leistungen/parkplatzreinigung',
   },
   robots: {
     index: true,
@@ -69,9 +69,9 @@ const serviceSchema = {
   provider: {
     '@type': 'LocalBusiness',
     name: 'FIMI Gebäudereinigung',
-    image: 'https://fimi-service.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
+    image: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
     telephone: '+4987143033460',
-    email: 'info@fimi-service.de',
+    email: 'info@fimi-gebaeudereinigung.de',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Kellerstr. 39',

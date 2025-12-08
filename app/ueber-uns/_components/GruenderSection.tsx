@@ -6,20 +6,20 @@ import { Quote } from 'lucide-react'
 
 const gruender = [
   {
-    name: 'Max Mustermann',
+    name: 'Donald Tzoutzis',
     rolle: 'Geschäftsführer',
     bereich: 'Vertrieb & Kundenbetreuung',
     bild: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=800&auto=format&fit=crop',
     zitat: 'Für mich bedeutet Erfolg, dass unsere Kunden morgens in ein sauberes Büro kommen und sich auf ihre eigentliche Arbeit konzentrieren können. Wir nehmen ihnen eine Sorge ab.',
-    email: 'max.mustermann@fimi-service.de',
+    email: 'd.tzoutzis@fimi-gebaeudereinigung.de',
   },
   {
-    name: 'Thomas Schmidt',
+    name: 'Ergkest Qirjaj',
     rolle: 'Geschäftsführer',
     bereich: 'Betrieb & Qualitätsmanagement',
     bild: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=800&auto=format&fit=crop',
     zitat: 'Qualität ist kein Zufall. Sie entsteht durch klare Prozesse, gut geschulte Mitarbeiter und den Anspruch, jeden Tag besser zu werden als am Tag zuvor.',
-    email: 'thomas.schmidt@fimi-service.de',
+    email: 'e.qirjaj@fimi-gebaeudereinigung.de',
   },
 ]
 

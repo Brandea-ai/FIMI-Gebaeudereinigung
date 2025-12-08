@@ -35,7 +35,7 @@ const categories = [
   {
     id: 'facility',
     icon: Wrench,
-    title: 'Facility Management & Services',
+    title: 'Facility Management & Gebäudeservice',
     description: 'Umfassende Gebäudebetreuung und Dienstleistungen aus einer Hand',
     services: [
       { name: 'Facility Management', slug: 'facility-management', image: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800&auto=format&fit=crop' },

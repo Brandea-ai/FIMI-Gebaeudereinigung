@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description: 'Event-Reinigung, Messe-Reinigung, Hotel-Reinigung – professionelle Reinigung vor, während und nach Ihrer Veranstaltung.',
     type: 'website',
     locale: 'de_DE',
-    url: 'https://fimi-service.de/leistungen/sonderleistungen',
+    url: 'https://fimi-gebaeudereinigung.de/leistungen/sonderleistungen',
     siteName: 'FIMI Gebäudereinigung',
     images: [
       {
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     description: 'Event-Reinigung, Messe-Reinigung, Hotel-Reinigung – professionelle Reinigung für Ihre Veranstaltung.',
   },
   alternates: {
-    canonical: 'https://fimi-service.de/leistungen/sonderleistungen',
+    canonical: 'https://fimi-gebaeudereinigung.de/leistungen/sonderleistungen',
   },
   robots: {
     index: true,
@@ -75,9 +75,9 @@ const serviceSchema = {
   provider: {
     '@type': 'LocalBusiness',
     name: 'FIMI Gebäudereinigung',
-    image: 'https://fimi-service.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
+    image: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
     telephone: '+4987143033460',
-    email: 'info@fimi-service.de',
+    email: 'info@fimi-gebaeudereinigung.de',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Kellerstr. 39',

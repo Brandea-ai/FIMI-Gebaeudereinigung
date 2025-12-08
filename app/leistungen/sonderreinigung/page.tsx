@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     description: 'Wasserschaden, Brandschaden, Messie-Wohnung, Tatortreinigung – professionelle Sonderreinigung mit 24h Notdienst. Staatl. geprüfte Desinfektoren.',
     type: 'website',
     locale: 'de_DE',
-    url: 'https://fimi-service.de/leistungen/sonderreinigung',
+    url: 'https://fimi-gebaeudereinigung.de/leistungen/sonderreinigung',
     siteName: 'FIMI Gebäudereinigung',
     images: [
       {
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     description: 'Wasserschaden, Brandschaden, Messie, Tatortreinigung – professionelle Sonderreinigung mit 24h Notdienst.',
   },
   alternates: {
-    canonical: 'https://fimi-service.de/leistungen/sonderreinigung',
+    canonical: 'https://fimi-gebaeudereinigung.de/leistungen/sonderreinigung',
   },
   robots: {
     index: true,
@@ -82,9 +82,9 @@ const serviceSchema = {
   provider: {
     '@type': 'LocalBusiness',
     name: 'FIMI Gebäudereinigung',
-    image: 'https://fimi-service.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
+    image: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
     telephone: '+4987143033460',
-    email: 'info@fimi-service.de',
+    email: 'info@fimi-gebaeudereinigung.de',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Kellerstr. 39',

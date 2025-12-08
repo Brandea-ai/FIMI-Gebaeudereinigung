@@ -521,7 +521,7 @@ export default function Navigation() {
                     >
                       <div className="text-left">
                         <p className="text-[#012956] font-bold text-[16px]">Leistungen</p>
-                        <p className="text-gray-500 text-[13px] font-medium">18 Services</p>
+                        <p className="text-gray-500 text-[13px] font-medium">18 Leistungen</p>
                       </div>
                       <ChevronDown
                         size={22}

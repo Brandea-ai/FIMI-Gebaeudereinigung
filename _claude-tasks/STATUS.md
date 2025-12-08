@@ -1,7 +1,7 @@
 # FIMI Website Tasks - Status-Tracker
 
 **Quelle:** FIMI_Website_TODOs.md (HEILIGER GRAL - alle Tasks basieren darauf!)
-**Stand:** 2025-12-07
+**Stand:** 2025-12-08
 **Letzter Report:** R0022
 **Aktueller Sprint:** Sprint 2 (P1 - Wachstum)
 
@@ -167,3 +167,9 @@
 | 2025-12-07 | R0022 | Task 29: Umlaute korrigiert (4 Dateien, ~70 Korrekturen ae/ue/oe → ä/ü/ö) |
 | 2025-12-07 | R0022 | Task 33: Notfall-Claims geprüft und akzeptiert (keine Änderung nötig) |
 | 2025-12-07 | R0022 | Task 40: Heading-Audit (H3→H2 auf News-Artikel-Seite) |
+| 2025-12-08 | - | **DOMAIN-MIGRATION:** fimi-service.de → fimi-gebaeudereinigung.de (100+ Dateien) |
+| 2025-12-08 | - | Geschäftsführer-Namen korrigiert: Donald Tzoutzis & Ergkest Qirjaj (5 Dateien) |
+| 2025-12-08 | - | Email-Adressen aktualisiert: kontakt@, bewerbung@, datenschutz@, info@, noreply@ (27+ Dateien) |
+| 2025-12-08 | - | Resend API eingerichtet (.env.local mit API-Key, Domain verifiziert) |
+| 2025-12-08 | - | Labels "Services" → "Leistungen" (Navigation, Winterdienst CTA, Schema.org) |
+| 2025-12-08 | - | **DEPLOYMENT:** Vercel ENV-Variable gesetzt, alle Email-Postfächer erstellt |

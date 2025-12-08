@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     description: 'Professionelle Schneeräumung und Streudienst für Gewerbe, Hausverwaltungen und Industrie. 24/7 Bereitschaft, Haftungsübernahme, 2h Reaktionszeit.',
     type: 'website',
     locale: 'de_DE',
-    url: 'https://fimi-service.de/leistungen/winterdienst',
+    url: 'https://fimi-gebaeudereinigung.de/leistungen/winterdienst',
     siteName: 'FIMI Gebäudereinigung',
     images: [
       {
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     description: 'Professionelle Schneeräumung mit Haftungsübernahme. 24/7 Bereitschaft, 2h Reaktionszeit.',
   },
   alternates: {
-    canonical: 'https://fimi-service.de/leistungen/winterdienst',
+    canonical: 'https://fimi-gebaeudereinigung.de/leistungen/winterdienst',
   },
   robots: {
     index: true,
@@ -71,9 +71,9 @@ const serviceSchema = {
   provider: {
     '@type': 'LocalBusiness',
     name: 'FIMI Gebäudereinigung',
-    image: 'https://fimi-service.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
+    image: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
     telephone: '+4987143033460',
-    email: 'info@fimi-service.de',
+    email: 'info@fimi-gebaeudereinigung.de',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Kellerstr. 39',

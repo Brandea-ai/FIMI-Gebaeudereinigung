@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: 'Saubere Räume, in denen sich Mitarbeiter und Kunden wohlfühlen. Professionelle Büroreinigung mit festem Personal und 2h Reaktionszeit.',
     type: 'website',
     locale: 'de_DE',
-    url: 'https://fimi-service.de/leistungen/bueroreinigung',
+    url: 'https://fimi-gebaeudereinigung.de/leistungen/bueroreinigung',
     siteName: 'FIMI Gebäudereinigung',
     images: [
       {
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     description: 'Professionelle Büroreinigung mit festem Personal. 2h Reaktionszeit garantiert.',
   },
   alternates: {
-    canonical: 'https://fimi-service.de/leistungen/bueroreinigung',
+    canonical: 'https://fimi-gebaeudereinigung.de/leistungen/bueroreinigung',
   },
   robots: {
     index: true,
@@ -65,9 +65,9 @@ const jsonLd = {
   provider: {
     '@type': 'LocalBusiness',
     name: 'FIMI Gebäudereinigung',
-    image: 'https://fimi-service.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
+    image: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
     telephone: '+4987143033460',
-    email: 'info@fimi-service.de',
+    email: 'info@fimi-gebaeudereinigung.de',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Kellerstr. 39',

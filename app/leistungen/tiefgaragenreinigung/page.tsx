@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: 'Professionelle Tiefgaragenreinigung für Hausverwaltungen, WEG und Gewerbe. Ölflecken, Reifenabrieb, Streusalz - wir machen Ihre Tiefgarage wieder sauber.',
     type: 'website',
     locale: 'de_DE',
-    url: 'https://fimi-service.de/leistungen/tiefgaragenreinigung',
+    url: 'https://fimi-gebaeudereinigung.de/leistungen/tiefgaragenreinigung',
     siteName: 'FIMI Gebäudereinigung',
     images: [
       {
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     description: 'Professionelle Tiefgaragenreinigung für Hausverwaltungen und Gewerbe. 2h Reaktionszeit.',
   },
   alternates: {
-    canonical: 'https://fimi-service.de/leistungen/tiefgaragenreinigung',
+    canonical: 'https://fimi-gebaeudereinigung.de/leistungen/tiefgaragenreinigung',
   },
   robots: {
     index: true,
@@ -64,9 +64,9 @@ const serviceSchema = {
   provider: {
     '@type': 'LocalBusiness',
     name: 'FIMI Gebäudereinigung',
-    url: 'https://fimi-service.de',
+    url: 'https://fimi-gebaeudereinigung.de',
     telephone: '+4987143033460',
-    email: 'info@fimi-service.de',
+    email: 'info@fimi-gebaeudereinigung.de',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Siemensstraße 11',

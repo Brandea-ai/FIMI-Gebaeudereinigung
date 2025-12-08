@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     description: 'Vergrünte Fassade? Wir entfernen Algen, Moos und Grünbelag schonend und nachhaltig. Günstiger als Neuanstrich. Kostenfreie Besichtigung.',
     type: 'website',
     locale: 'de_DE',
-    url: 'https://fimi-service.de/leistungen/fassadenreinigung',
+    url: 'https://fimi-gebaeudereinigung.de/leistungen/fassadenreinigung',
     siteName: 'FIMI Gebäudereinigung',
     images: [
       {
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     description: 'Algen & Moos entfernen. Günstiger als Neuanstrich. Kostenfreie Besichtigung.',
   },
   alternates: {
-    canonical: 'https://fimi-service.de/leistungen/fassadenreinigung',
+    canonical: 'https://fimi-gebaeudereinigung.de/leistungen/fassadenreinigung',
   },
   robots: {
     index: true,
@@ -72,9 +72,9 @@ const jsonLd = {
   provider: {
     '@type': 'LocalBusiness',
     name: 'FIMI Gebäudereinigung',
-    image: 'https://fimi-service.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
+    image: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
     telephone: '+4987143033460',
-    email: 'info@fimi-service.de',
+    email: 'info@fimi-gebaeudereinigung.de',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Kellerstr. 39',

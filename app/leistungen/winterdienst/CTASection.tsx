@@ -59,10 +59,10 @@ export default function CTASection() {
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
 
-            {/* Weitere Services */}
+            {/* Weitere Leistungen */}
             <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-white/10">
               <p className="text-white/60 font-semibold text-xs sm:text-sm mb-4">
-                Weitere FIMI-Services:
+                Weitere FIMI-Leistungen:
               </p>
               <div className="flex flex-wrap gap-2 sm:gap-3">
                 <Link

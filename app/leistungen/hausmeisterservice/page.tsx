@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     description: 'Professionelle Objektbetreuung für Wohnanlagen, Hausverwaltungen und Gewerbe. Kleinreparaturen, Kontrollgänge, Winterdienst. 2h Reaktionszeit garantiert.',
     type: 'website',
     locale: 'de_DE',
-    url: 'https://fimi-service.de/leistungen/hausmeisterservice',
+    url: 'https://fimi-gebaeudereinigung.de/leistungen/hausmeisterservice',
     siteName: 'FIMI Gebäudereinigung',
     images: [
       {
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     description: 'Professionelle Objektbetreuung für Wohnanlagen und Gewerbe. Kleinreparaturen, Kontrollgänge, Winterdienst. 2h Reaktionszeit.',
   },
   alternates: {
-    canonical: 'https://fimi-service.de/leistungen/hausmeisterservice',
+    canonical: 'https://fimi-gebaeudereinigung.de/leistungen/hausmeisterservice',
   },
   robots: {
     index: true,
@@ -72,9 +72,9 @@ const serviceSchema = {
   provider: {
     '@type': 'LocalBusiness',
     name: 'FIMI Gebäudereinigung',
-    image: 'https://fimi-service.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
+    image: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
     telephone: '+4987143033460',
-    email: 'info@fimi-service.de',
+    email: 'info@fimi-gebaeudereinigung.de',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Kellerstr. 39',

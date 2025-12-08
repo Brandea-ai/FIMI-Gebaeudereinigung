@@ -49,8 +49,8 @@ export default function Footer() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-600 font-semibold uppercase tracking-wide mb-1">E-Mail</p>
-                    <a href="mailto:info@fimi-service.de" className="text-xl font-bold text-[#012956] hover:text-[#109387] transition-colors">
-                      info@fimi-service.de
+                    <a href="mailto:info@fimi-gebaeudereinigung.de" className="text-xl font-bold text-[#012956] hover:text-[#109387] transition-colors">
+                      info@fimi-gebaeudereinigung.de
                     </a>
                   </div>
                 </div>

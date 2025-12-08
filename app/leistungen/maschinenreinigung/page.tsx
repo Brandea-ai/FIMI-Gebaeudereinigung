@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     description: 'CNC-Fräsen, Spritzgussmaschinen, Bearbeitungszentren professionell gereinigt. Im laufenden Betrieb möglich. 2h Reaktionszeit bei Notfällen.',
     type: 'website',
     locale: 'de_DE',
-    url: 'https://fimi-service.de/leistungen/maschinenreinigung',
+    url: 'https://fimi-gebaeudereinigung.de/leistungen/maschinenreinigung',
     siteName: 'FIMI Gebäudereinigung',
     images: [
       {
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     description: 'CNC, Spritzguss & Produktionsanlagen professionell gereinigt. Im laufenden Betrieb möglich.',
   },
   alternates: {
-    canonical: 'https://fimi-service.de/leistungen/maschinenreinigung',
+    canonical: 'https://fimi-gebaeudereinigung.de/leistungen/maschinenreinigung',
   },
   robots: {
     index: true,
@@ -72,9 +72,9 @@ const serviceSchema = {
   provider: {
     '@type': 'LocalBusiness',
     name: 'FIMI Gebäudereinigung',
-    image: 'https://fimi-service.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
+    image: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
     telephone: '+4987143033460',
-    email: 'info@fimi-service.de',
+    email: 'info@fimi-gebaeudereinigung.de',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Kellerstr. 39',

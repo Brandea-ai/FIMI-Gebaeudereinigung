@@ -21,7 +21,7 @@ import { blogPosts } from '@/lib/blog-data'
  * - yearly: Rechtliche Seiten
  */
 
-const baseUrl = 'https://fimi-service.de'
+const baseUrl = 'https://fimi-gebaeudereinigung.de'
 
 // Alle 17 Leistungen-Slugs
 const leistungenSlugs = [

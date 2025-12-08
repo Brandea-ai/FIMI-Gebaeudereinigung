@@ -10,7 +10,7 @@ import { MetadataRoute } from 'next'
  * - Crawl-Delay nur für aggressive Bots
  */
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://fimi-service.de'
+  const baseUrl = 'https://fimi-gebaeudereinigung.de'
 
   return {
     rules: [

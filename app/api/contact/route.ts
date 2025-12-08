@@ -218,8 +218,8 @@ export async function POST(request: NextRequest) {
       try {
         // 1. Email to FIMI (Admin)
         await resend.emails.send({
-          from: 'FIMI Kontaktformular <noreply@fimi-service.de>',
-          to: ['info@fimi-service.de'],
+          from: 'FIMI Kontaktformular <noreply@fimi-gebaeudereinigung.de>',
+          to: ['kontakt@fimi-gebaeudereinigung.de'],
           replyTo: sanitizedData.email,
           subject: `Neue Anfrage: ${sanitizedData.name}${sanitizedData.service ? ` - ${sanitizedData.service}` : ''} [${requestId}]`,
           html: generateAdminEmail({
@@ -231,7 +231,7 @@ export async function POST(request: NextRequest) {
 
         // 2. Confirmation Email to Customer
         await resend.emails.send({
-          from: 'FIMI Gebäudereinigung <noreply@fimi-service.de>',
+          from: 'FIMI Gebäudereinigung <noreply@fimi-gebaeudereinigung.de>',
           to: [sanitizedData.email],
           subject: `Ihre Anfrage bei FIMI - ${requestId}`,
           html: generateConfirmationEmail({
@@ -247,7 +247,7 @@ export async function POST(request: NextRequest) {
       }
     } else {
       // Development mode - log to console
-      console.log('📧 Admin Email would be sent to: info@fimi-service.de')
+      console.log('📧 Admin Email would be sent to: kontakt@fimi-gebaeudereinigung.de')
       console.log('📧 Confirmation Email would be sent to:', sanitizedData.email)
       console.log('Request ID:', requestId)
       console.log('Data:', sanitizedData)

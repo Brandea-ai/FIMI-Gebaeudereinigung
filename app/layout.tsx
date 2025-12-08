@@ -20,7 +20,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://fimi-service.de'),
+  metadataBase: new URL('https://fimi-gebaeudereinigung.de'),
   title: {
     default: 'Gebäudereinigung Bayern | FIMI - Professionelle Reinigung',
     template: '%s | FIMI Gebäudereinigung',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'de_DE',
-    url: 'https://fimi-service.de',
+    url: 'https://fimi-gebaeudereinigung.de',
     siteName: 'FIMI Gebäudereinigung',
     title: 'Gebäudereinigung Bayern | FIMI - Professionelle Reinigung',
     description: 'Professionelle Gebäudereinigung in Bayern. 8+ Jahre Erfahrung. 120+ zufriedene Kunden.',
@@ -108,21 +108,21 @@ export const metadata: Metadata = {
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  '@id': 'https://fimi-service.de/#organization',
+  '@id': 'https://fimi-gebaeudereinigung.de/#organization',
   name: 'FIMI Gebäudereinigung',
   alternateName: ['FIMI', 'FIMI Service', 'FIMI Gebäudeservice'],
-  url: 'https://fimi-service.de',
+  url: 'https://fimi-gebaeudereinigung.de',
   logo: {
     '@type': 'ImageObject',
-    '@id': 'https://fimi-service.de/#logo',
-    url: 'https://fimi-service.de/FIMI-LOGO/Fimi-Favicon.png',
-    contentUrl: 'https://fimi-service.de/FIMI-LOGO/Fimi-Favicon.png',
+    '@id': 'https://fimi-gebaeudereinigung.de/#logo',
+    url: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/Fimi-Favicon.png',
+    contentUrl: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/Fimi-Favicon.png',
     caption: 'FIMI Gebäudereinigung Logo',
     width: 512,
     height: 512,
   },
-  image: 'https://fimi-service.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
-  email: 'info@fimi-service.de',
+  image: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
+  email: 'info@fimi-gebaeudereinigung.de',
   telephone: '+4987143033460',
   foundingDate: '2016',
   numberOfEmployees: {
@@ -175,19 +175,19 @@ const organizationSchema = {
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  '@id': 'https://fimi-service.de/#website',
-  url: 'https://fimi-service.de',
+  '@id': 'https://fimi-gebaeudereinigung.de/#website',
+  url: 'https://fimi-gebaeudereinigung.de',
   name: 'FIMI Gebäudereinigung',
   description: 'Professionelle Gebäudereinigung in Bayern - Landshut, München, Regensburg',
   publisher: {
-    '@id': 'https://fimi-service.de/#organization',
+    '@id': 'https://fimi-gebaeudereinigung.de/#organization',
   },
   inLanguage: 'de-DE',
   potentialAction: {
     '@type': 'SearchAction',
     target: {
       '@type': 'EntryPoint',
-      urlTemplate: 'https://fimi-service.de/leistungen?q={search_term_string}',
+      urlTemplate: 'https://fimi-gebaeudereinigung.de/leistungen?q={search_term_string}',
     },
     'query-input': 'required name=search_term_string',
   },
@@ -197,12 +197,12 @@ const websiteSchema = {
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  '@id': 'https://fimi-service.de/#localbusiness',
+  '@id': 'https://fimi-gebaeudereinigung.de/#localbusiness',
   name: 'FIMI Gebäudereinigung',
-  image: 'https://fimi-service.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
-  url: 'https://fimi-service.de',
+  image: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
+  url: 'https://fimi-gebaeudereinigung.de',
   telephone: '+4987143033460',
-  email: 'info@fimi-service.de',
+  email: 'info@fimi-gebaeudereinigung.de',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Kellerstr. 39',
@@ -254,7 +254,7 @@ const localBusinessSchema = {
       },
       {
         '@type': 'OfferCatalog',
-        name: 'Facility Services',
+        name: 'Facility Management & Gebäudeservice',
         itemListElement: [
           { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Facility Management' } },
           { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Hausmeisterservice' } },
@@ -277,13 +277,13 @@ const localBusinessSchema = {
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
-  '@id': 'https://fimi-service.de/#breadcrumb',
+  '@id': 'https://fimi-gebaeudereinigung.de/#breadcrumb',
   itemListElement: [
     {
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: 'https://fimi-service.de',
+      item: 'https://fimi-gebaeudereinigung.de',
     },
   ],
 }

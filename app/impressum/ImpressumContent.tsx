@@ -119,8 +119,8 @@ export default function ImpressumContent() {
                       {isOnline ? 'Online' : 'Offline'}
                     </span>
                   </div>
-                  <a href="mailto:info@fimi-service.de" className="text-white font-extrabold text-lg hover:text-[#109387] transition-colors">
-                    info@fimi-service.de
+                  <a href="mailto:info@fimi-gebaeudereinigung.de" className="text-white font-extrabold text-lg hover:text-[#109387] transition-colors">
+                    info@fimi-gebaeudereinigung.de
                   </a>
                   <p className="text-white/50 font-bold mt-2">Mo-Fr: 08:00-18:00</p>
                   <p className="text-[#109387] font-bold text-sm">Notfall: 2h Reaktionszeit</p>
@@ -165,7 +165,7 @@ export default function ImpressumContent() {
 
                   <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
                     <div className="text-gray-500 font-bold w-40 flex-shrink-0">Webseite</div>
-                    <div className="text-[#109387] font-bold">www.fimi-service.de</div>
+                    <div className="text-[#109387] font-bold">www.fimi-gebaeudereinigung.de</div>
                   </div>
 
                   <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
@@ -189,7 +189,7 @@ export default function ImpressumContent() {
                   <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
                     <div className="text-gray-500 font-bold w-40 flex-shrink-0">Geschäftsführung</div>
                     <div>
-                      <div className="text-[#012956] font-extrabold">Ntonalnt Tzoutzis & Ergest Qiraj</div>
+                      <div className="text-[#012956] font-extrabold">Donald Tzoutzis & Ergkest Qirjaj</div>
                       <p className="text-gray-600 font-semibold text-sm mt-1">Vertretungsberechtigte Gesellschafter und inhaltlich verantwortlich gemäß § 18 Abs. 2 MStV</p>
                     </div>
                   </div>
@@ -255,11 +255,11 @@ export default function ImpressumContent() {
                   <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
                     <div className="text-gray-500 font-bold w-40 flex-shrink-0">E-Mail</div>
                     <div className="flex items-center gap-3">
-                      <a href="mailto:info@fimi-service.de" className="text-[#109387] font-extrabold text-lg hover:text-[#012956] transition-colors">
-                        info@fimi-service.de
+                      <a href="mailto:info@fimi-gebaeudereinigung.de" className="text-[#109387] font-extrabold text-lg hover:text-[#012956] transition-colors">
+                        info@fimi-gebaeudereinigung.de
                       </a>
                       <button
-                        onClick={() => copyToClipboard('info@fimi-service.de', 'email')}
+                        onClick={() => copyToClipboard('info@fimi-gebaeudereinigung.de', 'email')}
                         className="p-2 rounded-[6px] bg-[#f8f9fa] hover:bg-[#109387] hover:text-white text-gray-500 transition-all"
                         title="E-Mail kopieren"
                       >

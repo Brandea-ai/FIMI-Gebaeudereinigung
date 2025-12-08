@@ -136,8 +136,8 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
                   </tr>
                   <tr>
                     <td style="padding: 8px 0;">
-                      <a href="mailto:info@fimi-service.de" style="color: rgba(255,255,255,0.8); font-size: 15px; text-decoration: none;">
-                        info@fimi-service.de
+                      <a href="mailto:info@fimi-gebaeudereinigung.de" style="color: rgba(255,255,255,0.8); font-size: 15px; text-decoration: none;">
+                        info@fimi-gebaeudereinigung.de
                       </a>
                     </td>
                   </tr>
@@ -164,7 +164,7 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
 
         <!-- Unsubscribe Notice -->
         <p style="margin: 20px 0 0; color: #999; font-size: 11px; text-align: center;">
-          Diese E-Mail wurde automatisch versendet. Sie erhalten diese Nachricht, weil Sie eine Anfrage auf fimi-service.de gestellt haben.
+          Diese E-Mail wurde automatisch versendet. Sie erhalten diese Nachricht, weil Sie eine Anfrage auf fimi-gebaeudereinigung.de gestellt haben.
         </p>
 
       </td>

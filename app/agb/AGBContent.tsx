@@ -475,7 +475,7 @@ export default function AGBContent() {
 
                   <p className="text-body">
                     (3) Nähere Informationen finden Sie in unserer Datenschutzerklärung unter{' '}
-                    <a href="/datenschutz" className="text-link">fimi-service.de/datenschutz</a>.
+                    <a href="/datenschutz" className="text-link">fimi-gebaeudereinigung.de/datenschutz</a>.
                   </p>
                 </article>
 

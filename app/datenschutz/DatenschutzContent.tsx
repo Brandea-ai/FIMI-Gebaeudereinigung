@@ -406,7 +406,7 @@ Mit freundlichen Grüßen
                       </tr>
                       <tr>
                         <td className="info-table-label">Vertretung:</td>
-                        <td className="info-table-value">Ntonalnt Tzoutzis & Ergest Qiraj (Geschäftsführer)</td>
+                        <td className="info-table-value">Donald Tzoutzis & Ergkest Qirjaj (Geschäftsführer)</td>
                       </tr>
                       <tr>
                         <td className="info-table-label">Anschrift:</td>
@@ -425,7 +425,7 @@ Mit freundlichen Grüßen
                       <tr>
                         <td className="info-table-label">E-Mail:</td>
                         <td className="info-table-value">
-                          <a href="mailto:info@fimi-service.de" className="text-link">info@fimi-service.de</a>
+                          <a href="mailto:datenschutz@fimi-gebaeudereinigung.de" className="text-link">datenschutz@fimi-gebaeudereinigung.de</a>
                         </td>
                       </tr>
                       <tr>

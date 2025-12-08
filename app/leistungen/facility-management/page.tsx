@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     description: 'Alle Gebäudedienstleistungen aus einer Hand: Reinigung, Hausmeister, Winterdienst, Grünpflege. Ein Ansprechpartner für Ihr Objekt. 2h Reaktionszeit garantiert.',
     type: 'website',
     locale: 'de_DE',
-    url: 'https://fimi-service.de/leistungen/facility-management',
+    url: 'https://fimi-gebaeudereinigung.de/leistungen/facility-management',
     siteName: 'FIMI Gebäudereinigung',
     images: [
       {
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     description: 'Gebäudeservice aus einer Hand: Reinigung, Hausmeister, Winterdienst. Ein Ansprechpartner. 2h Reaktionszeit.',
   },
   alternates: {
-    canonical: 'https://fimi-service.de/leistungen/facility-management',
+    canonical: 'https://fimi-gebaeudereinigung.de/leistungen/facility-management',
   },
   robots: {
     index: true,
@@ -72,9 +72,9 @@ const serviceSchema = {
   provider: {
     '@type': 'LocalBusiness',
     name: 'FIMI Gebäudereinigung',
-    image: 'https://fimi-service.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
+    image: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
     telephone: '+4987143033460',
-    email: 'info@fimi-service.de',
+    email: 'info@fimi-gebaeudereinigung.de',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Kellerstr. 39',

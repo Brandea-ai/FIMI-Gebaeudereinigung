@@ -24,8 +24,8 @@ export const siteConfig = {
       international: '+49 871 430 334 60',
     },
     email: {
-      display: 'info@fimi-service.de',
-      href: 'mailto:info@fimi-service.de',
+      display: 'info@fimi-gebaeudereinigung.de',
+      href: 'mailto:info@fimi-gebaeudereinigung.de',
     },
     address: {
       street: 'Kellerstr. 39',
@@ -54,7 +54,7 @@ export const siteConfig = {
 
   // URLs
   urls: {
-    website: 'https://fimi-service.de',
+    website: 'https://fimi-gebaeudereinigung.de',
     mapsDirection: 'https://www.google.com/maps/dir/?api=1&destination=Kellerstr.+39,+84036+Landshut',
     mapsEmbed: 'https://maps.google.com/maps?q=Kellerstra%C3%9Fe+39,+84036+Landshut,+Germany&t=&z=15&ie=UTF8&iwloc=&output=embed',
   },
@@ -64,7 +64,7 @@ export const siteConfig = {
     registergericht: 'Amtsgericht Landshut',
     handelsregister: 'In Bearbeitung',
     ustId: 'DE347549925',
-    geschaeftsfuehrer: 'Ntonalnt Tzoutzis & Ergest Qiraj',
+    geschaeftsfuehrer: 'Donald Tzoutzis & Ergkest Qirjaj',
   },
 
   // Servicegebiet
