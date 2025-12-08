@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { kv } from '@vercel/kv'
 import { generateAdminEmail } from '@/lib/email-templates/admin-email'
 import { generateConfirmationEmail } from '@/lib/email-templates/confirmation-email'
 
@@ -31,54 +32,57 @@ function checkRateLimit(ip: string): boolean {
   return true
 }
 
-// Reference Number Generator - Obfuscated format
-// Format: FIMI-{year}{counter}{daymonth}-{service}
-// Counter is based on time to create unique, non-sequential looking IDs
-const serviceCounters: Record<string, { count: number; lastDate: string }> = {}
+// Service abbreviation map
+const serviceMap: Record<string, string> = {
+  'Unterhaltsreinigung': 'UR',
+  'Büroreinigung': 'BR',
+  'Industriereinigung': 'IR',
+  'Fensterreinigung': 'FR',
+  'Glasreinigung': 'GR',
+  'Fassadenreinigung': 'FA',
+  'Hallenreinigung': 'HR',
+  'Maschinenreinigung': 'MR',
+  'Facility Management': 'FM',
+  'Winterdienst': 'WD',
+  'Hausmeisterservice': 'HS',
+  'Außenanlagenpflege': 'AP',
+  'Baureinigung': 'BA',
+  'Sonderreinigung': 'SR',
+  'Tiefgaragenreinigung': 'TG',
+  'Parkplatzreinigung': 'PP',
+  'Sonstiges': 'SO',
+}
 
-function generateRequestId(service?: string): string {
+// Reference Number Generator - Persistent counters with Vercel KV
+// Format: FIMI-{year}{counter}{daymonth}-{service}
+// Each service has its own counter that never resets
+async function generateRequestId(service?: string): Promise<string> {
   const now = new Date()
   const year = now.getFullYear()
   const month = String(now.getMonth() + 1).padStart(2, '0')
   const day = String(now.getDate()).padStart(2, '0')
-  const dateKey = `${year}${month}${day}`
-
-  // Service abbreviation
-  const serviceMap: Record<string, string> = {
-    'Unterhaltsreinigung': 'UR',
-    'Büroreinigung': 'BR',
-    'Industriereinigung': 'IR',
-    'Fensterreinigung': 'FR',
-    'Glasreinigung': 'GR',
-    'Fassadenreinigung': 'FA',
-    'Hallenreinigung': 'HR',
-    'Maschinenreinigung': 'MR',
-    'Facility Management': 'FM',
-    'Winterdienst': 'WD',
-    'Hausmeisterservice': 'HS',
-    'Außenanlagenpflege': 'AP',
-    'Baureinigung': 'BA',
-    'Sonderreinigung': 'SR',
-    'Tiefgaragenreinigung': 'TG',
-    'Parkplatzreinigung': 'PP',
-    'Sonstiges': 'SO',
-  }
 
   const serviceCode = service ? (serviceMap[service] || 'AN') : 'AN'
 
-  // Separate counter per service, resets daily
-  const counterKey = `${serviceCode}-${dateKey}`
-  if (!serviceCounters[counterKey] || serviceCounters[counterKey].lastDate !== dateKey) {
-    serviceCounters[counterKey] = { count: 0, lastDate: dateKey }
-  }
-  serviceCounters[counterKey].count++
+  // Persistent counter per service using Vercel KV
+  // Key: fimi:counter:{serviceCode} - Value increments forever
+  const counterKey = `fimi:counter:${serviceCode}`
 
-  // 4-digit counter (0001-9999)
-  const counter = String(serviceCounters[counterKey].count).padStart(4, '0')
+  let counter = 1
+  try {
+    // Increment counter in KV (atomic operation)
+    counter = await kv.incr(counterKey)
+  } catch {
+    // Fallback if KV not available (dev environment)
+    counter = Math.floor(Math.random() * 9000) + 1000
+  }
+
+  // 4-digit counter (0001-9999, then 10000+)
+  const counterStr = String(counter).padStart(4, '0')
 
   // Obfuscated format: FIMI-{year}{counter}{daymonth}-{service}
-  // Example: FIMI-202500011208-BR (looks like one big number)
-  return `FIMI-${year}${counter}${day}${month}-${serviceCode}`
+  // Example: FIMI-202500011208-BR (counter hidden in number)
+  return `FIMI-${year}${counterStr}${day}${month}-${serviceCode}`
 }
 
 // Validation
@@ -218,7 +222,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Generate request ID
-    const requestId = generateRequestId(sanitizedData.service)
+    const requestId = await generateRequestId(sanitizedData.service)
 
     // Format date for email
     const submittedAt = new Date().toLocaleString('de-DE', {
