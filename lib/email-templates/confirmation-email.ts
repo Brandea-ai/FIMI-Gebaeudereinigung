@@ -127,7 +127,7 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
                   Sie können direkt auf diese E-Mail antworten
                 </p>
                 <p style="margin: 8px 0 0; color: #666; font-size: 14px; line-height: 1.6;">
-                  Bei weiteren Fragen oder Ergänzungen zu Ihrer Anfrage antworten Sie einfach auf diese E-Mail – wir erhalten Ihre Nachricht direkt.
+                  Bei weiteren Fragen oder Ergänzungen antworten Sie einfach auf diese E-Mail.
                 </p>
               </div>
 
@@ -179,7 +179,7 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
         <!-- Legal Disclaimer -->
         <div style="margin: 25px 0 0; padding: 20px; background-color: #f8f9fa; border-radius: 6px;">
           <p style="margin: 0 0 10px; color: #666; font-size: 11px; text-align: left; line-height: 1.6;">
-            <strong style="color: #012956;">Datenschutzhinweis:</strong> Ihre Daten werden gemäß DSGVO verarbeitet und ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Eine Weitergabe an Dritte erfolgt nicht. Weitere Informationen finden Sie in unserer <a href="https://fimi-gebaeudereinigung.de/datenschutz" style="color: #109387; text-decoration: none;">Datenschutzerklärung</a>. Bei Fragen zum Datenschutz: <a href="mailto:datenschutz@fimi-gebaeudereinigung.de" style="color: #109387; text-decoration: none;">datenschutz@fimi-gebaeudereinigung.de</a>
+            <strong style="color: #012956;">Datenschutzhinweis:</strong> Ihre Daten werden gemäß DSGVO verarbeitet und ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Eine Weitergabe an Dritte erfolgt nicht.<br>Weitere Informationen: <a href="https://fimi-gebaeudereinigung.de/datenschutz" style="color: #109387; text-decoration: none;">Datenschutzerklärung</a> | Fragen: <a href="mailto:datenschutz@fimi-gebaeudereinigung.de" style="color: #109387; text-decoration: none;">datenschutz@fimi-gebaeudereinigung.de</a>
           </p>
           <p style="margin: 0 0 10px; color: #666; font-size: 11px; text-align: left; line-height: 1.6;">
             <strong style="color: #012956;">Vertraulichkeit:</strong> Diese E-Mail und eventuelle Anhänge sind ausschließlich für den bezeichneten Adressaten bestimmt. Sollten Sie diese E-Mail irrtümlich erhalten haben, informieren Sie uns bitte umgehend und löschen Sie die Nachricht.

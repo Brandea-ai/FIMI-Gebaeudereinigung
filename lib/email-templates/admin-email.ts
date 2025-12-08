@@ -144,7 +144,7 @@ export function generateAdminEmail(data: AdminEmailData): string {
                 Nachricht
               </h2>
 
-              <div style="background-color: #f8f9fa; padding: 20px; border-radius: 6px; border-left: 4px solid #109387; margin-bottom: 30px;">
+              <div style="background-color: #f8f9fa; padding: 20px; border-radius: 6px; margin-bottom: 30px;">
                 <p style="margin: 0; color: #333; font-size: 15px; line-height: 1.6; white-space: pre-wrap;">${message}</p>
               </div>
               ` : ''}
