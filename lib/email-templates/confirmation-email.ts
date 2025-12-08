@@ -26,10 +26,10 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
           <tr>
             <td style="background-color: #012956; padding: 30px 40px; border-radius: 6px 6px 0 0; text-align: center;">
               <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: 700;">
-                FIMI
+                FIMI Gebäudereinigung
               </h1>
               <p style="margin: 5px 0 0; color: #109387; font-size: 14px; font-weight: 600; letter-spacing: 1px;">
-                GEBÄUDEREINIGUNG
+                GmbH • Professionelle Reinigung in Bayern
               </p>
             </td>
           </tr>
@@ -48,11 +48,11 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
             <td style="background-color: #ffffff; padding: 40px;">
 
               <h2 style="margin: 0 0 20px; color: #012956; font-size: 24px; font-weight: 700;">
-                Vielen Dank, ${firstName}!
+                Herzlichen Dank für Ihre Anfrage, ${firstName}!
               </h2>
 
               <p style="margin: 0 0 25px; color: #333; font-size: 16px; line-height: 1.7;">
-                Wir haben Ihre Anfrage${service ? ` zum Thema <strong>${service}</strong>` : ''} erhalten und werden uns schnellstmöglich bei Ihnen melden.
+                Das Team von FIMI Gebäudereinigung freut sich über Ihr Interesse${service ? ` an unserer Leistung <strong>${service}</strong>` : ''}. Wir haben Ihre Anfrage erhalten und werden uns innerhalb von 2 Stunden persönlich bei Ihnen melden.
               </p>
 
               <!-- Request ID Box -->
@@ -121,10 +121,20 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
                 </tr>
               </table>
 
+              <!-- Reply Hint -->
+              <div style="background-color: #e8f5f3; border-radius: 6px; padding: 20px; margin-top: 30px; border-left: 4px solid #109387;">
+                <p style="margin: 0; color: #012956; font-size: 15px; font-weight: 600;">
+                  💬 Sie können direkt auf diese E-Mail antworten
+                </p>
+                <p style="margin: 8px 0 0; color: #666; font-size: 14px; line-height: 1.6;">
+                  Bei weiteren Fragen oder Ergänzungen zu Ihrer Anfrage antworten Sie einfach auf diese E-Mail – wir erhalten Ihre Nachricht direkt.
+                </p>
+              </div>
+
               <!-- Contact Info -->
-              <div style="background-color: #012956; border-radius: 6px; padding: 25px; margin-top: 30px;">
+              <div style="background-color: #012956; border-radius: 6px; padding: 25px; margin-top: 20px;">
                 <p style="margin: 0 0 15px; color: #ffffff; font-size: 16px; font-weight: 600;">
-                  Sie haben dringende Fragen?
+                  Sie möchten uns direkt erreichen?
                 </p>
                 <table role="presentation">
                   <tr>
@@ -150,12 +160,16 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
           <!-- Footer -->
           <tr>
             <td style="background-color: #01203d; padding: 25px 40px; border-radius: 0 0 6px 6px;">
-              <p style="margin: 0 0 10px; color: rgba(255,255,255,0.8); font-size: 14px; text-align: center; font-weight: 600;">
-                FIMI Gebäudereinigung
+              <p style="margin: 0 0 10px; color: rgba(255,255,255,0.9); font-size: 15px; text-align: center; font-weight: 700;">
+                FIMI Gebäudereinigung GmbH
               </p>
-              <p style="margin: 0; color: rgba(255,255,255,0.5); font-size: 12px; text-align: center;">
-                Kellerstr. 39 • 84036 Landshut<br>
-                Professionelle Gebäudereinigung in Bayern
+              <p style="margin: 0 0 10px; color: rgba(255,255,255,0.6); font-size: 13px; text-align: center;">
+                Kellerstr. 39 • 84036 Landshut • Bayern
+              </p>
+              <p style="margin: 0; text-align: center;">
+                <a href="https://fimi-gebaeudereinigung.de" style="color: #109387; font-size: 13px; text-decoration: none; font-weight: 600;">
+                  www.fimi-gebaeudereinigung.de
+                </a>
               </p>
             </td>
           </tr>
@@ -164,7 +178,8 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
 
         <!-- Unsubscribe Notice -->
         <p style="margin: 20px 0 0; color: #999; font-size: 11px; text-align: center;">
-          Diese E-Mail wurde automatisch versendet. Sie erhalten diese Nachricht, weil Sie eine Anfrage auf fimi-gebaeudereinigung.de gestellt haben.
+          Diese E-Mail wurde automatisch versendet, weil Sie eine Anfrage über unser Kontaktformular gestellt haben.<br>
+          © ${new Date().getFullYear()} FIMI Gebäudereinigung GmbH • Alle Rechte vorbehalten
         </p>
 
       </td>

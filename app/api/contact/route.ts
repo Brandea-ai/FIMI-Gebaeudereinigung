@@ -218,7 +218,7 @@ export async function POST(request: NextRequest) {
       try {
         // 1. Email to FIMI (Admin)
         await resend.emails.send({
-          from: 'FIMI Kontaktformular <noreply@fimi-gebaeudereinigung.de>',
+          from: 'FIMI Gebäudereinigung <info@fimi-gebaeudereinigung.de>',
           to: ['kontakt@fimi-gebaeudereinigung.de'],
           replyTo: sanitizedData.email,
           subject: `Neue Anfrage: ${sanitizedData.name}${sanitizedData.service ? ` - ${sanitizedData.service}` : ''} [${requestId}]`,
@@ -231,9 +231,10 @@ export async function POST(request: NextRequest) {
 
         // 2. Confirmation Email to Customer
         await resend.emails.send({
-          from: 'FIMI Gebäudereinigung <noreply@fimi-gebaeudereinigung.de>',
+          from: 'FIMI Gebäudereinigung GmbH <info@fimi-gebaeudereinigung.de>',
           to: [sanitizedData.email],
-          subject: `Ihre Anfrage bei FIMI - ${requestId}`,
+          replyTo: 'info@fimi-gebaeudereinigung.de',
+          subject: `Ihre Anfrage bei FIMI Gebäudereinigung - ${requestId}`,
           html: generateConfirmationEmail({
             name: sanitizedData.name,
             requestId,
