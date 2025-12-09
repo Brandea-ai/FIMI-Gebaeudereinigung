@@ -1,26 +1,23 @@
 #!/usr/bin/env python3
 """
-FIMI Einzelbild-Generator
-==========================
-Generiert einzelne Bilder mit Imagen 3 für manuelle Qualitätskontrolle.
+FIMI Bildgenerator mit Gemini 3 Pro Image (Nano Banana Pro)
+============================================================
+Generiert Bilder mit dem FIMI Logo als Referenz für konsistentes Branding.
 
 Usage:
-    # Voraussetzungen prüfen:
-    python3 setup_check.py
-
-    # Einzelnes Bild generieren:
-    python3 generate_single.py --name "hero-team" --prompt "Team vor Gebäude" --ratio "16:9" --output "home"
-
-    # Alle fehlenden Startseiten-Bilder:
-    python3 generate_single.py --startseite
+    python3 setup_check.py                    # Voraussetzungen prüfen
+    python3 generate_single.py --startseite   # Alle Startseiten-Bilder
+    python3 generate_single.py --name "bild" --prompt "Beschreibung" --ratio "16:9"
 """
 
 import os
 import sys
 import time
 import argparse
+import base64
 from pathlib import Path
 from datetime import datetime
+from io import BytesIO
 
 # ============================================================================
 # DEPENDENCY CHECK
@@ -53,7 +50,6 @@ def check_dependencies():
 
 check_dependencies()
 
-# Imports nach Check
 from google import genai
 from google.genai import types
 from PIL import Image
@@ -64,43 +60,45 @@ import pillow_avif
 # ============================================================================
 
 SCRIPT_DIR = Path(__file__).parent
+PROJECT_ROOT = SCRIPT_DIR.parent
 CREDENTIALS_PATH = SCRIPT_DIR / "credentials" / "fimi-bilder-credentials.json"
-PUBLIC_DIR = SCRIPT_DIR.parent / "public" / "images"
+PUBLIC_DIR = PROJECT_ROOT / "public" / "images"
 LOG_FILE = SCRIPT_DIR / "generation_log.txt"
 
-# Master Style Prompt
-MASTER_STYLE = """FIMI Corporate Photography Style - Premium German Cleaning Company
+# FIMI Logo als Referenzbild
+LOGO_PATH = PROJECT_ROOT / "public" / "FIMI-LOGO" / "FIMI-Logo.png"
 
-BRAND IDENTITY:
-- Company: FIMI Gebäudereinigung (Professional cleaning services)
-- Primary Color: Deep navy blue (#012956)
-- Accent Color: Teal (#109387)
-- Mood: Trustworthy, competent, premium quality, authentically German
+# Modell: Gemini 3 Pro Image (Nano Banana Pro)
+MODEL_NAME = "gemini-2.0-flash-exp"  # Aktuelles Modell mit Bildgenerierung
 
-PHOTOGRAPHY STYLE:
-- Style: High-end commercial corporate photography
-- Lighting: Bright natural daylight, soft professional shadows
-- Focus: Sharp with subtle depth of field
-- Post-processing: Clean, vibrant but not oversaturated
+# ============================================================================
+# MASTER STYLE PROMPT
+# ============================================================================
 
-WORKWEAR (Engelbert Strauss Style):
-- Navy blue (#012956) polo shirts, jackets, or work pants
-- FIMI logo: small on left chest, large on back
-- Clean, professional appearance
-- Quality German workwear look
+MASTER_STYLE = """FIMI Gebäudereinigung - Corporate Photography
 
-CRITICAL REQUIREMENTS:
-- NO stock photo aesthetic - must look authentic
-- NO generic/international look - German environment
-- MUST be photorealistic (not illustration)
-- NO AI artifacts (extra fingers, distorted faces)
-- Professional corporate photography feel
+MARKENIDENTITÄT (siehe Referenz-Logo):
+- Firmenname: FIMI Gebäudereinigung
+- Primärfarbe: Tiefes Marineblau (#012956)
+- Akzentfarbe: Türkis (#109387)
+- Stil: Professionell, vertrauenswürdig, deutsch
 
-EQUIPMENT BRANDS (for authenticity):
-- Kärcher (yellow/black) - floor scrubbers, pressure washers
-- Unger (green) - window cleaning tools
-- Vermop - mop systems, cleaning carts
-- Numatic Henry (red) - vacuum cleaners
+FOTOGRAFIE-STIL:
+- High-End Corporate Photography
+- Natürliches Tageslicht
+- Scharf mit dezenter Tiefenschärfe
+- Authentisch, kein Stock-Photo-Look
+
+ARBEITSKLEIDUNG:
+- Marineblaue Poloshirts/Jacken (#012956)
+- Sauberes, professionelles Erscheinungsbild
+- Deutsche Arbeitskleidung-Qualität
+
+WICHTIG:
+- Fotorealistisch, keine Illustration
+- Keine KI-Artefakte
+- Deutsches Umfeld erkennbar
+- Professioneller Corporate-Look
 """
 
 # ============================================================================
@@ -108,7 +106,7 @@ EQUIPMENT BRANDS (for authenticity):
 # ============================================================================
 
 def init_client():
-    """Initialisiert den Google GenAI Client mit Vertex AI."""
+    """Initialisiert den Google GenAI Client."""
 
     if not CREDENTIALS_PATH.exists():
         print(f"\n❌ CREDENTIALS FEHLEN:")
@@ -124,7 +122,7 @@ def init_client():
             project="fimi-bilder",
             location="us-central1"
         )
-        print("✓ Vertex AI Client initialisiert")
+        print("✓ Google GenAI Client initialisiert")
         return client
 
     except Exception as e:
@@ -133,29 +131,122 @@ def init_client():
         sys.exit(1)
 
 # ============================================================================
+# LOGO LOADING
+# ============================================================================
+
+def load_logo():
+    """Lädt das FIMI Logo als PIL Image."""
+    if not LOGO_PATH.exists():
+        print(f"\n❌ LOGO NICHT GEFUNDEN:")
+        print(f"   Erwartet: {LOGO_PATH}\n")
+        sys.exit(1)
+
+    logo = Image.open(LOGO_PATH)
+    print(f"✓ Logo geladen: {LOGO_PATH.name}")
+    return logo
+
+# ============================================================================
 # IMAGE GENERATION
 # ============================================================================
 
-def generate_image(client, prompt: str, aspect_ratio: str = "16:9", retries: int = 3) -> bytes:
+def generate_image(client, prompt: str, aspect_ratio: str = "16:9", logo: Image = None, retries: int = 3) -> Image:
     """
-    Generiert ein Bild mit Imagen 3.
+    Generiert ein Bild mit Gemini und optionalem Logo als Referenz.
 
     Args:
         client: Google GenAI Client
-        prompt: Bildprompt (wird mit MASTER_STYLE kombiniert)
-        aspect_ratio: z.B. "16:9", "3:4", "1:1", "9:16"
-        retries: Anzahl Wiederholungsversuche bei Fehlern
+        prompt: Bildprompt
+        aspect_ratio: z.B. "16:9", "4:3", "3:4", "1:1"
+        logo: FIMI Logo als PIL Image (Referenz)
+        retries: Anzahl Wiederholungsversuche
 
     Returns:
-        Bild als Bytes
+        PIL Image
     """
-    full_prompt = f"{MASTER_STYLE}\n\n---\n\nGENERATE THIS IMAGE:\n{prompt}"
+    # Kombiniere Style und Prompt
+    full_prompt = f"""{MASTER_STYLE}
 
-    print(f"\n📸 Generiere Bild...")
+---
+
+GENERIERE DIESES BILD:
+{prompt}
+
+Seitenverhältnis: {aspect_ratio}
+Das Bild soll die Markenfarben des Referenz-Logos widerspiegeln.
+"""
+
+    print(f"\n📸 Generiere Bild mit Gemini...")
     print(f"   Aspect Ratio: {aspect_ratio}")
     print(f"   Prompt: {prompt[:80]}...")
 
     last_error = None
+
+    for attempt in range(1, retries + 1):
+        try:
+            # Content für Request aufbauen
+            contents = [full_prompt]
+
+            # Logo als Referenz hinzufügen wenn vorhanden
+            if logo:
+                contents.insert(0, "Referenz-Logo für Markenfarben und Corporate Identity:")
+                contents.insert(1, logo)
+
+            response = client.models.generate_content(
+                model=MODEL_NAME,
+                contents=contents,
+                config=types.GenerateContentConfig(
+                    response_modalities=["IMAGE", "TEXT"],
+                )
+            )
+
+            # Bild aus Response extrahieren
+            if response.candidates:
+                for part in response.candidates[0].content.parts:
+                    if hasattr(part, 'inline_data') and part.inline_data:
+                        # Daten sind bereits Bytes (nicht Base64)
+                        image_data = part.inline_data.data
+                        img = Image.open(BytesIO(image_data))
+                        print(f"   ✓ Bild generiert (Versuch {attempt}/{retries})")
+                        return img
+
+            print(f"   ⚠️  Keine Bilddaten in Response (Versuch {attempt}/{retries})")
+
+        except Exception as e:
+            last_error = e
+            error_str = str(e)
+
+            if "PERMISSION_DENIED" in error_str:
+                print(f"\n❌ PERMISSION DENIED")
+                print(f"   Service Account braucht entsprechende Berechtigungen!")
+                print(f"   Projekt: fimi-bilder\n")
+                sys.exit(1)
+
+            elif "RESOURCE_EXHAUSTED" in error_str:
+                wait_time = 30 * attempt
+                print(f"   ⏳ Rate Limit - warte {wait_time}s (Versuch {attempt}/{retries})")
+                time.sleep(wait_time)
+
+            elif "not found" in error_str.lower() or "404" in error_str:
+                print(f"\n❌ MODELL NICHT VERFÜGBAR: {MODEL_NAME}")
+                print(f"   Fehler: {error_str[:100]}")
+                print(f"   Versuche alternatives Modell...\n")
+                # Fallback zu Imagen 3
+                return generate_image_imagen(client, prompt, aspect_ratio, retries - attempt)
+
+            else:
+                print(f"   ⚠️  Fehler: {error_str[:80]}... (Versuch {attempt}/{retries})")
+                time.sleep(10)
+
+    raise Exception(f"Bildgenerierung nach {retries} Versuchen fehlgeschlagen: {last_error}")
+
+
+def generate_image_imagen(client, prompt: str, aspect_ratio: str = "16:9", retries: int = 3) -> Image:
+    """
+    Fallback: Generiert Bild mit Imagen 3.
+    """
+    full_prompt = f"{MASTER_STYLE}\n\n---\n\nGENERIERE DIESES BILD:\n{prompt}"
+
+    print(f"\n📸 Fallback: Generiere mit Imagen 3...")
 
     for attempt in range(1, retries + 1):
         try:
@@ -171,60 +262,28 @@ def generate_image(client, prompt: str, aspect_ratio: str = "16:9", retries: int
             )
 
             if response.generated_images:
-                print(f"   ✓ Bild generiert (Versuch {attempt}/{retries})")
-                return response.generated_images[0].image.image_bytes
+                image_bytes = response.generated_images[0].image.image_bytes
+                img = Image.open(BytesIO(image_bytes))
+                print(f"   ✓ Bild generiert mit Imagen 3 (Versuch {attempt}/{retries})")
+                return img
 
         except Exception as e:
-            last_error = e
-            error_str = str(e)
+            print(f"   ⚠️  Imagen-Fehler: {str(e)[:60]}... (Versuch {attempt}/{retries})")
+            time.sleep(10)
 
-            if "PERMISSION_DENIED" in error_str:
-                print(f"\n❌ PERMISSION DENIED - Service Account braucht 'Vertex AI User' Rolle!")
-                print(f"   Öffne: https://console.cloud.google.com/iam-admin/iam?project=fimi-bilder")
-                print(f"   Füge Rolle 'Vertex AI User' hinzu für: fimi-bildgenerator@fimi-bilder.iam.gserviceaccount.com\n")
-                sys.exit(1)
+    raise Exception(f"Imagen 3 Fallback fehlgeschlagen nach {retries} Versuchen")
 
-            elif "RESOURCE_EXHAUSTED" in error_str:
-                wait_time = 30 * attempt
-                print(f"   ⏳ Rate Limit - warte {wait_time}s (Versuch {attempt}/{retries})")
-                time.sleep(wait_time)
-
-            elif "SAFETY" in error_str.upper():
-                print(f"   ⚠️  Safety Filter - passe Prompt an (Versuch {attempt}/{retries})")
-                # Könnte hier Prompt anpassen
-                time.sleep(5)
-
-            else:
-                print(f"   ⚠️  Fehler: {error_str[:60]}... (Versuch {attempt}/{retries})")
-                time.sleep(10)
-
-    raise Exception(f"Bildgenerierung nach {retries} Versuchen fehlgeschlagen: {last_error}")
 
 # ============================================================================
 # IMAGE SAVING
 # ============================================================================
 
-def save_image(image_bytes: bytes, name: str, target_dir: Path) -> Path:
+def save_image(img: Image, name: str, target_dir: Path) -> Path:
     """
     Speichert Bild als AVIF + WebP in responsiven Größen.
-
-    Args:
-        image_bytes: Rohes Bild von der API
-        name: Dateiname ohne Erweiterung (z.B. "hero-team")
-        target_dir: Zielverzeichnis (z.B. public/images/home)
-
-    Returns:
-        Pfad zur Hauptdatei (.avif)
     """
     target_dir.mkdir(parents=True, exist_ok=True)
 
-    # Temporär speichern
-    temp_path = target_dir / f"{name}_temp.png"
-    with open(temp_path, 'wb') as f:
-        f.write(image_bytes)
-
-    # Mit Pillow öffnen
-    img = Image.open(temp_path)
     if img.mode == 'RGBA':
         img = img.convert('RGB')
 
@@ -232,7 +291,7 @@ def save_image(image_bytes: bytes, name: str, target_dir: Path) -> Path:
     print(f"\n💾 Speichere Bild...")
     print(f"   Original: {original_size}")
 
-    # Responsive Größen (nur kleiner als Original)
+    # Responsive Größen
     sizes = [1920, 1440, 1024, 768, 384]
     saved_sizes = []
 
@@ -246,7 +305,6 @@ def save_image(image_bytes: bytes, name: str, target_dir: Path) -> Path:
             resized = img
             actual_size = img.width
 
-        # Skip wenn diese Größe schon gespeichert wurde
         if actual_size in saved_sizes:
             continue
         saved_sizes.append(actual_size)
@@ -261,15 +319,12 @@ def save_image(image_bytes: bytes, name: str, target_dir: Path) -> Path:
 
         print(f"   ✓ {actual_size}w: AVIF + WebP")
 
-    # Hauptdatei (höchste Qualität, ohne Größensuffix)
+    # Hauptdatei
     main_avif = target_dir / f"{name}.avif"
     img.save(main_avif, 'AVIF', quality=85)
     print(f"   ✓ {name}.avif (Hauptdatei)")
 
-    # Temp löschen
-    temp_path.unlink()
-
-    # Log schreiben
+    # Log
     log_entry = f"{datetime.now().isoformat()} | {name} | {original_size} | {target_dir}\n"
     with open(LOG_FILE, 'a') as f:
         f.write(log_entry)
@@ -277,83 +332,168 @@ def save_image(image_bytes: bytes, name: str, target_dir: Path) -> Path:
     return main_avif
 
 # ============================================================================
-# PREDEFINED IMAGE SETS
+# STARTSEITE BILDER DEFINITION
 # ============================================================================
 
 STARTSEITE_IMAGES = [
     {
+        "name": "hero-team",
+        "output": "home",
+        "ratio": "16:9",
+        "prompt": """FIMI Reinigungsteam vor modernem Bürogebäude in Deutschland.
+
+SZENE:
+- Modernes deutsches Bürogebäude im Hintergrund
+- Professionelle Architektur, Glas und Stahl
+- Klarer Himmel, natürliches Tageslicht
+
+PERSONEN:
+- 3-4 FIMI Mitarbeiter (gemischtes Team)
+- Marineblaue Arbeitskleidung (#012956)
+- Selbstbewusste, professionelle Haltung
+- Freundliche aber seriöse Ausstrahlung
+
+STIMMUNG:
+- Professionell, vertrauenswürdig, kompetent
+- Premium-Qualität erkennbar
+- Corporate Photography Stil"""
+    },
+    {
+        "name": "trust-team",
+        "output": "home",
+        "ratio": "4:3",
+        "prompt": """Nahaufnahme eines FIMI Mitarbeiters bei der Arbeit.
+
+SZENE:
+- Modernes Büro oder Empfangsbereich
+- Saubere, helle Umgebung
+
+PERSON:
+- Männlicher oder weiblicher FIMI Mitarbeiter, ca. 35-45 Jahre
+- Marineblaues Poloshirt (#012956)
+- Konzentriert bei der Arbeit
+- Professionelle, freundliche Ausstrahlung
+
+TÄTIGKEIT:
+- Reinigt eine Oberfläche oder Glasfläche
+- Professionelle Mikrofasertücher
+- Sorgfältige, präzise Bewegung
+
+STIMMUNG:
+- Vertrauenswürdig, zuverlässig, kompetent"""
+    },
+    {
         "name": "service-office",
         "output": "home",
         "ratio": "4:3",
-        "prompt": """Professional office cleaning scene at a modern German company.
+        "prompt": """Büroreinigung in einem modernen deutschen Unternehmen.
 
-SCENE:
-- Bright, modern open-plan office in Germany
-- Large windows with natural daylight
-- Glass partitions, contemporary furniture
-- Clean desks with computers
+SZENE:
+- Open-Space Büro mit Schreibtischen und Computern
+- Große Fenster mit natürlichem Licht
+- Moderne Büroeinrichtung
 
 PERSON:
-- Female FIMI employee, mid-30s
-- Navy blue polo shirt with FIMI logo
-- Cleaning a desk surface with microfiber cloth
-- Professional, focused expression
+- Weibliche FIMI Mitarbeiterin, ca. 30-40 Jahre
+- Marineblaues Poloshirt (#012956)
+- Reinigt einen Schreibtisch
 
 EQUIPMENT:
-- Vermop cleaning cart visible in background
-- Professional cleaning supplies
-- Microfiber cloths
+- Professioneller Reinigungswagen im Hintergrund
+- Mikrofasertücher
+- Professionelle Reinigungsmittel
 
-MOOD: Professional, efficient, trustworthy. Shows quality office cleaning."""
+STIMMUNG:
+- Effizient, gründlich, professionell"""
     },
     {
         "name": "service-industrie",
         "output": "home",
         "ratio": "4:3",
-        "prompt": """Industrial cleaning scene in a German production facility.
+        "prompt": """Industriereinigung in einer deutschen Produktionshalle.
 
-SCENE:
-- Modern German industrial hall / production facility
-- High ceilings, industrial lighting
-- Manufacturing equipment visible
-- Clean concrete floor
+SZENE:
+- Große Industriehalle mit hohen Decken
+- Produktionsmaschinen im Hintergrund
+- Industrielle Beleuchtung
 
 PERSON:
-- Male FIMI employee, mid-40s
-- Navy blue work jacket with FIMI logo on back
-- Operating a yellow Kärcher floor scrubber machine
-- Safety shoes, professional appearance
+- Männlicher FIMI Mitarbeiter, ca. 40-50 Jahre
+- Marineblaue Arbeitsjacke (#012956)
+- Bedient professionelle Bodenreinigungsmaschine
 
 EQUIPMENT:
-- Yellow Kärcher professional floor scrubber (prominent)
-- Industrial cleaning equipment
-- Safety vest if appropriate
+- Gelbe Kärcher Scheuersaugmaschine (prominent)
+- Sicherheitsschuhe
+- Professionelle Arbeitskleidung
 
-MOOD: Competent, industrial-grade cleaning. Shows capability for demanding environments."""
+STIMMUNG:
+- Kompetent, industrietauglich, professionell"""
     },
     {
         "name": "service-facility",
         "output": "home",
         "ratio": "4:3",
-        "prompt": """Facility management overview scene - team coordination.
+        "prompt": """Facility Management Koordination vor Geschäftsgebäude.
 
-SCENE:
-- Modern German commercial building exterior or lobby
-- Professional business environment
-- Well-maintained grounds/entrance visible
+SZENE:
+- Eingangsbereich eines modernen Geschäftsgebäudes
+- Gepflegte Außenanlagen sichtbar
+- Professionelle Business-Umgebung
 
-PEOPLE:
-- Two FIMI employees in navy blue uniforms
-- One with tablet/clipboard (supervisor)
-- One with cleaning equipment
-- Professional discussion/coordination
+PERSONEN:
+- Zwei FIMI Mitarbeiter in marineblauen Uniformen
+- Einer mit Tablet/Klemmbrett (Teamleiter)
+- Einer mit Reinigungsausrüstung
+- Professionelle Besprechung
 
-EQUIPMENT:
-- Tablet or clipboard for documentation
-- Professional cleaning cart
-- Building maintenance tools
+STIMMUNG:
+- Organisiert, koordiniert, Full-Service"""
+    },
+    {
+        "name": "process-contact",
+        "output": "home",
+        "ratio": "3:4",
+        "prompt": """FIMI Kundenberater am Telefon.
 
-MOOD: Organized, comprehensive service. Shows full-service facility management capability."""
+SZENE:
+- Modernes Büro mit sauberem Schreibtisch
+- Professionelle Arbeitsumgebung
+- Heller, freundlicher Raum
+
+PERSON:
+- Männlicher oder weiblicher Mitarbeiter, ca. 30-45 Jahre
+- Business-Casual oder marineblaues Poloshirt
+- Freundlich am Telefon
+- Macht sich Notizen
+
+STIMMUNG:
+- Erreichbar, serviceorientiert, persönlich
+- Kundennähe und Professionalität"""
+    },
+    {
+        "name": "faq-service",
+        "output": "home",
+        "ratio": "16:9",
+        "prompt": """FIMI Reinigungsteam bei der Arbeit in einem modernen Gebäude.
+
+SZENE:
+- Großer Eingangsbereich oder Lobby
+- Modernes deutsches Geschäftsgebäude
+- Professionelle Architektur
+
+PERSONEN:
+- 2 FIMI Mitarbeiter bei der Arbeit
+- Marineblaue Arbeitskleidung (#012956)
+- Koordinierte Teamarbeit
+
+TÄTIGKEIT:
+- Einer reinigt Boden
+- Einer reinigt Glasflächen
+- Professionelle Ausrüstung sichtbar
+
+STIMMUNG:
+- Teamarbeit, Effizienz, Qualität"""
     },
 ]
 
@@ -361,7 +501,7 @@ MOOD: Organized, comprehensive service. Shows full-service facility management c
 # MAIN FUNCTIONS
 # ============================================================================
 
-def generate_single(client, name: str, prompt: str, ratio: str, output_subdir: str):
+def generate_single(client, name: str, prompt: str, ratio: str, output_subdir: str, logo: Image = None):
     """Generiert ein einzelnes Bild."""
     target_dir = PUBLIC_DIR / output_subdir
 
@@ -372,8 +512,8 @@ def generate_single(client, name: str, prompt: str, ratio: str, output_subdir: s
     print(f"Ratio: {ratio}")
 
     try:
-        image_bytes = generate_image(client, prompt, ratio)
-        result_path = save_image(image_bytes, name, target_dir)
+        img = generate_image(client, prompt, ratio, logo)
+        result_path = save_image(img, name, target_dir)
         print(f"\n✅ ERFOLGREICH: {result_path}")
         return True
     except Exception as e:
@@ -381,11 +521,11 @@ def generate_single(client, name: str, prompt: str, ratio: str, output_subdir: s
         return False
 
 
-def generate_startseite_missing(client):
-    """Generiert alle fehlenden Startseiten-Bilder."""
+def generate_startseite(client, logo: Image = None, force: bool = False):
+    """Generiert alle Startseiten-Bilder."""
 
     print("\n" + "="*60)
-    print("FIMI BILDGENERATOR - STARTSEITE (fehlende Bilder)")
+    print("FIMI BILDGENERATOR - STARTSEITE")
     print("="*60)
 
     home_dir = PUBLIC_DIR / "home"
@@ -395,9 +535,9 @@ def generate_startseite_missing(client):
         name = img_config["name"]
         target_file = home_dir / f"{name}.avif"
 
-        # Prüfe ob schon existiert
-        if target_file.exists():
-            print(f"\n⏭️  {name}.avif existiert bereits - überspringe")
+        # Skip wenn existiert und nicht force
+        if target_file.exists() and not force:
+            print(f"\n⏭️  {name}.avif existiert - überspringe (nutze --force zum Überschreiben)")
             continue
 
         success = generate_single(
@@ -405,14 +545,14 @@ def generate_startseite_missing(client):
             name=name,
             prompt=img_config["prompt"],
             ratio=img_config["ratio"],
-            output_subdir=img_config["output"]
+            output_subdir=img_config["output"],
+            logo=logo
         )
         results.append((name, success))
 
-        # Pause zwischen Bildern
         if success:
-            print("\n⏳ Warte 10 Sekunden (Rate Limit)...")
-            time.sleep(10)
+            print("\n⏳ Warte 15 Sekunden (Rate Limit)...")
+            time.sleep(15)
 
     # Zusammenfassung
     print("\n" + "="*60)
@@ -425,35 +565,36 @@ def generate_startseite_missing(client):
 
     if not results:
         print("  Alle Bilder existieren bereits!")
+        print("  Nutze --force zum Überschreiben.")
 
     return all(s for _, s in results) if results else True
 
 
 def main():
     parser = argparse.ArgumentParser(
-        description="FIMI Bildgenerator - Einzelbilder mit Imagen 3",
+        description="FIMI Bildgenerator mit Gemini 3 Pro Image",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Beispiele:
-  # Voraussetzungen prüfen:
-  python3 setup_check.py
-
-  # Fehlende Startseiten-Bilder generieren:
-  python3 generate_single.py --startseite
-
-  # Einzelnes Bild:
-  python3 generate_single.py --name "team-photo" --prompt "FIMI Team vor Gebäude" --ratio "16:9" --output "home"
+  python3 setup_check.py                     # Voraussetzungen prüfen
+  python3 generate_single.py --startseite    # Alle Startseiten-Bilder
+  python3 generate_single.py --startseite --force  # Überschreibe existierende
+  python3 generate_single.py --name "bild" --prompt "..." --ratio "16:9"
         """
     )
 
     parser.add_argument("--startseite", action="store_true",
-                       help="Generiere alle fehlenden Startseiten-Bilder")
+                       help="Generiere alle Startseiten-Bilder")
+    parser.add_argument("--force", action="store_true",
+                       help="Überschreibe existierende Bilder")
+    parser.add_argument("--no-logo", action="store_true",
+                       help="Ohne Logo-Referenz generieren")
     parser.add_argument("--name", type=str,
                        help="Dateiname (ohne Erweiterung)")
     parser.add_argument("--prompt", type=str,
                        help="Bildprompt")
     parser.add_argument("--ratio", type=str, default="16:9",
-                       help="Seitenverhältnis: 16:9, 4:3, 3:4, 1:1, 9:16")
+                       help="Seitenverhältnis: 16:9, 4:3, 3:4, 1:1")
     parser.add_argument("--output", type=str, default="home",
                        help="Ausgabe-Unterordner in public/images/")
 
@@ -462,17 +603,26 @@ Beispiele:
     # Client initialisieren
     client = init_client()
 
+    # Logo laden (optional)
+    logo = None
+    if not args.no_logo:
+        try:
+            logo = load_logo()
+        except Exception as e:
+            print(f"⚠️  Logo konnte nicht geladen werden: {e}")
+            print("   Generiere ohne Logo-Referenz...")
+
     if args.startseite:
-        success = generate_startseite_missing(client)
+        success = generate_startseite(client, logo, force=args.force)
         return 0 if success else 1
 
     elif args.name and args.prompt:
-        success = generate_single(client, args.name, args.prompt, args.ratio, args.output)
+        success = generate_single(client, args.name, args.prompt, args.ratio, args.output, logo)
         return 0 if success else 1
 
     else:
         parser.print_help()
-        print("\n💡 Tipp: Nutze --startseite für automatische Generierung")
+        print("\n💡 Tipp: Nutze --startseite für alle Homepage-Bilder")
         return 0
 
 
