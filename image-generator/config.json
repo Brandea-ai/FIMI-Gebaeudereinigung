@@ -4,8 +4,7 @@
     "region": "us-central1"
   },
   "models": {
-    "primary": "gemini-3-pro-image-preview",
-    "alternative": "imagen-3.0-generate-002",
+    "primary": "imagen-3.0-generate-002",
     "quality_check": "gemini-2.0-flash"
   },
   "generation": {

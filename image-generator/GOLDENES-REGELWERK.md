@@ -1,7 +1,57 @@
 # FIMI Bildgenerator - Goldenes Regelwerk
-**Version:** 1.0
+**Version:** 2.0
 **Letzte Aktualisierung:** 2025-12-09
 **Status:** In Bearbeitung
+
+---
+
+## QUICKSTART (NEUE SESSION)
+
+### 1. Voraussetzungen prüfen
+```bash
+cd /Users/brandea/Desktop/FIMI-Gebaeudereinigung/image-generator
+python3 setup_check.py
+```
+
+### 2. Falls Fehler auftreten:
+
+**Dependencies fehlen:**
+```bash
+pip install google-genai Pillow pillow-avif-plugin
+```
+
+**Permission Denied (Vertex AI):**
+1. Öffne: https://console.cloud.google.com/iam-admin/iam?project=fimi-bilder
+2. Finde: `fimi-bildgenerator@fimi-bilder.iam.gserviceaccount.com`
+3. Klicke "Bearbeiten" → Rolle hinzufügen: **"Vertex AI User"**
+4. Speichern
+
+**Git Repository korrupt:**
+```bash
+cd /Users/brandea/Desktop/FIMI-Gebaeudereinigung
+rm -rf .git
+git init
+git remote add origin https://github.com/Brandea-ai/FIMI-Gebaeudereinigung.git
+git fetch origin
+git reset --hard origin/main
+```
+
+### 3. Bilder generieren
+```bash
+# Fehlende Startseiten-Bilder:
+python3 generate_single.py --startseite
+
+# Einzelnes Bild:
+python3 generate_single.py --name "mein-bild" --prompt "Beschreibung..." --ratio "16:9" --output "home"
+```
+
+### 4. Nach Generierung
+```bash
+cd /Users/brandea/Desktop/FIMI-Gebaeudereinigung
+git add -A
+git commit -m "feat(images): [Seite] - [X] Bilder generiert"
+git push origin main
+```
 
 ---
 
@@ -15,12 +65,15 @@ Ersetze ALLE Stock-Bilder auf der FIMI Website durch hochwertige, KI-generierte 
 
 | Was | Wert |
 |-----|------|
-| **Modell** | `gemini-3-pro-image-preview` (Nano Banana Pro) |
-| **Auflösung** | 4K (maximale Qualität, dann skalieren) |
+| **Modell** | `imagen-3.0-generate-002` (Imagen 3) |
+| **Auflösung** | Bis 1408x1408 (dann responsive skalieren) |
 | **Output-Formate** | AVIF (primär) + WebP (fallback) |
 | **KEIN JPG/PNG** | Originale werden nach Konvertierung GELÖSCHT |
 | **API** | Google Cloud Vertex AI |
 | **Projekt-ID** | `fimi-bilder` |
+| **Region** | `us-central1` |
+| **Service Account** | `fimi-bildgenerator@fimi-bilder.iam.gserviceaccount.com` |
+| **Benötigte Rolle** | `Vertex AI User` |
 | **Guthaben** | $300 (91 Tage gültig ab 09.12.2025) |
 
 ---

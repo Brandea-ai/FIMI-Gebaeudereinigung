@@ -1,0 +1,33 @@
+# Credentials - NIEMALS committen!
+credentials/
+*.credentials.json
+*.json.key
+
+# Temporäre Dateien
+*_temp.png
+*_temp.jpg
+*.tmp
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+*.so
+
+# Output (wird lokal generiert, nicht committen)
+output/
+
+# Logs
+*.log
+generation_log.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
