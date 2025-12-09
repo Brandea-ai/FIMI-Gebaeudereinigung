@@ -1,0 +1,14 @@
+# FIMI Bildgenerator Dependencies
+
+# Google GenAI SDK (fuer Nano Banana Pro)
+google-genai>=1.0.0
+
+# Google Cloud AI Platform (Vertex AI Backend)
+google-cloud-aiplatform>=1.38.0
+
+# Bildverarbeitung
+Pillow>=10.0.0
+pillow-avif-plugin>=1.4.0
+
+# Utilities
+python-dotenv>=1.0.0

@@ -117,7 +117,7 @@ export default function ProcessContainer() {
           {/* Right: Full Height Image - Person mit Blickkontakt */}
           <div className="relative aspect-[3/4] lg:aspect-auto lg:h-full lg:min-h-[700px] order-1 lg:order-2 overflow-hidden">
             <Image
-              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1200&auto=format&fit=crop"
+              src="/images/home/process-contact.avif"
               alt="Ihr Ansprechpartner bei FIMI Gebäudereinigung"
               fill
               className="object-cover object-top"

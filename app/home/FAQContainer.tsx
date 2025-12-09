@@ -96,7 +96,7 @@ export default function FAQContainer() {
               {/* Bild */}
               <div className="relative mt-8 h-48 lg:h-64 rounded-[6px] overflow-hidden hidden lg:block">
                 <Image
-                  src="https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?q=80&w=800&auto=format&fit=crop"
+                  src="/images/home/faq-service.avif"
                   alt="Kundenservice FIMI Gebäudereinigung"
                   fill
                   className="object-cover"

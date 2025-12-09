@@ -1,0 +1,44 @@
+{
+  "project": {
+    "id": "fimi-bilder",
+    "region": "us-central1"
+  },
+  "models": {
+    "primary": "gemini-3-pro-image-preview",
+    "alternative": "imagen-3.0-generate-002",
+    "quality_check": "gemini-2.0-flash"
+  },
+  "generation": {
+    "default_resolution": "4K",
+    "max_retries": 3,
+    "delay_between_requests": 10,
+    "quality_threshold": 7
+  },
+  "output": {
+    "originals_dir": "./output/originals",
+    "optimized_dir": "./output/optimized",
+    "formats": ["avif", "webp"],
+    "delete_originals": true,
+    "responsive_sizes": [384, 768, 1024, 1440, 1920]
+  },
+  "style": {
+    "master_prompt": "FIMI Corporate Photography Style: Professional German cleaning company. Color palette: Deep navy blue uniforms (#012956), clean whites, modern German architecture. Lighting: Bright natural daylight, soft professional shadows. Mood: Trustworthy, competent, premium quality, authentic. Style: High-end commercial corporate photography, sharp focus, documentary feel. Workwear: Engelbert Strauss quality, custom FIMI branding. NO stock photo aesthetic, genuine and professional.",
+    "brand_colors": {
+      "primary": "#012956",
+      "secondary": "#109387",
+      "accent": "#01203d"
+    },
+    "aspect_ratios": {
+      "hero_desktop": "16:9",
+      "hero_mobile": "9:16",
+      "card": "4:3",
+      "square": "1:1",
+      "portrait": "3:4"
+    }
+  },
+  "logo_files": {
+    "original": "/public/FIMI-LOGO/FIMI-Logo.png",
+    "white": "/public/FIMI-LOGO/FIMI-LOGO_Weiße-Schrift_Transparent.png",
+    "transparent": "/public/FIMI-LOGO/FIMI-Logo_Transparent.png"
+  }
+}
