@@ -69,7 +69,7 @@ LOG_FILE = SCRIPT_DIR / "generation_log.txt"
 LOGO_PATH = PROJECT_ROOT / "public" / "FIMI-LOGO" / "FIMI-Logo.png"
 
 # Modell: Gemini 3 Pro Image (Nano Banana Pro)
-MODEL_NAME = "gemini-2.0-flash-exp"  # Aktuelles Modell mit Bildgenerierung
+MODEL_NAME = "gemini-3-pro-image-preview"  # Nano Banana Pro - höchste Qualität
 
 # ============================================================================
 # MASTER STYLE PROMPT
@@ -117,12 +117,13 @@ def init_client():
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = str(CREDENTIALS_PATH)
 
     try:
+        # WICHTIG: Für gemini-3-pro-image-preview muss location="global" sein!
         client = genai.Client(
             vertexai=True,
             project="fimi-bilder",
-            location="us-central1"
+            location="global"
         )
-        print("✓ Google GenAI Client initialisiert")
+        print("✓ Google GenAI Client initialisiert (Location: global)")
         return client
 
     except Exception as e:

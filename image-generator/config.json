@@ -1,16 +1,17 @@
 {
   "project": {
     "id": "fimi-bilder",
-    "region": "us-central1"
+    "location": "global"
   },
   "models": {
-    "primary": "imagen-3.0-generate-002",
+    "primary": "gemini-3-pro-image-preview",
+    "fallback": "imagen-3.0-generate-002",
     "quality_check": "gemini-2.0-flash"
   },
   "generation": {
     "default_resolution": "4K",
     "max_retries": 3,
-    "delay_between_requests": 10,
+    "delay_between_requests": 15,
     "quality_threshold": 7
   },
   "output": {
@@ -32,7 +33,7 @@
       "hero_mobile": "9:16",
       "card": "4:3",
       "square": "1:1",
-      "portrait": "3:4"
+      "portrait": "4:5"
     }
   },
   "logo_files": {
