@@ -13,12 +13,12 @@ const teamBereiche = [
       {
         name: 'Anna Weber',
         position: 'Key Account Managerin',
-        bild: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop',
+        bild: '/images/ueber-uns/team-anna-weber.avif',
       },
       {
         name: 'Michael Huber',
         position: 'Vertriebsleiter',
-        bild: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600&auto=format&fit=crop',
+        bild: '/images/ueber-uns/team-michael-huber.avif',
       },
     ],
   },
@@ -29,17 +29,17 @@ const teamBereiche = [
       {
         name: 'Sandra Müller',
         position: 'Office Managerin',
-        bild: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&auto=format&fit=crop',
+        bild: '/images/ueber-uns/team-sandra-mueller.avif',
       },
       {
         name: 'Lisa Bauer',
         position: 'Disposition',
-        bild: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=600&auto=format&fit=crop',
+        bild: '/images/ueber-uns/team-lisa-bauer.avif',
       },
       {
         name: 'Julia Fischer',
         position: 'Buchhaltung',
-        bild: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop',
+        bild: '/images/ueber-uns/team-julia-fischer.avif',
       },
     ],
   },
@@ -50,17 +50,17 @@ const teamBereiche = [
       {
         name: 'Stefan Gruber',
         position: 'Objektleiter Gewerbe',
-        bild: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=600&auto=format&fit=crop',
+        bild: '/images/ueber-uns/team-stefan-gruber.avif',
       },
       {
         name: 'Maria Schneider',
         position: 'Objektleiterin Industrie',
-        bild: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=600&auto=format&fit=crop',
+        bild: '/images/ueber-uns/team-maria-schneider.avif',
       },
       {
         name: 'Andreas Maier',
         position: 'Objektleiter Sonderreinigung',
-        bild: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=600&auto=format&fit=crop',
+        bild: '/images/ueber-uns/team-andreas-maier.avif',
       },
     ],
   },
@@ -71,7 +71,7 @@ const teamBereiche = [
       {
         name: 'Petra Hoffmann',
         position: 'QM-Beauftragte',
-        bild: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=600&auto=format&fit=crop',
+        bild: '/images/ueber-uns/team-petra-hoffmann.avif',
       },
     ],
   },

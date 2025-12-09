@@ -9,15 +9,26 @@ export default function HeroSection() {
     <section id="hero" className="relative min-h-[90vh] bg-[#012956] overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <Image
-          src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1920&auto=format&fit=crop"
-          alt="FIMI Team"
-          fill
-          sizes="100vw"
-          className="object-cover"
-          priority
-          quality={75}
-        />
+        <picture>
+          <source
+            type="image/avif"
+            srcSet="/images/ueber-uns/ueber-uns-hero-384w.avif 384w, /images/ueber-uns/ueber-uns-hero-768w.avif 768w, /images/ueber-uns/ueber-uns-hero-1024w.avif 1024w, /images/ueber-uns/ueber-uns-hero-1376w.avif 1376w"
+            sizes="100vw"
+          />
+          <source
+            type="image/webp"
+            srcSet="/images/ueber-uns/ueber-uns-hero-384w.webp 384w, /images/ueber-uns/ueber-uns-hero-768w.webp 768w, /images/ueber-uns/ueber-uns-hero-1024w.webp 1024w, /images/ueber-uns/ueber-uns-hero-1376w.webp 1376w"
+            sizes="100vw"
+          />
+          <Image
+            src="/images/ueber-uns/ueber-uns-hero.avif"
+            alt="FIMI Gebäudereinigung Team vor modernem Bürogebäude"
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-r from-[#012956]/95 via-[#012956]/80 to-[#012956]/60" />
       </div>
 

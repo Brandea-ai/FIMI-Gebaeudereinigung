@@ -9,7 +9,7 @@ const timeline = [
     title: 'Der Anfang',
     subtitle: 'Gründung als GbR',
     description: 'Mit einer Vision und viel Leidenschaft gründeten wir FIMI als kleine GbR in Landshut. Der Fokus lag zunächst auf Glas- und Fassadenreinigung.',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop',
+    image: '/images/ueber-uns/timeline-2016.avif',
     highlight: false,
   },
   {
@@ -17,7 +17,7 @@ const timeline = [
     title: 'Erste Großkunden',
     subtitle: 'Wachstum beginnt',
     description: 'Die ersten gewerblichen Großkunden vertrauten auf unsere Qualität. Wir erweiterten unser Team auf 15 Mitarbeiter.',
-    image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=800&auto=format&fit=crop',
+    image: '/images/ueber-uns/timeline-2017.avif',
     highlight: false,
   },
   {
@@ -25,7 +25,7 @@ const timeline = [
     title: 'Leistungserweiterung',
     subtitle: 'Mehr als nur Glas',
     description: 'Unterhaltsreinigung, Büroreinigung und Industriereinigung kamen zu unserem Portfolio. Die Nachfrage stieg kontinuierlich.',
-    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop',
+    image: '/images/ueber-uns/timeline-2018.avif',
     highlight: false,
   },
   {
@@ -33,7 +33,7 @@ const timeline = [
     title: 'Pandemie-Herausforderung',
     subtitle: 'Stärker durch die Krise',
     description: 'Die Corona-Pandemie stellte uns vor neue Herausforderungen. Mit Hygienekonzepten und Desinfektionsservices wurden wir zum unverzichtbaren Partner unserer Kunden.',
-    image: 'https://images.unsplash.com/photo-1584634731339-252c581abfc5?q=80&w=800&auto=format&fit=crop',
+    image: '/images/ueber-uns/timeline-2020.avif',
     highlight: false,
   },
   {
@@ -41,7 +41,7 @@ const timeline = [
     title: 'Regionale Expansion',
     subtitle: '8 Einsatzgebiete in Bayern',
     description: 'Von Landshut aus expandierten wir nach München, Regensburg, Ingolstadt, Freising, Erding, Straubing und Passau.',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop',
+    image: '/images/ueber-uns/timeline-2022.avif',
     highlight: true,
   },
   {
@@ -49,7 +49,7 @@ const timeline = [
     title: 'Heute',
     subtitle: '90+ Mitarbeiter, 120+ Kunden',
     description: 'Mit über 90 Mitarbeitern und mehr als 120 zufriedenen Geschäftskunden sind wir einer der führenden Gebäudereiniger in Niederbayern und Oberbayern.',
-    image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop',
+    image: '/images/ueber-uns/timeline-2025.avif',
     highlight: true,
   },
   {
@@ -57,7 +57,7 @@ const timeline = [
     title: 'Weitere Expansion',
     subtitle: 'Coming Soon',
     description: 'Ausbau unseres Standortnetzwerks und Erweiterung unserer Dienstleistungspalette für noch mehr Kunden in Bayern.',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop',
+    image: '/images/ueber-uns/timeline-2026.avif',
     highlight: false,
   },
 ]
