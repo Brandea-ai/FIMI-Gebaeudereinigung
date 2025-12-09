@@ -110,12 +110,13 @@ def main():
 
         try:
             from google import genai
+            # WICHTIG: gemini-3-pro-image-preview erfordert location="global"!
             client = genai.Client(
                 vertexai=True,
                 project="fimi-bilder",
-                location="us-central1"
+                location="global"
             )
-            print_result("Client initialisiert", True)
+            print_result("Client initialisiert (Location: global)", True)
 
             # Test API Zugriff (ohne Bild zu generieren)
             try:

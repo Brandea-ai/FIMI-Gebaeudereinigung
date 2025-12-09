@@ -134,15 +134,16 @@ class FIMIImageGenerator:
             os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path
 
             # Initialisiere mit Vertex AI Backend
+            # WICHTIG: gemini-3-pro-image-preview erfordert location="global"!
             self.client = genai.Client(
                 vertexai=True,
                 project=self.config["project"]["id"],
-                location=self.config["project"]["region"]
+                location=self.config["project"].get("location", "global")
             )
-            print(f"✓ Nano Banana Pro initialisiert")
+            print(f"✓ Gemini 3 Pro Image initialisiert")
             print(f"  Projekt: {self.config['project']['id']}")
-            print(f"  Region: {self.config['project']['region']}")
-            print(f"  Model: gemini-3-pro-image-preview (4K)")
+            print(f"  Location: {self.config['project'].get('location', 'global')}")
+            print(f"  Model: gemini-3-pro-image-preview")
 
     def _load_config(self, config_path: str) -> dict:
         """Laedt die Konfiguration"""

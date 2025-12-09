@@ -65,16 +65,19 @@ Ersetze ALLE Stock-Bilder auf der FIMI Website durch hochwertige, KI-generierte 
 
 | Was | Wert |
 |-----|------|
-| **Modell** | `imagen-3.0-generate-002` (Imagen 3) |
-| **Auflösung** | Bis 1408x1408 (dann responsive skalieren) |
+| **Modell** | `gemini-3-pro-image-preview` (Gemini 3 Pro Image) |
+| **Auflösung** | Bis 4096px (dann responsive skalieren) |
 | **Output-Formate** | AVIF (primär) + WebP (fallback) |
 | **KEIN JPG/PNG** | Originale werden nach Konvertierung GELÖSCHT |
 | **API** | Google Cloud Vertex AI |
 | **Projekt-ID** | `fimi-bilder` |
-| **Region** | `us-central1` |
+| **Location** | `global` (WICHTIG: nicht us-central1!) |
 | **Service Account** | `fimi-bildgenerator@fimi-bilder.iam.gserviceaccount.com` |
 | **Benötigte Rolle** | `Vertex AI User` |
 | **Guthaben** | $300 (91 Tage gültig ab 09.12.2025) |
+
+### Unterstützte Seitenverhältnisse (gemini-3-pro-image-preview)
+`1:1`, `3:2`, `2:3`, `3:4`, `4:3`, `4:5`, `5:4`, `9:16`, `16:9`, `21:9`
 
 ---
 
@@ -722,9 +725,20 @@ AVOID:
 ### Credentials
 ```
 Projekt-ID:        fimi-bilder
-Region:            us-central1
+Location:          global (WICHTIG!)
+Modell:            gemini-3-pro-image-preview
 Service-Account:   fimi-bildgenerator@fimi-bilder.iam.gserviceaccount.com
 Credentials-File:  ./credentials/fimi-bilder-credentials.json
+```
+
+### WICHTIG: Location = global
+Das Modell `gemini-3-pro-image-preview` ist NUR auf dem globalen Endpoint verfügbar!
+```python
+client = genai.Client(
+    vertexai=True,
+    project="fimi-bilder",
+    location="global"  # NICHT us-central1!
+)
 ```
 
 ### Umgebungsvariablen
@@ -732,8 +746,8 @@ Siehe `.env.local` im Hauptprojekt.
 
 ### Rate Limits
 ```
-Nano Banana Pro:   ~10 Requests/Minute
-Empfohlene Pause:  8-10 Sekunden zwischen Bildern
+Gemini 3 Pro Image:  ~10 Requests/Minute
+Empfohlene Pause:    15 Sekunden zwischen Bildern
 ```
 
 ### Kosten

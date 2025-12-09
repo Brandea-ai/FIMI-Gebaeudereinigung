@@ -1,5 +1,17 @@
 # FIMI Bildgenerator - Starter Prompt
 
+## WICHTIG: Modell-Information
+
+| Parameter | Wert |
+|-----------|------|
+| **Modell** | `gemini-3-pro-image-preview` |
+| **Location** | `global` (NICHT us-central1!) |
+| **Projekt** | `fimi-bilder` |
+
+**Siehe auch:** `!MODEL-INFO.md` für Details
+
+---
+
 ## Schnellstart für neue Session
 
 Kopiere diesen Text in einen neuen Claude Code Chat:
@@ -9,21 +21,38 @@ Kopiere diesen Text in einen neuen Claude Code Chat:
 ```
 FIMI Bildgenerator Session starten:
 
-1. Lies das Regelwerk:
+1. Lies zuerst die Modell-Info:
+/Users/brandea/Desktop/FIMI-Gebaeudereinigung/image-generator/!MODEL-INFO.md
+
+2. Lies das Regelwerk:
 /Users/brandea/Desktop/FIMI-Gebaeudereinigung/image-generator/GOLDENES-REGELWERK.md
 
-2. Führe den Setup-Check aus:
+3. Führe den Setup-Check aus:
 cd /Users/brandea/Desktop/FIMI-Gebaeudereinigung/image-generator && python3 setup_check.py
 
-3. Falls alles OK: Prüfe welche Seite als nächstes Bilder braucht und generiere sie.
+4. Falls alles OK: Prüfe welche Seite als nächstes Bilder braucht und generiere sie.
    Falls Fehler: Behebe sie gemäß QUICKSTART im Regelwerk.
 
-4. Nach Generierung: git add, commit, push
+5. Nach Generierung: git add, commit, push
+
+WICHTIG: Nutze Modell "gemini-3-pro-image-preview" mit Location "global"!
 ```
 
 ---
 
 ## Bei Problemen
+
+### Problem: "404 NOT_FOUND" bei Bildgenerierung
+```
+Ursache: Falsche Location (us-central1 statt global)
+Lösung: location="global" verwenden!
+
+client = genai.Client(
+    vertexai=True,
+    project="fimi-bilder",
+    location="global"  # NICHT us-central1!
+)
+```
 
 ### Problem: "Permission Denied" bei Bildgenerierung
 ```

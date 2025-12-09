@@ -4,9 +4,7 @@
     "location": "global"
   },
   "models": {
-    "primary": "gemini-3-pro-image-preview",
-    "fallback": "imagen-3.0-generate-002",
-    "quality_check": "gemini-2.0-flash"
+    "primary": "gemini-3-pro-image-preview"
   },
   "generation": {
     "default_resolution": "4K",
