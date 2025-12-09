@@ -112,7 +112,7 @@ def generate_image(client, prompt: str, aspect_ratio: str = "16:9", retries: int
 REFERENZ-LOGO (oben): Nutze die Farben als Corporate Identity Referenz:
 - Primärfarbe für Arbeitskleidung: Tiefes Marineblau (#012956)
 - Akzentfarbe: Türkis (#109387)
-Das Logo selbst soll NICHT im generierten Bild erscheinen!
+Das Logo selbst soll NICHT frei im Bild schweben, aber auf Kleidung sichtbar sein!
 
 BILDANFORDERUNG:
 {prompt}
@@ -124,17 +124,39 @@ STIL:
 - Natürliches Tageslicht, professionelle Schatten
 - Deutsches Umfeld, authentisch (kein Stock-Photo-Look)
 - Keine KI-Artefakte
+- Natürliche Gesichter, nicht generisch wirkend
 
 ARBEITSKLEIDUNG:
 - Marineblaue Poloshirts/Jacken (#012956) für FIMI Mitarbeiter
+- FIMI Logo: WEISS auf dunkler Kleidung, DEZENT und SUBTIL (nicht auffällig!)
+- Logo auf linker Brustseite, klein und unauffällig
 - Sauber, professionell
 
-REINIGUNGSGERÄTE - IMMER ORIGINALFARBEN DER HERSTELLER:
-- Kärcher: GELB mit schwarzen Details (niemals blau!)
-- Unger: GRÜN (Fensterreinigung)
-- Numatic Henry: ROT (Staubsauger)
-- Vermop: Original Herstellerfarben
-Die Geräte behalten ihre echten Herstellerfarben, NICHT die FIMI CI-Farben!
+REINIGUNGSGERÄTE - KRITISCHE REGELN:
+1. KÄRCHER: NUR Scheuersaugmaschinen, Hochdruckreiniger, Industriesauger
+   - Farbe: GELB mit schwarzen Details (niemals blau!)
+   - KÄRCHER macht KEINE Reinigungswagen oder Einscheibenmaschinen!
+
+2. VERMOP: Reinigungswagen, Mopsysteme, Eimer
+   - Farbe: Grau/silbernes Gestell mit blauen Kunststoffteilen
+   - Für Büroreinigung IMMER VERMOP Wagen verwenden!
+
+3. CLEANFIX/COLUMBUS: Einscheibenmaschinen (Poliermaschinen)
+   - Farbe: Silber/grau mit roten oder blauen Akzenten
+
+4. UNGER: Fensterreinigung
+   - Farbe: GRÜN (Griffe, Akzente)
+
+5. NUMATIC HENRY: Staubsauger
+   - Farbe: ROT mit Smiley-Gesicht
+
+4-FARBEN-PRINZIP FÜR MOPS/TÜCHER:
+- BLAU = Büro/allgemeine Flächen (NICHT GRÜN!)
+- ROT = Sanitär/WC
+- GELB = Küche
+- GRÜN = Krankenhaus/OP
+
+Die Geräte behalten IMMER ihre Original-Herstellerfarben, NICHT die FIMI CI-Farben!
 """
 
     print(f"\n📸 Generiere mit Gemini 3 Pro Image (Nano Banana Pro)...")
@@ -241,72 +263,89 @@ STARTSEITE_IMAGES = [
         "ratio": "16:9",
         "prompt": """FIMI Reinigungsteam vor modernem deutschen Bürogebäude.
 
-3-4 Mitarbeiter in marineblauen Poloshirts stehen selbstbewusst vor einem
-modernen Glasgebäude. Einer hält eine GELBE Kärcher Reinigungsmaschine.
+3-4 Mitarbeiter in marineblauen Poloshirts mit FIMI Logo auf der linken Brust.
+Sie stehen selbstbewusst vor einem modernen Glasgebäude.
+Einer hält eine GELBE Kärcher Scheuersaugmaschine (Originalfarbe gelb/schwarz!).
 Natürliches Tageslicht, professionelle Teamaufnahme.
-Freundliche aber seriöse Ausstrahlung, deutsches Business-Umfeld."""
+Freundliche aber seriöse Ausstrahlung, deutsches Business-Umfeld.
+Natürliche Gesichter, nicht generisch wirkend."""
     },
     {
         "name": "trust-team",
         "ratio": "4:3",
-        "prompt": """Nahaufnahme: FIMI Mitarbeiter bei Büroreinigung.
+        "prompt": """Nahaufnahme: FIMI Mitarbeiterin bei Büroreinigung.
 
-Eine Frau (ca. 35) in marineblauem Poloshirt reinigt konzentriert einen
-Schreibtisch mit Mikrofasertuch. Im Hintergrund ein Vermop Reinigungswagen
-in Originalfarben. Modernes Büro, große Fenster, natürliches Licht.
-Professionelle, vertrauenswürdige Ausstrahlung."""
+Eine Frau (ca. 35) in marineblauem Poloshirt mit FIMI Logo auf linker Brust.
+Sie reinigt konzentriert einen Schreibtisch mit BLAUEM Mikrofasertuch.
+Im Hintergrund: VERMOP Reinigungswagen (grau/silbernes Gestell, blaue Eimer).
+BLAUE Wischbezüge am Wagen (4-Farben-Prinzip: Blau = Büro!).
+Modernes Büro, große Fenster, natürliches Licht.
+Professionelle, vertrauenswürdige Ausstrahlung. Natürliches Gesicht."""
     },
     {
         "name": "service-office",
         "ratio": "4:3",
         "prompt": """Büroreinigung in modernem Open-Space Office.
 
-Weibliche FIMI Mitarbeiterin in marineblauem Poloshirt wischt Schreibtisch.
-Im Hintergrund: professioneller Reinigungswagen, saubere Büroumgebung.
+Weibliche FIMI Mitarbeiterin in marineblauem Poloshirt.
+LOGO: Kleines, dezentes WEISSES FIMI Logo auf linker Brust (subtil, nicht auffällig!).
+Sie wischt einen Schreibtisch mit BLAUEM Mikrofasertuch.
+Im Hintergrund: VERMOP Reinigungswagen (grau/silber mit blauen Eimern).
+WICHTIG: Nur EIN einzelner BLAUER Mop am Wagen (nicht zwei!).
 Große Fenster mit Tageslicht, moderne Möbel, Computer auf Tischen.
-Effiziente, gründliche Arbeitsweise sichtbar."""
+Effiziente, gründliche Arbeitsweise. Natürliches, nicht generisches Gesicht."""
     },
     {
         "name": "service-industrie",
         "ratio": "4:3",
-        "prompt": """Industriereinigung in deutscher Produktionshalle.
+        "prompt": """Industriereinigung: Einscheibenmaschine in Produktionshalle.
 
-Männlicher FIMI Mitarbeiter in marineblauerArbeitsjacke bedient eine
-GELBE Kärcher Scheuersaugmaschine (Originalfarbe gelb/schwarz!).
-Große Industriehalle mit hohen Decken, Maschinen im Hintergrund.
-Sicherheitsschuhe, kompetente Arbeitsweise, industrielles Umfeld."""
+Männlicher FIMI Mitarbeiter in marineblauer Arbeitsjacke mit FIMI Logo.
+Er bedient eine CLEANFIX Einscheibenmaschine (silber/grau mit roten Akzenten).
+KEIN Reinigungswagen, KEIN Staubsauger - nur die Einscheibenmaschine!
+Große deutsche Industriehalle mit hohen Decken.
+Sicherheitsschuhe, kompetente Arbeitsweise, industrielles Umfeld.
+Natürliches Gesicht, nicht generisch wirkend."""
     },
     {
         "name": "service-facility",
         "ratio": "4:3",
-        "prompt": """Facility Management: Teamkoordination vor Gebäude.
+        "prompt": """Facility Management: Professionelle Teamkoordination.
 
-Zwei FIMI Mitarbeiter in marineblauen Uniformen vor modernem Geschäftsgebäude.
-Einer hält Tablet zur Dokumentation, der andere steht bei Reinigungswagen.
+Zwei FIMI Mitarbeiter in marineblauen Uniformen mit FIMI Logo auf Brust.
+Sie stehen vor einem modernen deutschen Geschäftsgebäude.
+Einer hält ein Tablet zur Dokumentation, der andere gestikuliert erklärend.
+KEIN Reinigungswagen, KEIN Staubsauger - nur die zwei Personen!
 Professionelle Besprechung, gepflegte Außenanlagen sichtbar.
-Organisierte, koordinierte Zusammenarbeit."""
+Organisierte, koordinierte Zusammenarbeit. Natürliche Gesichter."""
     },
     {
         "name": "process-contact",
         "ratio": "3:4",
-        "prompt": """CTA-Bild: Freundlicher FIMI Kundenberater.
+        "prompt": """CTA-Bild: Freundlicher FIMI Kundenberater (Mann).
 
-WICHTIG: Person schaut DIREKT IN DIE KAMERA mit freundlichem Lächeln!
-Mann oder Frau (ca. 35-45) in marineblauem Poloshirt oder Business-Casual.
-Hält Telefon oder steht bereit zum Gespräch.
+KRITISCH: Person schaut DIREKT IN DIE KAMERA mit freundlichem Lächeln!
+Mann (ca. 35-45) in marineblauem Poloshirt.
+LOGO: Kleines, dezentes WEISSES FIMI Logo auf linker Brust (subtil, kaum sichtbar!).
+Er hält freundlich ein Telefon oder steht bereit zum Gespräch.
 Einladende, offene Körpersprache. Direkter Blickkontakt zum Betrachter!
-Hintergrund: modernes, helles Büro. Vertrauenswürdig, erreichbar."""
+KEINE Reinigungsgeräte im Bild - nur die Person!
+Hintergrund: modernes, helles Büro. Vertrauenswürdig, erreichbar.
+Natürliches, authentisches Gesicht - nicht generisch!"""
     },
     {
         "name": "faq-service",
         "ratio": "16:9",
-        "prompt": """FIMI Team bei koordinierter Gebäudereinigung.
+        "prompt": """FAQ-Bereich: Freundliche FIMI Mitarbeiterin mit Blickkontakt.
 
-Zwei Mitarbeiter in marineblauen Uniformen arbeiten in großer Lobby.
-Einer bedient GELBE Kärcher Bodenmaschine (Originalfarbe!),
-einer reinigt Glasflächen mit GRÜNEM Unger Werkzeug (Originalfarbe!).
-Modernes deutsches Geschäftsgebäude, professionelle Architektur.
-Teamarbeit, Effizienz, Qualität sichtbar."""
+KRITISCH: Eine FRAU schaut DIREKT IN DIE KAMERA mit freundlichem Lächeln!
+Sie trägt marineblaues Poloshirt.
+LOGO: Kleines, dezentes WEISSES FIMI Logo auf linker Brust (sehr subtil, kaum auffällig!).
+Sie steht in einem modernen, hellen Büro oder Empfangsbereich.
+Offene, einladende Körpersprache - bereit Fragen zu beantworten.
+KEINE Männer im Bild, KEINE Fensterreinigung, KEINE Maschinen!
+Nur eine freundliche Frau mit direktem Blickkontakt.
+Natürliches, authentisches Gesicht - nicht generisch wirkend!"""
     },
 ]
 

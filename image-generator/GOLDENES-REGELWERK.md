@@ -1,7 +1,9 @@
 # FIMI Bildgenerator - Goldenes Regelwerk
-**Version:** 2.0
+**Version:** 3.0
 **Letzte Aktualisierung:** 2025-12-09
 **Status:** In Bearbeitung
+
+> **NEU:** Siehe `LIEFERANTEN.md` für detaillierte Marken-/Produktübersicht!
 
 ---
 
@@ -213,14 +215,17 @@ Die Kleidung soll aussehen wie von einem deutschen Premium-Workwear-Hersteller (
 
 ### Logo-Platzierung Details
 ```
+BRUST:      8-10cm, links, Herzhöhe (WICHTIGSTE POSITION!)
+            FIMI Logo klein aber sichtbar
+            → Bei JEDEM Mitarbeiter auf Kleidung zeigen!
+
 RÜCKEN:     25-30cm breit, mittig, oberer Rücken
             "FIMI" + Icon + "GEBÄUDEREINIGUNG"
-
-BRUST:      8-10cm, links, Herzhöhe
-            Nur Icon + "FIMI"
+            → Optional, nicht immer sichtbar
 
 SCHULTER:   5-8cm, rechte Schulter
             Nur Icon
+            → Optional
 
 DIENSTAUSWEIS:
             FIMI Logo oben
@@ -228,6 +233,9 @@ DIENSTAUSWEIS:
             Name nicht lesbar
             Abteilung: "Reinigungsteam" o.ä.
 ```
+
+> **KRITISCH:** Das FIMI Logo MUSS auf der Arbeitskleidung sichtbar sein!
+> Mindestens auf der linken Brustseite klein aber erkennbar.
 
 ---
 
@@ -415,6 +423,23 @@ NÄHE:            Deutsche Umgebung, lokale Authentizität
 QUALITÄT:        Premium-Materialien, saubere Ergebnisse
 ```
 
+### CTA-Bilder (Call-to-Action)
+```
+KRITISCH: CTA-Bilder müssen DIREKTEN BLICKKONTAKT zur Kamera haben!
+
+✅ RICHTIG:
+- Person schaut direkt in die Kamera
+- Freundliches, einladendes Lächeln
+- Offene Körpersprache
+- Keine Arbeitsszene, Person ist "bereit für den Kunden"
+
+❌ FALSCH:
+- Person arbeitet und schaut woanders hin
+- Seitenansicht oder Profilaufnahme
+- Person ist beschäftigt mit Reinigung
+- Kein Blickkontakt zum Betrachter
+```
+
 ### Marketing-Grundsätze
 ```
 1. Zielgruppe im Fokus:
@@ -533,6 +558,8 @@ QUALITÄTS-SIEGEL BEREICH:
 
 ## LIEFERANTEN & AUSRÜSTUNG
 
+> **WICHTIG:** Detaillierte Marken-/Produktlisten siehe `LIEFERANTEN.md`!
+
 ### Warum echte Marken?
 ```
 - Erhöht Glaubwürdigkeit (bekannte Qualitätsmarken)
@@ -541,82 +568,57 @@ QUALITÄTS-SIEGEL BEREICH:
 - Differenziert von "Eimer und Lappen" Image
 ```
 
-### FIMI Partner-Marken für Bilder
+### KRITISCHE REGELN (NIEMALS BRECHEN!)
 
-#### Reinigungsmaschinen
 ```
-KÄRCHER (Hauptmarke)
-- Scheuersaugmaschinen
-- Hochdruckreiniger
-- Dampfreiniger
-- Erkennbar: Gelb/Schwarz Design
+❌ KÄRCHER macht KEINE Reinigungswagen!
+   → Für Reinigungswagen/Putzwagen immer VERMOP verwenden!
 
-HAKO
-- Kehrmaschinen
-- Scheuersaugmaschinen
-- Erkennbar: Grün/Weiß
+❌ KÄRCHER macht KEINE Einscheibenmaschinen!
+   → Für Poliermaschinen CLEANFIX oder COLUMBUS verwenden!
 
-NUMATIC (Henry)
-- Staubsauger
-- Erkennbar: Rotes "Gesicht"
+❌ KÄRCHER macht KEINE Fensterreinigungswerkzeuge!
+   → Für Fensterreinigung immer UNGER verwenden!
+
+✅ KÄRCHER macht: Hochdruckreiniger, Scheuersaugmaschinen, Industriesauger, Kehrmaschinen
 ```
 
-#### Reinigungswerkzeuge
-```
-VERMOP
-- Wischsysteme
-- Mopps und Halter
-- Reinigungswagen
+### 4-FARBEN-PRINZIP (MOPS & TÜCHER)
 
-UNGER
-- Fensterreinigung
-- Abzieher
-- Teleskopstangen
-- Erkennbar: Grün
+| Farbe | Einsatzbereich |
+|-------|----------------|
+| **BLAU** | Büro, allgemeine Flächen |
+| **ROT** | Sanitär, WC |
+| **GELB** | Küche, Lebensmittelbereich |
+| **GRÜN** | OP, Krankenhaus, sensible Bereiche |
 
-VILEDA PROFESSIONAL
-- Mikrofasertücher
-- Moppsysteme
-```
+> **KRITISCH:** Bei Büroreinigung IMMER BLAUE Mops/Bezüge verwenden!
+> Grün ist die FIMI CI-Farbe, aber Mops im Büro sind BLAU nach Hygienestandard!
 
-#### Chemie & Hygiene
-```
-DR. SCHNELL
-- Reinigungsmittel
-- Desinfektionsmittel
+### Markenfarben (ORIGINALFARBEN BEHALTEN!)
 
-ECOLAB
-- Professionelle Reinigungschemie
-- Hygienesysteme
+| Marke | Farbe | Produkte |
+|-------|-------|----------|
+| **KÄRCHER** | GELB/Schwarz | Scheuersaugmaschinen, Hochdruckreiniger |
+| **VERMOP** | Grau/Silber + Blau | Reinigungswagen, Eimer, Mopsysteme |
+| **UNGER** | GRÜN | Fensterabzieher, Teleskopstangen |
+| **NUMATIC HENRY** | ROT | Staubsauger |
+| **CLEANFIX** | Silber/Grau | Einscheibenmaschinen |
+| **COLUMBUS** | BLAU/Grau | Scheuersaugmaschinen, Einscheibenmaschinen |
 
-HAGLEITNER
-- Seifenspender
-- Hygienesysteme
-```
+> **WICHTIG:** Reinigungsgeräte behalten IMMER ihre Original-Herstellerfarben!
+> NIEMALS in FIMI CI-Farben umfärben - das wirkt unprofessionell!
 
-#### Winterdienst
-```
-STIHL
-- Laubbläser
-- Motorsägen (für Grünpflege)
-- Erkennbar: Orange
+### Schnellreferenz für Szenen
 
-KÄRCHER
-- Hochdruckreiniger
-- Kehrmaschinen
-```
-
-### Anwendung in Prompts
-```
-Statt: "cleaning machine"
-Besser: "yellow Kärcher professional floor scrubber"
-
-Statt: "vacuum cleaner"
-Besser: "red Numatic Henry commercial vacuum"
-
-Statt: "window cleaning tools"
-Besser: "green Unger professional squeegee and extension pole"
-```
+| Szene | Richtige Marke/Farbe | FALSCH |
+|-------|---------------------|--------|
+| Büro + Reinigungswagen | VERMOP (grau/blau) | ~~Kärcher~~ |
+| Büro + Wischmop | BLAU (4-Farben!) | ~~Grün~~ |
+| Industriehalle + Bodenmaschine | KÄRCHER (gelb) oder COLUMBUS (blau) | - |
+| Poliermaschine | CLEANFIX (silber) | ~~Kärcher~~ |
+| Fensterreinigung | UNGER (grün) | ~~Kärcher~~ |
+| Staubsauger | NUMATIC HENRY (rot) | - |
 
 ---
 
@@ -673,7 +675,7 @@ AVOID:
 #### Hauptseiten
 | Seite | Status | Bilder | Notizen |
 |-------|--------|--------|---------|
-| Startseite | ⬜ | 0/? | |
+| Startseite | 🟡 | 7/7 | hero-team, trust-team, service-office, service-industrie, service-facility, process-contact, faq-service |
 | Über uns | ⬜ | 0/? | |
 | Kontakt | ⬜ | 0/? | |
 | Karriere | ⬜ | 0/? | |

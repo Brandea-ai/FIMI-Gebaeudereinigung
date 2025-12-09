@@ -20,7 +20,7 @@
     "responsive_sizes": [384, 768, 1024, 1440, 1920]
   },
   "style": {
-    "master_prompt": "FIMI Corporate Photography Style: Professional German cleaning company. Color palette: Deep navy blue uniforms (#012956), clean whites, modern German architecture. Lighting: Bright natural daylight, soft professional shadows. Mood: Trustworthy, competent, premium quality, authentic. Style: High-end commercial corporate photography, sharp focus, documentary feel. Workwear: Engelbert Strauss quality, custom FIMI branding. NO stock photo aesthetic, genuine and professional.",
+    "master_prompt": "FIMI Corporate Photography Style: Professional German cleaning company. Color palette: Deep navy blue uniforms (#012956), clean whites, modern German architecture. Lighting: Bright natural daylight, soft professional shadows. Mood: Trustworthy, competent, premium quality, authentic. Style: High-end commercial corporate photography, sharp focus, documentary feel. Workwear: Engelbert Strauss quality, custom FIMI branding with logo on left chest. NO stock photo aesthetic, genuine and professional. Natural faces, not generic.",
     "brand_colors": {
       "primary": "#012956",
       "secondary": "#109387",
@@ -31,12 +31,48 @@
       "hero_mobile": "9:16",
       "card": "4:3",
       "square": "1:1",
-      "portrait": "4:5"
+      "portrait": "4:5",
+      "cta": "3:4"
     }
   },
   "logo_files": {
     "original": "/public/FIMI-LOGO/FIMI-Logo.png",
     "white": "/public/FIMI-LOGO/FIMI-LOGO_Weiße-Schrift_Transparent.png",
     "transparent": "/public/FIMI-LOGO/FIMI-Logo_Transparent.png"
+  },
+  "suppliers": {
+    "_comment": "Siehe LIEFERANTEN.md für vollständige Übersicht",
+    "kaercher": {
+      "color": "gelb/schwarz",
+      "products": ["Scheuersaugmaschinen", "Hochdruckreiniger", "Industriesauger", "Kehrmaschinen"],
+      "NOT": ["Reinigungswagen", "Einscheibenmaschinen", "Fensterreinigung"]
+    },
+    "vermop": {
+      "color": "grau/silber mit blau",
+      "products": ["Reinigungswagen", "Mopsysteme", "Eimer", "Wischbezüge"]
+    },
+    "unger": {
+      "color": "grün",
+      "products": ["Fensterabzieher", "Teleskopstangen", "Einwascher"]
+    },
+    "numatic_henry": {
+      "color": "rot",
+      "products": ["Staubsauger"]
+    },
+    "cleanfix": {
+      "color": "silber/grau",
+      "products": ["Einscheibenmaschinen", "Poliermaschinen"]
+    },
+    "columbus": {
+      "color": "blau/grau",
+      "products": ["Scheuersaugmaschinen", "Einscheibenmaschinen"]
+    }
+  },
+  "four_color_principle": {
+    "_comment": "4-Farben-Prinzip für Mops/Tücher nach Hygienestandard",
+    "blau": "Büro, allgemeine Flächen",
+    "rot": "Sanitär, WC",
+    "gelb": "Küche, Lebensmittelbereich",
+    "gruen": "Krankenhaus, OP, sensible Bereiche"
   }
 }

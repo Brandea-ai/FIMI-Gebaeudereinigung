@@ -12,6 +12,28 @@
 
 ---
 
+## KRITISCHE REGELN (VOR JEDER SESSION LESEN!)
+
+### Lieferanten & Marken
+- **LIEFERANTEN.md** enthält vollständige Übersicht was jeder Hersteller produziert!
+- Kärcher macht KEINE Reinigungswagen → VERMOP verwenden!
+- Kärcher macht KEINE Einscheibenmaschinen → CLEANFIX/COLUMBUS verwenden!
+- Geräte behalten ORIGINALFARBEN (Kärcher=gelb, Unger=grün, etc.)
+
+### 4-Farben-Prinzip für Mops
+- BLAU = Büro (NICHT GRÜN!)
+- ROT = Sanitär
+- GELB = Küche
+- GRÜN = Krankenhaus
+
+### Logo auf Kleidung
+- FIMI Logo MUSS auf linker Brustseite sichtbar sein!
+
+### CTA-Bilder
+- DIREKTER BLICKKONTAKT zur Kamera erforderlich!
+
+---
+
 ## Schnellstart für neue Session
 
 Kopiere diesen Text in einen neuen Claude Code Chat:
@@ -24,18 +46,25 @@ FIMI Bildgenerator Session starten:
 1. Lies zuerst die Modell-Info:
 /Users/brandea/Desktop/FIMI-Gebaeudereinigung/image-generator/!MODEL-INFO.md
 
-2. Lies das Regelwerk:
+2. Lies die Lieferanten-Übersicht (WICHTIG!):
+/Users/brandea/Desktop/FIMI-Gebaeudereinigung/image-generator/LIEFERANTEN.md
+
+3. Lies das Regelwerk:
 /Users/brandea/Desktop/FIMI-Gebaeudereinigung/image-generator/GOLDENES-REGELWERK.md
 
-3. Führe den Setup-Check aus:
+4. Führe den Setup-Check aus:
 cd /Users/brandea/Desktop/FIMI-Gebaeudereinigung/image-generator && python3 setup_check.py
 
-4. Falls alles OK: Prüfe welche Seite als nächstes Bilder braucht und generiere sie.
+5. Falls alles OK: Prüfe welche Seite als nächstes Bilder braucht und generiere sie.
    Falls Fehler: Behebe sie gemäß QUICKSTART im Regelwerk.
 
-5. Nach Generierung: git add, commit, push
+6. Nach Generierung: git add, commit, push
 
-WICHTIG: Nutze Modell "gemini-3-pro-image-preview" mit Location "global"!
+WICHTIG:
+- Nutze Modell "gemini-3-pro-image-preview" mit Location "global"!
+- Kärcher macht KEINE Reinigungswagen (VERMOP!) oder Einscheibenmaschinen (CLEANFIX!)
+- Mops im Büro sind BLAU (4-Farben-Prinzip)
+- Logo muss auf Kleidung sichtbar sein
 ```
 
 ---
