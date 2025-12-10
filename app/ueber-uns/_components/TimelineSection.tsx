@@ -54,11 +54,11 @@ const timeline = [
   },
   {
     year: '2026',
-    title: 'Weitere Expansion',
-    subtitle: 'Coming Soon',
-    description: 'Ausbau unseres Standortnetzwerks und Erweiterung unserer Dienstleistungspalette für noch mehr Kunden in Bayern.',
+    title: 'ISO Zertifizierung',
+    subtitle: 'ISO 9001 & ISO 14001',
+    description: 'Mit der ISO 9001 (Qualitätsmanagement) und ISO 14001 (Umweltmanagement) Zertifizierung setzen wir neue Maßstäbe für Qualität und Nachhaltigkeit in der Gebäudereinigung.',
     image: '/images/ueber-uns/timeline-2026.avif',
-    highlight: false,
+    highlight: true,
   },
 ]
 
