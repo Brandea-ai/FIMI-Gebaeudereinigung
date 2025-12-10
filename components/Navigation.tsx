@@ -15,7 +15,7 @@ const leistungenCategories = [
     id: 'gewerblich',
     title: 'Gewerbliche Reinigung',
     icon: Building2,
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=400&auto=format&fit=crop',
+    image: '/images/nav/gewerbliche-reinigung-800w.webp',
     services: [
       { name: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
       { name: 'Büroreinigung', href: '/leistungen/bueroreinigung' },
@@ -27,7 +27,7 @@ const leistungenCategories = [
     id: 'industrie',
     title: 'Industriereinigung',
     icon: Factory,
-    image: 'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?q=80&w=400&auto=format&fit=crop',
+    image: '/images/nav/industriereinigung-800w.webp',
     services: [
       { name: 'Industriereinigung', href: '/leistungen/industriereinigung' },
       { name: 'Hallenreinigung', href: '/leistungen/hallenreinigung' },
@@ -40,7 +40,7 @@ const leistungenCategories = [
     id: 'facility',
     title: 'Facility Management',
     icon: Wrench,
-    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=400&auto=format&fit=crop',
+    image: '/images/nav/facility-management-800w.webp',
     services: [
       { name: 'Facility Management', href: '/leistungen/facility-management' },
       { name: 'Hausmeisterservice', href: '/leistungen/hausmeisterservice' },
@@ -52,7 +52,7 @@ const leistungenCategories = [
     id: 'spezial',
     title: 'Spezialreinigung',
     icon: Sparkles,
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=400&auto=format&fit=crop',
+    image: '/images/nav/spezialreinigung-800w.webp',
     services: [
       { name: 'Baureinigung', href: '/leistungen/baureinigung' },
       { name: 'Sonderreinigung', href: '/leistungen/sonderreinigung' },
