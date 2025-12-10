@@ -40,118 +40,118 @@ NAV_IMAGES = [
     {
         "filename": "gewerbliche-reinigung",
         "title": "Gewerbliche Reinigung",
-        "prompt": """PROFESSIONELLES BILD für Navigation-Menü einer Gebäudereinigungsfirma
+        "prompt": """AUTHENTISCHES STOCKFOTO für eine Unternehmenswebsite
 
-SZENE: Gewerbliche Reinigung
-- Modernes, sauberes Bürogebäude-Foyer oder Empfangsbereich
-- Glänzende Böden, gepflegte Oberflächen
-- Helle, einladende Atmosphäre
-- Professionelles Business-Ambiente
+SZENE: Professionelle Reinigungskraft bei der Arbeit in einem modernen Büro
+- Eine echte Reinigungskraft (Frau oder Mann, ca. 35-50 Jahre) wischt den Boden in einem hellen, modernen Büro
+- Die Person trägt professionelle Arbeitskleidung (Poloshirt, Arbeitshose) - KEINE spezifische Firmenfarbe
+- Natürliche Arbeitsszene, nicht gestellt
+- Modernes, helles Büroumfeld mit Schreibtischen im Hintergrund
 
-STIL:
-- Hochwertige Architektur-/Interiorfotografie
-- Warme, einladende Beleuchtung
-- Sauberkeit und Professionalität ausstrahlen
-- KEINE Personen, KEINE Reinigungsgeräte sichtbar
-- Fokus auf das saubere Ergebnis
+FOTOSTIL:
+- Wie ein echtes Stockfoto von Getty Images oder Shutterstock
+- Natürliches Tageslicht oder Bürobeleuchtung
+- Authentische, dokumentarische Qualität
+- DSLR-Kamera-Look, leichte Tiefenschärfe
+- Warme, natürliche Farben - KEINE Corporate-Farben
 
 TECHNISCH:
 - Querformat 16:9
-- Hohe Qualität, scharfes Bild
-- Professionelle Bildkomposition
+- Hohe Auflösung, professionelle Schärfe
+- Wie ein Foto, das man bei Google Bildersuche "Büroreinigung" findet
 
-VERBOTEN:
-- KEINE Menschen
-- KEINE Reinigungsmaschinen oder -geräte
-- KEINE Logos oder Texte
-- KEINE Eimer, Wischmops, etc."""
+WICHTIG:
+- KEINE künstlichen CI-Farben (kein Türkis, kein Navy)
+- KEINE Logos auf der Kleidung
+- Realistische, alltägliche Arbeitsszene
+- Person soll freundlich und professionell wirken"""
     },
     {
         "filename": "industriereinigung",
         "title": "Industriereinigung",
-        "prompt": """PROFESSIONELLES BILD für Navigation-Menü einer Gebäudereinigungsfirma
+        "prompt": """AUTHENTISCHES STOCKFOTO für eine Unternehmenswebsite
 
-SZENE: Industriereinigung
-- Saubere, moderne Industriehalle oder Produktionsstätte
-- Makellose Industrieböden (Epoxidboden)
-- Organisierte, aufgeräumte Umgebung
-- Professionelle Industriearchitektur
+SZENE: Industriereinigung in einer großen Produktionshalle
+- Ein Arbeiter mit Scheuersaugmaschine (z.B. Kärcher, GELB) reinigt den Boden einer Industriehalle
+- Die Person trägt Sicherheitskleidung: Warnweste, Sicherheitsschuhe
+- Große, helle Industriehalle mit hohen Decken
+- Maschinen oder Regale im Hintergrund
 
-STIL:
-- Hochwertige Industriefotografie
-- Gute Beleuchtung, kein dunkles Ambiente
-- Sauberkeit und Ordnung ausstrahlen
-- KEINE Personen, KEINE Reinigungsgeräte sichtbar
-- Fokus auf die saubere, gepflegte Halle
+FOTOSTIL:
+- Wie ein echtes Industriefoto von Getty Images
+- Authentische Industrieatmosphäre
+- Natürliches Hallenlicht (große Fenster oder Oberlichter)
+- Dokumentarischer Stil, nicht inszeniert
+- Realistische Farben der Umgebung
 
 TECHNISCH:
 - Querformat 16:9
-- Hohe Qualität, scharfes Bild
-- Weitwinkel-Perspektive
+- Professionelle Qualität
+- Weitwinkel-Perspektive zeigt Größe der Halle
 
-VERBOTEN:
-- KEINE Menschen
-- KEINE Reinigungsmaschinen oder -geräte
-- KEINE Logos oder Texte
-- KEINE Eimer, Wischmops, etc."""
+WICHTIG:
+- KEINE künstlichen CI-Farben
+- Echte Industrieumgebung
+- Authentische Arbeitsszene
+- Professionelle aber alltägliche Situation"""
     },
     {
         "filename": "facility-management",
         "title": "Facility Management",
-        "prompt": """PROFESSIONELLES BILD für Navigation-Menü einer Gebäudereinigungsfirma
+        "prompt": """AUTHENTISCHES STOCKFOTO für eine Unternehmenswebsite
 
-SZENE: Facility Management
-- Modernes Gebäude mit gepflegter Außenanlage
-- Sauberer Eingangsbereich eines Bürogebäudes
-- Gepflegte Grünflächen, saubere Wege
-- Professionell gewartetes Gebäude
+SZENE: Hausmeister/Facility Manager bei der Außenanlagenpflege
+- Ein Hausmeister (Mann, ca. 40-55 Jahre) bei der Arbeit im Außenbereich
+- Gepflegter Eingangsbereich eines Bürogebäudes oder Wohnanlage
+- Die Person harkt Laub, pflegt Grünanlagen oder reinigt Wege
+- Professionelle Arbeitskleidung, evtl. Handschuhe
 
-STIL:
-- Hochwertige Architektur-/Immobilienfotografie
-- Sonniges, freundliches Wetter
-- Gepflegte Gesamtansicht
-- KEINE Personen, KEINE Geräte sichtbar
-- Fokus auf das gut gewartete Gebäude und Außenanlage
+FOTOSTIL:
+- Wie ein echtes Stockfoto bei der Google-Suche "Hausmeisterservice"
+- Natürliches Tageslicht, leicht bewölkt oder sonnig
+- Authentische Außenaufnahme
+- Dokumentarischer, nicht gestellter Stil
+- Natürliche Farben der Jahreszeit
 
 TECHNISCH:
 - Querformat 16:9
-- Hohe Qualität, scharfes Bild
-- Schöne Perspektive auf Gebäude und Umgebung
+- Professionelle Qualität
+- Gute Schärfentiefe
 
-VERBOTEN:
-- KEINE Menschen
-- KEINE Fahrzeuge
-- KEINE Logos oder Texte
-- KEINE Arbeitsgeräte"""
+WICHTIG:
+- KEINE künstlichen CI-Farben
+- Realistische deutsche Architektur im Hintergrund
+- Authentische Arbeitsszene
+- Freundlicher, kompetenter Eindruck"""
     },
     {
         "filename": "spezialreinigung",
         "title": "Spezialreinigung",
-        "prompt": """PROFESSIONELLES BILD für Navigation-Menü einer Gebäudereinigungsfirma
+        "prompt": """AUTHENTISCHES STOCKFOTO für eine Unternehmenswebsite
 
-SZENE: Spezialreinigung / Baureinigung
-- Frisch renovierter oder neu gebauter Raum
-- Makellos saubere Fenster mit Tageslichteinfall
-- Glänzende, perfekt gereinigte Oberflächen
-- Hochwertiges Finish nach Bauarbeiten
+SZENE: Professionelle Fensterreinigung oder Spezialreinigung
+- Ein Fensterputzer bei der Arbeit an großen Glasflächen
+- Professionelle Ausrüstung: Einwascher, Abzieher (z.B. UNGER, GRÜN)
+- Große Fensterfront eines modernen Gebäudes
+- Konzentrierte, professionelle Arbeit
 
-STIL:
-- Hochwertige Interiorfotografie
-- Helle, strahlende Atmosphäre
-- Perfektion und Sauberkeit ausstrahlen
-- KEINE Personen, KEINE Reinigungsgeräte sichtbar
-- Fokus auf das perfekte Endergebnis
+FOTOSTIL:
+- Wie ein echtes Stockfoto von Shutterstock
+- Natürliches Tageslicht
+- Klare, scharfe Aufnahme
+- Authentische Arbeitsszene
+- Natürliche Farben
 
 TECHNISCH:
 - Querformat 16:9
-- Hohe Qualität, scharfes Bild
-- Professionelle Beleuchtung
+- Professionelle Qualität
+- Interessante Perspektive (evtl. von innen nach außen oder Seitenperspektive)
 
-VERBOTEN:
-- KEINE Menschen
-- KEINE Reinigungsmaschinen oder -geräte
-- KEINE Logos oder Texte
-- KEINE Eimer, Wischmops, etc."""
+WICHTIG:
+- KEINE künstlichen CI-Farben
+- Authentische Reinigungstechnik sichtbar
+- Professioneller Eindruck
+- Wie ein Foto das man bei "professionelle Fensterreinigung" findet"""
     },
 ]
 
