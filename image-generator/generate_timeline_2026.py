@@ -27,45 +27,45 @@ client = genai.Client(
 )
 
 def generate():
-    prompt = """GENERIERE EIN NEUES BILD - Seriöses deutsches Büro mit Zertifikaten
+    prompt = """GENERIERE EIN NEUES BILD - Whiteboard mit Roadmap / Strategieplan
 
-Erstelle ein REALISTISCHES Foto eines klassischen, seriösen deutschen Büros.
+Erstelle ein REALISTISCHES Foto eines Whiteboards oder einer Pinnwand mit einer visuellen Roadmap.
 
-SZENE - Traditionelles deutsches Geschäftsbüro:
-- Klassischer Holzschreibtisch (Eiche oder Nussbaum)
-- Gerahmte Zertifikate/Urkunden an der Wand (2-3 Stück in schlichten schwarzen oder goldenen Rahmen)
-- Die Zertifikate sind UNSCHARF oder aus der Ferne - KEINE lesbaren Texte!
-- Ordner-Regal im Hintergrund (Leitz-Ordner, grau oder blau)
-- Schreibtischlampe (klassisch, nicht modern)
-- Vielleicht ein Aktenordner auf dem Schreibtisch
-- Fenster mit Tageslicht, eventuell mit Jalousien
-- Zimmerpflanze (Ficus oder ähnlich)
-- Teppichboden oder Parkett
+SZENE - Strategische Planung visualisiert:
+- Großes Whiteboard ODER Glaswand ODER Pinnwand
+- Darauf eine ROADMAP / TIMELINE als Grafik:
+  - Mehrere Meilensteine auf einer horizontalen Linie
+  - Pfeile die nach rechts zeigen (Fortschritt)
+  - Farbige Post-its oder Marker-Zeichnungen
+  - Checkmarks bei erledigten Punkten
+  - Ein Stern oder Ziel-Symbol am Ende
+- Eventuell bunte Sticky Notes daneben
+- Marker/Stifte am Whiteboard-Rand
 
-ATMOSPHÄRE - Typisch deutsches Mittelstands-Unternehmen:
-- Seriös, vertrauenswürdig, bodenständig
-- NICHT futuristisch oder high-tech
-- NICHT steril oder kalt
-- Warme, einladende Atmosphäre
-- Wie das Büro eines etablierten Handwerksbetriebs oder Dienstleisters
+WICHTIG - KEINE LESBAREN TEXTE:
+- Die Post-its und Beschriftungen sind UNSCHARF oder zu klein
+- Man erkennt DASS es Text gibt, aber man kann ihn NICHT lesen
+- Nur abstrakte Formen, Pfeile, Linien, Checkmarks
+
+ATMOSPHÄRE:
+- Wie in einem Besprechungsraum nach einer Strategiesitzung
+- Professionell aber dynamisch
+- Fortschritt und Planung
+- Zielorientiert
 
 KRITISCH - VERBOTEN:
 - KEINE Menschen im Bild!
-- KEINE futuristischen Elemente
-- KEINE Glaswände oder Start-up-Atmosphäre
-- KEINE lesbaren Texte auf Dokumenten
-- KEINE Monitore mit Inhalten
-- KEINE Reinigungsgeräte
+- KEINE lesbaren Texte oder Wörter!
 - KEINE Logos
+- KEINE Computer-Bildschirme
 
 STIL:
-- Fotorealistisch wie ein echtes Foto
-- Warme Beleuchtung (Tageslicht + Kunstlicht)
-- Wie aus einem Imagefilm eines deutschen Mittelständlers
-- Vertrauenswürdig und authentisch
-- NICHT wie ein Stock-Foto - sondern wie ein echtes Büro
+- Fotorealistisch
+- Leicht schräge Perspektive auf das Whiteboard
+- Gute Beleuchtung
+- Schärfentiefe: Whiteboard scharf, Hintergrund leicht unscharf
 
-Das Bild zeigt ein seriöses, etabliertes Unternehmensbüro - passend zu einer professionellen Gebäudereinigungsfirma."""
+Das Bild symbolisiert strategische Planung und Zielerreichung - perfekt für "ISO Zertifizierung als nächstes Ziel"."""
 
     for attempt in range(1, 6):
         try:
