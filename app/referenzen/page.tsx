@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Award, Building2, Maximize2, X, ArrowRight, CheckCircle } from 'lucide-react'
 import QualityTrustBar from '@/components/QualityTrustBar'
-import { referenzen, getReferenzStatistiken, type Referenz } from '@/lib/referenzen-data'
+import { referenzen, type Referenz } from '@/lib/referenzen-data'
 import { leistungen } from '@/lib/leistungen-data'
 import { branchen } from '@/lib/branchen-data'
 
@@ -22,9 +22,6 @@ export default function ReferenzenPage() {
   // Pagination State - initial 12 Projekte laden
   const ITEMS_PER_PAGE = 12
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE)
-
-  // Get filter options
-  const stats = getReferenzStatistiken()
 
   // Filter referenzen
   const filteredReferenzen = useMemo(() => {
@@ -113,15 +110,15 @@ export default function ReferenzenPage() {
               <div className="flex flex-wrap gap-8 mb-12">
                 <div className="flex items-center gap-2">
                   <CheckCircle size={22} className="text-[#109387]" aria-hidden="true" />
-                  <span className="text-white font-semibold text-lg">Seit 2016</span>
+                  <span className="text-white font-semibold text-lg">Alle Branchen</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle size={22} className="text-[#109387]" aria-hidden="true" />
-                  <span className="text-white font-semibold text-lg">8 Einsatzorte</span>
+                  <span className="text-white font-semibold text-lg">Flexible Lösungen</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle size={22} className="text-[#109387]" aria-hidden="true" />
-                  <span className="text-white font-semibold text-lg">{Math.round(stats.flaeche / 1000)}k m² betreut</span>
+                  <span className="text-white font-semibold text-lg">Individuelle Beratung</span>
                 </div>
               </div>
 
@@ -157,7 +154,7 @@ export default function ReferenzenPage() {
                       Von Büro & Verwaltung über Industrie bis Gesundheitswesen – wir kennen die Anforderungen Ihrer Branche.
                     </p>
                     <span className="inline-flex items-center gap-2 text-[#109387] font-bold group-hover:gap-3 transition-all">
-                      {stats.branchen} Branchen entdecken
+                      Alle Branchen entdecken
                       <ArrowRight size={18} aria-hidden="true" />
                     </span>
                   </div>
