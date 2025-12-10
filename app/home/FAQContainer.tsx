@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import { ChevronDown, ArrowRight } from 'lucide-react'
 import FadeIn from '@/components/FadeIn'
 
@@ -92,16 +91,6 @@ export default function FAQContainer() {
                   0871 430 334 60
                 </span>
               </a>
-
-              {/* Bild */}
-              <div className="relative mt-8 h-48 lg:h-64 rounded-[6px] overflow-hidden hidden lg:block">
-                <Image
-                  src="/images/home/faq-service.avif"
-                  alt="Kundenservice FIMI Gebäudereinigung"
-                  fill
-                  className="object-cover"
-                />
-              </div>
             </aside>
           </FadeIn>
 
