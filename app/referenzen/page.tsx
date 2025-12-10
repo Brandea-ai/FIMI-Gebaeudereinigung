@@ -4,15 +4,14 @@ import { useState, useMemo } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Award, Building2, MapPin, Maximize2, X, ArrowRight, CheckCircle } from 'lucide-react'
+import { Award, Building2, Maximize2, X, ArrowRight, CheckCircle } from 'lucide-react'
 import QualityTrustBar from '@/components/QualityTrustBar'
-import { referenzen, getAllJahre, getReferenzStatistiken, type Referenz } from '@/lib/referenzen-data'
+import { referenzen, getReferenzStatistiken, type Referenz } from '@/lib/referenzen-data'
 import { leistungen } from '@/lib/leistungen-data'
 import { branchen } from '@/lib/branchen-data'
 
 export default function ReferenzenPage() {
   // Filter States
-  const [selectedJahr, setSelectedJahr] = useState<number | null>(null)
   const [selectedBranche, setSelectedBranche] = useState<string | null>(null)
   const [selectedLeistung, setSelectedLeistung] = useState<string | null>(null)
 
@@ -25,16 +24,11 @@ export default function ReferenzenPage() {
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE)
 
   // Get filter options
-  const jahre = getAllJahre()
   const stats = getReferenzStatistiken()
 
   // Filter referenzen
   const filteredReferenzen = useMemo(() => {
     let result = referenzen
-
-    if (selectedJahr) {
-      result = result.filter(r => r.jahr === selectedJahr)
-    }
 
     if (selectedBranche) {
       result = result.filter(r => r.branche === selectedBranche)
@@ -45,7 +39,7 @@ export default function ReferenzenPage() {
     }
 
     return result
-  }, [selectedJahr, selectedBranche, selectedLeistung])
+  }, [selectedBranche, selectedLeistung])
 
   // Get branche name by slug
   const getBrancheName = (slug: string) => {
@@ -72,7 +66,6 @@ export default function ReferenzenPage() {
 
   // Reset filters
   const resetFilters = () => {
-    setSelectedJahr(null)
     setSelectedBranche(null)
     setSelectedLeistung(null)
     setVisibleCount(ITEMS_PER_PAGE)
@@ -87,7 +80,7 @@ export default function ReferenzenPage() {
   const visibleReferenzen = filteredReferenzen.slice(0, visibleCount)
   const hasMoreToLoad = visibleCount < filteredReferenzen.length
 
-  const hasActiveFilters = selectedJahr || selectedBranche || selectedLeistung
+  const hasActiveFilters = selectedBranche || selectedLeistung
 
   return (
     <main className="min-h-screen bg-white">
@@ -217,20 +210,6 @@ export default function ReferenzenPage() {
                 Alle
               </button>
 
-              {/* Jahr Filter */}
-              <label htmlFor="filter-jahr" className="sr-only">Nach Jahr filtern</label>
-              <select
-                id="filter-jahr"
-                value={selectedJahr || ''}
-                onChange={(e) => { setSelectedJahr(e.target.value ? Number(e.target.value) : null); setVisibleCount(ITEMS_PER_PAGE); }}
-                className="appearance-none bg-[#f8f9fa] hover:bg-[#012956] hover:text-white text-[#012956] font-bold text-sm sm:text-base px-3 sm:px-5 py-2 sm:py-2.5 pr-7 sm:pr-10 rounded-[6px] cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-[#109387]/20"
-              >
-                <option value="">Jahr</option>
-                {jahre.map((jahr) => (
-                  <option key={jahr} value={jahr}>{jahr}</option>
-                ))}
-              </select>
-
               {/* Branche Filter */}
               <label htmlFor="filter-branche" className="sr-only">Nach Branche filtern</label>
               <select
@@ -334,11 +313,6 @@ export default function ReferenzenPage() {
                         loading={index < 3 ? undefined : 'lazy'}
                       />
 
-                      {/* Year Badge */}
-                      <div className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-[#109387] text-white text-xs sm:text-sm font-bold px-2 py-0.5 sm:px-3 sm:py-1 rounded-[4px] sm:rounded-[6px]">
-                        {referenz.jahr}
-                      </div>
-
                       {/* Expand Icon - Desktop only */}
                       <div className="absolute top-4 right-4 bg-white text-[#012956] p-2 rounded-[6px] opacity-0 group-hover:opacity-100 transition-opacity hidden sm:block" aria-hidden="true">
                         <Maximize2 className="w-4 h-4" />
@@ -361,14 +335,6 @@ export default function ReferenzenPage() {
                       <p className="hidden sm:block text-gray-600 font-semibold mb-4 line-clamp-2 text-sm lg:text-base">
                         {referenz.kurzbeschreibung}
                       </p>
-
-                      {/* Meta Info - nur Desktop */}
-                      <div className="hidden sm:flex items-center gap-4 text-sm text-gray-600 font-semibold">
-                        <div className="flex items-center gap-1">
-                          <MapPin className="w-4 h-4" aria-hidden="true" />
-                          <span className="truncate">{referenz.standort}</span>
-                        </div>
-                      </div>
 
                       {/* Leistungen Tags - nur auf lg+ */}
                       <div className="hidden lg:flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-100">
@@ -468,9 +434,6 @@ export default function ReferenzenPage() {
                     <div className="mb-6">
                       <div className="flex items-center gap-3 mb-3">
                         <span className="bg-[#109387] text-white text-sm font-bold px-3 py-1 rounded-[6px]">
-                          {selectedReferenz.jahr}
-                        </span>
-                        <span className="text-[#012956] font-semibold">
                           {getBrancheName(selectedReferenz.branche)}
                         </span>
                       </div>
@@ -489,30 +452,9 @@ export default function ReferenzenPage() {
                       {selectedReferenz.beschreibung}
                     </p>
 
-                    {/* Meta Grid */}
-                    <div className="grid grid-cols-2 gap-3 md:gap-4 mb-6 md:mb-8">
-                      <div className="bg-[#f8f9fa] rounded-[6px] p-3 md:p-4">
-                        <div className="flex items-center gap-2 text-gray-600 text-xs md:text-sm font-semibold mb-1">
-                          <MapPin className="w-3.5 h-3.5 md:w-4 md:h-4" aria-hidden="true" />
-                          Standort
-                        </div>
-                        <div className="font-bold text-[#012956] text-sm md:text-base">{selectedReferenz.standort}</div>
-                      </div>
-
-                      {selectedReferenz.flaeche && (
-                        <div className="bg-[#f8f9fa] rounded-[6px] p-3 md:p-4">
-                          <div className="flex items-center gap-2 text-gray-600 text-xs md:text-sm font-semibold mb-1">
-                            <Maximize2 className="w-3.5 h-3.5 md:w-4 md:h-4" aria-hidden="true" />
-                            Fläche
-                          </div>
-                          <div className="font-bold text-[#012956] text-sm md:text-base">{selectedReferenz.flaeche}</div>
-                        </div>
-                      )}
-                    </div>
-
                     {/* Leistungen */}
                     <div className="mb-6 md:mb-8">
-                      <h3 className="font-bold text-[#012956] mb-3 text-sm md:text-base">Erbrachte Leistungen</h3>
+                      <h3 className="font-bold text-[#012956] mb-3 text-sm md:text-base">Mögliche Leistungen</h3>
                       <div className="flex flex-wrap gap-2">
                         {selectedReferenz.leistungen.map((leistungSlug) => (
                           <span
