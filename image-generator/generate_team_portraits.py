@@ -121,51 +121,59 @@ TEAM_MEMBERS = [
 def generate_portrait(member: dict, retries: int = 5) -> bool:
     """Generiert ein authentisches Profilbild für einen Mitarbeiter."""
 
-    prompt = f"""GENERIERE EIN PROFILBILD - Echte normale Person, KEIN Model
+    # Verschiedene Lächeln-Stile für Abwechslung
+    smile_styles = [
+        "breites freundliches Lächeln mit sichtbaren Zähnen",
+        "warmes herzliches Lächeln mit Zähnen",
+        "freundliches Lächeln ohne Zähne, geschlossener Mund",
+        "selbstbewusstes Lächeln mit leicht sichtbaren Zähnen",
+        "natürliches entspanntes Lächeln",
+    ]
+    import hashlib
+    smile_index = int(hashlib.md5(member['filename'].encode()).hexdigest(), 16) % len(smile_styles)
+    smile_style = smile_styles[smile_index]
+
+    prompt = f"""GENERIERE EIN PROFESSIONELLES PROFILBILD
 
 PERSON:
 - Geschlecht: {member['geschlecht']}
 - Alter: ca. {member['alter']} Jahre
 - Herkunft: {member['herkunft']}
 - Position: {member['position']}
+- Beschreibung: {member['beschreibung']}
 
-WICHTIG - AUTHENTISCHER LOOK:
-- NORMALE Person, KEIN Model, KEIN perfektes Aussehen
-- Durchschnittliches Gesicht wie ein echter Mitarbeiter
-- Leichte Hautunreinheiten, Falten, normale Haut erlaubt
-- Normale Körperform (nicht schlank wie ein Model)
-- Alltägliches, ungestelltes Aussehen
-- Wie ein Foto vom Kollegen mit dem Handy gemacht
+AUTHENTISCHER LOOK:
+- Normale, echte Person - KEIN Supermodel
+- Natürliche Haut (leichte Falten oder Unreinheiten sind OK)
+- Durchschnittliche Körperform
+- Wie ein echter Mitarbeiter einer deutschen Firma
 
-GESICHTSAUSDRUCK:
-- NEUTRAL bis leicht freundlich
-- KEIN breites Lächeln
-- KEIN übertriebener Ausdruck
-- Entspannt, natürlich, ruhig
-- Wie auf einem Passfoto oder Firmenausweis
+GESICHTSAUSDRUCK - WICHTIG:
+- {smile_style}
+- Freundlich, sympathisch, einladend
+- Augen strahlen Wärme aus
+- Natürlich und authentisch, nicht gestellt
 
-STIL:
-- Kopf-Schulter-Portrait (Brustbild)
-- Neutraler, unscharfer Hintergrund (grau oder beige)
-- Normale Bürobeleuchtung (nicht perfekt ausgeleuchtet)
-- Person schaut direkt in die Kamera
+FOTOSTIL:
+- Professionelles Kopf-Schulter-Portrait (Brustbild)
+- GUTE BELEUCHTUNG - professionell ausgeleuchtet, weich
+- Neutraler, unscharfer Hintergrund (grau, beige oder hellblau)
+- Hochwertige Kameraqualität
+- Person schaut freundlich in die Kamera
 
 KLEIDUNG:
-- Normale Alltagskleidung oder einfaches Hemd/Bluse
-- Nicht zu schick, nicht zu casual
+- Business-casual oder professionell
+- Hemd, Bluse oder Blazer
 - KEINE Logos
 
-KRITISCH VERBOTEN:
-- KEINE Model-Gesichter oder perfekte Haut
-- KEIN Hollywood-Lächeln
-- KEINE professionelle Studio-Beleuchtung
+VERBOTEN:
 - KEINE Stock-Foto-Atmosphäre
-- KEINE übertriebene Schönheit
 - KEINE anderen Personen
+- KEINE Maschinen oder Geräte
 
 SEITENVERHÄLTNIS: Portrait 4:5 (hochformat)
 
-Denke an echte Mitarbeiterfotos von einer kleinen deutschen Firma - normale Menschen, nicht Models."""
+Erstelle ein hochwertiges, professionelles Mitarbeiterfoto wie für eine moderne Firmenwebsite."""
 
     for attempt in range(1, retries + 1):
         try:
