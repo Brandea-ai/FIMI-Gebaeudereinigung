@@ -431,6 +431,11 @@ export default function ReferenzenPage() {
                 placeholder="Suchen... z.B. Hotel, Büro, Industrie"
                 value={searchQuery}
                 onChange={(e) => { setSearchQuery(e.target.value); setVisibleCount(ITEMS_PER_PAGE); }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    gridSectionRef.current?.scrollIntoView({ behavior: 'smooth' })
+                  }
+                }}
                 aria-label="Szenarien durchsuchen"
                 className="w-full pl-12 pr-10 py-3 rounded-[6px] border border-gray-200 bg-[#f8f9fa] font-semibold text-[#012956] placeholder:text-gray-400 focus:outline-none focus:border-[#109387] focus:ring-2 focus:ring-[#109387]/20 transition-all"
               />
