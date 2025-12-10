@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      images: [post.image],
+      images: [post.heroImage],
     },
   }
 }
@@ -90,10 +90,10 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   return (
     <main className="min-h-screen bg-white">
-      {/* Hero Image - responsive Höhe */}
-      <section className="relative min-h-[50vh] sm:min-h-[45vh] lg:min-h-[50vh] flex flex-col" aria-labelledby="article-title">
+      {/* Hero Image - 21:9 Format für breites Kinolook */}
+      <section className="relative aspect-[21/9] sm:aspect-[21/9] lg:aspect-[21/9] max-h-[60vh] flex flex-col" aria-labelledby="article-title">
         <Image
-          src={post.image}
+          src={post.heroImage}
           alt={post.title}
           fill
           className="object-cover"

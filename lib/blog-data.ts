@@ -7,7 +7,8 @@ export interface BlogPost {
   title: string
   excerpt: string
   content: string // HTML content
-  image: string
+  image: string // Vorschaubild (16:10 Format) für Übersichtsseite
+  heroImage: string // Hero-Bild (21:9 Format) für Detailseite
   category: 'news' | 'tipps' | 'projekt' | 'team'
   author: string
   authorRole?: string // E-E-A-T: Rolle/Position des Autors
@@ -139,7 +140,8 @@ export const blogPosts: BlogPost[] = [
         </li>
       </ul>
     `,
-    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
+    image: '/images/blog/tariflohn-gebaeudereinigung-2025-2026.avif',
+    heroImage: '/images/blog/tariflohn-gebaeudereinigung-2025-2026-hero.avif',
     category: 'news',
     author: 'FIMI Team',
     authorRole: 'Redaktion Gebäudereinigung',
@@ -260,7 +262,8 @@ export const blogPosts: BlogPost[] = [
         </li>
       </ul>
     `,
-    image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=800&auto=format&fit=crop',
+    image: '/images/blog/eu-oekodesign-verordnung-espr-reinigung.avif',
+    heroImage: '/images/blog/eu-oekodesign-verordnung-espr-reinigung-hero.avif',
     category: 'news',
     author: 'FIMI Team',
     authorRole: 'Redaktion Gebäudereinigung',
@@ -381,7 +384,8 @@ export const blogPosts: BlogPost[] = [
         </li>
       </ul>
     `,
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800&auto=format&fit=crop',
+    image: '/images/blog/digitalisierung-gebaeudereinigung-2025-ki-robotik-iot.avif',
+    heroImage: '/images/blog/digitalisierung-gebaeudereinigung-2025-ki-robotik-iot-hero.avif',
     category: 'news',
     author: 'FIMI Team',
     authorRole: 'Redaktion Gebäudereinigung',
@@ -514,7 +518,8 @@ export const blogPosts: BlogPost[] = [
         </li>
       </ul>
     `,
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop',
+    image: '/images/blog/hygiene-arbeitsplatz-standards-buero-bmas-baua.avif',
+    heroImage: '/images/blog/hygiene-arbeitsplatz-standards-buero-bmas-baua-hero.avif',
     category: 'tipps',
     author: 'FIMI Team',
     authorRole: 'Reinigungsexperten',
@@ -668,7 +673,8 @@ export const blogPosts: BlogPost[] = [
         </li>
       </ul>
     `,
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop',
+    image: '/images/blog/reinigungsintervalle-buero-schule-praxis-din-ral.avif',
+    heroImage: '/images/blog/reinigungsintervalle-buero-schule-praxis-din-ral-hero.avif',
     category: 'tipps',
     author: 'FIMI Team',
     authorRole: 'Reinigungsexperten',
@@ -786,7 +792,8 @@ export const blogPosts: BlogPost[] = [
         </li>
       </ul>
     `,
-    image: 'https://images.unsplash.com/photo-1516912481808-3406841bd33c?q=80&w=800&auto=format&fit=crop',
+    image: '/images/blog/winterdienst-bayern-pflichten-haftung-bgh-urteil-2025.avif',
+    heroImage: '/images/blog/winterdienst-bayern-pflichten-haftung-bgh-urteil-2025-hero.avif',
     category: 'tipps',
     author: 'FIMI Team',
     authorRole: 'Reinigungsexperten',
@@ -901,7 +908,8 @@ export const blogPosts: BlogPost[] = [
         </li>
       </ul>
     `,
-    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop',
+    image: '/images/blog/praxisreinigung-rki-krinko-richtlinien-hygiene-gesundheitswesen.avif',
+    heroImage: '/images/blog/praxisreinigung-rki-krinko-richtlinien-hygiene-gesundheitswesen-hero.avif',
     category: 'projekt',
     author: 'FIMI Team',
     authorRole: 'Projektleitung',
@@ -1019,7 +1027,8 @@ export const blogPosts: BlogPost[] = [
         </li>
       </ul>
     `,
-    image: 'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?q=80&w=800&auto=format&fit=crop',
+    image: '/images/blog/industriereinigung-arbeitssicherheit-dguv-gefahrstoffv.avif',
+    heroImage: '/images/blog/industriereinigung-arbeitssicherheit-dguv-gefahrstoffv-hero.avif',
     category: 'projekt',
     author: 'FIMI Team',
     authorRole: 'Projektleitung',
@@ -1145,7 +1154,8 @@ export const blogPosts: BlogPost[] = [
         </li>
       </ul>
     `,
-    image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=800&auto=format&fit=crop',
+    image: '/images/blog/schulreinigung-bayern-rahmenhygieneplan-hygienestandards.avif',
+    heroImage: '/images/blog/schulreinigung-bayern-rahmenhygieneplan-hygienestandards-hero.avif',
     category: 'projekt',
     author: 'FIMI Team',
     authorRole: 'Projektleitung',
@@ -1283,7 +1293,8 @@ export const blogPosts: BlogPost[] = [
         </li>
       </ul>
     `,
-    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop',
+    image: '/images/blog/ausbildung-gebaeudereiniger-gehalt-karriere-2025.avif',
+    heroImage: '/images/blog/ausbildung-gebaeudereiniger-gehalt-karriere-2025-hero.avif',
     category: 'team',
     author: 'FIMI Team',
     authorRole: 'Personalabteilung',
@@ -1388,7 +1399,8 @@ export const blogPosts: BlogPost[] = [
         </li>
       </ul>
     `,
-    image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop',
+    image: '/images/blog/fachkraeftemangel-gebaeudereinigung-loesungen-2025.avif',
+    heroImage: '/images/blog/fachkraeftemangel-gebaeudereinigung-loesungen-2025-hero.avif',
     category: 'team',
     author: 'FIMI Team',
     authorRole: 'Personalabteilung',
@@ -1504,7 +1516,8 @@ export const blogPosts: BlogPost[] = [
         </li>
       </ul>
     `,
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=800&auto=format&fit=crop',
+    image: '/images/blog/gesundheitsschutz-reinigung-ergonomie-hautschutz-bg-bau.avif',
+    heroImage: '/images/blog/gesundheitsschutz-reinigung-ergonomie-hautschutz-bg-bau-hero.avif',
     category: 'team',
     author: 'FIMI Team',
     authorRole: 'Personalabteilung',
