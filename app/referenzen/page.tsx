@@ -664,13 +664,13 @@ export default function ReferenzenPage() {
               <X className="w-6 h-6" />
             </button>
 
-            {/* Modal Container - Desktop: zentriert, Mobile: Bottom Sheet */}
+            {/* Modal Container - Desktop: zentriert & größer, Mobile: Bottom Sheet */}
             <motion.div
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 100 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className="w-full md:w-[95vw] md:max-w-5xl bg-white rounded-t-[20px] md:rounded-[6px] max-h-[92vh] md:max-h-[90vh] overflow-hidden shadow-2xl"
+              className="w-full md:w-[95vw] md:max-w-6xl lg:max-w-7xl bg-white rounded-t-[20px] md:rounded-[6px] max-h-[92vh] md:max-h-[92vh] overflow-hidden shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Mobile Drag Handle */}
@@ -679,17 +679,17 @@ export default function ReferenzenPage() {
               </div>
 
               {/* Scrollable Content Container */}
-              <div className="overflow-y-auto max-h-[calc(92vh-20px)] md:max-h-[90vh]">
-                <div className="md:grid md:grid-cols-2">
-                  {/* Image - Vollständig angezeigt */}
-                  <div className="relative aspect-[4/3] md:aspect-auto md:h-full md:min-h-[500px] bg-gray-900 md:sticky md:top-0 flex items-center justify-center">
+              <div className="overflow-y-auto max-h-[calc(92vh-20px)] md:max-h-[92vh]">
+                <div className="md:grid md:grid-cols-[1.2fr_1fr] lg:grid-cols-[1.4fr_1fr]">
+                  {/* Image - Vollständig angezeigt, größer */}
+                  <div className="relative aspect-[4/3] md:aspect-auto md:h-full md:min-h-[550px] lg:min-h-[650px] bg-gray-900 md:sticky md:top-0 flex items-center justify-center">
                     <Image
                       src={selectedReferenz.bilder[0]}
                       alt={selectedReferenz.projektName}
                       fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
+                      sizes="(max-width: 768px) 100vw, 60vw"
                       className="object-contain"
-                      quality={75}
+                      quality={80}
                       loading="eager"
                     />
                   </div>
