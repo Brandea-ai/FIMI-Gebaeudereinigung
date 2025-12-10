@@ -121,47 +121,51 @@ TEAM_MEMBERS = [
 def generate_portrait(member: dict, retries: int = 5) -> bool:
     """Generiert ein authentisches Profilbild für einen Mitarbeiter."""
 
-    prompt = f"""GENERIERE EIN PROFILBILD - Authentisches Business-Portrait
+    prompt = f"""GENERIERE EIN PROFILBILD - Echte normale Person, KEIN Model
 
 PERSON:
-- Name: {member['name']}
 - Geschlecht: {member['geschlecht']}
 - Alter: ca. {member['alter']} Jahre
+- Herkunft: {member['herkunft']}
 - Position: {member['position']}
-- Beschreibung: {member['beschreibung']}
 
-STIL - Authentisches Mitarbeiter-Foto:
+WICHTIG - AUTHENTISCHER LOOK:
+- NORMALE Person, KEIN Model, KEIN perfektes Aussehen
+- Durchschnittliches Gesicht wie ein echter Mitarbeiter
+- Leichte Hautunreinheiten, Falten, normale Haut erlaubt
+- Normale Körperform (nicht schlank wie ein Model)
+- Alltägliches, ungestelltes Aussehen
+- Wie ein Foto vom Kollegen mit dem Handy gemacht
+
+GESICHTSAUSDRUCK:
+- NEUTRAL bis leicht freundlich
+- KEIN breites Lächeln
+- KEIN übertriebener Ausdruck
+- Entspannt, natürlich, ruhig
+- Wie auf einem Passfoto oder Firmenausweis
+
+STIL:
 - Kopf-Schulter-Portrait (Brustbild)
-- Neutraler, unscharfer Hintergrund (grau, beige oder weiß)
-- Natürliche, weiche Beleuchtung
-- Person schaut freundlich in die Kamera
-- Echtes, natürliches Lächeln (nicht übertrieben)
-- Wie ein echtes Firmenfoto, nicht wie ein Stock-Foto
+- Neutraler, unscharfer Hintergrund (grau oder beige)
+- Normale Bürobeleuchtung (nicht perfekt ausgeleuchtet)
+- Person schaut direkt in die Kamera
 
 KLEIDUNG:
-- Angemessen für die Position
-- Sauber und gepflegt
-- Business-casual oder professionell
-- KEINE Firmenlogos sichtbar
-- KEINE Arbeitskleidung mit Aufdrucken
+- Normale Alltagskleidung oder einfaches Hemd/Bluse
+- Nicht zu schick, nicht zu casual
+- KEINE Logos
 
-QUALITÄT:
-- Fotorealistisch
-- Hochauflösend
-- Scharfes Gesicht
-- Professionelle Fotografie-Qualität
-
-KRITISCH - VERBOTEN:
-- KEINE Logos oder Schriftzüge
-- KEINE Reinigungsgeräte oder Maschinen
-- KEINE künstlichen oder übertriebenen Posen
+KRITISCH VERBOTEN:
+- KEINE Model-Gesichter oder perfekte Haut
+- KEIN Hollywood-Lächeln
+- KEINE professionelle Studio-Beleuchtung
 - KEINE Stock-Foto-Atmosphäre
-- KEIN ablenkender Hintergrund
-- KEINE anderen Personen im Bild
+- KEINE übertriebene Schönheit
+- KEINE anderen Personen
 
 SEITENVERHÄLTNIS: Portrait 4:5 (hochformat)
 
-Das Foto soll authentisch wirken - wie ein echtes Mitarbeiterfoto einer Gebäudereinigungsfirma."""
+Denke an echte Mitarbeiterfotos von einer kleinen deutschen Firma - normale Menschen, nicht Models."""
 
     for attempt in range(1, retries + 1):
         try:
