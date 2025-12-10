@@ -11,14 +11,14 @@ const teamBereiche = [
     beschreibung: 'Persönliche Beratung und maßgeschneiderte Lösungen für Ihren Bedarf.',
     mitglieder: [
       {
-        name: 'Anna Weber',
+        name: 'Elena Popescu',
         position: 'Key Account Managerin',
-        bild: '/images/ueber-uns/team-anna-weber.avif',
+        bild: '/images/ueber-uns/team-elena-popescu.avif',
       },
       {
-        name: 'Michael Huber',
+        name: 'Markus Lehner',
         position: 'Vertriebsleiter',
-        bild: '/images/ueber-uns/team-michael-huber.avif',
+        bild: '/images/ueber-uns/team-markus-lehner.avif',
       },
     ],
   },
@@ -27,19 +27,19 @@ const teamBereiche = [
     beschreibung: 'Reibungslose Organisation, Disposition und Kundenservice.',
     mitglieder: [
       {
-        name: 'Sandra Müller',
+        name: 'Fatima Krasniqi',
         position: 'Office Managerin',
-        bild: '/images/ueber-uns/team-sandra-mueller.avif',
+        bild: '/images/ueber-uns/team-fatima-krasniqi.avif',
       },
       {
-        name: 'Lisa Bauer',
+        name: 'Svetlana Morozova',
         position: 'Disposition',
-        bild: '/images/ueber-uns/team-lisa-bauer.avif',
+        bild: '/images/ueber-uns/team-svetlana-morozova.avif',
       },
       {
-        name: 'Julia Fischer',
+        name: 'Thomas Berger',
         position: 'Buchhaltung',
-        bild: '/images/ueber-uns/team-julia-fischer.avif',
+        bild: '/images/ueber-uns/team-thomas-berger.avif',
       },
     ],
   },
@@ -48,19 +48,19 @@ const teamBereiche = [
     beschreibung: 'Verantwortung für Qualität und Kundenzufriedenheit vor Ort.',
     mitglieder: [
       {
-        name: 'Stefan Gruber',
+        name: 'Dragan Petrović',
         position: 'Objektleiter Gewerbe',
-        bild: '/images/ueber-uns/team-stefan-gruber.avif',
+        bild: '/images/ueber-uns/team-dragan-petrovic.avif',
       },
       {
-        name: 'Maria Schneider',
+        name: 'Maria Ionescu',
         position: 'Objektleiterin Industrie',
-        bild: '/images/ueber-uns/team-maria-schneider.avif',
+        bild: '/images/ueber-uns/team-maria-ionescu.avif',
       },
       {
-        name: 'Andreas Maier',
+        name: 'Blerim Hoxha',
         position: 'Objektleiter Sonderreinigung',
-        bild: '/images/ueber-uns/team-andreas-maier.avif',
+        bild: '/images/ueber-uns/team-blerim-hoxha.avif',
       },
     ],
   },
@@ -69,9 +69,9 @@ const teamBereiche = [
     beschreibung: 'Kontinuierliche Verbesserung und Einhaltung unserer Qualitätsstandards.',
     mitglieder: [
       {
-        name: 'Petra Hoffmann',
+        name: 'Claudia Wimmer',
         position: 'QM-Beauftragte',
-        bild: '/images/ueber-uns/team-petra-hoffmann.avif',
+        bild: '/images/ueber-uns/team-claudia-wimmer.avif',
       },
     ],
   },

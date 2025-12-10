@@ -96,17 +96,17 @@ export default function ReferenzenPage() {
             {/* Content - Links */}
             <div>
               <p className="text-sm text-[#109387] font-semibold uppercase tracking-wide mb-3">
-                Unsere Projekte
+                Einsatzmöglichkeiten
               </p>
 
               <h1 id="hero-heading" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.15] mb-6">
-                So arbeiten wir
-                <span className="block text-[#109387] mt-2">für unsere Kunden</span>
+                So könnten wir
+                <span className="block text-[#109387] mt-2">für Sie arbeiten</span>
               </h1>
 
               <p className="text-lg text-white/80 font-semibold leading-relaxed mb-10 max-w-xl">
-                Entdecken Sie anonymisierte Projektbeispiele aus verschiedenen Branchen.
-                Konkrete Referenzen mit Ansprechpartnern erhalten Sie auf Anfrage.
+                Entdecken Sie typische Einsatzszenarien aus verschiedenen Branchen und
+                lassen Sie sich von unseren Lösungsansätzen inspirieren.
               </p>
 
               {/* Trust-Punkte */}
@@ -258,18 +258,18 @@ export default function ReferenzenPage() {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 id="projekte-heading" className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1] mb-4">
-              {hasActiveFilters ? 'Gefilterte Projekte' : 'Projektbeispiele im Überblick'}
+              {hasActiveFilters ? 'Gefilterte Szenarien' : 'Typische Einsatzszenarien'}
             </h2>
             <p className="text-lg text-gray-700 font-semibold leading-relaxed max-w-2xl mx-auto mb-6">
               {hasActiveFilters
-                ? `${filteredReferenzen.length} Projekte gefunden`
-                : 'Aus Datenschutzgründen zeigen wir hier anonymisierte Projektbeispiele.'}
+                ? `${filteredReferenzen.length} Szenarien gefunden`
+                : 'Sehen Sie, wie professionelle Gebäudereinigung in verschiedenen Branchen aussehen kann.'}
             </p>
-            {/* Referenzen auf Anfrage Hinweis */}
+            {/* Hinweis */}
             <div className="inline-flex items-center gap-3 bg-[#109387]/10 border border-[#109387]/20 rounded-[6px] px-5 py-3">
               <CheckCircle size={20} className="text-[#109387] flex-shrink-0" aria-hidden="true" />
               <span className="text-[#012956] font-semibold text-sm md:text-base">
-                Konkrete Referenzen mit Ansprechpartnern erhalten Sie gerne auf Anfrage
+                Gerne besprechen wir Ihre individuellen Anforderungen persönlich
               </span>
             </div>
           </div>
@@ -277,13 +277,13 @@ export default function ReferenzenPage() {
           {filteredReferenzen.length === 0 ? (
             <div className="text-center py-20">
               <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-2xl font-bold text-[#012956] mb-2">Keine Projekte gefunden</h3>
+              <h3 className="text-2xl font-bold text-[#012956] mb-2">Keine Szenarien gefunden</h3>
               <p className="text-gray-600 font-semibold mb-6">Versuchen Sie andere Filtereinstellungen</p>
               <button
                 onClick={resetFilters}
                 className="bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-6 py-3 rounded-[6px] transition-colors"
               >
-                Alle Projekte anzeigen
+                Alle Szenarien anzeigen
               </button>
             </div>
           ) : (
@@ -366,7 +366,7 @@ export default function ReferenzenPage() {
                 onClick={loadMore}
                 className="inline-flex items-center gap-3 bg-[#012956] hover:bg-[#01203d] text-white font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"
               >
-                Weitere Projekte laden
+                Weitere Szenarien entdecken
                 <span className="text-white/70 font-semibold">
                   ({filteredReferenzen.length - visibleCount} weitere)
                 </span>
@@ -473,7 +473,7 @@ export default function ReferenzenPage() {
                       onClick={closeModal}
                       className="inline-flex items-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-5 md:px-6 py-3 rounded-[6px] transition-colors text-sm md:text-base w-full md:w-auto justify-center"
                     >
-                      Ähnliches Projekt anfragen
+                      Unverbindlich anfragen
                       <ArrowRight className="w-4 h-4 md:w-5 md:h-5" aria-hidden="true" />
                     </Link>
 
@@ -494,13 +494,13 @@ export default function ReferenzenPage() {
             {/* Content - Links */}
             <div className="mb-12 lg:mb-0">
               <h2 id="cta-heading" className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.15] mb-6">
-                Ihr nächstes Projekt
-                <span className="block text-[#109387] mt-2">verdient Qualität</span>
+                Passt das zu
+                <span className="block text-[#109387] mt-2">Ihren Anforderungen?</span>
               </h2>
 
               <p className="text-xl text-white/80 font-semibold leading-relaxed mb-8 max-w-xl">
-                Lassen Sie sich unverbindlich beraten. Wir analysieren Ihren Bedarf vor Ort
-                und erstellen ein maßgeschneidertes Angebot – kostenfrei.
+                Lassen Sie uns gemeinsam herausfinden, wie wir Sie optimal unterstützen können.
+                Wir analysieren Ihren Bedarf vor Ort – kostenfrei und unverbindlich.
               </p>
 
               {/* CTA Buttons */}
