@@ -55,10 +55,10 @@ const timeline = [
   {
     year: '2026',
     title: 'ISO Zertifizierung',
-    subtitle: 'ISO 9001 & ISO 14001',
-    description: 'Mit der ISO 9001 (Qualitätsmanagement) und ISO 14001 (Umweltmanagement) Zertifizierung setzen wir neue Maßstäbe für Qualität und Nachhaltigkeit in der Gebäudereinigung.',
+    subtitle: 'Unser nächstes Ziel',
+    description: 'Wir arbeiten an der ISO 9001 (Qualitätsmanagement) und ISO 14001 (Umweltmanagement) Zertifizierung, um unsere Standards weiter zu erhöhen.',
     image: '/images/ueber-uns/timeline-2026.avif',
-    highlight: true,
+    highlight: false,
   },
 ]
 
