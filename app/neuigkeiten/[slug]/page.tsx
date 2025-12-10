@@ -91,7 +91,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Image - 21:9 Format für breites Kinolook */}
-      <section className="relative aspect-[21/9] sm:aspect-[21/9] lg:aspect-[21/9] max-h-[60vh] flex flex-col" aria-labelledby="article-title">
+      <section className="relative w-full aspect-[21/9] max-h-[60vh] flex flex-col" aria-labelledby="article-title">
         <Image
           src={post.heroImage}
           alt={post.title}
