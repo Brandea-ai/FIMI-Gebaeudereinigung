@@ -274,21 +274,34 @@ export default function RegionenContainer() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
 
           {/* Left: Map + Link */}
-          <div className="w-full">
-            {/* Bild Container */}
-            <div className="relative w-full">
-              <Image
-                src="/images/home/staedte-fimi.avif"
-                alt="Bayern Karte - FIMI Gebäudereinigung Servicegebiete"
-                width={4800}
-                height={3584}
-                className="w-full h-auto rounded-[6px]"
-                priority
-              />
+          <div className="w-full flex flex-col">
+            {/* Bild Container - Desktop: flex-1 für gleiche Höhe wie rechter Container */}
+            <div className="relative w-full lg:flex-1">
+              {/* Mobile: Normales Bild mit aspect-ratio */}
+              <div className="lg:hidden">
+                <Image
+                  src="/images/home/staedte-fimi.avif"
+                  alt="Bayern Karte - FIMI Gebäudereinigung Servicegebiete"
+                  width={4800}
+                  height={3584}
+                  className="w-full h-auto rounded-[6px]"
+                  priority
+                />
+              </div>
+              {/* Desktop: Fill für gleiche Höhe */}
+              <div className="hidden lg:block absolute inset-0">
+                <Image
+                  src="/images/home/staedte-fimi.avif"
+                  alt="Bayern Karte - FIMI Gebäudereinigung Servicegebiete"
+                  fill
+                  className="object-cover rounded-[6px]"
+                  priority
+                />
+              </div>
               {/* Desktop: Dezenter Link unten links */}
               <Link
                 href="/ueber-uns"
-                className="hidden lg:inline-flex absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-[6px] px-4 py-2.5 items-center gap-2 group hover:bg-white hover:border-[#109387] transition-all shadow-sm"
+                className="hidden lg:inline-flex absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm border border-gray-200 rounded-[6px] px-4 py-2.5 items-center gap-2 group hover:bg-white hover:border-[#109387] transition-all shadow-sm z-10"
               >
                 <span className="text-[#012956] font-semibold text-sm">
                   Mehr über FIMI

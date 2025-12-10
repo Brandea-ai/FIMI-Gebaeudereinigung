@@ -4,7 +4,7 @@ import { useState, useMemo } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Award, Building2, MapPin, Maximize2, ChevronLeft, ChevronRight, X, Calendar, Tag, ArrowRight, CheckCircle } from 'lucide-react'
+import { Award, Building2, MapPin, Maximize2, X, ArrowRight, CheckCircle } from 'lucide-react'
 import QualityTrustBar from '@/components/QualityTrustBar'
 import { referenzen, getAllJahre, getReferenzStatistiken, type Referenz } from '@/lib/referenzen-data'
 import { leistungen } from '@/lib/leistungen-data'
@@ -18,7 +18,7 @@ export default function ReferenzenPage() {
 
   // Modal State
   const [selectedReferenz, setSelectedReferenz] = useState<Referenz | null>(null)
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  // currentImageIndex wird nicht mehr benötigt da nur noch 1 Bild
 
   // Pagination State - initial 12 Projekte laden
   const ITEMS_PER_PAGE = 12
@@ -62,29 +62,12 @@ export default function ReferenzenPage() {
   // Modal handlers
   const openModal = (referenz: Referenz) => {
     setSelectedReferenz(referenz)
-    setCurrentImageIndex(0)
     document.body.style.overflow = 'hidden'
   }
 
   const closeModal = () => {
     setSelectedReferenz(null)
     document.body.style.overflow = 'unset'
-  }
-
-  const nextImage = () => {
-    if (selectedReferenz) {
-      setCurrentImageIndex((prev) =>
-        prev === selectedReferenz.bilder.length - 1 ? 0 : prev + 1
-      )
-    }
-  }
-
-  const prevImage = () => {
-    if (selectedReferenz) {
-      setCurrentImageIndex((prev) =>
-        prev === 0 ? selectedReferenz.bilder.length - 1 : prev - 1
-      )
-    }
   }
 
   // Reset filters
@@ -466,56 +449,17 @@ export default function ReferenzenPage() {
               {/* Scrollable Content Container */}
               <div className="overflow-y-auto max-h-[calc(92vh-20px)] md:max-h-[90vh]">
                 <div className="md:grid md:grid-cols-2">
-                  {/* Image Gallery */}
-                  <div className="relative aspect-[4/3] md:aspect-auto md:h-full md:min-h-[500px] bg-gray-900 md:sticky md:top-0">
+                  {/* Image - Vollständig angezeigt */}
+                  <div className="relative aspect-[4/3] md:aspect-auto md:h-full md:min-h-[500px] bg-gray-900 md:sticky md:top-0 flex items-center justify-center">
                     <Image
-                      src={selectedReferenz.bilder[currentImageIndex].replace('w=800', 'w=600')}
+                      src={selectedReferenz.bilder[0]}
                       alt={selectedReferenz.projektName}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      className="object-cover"
+                      className="object-contain"
                       quality={75}
                       loading="eager"
                     />
-
-                    {/* Image Counter Badge - Mobile */}
-                    <div className="absolute top-4 left-4 bg-black/60 text-white text-sm font-bold px-3 py-1.5 rounded-full md:hidden">
-                      {currentImageIndex + 1} / {selectedReferenz.bilder.length}
-                    </div>
-
-                    {/* Image Navigation */}
-                    {selectedReferenz.bilder.length > 1 && (
-                      <>
-                        <button
-                          onClick={prevImage}
-                          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#012956] p-2.5 rounded-full shadow-lg transition-colors"
-                          aria-label="Vorheriges Bild"
-                        >
-                          <ChevronLeft className="w-5 h-5" />
-                        </button>
-                        <button
-                          onClick={nextImage}
-                          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-[#012956] p-2.5 rounded-full shadow-lg transition-colors"
-                          aria-label="Nächstes Bild"
-                        >
-                          <ChevronRight className="w-5 h-5" />
-                        </button>
-
-                        {/* Dots - Desktop only */}
-                        <div className="hidden md:flex absolute bottom-4 left-1/2 -translate-x-1/2 gap-2">
-                          {selectedReferenz.bilder.map((_, index) => (
-                            <button
-                              key={index}
-                              onClick={() => setCurrentImageIndex(index)}
-                              className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                                index === currentImageIndex ? 'bg-white' : 'bg-white/50'
-                              }`}
-                              aria-label={`Bild ${index + 1}`}
-                            />
-                          ))}
-                        </div>
-                      </>
-                    )}
                   </div>
 
                   {/* Content */}
