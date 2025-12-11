@@ -134,31 +134,32 @@ WICHTIG:
         "title": "Spezialreinigung",
         "prompt": """AUTHENTISCHES STOCKFOTO - KEINE PERSONEN
 
-SZENE: Professionelle Grundreinigung/Teppichreinigung in einem hochwertigen Raum
-- Professionelle Teppichreinigungsmaschine (z.B. Kärcher Puzzi oder Sprühextraktionsgerät) auf einem Teppichboden
-- Alternativ: Professionelle Einscheibenmaschine für Grundreinigung auf Steinboden
-- Hochwertiger Konferenzraum oder Hotellobby als Umgebung
-- Sichtbarer Unterschied: Ein Teil bereits gereinigt (sauber), ein Teil noch schmutzig
-- Professionelle Reinigungschemikalien und Zubehör im Bild
+SZENE: Professionelle Bauendreinigung in einem luxuriösen Neubau
+- Großzügiger, moderner Neubau-Innenraum (Penthouse, Villa oder hochwertiges Bürogebäude)
+- Frisch verlegte, glänzende Böden (Marmor, Parkett oder polierter Beton)
+- Große, bodentiefe Fenster mit Blick auf Skyline oder Garten
+- Professionelle Einscheibenmaschine oder Poliermaschine auf dem Boden
+- Bauendreinigung-typisch: Letzte Feinarbeiten sichtbar
+- Hochwertige Materialien: Glas, Stein, Holz
 
 FOTOSTIL:
-- Wie ein echtes Stockfoto von Getty Images
-- Warmes, natürliches Licht
-- Professionelle Interiorfotografie
-- Fokus auf die Reinigungsmaschine und das Ergebnis
-- Hochwertige, einladende Atmosphäre
+- Wie ein echtes Architektur-/Immobilienfoto von Getty Images
+- Helles, natürliches Licht durch große Fenster
+- Luxuriöse, moderne Atmosphäre
+- Professionelle Architekturfotografie
+- Saubere Linien, Premium-Ausstrahlung
 
 TECHNISCH:
 - Querformat 16:9
 - Professionelle Qualität
-- Mittlere Brennweite, gute Schärfentiefe
+- Weitwinkel, zeigt Größe und Luxus des Raums
 
 WICHTIG:
 - ABSOLUT KEINE PERSONEN/MENSCHEN im Bild
 - KEINE künstlichen CI-Farben (kein Türkis, kein Navy)
-- Fokus auf Spezialreinigung (Teppich, Polster, Grundreinigung)
-- Professionelles Equipment sichtbar
-- Hochwertiger, luxuriöser Eindruck"""
+- Fokus auf hochwertige Bauendreinigung
+- Luxuriöser Neubau als Kulisse
+- Premium-Eindruck (= Premium-Preise)"""
     },
 ]
 
