@@ -95,7 +95,7 @@ export default function LeistungenCTAContainer() {
                 className="block w-full text-center border-2 border-white text-white px-8 py-4 font-bold text-lg hover:bg-white hover:text-fimi-navy transition-all"
                 style={{ borderRadius: '4px' }}
               >
-                Oder anrufen: 0871 2066936-0
+                Oder anrufen: 0871 2066936 0
               </a>
             </div>
           </div>

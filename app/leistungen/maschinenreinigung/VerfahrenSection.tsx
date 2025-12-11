@@ -159,7 +159,7 @@ export default function VerfahrenSection() {
                 href="tel:+4987120669360"
                 className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold px-5 sm:px-6 py-3 rounded-[6px] transition-colors text-sm sm:text-base"
               >
-                0871 2066936-0
+                0871 2066936 0
               </a>
             </div>
           </div>

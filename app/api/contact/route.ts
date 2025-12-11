@@ -297,7 +297,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Contact form error:', error)
     return NextResponse.json(
-      { message: 'Ein technischer Fehler ist aufgetreten. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns telefonisch unter 0871 2066936-0.' },
+      { message: 'Ein technischer Fehler ist aufgetreten. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns telefonisch unter 0871 2066936 0.' },
       { status: 500 }
     )
   }

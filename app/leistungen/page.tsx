@@ -576,7 +576,7 @@ export default function LeistungenPage() {
                   href="tel:+4987120669360"
                   className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-[#012956] font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"
                 >
-                  0871 2066936-0
+                  0871 2066936 0
                 </a>
               </div>
             </div>

@@ -79,7 +79,7 @@ export default function Error({
             className="inline-flex items-center gap-2 text-[#109387] hover:text-[#0d7d72] font-bold text-lg"
           >
             <Phone size={20} />
-            0871 2066936-0
+            0871 2066936 0
           </a>
         </div>
       </div>

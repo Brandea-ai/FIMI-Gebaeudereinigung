@@ -90,7 +90,7 @@ export default function CTASection() {
               <div>
                 <span className="text-gray-500 group-hover:text-white/60 text-xs sm:text-sm font-semibold block transition-colors">Oder direkt anrufen</span>
                 <span className="text-[#012956] group-hover:text-white font-bold text-base sm:text-lg lg:text-xl transition-colors">
-                  0871 2066936-0
+                  0871 2066936 0
                 </span>
               </div>
             </a>

@@ -105,7 +105,7 @@ export default function HeroContainer() {
               >
                 <Phone size={18} className="sm:w-5 sm:h-5" />
                 <span className="sm:hidden">Jetzt anrufen</span>
-                <span className="hidden sm:inline">0871 2066936-0</span>
+                <span className="hidden sm:inline">0871 2066936 0</span>
               </a>
             </div>
 

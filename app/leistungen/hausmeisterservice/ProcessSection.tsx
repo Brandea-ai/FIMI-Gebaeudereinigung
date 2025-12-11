@@ -106,7 +106,7 @@ export default function ProcessSection() {
           <div>
             <p className="text-sm sm:text-base lg:text-lg text-gray-600 font-semibold">
               <strong className="text-[#012956]">Eilig?</strong> Bei dringendem Bedarf sind wir auch schneller vor Ort.
-              Rufen Sie uns direkt an: <span className="text-[#109387]">0871 2066936-0</span>
+              Rufen Sie uns direkt an: <span className="text-[#109387]">0871 2066936 0</span>
             </p>
           </div>
           <span className="inline-flex items-center justify-center gap-2 bg-[#109387] group-hover:bg-[#0d7d72] text-white font-bold px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-[6px] transition-colors text-sm sm:text-base whitespace-nowrap flex-shrink-0">

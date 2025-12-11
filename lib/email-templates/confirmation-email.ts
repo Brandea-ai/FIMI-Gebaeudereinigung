@@ -140,7 +140,7 @@ export function generateConfirmationEmail(data: ConfirmationEmailData): string {
                   <tr>
                     <td style="padding: 8px 0;">
                       <a href="tel:+4987120669360" style="color: #109387; font-size: 18px; font-weight: 700; text-decoration: none;">
-                        0871 2066936-0
+                        0871 2066936 0
                       </a>
                     </td>
                   </tr>

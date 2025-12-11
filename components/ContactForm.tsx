@@ -188,7 +188,7 @@ export default function ContactForm() {
       }
     } catch {
       formTracking.onError('network', 'submission')
-      alert('Technischer Fehler. Bitte kontaktieren Sie uns telefonisch: 0871 2066936-0')
+      alert('Technischer Fehler. Bitte kontaktieren Sie uns telefonisch: 0871 2066936 0')
     } finally {
       setIsSubmitting(false)
     }

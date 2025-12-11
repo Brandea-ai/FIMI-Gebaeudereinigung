@@ -121,7 +121,7 @@ export default function NotFound() {
                 className="flex items-center justify-center gap-2 text-white/80 hover:text-white font-semibold text-sm transition-colors"
               >
                 <Phone size={16} />
-                0871 2066936-0
+                0871 2066936 0
               </a>
             </div>
           </div>
