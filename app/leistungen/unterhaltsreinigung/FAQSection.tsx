@@ -87,15 +87,6 @@ export default function FAQSection() {
               </span>
             </a>
 
-            {/* Bild - nur Desktop */}
-            <div className="relative mt-6 sm:mt-8 h-48 lg:h-64 rounded-[6px] overflow-hidden hidden lg:block">
-              <Image
-                src="/images/leistungen/unterhaltsreinigung/faq.avif"
-                alt="Kundenservice FIMI Gebäudereinigung"
-                fill
-                className="object-cover"
-              />
-            </div>
           </aside>
 
           {/* FAQ Accordion */}

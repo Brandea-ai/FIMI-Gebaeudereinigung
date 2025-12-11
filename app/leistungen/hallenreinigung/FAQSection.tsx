@@ -87,16 +87,6 @@ export default function FAQSection() {
               </span>
             </a>
 
-            {/* Bild - nur Desktop */}
-            <div className="relative mt-6 sm:mt-8 h-48 lg:h-64 rounded-[6px] overflow-hidden hidden lg:block">
-              <Image
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=800&auto=format&fit=crop"
-                alt="Kundenberatung FIMI Hallenreinigung"
-                fill
-                className="object-cover"
-                sizes="400px"
-              />
-            </div>
           </aside>
 
           {/* FAQ Accordion */}

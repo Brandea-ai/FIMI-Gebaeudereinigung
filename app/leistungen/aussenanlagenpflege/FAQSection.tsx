@@ -79,15 +79,6 @@ export default function FAQSection() {
               </span>
             </a>
 
-            {/* Bild - nur Desktop */}
-            <div className="relative mt-6 sm:mt-8 h-48 lg:h-64 rounded-[6px] overflow-hidden hidden lg:block">
-              <Image
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop"
-                alt="Gepflegte Außenanlage"
-                fill
-                className="object-cover"
-              />
-            </div>
           </aside>
 
           {/* FAQ Accordion */}
