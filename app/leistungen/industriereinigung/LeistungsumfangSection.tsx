@@ -110,20 +110,20 @@ export default function LeistungsumfangSection() {
           <div className="relative h-[250px] sm:h-[320px] md:h-[400px] lg:h-[500px] rounded-[6px] lg:rounded-[12px] overflow-hidden">
             <picture>
               <source
-                srcSet="/images/leistungen/industriereinigung/hallenboden-detail-384w.avif 384w, /images/leistungen/industriereinigung/hallenboden-detail-768w.avif 768w, /images/leistungen/industriereinigung/hallenboden-detail-1024w.avif 1024w, /images/leistungen/industriereinigung/hallenboden-detail.avif 1200w"
+                srcSet="/images/leistungen/industriereinigung/equipment-scheuersaugmaschine-384w.avif 384w, /images/leistungen/industriereinigung/equipment-scheuersaugmaschine-768w.avif 768w, /images/leistungen/industriereinigung/equipment-scheuersaugmaschine-1024w.avif 1024w, /images/leistungen/industriereinigung/equipment-scheuersaugmaschine.avif 1200w"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 type="image/avif"
               />
               <source
-                srcSet="/images/leistungen/industriereinigung/hallenboden-detail-384w.webp 384w, /images/leistungen/industriereinigung/hallenboden-detail-768w.webp 768w, /images/leistungen/industriereinigung/hallenboden-detail-1024w.webp 1024w, /images/leistungen/industriereinigung/hallenboden-detail.webp 1200w"
+                srcSet="/images/leistungen/industriereinigung/equipment-scheuersaugmaschine-384w.webp 384w, /images/leistungen/industriereinigung/equipment-scheuersaugmaschine-768w.webp 768w, /images/leistungen/industriereinigung/equipment-scheuersaugmaschine-1024w.webp 1024w, /images/leistungen/industriereinigung/equipment-scheuersaugmaschine.webp 1200w"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 type="image/webp"
               />
               <Image
-                src="/images/leistungen/industriereinigung/hallenboden-detail.avif"
-                alt="Perfekt gereinigter Industrieboden in Produktionshalle"
+                src="/images/leistungen/industriereinigung/equipment-scheuersaugmaschine.avif"
+                alt="Professionelle Aufsitz-Scheuersaugmaschine für Industriereinigung"
                 fill
-                className="object-cover"
+                className="object-contain bg-white"
               />
             </picture>
           </div>
