@@ -12,8 +12,8 @@ import CTASection from './CTASection'
 import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
-  title: 'Büroreinigung Bayern | Professionelle Reinigung für Ihr Büro',
-  description: 'Professionelle Büroreinigung in Landshut, München, Regensburg und ganz Bayern. Festes Personal, 2h Reaktionszeit, geprüfte Qualität. Jetzt kostenfreie Besichtigung anfragen.',
+  title: 'Büroreinigung Bayern - Vor oder nach Bürozeiten | FIMI',
+  description: 'Diskrete Büroreinigung ab 0,90€/m²: Morgens ab 5 Uhr oder abends. Festes Team, keine Störung. München, Landshut & Region. Angebot in 24h.',
   keywords: [
     'Büroreinigung Bayern',
     'Büroreinigung Landshut',

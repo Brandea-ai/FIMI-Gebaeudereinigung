@@ -14,8 +14,8 @@ import CTASection from './CTASection'
 import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
-  title: 'Winterdienst Bayern | Professionelle Schneeräumung & Streudienst',
-  description: 'Professioneller Winterdienst in Landshut, München, Regensburg und ganz Bayern. ✓ 24/7 Bereitschaft ✓ Haftungsübernahme ✓ 2h Reaktionszeit ✓ Rechtssichere Dokumentation. Jetzt kostenfreie Besichtigung!',
+  title: 'Winterdienst Bayern - Räumen ab 4 Uhr | FIMI',
+  description: 'Schneeräumung mit Haftungsübernahme: Räumdienst ab 4 Uhr, 24/7 Bereitschaft, rechtssichere Dokumentation. Landshut & Regensburg. Vertrag sichern.',
   keywords: [
     'Winterdienst Bayern',
     'Winterdienst Landshut',

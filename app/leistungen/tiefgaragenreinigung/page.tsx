@@ -14,8 +14,8 @@ import PartnerLogosSlider from '@/components/PartnerLogosSlider'
 import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
-  title: 'Tiefgaragenreinigung Bayern | Ölflecken & Reifenabrieb entfernen | FIMI',
-  description: 'Professionelle Tiefgaragenreinigung in Landshut, München, Regensburg. ✓ Ölflecken entfernen ✓ 2h Reaktionszeit ✓ Transparente Festpreise. Jetzt kostenfreie Besichtigung!',
+  title: 'Tiefgaragenreinigung Bayern - Öl & Streusalz weg | FIMI',
+  description: 'Nassreinigung für Tiefgaragen ab 3,50€/m²: Öl, Reifenspuren, Streusalz entfernt. München, Landshut, Regensburg. Werterhalt garantiert.',
   keywords: 'Tiefgaragenreinigung, Tiefgarage reinigen, Parkhaus Reinigung, Ölflecken entfernen, Reifenabrieb, Streusalz entfernen, Garagenreinigung Bayern, Tiefgaragenreinigung Landshut, Tiefgaragenreinigung München, Hausverwaltung, WEG, Facility Management',
   openGraph: {
     title: 'Tiefgaragenreinigung Bayern | FIMI Gebäudereinigung',

@@ -1,11 +1,11 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Karriere - Jobs in der Gebäudereinigung Bayern | FIMI',
-  description: 'Stellenangebote bei FIMI Gebäudereinigung: Reinigungskräfte, Objektleiter, Teamleiter gesucht. Faire Bezahlung, feste Teams, 8 Standorte in Bayern. Jetzt bewerben!',
+  title: 'Jobs Gebäudereinigung Bayern - ab 14,50€/h | FIMI',
+  description: 'Tariflohn ab 14,50€/h, feste Reviere, Aufstieg zum Meister: Jobs als Reinigungskraft, Vorarbeiter oder Objektleitung in Landshut & München. Jetzt bewerben.',
   openGraph: {
-    title: 'Karriere bei FIMI - Jobs in der Gebäudereinigung',
-    description: 'Werden Sie Teil unseres Teams! Faire Bezahlung, feste Teams, Weiterbildung. Standorte in ganz Bayern.',
+    title: 'Jobs Gebäudereinigung Bayern - ab 14,50€/h | FIMI',
+    description: 'Tariflohn ab 14,50€/h, feste Reviere, Aufstieg zum Meister: Jobs in Landshut & München. Jetzt bewerben.',
   },
 }
 

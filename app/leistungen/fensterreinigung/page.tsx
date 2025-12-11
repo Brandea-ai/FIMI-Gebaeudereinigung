@@ -12,8 +12,8 @@ import CTASection from './CTASection'
 import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
-  title: 'Fensterreinigung Bayern | Professionelle Glasreinigung für Gewerbe',
-  description: 'Professionelle Fensterreinigung in Landshut, München, Regensburg und ganz Bayern. Streifenfrei garantiert. Feste Teams. Flexible Intervalle. Jetzt kostenfreie Besichtigung anfragen.',
+  title: 'Fensterreinigung Bayern - Streifenfrei garantiert | FIMI',
+  description: 'Glasreinigung ab 2,50€/m²: Fenster, Rahmen, Wintergärten. Bis 18m Höhe ohne Gerüst. Landshut & München. Kostenlose Besichtigung.',
   keywords: [
     'Fensterreinigung Bayern',
     'Fensterreinigung Landshut',

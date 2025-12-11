@@ -13,8 +13,8 @@ import CTASection from './CTASection'
 import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
-  title: 'Außenanlagenpflege Bayern | Grünpflege für Gewerbe & Wohnanlagen',
-  description: 'Professionelle Außenanlagenpflege in Landshut, München, Regensburg und ganz Bayern. Rasenpflege, Heckenschnitt, Laubbeseitigung. Festes Team, alles aus einer Hand. Jetzt kostenfreie Besichtigung!',
+  title: 'Grünpflege Bayern - Rasen & Hecken | FIMI',
+  description: 'Außenanlagen für Gewerbe: Rasenmähen, Heckenschnitt, Laubbeseitigung. Ein Team fürs ganze Jahr. Landshut & Umgebung. Pflegevertrag anfragen.',
   keywords: [
     'Außenanlagenpflege Bayern',
     'Außenanlagenpflege Landshut',

@@ -15,8 +15,8 @@ import PartnerLogosSlider from '@/components/PartnerLogosSlider'
 import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
-  title: 'Fassadenreinigung Bayern | Algen & Moos entfernen | FIMI',
-  description: 'Professionelle Fassadenreinigung in Landshut, München, Regensburg. Algen, Moos, Grünbelag schonend entfernen. 5-10 Jahre Schutz mit Imprägnierung. Kostenfreie Besichtigung.',
+  title: 'Fassadenreinigung Bayern - Algen & Moos entfernen | FIMI',
+  description: 'Fassade reinigen statt streichen: 60% günstiger als Neuanstrich. Algen, Moos, Grauschleier weg. 5 Jahre Schutz. Kostenlose Analyse.',
   keywords: [
     'Fassadenreinigung Bayern',
     'Fassadenreinigung Landshut',

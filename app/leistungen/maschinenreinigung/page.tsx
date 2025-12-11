@@ -15,8 +15,8 @@ import CTASection from './CTASection'
 import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
-  title: 'Maschinenreinigung Bayern | CNC, Spritzguss & Produktionsanlagen professionell gereinigt',
-  description: 'Professionelle Maschinenreinigung in Landshut, München, Ingolstadt und ganz Bayern. CNC-Fräsen, Spritzgussmaschinen, Bearbeitungszentren. Im laufenden Betrieb, 2h Reaktionszeit. Jetzt kostenfreie Besichtigung!',
+  title: 'Maschinenreinigung Bayern - CNC & Anlagen | FIMI',
+  description: 'Fachgerechte Reinigung für CNC, Spritzguss & Fertigungsstraßen. Werterhalt für Ihre Anlagen. Ingolstadt & Bayern. Kostenlose Erstberatung.',
   keywords: [
     'Maschinenreinigung Bayern',
     'Maschinenreinigung München',

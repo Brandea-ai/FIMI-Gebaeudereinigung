@@ -13,8 +13,8 @@ import CTASection from './CTASection'
 import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
-  title: 'Baureinigung Bayern | Bauendreinigung & Bauschlussreinigung | FIMI',
-  description: 'Professionelle Baureinigung in Landshut, München, Regensburg und ganz Bayern. Baugrobreinigung, Baufeinreinigung, Bauschlussreinigung. 24h Notfall-Service. Bezugsfertig garantiert. Jetzt kostenfreie Besichtigung!',
+  title: 'Baureinigung Bayern - Grob bis Endreinigung | FIMI',
+  description: 'Vom Rohbau zur Übergabe: Baugrob-, Baufein- & Schlussreinigung. Termingarantie für Architekten & GU. München & Bayern. Angebot in 24h.',
   keywords: [
     'Baureinigung',
     'Bauendreinigung',

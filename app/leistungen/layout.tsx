@@ -1,12 +1,12 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Leistungen | 18 Professionelle Reinigungsservices | FIMI Gebäudereinigung',
-  description: 'Entdecken Sie unsere 18 professionellen Reinigungsservices: Büroreinigung, Industriereinigung, Facility Management & mehr. ✓ Geprüfte Qualität ✓ Kostenfreie Besichtigung ✓ Bayern',
+  title: '18 Reinigungsleistungen aus einer Hand - Bayern | FIMI',
+  description: 'Unterhaltsreinigung bis Winterdienst: 18 Services für Ihr Unternehmen. Maßgeschneiderte Konzepte, ein Ansprechpartner. Jetzt Leistungen entdecken.',
   keywords: 'Gebäudereinigung Leistungen, Büroreinigung, Industriereinigung, Facility Management, Unterhaltsreinigung, Glasreinigung, Winterdienst, Bayern, Landshut',
   openGraph: {
-    title: 'Leistungen | FIMI Gebäudereinigung',
-    description: '18 professionelle Reinigungsservices für Ihr Unternehmen. Von Büroreinigung bis Industriereinigung - alles aus einer Hand.',
+    title: '18 Reinigungsleistungen aus einer Hand - Bayern | FIMI',
+    description: 'Unterhaltsreinigung bis Winterdienst: 18 Services für Ihr Unternehmen. Maßgeschneiderte Konzepte, ein Ansprechpartner.',
     type: 'website',
   },
 }

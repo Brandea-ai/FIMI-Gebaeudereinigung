@@ -12,8 +12,8 @@ import CTASection from './CTASection'
 import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
-  title: 'Unterhaltsreinigung Bayern | Regelmäßige Gebäudereinigung',
-  description: 'Professionelle Unterhaltsreinigung in Landshut, München, Regensburg und ganz Bayern. Festes Personal, 2h Reaktionszeit, geprüfte Qualität. Jetzt kostenfreie Besichtigung anfragen.',
+  title: 'Unterhaltsreinigung Bayern - Ihr Reinigungsvertrag | FIMI',
+  description: 'Laufende Gebäudereinigung ab 0,80€/m²: Feste Intervalle, digitale Qualitätskontrolle, gleiches Team. Landshut, München, Regensburg. Vertrag anfragen.',
   keywords: [
     'Unterhaltsreinigung Bayern',
     'Unterhaltsreinigung Landshut',

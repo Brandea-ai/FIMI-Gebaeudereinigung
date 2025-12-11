@@ -1,11 +1,11 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Branchen - Reinigung für jede Branche | FIMI',
-  description: 'Branchenspezifische Reinigungslösungen: Büro, Industrie, Gesundheitswesen, Einzelhandel, Gastronomie, Bildung und mehr. FIMI kennt die Anforderungen Ihrer Branche.',
+  title: 'Branchenlösungen Gebäudereinigung Bayern | FIMI',
+  description: 'Spezialisierte Reinigung für Industrie, Gesundheit, Handel & Büro. Wir kennen die Vorschriften Ihrer Branche. Branchenlösung anfragen.',
   openGraph: {
-    title: 'Branchen - Reinigung für jede Branche | FIMI Gebäudereinigung',
-    description: 'Spezialisierte Reinigungslösungen für 12 Branchen in Bayern. Wir kennen die Anforderungen Ihrer Branche.',
+    title: 'Branchenlösungen Gebäudereinigung Bayern | FIMI',
+    description: 'Spezialisierte Reinigung für 12 Branchen in Bayern. Wir kennen die Vorschriften Ihrer Branche.',
   },
 }
 

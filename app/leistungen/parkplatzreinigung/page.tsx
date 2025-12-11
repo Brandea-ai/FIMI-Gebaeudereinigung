@@ -12,8 +12,8 @@ import CTASection from './CTASection'
 import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
-  title: 'Parkplatzreinigung Bayern | Professionelle Außenflächenreinigung | FIMI',
-  description: 'Professionelle Parkplatzreinigung in Landshut, München, Regensburg und ganz Bayern. Ölflecken entfernen, Kehrarbeiten, Hochdruckreinigung. ✓ 2h Reaktionszeit ✓ Kostenfreie Besichtigung ✓ Transparente Festpreise.',
+  title: 'Parkplatzreinigung Bayern - Kehrdienst | FIMI',
+  description: 'Gepflegte Parkplätze ab 0,50€/m²: Maschinelle Kehrung, Müllbeseitigung, Ölflecken. Landshut & Region. Der erste Eindruck zählt.',
   keywords: [
     'Parkplatzreinigung Bayern',
     'Parkplatzreinigung Landshut',

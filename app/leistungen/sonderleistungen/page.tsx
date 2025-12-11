@@ -13,8 +13,8 @@ import CTASection from './CTASection'
 import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
-  title: 'Event- & Veranstaltungsreinigung Bayern | Messe, Hotel, Tagung | FIMI',
-  description: 'Professionelle Veranstaltungsreinigung in Landshut, München und Bayern. Event-Reinigung, Messe-Reinigung, Hotelzimmer-Reinigung, Tagungsraum-Reinigung. Vor, während und nach Ihrer Veranstaltung. Jetzt anfragen!',
+  title: 'Eventreinigung Bayern - Vor & nach Events | FIMI',
+  description: 'Messe, Tagung, Firmenfeier: Reinigung vor, während und nach Ihrer Veranstaltung. Diskret im Hintergrund. München & Bayern. Termin sichern.',
   keywords: [
     'Veranstaltungsreinigung Bayern',
     'Event Reinigung München',

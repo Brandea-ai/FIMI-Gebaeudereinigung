@@ -12,8 +12,8 @@ import CTASection from './CTASection'
 import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
-  title: 'Industriereinigung Bayern | Produktionshallen & Maschinen professionell gereinigt',
-  description: 'Professionelle Industriereinigung in Landshut, München, Ingolstadt und ganz Bayern. Hallenreinigung, Maschinenreinigung, Entölung. Im laufenden Betrieb möglich. 2h Reaktionszeit. Kostenfreie Besichtigung.',
+  title: 'Industriereinigung Bayern - Hallen & Maschinen | FIMI',
+  description: 'Hallenreinigung im laufenden Betrieb: Öl, Späne, Staub sicher entfernt. Dingolfing, Ingolstadt, München. 2h Notfall-Reaktion. Besichtigung gratis.',
   keywords: [
     'Industriereinigung Bayern',
     'Industriereinigung München',

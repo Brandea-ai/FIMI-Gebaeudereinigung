@@ -21,16 +21,16 @@ const navItems = [
 ]
 
 export const metadata: Metadata = {
-  title: 'Gebaeudereinigung Bayern | FIMI - Professionelle Reinigung fuer Unternehmen',
-  description: 'Professionelle Gebaeudereinigung in Landshut, Muenchen, Regensburg und ganz Bayern. Bueroreinigung, Industriereinigung, Facility Management. 8+ Jahre Erfahrung. 24/7 Service.',
-  keywords: 'Gebaeudereinigung, Bueroreinigung, Industriereinigung, Facility Management, Landshut, Muenchen, Regensburg, Bayern, Unterhaltsreinigung, gewerbliche Reinigung',
+  title: 'Gebäudereinigung Bayern - Landshut & München | FIMI',
+  description: '120+ Kunden vertrauen FIMI: Büro-, Industrie- & Glasreinigung in Bayern. 90 Mitarbeiter, 8 Standorte, feste Teams. Kostenloses Angebot in 24h.',
+  keywords: 'Gebäudereinigung, Büroreinigung, Industriereinigung, Facility Management, Landshut, München, Regensburg, Bayern, Unterhaltsreinigung, gewerbliche Reinigung',
   openGraph: {
-    title: 'Gebaeudereinigung Bayern | FIMI - Ihr Partner fuer professionelle Reinigung',
-    description: 'Professionelle Gebaeudereinigung in Landshut und ganz Bayern. 8+ Jahre Erfahrung. 120+ zufriedene Unternehmen. 24/7 Notfallservice.',
+    title: 'Gebäudereinigung Bayern - Landshut & München | FIMI',
+    description: '120+ Kunden vertrauen FIMI: Büro-, Industrie- & Glasreinigung in Bayern. 90 Mitarbeiter, 8 Standorte, feste Teams. Kostenloses Angebot in 24h.',
     type: 'website',
     locale: 'de_DE',
     url: 'https://fimi-gebaeudereinigung.de',
-    siteName: 'FIMI Gebaeudereinigung',
+    siteName: 'FIMI Gebäudereinigung',
     images: [
       {
         url: '/FIMI-LOGO/fimi-logo-weiss-mit-hintergrund.png',
@@ -42,8 +42,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gebaeudereinigung Bayern | FIMI',
-    description: 'Professionelle Gebaeudereinigung in Landshut und ganz Bayern. 8+ Jahre Erfahrung.',
+    title: 'Gebäudereinigung Bayern - Landshut & München | FIMI',
+    description: '120+ Kunden vertrauen FIMI: Büro-, Industrie- & Glasreinigung. 90 Mitarbeiter, 8 Standorte.',
   },
   alternates: {
     canonical: 'https://fimi-gebaeudereinigung.de',

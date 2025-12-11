@@ -13,8 +13,8 @@ import CTASection from './CTASection'
 import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
-  title: 'Hallenreinigung Bayern | Lagerhallen & Produktionshallen reinigen | FIMI',
-  description: 'Professionelle Hallenreinigung in Landshut, München, Ingolstadt und ganz Bayern. ✓ Im laufenden Betrieb ✓ 2h Reaktionszeit ✓ Transparente Festpreise. Lagerhallen, Produktionshallen, Logistikzentren – jetzt kostenfreie Besichtigung!',
+  title: 'Hallenreinigung Bayern - Lager & Produktion | FIMI',
+  description: 'Maschinelle Bodenreinigung für Hallen ab 1.000m²: Logistik, Produktion, Lager. Minimale Ausfallzeit. Landshut & Bayern. Angebot anfordern.',
   keywords: [
     'Hallenreinigung Bayern',
     'Hallenreinigung München',

@@ -1,11 +1,11 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Projekte - Erfolgreich umgesetzte Reinigungsaufträge | FIMI',
-  description: 'Einblicke in unsere Arbeit: 50+ erfolgreich umgesetzte Reinigungsprojekte in Bayern. Büroreinigung, Industriereinigung, Facility Management - sehen Sie unsere Referenzen.',
+  title: '120+ Referenzen Gebäudereinigung Bayern | FIMI',
+  description: 'Echte Projekte aus Industrie, Büro & Facility Management in Landshut, München & Regensburg. Sehen Sie unsere Arbeit in Bildern.',
   openGraph: {
-    title: 'Projekte & Referenzen | FIMI Gebäudereinigung',
-    description: '50+ erfolgreich umgesetzte Reinigungsprojekte in Bayern. Qualität, die überzeugt.',
+    title: '120+ Referenzen Gebäudereinigung Bayern | FIMI',
+    description: 'Echte Projekte aus Industrie, Büro & Facility Management in Bayern. Qualität, die überzeugt.',
   },
 }
 

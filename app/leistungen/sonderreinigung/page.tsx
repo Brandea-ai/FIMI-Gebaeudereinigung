@@ -16,8 +16,8 @@ import CTASection from './CTASection'
 import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
-  title: 'Sonderreinigung Bayern | Wasserschaden, Brandschaden, Messie, Notfall 24/7 | FIMI',
-  description: 'Professionelle Sonderreinigung in Landshut, München, Regensburg und ganz Bayern. Wasserschadenreinigung, Brandschadenreinigung, Messie-Wohnung, Tatortreinigung, Taubenkot-Entfernung. 24h Notdienst, staatl. geprüfte Desinfektoren. Jetzt anrufen!',
+  title: 'Sonderreinigung Bayern - Notfall 24/7 | FIMI',
+  description: 'Wasserschaden, Brandschaden, Tatortreinigung: Notdienst in 2h vor Ort. Staatl. geprüfte Desinfektoren. Diskret & dokumentiert. Jetzt anrufen.',
   keywords: [
     'Sonderreinigung Bayern',
     'Sonderreinigung München',

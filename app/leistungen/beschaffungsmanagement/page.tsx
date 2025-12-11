@@ -15,8 +15,8 @@ import CTASection from './CTASection'
 import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
-  title: 'Beschaffungsmanagement Bayern | Einkaufsoptimierung & Strategischer Einkauf',
-  description: 'Professionelles Beschaffungsmanagement in Bayern. Einkaufskosten senken, Lieferantenmanagement optimieren, Ausschreibungen begleiten. 5-15% Einsparpotenzial. Kostenfreie Erstberatung.',
+  title: 'Hygienematerial-Service Bayern - Nie mehr leer | FIMI',
+  description: 'Seife, Papier, Reinigungsmittel: Wir managen Nachfüllung & Logistik. Nie wieder leere Spender. Für Gewerbe in Bayern. Service anfragen.',
   keywords: [
     'Beschaffungsmanagement Bayern',
     'Einkaufsoptimierung',

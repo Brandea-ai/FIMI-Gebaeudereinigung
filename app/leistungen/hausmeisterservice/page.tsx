@@ -14,8 +14,8 @@ import CTASection from './CTASection'
 import LeistungFloatingNav from '../_components/LeistungFloatingNav'
 
 export const metadata: Metadata = {
-  title: 'Hausmeisterservice Bayern | Objektbetreuung & Kleinreparaturen | FIMI',
-  description: 'Professioneller Hausmeisterservice in Landshut, München, Regensburg und ganz Bayern. Kleinreparaturen, Kontrollgänge, Winterdienst, Grünpflege. ✓ 2h Reaktionszeit ✓ Festes Team ✓ Kostenfreie Beratung',
+  title: 'Hausmeisterservice Bayern - Ein Ansprechpartner | FIMI',
+  description: 'Objektbetreuung ab 400€/Monat: Kontrollen, Kleinreparaturen, Koordination. Fester Hausmeister für Ihre Immobilie. Landshut & München. Angebot holen.',
   keywords: [
     'Hausmeisterservice Bayern',
     'Hausmeisterservice Landshut',
