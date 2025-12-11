@@ -107,11 +107,11 @@ export default function HeroSection() {
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </a>
               <a
-                href="tel:+4987143033460"
+                href="tel:+4987120669360"
                 className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-white hover:bg-gray-100 text-[#012956] font-bold text-sm sm:text-base lg:text-lg px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-[6px] transition-all duration-300 shadow-lg"
               >
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
-                0871 430 334 60
+                0871 2066936-0
               </a>
             </div>
 

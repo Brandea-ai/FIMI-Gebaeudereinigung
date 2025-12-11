@@ -62,11 +62,11 @@ export default function GlobalError({
             <div className="text-gray-600">
               <p className="mb-2">Rufen Sie uns an:</p>
               <a
-                href="tel:+4987143033460"
+                href="tel:+4987120669360"
                 className="inline-flex items-center gap-2 text-[#109387] hover:text-[#0d7d72] font-bold text-lg"
               >
                 <Phone size={20} />
-                0871 430 334 60
+                0871 2066936-0
               </a>
             </div>
           </div>

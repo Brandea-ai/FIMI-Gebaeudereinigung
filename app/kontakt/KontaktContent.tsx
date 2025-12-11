@@ -70,13 +70,13 @@ export default function KontaktContent() {
                     <ArrowRight size={18} className="sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                   </motion.a>
                   <motion.a
-                    href="tel:+4987143033460"
+                    href="tel:+4987120669360"
                     className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-white/10 hover:bg-white/20 text-white font-bold text-sm sm:text-base lg:text-lg px-5 sm:px-8 py-3.5 sm:py-4 rounded-[6px] transition-all"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
                     <Phone size={18} className="sm:w-5 sm:h-5" aria-hidden="true" />
-                    <span>0871 430 334 60</span>
+                    <span>0871 2066936-0</span>
                   </motion.a>
                 </div>
               </FadeIn>
@@ -132,7 +132,7 @@ export default function KontaktContent() {
             {/* Telefon */}
             <FadeInItem>
               <motion.a
-                href="tel:+4987143033460"
+                href="tel:+4987120669360"
                 className="group flex items-start gap-4 p-5 sm:p-6 bg-[#f8f9fa] hover:bg-[#012956] rounded-[6px] transition-all duration-300 h-full"
                 whileHover={{ y: -4 }}
               >
@@ -141,7 +141,7 @@ export default function KontaktContent() {
                 </div>
                 <div>
                   <p className="text-[#012956] group-hover:text-white/80 text-xs font-semibold uppercase tracking-wider mb-1 transition-colors">Telefon</p>
-                  <p className="text-[#012956] group-hover:text-white font-bold text-base sm:text-lg transition-colors">0871 430 334 60</p>
+                  <p className="text-[#012956] group-hover:text-white font-bold text-base sm:text-lg transition-colors">0871 2066936-0</p>
                 </div>
               </motion.a>
             </FadeInItem>

@@ -163,7 +163,7 @@ export default function EinsatzszenarienSection() {
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </a>
                 <a
-                  href="tel:+4987143033460"
+                  href="tel:+4987120669360"
                   className="inline-flex items-center justify-center gap-2 bg-white hover:bg-[#012956] text-[#012956] hover:text-white font-bold text-base px-6 py-3 rounded-[6px] border-2 border-[#012956] transition-all duration-300"
                 >
                   <Clock className="w-5 h-5" aria-hidden="true" />

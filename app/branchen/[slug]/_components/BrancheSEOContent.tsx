@@ -101,10 +101,10 @@ export function BrancheSEOContent({ branche }: BrancheSEOContentProps) {
                   Kostenfreie Besichtigung
                 </a>
                 <a
-                  href="tel:+4987143033460"
+                  href="tel:+4987120669360"
                   className="block w-full text-center text-[#012956] font-bold text-sm sm:text-base py-2.5 sm:py-3 rounded-[6px] border-2 border-[#012956] hover:bg-[#012956] hover:text-white transition-colors"
                 >
-                  0871 430 334 60
+                  0871 2066936-0
                 </a>
               </div>
             </div>

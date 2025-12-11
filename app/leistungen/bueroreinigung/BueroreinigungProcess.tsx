@@ -117,11 +117,11 @@ export default function BueroreinigungProcess() {
             </button>
 
             <a
-              href="tel:+4987143033460"
+              href="tel:+4987120669360"
               className="px-8 py-4 border-2 border-white text-white font-bold text-lg hover:bg-white hover:text-fimi-navy transition-all"
               style={{ borderRadius: '4px' }}
             >
-              0871 430 334 60 anrufen
+              0871 2066936-0 anrufen
             </a>
           </div>
 

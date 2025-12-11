@@ -77,14 +77,14 @@ export default function FAQSection() {
 
             {/* Telefon */}
             <a
-              href="tel:+4987143033460"
+              href="tel:+4987120669360"
               className="mt-6 sm:mt-8 bg-[#f8f9fa] border-2 border-[#012956] hover:bg-[#012956] rounded-[6px] p-4 sm:p-6 block transition-all duration-300 group"
             >
               <p className="text-sm text-gray-600 group-hover:text-white/80 font-semibold mb-2 transition-colors">
                 Lieber persönlich sprechen?
               </p>
               <span className="text-lg sm:text-xl font-bold text-[#012956] group-hover:text-white transition-colors">
-                0871 430 334 60
+                0871 2066936-0
               </span>
             </a>
 

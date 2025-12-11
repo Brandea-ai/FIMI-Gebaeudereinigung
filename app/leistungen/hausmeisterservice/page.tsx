@@ -73,7 +73,7 @@ const serviceSchema = {
     '@type': 'LocalBusiness',
     name: 'FIMI Gebäudereinigung',
     image: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
-    telephone: '+4987143033460',
+    telephone: '+4987120669360',
     email: 'info@fimi-gebaeudereinigung.de',
     address: {
       '@type': 'PostalAddress',

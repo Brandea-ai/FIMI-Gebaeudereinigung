@@ -603,11 +603,11 @@ function JobModal({ job, onClose }: JobModalProps) {
           </a>
 
           <a
-            href="tel:+4987143033460"
+            href="tel:+4987120669360"
             className="block w-full bg-[#012956] hover:bg-[#01203f] text-white font-bold text-center py-4 rounded-[6px]"
           >
             <Phone size={18} className="inline mr-2" />
-            Anrufen: 0871 430 334 60
+            Anrufen: 0871 2066936-0
           </a>
         </div>
 
@@ -914,11 +914,11 @@ export default function KarrierePage() {
                 <div className="mt-6 pt-6 border-t border-gray-200">
                   <p className="text-sm font-bold text-[#012956] mb-3">Fragen?</p>
                   <a
-                    href="tel:+4987143033460"
+                    href="tel:+4987120669360"
                     className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#109387] font-medium mb-2"
                   >
                     <Phone size={14} />
-                    0871 430 334 60
+                    0871 2066936-0
                   </a>
                   <a
                     href="mailto:bewerbung@fimi-gebaeudereinigung.de"
@@ -1060,7 +1060,7 @@ export default function KarrierePage() {
                         Per E-Mail bewerben
                       </a>
                       <a
-                        href="tel:+4987143033460"
+                        href="tel:+4987120669360"
                         className="inline-flex items-center gap-2 text-[#012956] hover:text-[#109387] font-bold text-sm"
                       >
                         <Phone size={16} />
@@ -1167,7 +1167,7 @@ export default function KarrierePage() {
                   Jetzt bewerben
                 </a>
                 <a
-                  href="tel:+4987143033460"
+                  href="tel:+4987120669360"
                   className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold text-sm lg:text-base px-5 lg:px-6 py-3 rounded-[6px] transition-all duration-300 border border-white/30"
                 >
                   <Phone size={18} />
@@ -1383,11 +1383,11 @@ export default function KarrierePage() {
                 <span className="sm:hidden">E-Mail senden</span>
               </a>
               <a
-                href="tel:+4987143033460"
+                href="tel:+4987120669360"
                 className="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white font-bold text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4 rounded-[6px] transition-all duration-300 border border-white/30"
               >
                 <Phone size={20} />
-                0871 430 334 60
+                0871 2066936-0
               </a>
             </div>
           </FadeIn>

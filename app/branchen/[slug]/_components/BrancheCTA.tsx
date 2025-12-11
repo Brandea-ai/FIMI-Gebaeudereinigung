@@ -40,11 +40,11 @@ export function BrancheCTA({ branche }: BrancheCTAProps) {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <a
-              href="tel:+4987143033460"
+              href="tel:+4987120669360"
               className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-[6px] transition-all duration-300 group shadow-lg"
             >
               <Phone size={18} className="sm:w-5 sm:h-5" />
-              0871 430 334 60
+              0871 2066936-0
             </a>
             <a
               href="mailto:info@fimi-gebaeudereinigung.de"

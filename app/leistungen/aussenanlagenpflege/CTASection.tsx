@@ -67,11 +67,11 @@ export default function CTASection() {
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
-                href="tel:+4987143033460"
+                href="tel:+4987120669360"
                 className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-bold text-sm sm:text-base lg:text-lg px-5 sm:px-6 lg:px-8 py-3 sm:py-3.5 lg:py-4 rounded-[6px] transition-all duration-300"
               >
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
-                0871 430 334 60
+                0871 2066936-0
               </a>
             </div>
 
@@ -125,10 +125,10 @@ export default function CTASection() {
                 Oder direkt anrufen:
               </p>
               <a
-                href="tel:+4987143033460"
+                href="tel:+4987120669360"
                 className="text-white font-bold text-xl sm:text-2xl hover:text-[#109387] transition-colors"
               >
-                0871 430 334 60
+                0871 2066936-0
               </a>
               <p className="text-white/50 font-semibold text-xs mt-1">
                 Mo–Fr 08:00–18:00 Uhr

@@ -257,11 +257,11 @@ export default function ImpressumContent() {
                   <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-8 py-3 border-b border-gray-100">
                     <div className="text-gray-500 font-bold w-40 flex-shrink-0">Telefon</div>
                     <div className="flex items-center gap-3">
-                      <a href="tel:+4987143033460" className="text-[#109387] font-extrabold text-lg hover:text-[#012956] transition-colors">
-                        0871 430 334 60
+                      <a href="tel:+4987120669360" className="text-[#109387] font-extrabold text-lg hover:text-[#012956] transition-colors">
+                        0871 2066936-0
                       </a>
                       <button
-                        onClick={() => copyToClipboard('+49 871 430 334 60', 'phone')}
+                        onClick={() => copyToClipboard('+49 871 2066936-0', 'phone')}
                         className="p-2 rounded-[6px] bg-[#f8f9fa] hover:bg-[#109387] hover:text-white text-gray-500 transition-all"
                         title="Telefonnummer kopieren"
                       >
@@ -344,7 +344,7 @@ export default function ImpressumContent() {
                         <ExternalLink size={14} />
                       </a>
                       <a
-                        href="tel:+4987143033460"
+                        href="tel:+4987120669360"
                         className="flex items-center gap-1 bg-[#012956] hover:bg-[#01203d] text-white font-bold text-sm px-4 py-2.5 rounded-[6px] transition-colors"
                       >
                         Anrufen

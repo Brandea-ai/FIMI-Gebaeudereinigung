@@ -123,7 +123,7 @@ const organizationSchema = {
   },
   image: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
   email: 'info@fimi-gebaeudereinigung.de',
-  telephone: '+4987143033460',
+  telephone: '+4987120669360',
   foundingDate: '2016',
   numberOfEmployees: {
     '@type': 'QuantitativeValue',
@@ -143,14 +143,14 @@ const organizationSchema = {
   contactPoint: [
     {
       '@type': 'ContactPoint',
-      telephone: '+4987143033460',
+      telephone: '+4987120669360',
       contactType: 'customer service',
       availableLanguage: ['German'],
       areaServed: 'DE',
     },
     {
       '@type': 'ContactPoint',
-      telephone: '+4987143033460',
+      telephone: '+4987120669360',
       contactType: 'sales',
       availableLanguage: ['German'],
       areaServed: 'DE',
@@ -201,7 +201,7 @@ const localBusinessSchema = {
   name: 'FIMI Gebäudereinigung',
   image: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
   url: 'https://fimi-gebaeudereinigung.de',
-  telephone: '+4987143033460',
+  telephone: '+4987120669360',
   email: 'info@fimi-gebaeudereinigung.de',
   address: {
     '@type': 'PostalAddress',

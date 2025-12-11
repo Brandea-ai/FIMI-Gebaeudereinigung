@@ -238,11 +238,11 @@ export function BrancheRegionen({ branche }: BrancheRegionenProps) {
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </a>
               <a
-                href="tel:+4987143033460"
+                href="tel:+4987120669360"
                 className="flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-[#012956] font-bold text-sm sm:text-base border-2 border-[#012956] px-6 py-3 rounded-[6px] transition-all w-full"
               >
                 <Phone size={18} />
-                0871 430 334 60
+                0871 2066936-0
               </a>
             </div>
 

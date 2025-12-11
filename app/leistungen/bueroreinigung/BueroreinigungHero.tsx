@@ -64,7 +64,7 @@ export default function BueroreinigungHero() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href="tel:+4987143033460"
+              href="tel:+4987120669360"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-fimi-turquoise text-white text-lg font-bold hover:opacity-90 transition-opacity"
               style={{ borderRadius: '4px' }}
             >

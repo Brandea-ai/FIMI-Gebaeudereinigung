@@ -437,11 +437,11 @@ export default function Navigation() {
                 <ArrowRight size={18} strokeWidth={2.5} />
               </Link>
               <a
-                href="tel:+4987143033460"
+                href="tel:+4987120669360"
                 className="flex items-center gap-2.5 text-[#012956] hover:text-white bg-white hover:bg-[#012956] border-2 border-[#012956] font-bold text-[15px] xl:text-[16px] px-5 xl:px-7 py-3 xl:py-3.5 rounded-[6px] transition-all whitespace-nowrap shadow-sm hover:shadow-md"
               >
                 <Phone size={18} strokeWidth={2} />
-                <span>0871 430 334 60</span>
+                <span>0871 2066936-0</span>
               </a>
             </div>
 
@@ -708,11 +708,11 @@ export default function Navigation() {
                   <p className="text-white font-bold text-[18px]">Kostenfreie Beratung</p>
                 </div>
                 <a
-                  href="tel:+4987143033460"
+                  href="tel:+4987120669360"
                   className="flex items-center justify-center gap-3 w-full text-white py-4 font-bold text-[16px] bg-white/10 rounded-[6px] active:bg-white/20 touch-manipulation"
                 >
                   <Phone size={20} strokeWidth={2} aria-hidden="true" />
-                  <span>0871 430 334 60</span>
+                  <span>0871 2066936-0</span>
                 </a>
                 <button
                   onClick={scrollToContact}

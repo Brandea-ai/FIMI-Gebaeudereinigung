@@ -700,10 +700,10 @@ export default function BranchenPage() {
                   <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" aria-hidden="true" />
                 </a>
                 <a
-                  href="tel:+4987143033460"
+                  href="tel:+4987120669360"
                   className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-[#012956] font-bold text-lg px-8 py-4 rounded-[6px] transition-all duration-300"
                 >
-                  0871 430 334 60
+                  0871 2066936-0
                 </a>
               </div>
             </div>

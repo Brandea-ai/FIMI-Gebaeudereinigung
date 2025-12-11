@@ -82,7 +82,7 @@ export default function CTASection() {
 
             {/* Telefon */}
             <a
-              href="tel:+4987143033460"
+              href="tel:+4987120669360"
               className="flex items-center gap-3 sm:gap-4 bg-[#f8f9fa] hover:bg-[#012956] rounded-[6px] p-3 sm:p-4 lg:p-5 mb-5 sm:mb-6 group transition-colors"
             >
               <div className="w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 border-2 border-[#109387] group-hover:bg-[#109387] rounded-[6px] flex items-center justify-center flex-shrink-0 transition-all duration-300" aria-hidden="true">
@@ -91,7 +91,7 @@ export default function CTASection() {
               <div>
                 <span className="text-gray-600 group-hover:text-white/80 text-xs sm:text-sm font-semibold block transition-colors">Oder direkt anrufen</span>
                 <span className="text-[#012956] group-hover:text-white font-bold text-base sm:text-lg lg:text-xl transition-colors">
-                  0871 430 334 60
+                  0871 2066936-0
                 </span>
               </div>
             </a>

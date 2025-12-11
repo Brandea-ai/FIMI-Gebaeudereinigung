@@ -36,36 +36,34 @@ VERFAHREN_IMAGES = [
         "title": "Niederdruck-Reinigung - In Action",
         "prompt": """REALISTISCHES STOCKFOTO - FASSADENREINIGUNG
 
-SZENE: Sanfte Niederdruck-Reinigung an heller Hausfassade
-- Professioneller Hochdruckreiniger im Einsatz
-- Sanfter Wasserstrahl (NICHT aggressiv) reinigt Fassade
-- Leichte Verschmutzung wird entfernt (dezent, nicht extrem)
-- Helle deutsche Putzfassade, gut gepflegt
+SZENE: EIN EINZELNER Arbeiter reinigt Hausfassade mit Hochdruckreiniger
+- EINE Person hält EINE Reinigungslanze
+- Sanfter Wasserstrahl reinigt helle Putzfassade
+- Leichte Verschmutzung (dezent, nicht extrem)
+- Gelber KÄRCHER Hochdruckreiniger am Boden sichtbar
 
-PERSON:
-- Arbeiter von der SEITE oder HINTEN
-- Professionelle Arbeitskleidung (dunkel)
-- Hält Reinigungslanze
-- Gesicht NICHT erkennbar oder abgewandt
-- Natürliche Arbeitshaltung
+PERSON (NUR EINE!):
+- EIN einzelner Arbeiter von HINTEN fotografiert
+- Dunkle Arbeitskleidung
+- Hält mit BEIDEN Händen EINE Lanze
+- Gesicht NICHT sichtbar
+- Realistische Körperhaltung beim Arbeiten
 
 UMGEBUNG:
-- Typisches deutsches Einfamilienhaus oder Reihenhaus
-- Gepflegter Vorgarten sichtbar
-- Tageslicht, leicht bewölkt
-- Realistisch, alltäglich
+- Deutsches Einfamilienhaus
+- Gepflegter Garten
+- Bewölkter Tag, natürliches Licht
 
 FOTOSTIL:
-- Wie echtes Stockfoto von Getty Images
-- Natürliche Beleuchtung
-- Nicht übertrieben, nicht gestellt
-- Professionell aber authentisch
+- Wie echtes Getty Images Stockfoto
+- Natürlich, authentisch
 - 21:9 Breitformat
 
-WICHTIG:
-- REALISTISCH - wie ein echtes Foto
-- Dezente Verschmutzung (nicht extrem!)
-- Person natürlich, nicht posierend"""
+KRITISCH WICHTIG:
+- NUR EINE PERSON im Bild!
+- EINE Lanze, ZWEI Hände
+- Physikalisch korrekt und realistisch
+- Keine doppelten Personen oder Geräte"""
     },
     {
         "filename": "verfahren-teleskop",
@@ -140,37 +138,36 @@ ABSOLUT WICHTIG:
         "title": "Biozid-Behandlung - In Action",
         "prompt": """REALISTISCHES STOCKFOTO - BIOZID-BEHANDLUNG
 
-SZENE: Professionelle Behandlung einer leicht verschmutzten Fassade
-- Helle Hausfassade mit LEICHTEM grünlichem Belag (dezent!)
-- Arbeiter sprüht Behandlungsmittel auf
-- Rückensprühgerät (professionell, weiß oder blau)
+SZENE: EIN EINZELNER Arbeiter behandelt Hausfassade mit Sprühgerät
+- EINE Person mit Rückensprühgerät
+- Sprüht auf helle Fassade mit leichtem Grünbelag
 - Feiner Sprühnebel sichtbar
+- Dezenter Algenbefall (nicht extrem!)
 
-PERSON:
-- Arbeiter von HINTEN fotografiert
-- Normale Arbeitskleidung (Overall oder Arbeitshose/Jacke)
-- Trägt Sprühgerät auf dem Rücken
+PERSON (NUR EINE!):
+- EIN einzelner Arbeiter von HINTEN fotografiert
+- Blaue Arbeitskleidung oder Overall
+- Trägt EIN Rückensprühgerät (weiß/blau)
+- Hält Sprühlanze mit einer Hand
 - Gesicht NICHT sichtbar
-- Natürliche Arbeitshaltung
 
 UMGEBUNG:
-- Typisches deutsches Wohnhaus
-- Nordseite mit LEICHTEM Grünbelag (nicht extrem!)
-- Gepflegter Garten/Rasen im Vordergrund
-- Normaler bewölkter Tag
+- Deutsches Einfamilienhaus
+- Leichter grünlicher Belag auf Putzfassade
+- Gepflegter Rasen im Vordergrund
+- Bewölkter Tag
 
 FOTOSTIL:
-- Wie echtes Stockfoto
-- Natürlich, nicht dramatisch
-- Realistisch, alltäglich
-- Professionelle Arbeitsszene
+- Wie echtes Getty Images Stockfoto
+- Natürlich, authentisch, alltäglich
 - 21:9 Breitformat
 
-WICHTIG:
-- DEZENTER Algenbefall (nicht Horror-Bild!)
-- Realistisch wie echter Arbeitsalltag
-- Keine Schutzanzug-Vollmontur nötig
-- Person natürlich, nicht übertrieben"""
+KRITISCH WICHTIG:
+- NUR EINE PERSON im Bild!
+- EIN Sprühgerät auf dem Rücken
+- Physikalisch korrekt und realistisch
+- Keine doppelten Personen oder Geräte
+- Dezenter Algenbefall (kein Horror!)"""
     },
     {
         "filename": "verfahren-impraegnierung",

@@ -117,11 +117,11 @@ export default function NotFound() {
 
               {/* Phone */}
               <a
-                href="tel:+4987143033460"
+                href="tel:+4987120669360"
                 className="flex items-center justify-center gap-2 text-white/80 hover:text-white font-semibold text-sm transition-colors"
               >
                 <Phone size={16} />
-                0871 430 334 60
+                0871 2066936-0
               </a>
             </div>
           </div>
