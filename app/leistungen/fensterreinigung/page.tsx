@@ -37,10 +37,10 @@ export const metadata: Metadata = {
     siteName: 'FIMI Gebäudereinigung',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=1200&auto=format&fit=crop',
-        width: 1200,
-        height: 630,
-        alt: 'Professionelle Fensterreinigung von FIMI',
+        url: 'https://fimi-gebaeudereinigung.de/images/leistungen/fensterreinigung/hero-1376w.webp',
+        width: 1376,
+        height: 768,
+        alt: 'Professionelle Fensterreinigung von FIMI - moderne Glasfassade',
       },
     ],
   },

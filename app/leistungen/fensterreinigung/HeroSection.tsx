@@ -7,16 +7,28 @@ import { ArrowRight, Phone, CheckCircle, Sparkles, Users, CalendarCheck } from '
 export default function HeroSection() {
   return (
     <section id="hero" className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center">
-      {/* Background Image - 4K Unsplash */}
+      {/* Background Image - Eigene Glasfassade */}
       <div className="absolute inset-0">
-        <Image
-          src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=3840&auto=format&fit=crop"
-          alt="Professionelle Fensterreinigung - streifenfreie Glasflächen für Unternehmen"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
+        <picture>
+          <source
+            srcSet="/images/leistungen/fensterreinigung/hero-384w.avif 384w, /images/leistungen/fensterreinigung/hero-768w.avif 768w, /images/leistungen/fensterreinigung/hero-1024w.avif 1024w, /images/leistungen/fensterreinigung/hero-1376w.avif 1376w"
+            sizes="100vw"
+            type="image/avif"
+          />
+          <source
+            srcSet="/images/leistungen/fensterreinigung/hero-384w.webp 384w, /images/leistungen/fensterreinigung/hero-768w.webp 768w, /images/leistungen/fensterreinigung/hero-1024w.webp 1024w, /images/leistungen/fensterreinigung/hero-1376w.webp 1376w"
+            sizes="100vw"
+            type="image/webp"
+          />
+          <Image
+            src="/images/leistungen/fensterreinigung/hero.webp"
+            alt="Moderne Glasfassade - professionelle Fensterreinigung für Unternehmen in Bayern"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+        </picture>
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#012956]/95 via-[#012956]/85 to-[#012956]/60" />
       </div>
