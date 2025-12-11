@@ -110,11 +110,11 @@ Vom 3-Mann-Startup bis zum Verwaltungsgebäude mit 500 Mitarbeitern – wir betr
 
 **Unzufrieden mit Ihrer aktuellen Reinigungsfirma?** Sie sind nicht allein. Viele unserer besten Kunden kamen zu uns, weil der vorherige Dienstleister unzuverlässig war. Bei FIMI ist das anders – seit 2016 setzen wir auf Qualität statt Quantität.
     `,
-    heroImage: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1920&auto=format&fit=crop',
+    heroImage: '/images/branchen/buero-verwaltung/hero.avif',
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop', alt: 'Modernes Büro', caption: 'Saubere Arbeitsplätze für produktive Teams' },
-      { src: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1200&auto=format&fit=crop', alt: 'Konferenzraum', caption: 'Repräsentative Meetingräume' },
-      { src: 'https://images.unsplash.com/photo-1564069114553-7215e1ff1890?q=80&w=1200&auto=format&fit=crop', alt: 'Büroküche', caption: 'Hygienische Sozialräume' },
+      { src: '/images/branchen/buero-verwaltung/hero.avif', alt: 'Modernes Büro mit Glasfronten', caption: 'Saubere Arbeitsplätze für produktive Teams' },
+      { src: '/images/branchen/buero-verwaltung/gallery-1.avif', alt: 'Konferenzraum', caption: 'Repräsentative Meetingräume' },
+      { src: '/images/branchen/buero-verwaltung/gallery-2.avif', alt: 'Büroküche', caption: 'Hygienische Sozialräume' },
     ],
     icon: 'Building2',
     detailedChallenges: [
@@ -237,11 +237,11 @@ Nach 8 Jahren Erfahrung wissen wir: Industriekunden brauchen einen Partner, der 
 
 **Wir stellen uns auf Ihre Produktion ein – nicht umgekehrt.**
     `,
-    heroImage: 'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?q=80&w=1920&auto=format&fit=crop',
+    heroImage: '/images/branchen/industrie-produktion/hero.avif',
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?q=80&w=1200&auto=format&fit=crop', alt: 'Produktionshalle', caption: 'Große Flächen, effizient gereinigt' },
-      { src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop', alt: 'Maschinenpark', caption: 'Maschinenreinigung ohne Beschädigung' },
-      { src: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1200&auto=format&fit=crop', alt: 'Fertigungslinie', caption: 'Sauberkeit für reibungslose Produktion' },
+      { src: '/images/branchen/industrie-produktion/hero.avif', alt: 'Moderne Produktionshalle', caption: 'Große Flächen, effizient gereinigt' },
+      { src: '/images/branchen/industrie-produktion/gallery-1.avif', alt: 'Maschinenpark', caption: 'Maschinenreinigung ohne Beschädigung' },
+      { src: '/images/branchen/industrie-produktion/gallery-2.avif', alt: 'Fertigungslinie', caption: 'Sauberkeit für reibungslose Produktion' },
     ],
     icon: 'Factory',
     detailedChallenges: [
@@ -362,11 +362,11 @@ Auf Wunsch erstellen wir gemeinsam mit Ihnen einen Hygieneplan, der alle Reinigu
 
 **Ihre Patienten vertrauen Ihnen. Vertrauen Sie uns.**
     `,
-    heroImage: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1920&auto=format&fit=crop',
+    heroImage: '/images/branchen/gesundheitswesen/hero.avif',
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1200&auto=format&fit=crop', alt: 'Arztpraxis', caption: 'Hygienische Reinigung für Ihre Praxis' },
-      { src: 'https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=1200&auto=format&fit=crop', alt: 'Behandlungsraum', caption: 'Desinfektion aller Kontaktflächen' },
-      { src: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=1200&auto=format&fit=crop', alt: 'Wartezimmer', caption: 'Saubere Wartebereiche für Patienten' },
+      { src: '/images/branchen/gesundheitswesen/hero.avif', alt: 'Moderne Arztpraxis', caption: 'Hygiene auf höchstem Niveau' },
+      { src: '/images/branchen/gesundheitswesen/gallery-1.avif', alt: 'Behandlungsraum', caption: 'Sterile Behandlungsräume' },
+      { src: '/images/branchen/gesundheitswesen/gallery-2.avif', alt: 'Klinikflur', caption: 'Saubere Verkehrswege' },
     ],
     icon: 'Stethoscope',
     detailedChallenges: [
@@ -495,11 +495,11 @@ Wir haben ein dreistufiges System entwickelt:
 
 **Ihr Geschäft verdient eine Reinigung, die zu Ihrem Qualitätsanspruch passt.**
     `,
-    heroImage: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1920&auto=format&fit=crop',
+    heroImage: '/images/branchen/einzelhandel/hero.avif',
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop', alt: 'Boutique', caption: 'Gepflegte Verkaufsflächen' },
-      { src: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=1200&auto=format&fit=crop', alt: 'Einkaufszentrum', caption: 'Auch große Flächen, professionell gereinigt' },
-      { src: 'https://images.unsplash.com/photo-1604719312566-8912e9227c6a?q=80&w=1200&auto=format&fit=crop', alt: 'Schaufenster', caption: 'Glänzende Schaufenster ziehen Kunden an' },
+      { src: '/images/branchen/einzelhandel/hero.avif', alt: 'Modernes Einkaufszentrum', caption: 'Einladende Verkaufsflächen' },
+      { src: '/images/branchen/einzelhandel/gallery-1.avif', alt: 'Boutique', caption: 'Repräsentative Ladengestaltung' },
+      { src: '/images/branchen/einzelhandel/gallery-2.avif', alt: 'Schaufenster', caption: 'Blitzsaubere Schaufenster' },
     ],
     icon: 'ShoppingBag',
     detailedChallenges: [
@@ -621,11 +621,11 @@ Ihre Küche ist das Herzstück Ihres Betriebs. Wir sorgen dafür, dass sie nicht
 
 **HACCP-Dokumentation auf Wunsch** – für Ihre Unterlagen und Kontrollen.
     `,
-    heroImage: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1920&auto=format&fit=crop',
+    heroImage: '/images/branchen/gastronomie-hotel/hero.avif',
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=1200&auto=format&fit=crop', alt: 'Hotel Lobby', caption: 'Repräsentative Hotelbereiche' },
-      { src: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1200&auto=format&fit=crop', alt: 'Hotelzimmer', caption: 'Makellose Zimmer für zufriedene Gäste' },
-      { src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=1200&auto=format&fit=crop', alt: 'Restaurantküche', caption: 'HACCP-konforme Küchenhygiene' },
+      { src: '/images/branchen/gastronomie-hotel/hero.avif', alt: 'Elegante Hotellobby', caption: 'Erster Eindruck zählt' },
+      { src: '/images/branchen/gastronomie-hotel/gallery-1.avif', alt: 'Hotelzimmer', caption: 'Makellose Hotelzimmer' },
+      { src: '/images/branchen/gastronomie-hotel/gallery-2.avif', alt: 'Profiküche', caption: 'Hygienische Gastro-Küchen' },
     ],
     icon: 'UtensilsCrossed',
     detailedChallenges: [
@@ -749,11 +749,11 @@ In Schulen und Kindergärten treffen täglich viele Kinder aufeinander. Keime ve
 
 **Gesunde Kinder lernen besser.** Mit FIMI sorgen Sie für ein hygienisches Lernumfeld.
     `,
-    heroImage: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1920&auto=format&fit=crop',
+    heroImage: '/images/branchen/bildung-schulen/hero.avif',
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1200&auto=format&fit=crop', alt: 'Klassenzimmer', caption: 'Saubere Klassenräume für konzentriertes Lernen' },
-      { src: 'https://images.unsplash.com/photo-1576495199011-eb94736d05d6?q=80&w=1200&auto=format&fit=crop', alt: 'Turnhalle', caption: 'Hygienische Turnhallen für Sport' },
-      { src: 'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=1200&auto=format&fit=crop', alt: 'Kindergarten', caption: 'Kindgerechte Reinigung für die Kleinsten' },
+      { src: '/images/branchen/bildung-schulen/hero.avif', alt: 'Modernes Klassenzimmer', caption: 'Saubere Lernumgebungen' },
+      { src: '/images/branchen/bildung-schulen/gallery-1.avif', alt: 'Schulaula', caption: 'Gepflegte Veranstaltungsräume' },
+      { src: '/images/branchen/bildung-schulen/gallery-2.avif', alt: 'Schulflur', caption: 'Saubere Verkehrswege' },
     ],
     icon: 'GraduationCap',
     detailedChallenges: [
@@ -877,11 +877,11 @@ In Fitnessstudios wird geschwitzt – das ist der Sinn der Sache. Aber genau des
 
 **Saubere Studios binden Mitglieder.** Investieren Sie in Hygiene.
     `,
-    heroImage: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1920&auto=format&fit=crop',
+    heroImage: '/images/branchen/fitness-sport/hero.avif',
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200&auto=format&fit=crop', alt: 'Fitnessgeräte', caption: 'Desinfizierte Geräte für hygienisches Training' },
-      { src: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=1200&auto=format&fit=crop', alt: 'Trainingsbereich', caption: 'Saubere Trainingsflächen' },
-      { src: 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1200&auto=format&fit=crop', alt: 'Kursraum', caption: 'Hygienische Kursräume' },
+      { src: '/images/branchen/fitness-sport/hero.avif', alt: 'Modernes Fitnessstudio', caption: 'Hygienische Trainingsumgebung' },
+      { src: '/images/branchen/fitness-sport/gallery-1.avif', alt: 'Umkleideraum', caption: 'Saubere Umkleidebereiche' },
+      { src: '/images/branchen/fitness-sport/gallery-2.avif', alt: 'Sporthalle', caption: 'Gepflegte Sportflächen' },
     ],
     icon: 'Dumbbell',
     detailedChallenges: [
@@ -1007,11 +1007,11 @@ Logistikzentren und Lagerhallen haben eine Gemeinsamkeit: Sie sind groß. Sehr g
 
 **Wir reinigen, wenn Sie es brauchen – nicht wenn es uns passt.**
     `,
-    heroImage: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1920&auto=format&fit=crop',
+    heroImage: '/images/branchen/logistik-lager/hero.avif',
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop', alt: 'Lagerhalle', caption: 'Große Flächen, effizient gereinigt' },
-      { src: 'https://images.unsplash.com/photo-1553413077-190dd305871c?q=80&w=1200&auto=format&fit=crop', alt: 'Hochregallager', caption: 'Auch Hochregale reinigen wir' },
-      { src: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop', alt: 'Logistikzentrum', caption: 'Sauberkeit für reibungslose Logistik' },
+      { src: '/images/branchen/logistik-lager/hero.avif', alt: 'Modernes Hochregallager', caption: 'Saubere Lagerflächen' },
+      { src: '/images/branchen/logistik-lager/gallery-1.avif', alt: 'Versandbereich', caption: 'Effiziente Arbeitsbereiche' },
+      { src: '/images/branchen/logistik-lager/gallery-2.avif', alt: 'Laderampen', caption: 'Saubere Laderampen' },
     ],
     icon: 'Warehouse',
     detailedChallenges: [
@@ -1136,11 +1136,11 @@ Das Treppenhaus ist die Visitenkarte einer Wohnanlage. Wenn Mieter oder Besucher
 
 **Weniger Mieterbeschwerden, weniger Stress für Sie.**
     `,
-    heroImage: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1920&auto=format&fit=crop',
+    heroImage: '/images/branchen/wohnungswirtschaft/hero.avif',
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1200&auto=format&fit=crop', alt: 'Wohnanlage', caption: 'Gepflegte Wohnanlagen' },
-      { src: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=1200&auto=format&fit=crop', alt: 'Eingangsbereich', caption: 'Einladende Eingangsbereiche' },
-      { src: 'https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=1200&auto=format&fit=crop', alt: 'Treppenhaus', caption: 'Saubere Treppenhäuser' },
+      { src: '/images/branchen/wohnungswirtschaft/hero.avif', alt: 'Gepflegtes Mehrfamilienhaus', caption: 'Gepflegte Wohnanlagen' },
+      { src: '/images/branchen/wohnungswirtschaft/gallery-1.avif', alt: 'Treppenhaus', caption: 'Saubere Treppenhäuser' },
+      { src: '/images/branchen/wohnungswirtschaft/gallery-2.avif', alt: 'Tiefgarage', caption: 'Gepflegte Tiefgaragen' },
     ],
     icon: 'Home',
     detailedChallenges: [
@@ -1264,11 +1264,11 @@ Wir kennen die Anforderungen:
 
 **Wir verstehen öffentliche Auftraggeber – und liefern, was Sie brauchen.**
     `,
-    heroImage: 'https://images.unsplash.com/photo-1555431189-0fabf2667795?q=80&w=1920&auto=format&fit=crop',
+    heroImage: '/images/branchen/oeffentliche-einrichtungen/hero.avif',
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1555431189-0fabf2667795?q=80&w=1200&auto=format&fit=crop', alt: 'Rathaus', caption: 'Repräsentative Sauberkeit für öffentliche Gebäude' },
-      { src: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1200&auto=format&fit=crop', alt: 'Empfangshalle', caption: 'Einladende Bürgerbereiche' },
-      { src: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop', alt: 'Verwaltung', caption: 'Saubere Arbeitsplätze für Mitarbeiter' },
+      { src: '/images/branchen/oeffentliche-einrichtungen/hero.avif', alt: 'Rathaus Foyer', caption: 'Repräsentative Eingangsbereiche' },
+      { src: '/images/branchen/oeffentliche-einrichtungen/gallery-1.avif', alt: 'Bibliothek Lesesaal', caption: 'Saubere Lernumgebungen' },
+      { src: '/images/branchen/oeffentliche-einrichtungen/gallery-2.avif', alt: 'Hallenbad', caption: 'Hygienische Bäder' },
     ],
     icon: 'Landmark',
     detailedChallenges: [
@@ -1391,11 +1391,11 @@ Für Banken und Versicherungen wählen wir unser Personal besonders sorgfältig 
 
 **Ihr guter Ruf ist unser Auftrag.**
     `,
-    heroImage: 'https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?q=80&w=1920&auto=format&fit=crop',
+    heroImage: '/images/branchen/banken-versicherungen/hero.avif',
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?q=80&w=1200&auto=format&fit=crop', alt: 'Bankgebäude', caption: 'Repräsentative Reinigung für Banken' },
-      { src: 'https://images.unsplash.com/photo-1560472355-536de3962603?q=80&w=1200&auto=format&fit=crop', alt: 'Schalterraum', caption: 'Makellose Kundenbereiche' },
-      { src: 'https://images.unsplash.com/photo-1497215842964-222b430dc094?q=80&w=1200&auto=format&fit=crop', alt: 'Beratungsraum', caption: 'Diskret und gründlich' },
+      { src: '/images/branchen/banken-versicherungen/hero.avif', alt: 'Bankschalterhalle', caption: 'Vertrauenswürdige Atmosphäre' },
+      { src: '/images/branchen/banken-versicherungen/gallery-1.avif', alt: 'Beratungszimmer', caption: 'Diskrete Beratungsräume' },
+      { src: '/images/branchen/banken-versicherungen/gallery-2.avif', alt: 'Versicherung Empfang', caption: 'Professioneller Empfang' },
     ],
     icon: 'Banknote',
     detailedChallenges: [
@@ -1519,11 +1519,11 @@ Im Autohaus entscheidet der erste Eindruck. Wenn ein Kunde den Showroom betritt,
 
 **Lassen Sie Ihre Fahrzeuge glänzen – und Ihr Autohaus auch.**
     `,
-    heroImage: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1920&auto=format&fit=crop',
+    heroImage: '/images/branchen/automotive/hero.avif',
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop', alt: 'Showroom', caption: 'Glänzende Showrooms verkaufen besser' },
-      { src: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=1200&auto=format&fit=crop', alt: 'Werkstatt', caption: 'Auch Werkstätten verdienen Sauberkeit' },
-      { src: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1200&auto=format&fit=crop', alt: 'Außenbereich', caption: 'Einladende Außenflächen' },
+      { src: '/images/branchen/automotive/hero.avif', alt: 'Autohaus Showroom', caption: 'Makellose Präsentation' },
+      { src: '/images/branchen/automotive/gallery-1.avif', alt: 'KFZ-Werkstatt', caption: 'Saubere Werkstätten' },
+      { src: '/images/branchen/automotive/gallery-2.avif', alt: 'Waschanlage', caption: 'Gepflegte Waschanlagen' },
     ],
     icon: 'Car',
     detailedChallenges: [
