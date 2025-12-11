@@ -87,17 +87,17 @@ export default function ProblemLoesungSection() {
           <div className="relative h-[220px] sm:h-[280px] md:h-[350px] lg:h-[400px] rounded-[6px] overflow-hidden">
             <picture>
               <source
-                srcSet="/images/leistungen/industriereinigung/halle-nach-reinigung-384w.avif 384w, /images/leistungen/industriereinigung/halle-nach-reinigung-768w.avif 768w, /images/leistungen/industriereinigung/halle-nach-reinigung-1024w.avif 1024w, /images/leistungen/industriereinigung/halle-nach-reinigung.avif 1200w"
+                srcSet="/images/leistungen/industriereinigung/halle-sauber-384w.avif 384w, /images/leistungen/industriereinigung/halle-sauber-768w.avif 768w, /images/leistungen/industriereinigung/halle-sauber-1024w.avif 1024w, /images/leistungen/industriereinigung/halle-sauber.avif 1200w"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 type="image/avif"
               />
               <source
-                srcSet="/images/leistungen/industriereinigung/halle-nach-reinigung-384w.webp 384w, /images/leistungen/industriereinigung/halle-nach-reinigung-768w.webp 768w, /images/leistungen/industriereinigung/halle-nach-reinigung-1024w.webp 1024w, /images/leistungen/industriereinigung/halle-nach-reinigung.avif 1200w"
+                srcSet="/images/leistungen/industriereinigung/halle-sauber-384w.webp 384w, /images/leistungen/industriereinigung/halle-sauber-768w.webp 768w, /images/leistungen/industriereinigung/halle-sauber-1024w.webp 1024w, /images/leistungen/industriereinigung/halle-sauber.webp 1200w"
                 sizes="(max-width: 768px) 100vw, 50vw"
                 type="image/webp"
               />
               <Image
-                src="/images/leistungen/industriereinigung/halle-nach-reinigung.avif"
+                src="/images/leistungen/industriereinigung/halle-sauber.avif"
                 alt="Saubere Produktionshalle nach professioneller Industriereinigung"
                 fill
                 className="object-cover"

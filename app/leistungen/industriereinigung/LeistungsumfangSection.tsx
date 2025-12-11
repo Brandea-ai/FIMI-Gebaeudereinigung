@@ -110,18 +110,18 @@ export default function LeistungsumfangSection() {
           <div className="relative h-[250px] sm:h-[320px] md:h-[400px] lg:h-[500px] rounded-[6px] lg:rounded-[12px] overflow-hidden">
             <picture>
               <source
-                srcSet="/images/leistungen/industriereinigung/scheuersaugmaschine-halle-384w.avif 384w, /images/leistungen/industriereinigung/scheuersaugmaschine-halle-768w.avif 768w, /images/leistungen/industriereinigung/scheuersaugmaschine-halle-1024w.avif 1024w, /images/leistungen/industriereinigung/scheuersaugmaschine-halle.avif 1200w"
+                srcSet="/images/leistungen/industriereinigung/hallenboden-detail-384w.avif 384w, /images/leistungen/industriereinigung/hallenboden-detail-768w.avif 768w, /images/leistungen/industriereinigung/hallenboden-detail-1024w.avif 1024w, /images/leistungen/industriereinigung/hallenboden-detail.avif 1200w"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 type="image/avif"
               />
               <source
-                srcSet="/images/leistungen/industriereinigung/scheuersaugmaschine-halle-384w.webp 384w, /images/leistungen/industriereinigung/scheuersaugmaschine-halle-768w.webp 768w, /images/leistungen/industriereinigung/scheuersaugmaschine-halle-1024w.webp 1024w, /images/leistungen/industriereinigung/scheuersaugmaschine-halle.avif 1200w"
+                srcSet="/images/leistungen/industriereinigung/hallenboden-detail-384w.webp 384w, /images/leistungen/industriereinigung/hallenboden-detail-768w.webp 768w, /images/leistungen/industriereinigung/hallenboden-detail-1024w.webp 1024w, /images/leistungen/industriereinigung/hallenboden-detail.webp 1200w"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 type="image/webp"
               />
               <Image
-                src="/images/leistungen/industriereinigung/scheuersaugmaschine-halle.avif"
-                alt="Professionelle Scheuersaugmaschine in der Produktionshalle"
+                src="/images/leistungen/industriereinigung/hallenboden-detail.avif"
+                alt="Perfekt gereinigter Industrieboden in Produktionshalle"
                 fill
                 className="object-cover"
               />
@@ -232,18 +232,18 @@ export default function LeistungsumfangSection() {
           <div className="relative h-[250px] sm:h-[320px] md:h-[400px] lg:h-[500px] rounded-[6px] lg:rounded-[12px] overflow-hidden order-first lg:order-last">
             <picture>
               <source
-                srcSet="/images/leistungen/industriereinigung/dampfreinigung-maschine-384w.avif 384w, /images/leistungen/industriereinigung/dampfreinigung-maschine-768w.avif 768w, /images/leistungen/industriereinigung/dampfreinigung-maschine-1024w.avif 1024w, /images/leistungen/industriereinigung/dampfreinigung-maschine.avif 1200w"
+                srcSet="/images/leistungen/industriereinigung/produktionshalle-leer-384w.avif 384w, /images/leistungen/industriereinigung/produktionshalle-leer-768w.avif 768w, /images/leistungen/industriereinigung/produktionshalle-leer-1024w.avif 1024w, /images/leistungen/industriereinigung/produktionshalle-leer.avif 1200w"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 type="image/avif"
               />
               <source
-                srcSet="/images/leistungen/industriereinigung/dampfreinigung-maschine-384w.webp 384w, /images/leistungen/industriereinigung/dampfreinigung-maschine-768w.webp 768w, /images/leistungen/industriereinigung/dampfreinigung-maschine-1024w.webp 1024w, /images/leistungen/industriereinigung/dampfreinigung-maschine.avif 1200w"
+                srcSet="/images/leistungen/industriereinigung/produktionshalle-leer-384w.webp 384w, /images/leistungen/industriereinigung/produktionshalle-leer-768w.webp 768w, /images/leistungen/industriereinigung/produktionshalle-leer-1024w.webp 1024w, /images/leistungen/industriereinigung/produktionshalle-leer.webp 1200w"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 type="image/webp"
               />
               <Image
-                src="/images/leistungen/industriereinigung/dampfreinigung-maschine.avif"
-                alt="Industriereinigung mit Spezialgeräten - Dampfreiniger"
+                src="/images/leistungen/industriereinigung/produktionshalle-leer.avif"
+                alt="Moderne Produktionshalle - sauber und bereit"
                 fill
                 className="object-cover"
               />
