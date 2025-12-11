@@ -8,7 +8,7 @@ const regionen = [
   {
     id: 'landshut',
     name: 'Landshut',
-    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-landshut.avif',
     headline: 'Beschaffungsmanagement in Landshut',
     beschreibung: 'Als Landshuter Unternehmen verstehen wir die Anforderungen des regionalen Mittelstands. Produktionsunternehmen, Zulieferer und Dienstleister profitieren von unserer Nähe.',
     vorteile: ['Vor Ort in 30 Min.', 'Mittelstands-Fokus', 'Regionale Vernetzung'],
@@ -16,7 +16,7 @@ const regionen = [
   {
     id: 'muenchen',
     name: 'München',
-    image: 'https://images.unsplash.com/photo-1595867818082-083862f3d630?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-muenchen.avif',
     headline: 'Einkaufsberatung in München',
     beschreibung: 'In der Metropolregion München unterstützen wir Unternehmen aller Größen. Von Tech-Start-ups über etablierte Mittelständler bis zu Konzernen.',
     vorteile: ['Alle Branchen', 'Konzern-Erfahrung', 'Startup-kompatibel'],
@@ -24,7 +24,7 @@ const regionen = [
   {
     id: 'regensburg',
     name: 'Regensburg',
-    image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-regensburg.avif',
     headline: 'Beschaffungsmanagement in Regensburg',
     beschreibung: 'Der Industriestandort Regensburg mit Automotive, Elektrotechnik und Maschinenbau. Wir kennen die Lieferantenstrukturen der Region.',
     vorteile: ['Automotive-Expertise', 'Industrie-Fokus', 'Lieferanten-Netzwerk'],
@@ -32,7 +32,7 @@ const regionen = [
   {
     id: 'ingolstadt',
     name: 'Ingolstadt',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-ingolstadt.avif',
     headline: 'Einkaufsoptimierung in Ingolstadt',
     beschreibung: 'Im Herzen der Automobilindustrie. Zulieferer und OEMs profitieren von unserer Erfahrung mit Automotive-Einkaufsprozessen und Qualitätsanforderungen.',
     vorteile: ['Automotive-Branche', 'Zulieferer-Erfahrung', 'Qualitätsstandards'],
@@ -40,7 +40,7 @@ const regionen = [
   {
     id: 'freising',
     name: 'Freising',
-    image: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-freising.avif',
     headline: 'Beschaffungsmanagement in Freising',
     beschreibung: 'Zwischen Flughafen und TU München. Innovative Unternehmen, Forschungseinrichtungen und Logistiker sind hier zu Hause.',
     vorteile: ['Flughafen-Region', 'Innovationshub', 'Logistik-Know-how'],
@@ -48,7 +48,7 @@ const regionen = [
   {
     id: 'dingolfing',
     name: 'Dingolfing',
-    image: 'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-erding.avif',
     headline: 'Einkaufsberatung in Dingolfing',
     beschreibung: 'Der Standort für Fertigung und Produktion. Wir unterstützen bei der Optimierung von Materialkosten und Lieferantenbeziehungen.',
     vorteile: ['Produktionsbetriebe', 'Material-Einkauf', 'Fertigungs-Expertise'],
@@ -56,7 +56,7 @@ const regionen = [
   {
     id: 'straubing',
     name: 'Straubing',
-    image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-straubing.avif',
     headline: 'Beschaffungsmanagement in Straubing',
     beschreibung: 'Niederbayern mit starkem Mittelstand. Vom Handwerksbetrieb bis zum Hidden Champion – wir skalieren unsere Leistungen passend.',
     vorteile: ['Niederbayern-Fokus', 'Mittelstand', 'Pragmatisch'],
@@ -64,7 +64,7 @@ const regionen = [
   {
     id: 'passau',
     name: 'Passau',
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-passau.avif',
     headline: 'Einkaufsberatung in Passau',
     beschreibung: 'Die Dreiflüssestadt mit grenzüberschreitenden Geschäftsbeziehungen. Internationaler Einkauf und lokale Beschaffung kombiniert.',
     vorteile: ['International', 'Grenznähe Österreich', 'Universität'],

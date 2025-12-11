@@ -8,7 +8,7 @@ const regionen = [
   {
     id: 'landshut',
     name: 'Landshut',
-    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-landshut.avif',
     headline: 'Industriereinigung in Landshut',
     beschreibung: 'Als Landshuter Unternehmen kennen wir die Anforderungen der regionalen Industrie. Ob BMW-Zulieferer, Mittelstand oder Handwerk – wir sind schnell vor Ort.',
     vorteile: ['30 Min. Anfahrt', 'Lokales Team', 'Notfallservice'],
@@ -16,7 +16,7 @@ const regionen = [
   {
     id: 'muenchen',
     name: 'München',
-    image: 'https://images.unsplash.com/photo-1595867818082-083862f3d630?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-muenchen.avif',
     headline: 'Industriereinigung in München',
     beschreibung: 'Professionelle Industriereinigung für die Landeshauptstadt. Vom Werksviertel bis zum Industriegebiet Nord – unsere Teams arbeiten auch nachts und am Wochenende.',
     vorteile: ['Alle Stadtteile', 'Wochenend-Service', 'Großprojekte'],
@@ -24,7 +24,7 @@ const regionen = [
   {
     id: 'regensburg',
     name: 'Regensburg',
-    image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-regensburg.avif',
     headline: 'Industriereinigung in Regensburg',
     beschreibung: 'Von Continental bis zum Mittelstand. Wir reinigen Produktionshallen, Lagerflächen und Maschinen im gesamten Raum Regensburg.',
     vorteile: ['Automotive-Erfahrung', 'Gewerbepark', 'A3 Anbindung'],
@@ -32,7 +32,7 @@ const regionen = [
   {
     id: 'ingolstadt',
     name: 'Ingolstadt',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-ingolstadt.avif',
     headline: 'Industriereinigung in Ingolstadt',
     beschreibung: 'Der Automobilstandort verlangt Präzision. Für Zulieferer und Produktionsbetriebe arbeiten wir nach höchsten Standards.',
     vorteile: ['Automotive-Standards', 'Schichtmodelle', 'Kurzfristig'],
@@ -40,7 +40,7 @@ const regionen = [
   {
     id: 'dingolfing',
     name: 'Dingolfing',
-    image: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-erding.avif',
     headline: 'Industriereinigung in Dingolfing',
     beschreibung: 'BMW-Werk und Zulieferer prägen die Region. Wir kennen die Anforderungen und reinigen im laufenden Betrieb.',
     vorteile: ['BMW-Region', 'Zulieferer-Know-how', 'Flexibel'],
@@ -48,7 +48,7 @@ const regionen = [
   {
     id: 'straubing',
     name: 'Straubing',
-    image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-straubing.avif',
     headline: 'Industriereinigung in Straubing',
     beschreibung: 'Niederbayern verdient erstklassige Reinigung. Vom Industriegebiet bis zum Hafen – wir sind Ihr Partner.',
     vorteile: ['Niederbayern-Fokus', 'Industrie-Erfahrung', 'Persönlich'],
@@ -56,7 +56,7 @@ const regionen = [
   {
     id: 'passau',
     name: 'Passau',
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-passau.avif',
     headline: 'Industriereinigung in Passau',
     beschreibung: 'Die Dreiflüssestadt mit starker Industrie. Vom ZF-Werk bis zum Mittelstand – wir passen uns Ihren Anforderungen an.',
     vorteile: ['Grenznähe', 'Großbetriebe', 'Persönlich'],
@@ -64,7 +64,7 @@ const regionen = [
   {
     id: 'freising',
     name: 'Freising',
-    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-freising.avif',
     headline: 'Industriereinigung in Freising',
     beschreibung: 'Zwischen Flughafen und München. Wir reinigen Produktionshallen, Labore und Gewerbeobjekte im gesamten Landkreis.',
     vorteile: ['Flughafen-Nähe', 'Forschung & Uni', 'Flexibel'],

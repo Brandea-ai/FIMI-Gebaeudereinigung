@@ -8,7 +8,7 @@ const regionen = [
   {
     id: 'landshut',
     name: 'Landshut',
-    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-landshut.avif',
     headline: 'Parkplatzreinigung in Landshut',
     beschreibung: 'Als Landshuter Unternehmen sind wir schnell vor Ort. Ob Supermarkt-Parkplatz in der Altstadt, Firmenparkplatz im Gewerbegebiet Ergolding oder Wohnanlage – wir kennen die Region und ihre Anforderungen.',
     vorteile: ['30 Min. Anfahrt', 'Lokale Teams', 'Notfallservice'],
@@ -16,7 +16,7 @@ const regionen = [
   {
     id: 'muenchen',
     name: 'München',
-    image: 'https://images.unsplash.com/photo-1595867818082-083862f3d630?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-muenchen.avif',
     headline: 'Parkplatzreinigung in München',
     beschreibung: 'Professionelle Parkplatzreinigung für die Landeshauptstadt. Vom Einkaufszentrum bis zum Firmenparkplatz – unsere Kehrmaschinen und Teams sind in allen Stadtteilen im Einsatz.',
     vorteile: ['Alle Stadtteile', 'Wochenend-Service', 'Großflächenprojekte'],
@@ -24,7 +24,7 @@ const regionen = [
   {
     id: 'regensburg',
     name: 'Regensburg',
-    image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-regensburg.avif',
     headline: 'Parkplatzreinigung in Regensburg',
     beschreibung: 'Von der UNESCO-Altstadt bis zum Gewerbepark. Wir reinigen Parkflächen für Einzelhandel, Industrie und Wohnanlagen mit gleichbleibend hoher Qualität.',
     vorteile: ['Gewerbepark-Erfahrung', 'A3 Anbindung', 'Regelmäßige Touren'],
@@ -32,7 +32,7 @@ const regionen = [
   {
     id: 'ingolstadt',
     name: 'Ingolstadt',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-ingolstadt.avif',
     headline: 'Parkplatzreinigung in Ingolstadt',
     beschreibung: 'Der Automobilstandort verlangt Präzision. Für Autohäuser, Zulieferer und Gewerbebetriebe bieten wir Parkplatzreinigung nach höchsten Standards.',
     vorteile: ['Automotive-Erfahrung', 'Ölflecken-Spezialist', 'Flexible Zeiten'],
@@ -40,7 +40,7 @@ const regionen = [
   {
     id: 'freising',
     name: 'Freising',
-    image: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-freising.avif',
     headline: 'Parkplatzreinigung in Freising',
     beschreibung: 'Zwischen Flughafen und Weihenstephan. Wir reinigen Parkflächen für Hotels, Gewerbebetriebe und Forschungseinrichtungen im gesamten Landkreis.',
     vorteile: ['Flughafen-Nähe', 'Hotel-Erfahrung', 'Umweltschonend'],
@@ -48,7 +48,7 @@ const regionen = [
   {
     id: 'erding',
     name: 'Erding',
-    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-erding.avif',
     headline: 'Parkplatzreinigung in Erding',
     beschreibung: 'Der wachsende Landkreis mit Therme und Flughafen-Nähe. Wir betreuen Parkflächen von Hotels, Gewerbebetrieben und großen Wohnanlagen.',
     vorteile: ['Hotel-Expertise', 'Großflächen', 'Flexible Intervalle'],
@@ -56,7 +56,7 @@ const regionen = [
   {
     id: 'straubing',
     name: 'Straubing',
-    image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-straubing.avif',
     headline: 'Parkplatzreinigung in Straubing',
     beschreibung: 'Niederbayern verdient erstklassige Parkplatzpflege. Von der Innenstadt bis zum Hafen – wir sind Ihr zuverlässiger Partner für saubere Außenflächen.',
     vorteile: ['Niederbayern-Fokus', 'Industrie-Erfahrung', 'Persönlicher Service'],
@@ -64,7 +64,7 @@ const regionen = [
   {
     id: 'passau',
     name: 'Passau',
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-passau.avif',
     headline: 'Parkplatzreinigung in Passau',
     beschreibung: 'Die Dreiflüssestadt mit Tourismus und Universität. Wir reinigen Parkflächen für Hotels, Gastronomie und Gewerbebetriebe bis zur österreichischen Grenze.',
     vorteile: ['Tourismus-Know-how', 'Grenznähe', 'Regelmäßige Touren'],

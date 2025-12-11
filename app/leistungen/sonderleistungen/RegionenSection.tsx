@@ -8,7 +8,7 @@ const regionen = [
   {
     id: 'landshut',
     name: 'Landshut',
-    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-landshut.avif',
     headline: 'Event-Reinigung in Landshut',
     beschreibung: 'Als Landshuter Unternehmen reinigen wir Events, Hotels und Tagungen in der Region. Kurze Wege, schnelle Reaktion – innerhalb von 2 Stunden vor Ort.',
     vorteile: ['2h Reaktionszeit', 'Lokale Teams', 'Persönliche Betreuung'],
@@ -16,7 +16,7 @@ const regionen = [
   {
     id: 'muenchen',
     name: 'München',
-    image: 'https://images.unsplash.com/photo-1595867818082-083862f3d630?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-muenchen.avif',
     headline: 'Event-Reinigung in München',
     beschreibung: 'Professionelle Veranstaltungsreinigung für die Landeshauptstadt. Messen, Kongresse, Firmenevents und Hotelreinigung – wir bedienen alle Stadtteile.',
     vorteile: ['Alle Stadtteile', 'Messe-Erfahrung', 'Premium-Hotels'],
@@ -24,7 +24,7 @@ const regionen = [
   {
     id: 'regensburg',
     name: 'Regensburg',
-    image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-regensburg.avif',
     headline: 'Event-Reinigung in Regensburg',
     beschreibung: 'Von der Altstadt bis zum Gewerbepark: Event-Reinigung, Hotelreinigung und Tagungsraum-Service für Regensburg und Umgebung.',
     vorteile: ['UNESCO-Altstadt', 'Gewerbepark', 'Schnelle Anbindung'],
@@ -32,7 +32,7 @@ const regionen = [
   {
     id: 'ingolstadt',
     name: 'Ingolstadt',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-ingolstadt.avif',
     headline: 'Event-Reinigung in Ingolstadt',
     beschreibung: 'Am Automobilstandort zählt Professionalität. Wir reinigen Firmenevents, Tagungen und Messen für Zulieferer und Unternehmen.',
     vorteile: ['Automotive-Erfahrung', 'Business-Events', 'Hoher Standard'],
@@ -40,7 +40,7 @@ const regionen = [
   {
     id: 'freising',
     name: 'Freising',
-    image: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-freising.avif',
     headline: 'Event-Reinigung in Freising',
     beschreibung: 'Zwischen Flughafen München und Weihenstephan. Event- und Hotelreinigung für Hotels, Tagungszentren und Unternehmen im Landkreis.',
     vorteile: ['Flughafen-Nähe', 'Hotel-Reinigung', 'Flexible Zeiten'],
@@ -48,7 +48,7 @@ const regionen = [
   {
     id: 'erding',
     name: 'Erding',
-    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-erding.avif',
     headline: 'Event-Reinigung in Erding',
     beschreibung: 'Im wachsenden Landkreis Erding reinigen wir Hotels, Therme-Veranstaltungen und Firmenevents – zuverlässig und gründlich.',
     vorteile: ['Therme-Region', 'Hotel-Expertise', 'Wachstumsregion'],
@@ -56,7 +56,7 @@ const regionen = [
   {
     id: 'straubing',
     name: 'Straubing',
-    image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-straubing.avif',
     headline: 'Event-Reinigung in Straubing',
     beschreibung: 'Im Herzen Niederbayerns: Event-Reinigung, Hotelreinigung und Messe-Service für Straubing und die gesamte Region Gäuboden.',
     vorteile: ['Niederbayern-Fokus', 'Messe-Erfahrung', 'Regionale Teams'],
@@ -64,7 +64,7 @@ const regionen = [
   {
     id: 'passau',
     name: 'Passau',
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-passau.avif',
     headline: 'Event-Reinigung in Passau',
     beschreibung: 'Die Dreiflüssestadt lebt vom Tourismus. Wir reinigen Hotels, Kreuzfahrt-Events und Veranstaltungen – professionell und diskret.',
     vorteile: ['Tourismus-Erfahrung', 'Hotel-Reinigung', 'Kreuzfahrt-Events'],

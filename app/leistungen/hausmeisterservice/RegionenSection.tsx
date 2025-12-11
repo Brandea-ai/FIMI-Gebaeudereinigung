@@ -9,7 +9,7 @@ const regionen = [
   {
     id: 'landshut',
     name: 'Landshut',
-    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-landshut.avif',
     headline: 'Hausmeisterservice in Landshut',
     beschreibung: 'Als Landshuter Unternehmen sind wir schnell bei Ihnen. Ob Altstadt, Ergolding oder Industriegebiet – Ihr Objekt ist in guten Händen. Notfälle? Wir sind in 30 Minuten vor Ort.',
     vorteile: ['30 Min. Anfahrt', 'Lokales Team', 'Notfallservice'],
@@ -17,7 +17,7 @@ const regionen = [
   {
     id: 'muenchen',
     name: 'München',
-    image: 'https://images.unsplash.com/photo-1595867818082-083862f3d630?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-muenchen.avif',
     headline: 'Hausmeisterservice in München',
     beschreibung: 'Professionelle Objektbetreuung für die Landeshauptstadt. Vom Werksviertel bis Schwabing – unsere Teams arbeiten zuverlässig und diskret, auch am Wochenende.',
     vorteile: ['Alle Stadtteile', 'Wochenendservice', 'Großobjekte'],
@@ -25,7 +25,7 @@ const regionen = [
   {
     id: 'regensburg',
     name: 'Regensburg',
-    image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-regensburg.avif',
     headline: 'Hausmeisterservice in Regensburg',
     beschreibung: 'Von der UNESCO-Altstadt bis zum Gewerbepark. Wir betreuen historische Gebäude genauso sorgfältig wie moderne Wohnanlagen und Gewerbeobjekte.',
     vorteile: ['Denkmalschutz-Erfahrung', 'Gewerbepark', 'A3-Anbindung'],
@@ -33,7 +33,7 @@ const regionen = [
   {
     id: 'ingolstadt',
     name: 'Ingolstadt',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-ingolstadt.avif',
     headline: 'Hausmeisterservice in Ingolstadt',
     beschreibung: 'Der Automobilstandort verlangt Präzision. Für Wohnanlagen, Bürokomplexe und Zulieferer-Gebäude arbeiten wir nach höchsten Standards.',
     vorteile: ['Automotive-Erfahrung', 'Qualitätsprozesse', 'Flexible Zeiten'],
@@ -41,7 +41,7 @@ const regionen = [
   {
     id: 'freising',
     name: 'Freising',
-    image: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-freising.avif',
     headline: 'Hausmeisterservice in Freising',
     beschreibung: 'Zwischen Flughafen und TU Weihenstephan. Wir betreuen Wohnanlagen, Gewerbeobjekte und Forschungseinrichtungen im gesamten Landkreis.',
     vorteile: ['Flughafennähe', 'Forschung & Uni', 'Zuverlässig'],
@@ -49,7 +49,7 @@ const regionen = [
   {
     id: 'erding',
     name: 'Erding',
-    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-erding.avif',
     headline: 'Hausmeisterservice in Erding',
     beschreibung: 'Für den wachsenden Landkreis. Neue Wohnanlagen, Hotels nahe der Therme und Gewerbebetriebe vertrauen auf unseren zuverlässigen Service.',
     vorteile: ['Wachstumsregion', 'Hotel-Expertise', 'Flexibel'],
@@ -57,7 +57,7 @@ const regionen = [
   {
     id: 'straubing',
     name: 'Straubing',
-    image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-straubing.avif',
     headline: 'Hausmeisterservice in Straubing',
     beschreibung: 'Niederbayern verdient erstklassige Betreuung. Von der Innenstadt bis zum Industriegebiet – wir sind Ihr verlässlicher Partner vor Ort.',
     vorteile: ['Niederbayern-Fokus', 'Industrie-Erfahrung', 'Persönlich'],
@@ -65,7 +65,7 @@ const regionen = [
   {
     id: 'passau',
     name: 'Passau',
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-passau.avif',
     headline: 'Hausmeisterservice in Passau',
     beschreibung: 'Die Dreiflüssestadt mit Charakter. Altstadt, Universität und Gewerbe – wir passen unseren Hausmeisterservice an Ihre Anforderungen an.',
     vorteile: ['Universität', 'Grenznähe', 'Tourismus-Know-how'],

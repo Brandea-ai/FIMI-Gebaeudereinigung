@@ -8,7 +8,7 @@ const regionen = [
   {
     id: 'landshut',
     name: 'Landshut',
-    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-landshut.avif',
     headline: 'Sonderreinigung in Landshut',
     beschreibung: 'Unser Hauptstandort – bei Notfällen in Landshut und Umgebung sind wir in maximal 2 Stunden vor Ort. Schnelle Hilfe bei Wasserschaden, Brandschaden und allen Extremsituationen.',
     vorteile: ['2h Reaktionszeit', 'Lokales Notfall-Team', '24/7 erreichbar'],
@@ -17,7 +17,7 @@ const regionen = [
   {
     id: 'muenchen',
     name: 'München',
-    image: 'https://images.unsplash.com/photo-1595867818082-083862f3d630?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-muenchen.avif',
     headline: 'Sonderreinigung in München',
     beschreibung: 'Für die Landeshauptstadt und den gesamten Großraum München. Ob Wasserschaden im Büro oder Brandschaden in der Produktion – wir sind schnell vor Ort.',
     vorteile: ['Alle Stadtteile', 'Gewerbe & Privat', 'Notfall-Service'],
@@ -26,7 +26,7 @@ const regionen = [
   {
     id: 'regensburg',
     name: 'Regensburg',
-    image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-regensburg.avif',
     headline: 'Sonderreinigung in Regensburg',
     beschreibung: 'Von der UNESCO-Altstadt bis zum Industriegebiet. Sonderreinigung mit Erfahrung in historischen Gebäuden und modernen Gewerbeobjekten.',
     vorteile: ['Denkmalschutz-Erfahrung', 'A3 Anbindung', 'Schnelle Anfahrt'],
@@ -35,7 +35,7 @@ const regionen = [
   {
     id: 'ingolstadt',
     name: 'Ingolstadt',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-ingolstadt.avif',
     headline: 'Sonderreinigung in Ingolstadt',
     beschreibung: 'Der Automobilstandort verlangt schnelle Reaktionen. Industriereinigung nach Ölunfällen, Brandschäden in der Produktion – wir kennen die Anforderungen.',
     vorteile: ['Industrie-Erfahrung', 'Gefahrstoff-Kompetenz', 'Qualitätsprozesse'],
@@ -44,7 +44,7 @@ const regionen = [
   {
     id: 'freising',
     name: 'Freising',
-    image: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-freising.avif',
     headline: 'Sonderreinigung in Freising',
     beschreibung: 'Zwischen Flughafen und Universität. Sonderreinigung für Hotels, Forschungseinrichtungen und Gewerbeobjekte im Landkreis Freising.',
     vorteile: ['Flughafen-Nähe', 'Hotel-Erfahrung', 'Diskret'],
@@ -53,7 +53,7 @@ const regionen = [
   {
     id: 'erding',
     name: 'Erding',
-    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-erding.avif',
     headline: 'Sonderreinigung in Erding',
     beschreibung: 'Für den wachsenden Landkreis Erding. Wasserschaden im Neubau, Messie-Wohnung im Bestand – wir sind Ihr Partner für alle Sonderfälle.',
     vorteile: ['Schnelles Wachstum', 'Neubau-Erfahrung', 'Flexible Zeiten'],
@@ -62,7 +62,7 @@ const regionen = [
   {
     id: 'straubing',
     name: 'Straubing',
-    image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-straubing.avif',
     headline: 'Sonderreinigung in Straubing',
     beschreibung: 'Niederbayern verdient erstklassige Sonderreinigung. Von der Innenstadt bis zum Industriegebiet – wir sind Ihr verlässlicher Partner.',
     vorteile: ['Niederbayern-Fokus', 'Persönlich', 'Zuverlässig'],
@@ -71,7 +71,7 @@ const regionen = [
   {
     id: 'passau',
     name: 'Passau',
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-passau.avif',
     headline: 'Sonderreinigung in Passau',
     beschreibung: 'Die Dreiflüssestadt kennt Hochwasser. Wir sind erfahren in der Wasserschadenreinigung und allen anderen Sonderreinigungen.',
     vorteile: ['Hochwasser-Erfahrung', 'Grenznähe', 'Universität'],

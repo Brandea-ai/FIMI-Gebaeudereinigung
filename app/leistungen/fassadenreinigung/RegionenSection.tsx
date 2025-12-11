@@ -8,7 +8,7 @@ const regionen = [
   {
     id: 'landshut',
     name: 'Landshut',
-    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-landshut.avif',
     headline: 'Fassadenreinigung in Landshut',
     beschreibung: 'Als Landshuter Unternehmen kennen wir die regionalen Anforderungen. Ob Altstadt, Ergolding oder Gewerbegebiet – wir sind schnell vor Ort und reinigen Ihre Fassade schonend und nachhaltig.',
     vorteile: ['30 Min. Anfahrt', 'Lokales Team', 'Notfallservice'],
@@ -16,7 +16,7 @@ const regionen = [
   {
     id: 'muenchen',
     name: 'München',
-    image: 'https://images.unsplash.com/photo-1595867818082-083862f3d630?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-muenchen.avif',
     headline: 'Fassadenreinigung in München',
     beschreibung: 'Professionelle Fassadenreinigung für die Landeshauptstadt. Vom Werksviertel bis Schwabing – unsere Teams arbeiten diskret und zuverlässig, auch bei großen Objekten.',
     vorteile: ['Alle Stadtteile', 'Wochenend-Service', 'Großprojekte'],
@@ -24,7 +24,7 @@ const regionen = [
   {
     id: 'regensburg',
     name: 'Regensburg',
-    image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-regensburg.avif',
     headline: 'Fassadenreinigung in Regensburg',
     beschreibung: 'Von der UNESCO-Altstadt bis zum Gewerbepark. Wir pflegen historische Gebäude genauso sorgfältig wie moderne Fassaden und kennen die besonderen Anforderungen.',
     vorteile: ['Denkmalschutz-Erfahrung', 'Gewerbepark', 'A3 Anbindung'],
@@ -32,7 +32,7 @@ const regionen = [
   {
     id: 'ingolstadt',
     name: 'Ingolstadt',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-ingolstadt.avif',
     headline: 'Fassadenreinigung in Ingolstadt',
     beschreibung: 'Der Automobilstandort verlangt Präzision. Für Zulieferer, Bürogebäude und Gewerbeobjekte arbeiten wir nach höchsten Standards und flexiblen Zeitmodellen.',
     vorteile: ['Automotive-Erfahrung', 'Qualitätsprozesse', 'Schichtmodelle'],
@@ -40,7 +40,7 @@ const regionen = [
   {
     id: 'freising',
     name: 'Freising',
-    image: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-freising.avif',
     headline: 'Fassadenreinigung in Freising',
     beschreibung: 'Zwischen Flughafen und TU Weihenstephan. Wir reinigen Fassaden von Büros, Forschungseinrichtungen und Gewerbeobjekten im gesamten Landkreis.',
     vorteile: ['Flughafen-Nähe', 'Forschung & Uni', 'Umweltschonend'],
@@ -48,7 +48,7 @@ const regionen = [
   {
     id: 'erding',
     name: 'Erding',
-    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-erding.avif',
     headline: 'Fassadenreinigung in Erding',
     beschreibung: 'Für den wachsenden Landkreis. Gewerbebetriebe, Hotels und öffentliche Einrichtungen vertrauen auf unsere Qualität bei der Fassadenpflege.',
     vorteile: ['Schnelles Wachstum', 'Hotel-Expertise', 'Flexible Zeiten'],
@@ -56,7 +56,7 @@ const regionen = [
   {
     id: 'straubing',
     name: 'Straubing',
-    image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-straubing.avif',
     headline: 'Fassadenreinigung in Straubing',
     beschreibung: 'Niederbayern verdient erstklassige Reinigung. Von der Innenstadt bis zum Industriegebiet – wir sind Ihr Partner für saubere Fassaden.',
     vorteile: ['Niederbayern-Fokus', 'Industrie-Erfahrung', 'Persönlich'],
@@ -64,7 +64,7 @@ const regionen = [
   {
     id: 'passau',
     name: 'Passau',
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-passau.avif',
     headline: 'Fassadenreinigung in Passau',
     beschreibung: 'Die Dreiflüssestadt mit Charakter. Altstadt, Universität und Gewerbe – wir passen uns Ihren Anforderungen an und liefern erstklassige Ergebnisse.',
     vorteile: ['Universität', 'Grenznähe', 'Tourismus-Know-how'],

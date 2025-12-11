@@ -8,7 +8,7 @@ const regionen = [
   {
     id: 'landshut',
     name: 'Landshut',
-    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-landshut.avif',
     headline: 'Maschinenreinigung in Landshut',
     beschreibung: 'Als Landshuter Unternehmen sind wir innerhalb von 30 Minuten bei Ihnen. Ob BMW-Zulieferer in Ergolding, Mittelstand im Industriegebiet oder Handwerksbetrieb – wir reinigen Ihre Maschinen schnell und zuverlässig.',
     vorteile: ['30 Min. Anfahrt', 'Lokales Team', '2h Notfallservice'],
@@ -16,7 +16,7 @@ const regionen = [
   {
     id: 'muenchen',
     name: 'München',
-    image: 'https://images.unsplash.com/photo-1595867818082-083862f3d630?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-muenchen.avif',
     headline: 'Maschinenreinigung in München',
     beschreibung: 'Professionelle Maschinenreinigung für die Landeshauptstadt. Vom Werksviertel bis zum Industriegebiet Nord – unsere Teams arbeiten auch nachts und am Wochenende, um Ihre Produktion nicht zu stören.',
     vorteile: ['Alle Stadtteile', 'Wochenend-Service', 'Großprojekte'],
@@ -24,7 +24,7 @@ const regionen = [
   {
     id: 'ingolstadt',
     name: 'Ingolstadt',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-ingolstadt.avif',
     headline: 'Maschinenreinigung in Ingolstadt',
     beschreibung: 'Der Automobilstandort verlangt Präzision. Für Audi-Zulieferer und Produktionsbetriebe reinigen wir CNC-Maschinen, Bearbeitungszentren und Produktionsanlagen nach höchsten Standards.',
     vorteile: ['Automotive-Standards', 'Schichtmodelle', 'Kurzfristig'],
@@ -32,7 +32,7 @@ const regionen = [
   {
     id: 'regensburg',
     name: 'Regensburg',
-    image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-regensburg.avif',
     headline: 'Maschinenreinigung in Regensburg',
     beschreibung: 'Von Continental bis zum Mittelstand. Wir reinigen Produktionsmaschinen im gesamten Raum Regensburg – von der CNC-Fräse bis zur kompletten Produktionslinie.',
     vorteile: ['Automotive-Erfahrung', 'Gewerbepark', 'A3 Anbindung'],
@@ -40,7 +40,7 @@ const regionen = [
   {
     id: 'dingolfing',
     name: 'Dingolfing',
-    image: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-erding.avif',
     headline: 'Maschinenreinigung in Dingolfing',
     beschreibung: 'BMW-Werk und Zulieferer prägen die Region. Wir kennen die hohen Anforderungen der Automobilindustrie und reinigen Ihre Maschinen im laufenden Betrieb.',
     vorteile: ['BMW-Region', 'Zulieferer-Know-how', 'Flexibel'],
@@ -48,7 +48,7 @@ const regionen = [
   {
     id: 'straubing',
     name: 'Straubing',
-    image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-straubing.avif',
     headline: 'Maschinenreinigung in Straubing',
     beschreibung: 'Niederbayern verdient erstklassige Maschinenreinigung. Vom Industriegebiet bis zum Hafen – für Ihre Produktionsmaschinen sind wir der richtige Partner.',
     vorteile: ['Niederbayern-Fokus', 'Industrie-Erfahrung', 'Persönlich'],
@@ -56,7 +56,7 @@ const regionen = [
   {
     id: 'passau',
     name: 'Passau',
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-passau.avif',
     headline: 'Maschinenreinigung in Passau',
     beschreibung: 'Die Dreiflüssestadt mit starker Industrie. Vom ZF-Werk bis zum Mittelstand – wir passen die Maschinenreinigung an Ihre Anforderungen an.',
     vorteile: ['Grenznähe', 'Großbetriebe', 'Persönlich'],
@@ -64,7 +64,7 @@ const regionen = [
   {
     id: 'freising',
     name: 'Freising',
-    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-freising.avif',
     headline: 'Maschinenreinigung in Freising',
     beschreibung: 'Zwischen Flughafen München und TU Weihenstephan. Wir reinigen Produktionsmaschinen, Laborgeräte und Forschungsanlagen im gesamten Landkreis.',
     vorteile: ['Flughafen-Nähe', 'Forschung & Uni', 'Flexibel'],

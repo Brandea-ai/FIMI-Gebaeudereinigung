@@ -8,7 +8,7 @@ const regionen = [
   {
     id: 'landshut',
     name: 'Landshut',
-    image: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-landshut.avif',
     headline: 'Tiefgaragenreinigung in Landshut',
     beschreibung: 'Als Landshuter Unternehmen sind wir in 30 Minuten bei Ihnen. Ob WEG-Tiefgarage in der Altstadt, Parkhaus am Arbeo-Park oder Gewerbeimmobilie in Ergolding – wir kennen die Anforderungen vor Ort und liefern erstklassige Ergebnisse.',
     vorteile: ['30 Min. Anfahrt', 'Lokale Teams', 'WEG-Spezialist'],
@@ -16,7 +16,7 @@ const regionen = [
   {
     id: 'muenchen',
     name: 'München',
-    image: 'https://images.unsplash.com/photo-1595867818082-083862f3d630?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-muenchen.avif',
     headline: 'Tiefgaragenreinigung in München',
     beschreibung: 'Professionelle Tiefgaragenreinigung für die Landeshauptstadt. Vom Mehrfamilienhaus in Schwabing bis zum Bürokomplex in der Innenstadt – unsere Scheuersaugmaschinen und Teams sind in allen Stadtteilen einsatzbereit.',
     vorteile: ['Alle Stadtteile', 'Nacht- & Wochenendservice', 'Großprojekte'],
@@ -24,7 +24,7 @@ const regionen = [
   {
     id: 'regensburg',
     name: 'Regensburg',
-    image: 'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-regensburg.avif',
     headline: 'Tiefgaragenreinigung in Regensburg',
     beschreibung: 'Von der UNESCO-Welterbe-Altstadt bis zum Gewerbepark Ost. Wir reinigen Tiefgaragen für Hausverwaltungen, Wohnungseigentümergemeinschaften und Gewerbeimmobilien mit gleichbleibend hoher Qualität.',
     vorteile: ['Gewerbepark-Erfahrung', 'A3/A93 Anbindung', 'Regelmäßige Wartung'],
@@ -32,7 +32,7 @@ const regionen = [
   {
     id: 'ingolstadt',
     name: 'Ingolstadt',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-ingolstadt.avif',
     headline: 'Tiefgaragenreinigung in Ingolstadt',
     beschreibung: 'Der Automobilstandort stellt höchste Ansprüche – auch an Tiefgaragen. Für Autohäuser, Zulieferer-Parkdecks und Wohnanlagen bieten wir Reinigung nach Automotive-Standards mit besonderem Fokus auf Ölfleckenentfernung.',
     vorteile: ['Automotive-Standard', 'Ölflecken-Spezialist', 'Flexible Zeiten'],
@@ -40,7 +40,7 @@ const regionen = [
   {
     id: 'freising',
     name: 'Freising',
-    image: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-freising.avif',
     headline: 'Tiefgaragenreinigung in Freising',
     beschreibung: 'Zwischen Flughafen und Weihenstephan. Wir reinigen Tiefgaragen für Hotels, Forschungseinrichtungen und die wachsende Zahl an Wohnanlagen im gesamten Landkreis – auch mit Nachtservice für Hotelbetriebe.',
     vorteile: ['Flughafen-Nähe', 'Hotel-Erfahrung', '24h-Service möglich'],
@@ -48,7 +48,7 @@ const regionen = [
   {
     id: 'erding',
     name: 'Erding',
-    image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-erding.avif',
     headline: 'Tiefgaragenreinigung in Erding',
     beschreibung: 'Der boomende Landkreis mit Therme und Flughafen-Nähe. Wir betreuen Tiefgaragen von Hotels, Ferienwohnungen, Gewerbebetrieben und den zahlreichen Neubauprojekten mit erstklassigem Service.',
     vorteile: ['Hotel-Expertise', 'Neubau-Erfahrung', 'Flexible Intervalle'],
@@ -56,7 +56,7 @@ const regionen = [
   {
     id: 'straubing',
     name: 'Straubing',
-    image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-straubing.avif',
     headline: 'Tiefgaragenreinigung in Straubing',
     beschreibung: 'Niederbayern verdient erstklassige Tiefgaragenpflege. Von der Innenstadt bis zum Hafen – wir sind Ihr zuverlässiger Partner für saubere Parkebenen und zufriedene Eigentümer.',
     vorteile: ['Niederbayern-Fokus', 'Industrie-Erfahrung', 'Persönlicher Service'],
@@ -64,7 +64,7 @@ const regionen = [
   {
     id: 'passau',
     name: 'Passau',
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1600&auto=format&fit=crop',
+    image: '/images/leistungen/unterhaltsreinigung/region-passau.avif',
     headline: 'Tiefgaragenreinigung in Passau',
     beschreibung: 'Die Dreiflüssestadt mit besonderer Herausforderung: Hochwassergefahr und Tourismus. Wir reinigen Tiefgaragen für Hotels, Wohnanlagen und Gewerbebetriebe – auch nach Hochwasserschäden.',
     vorteile: ['Tourismus-Know-how', 'Hochwasser-Sanierung', 'Grenznähe'],
