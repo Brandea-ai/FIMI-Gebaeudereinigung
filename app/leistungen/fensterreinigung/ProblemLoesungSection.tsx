@@ -85,12 +85,24 @@ export default function ProblemLoesungSection() {
         {/* Image + CTA */}
         <div className="mt-10 sm:mt-12 lg:mt-16 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div className="relative h-[220px] sm:h-[280px] md:h-[350px] lg:h-[400px] rounded-[6px] overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop"
-              alt="Moderne Büroräume mit sauberen, streifenfreien Fenstern und klarem Durchblick"
-              fill
-              className="object-cover"
-            />
+            <picture>
+              <source
+                srcSet="/images/leistungen/fensterreinigung/problem-loesung-384w.avif 384w, /images/leistungen/fensterreinigung/problem-loesung-768w.avif 768w, /images/leistungen/fensterreinigung/problem-loesung-1024w.avif 1024w, /images/leistungen/fensterreinigung/problem-loesung-1376w.avif 1376w"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                type="image/avif"
+              />
+              <source
+                srcSet="/images/leistungen/fensterreinigung/problem-loesung-384w.webp 384w, /images/leistungen/fensterreinigung/problem-loesung-768w.webp 768w, /images/leistungen/fensterreinigung/problem-loesung-1024w.webp 1024w, /images/leistungen/fensterreinigung/problem-loesung-1376w.webp 1376w"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                type="image/webp"
+              />
+              <Image
+                src="/images/leistungen/fensterreinigung/problem-loesung.webp"
+                alt="Moderne Büroräume mit sauberen, streifenfreien Fenstern und Blick auf deutsche Altstadt"
+                fill
+                className="object-cover"
+              />
+            </picture>
           </div>
 
           <div className="md:pl-4 lg:pl-8">

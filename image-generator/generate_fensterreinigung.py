@@ -38,6 +38,7 @@ client = genai.Client(
 )
 
 # Fensterreinigung Bilder - KEINE Menschen, KEINE Geräte
+# WICHTIG: Typisch deutsche Umgebung bei Fensterblick!
 FENSTERREINIGUNG_IMAGES = [
     {
         "filename": "hero",
@@ -72,16 +73,17 @@ ABSOLUT WICHTIG:
     },
     {
         "filename": "buero-fenster",
-        "title": "Modernes Büro mit großen Fenstern",
+        "title": "Modernes Büro mit großen Fenstern - Deutsche Stadt",
         "prompt": """HOCHWERTIGE INTERIORFOTOGRAFIE - KEINE PERSONEN, KEINE REINIGUNGSGERÄTE
 
-SZENE: Modernes deutsches Büro mit großen, sauberen Fenstern
+SZENE: Modernes deutsches Büro mit großen Fenstern und DEUTSCHEM STADTBLICK
 - Helles, modernes Open-Space Büro
-- Große, bodentiefe Fenster mit Blick nach draußen
+- Große, bodentiefe Fenster mit Blick auf DEUTSCHE STADT
+- Durch die Fenster sichtbar: Typisch deutsche Architektur (Backsteingebäude, Kirchtürme, Altbau-Fassaden)
+- München, Hamburg, Frankfurt oder Landshut als Vorbild
 - Kristallklare, makellos saubere Glasflächen
 - Elegante Büromöbel (leer, keine Personen)
 - Natürliches Tageslicht flutet den Raum
-- Grünpflanzen als Akzent
 
 FOTOSTIL:
 - Professionelle Immobilien-/Interiorfotografie
@@ -98,7 +100,7 @@ TECHNISCH:
 ABSOLUT WICHTIG:
 - KEINE PERSONEN/MENSCHEN im Bild
 - KEINE Reinigungsgeräte oder Equipment
-- Fokus auf saubere, klare Glasflächen
+- Fensterblick zeigt DEUTSCHE STADT (keine amerikanische Skyline!)
 - Professioneller, seriöser Look"""
     },
     {
@@ -166,22 +168,22 @@ ABSOLUT WICHTIG:
     },
     {
         "filename": "wintergarten",
-        "title": "Eleganter Wintergarten",
+        "title": "Eleganter Wintergarten mit deutschem Garten",
         "prompt": """HOCHWERTIGE ARCHITEKTURFOTOGRAFIE - KEINE PERSONEN, KEINE REINIGUNGSGERÄTE
 
 SZENE: Eleganter deutscher Wintergarten an einem Wohnhaus
 - Hochwertiger Wintergarten mit viel Glas
 - Kristallklare Glasflächen (Dach und Seiten)
-- Schöne deutsche Garten-Umgebung sichtbar
+- TYPISCH DEUTSCHER GARTEN sichtbar: gepflegter Rasen, Hecken, Rosen, Obstbäume
+- Deutsches Einfamilienhaus im Hintergrund (Backstein oder Putz)
 - Elegante Möbel im Inneren (leer)
 - Hochwertige Materialien (Aluminium, Holz)
-- Gepflegter Garten im Hintergrund
 
 FOTOSTIL:
 - Professionelle Immobilienfotografie
 - Helles, freundliches Tageslicht
 - Premium Wohn-Atmosphäre
-- Wie aus einem Architektur-Magazin
+- Wie aus einem deutschen Architektur-Magazin
 - Deutsche Handwerksqualität
 
 TECHNISCH:
@@ -192,8 +194,118 @@ TECHNISCH:
 ABSOLUT WICHTIG:
 - KEINE PERSONEN/MENSCHEN im Bild
 - KEINE Reinigungsgeräte
-- Fokus auf saubere Glasflächen
+- Typisch deutscher Garten (keine amerikanischen Pools!)
 - Hochwertig und einladend"""
+    },
+    {
+        "filename": "problem-loesung",
+        "title": "Sauberes Büro Problem-Lösung",
+        "prompt": """HOCHWERTIGE INTERIORFOTOGRAFIE - KEINE PERSONEN, KEINE REINIGUNGSGERÄTE
+
+SZENE: Hochwertiges deutsches Büro mit perfekt sauberen Fenstern
+- Modernes, aufgeräumtes Büro in Deutschland
+- Große Fensterfront mit Blick auf DEUTSCHE ALTSTADT
+- Durch Fenster sichtbar: Kirchtürme, Backsteinhäuser, historische Fassaden
+- Kristallklare, streifenfreie Glasflächen
+- Sonnenlicht fällt schön durch die sauberen Fenster
+- Elegante, minimalistische Büroeinrichtung (leer)
+- Grünpflanzen als Akzent
+
+FOTOSTIL:
+- Professionelle Immobilienfotografie
+- Warmes, natürliches Licht
+- "Vorher/Nachher" Gefühl - alles perfekt sauber
+- Premium Business-Atmosphäre
+- Deutsche Qualität und Ordnung
+
+TECHNISCH:
+- Querformat 16:9
+- Professionelle Qualität
+- Interieur-Weitwinkel
+
+ABSOLUT WICHTIG:
+- KEINE PERSONEN/MENSCHEN im Bild
+- KEINE Reinigungsgeräte
+- Fensterblick zeigt DEUTSCHE ARCHITEKTUR
+- Fokus auf kristallklare, saubere Fenster"""
+    },
+    {
+        "filename": "blog-1",
+        "title": "Blog Bild 1 - Deutsche Glasfassade",
+        "prompt": """HOCHWERTIGE ARCHITEKTURFOTOGRAFIE - KEINE PERSONEN
+
+SZENE: Moderne Glasfassade eines deutschen Bürogebäudes
+- Elegante Stahl-Glas-Fassade
+- Kristallklare, saubere Glasflächen
+- Typisch deutsche Business-Architektur
+- Blauer Himmel spiegelt sich im Glas
+- Frühlingshafte Atmosphäre
+
+FOTOSTIL:
+- Professionelle Architekturfotografie
+- Klarer, sonniger Tag
+- Dynamische Perspektive
+
+TECHNISCH:
+- Querformat 16:9
+- Professionelle Qualität
+
+ABSOLUT WICHTIG:
+- KEINE PERSONEN
+- KEINE Reinigungsgeräte
+- Seriöser Business-Look"""
+    },
+    {
+        "filename": "blog-2",
+        "title": "Blog Bild 2 - Deutsches Büro Interieur",
+        "prompt": """HOCHWERTIGE INTERIORFOTOGRAFIE - KEINE PERSONEN
+
+SZENE: Modernes deutsches Büro mit großen Fenstern
+- Helles Open-Space Büro
+- Große Fenster mit Blick auf DEUTSCHE STADT
+- Durch Fenster: Altbau-Fassaden, Kirchtürme, europäische Architektur
+- Elegante Büromöbel, aufgeräumt
+- Natürliches Tageslicht
+- Grünpflanzen
+
+FOTOSTIL:
+- Professionelle Interiorfotografie
+- Warme, einladende Farben
+- Premium Business-Atmosphäre
+
+TECHNISCH:
+- Querformat 16:9
+- Professionelle Qualität
+
+ABSOLUT WICHTIG:
+- KEINE PERSONEN
+- Deutscher Stadtblick (keine US-Skyline!)"""
+    },
+    {
+        "filename": "blog-3",
+        "title": "Blog Bild 3 - Deutscher Einzelhandel",
+        "prompt": """HOCHWERTIGE ARCHITEKTURFOTOGRAFIE - KEINE PERSONEN
+
+SZENE: Elegantes deutsches Geschäft mit großem Schaufenster
+- Hochwertiger Laden in deutscher Innenstadt
+- Großes, kristallklares Schaufenster
+- Typisch deutsche Altstadt-Architektur (Backstein, Stuck)
+- Gepflegte Fußgängerzone
+- Blaue Stunde oder goldenes Licht
+- Kopfsteinpflaster
+
+FOTOSTIL:
+- Professionelle Stadtfotografie
+- Premium Einzelhandel-Atmosphäre
+- Einladend und hochwertig
+
+TECHNISCH:
+- Querformat 16:9
+- Professionelle Qualität
+
+ABSOLUT WICHTIG:
+- KEINE PERSONEN
+- Typisch deutsche Umgebung"""
     },
 ]
 
