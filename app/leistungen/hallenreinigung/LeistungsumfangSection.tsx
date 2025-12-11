@@ -260,20 +260,20 @@ export default function LeistungsumfangSection() {
           <div className="relative h-[250px] sm:h-[320px] md:h-[400px] lg:h-[500px] rounded-[6px] lg:rounded-[12px] overflow-hidden order-first lg:order-last">
             <picture>
               <source
-                srcSet="/images/leistungen/hallenreinigung/halle-komplett-384w.avif 384w, /images/leistungen/hallenreinigung/halle-komplett-768w.avif 768w, /images/leistungen/hallenreinigung/halle-komplett-1024w.avif 1024w, /images/leistungen/hallenreinigung/halle-komplett.avif 1200w"
+                srcSet="/images/leistungen/hallenreinigung/equipment-scheuersaugmaschine-384w.avif 384w, /images/leistungen/hallenreinigung/equipment-scheuersaugmaschine-768w.avif 768w, /images/leistungen/hallenreinigung/equipment-scheuersaugmaschine-1024w.avif 1024w, /images/leistungen/hallenreinigung/equipment-scheuersaugmaschine.avif 1200w"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 type="image/avif"
               />
               <source
-                srcSet="/images/leistungen/hallenreinigung/halle-komplett-384w.webp 384w, /images/leistungen/hallenreinigung/halle-komplett-768w.webp 768w, /images/leistungen/hallenreinigung/halle-komplett-1024w.webp 1024w, /images/leistungen/hallenreinigung/halle-komplett.webp 1200w"
+                srcSet="/images/leistungen/hallenreinigung/equipment-scheuersaugmaschine-384w.webp 384w, /images/leistungen/hallenreinigung/equipment-scheuersaugmaschine-768w.webp 768w, /images/leistungen/hallenreinigung/equipment-scheuersaugmaschine-1024w.webp 1024w, /images/leistungen/hallenreinigung/equipment-scheuersaugmaschine.webp 1200w"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 type="image/webp"
               />
               <Image
-                src="/images/leistungen/hallenreinigung/halle-komplett.avif"
-                alt="Saubere Produktionshalle - von Boden bis Decke gereinigt"
+                src="/images/leistungen/hallenreinigung/equipment-scheuersaugmaschine.avif"
+                alt="Professionelle Aufsitz-Scheuersaugmaschine für Hallenreinigung"
                 fill
-                className="object-cover"
+                className="object-contain bg-white"
               />
             </picture>
           </div>
