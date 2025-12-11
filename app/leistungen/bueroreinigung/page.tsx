@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     siteName: 'FIMI Gebäudereinigung',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop',
-        width: 1200,
-        height: 630,
+        url: 'https://fimi-gebaeudereinigung.de/images/leistungen/bueroreinigung/hero.avif',
+        width: 1920,
+        height: 1080,
         alt: 'Professionelle Büroreinigung von FIMI',
       },
     ],

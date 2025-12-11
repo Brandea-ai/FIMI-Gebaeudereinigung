@@ -7,10 +7,10 @@ import { ArrowRight, Phone, CheckCircle, Clock, Users, Shield } from 'lucide-rea
 export default function HeroSection() {
   return (
     <section id="hero" className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center">
-      {/* Background Image - 4K Unsplash */}
+      {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=3840&auto=format&fit=crop"
+          src="/images/leistungen/bueroreinigung/hero.avif"
           alt="Modernes sauberes Büro mit professioneller Reinigung"
           fill
           className="object-cover"

@@ -86,7 +86,7 @@ export default function ProblemLoesungSection() {
         <div className="mt-10 sm:mt-12 lg:mt-16 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div className="relative h-[220px] sm:h-[280px] md:h-[350px] lg:h-[400px] rounded-[6px] overflow-hidden">
             <Image
-              src="https://images.unsplash.com/photo-1497215842964-222b430dc094?q=80&w=2000&auto=format&fit=crop"
+              src="/images/leistungen/bueroreinigung/problem-loesung.avif"
               alt="Sauberes modernes Büro nach professioneller Reinigung"
               fill
               className="object-cover"
