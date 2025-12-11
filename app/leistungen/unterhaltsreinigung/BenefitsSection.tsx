@@ -4,32 +4,32 @@ const benefits = [
   {
     icon: Sparkles,
     title: 'Flexible Intervalle',
-    description: '[PLATZHALTER: Beschreibung flexible Reinigungsintervalle]'
+    description: 'Täglich, wöchentlich oder nach Bedarf – wir passen die Reinigungsfrequenz an Ihre Anforderungen und Ihr Budget an.'
   },
   {
     icon: Shield,
     title: 'Qualitätskontrolle',
-    description: '[PLATZHALTER: Beschreibung Qualitätssicherung]'
+    description: 'Regelmäßige Kontrollen durch unsere Objektleiter stellen sicher, dass die Reinigungsqualität konstant hoch bleibt.'
   },
   {
     icon: Clock,
     title: 'Zuverlässige Zeiten',
-    description: '[PLATZHALTER: Beschreibung pünktliche Reinigung]'
+    description: 'Pünktlich und diskret – wir reinigen zu den vereinbarten Zeiten, ohne Ihren Betriebsablauf zu stören.'
   },
   {
     icon: Users,
     title: 'Festes Stammpersonal',
-    description: '[PLATZHALTER: Beschreibung Stammpersonal]'
+    description: 'Ihr Reinigungsteam kennt Ihre Räume und Ihre Anforderungen. Keine ständig wechselnden Fremden in Ihrem Unternehmen.'
   },
   {
     icon: Leaf,
     title: 'Umweltfreundlich',
-    description: '[PLATZHALTER: Beschreibung Umweltfreundlichkeit]'
+    description: 'Wir setzen auf ökologische Reinigungsmittel und nachhaltige Verfahren – gut für die Umwelt und Ihre Mitarbeiter.'
   },
   {
     icon: Award,
     title: 'Höchste Standards',
-    description: '[PLATZHALTER: Beschreibung Standards]'
+    description: 'Dokumentierte Prozesse und geschultes Personal garantieren gleichbleibend hohe Reinigungsqualität.'
   }
 ]
 
@@ -46,7 +46,7 @@ export default function BenefitsSection() {
             Warum FIMI Unterhaltsreinigung?
           </h2>
           <p className="text-lg text-gray-700 font-semibold leading-relaxed">
-            [PLATZHALTER: Kurze Einleitung zu den Vorteilen der Unterhaltsreinigung]
+            Regelmäßige Reinigung mit festem Team – damit Sie sich auf Ihr Kerngeschäft konzentrieren können.
           </p>
         </div>
 

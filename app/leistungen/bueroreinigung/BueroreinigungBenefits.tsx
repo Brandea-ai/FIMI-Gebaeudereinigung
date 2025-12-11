@@ -117,7 +117,7 @@ export default function BueroreinigungBenefits() {
                 'Weniger Krankheitstage',
                 'Professioneller Auftritt',
                 'Voller Fokus aufs Geschäft',
-                'ISO-zertifizierte Expertise'
+                'Geprüfte Fachkompetenz'
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-fimi-turquoise text-white flex items-center justify-center flex-shrink-0 mt-0.5" style={{ borderRadius: '4px' }}>

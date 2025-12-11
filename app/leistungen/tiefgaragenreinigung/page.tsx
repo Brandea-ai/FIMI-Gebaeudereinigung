@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: 'FIMI Gebäudereinigung',
     images: [
       {
-        url: '/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
+        url: '/FIMI-LOGO/fimi-logo-weiss-mit-hintergrund.png',
         width: 1200,
         height: 630,
         alt: 'Professionelle Tiefgaragenreinigung - FIMI Gebäudereinigung Bayern',

@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: 'FIMI Gebaeudereinigung',
     images: [
       {
-        url: '/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
+        url: '/FIMI-LOGO/fimi-logo-weiss-mit-hintergrund.png',
         width: 1200,
         height: 630,
         alt: 'FIMI Gebäudereinigung - Professionelle Reinigung in Bayern',

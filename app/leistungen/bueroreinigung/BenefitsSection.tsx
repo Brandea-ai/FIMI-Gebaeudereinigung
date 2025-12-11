@@ -4,7 +4,7 @@ const benefits = [
   {
     icon: Shield,
     title: 'Höchste Qualitätsstandards',
-    description: 'Wir arbeiten nach ISO-Standards und führen regelmäßige Qualitätskontrollen durch für perfekte Ergebnisse.'
+    description: 'Wir führen regelmäßige Qualitätskontrollen durch und arbeiten nach dokumentierten Prozessen für perfekte Ergebnisse.'
   },
   {
     icon: Clock,

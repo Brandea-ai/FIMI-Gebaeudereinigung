@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     default: 'Gebäudereinigung Bayern | FIMI - Professionelle Reinigung',
     template: '%s | FIMI Gebäudereinigung',
   },
-  description: 'Professionelle Gebäudereinigung in Bayern. Büroreinigung, Industriereinigung, Facility Management in Landshut, München, Regensburg. 15+ Jahre Erfahrung.',
+  description: 'Professionelle Gebäudereinigung in Bayern. Büroreinigung, Industriereinigung, Facility Management in Landshut, München, Regensburg. 8+ Jahre Erfahrung.',
   keywords: [
     'Gebäudereinigung',
     'Büroreinigung',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     description: 'Professionelle Gebäudereinigung in Bayern. 8+ Jahre Erfahrung. 120+ zufriedene Kunden.',
     images: [
       {
-        url: '/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
+        url: '/FIMI-LOGO/fimi-logo-weiss-mit-hintergrund.png',
         width: 1200,
         height: 630,
         alt: 'FIMI Gebäudereinigung - Professionelle Reinigung in Bayern',
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Gebäudereinigung Bayern | FIMI',
     description: 'Professionelle Gebäudereinigung in Bayern. 8+ Jahre Erfahrung.',
-    images: ['/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png'],
+    images: ['/FIMI-LOGO/fimi-logo-weiss-mit-hintergrund.png'],
   },
   robots: {
     index: true,
@@ -121,7 +121,7 @@ const organizationSchema = {
     width: 512,
     height: 512,
   },
-  image: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
+  image: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/fimi-logo-weiss-mit-hintergrund.png',
   email: 'info@fimi-gebaeudereinigung.de',
   telephone: '+4987120669360',
   foundingDate: '2016',
@@ -199,7 +199,7 @@ const localBusinessSchema = {
   '@type': 'LocalBusiness',
   '@id': 'https://fimi-gebaeudereinigung.de/#localbusiness',
   name: 'FIMI Gebäudereinigung',
-  image: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/FIMI-LOGO-WEIße_Schrift_mit-Hintergrund.png',
+  image: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/fimi-logo-weiss-mit-hintergrund.png',
   url: 'https://fimi-gebaeudereinigung.de',
   telephone: '+4987120669360',
   email: 'info@fimi-gebaeudereinigung.de',

@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     question: 'Welche Reinigungsmittel verwenden Sie?',
-    answer: 'Wir setzen auf professionelle, umweltfreundliche Reinigungsmittel, die nach ISO 14001 Standards ausgewählt werden. Alle Produkte sind gesundheitlich unbedenklich und hochwirksam. Auf Wunsch bieten wir auch komplett ökologische Reinigungslösungen an.'
+    answer: 'Wir setzen auf professionelle, umweltfreundliche Reinigungsmittel von Markenherstellern. Alle Produkte sind gesundheitlich unbedenklich und hochwirksam. Auf Wunsch bieten wir auch komplett ökologische Reinigungslösungen an.'
   },
   {
     question: 'Sind Ihre Mitarbeiter versichert?',
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     question: 'Was passiert wenn ich nicht zufrieden bin?',
-    answer: 'Ihre Zufriedenheit ist unsere Priorität. Bei Beanstandungen kontaktieren Sie einfach Ihren persönlichen Ansprechpartner. Wir bessern umgehend und kostenlos nach. Dank unserer ISO 9001 Zertifizierung haben wir dokumentierte Qualitätsprozesse.'
+    answer: 'Ihre Zufriedenheit ist unsere Priorität. Bei Beanstandungen kontaktieren Sie einfach Ihren persönlichen Ansprechpartner. Wir bessern umgehend und kostenlos nach. Unsere dokumentierten Qualitätsprozesse stellen sicher, dass solche Fälle die Ausnahme bleiben.'
   },
   {
     question: 'Gibt es eine Mindestvertragslaufzeit?',

@@ -4,32 +4,32 @@ const benefits = [
   {
     icon: Factory,
     title: 'Industrieerfahrung',
-    description: '[PLATZHALTER: Beschreibung Industrieerfahrung]'
+    description: '8+ Jahre Erfahrung in der Reinigung von Produktionshallen, Lagern und technischen Anlagen. Wir kennen die Anforderungen der Industrie.'
   },
   {
     icon: Shield,
     title: 'Arbeitssicherheit',
-    description: '[PLATZHALTER: Beschreibung Arbeitssicherheit]'
+    description: 'Geschultes Personal mit PSA-Ausrüstung. Wir arbeiten sicher mit Gefahrstoffen und in Sperrbereichen – dokumentiert und versichert.'
   },
   {
     icon: Clock,
     title: 'Flexible Einsatzzeiten',
-    description: '[PLATZHALTER: Beschreibung flexible Zeiten]'
+    description: 'Reinigung im Schichtbetrieb, am Wochenende oder während Produktionspausen. Wir passen uns Ihrem Betriebsablauf an.'
   },
   {
     icon: Users,
     title: 'Geschultes Fachpersonal',
-    description: '[PLATZHALTER: Beschreibung Fachpersonal]'
+    description: 'Unsere Teams sind spezialisiert auf Industriereinigung – mit Schulungen in Arbeitssicherheit, HACCP und Gefahrstoffhandling.'
   },
   {
     icon: Leaf,
     title: 'Umweltgerechte Reinigung',
-    description: '[PLATZHALTER: Beschreibung Umwelt]'
+    description: 'Umweltfreundliche Reinigungsmittel und fachgerechte Entsorgung. Wir arbeiten nach den Vorgaben Ihres Umweltmanagements.'
   },
   {
     icon: Award,
     title: 'Qualitätsgarantie',
-    description: '[PLATZHALTER: Beschreibung Qualität]'
+    description: 'Dokumentierte Reinigungsprotokolle und regelmäßige Qualitätskontrollen. Bei Beanstandungen bessern wir kostenlos nach.'
   }
 ]
 
@@ -47,7 +47,7 @@ export default function BenefitsSection() {
             Warum FIMI Industriereinigung?
           </h2>
           <p className="text-lg text-gray-700 font-semibold leading-relaxed">
-            [PLATZHALTER: Kurze Einleitung zu den Vorteilen der Industriereinigung]
+            Produktionshallen, Lager, technische Anlagen – wir reinigen dort, wo andere aufhören. Mit dem Know-how aus über 120 Industriekunden.
           </p>
         </div>
 

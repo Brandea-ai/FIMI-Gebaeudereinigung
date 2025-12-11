@@ -43,7 +43,7 @@ export default function BueroreinigungFeatures() {
       icon: Shield,
       title: 'Qualität & Sicherheit',
       items: [
-        'ISO 9001 zertifiziert',
+        'Geprüfte Qualität',
         'Versichert und geprüft',
         'Qualitätskontrollen',
         'Dokumentierte Prozesse',
@@ -122,7 +122,7 @@ export default function BueroreinigungFeatures() {
 
             <div className="space-y-4">
               {[
-                'ISO 14001 zertifiziertes Umweltmanagement',
+                'Umweltbewusstes Arbeiten',
                 'Ökologische Reinigungsmittel',
                 'Wassersparende Verfahren',
                 'Mülltrennungskonzepte',

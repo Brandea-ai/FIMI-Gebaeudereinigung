@@ -32,7 +32,7 @@ export default function LeistungenHeroContainer() {
           <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
             {[
               { number: '3', label: 'Kategorien' },
-              { number: '500+', label: 'Kunden' },
+              { number: '120+', label: 'Kunden' },
               { number: '24/7', label: 'Service' }
             ].map((stat, i) => (
               <div key={i} className="bg-white/10 backdrop-blur-sm p-6 border border-white/20" style={{ borderRadius: '4px' }}>
