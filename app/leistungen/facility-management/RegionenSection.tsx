@@ -1,340 +1,207 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
-import { ArrowRight, ChevronLeft, ChevronRight, MapPin, CheckCircle } from 'lucide-react'
+import { MapPin, CheckCircle, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react'
 
-const staedte = [
+const regionen = [
   {
     id: 'landshut',
     name: 'Landshut',
+    image: '/images/leistungen/unterhaltsreinigung/region-landshut.avif',
     headline: 'Facility Management in Landshut',
-    subline: 'Unser Hauptstandort – schnell bei Ihnen',
-    beschreibung: 'Als Landshuter Unternehmen sind wir in wenigen Minuten bei Ihnen. Facility Management für Bürogebäude in der Altstadt, Produktionsstätten im Gewerbegebiet oder Wohnanlagen in den Stadtteilen. Ein Ansprechpartner für Reinigung, Hausmeister, Winterdienst und Grünpflege.',
-    vorteile: [
-      'Hauptstandort – schnellste Reaktionszeit',
-      'Lokale Teams vor Ort',
-      'Notfallservice in 30 Minuten',
-      'Persönliche Betreuung garantiert',
-    ],
+    beschreibung: 'Als Landshuter Unternehmen sind wir in wenigen Minuten bei Ihnen. Facility Management für Bürogebäude in der Altstadt, Produktionsstätten im Gewerbegebiet oder Wohnanlagen in den Stadtteilen.',
+    vorteile: ['30 Min. Anfahrt', 'Lokale Teams', 'Notfallservice'],
   },
   {
     id: 'muenchen',
     name: 'München',
+    image: '/images/leistungen/unterhaltsreinigung/region-muenchen.avif',
     headline: 'Facility Management in München',
-    subline: 'Professionelle Objektbetreuung in der Landeshauptstadt',
-    beschreibung: 'Ganzheitliches Facility Management in München für anspruchsvolle Objekte. Ob Bürokomplexe in Schwabing, Wohnanlagen in Bogenhausen oder Gewerbeobjekte im Münchner Norden – wir koordinieren alle Dienstleistungen aus einer Hand.',
-    vorteile: [
-      'Erfahrung mit Münchner Großobjekten',
-      'Teams in allen Stadtteilen',
-      'Premium-Service für anspruchsvolle Kunden',
-      'Zentrale Koordination vor Ort',
-    ],
+    beschreibung: 'Ganzheitliches Facility Management in München für anspruchsvolle Objekte. Ob Bürokomplexe in Schwabing, Wohnanlagen in Bogenhausen oder Gewerbeobjekte im Münchner Norden.',
+    vorteile: ['Alle Stadtteile', 'Wochenend-Service', 'Großprojekte'],
   },
   {
     id: 'regensburg',
     name: 'Regensburg',
+    image: '/images/leistungen/unterhaltsreinigung/region-regensburg.avif',
     headline: 'Facility Management in Regensburg',
-    subline: 'Von der Altstadt bis zum Gewerbepark',
-    beschreibung: 'Facility Management in Regensburg – für UNESCO-Welterbe und moderne Industrie. Komplette Objektbetreuung für Büros, Wohnanlagen und Gewerbeobjekte. Ein Partner für alle Gebäudedienstleistungen.',
-    vorteile: [
-      'Erfahrung mit historischen Gebäuden',
-      'Industriekompetenz Gewerbepark',
-      'Schnelle Erreichbarkeit über A3',
-      'Einheitliche Qualitätsstandards',
-    ],
+    beschreibung: 'Facility Management in Regensburg – für UNESCO-Welterbe und moderne Industrie. Komplette Objektbetreuung für Büros, Wohnanlagen und Gewerbeobjekte.',
+    vorteile: ['Denkmalschutz-Erfahrung', 'Gewerbepark', 'A3 Anbindung'],
   },
   {
     id: 'ingolstadt',
     name: 'Ingolstadt',
+    image: '/images/leistungen/unterhaltsreinigung/region-ingolstadt.avif',
     headline: 'Facility Management in Ingolstadt',
-    subline: 'Industriestandard für den Automobilstandort',
-    beschreibung: 'Facility Management in Ingolstadt auf Industrieniveau. Ganzheitliche Betreuung für Zulieferer, Bürokomplexe und Gewerbeimmobilien. Ein Ansprechpartner koordiniert Reinigung, Winterdienst, Hausmeister und Außenanlagen.',
-    vorteile: [
-      'Automotive-Zulieferer Erfahrung',
-      'Industriestandards',
-      'Flexible Schichtmodelle',
-      'Werksgelände-Kompetenz',
-    ],
+    beschreibung: 'Facility Management in Ingolstadt auf Industrieniveau. Ganzheitliche Betreuung für Zulieferer, Bürokomplexe und Gewerbeimmobilien.',
+    vorteile: ['Automotive-Erfahrung', 'Qualitätsprozesse', 'Schichtmodelle'],
   },
   {
     id: 'freising',
     name: 'Freising',
+    image: '/images/leistungen/unterhaltsreinigung/region-freising.avif',
     headline: 'Facility Management in Freising',
-    subline: 'Zwischen Flughafen und TU München',
-    beschreibung: 'Zuverlässiges Facility Management in Freising und Umgebung. Die Nähe zum Flughafen München stellt besondere Anforderungen – wir erfüllen sie. Komplette Objektbetreuung aus einer Hand.',
-    vorteile: [
-      'Nähe zum Flughafen München',
-      'Erfahrung mit Forschungseinrichtungen',
-      'Schnelle Reaktionszeiten',
-      'Umweltschonende Konzepte',
-    ],
+    beschreibung: 'Zuverlässiges Facility Management in Freising und Umgebung. Die Nähe zum Flughafen München stellt besondere Anforderungen – wir erfüllen sie.',
+    vorteile: ['Flughafen-Nähe', 'Forschung & Uni', 'Umweltschonend'],
   },
   {
     id: 'erding',
     name: 'Erding',
+    image: '/images/leistungen/unterhaltsreinigung/region-erding.avif',
     headline: 'Facility Management in Erding',
-    subline: 'Professionelle Betreuung im wachsenden Landkreis',
     beschreibung: 'Facility Management in Erding für den boomenden Landkreis. Wir betreuen Gewerbeobjekte, Hotels und Wohnanlagen mit allen Dienstleistungen aus einer Hand.',
-    vorteile: [
-      'Lokale Präsenz im Landkreis',
-      'Hotel- und Gastronomie-Erfahrung',
-      'Winterdienst-Kompetenz',
-      'Langfristige Partnerschaften',
-    ],
+    vorteile: ['Schnelles Wachstum', 'Hotel-Expertise', 'Flexible Zeiten'],
   },
   {
     id: 'straubing',
     name: 'Straubing',
+    image: '/images/leistungen/unterhaltsreinigung/region-straubing.avif',
     headline: 'Facility Management in Straubing',
-    subline: 'Gäuboden-Metropole professionell betreut',
-    beschreibung: 'Professionelles Facility Management in Straubing und dem Gäuboden. Komplette Objektbetreuung für Industrie, Handel und Wohnanlagen – ein Partner für alle Dienstleistungen.',
-    vorteile: [
-      'Verwurzelt in Niederbayern',
-      'Industriekompetenz Hafen',
-      'Messe-Erfahrung',
-      'Ganzjähriger Service',
-    ],
+    beschreibung: 'Professionelles Facility Management in Straubing und dem Gäuboden. Komplette Objektbetreuung für Industrie, Handel und Wohnanlagen.',
+    vorteile: ['Niederbayern-Fokus', 'Industrie-Erfahrung', 'Persönlich'],
   },
   {
     id: 'passau',
     name: 'Passau',
+    image: '/images/leistungen/unterhaltsreinigung/region-passau.avif',
     headline: 'Facility Management in Passau',
-    subline: 'Qualitätsservice in der Dreiflüssestadt',
-    beschreibung: 'Facility Management in Passau bis zur österreichischen Grenze. Ganzheitliche Betreuung für Hotels, Büros und Gewerbeobjekte – mit Teams, die auch mehrsprachig kommunizieren können.',
-    vorteile: [
-      'Service bis zur Grenze',
-      'Hotellerie und Tourismus',
-      'Hochwasser-Notfallplanung',
-      'Mehrsprachige Teams',
-    ],
+    beschreibung: 'Facility Management in Passau bis zur österreichischen Grenze. Ganzheitliche Betreuung für Hotels, Büros und Gewerbeobjekte.',
+    vorteile: ['Universität', 'Grenznähe', 'Tourismus-Know-how'],
   },
 ]
 
-const leistungen = [
-  { name: 'Unterhaltsreinigung', href: '/leistungen/unterhaltsreinigung' },
-  { name: 'Hausmeisterservice', href: '/leistungen/hausmeisterservice' },
-  { name: 'Winterdienst', href: '/leistungen/winterdienst' },
-  { name: 'Außenanlagenpflege', href: '/leistungen/aussenanlagenpflege' },
-]
-
 export default function RegionenSection() {
-  const [activeStadt, setActiveStadt] = useState(staedte[0])
-  const [expandedDescriptions, setExpandedDescriptions] = useState<Set<string>>(new Set())
-  const tabsRef = useRef<HTMLDivElement>(null)
-  const [canScrollLeft, setCanScrollLeft] = useState(false)
-  const [canScrollRight, setCanScrollRight] = useState(true)
+  const [activeIndex, setActiveIndex] = useState(0)
+  const active = regionen[activeIndex]
 
-  const toggleDescription = (stadtId: string) => {
-    setExpandedDescriptions(prev => {
-      const newSet = new Set(prev)
-      if (newSet.has(stadtId)) {
-        newSet.delete(stadtId)
-      } else {
-        newSet.add(stadtId)
-      }
-      return newSet
-    })
-  }
-
-  const checkScrollPosition = () => {
-    if (tabsRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } = tabsRef.current
-      setCanScrollLeft(scrollLeft > 0)
-      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10)
-    }
-  }
-
-  useEffect(() => {
-    checkScrollPosition()
-    window.addEventListener('resize', checkScrollPosition)
-    return () => window.removeEventListener('resize', checkScrollPosition)
-  }, [])
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (tabsRef.current) {
-      const scrollAmount = 200
-      tabsRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
-      })
-      setTimeout(checkScrollPosition, 300)
-    }
-  }
+  const next = () => setActiveIndex((prev) => (prev + 1) % regionen.length)
+  const prev = () => setActiveIndex((prev) => (prev - 1 + regionen.length) % regionen.length)
 
   return (
-    <section id="regionen" className="bg-white" aria-labelledby="regionen-heading">
+    <section id="regionen" className="py-12 sm:py-16 lg:py-28 bg-white">
+      <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
 
-      {/* Sticky Header + Tabs */}
-      <div className="sticky top-0 z-30 bg-white border-b border-gray-200 shadow-sm">
-        <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-4">
+        {/* Header */}
+        <div className="max-w-3xl mb-8 sm:mb-10 lg:mb-12">
+          <span className="text-[#109387] font-bold text-xs sm:text-sm uppercase tracking-wide mb-3 sm:mb-4 block">
+            Ihre Region
+          </span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight mb-4 sm:mb-6">
+            Facility Management in der Nähe
+          </h2>
+          <p className="text-base sm:text-lg text-gray-600 font-semibold leading-relaxed">
+            Wir sind in ganz Bayern für Sie da. Kurze Wege, schnelle Reaktionszeiten, lokale Teams.
+          </p>
+        </div>
 
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+        {/* City Selector - Mobile/Tablet */}
+        <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8 lg:hidden">
+          <button
+            onClick={prev}
+            className="w-9 h-9 sm:w-10 sm:h-10 rounded-[6px] bg-[#f8f9fa] flex items-center justify-center hover:bg-[#012956] hover:text-white transition-colors"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <div className="flex-1 text-center">
+            <span className="text-lg sm:text-xl font-bold text-[#012956]">{active.name}</span>
+          </div>
+          <button
+            onClick={next}
+            className="w-9 h-9 sm:w-10 sm:h-10 rounded-[6px] bg-[#f8f9fa] flex items-center justify-center hover:bg-[#012956] hover:text-white transition-colors"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </div>
+
+        {/* City Tabs - Desktop */}
+        <div className="hidden lg:flex items-center gap-2 mb-12 flex-wrap">
+          {regionen.map((region, index) => (
+            <button
+              key={region.id}
+              onClick={() => setActiveIndex(index)}
+              className={`px-4 py-2 lg:px-5 lg:py-2.5 rounded-[6px] font-bold text-sm transition-all ${
+                index === activeIndex
+                  ? 'bg-[#109387] text-white'
+                  : 'bg-[#f8f9fa] text-gray-600 hover:bg-[#012956] hover:text-white'
+              }`}
+            >
+              {region.name}
+            </button>
+          ))}
+        </div>
+
+        {/* Active Region Content */}
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
+          {/* Image */}
+          <div className="relative h-[220px] sm:h-[280px] md:h-[350px] lg:h-[450px] rounded-[6px] overflow-hidden">
+            <Image
+              src={active.image}
+              alt={active.headline}
+              fill
+              className="object-cover transition-all duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#012956]/60 to-transparent" />
+            <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 flex items-center gap-2">
+              <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[#109387]" />
+              <span className="text-white font-bold text-base sm:text-lg">{active.name}</span>
+            </div>
+          </div>
+
+          {/* Content */}
+          <div className="flex flex-col justify-center">
+            <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#012956] mb-3 sm:mb-4">
+              {active.headline}
+            </h3>
+            <p className="text-gray-600 font-semibold leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
+              {active.beschreibung}
+            </p>
+
+            {/* Vorteile */}
+            <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8">
+              {active.vorteile.map((vorteil, index) => (
+                <div
+                  key={index}
+                  className="flex items-center gap-1.5 sm:gap-2 bg-[#f8f9fa] rounded-[6px] px-2.5 sm:px-4 py-1.5 sm:py-2"
+                >
+                  <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#109387]" />
+                  <span className="text-xs sm:text-sm font-bold text-gray-700">{vorteil}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA Button */}
+            <a
+              href="#kontakt"
+              className="inline-flex items-center justify-center gap-2 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold px-4 sm:px-6 py-2.5 sm:py-3 rounded-[6px] transition-colors w-fit group text-sm sm:text-base"
+            >
+              Facility Management in {active.name} anfragen
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+        </div>
+
+        {/* Nicht dabei? - komplett klickbar */}
+        <a
+          href="#kontakt"
+          className="mt-10 sm:mt-12 lg:mt-16 bg-[#f8f9fa] hover:bg-[#e9ecef] rounded-[6px] p-4 sm:p-6 lg:p-10 block transition-colors group cursor-pointer"
+        >
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-6">
             <div>
-              <h2 id="regionen-heading" className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-[#109387] leading-[1.1]">
-                Facility Management in ganz Bayern
-              </h2>
-              <p className="text-sm sm:text-base text-gray-700 font-semibold mt-1 sm:mt-2 hidden lg:block">
-                Wählen Sie Ihre Stadt für lokale Informationen
+              <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-[#012956] mb-1 sm:mb-2">
+                Ihre Stadt nicht dabei?
+              </h3>
+              <p className="text-gray-600 font-semibold text-sm sm:text-base">
+                Wir sind in ganz Bayern aktiv – von Passau bis Würzburg.
               </p>
             </div>
-
-            {/* City Tabs */}
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => scroll('left')}
-                className={`flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-[6px] border-2 border-[#012956] flex items-center justify-center transition-all duration-300
-                  ${canScrollLeft ? 'bg-white text-[#012956] hover:bg-[#012956] hover:text-white cursor-pointer' : 'bg-gray-100 text-gray-300 border-gray-200 cursor-not-allowed'}`}
-                disabled={!canScrollLeft}
-                aria-label="Vorherige Städte"
-              >
-                <ChevronLeft size={18} strokeWidth={2.5} />
-              </button>
-
-              <div
-                ref={tabsRef}
-                onScroll={checkScrollPosition}
-                className="flex gap-2 overflow-x-auto pb-2 -mb-2 scrollbar-hide"
-                role="tablist"
-              >
-                {staedte.map((stadt) => (
-                  <button
-                    key={stadt.id}
-                    onClick={() => setActiveStadt(stadt)}
-                    role="tab"
-                    aria-selected={activeStadt.id === stadt.id}
-                    className={`px-3 sm:px-4 py-2 rounded-[6px] border-2 font-bold text-xs sm:text-sm whitespace-nowrap transition-all duration-300 flex-shrink-0
-                      ${activeStadt.id === stadt.id ? 'border-[#012956] bg-[#012956] text-white' : 'border-[#012956] bg-white text-[#109387] hover:bg-[#f8f9fa]'}`}
-                  >
-                    {stadt.name}
-                  </button>
-                ))}
-              </div>
-
-              <button
-                onClick={() => scroll('right')}
-                className={`flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-[6px] border-2 border-[#012956] flex items-center justify-center transition-all duration-300
-                  ${canScrollRight ? 'bg-white text-[#012956] hover:bg-[#012956] hover:text-white cursor-pointer' : 'bg-gray-100 text-gray-300 border-gray-200 cursor-not-allowed'}`}
-                disabled={!canScrollRight}
-                aria-label="Weitere Städte"
-              >
-                <ChevronRight size={18} strokeWidth={2.5} />
-              </button>
-            </div>
+            <span className="inline-flex items-center justify-center gap-2 bg-[#109387] group-hover:bg-[#0d7d72] text-white font-bold px-5 sm:px-8 py-3 sm:py-4 rounded-[6px] transition-colors whitespace-nowrap text-sm sm:text-base">
+              Standort anfragen
+              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+            </span>
           </div>
-        </div>
-      </div>
+        </a>
 
-      {/* Content Area */}
-      <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-8 sm:py-12 lg:py-16">
-
-        <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-stretch">
-
-          {/* Left: Map */}
-          <div className="w-full">
-            <Image
-              src="/images/home/staedte-fimi.avif"
-              alt="Bayern Karte - FIMI Servicegebiete"
-              width={4800}
-              height={3584}
-              className="w-full h-auto rounded-[6px]"
-              priority
-            />
-            <Link
-              href="/ueber-uns"
-              className="inline-flex items-center gap-1.5 bg-[#012956] hover:bg-[#01203d] text-white font-semibold text-xs sm:text-sm px-3 py-2 rounded-[6px] mt-3 transition-colors group"
-            >
-              Mehr über FIMI
-              <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
-            </Link>
-          </div>
-
-          {/* Right: Content Panels */}
-          <div className="relative flex flex-col">
-            {staedte.map((stadt) => (
-              <article
-                key={stadt.id}
-                role="tabpanel"
-                aria-hidden={activeStadt.id !== stadt.id}
-                className={`bg-[#f8f9fa] rounded-[6px] p-5 sm:p-6 lg:p-8 transition-opacity duration-300 flex flex-col
-                  ${activeStadt.id === stadt.id ? 'opacity-100 relative flex-1' : 'opacity-0 absolute inset-0 pointer-events-none'}`}
-              >
-                <div className="flex items-center gap-2 text-[#109387] mb-2">
-                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5" />
-                  <span className="text-xs sm:text-sm font-bold uppercase tracking-wide">8 Standorte in Bayern</span>
-                </div>
-
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#109387] mb-2">
-                  {stadt.headline}
-                </h3>
-                <p className="text-base sm:text-lg text-[#012956] font-bold mb-3 sm:mb-4">
-                  {stadt.subline}
-                </p>
-
-                <div className="mb-4 sm:mb-6">
-                  <p className="hidden lg:block text-gray-700 font-semibold leading-relaxed text-sm sm:text-base">
-                    {stadt.beschreibung}
-                  </p>
-                  <div className="lg:hidden">
-                    <p className={`text-gray-700 font-semibold leading-relaxed text-sm ${expandedDescriptions.has(stadt.id) ? '' : 'line-clamp-3'}`}>
-                      {stadt.beschreibung}
-                    </p>
-                    <button
-                      onClick={() => toggleDescription(stadt.id)}
-                      className="mt-2 text-[#109387] font-bold text-sm hover:text-[#012956] transition-colors"
-                    >
-                      {expandedDescriptions.has(stadt.id) ? 'Weniger anzeigen' : 'Mehr anzeigen'}
-                    </button>
-                  </div>
-                </div>
-
-                <div className="mb-6 sm:mb-8">
-                  <h4 className="text-xs sm:text-sm text-gray-500 font-semibold uppercase tracking-wide mb-2 sm:mb-3">
-                    Ihre Vorteile in {stadt.name}
-                  </h4>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                    {stadt.vorteile.map((vorteil, index) => (
-                      <li key={index} className="flex items-start gap-2 text-gray-700 font-semibold text-sm">
-                        <CheckCircle className="w-4 h-4 text-[#109387] mt-0.5 flex-shrink-0" />
-                        {vorteil}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="border-t border-gray-200 pt-4 sm:pt-6">
-                  <h4 className="text-xs sm:text-sm text-gray-500 font-semibold uppercase tracking-wide mb-3 sm:mb-4">
-                    FM-Leistungen in {stadt.name}
-                  </h4>
-                  <div className="grid grid-cols-2 gap-x-4 sm:gap-x-6 gap-y-2 sm:gap-y-3">
-                    {leistungen.map((leistung) => (
-                      <Link
-                        key={leistung.href}
-                        href={leistung.href}
-                        className="flex items-center gap-2 text-[#109387] font-semibold hover:text-[#012956] transition-colors group py-1 text-sm"
-                      >
-                        <ArrowRight size={12} className="flex-shrink-0 group-hover:translate-x-1 transition-transform" />
-                        <span>{leistung.name}</span>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mt-auto pt-6 sm:pt-8">
-                  <a
-                    href="#contact-form"
-                    className="flex items-center justify-center gap-2 sm:gap-3 bg-[#109387] hover:bg-[#0d7d72] text-white font-bold text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-[6px] transition-all duration-300 group w-full"
-                  >
-                    Kostenfreie Beratung in {stadt.name}
-                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
-
-        </div>
       </div>
     </section>
   )
