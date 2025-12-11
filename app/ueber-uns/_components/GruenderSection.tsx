@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { Quote } from 'lucide-react'
+import { Quote, Mail, Phone } from 'lucide-react'
 
 const gruender = [
   {
@@ -96,18 +96,24 @@ export default function GruenderSection() {
                   </div>
 
                   {/* Contact */}
-                  <div className="mt-6 pt-6 border-t border-gray-200 space-y-2">
+                  <div className="mt-6 pt-6 border-t border-gray-200 space-y-3">
                     <a
                       href={`mailto:${person.email}`}
-                      className="block text-[#109387] font-bold hover:text-[#012956] transition-colors"
+                      className="flex items-center gap-3 text-[#109387] font-bold hover:text-[#012956] transition-colors group"
                     >
-                      {person.email}
+                      <span className="flex items-center justify-center w-9 h-9 bg-[#109387]/10 rounded-full group-hover:bg-[#012956]/10 transition-colors">
+                        <Mail size={16} />
+                      </span>
+                      <span className="text-sm sm:text-base">{person.email}</span>
                     </a>
                     <a
                       href={`tel:+49${person.telefon.replace(/^0/, '').replace(/\s/g, '')}`}
-                      className="block text-gray-600 font-semibold hover:text-[#109387] transition-colors"
+                      className="flex items-center gap-3 text-gray-700 font-semibold hover:text-[#109387] transition-colors group"
                     >
-                      {person.telefon}
+                      <span className="flex items-center justify-center w-9 h-9 bg-gray-100 rounded-full group-hover:bg-[#109387]/10 transition-colors">
+                        <Phone size={16} />
+                      </span>
+                      <span className="text-sm sm:text-base">{person.telefon}</span>
                     </a>
                   </div>
                 </div>

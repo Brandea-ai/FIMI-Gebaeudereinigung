@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Mail, Phone } from 'lucide-react'
 
 const teamBereiche = [
   {
@@ -157,7 +157,7 @@ export default function TeamSection() {
                     className="group"
                   >
                     {/* Image with 4:5 aspect ratio */}
-                    <div className="relative aspect-[4/5] rounded-[6px] overflow-hidden mb-4">
+                    <div className="relative aspect-[4/5] rounded-[6px] overflow-hidden">
                       <Image
                         src={person.bild}
                         alt={person.name}
@@ -166,16 +166,38 @@ export default function TeamSection() {
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                         quality={75}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-                      {/* Name Overlay */}
-                      <div className="absolute bottom-0 left-0 right-0 p-4">
-                        <p className="text-white font-bold text-lg leading-tight">
+                      {/* Name & Contact Overlay */}
+                      <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4">
+                        <p className="text-white font-bold text-base sm:text-lg leading-tight">
                           {person.name}
                         </p>
-                        <p className="text-[#109387] font-semibold text-sm">
+                        <p className="text-[#109387] font-semibold text-xs sm:text-sm mb-2 sm:mb-3">
                           {person.position}
                         </p>
+
+                        {/* Contact Info */}
+                        <div className="space-y-1 sm:space-y-1.5">
+                          <a
+                            href={`mailto:${person.email}`}
+                            className="flex items-center gap-1.5 sm:gap-2 text-white/80 hover:text-[#109387] transition-colors group/link"
+                          >
+                            <Mail size={12} className="flex-shrink-0 sm:w-[14px] sm:h-[14px]" />
+                            <span className="text-[10px] sm:text-xs font-medium truncate group-hover/link:underline">
+                              {person.email}
+                            </span>
+                          </a>
+                          <a
+                            href={`tel:+49${person.telefon.replace(/^0/, '').replace(/\s/g, '')}`}
+                            className="flex items-center gap-1.5 sm:gap-2 text-white/80 hover:text-[#109387] transition-colors group/link"
+                          >
+                            <Phone size={12} className="flex-shrink-0 sm:w-[14px] sm:h-[14px]" />
+                            <span className="text-[10px] sm:text-xs font-medium group-hover/link:underline">
+                              {person.telefon}
+                            </span>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </motion.div>
