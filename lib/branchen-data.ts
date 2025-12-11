@@ -753,7 +753,7 @@ In Schulen und Kindergärten treffen täglich viele Kinder aufeinander. Keime ve
     gallery: [
       { src: '/images/branchen/bildung-schulen/hero.avif', alt: 'Modernes Klassenzimmer', caption: 'Saubere Lernumgebungen' },
       { src: '/images/branchen/bildung-schulen/gallery-1.avif', alt: 'Schulaula', caption: 'Gepflegte Veranstaltungsräume' },
-      { src: '/images/branchen/bildung-schulen/gallery-2.avif', alt: 'Schulflur', caption: 'Saubere Verkehrswege' },
+      { src: '/images/branchen/bildung-schulen/gallery-2.avif', alt: 'Schulhof Außenansicht', caption: 'Gepflegte Schulhöfe und Außenanlagen' },
     ],
     icon: 'GraduationCap',
     detailedChallenges: [
