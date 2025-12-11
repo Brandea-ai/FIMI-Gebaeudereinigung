@@ -3,36 +3,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Clock } from 'lucide-react'
-
-// Relevante Blog-Artikel für Fensterreinigung
-const blogArtikel = [
-  {
-    slug: 'fensterreinigung-wie-oft',
-    titel: 'Wie oft sollten Fenster professionell gereinigt werden?',
-    beschreibung: 'Die optimale Reinigungsfrequenz hängt von vielen Faktoren ab. Wir erklären, welche Intervalle für welche Branchen sinnvoll sind.',
-    bild: '/images/leistungen/fensterreinigung/blog-1.webp',
-    lesezeit: '5 Min',
-    kategorie: 'Ratgeber',
-  },
-  {
-    slug: 'streifenfreie-fenster-profi-tipps',
-    titel: 'Streifenfreie Fenster: Profi-Tipps für perfekte Ergebnisse',
-    beschreibung: 'Die richtigen Werkzeuge, Techniken und Reinigungsmittel für makellos saubere Fenster – Tipps vom Fachbetrieb.',
-    bild: '/images/leistungen/fensterreinigung/blog-2.webp',
-    lesezeit: '4 Min',
-    kategorie: 'Wissen',
-  },
-  {
-    slug: 'reinigungsfirma-beauftragen-tipps',
-    titel: '7 Tipps: So finden Sie die richtige Reinigungsfirma',
-    beschreibung: 'Worauf sollten Sie achten, wenn Sie eine professionelle Reinigungsfirma beauftragen? Unsere Checkliste für Entscheider.',
-    bild: '/images/leistungen/fensterreinigung/blog-3.webp',
-    lesezeit: '6 Min',
-    kategorie: 'Tipps',
-  },
-]
+import { blogPosts, blogCategories, formatDate } from '@/lib/blog-data'
 
 export default function BlogPreviewSection() {
+  // Die neuesten 3 Blog-Artikel holen
+  const latestPosts = [...blogPosts]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3)
+
   return (
     <section className="py-12 sm:py-16 lg:py-28 bg-white">
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
@@ -44,7 +22,7 @@ export default function BlogPreviewSection() {
               Wissen & Ratgeber
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-tight">
-              Mehr zum Thema Fensterreinigung
+              Mehr zum Thema Gebäudereinigung
             </h2>
           </div>
           <Link
@@ -58,7 +36,7 @@ export default function BlogPreviewSection() {
 
         {/* Artikel Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-          {blogArtikel.map((artikel) => (
+          {latestPosts.map((artikel) => (
             <Link
               key={artikel.slug}
               href={`/neuigkeiten/${artikel.slug}`}
@@ -67,14 +45,17 @@ export default function BlogPreviewSection() {
               {/* Bild */}
               <div className="relative h-[180px] sm:h-[200px] lg:h-[220px] overflow-hidden">
                 <Image
-                  src={artikel.bild}
-                  alt={artikel.titel}
+                  src={artikel.image}
+                  alt={artikel.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-3 left-3">
-                  <span className="bg-[#109387] text-white text-xs font-bold px-2.5 py-1 rounded-[4px]">
-                    {artikel.kategorie}
+                  <span
+                    className="text-white text-xs font-bold px-2.5 py-1 rounded-[4px]"
+                    style={{ backgroundColor: blogCategories[artikel.category].color }}
+                  >
+                    {blogCategories[artikel.category].label}
                   </span>
                 </div>
               </div>
@@ -83,15 +64,15 @@ export default function BlogPreviewSection() {
               <div className="p-4 sm:p-5 lg:p-6">
                 <div className="flex items-center gap-2 text-gray-500 text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
                   <Clock className="w-3.5 h-3.5" />
-                  {artikel.lesezeit} Lesezeit
+                  {artikel.readTime} Min. Lesezeit
                 </div>
 
                 <h3 className="text-base sm:text-lg lg:text-xl font-bold text-[#012956] group-hover:text-[#109387] transition-colors mb-2 sm:mb-3 line-clamp-2">
-                  {artikel.titel}
+                  {artikel.title}
                 </h3>
 
                 <p className="text-gray-600 font-semibold text-sm leading-relaxed line-clamp-2 mb-3 sm:mb-4">
-                  {artikel.beschreibung}
+                  {artikel.excerpt}
                 </p>
 
                 <div className="flex items-center gap-2 text-[#109387] font-bold text-sm group-hover:gap-3 transition-all">
