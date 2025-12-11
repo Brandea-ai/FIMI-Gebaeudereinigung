@@ -93,7 +93,7 @@ export default function HeroSection() {
                 className="inline-flex items-center justify-center gap-2 sm:gap-3 bg-white hover:bg-gray-100 text-[#012956] font-bold text-base sm:text-lg px-6 sm:px-8 py-3.5 sm:py-4 rounded-[6px] transition-all duration-300"
               >
                 <Phone size={20} />
-                0871 2066936 0
+                0871 20669360
               </a>
             </div>
           </div>

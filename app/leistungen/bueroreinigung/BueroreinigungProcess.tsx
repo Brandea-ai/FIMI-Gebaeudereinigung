@@ -121,7 +121,7 @@ export default function BueroreinigungProcess() {
               className="px-8 py-4 border-2 border-white text-white font-bold text-lg hover:bg-white hover:text-fimi-navy transition-all"
               style={{ borderRadius: '4px' }}
             >
-              0871 2066936 0 anrufen
+              0871 20669360 anrufen
             </a>
           </div>
 

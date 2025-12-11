@@ -12,7 +12,7 @@ const gruender = [
     bild: '/images/ueber-uns/gruender-donald-tzoutzis.avif',
     zitat: 'Für mich bedeutet Erfolg, dass unsere Kunden morgens in ein sauberes Büro kommen und sich auf ihre eigentliche Arbeit konzentrieren können. Wir nehmen ihnen eine Sorge ab.',
     email: 'd.tzoutzis@fimi-gebaeudereinigung.de',
-    telefon: '0871 2066936 1',
+    telefon: '0871 20669361',
   },
   {
     name: 'Ergkest Qirjaj',
@@ -21,7 +21,7 @@ const gruender = [
     bild: '/images/ueber-uns/gruender-ergkest-qirjaj.avif',
     zitat: 'Qualität ist kein Zufall. Sie entsteht durch klare Prozesse, gut geschulte Mitarbeiter und den Anspruch, jeden Tag besser zu werden als am Tag zuvor.',
     email: 'e.qirjaj@fimi-gebaeudereinigung.de',
-    telefon: '0871 2066936 2',
+    telefon: '0871 20669362',
   },
 ]
 

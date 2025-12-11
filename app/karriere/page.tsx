@@ -607,7 +607,7 @@ function JobModal({ job, onClose }: JobModalProps) {
             className="block w-full bg-[#012956] hover:bg-[#01203f] text-white font-bold text-center py-4 rounded-[6px]"
           >
             <Phone size={18} className="inline mr-2" />
-            Anrufen: 0871 2066936 0
+            Anrufen: 0871 20669360
           </a>
         </div>
 
@@ -918,7 +918,7 @@ export default function KarrierePage() {
                     className="flex items-center gap-2 text-sm text-gray-600 hover:text-[#109387] font-medium mb-2"
                   >
                     <Phone size={14} />
-                    0871 2066936 0
+                    0871 20669360
                   </a>
                   <a
                     href="mailto:bewerbung@fimi-gebaeudereinigung.de"
@@ -1387,7 +1387,7 @@ export default function KarrierePage() {
                 className="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white font-bold text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4 rounded-[6px] transition-all duration-300 border border-white/30"
               >
                 <Phone size={20} />
-                0871 2066936 0
+                0871 20669360
               </a>
             </div>
           </FadeIn>

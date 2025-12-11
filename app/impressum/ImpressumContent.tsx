@@ -258,10 +258,10 @@ export default function ImpressumContent() {
                     <div className="text-gray-500 font-bold w-40 flex-shrink-0">Telefon</div>
                     <div className="flex items-center gap-3">
                       <a href="tel:+4987120669360" className="text-[#109387] font-extrabold text-lg hover:text-[#012956] transition-colors">
-                        0871 2066936 0
+                        0871 20669360
                       </a>
                       <button
-                        onClick={() => copyToClipboard('+49 871 2066936 0', 'phone')}
+                        onClick={() => copyToClipboard('+49 871 20669360', 'phone')}
                         className="p-2 rounded-[6px] bg-[#f8f9fa] hover:bg-[#109387] hover:text-white text-gray-500 transition-all"
                         title="Telefonnummer kopieren"
                       >

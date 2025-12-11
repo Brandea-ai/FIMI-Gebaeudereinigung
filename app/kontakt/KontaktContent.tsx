@@ -76,7 +76,7 @@ export default function KontaktContent() {
                     whileTap={{ scale: 0.98 }}
                   >
                     <Phone size={18} className="sm:w-5 sm:h-5" aria-hidden="true" />
-                    <span>0871 2066936 0</span>
+                    <span>0871 20669360</span>
                   </motion.a>
                 </div>
               </FadeIn>
@@ -141,7 +141,7 @@ export default function KontaktContent() {
                 </div>
                 <div>
                   <p className="text-[#012956] group-hover:text-white/80 text-xs font-semibold uppercase tracking-wider mb-1 transition-colors">Telefon</p>
-                  <p className="text-[#012956] group-hover:text-white font-bold text-base sm:text-lg transition-colors">0871 2066936 0</p>
+                  <p className="text-[#012956] group-hover:text-white font-bold text-base sm:text-lg transition-colors">0871 20669360</p>
                 </div>
               </motion.a>
             </FadeInItem>

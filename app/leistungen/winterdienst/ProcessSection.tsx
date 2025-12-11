@@ -116,7 +116,7 @@ export default function ProcessSection() {
                 href="tel:+4987120669360"
                 className="inline-flex items-center justify-center gap-2 bg-white text-[#012956] font-bold text-sm sm:text-base px-5 sm:px-6 py-3 sm:py-3.5 rounded-[6px] hover:bg-gray-100 transition-colors"
               >
-                0871 2066936 0
+                0871 20669360
               </a>
               <a
                 href="#kontakt"

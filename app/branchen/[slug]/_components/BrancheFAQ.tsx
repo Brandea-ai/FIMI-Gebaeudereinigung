@@ -47,7 +47,7 @@ export function BrancheFAQ({ branche }: BrancheFAQProps) {
                   href="tel:+4987120669360"
                   className="block w-full text-center text-[#012956] font-bold text-sm sm:text-base py-2.5 sm:py-3 mt-2 sm:mt-3 rounded-[6px] border-2 border-[#012956] hover:bg-[#012956] hover:text-white transition-colors"
                 >
-                  0871 2066936 0
+                  0871 20669360
                 </a>
               </div>
             </div>

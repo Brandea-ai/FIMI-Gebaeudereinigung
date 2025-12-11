@@ -242,7 +242,7 @@ export function BrancheRegionen({ branche }: BrancheRegionenProps) {
                 className="flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-[#012956] font-bold text-sm sm:text-base border-2 border-[#012956] px-6 py-3 rounded-[6px] transition-all w-full"
               >
                 <Phone size={18} />
-                0871 2066936 0
+                0871 20669360
               </a>
             </div>
 

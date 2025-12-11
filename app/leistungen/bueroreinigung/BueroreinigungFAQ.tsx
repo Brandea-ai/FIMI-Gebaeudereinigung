@@ -107,7 +107,7 @@ export default function BueroreinigungFAQ() {
               className="inline-flex items-center justify-center px-8 py-4 bg-fimi-turquoise text-white font-bold hover:opacity-90 transition-opacity"
               style={{ borderRadius: '4px' }}
             >
-              Jetzt anrufen: 0871 2066936 0
+              Jetzt anrufen: 0871 20669360
             </a>
             <a
               href="mailto:info@fimi-gebaeudereinigung.de"

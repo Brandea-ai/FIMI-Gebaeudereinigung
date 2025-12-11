@@ -419,7 +419,7 @@ Mit freundlichen Grüßen
                       <tr>
                         <td className="info-table-label">Telefon:</td>
                         <td className="info-table-value">
-                          <a href="tel:+4987120669360" className="text-link">0871 2066936 0</a>
+                          <a href="tel:+4987120669360" className="text-link">0871 20669360</a>
                         </td>
                       </tr>
                       <tr>

@@ -84,7 +84,7 @@ export default function FAQSection() {
                 Lieber persönlich sprechen?
               </p>
               <span className="text-lg sm:text-xl font-bold text-[#012956] group-hover:text-white transition-colors">
-                0871 2066936 0
+                0871 20669360
               </span>
             </a>
 

@@ -20,9 +20,9 @@ export const siteConfig = {
   contact: {
     // Zentrale
     phone: {
-      display: '0871 2066936 0',
+      display: '0871 20669360',
       href: 'tel:+4987120669360',
-      international: '+49 871 2066936 0',
+      international: '+49 871 20669360',
     },
     email: {
       display: 'info@fimi-gebaeudereinigung.de',
@@ -30,18 +30,18 @@ export const siteConfig = {
     },
     // Team-Durchwahlen
     team: {
-      zentrale: { name: 'Zentrale', email: 'info@fimi-gebaeudereinigung.de', phone: '0871 2066936 0' },
+      zentrale: { name: 'Zentrale', email: 'info@fimi-gebaeudereinigung.de', phone: '0871 20669360' },
       geschaeftsfuehrung: [
-        { name: 'Donald Tzoutzis', position: 'Geschäftsführer', email: 'd.tzoutzis@fimi-gebaeudereinigung.de', phone: '0871 2066936 1' },
-        { name: 'Ergkest Qirjaj', position: 'Geschäftsführer', email: 'e.qirjaj@fimi-gebaeudereinigung.de', phone: '0871 2066936 2' },
+        { name: 'Donald Tzoutzis', position: 'Geschäftsführer', email: 'd.tzoutzis@fimi-gebaeudereinigung.de', phone: '0871 20669361' },
+        { name: 'Ergkest Qirjaj', position: 'Geschäftsführer', email: 'e.qirjaj@fimi-gebaeudereinigung.de', phone: '0871 20669362' },
       ],
-      officeManagement: { name: 'Fatima Krasniqi', position: 'Office Management', email: 'info@fimi-gebaeudereinigung.de', phone: '0871 2066936 0' },
-      vertrieb: { name: 'Markus Lehner', position: 'Vertriebsleiter', email: 'angebot@fimi-gebaeudereinigung.de', phone: '0871 2066936 3' },
-      kundenbetreuung: { name: 'Elena Popescu', position: 'Kundenbetreuung', email: 'kontakt@fimi-gebaeudereinigung.de', phone: '0871 2066936 4' },
-      buchhaltung: { name: 'Thomas Berger', position: 'Buchhaltung', email: 'buchhaltung@fimi-gebaeudereinigung.de', phone: '0871 2066936 5' },
-      personal: { name: 'Svetlana Morozova', position: 'Personalwesen', email: 'bewerbung@fimi-gebaeudereinigung.de', phone: '0871 2066936 6' },
-      qualitaet: { name: 'Claudia Wimmer', position: 'Qualitätsmanagement', email: 'datenschutz@fimi-gebaeudereinigung.de', phone: '0871 2066936 7' },
-      objektleitung: { email: 'partner@fimi-gebaeudereinigung.de', phone: '0871 2066936 8' },
+      officeManagement: { name: 'Fatima Krasniqi', position: 'Office Management', email: 'info@fimi-gebaeudereinigung.de', phone: '0871 20669360' },
+      vertrieb: { name: 'Markus Lehner', position: 'Vertriebsleiter', email: 'angebot@fimi-gebaeudereinigung.de', phone: '0871 20669363' },
+      kundenbetreuung: { name: 'Elena Popescu', position: 'Kundenbetreuung', email: 'kontakt@fimi-gebaeudereinigung.de', phone: '0871 20669364' },
+      buchhaltung: { name: 'Thomas Berger', position: 'Buchhaltung', email: 'buchhaltung@fimi-gebaeudereinigung.de', phone: '0871 20669365' },
+      personal: { name: 'Svetlana Morozova', position: 'Personalwesen', email: 'bewerbung@fimi-gebaeudereinigung.de', phone: '0871 20669366' },
+      qualitaet: { name: 'Claudia Wimmer', position: 'Qualitätsmanagement', email: 'datenschutz@fimi-gebaeudereinigung.de', phone: '0871 20669367' },
+      objektleitung: { email: 'partner@fimi-gebaeudereinigung.de', phone: '0871 20669368' },
     },
     address: {
       street: 'Kellerstr. 39',
