@@ -107,24 +107,24 @@ export default function LeistungsumfangSection() {
 
         {/* Two Column: Image + Text */}
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center mb-12 sm:mb-16 lg:mb-28">
-          {/* Image */}
-          <div className="relative h-[250px] sm:h-[320px] md:h-[400px] lg:h-[500px] rounded-[6px] lg:rounded-[12px] overflow-hidden">
+          {/* Image - UNGER Equipment */}
+          <div className="relative h-[250px] sm:h-[320px] md:h-[400px] lg:h-[500px] rounded-[6px] lg:rounded-[12px] overflow-hidden bg-gray-50">
             <picture>
               <source
-                srcSet="/images/leistungen/fensterreinigung/buero-fenster-384w.avif 384w, /images/leistungen/fensterreinigung/buero-fenster-768w.avif 768w, /images/leistungen/fensterreinigung/buero-fenster-1024w.avif 1024w"
+                srcSet="/images/leistungen/fensterreinigung/equipment-unger-set-384w.avif 384w, /images/leistungen/fensterreinigung/equipment-unger-set-768w.avif 768w, /images/leistungen/fensterreinigung/equipment-unger-set-1024w.avif 1024w"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 type="image/avif"
               />
               <source
-                srcSet="/images/leistungen/fensterreinigung/buero-fenster-384w.webp 384w, /images/leistungen/fensterreinigung/buero-fenster-768w.webp 768w, /images/leistungen/fensterreinigung/buero-fenster-1024w.webp 1024w"
+                srcSet="/images/leistungen/fensterreinigung/equipment-unger-set-384w.webp 384w, /images/leistungen/fensterreinigung/equipment-unger-set-768w.webp 768w, /images/leistungen/fensterreinigung/equipment-unger-set-1024w.webp 1024w"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 type="image/webp"
               />
               <Image
-                src="/images/leistungen/fensterreinigung/buero-fenster.webp"
-                alt="Modernes Büro mit großen, sauberen Fenstern und Stadtblick"
+                src="/images/leistungen/fensterreinigung/equipment-unger-set.webp"
+                alt="UNGER Profi-Fensterreinigung Equipment: Abzieher, Einwascher, Teleskopstange und Eimer"
                 fill
-                className="object-cover"
+                className="object-contain"
               />
             </picture>
           </div>
