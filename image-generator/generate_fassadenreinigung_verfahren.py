@@ -34,36 +34,38 @@ VERFAHREN_IMAGES = [
     {
         "filename": "verfahren-niederdruck",
         "title": "Niederdruck-Reinigung - In Action",
-        "prompt": """AUTHENTISCHES ARBEITSFOTO - FASSADENREINIGUNG IN ACTION
+        "prompt": """REALISTISCHES STOCKFOTO - FASSADENREINIGUNG
 
-SZENE: Niederdruck-Reinigung an einer Putzfassade
-- KÄRCHER Hochdruckreiniger (GELB/SCHWARZ) im Einsatz
-- Wasserstrahl trifft auf verschmutzte helle Fassade
-- Sichtbarer Reinigungseffekt (sauber vs. schmutzig)
-- Schlauch führt zum Gerät am Boden
+SZENE: Sanfte Niederdruck-Reinigung an heller Hausfassade
+- Professioneller Hochdruckreiniger im Einsatz
+- Sanfter Wasserstrahl (NICHT aggressiv) reinigt Fassade
+- Leichte Verschmutzung wird entfernt (dezent, nicht extrem)
+- Helle deutsche Putzfassade, gut gepflegt
 
-PERSON (SUBTIL):
-- Nur Hände und Unterarme sichtbar, die Lanze halten
-- Arbeitshandschuhe
-- KEIN Gesicht, KEIN voller Körper
-- Von hinten oder seitlich angedeutet
+PERSON:
+- Arbeiter von der SEITE oder HINTEN
+- Professionelle Arbeitskleidung (dunkel)
+- Hält Reinigungslanze
+- Gesicht NICHT erkennbar oder abgewandt
+- Natürliche Arbeitshaltung
 
 UMGEBUNG:
-- Deutsches Wohnhaus oder Mehrfamilienhaus
-- Typisch deutsche Architektur (Putzfassade, WDVS)
-- Bewölkter Himmel oder diffuses Licht
-- Professionelle Arbeitsszene
+- Typisches deutsches Einfamilienhaus oder Reihenhaus
+- Gepflegter Vorgarten sichtbar
+- Tageslicht, leicht bewölkt
+- Realistisch, alltäglich
 
 FOTOSTIL:
-- Authentische Dokumentarfotografie
-- Wie echtes Arbeitsfoto, nicht gestellt
-- Hochwertig aber natürlich
-- 21:9 Ultrawide Format
+- Wie echtes Stockfoto von Getty Images
+- Natürliche Beleuchtung
+- Nicht übertrieben, nicht gestellt
+- Professionell aber authentisch
+- 21:9 Breitformat
 
-ABSOLUT WICHTIG:
-- KÄRCHER = GELB mit schwarzen Details
-- Person nur angedeutet (Hände/Arme)
-- Authentisch, nicht künstlich"""
+WICHTIG:
+- REALISTISCH - wie ein echtes Foto
+- Dezente Verschmutzung (nicht extrem!)
+- Person natürlich, nicht posierend"""
     },
     {
         "filename": "verfahren-teleskop",
@@ -136,36 +138,39 @@ ABSOLUT WICHTIG:
     {
         "filename": "verfahren-biozid",
         "title": "Biozid-Behandlung - In Action",
-        "prompt": """AUTHENTISCHES ARBEITSFOTO - BIOZID-BEHANDLUNG IN ACTION
+        "prompt": """REALISTISCHES STOCKFOTO - BIOZID-BEHANDLUNG
 
-SZENE: Professionelle Biozid-Behandlung an befallener Fassade
-- Fassade mit sichtbarem Algen-/Moosbefall (grünlich)
-- Sprühnebel wird aufgetragen
-- Rückensprühgerät (GLORIA/MESTO, weiß/blau) sichtbar
+SZENE: Professionelle Behandlung einer leicht verschmutzten Fassade
+- Helle Hausfassade mit LEICHTEM grünlichem Belag (dezent!)
+- Arbeiter sprüht Behandlungsmittel auf
+- Rückensprühgerät (professionell, weiß oder blau)
+- Feiner Sprühnebel sichtbar
 
-PERSON (SUBTIL):
-- Arbeiter von HINTEN oder SEITE
-- Trägt Rückensprühgerät
-- Schutzkleidung/Overall
-- Sprüht auf Fassade
+PERSON:
+- Arbeiter von HINTEN fotografiert
+- Normale Arbeitskleidung (Overall oder Arbeitshose/Jacke)
+- Trägt Sprühgerät auf dem Rücken
 - Gesicht NICHT sichtbar
+- Natürliche Arbeitshaltung
 
 UMGEBUNG:
-- Deutsches Wohnhaus mit Nordseite
-- Sichtbarer grüner Algenbefall auf Putz
-- Teilweise schon behandelt (Kontrast)
-- Authentische Arbeitsszene
+- Typisches deutsches Wohnhaus
+- Nordseite mit LEICHTEM Grünbelag (nicht extrem!)
+- Gepflegter Garten/Rasen im Vordergrund
+- Normaler bewölkter Tag
 
 FOTOSTIL:
-- Dokumentarischer Stil
-- Problem (Befall) und Lösung (Behandlung) sichtbar
-- Professionell, überzeugend
-- 21:9 Ultrawide Format
+- Wie echtes Stockfoto
+- Natürlich, nicht dramatisch
+- Realistisch, alltäglich
+- Professionelle Arbeitsszene
+- 21:9 Breitformat
 
-ABSOLUT WICHTIG:
-- Schutzausrüstung sichtbar
-- Algenbefall erkennbar
-- Person von hinten (kein Gesicht!)"""
+WICHTIG:
+- DEZENTER Algenbefall (nicht Horror-Bild!)
+- Realistisch wie echter Arbeitsalltag
+- Keine Schutzanzug-Vollmontur nötig
+- Person natürlich, nicht übertrieben"""
     },
     {
         "filename": "verfahren-impraegnierung",
