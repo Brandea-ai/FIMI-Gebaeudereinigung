@@ -3,37 +3,19 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Clock, Calendar } from 'lucide-react'
+import { blogPosts, blogCategories } from '@/lib/blog-data'
 
-// Thematisch passende Artikel für Unterhaltsreinigung
-const relatedPosts = [
-  {
-    slug: 'tariflohn-gebaeudereinigung-2025-2026',
-    title: 'Tarifabschluss 2025/2026: Was bedeutet das für Ihre Reinigungskosten?',
-    excerpt: 'Die neuen Löhne in der Gebäudereinigung und ihre Auswirkungen auf Qualität und Preise.',
-    image: '/images/blog/tariflohn-gebaeudereinigung-2025-2026.avif',
-    category: 'Neuigkeiten',
-    date: '2025-01-18',
-    readTime: 4,
-  },
-  {
-    slug: 'reinigungsintervalle-buero-schule-praxis-din-ral',
-    title: 'Die richtigen Reinigungsintervalle: Wie oft muss gereinigt werden?',
-    excerpt: 'Die Festlegung der richtigen Reinigungsintervalle ist entscheidend für Hygiene, Werterhalt und Kosteneffizienz.',
-    image: '/images/blog/reinigungsintervalle-buero-schule-praxis-din-ral.avif',
-    category: 'Tipps',
-    date: '2025-01-10',
-    readTime: 5,
-  },
-  {
-    slug: 'hygiene-arbeitsplatz-standards-buero-bmas-baua',
-    title: 'Hygiene am Arbeitsplatz: Aktuelle Standards für ein gesundes Büro',
-    excerpt: 'Ein gesundes Arbeitsumfeld ist die Basis für Produktivität und Mitarbeiterzufriedenheit.',
-    image: '/images/blog/hygiene-arbeitsplatz-standards-buero-bmas-baua.avif',
-    category: 'Tipps',
-    date: '2025-01-05',
-    readTime: 3,
-  },
+// Thematisch passende Artikel-Slugs für Unterhaltsreinigung
+const relatedSlugs = [
+  'tariflohn-gebaeudereinigung-2025-2026',
+  'reinigungsintervalle-buero-schule-praxis-din-ral',
+  'hygiene-arbeitsplatz-standards-buero-bmas-baua',
 ]
+
+// Hole die echten Blog-Daten
+const relatedPosts = relatedSlugs
+  .map(slug => blogPosts.find(post => post.slug === slug))
+  .filter((post): post is NonNullable<typeof post> => post !== undefined)
 
 export default function BlogPreviewSection() {
   return (
@@ -80,8 +62,11 @@ export default function BlogPreviewSection() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
-                  <span className="bg-[#109387] text-white text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-[6px]">
-                    {post.category}
+                  <span
+                    className="text-white text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-[6px]"
+                    style={{ backgroundColor: blogCategories[post.category].color }}
+                  >
+                    {blogCategories[post.category].label}
                   </span>
                 </div>
               </div>
