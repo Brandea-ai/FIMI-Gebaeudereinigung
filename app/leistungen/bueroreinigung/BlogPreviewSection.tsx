@@ -3,37 +3,19 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Clock, Calendar } from 'lucide-react'
+import { blogPosts, blogCategories } from '@/lib/blog-data'
 
-// Thematisch passende Artikel für Büroreinigung
-const relatedPosts = [
-  {
-    slug: 'tariflohn-gebaeudereinigung-2025-2026',
-    title: 'Tarifabschluss 2025/2026: Was bedeutet das für Ihre Reinigungskosten?',
-    excerpt: 'Die neuen Löhne in der Gebäudereinigung und ihre Auswirkungen auf Qualität und Preise.',
-    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
-    category: 'Neuigkeiten',
-    date: '2025-01-18',
-    readTime: 4,
-  },
-  {
-    slug: 'bueroreinigung-ausserhalb-geschaeftszeiten',
-    title: 'Warum Büroreinigung außerhalb der Geschäftszeiten sinnvoll ist',
-    excerpt: 'Produktivität steigern, Störungen vermeiden: Die Vorteile von Nacht- und Wochenendreinigung.',
-    image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=800&auto=format&fit=crop',
-    category: 'Tipps',
-    date: '2025-01-10',
-    readTime: 3,
-  },
-  {
-    slug: 'hygiene-arbeitsplatz-mitarbeitergesundheit',
-    title: 'Sauberkeit am Arbeitsplatz: So bleibt Ihr Team gesund',
-    excerpt: 'Desinfektion, Luftqualität, Kontaktflächen – was professionelle Reinigung für die Gesundheit leistet.',
-    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop',
-    category: 'Tipps',
-    date: '2025-01-05',
-    readTime: 5,
-  },
+// Thematisch passende Artikel-Slugs für Büroreinigung
+const relatedSlugs = [
+  'tariflohn-gebaeudereinigung-2025-2026',
+  'hygiene-arbeitsplatz-standards-buero-bmas-baua',
+  'reinigungsintervalle-buero-schule-praxis-din-ral',
 ]
+
+// Hole die echten Blog-Daten
+const relatedPosts = relatedSlugs
+  .map(slug => blogPosts.find(post => post.slug === slug))
+  .filter((post): post is NonNullable<typeof post> => post !== undefined)
 
 export default function BlogPreviewSection() {
   return (
@@ -65,9 +47,9 @@ export default function BlogPreviewSection() {
 
         {/* Blog Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-          {relatedPosts.map((post, index) => (
+          {relatedPosts.map((post) => (
             <Link
-              key={index}
+              key={post.slug}
               href={`/neuigkeiten/${post.slug}`}
               className="group bg-[#f8f9fa] rounded-[6px] overflow-hidden hover:shadow-xl transition-all duration-300"
             >
@@ -80,8 +62,11 @@ export default function BlogPreviewSection() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
-                  <span className="bg-[#109387] text-white text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-[6px]">
-                    {post.category}
+                  <span
+                    className="text-white text-[10px] sm:text-xs font-bold px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-[6px]"
+                    style={{ backgroundColor: blogCategories[post.category].color }}
+                  >
+                    {blogCategories[post.category].label}
                   </span>
                 </div>
               </div>
@@ -110,7 +95,7 @@ export default function BlogPreviewSection() {
                 </h3>
 
                 {/* Excerpt */}
-                <p className="text-gray-600 font-semibold text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
+                <p className="text-gray-600 font-semibold text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 line-clamp-2">
                   {post.excerpt}
                 </p>
 

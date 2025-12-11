@@ -2,54 +2,39 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Clock, Tag } from 'lucide-react'
+import { ArrowRight, Clock, Calendar } from 'lucide-react'
+import { blogPosts, blogCategories } from '@/lib/blog-data'
 
-// Relevante Blog-Artikel für Hausmeisterservice
-const blogPosts = [
-  {
-    slug: 'winterdienst-bayern-pflichten-haftung-bgh-urteil-2025',
-    title: 'Winterdienst Bayern: Pflichten, Haftung & BGH-Urteil 2025',
-    excerpt: 'Wer haftet bei Glatteis? Welche Pflichten haben Eigentümer und Verwalter? Ein Überblick über rechtliche Grundlagen und aktuelle BGH-Urteile.',
-    image: 'https://images.unsplash.com/photo-1491002052546-bf38f186af56?q=80&w=800&auto=format&fit=crop',
-    kategorie: 'Winterdienst',
-    lesezeit: '8 Min.',
-  },
-  {
-    slug: 'tariflohn-gebaeudereinigung-2025-2026',
-    title: 'Tariflohn Gebäudereinigung 2025/2026: Aktuelle Löhne & Zulagen',
-    excerpt: 'Was verdienen Reinigungskräfte und Hausmeister nach Tarif? Alle aktuellen Lohngruppen, Zulagen und regionale Unterschiede im Überblick.',
-    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=800&auto=format&fit=crop',
-    kategorie: 'Branche',
-    lesezeit: '10 Min.',
-  },
-  {
-    slug: 'fachkraeftemangel-gebaeudereinigung-loesungen-2025',
-    title: 'Fachkräftemangel Gebäudereinigung: Lösungen für 2025',
-    excerpt: 'Der Fachkräftemangel trifft auch den Hausmeisterservice. Welche Strategien helfen Unternehmen, qualifiziertes Personal zu finden und zu halten?',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop',
-    kategorie: 'Branche',
-    lesezeit: '9 Min.',
-  },
+// Thematisch passende Artikel-Slugs für Hausmeisterservice
+const relatedSlugs = [
+  'winterdienst-bayern-pflichten-haftung-bgh-urteil-2025',
+  'tariflohn-gebaeudereinigung-2025-2026',
+  'reinigungsintervalle-buero-schule-praxis-din-ral',
 ]
+
+// Hole die echten Blog-Daten
+const relatedPosts = relatedSlugs
+  .map(slug => blogPosts.find(post => post.slug === slug))
+  .filter((post): post is NonNullable<typeof post> => post !== undefined)
 
 export default function BlogPreviewSection() {
   return (
-    <section id="blog" className="py-16 sm:py-20 lg:py-28 bg-[#f8f9fa]">
+    <section className="py-12 sm:py-16 lg:py-28 bg-[#f8f9fa]">
       <div className="w-full max-w-[1800px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
 
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 sm:gap-6 mb-10 sm:mb-12 lg:mb-14">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 sm:mb-10 lg:mb-12">
           <div>
-            <span className="text-[#109387] font-bold text-xs sm:text-sm uppercase tracking-wide mb-3 sm:mb-4 block">
-              Wissen
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1]">
-              Ratgeber & Praxis-Tipps
+            <p className="text-xs sm:text-sm text-[#109387] font-semibold uppercase tracking-wide mb-2 sm:mb-3">
+              Wissen & Tipps
+            </p>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#012956]">
+              Aktuelles zum Hausmeisterservice
             </h2>
           </div>
           <Link
             href="/neuigkeiten"
-            className="inline-flex items-center gap-2 text-[#109387] font-bold hover:text-[#012956] transition-colors text-sm sm:text-base whitespace-nowrap"
+            className="inline-flex items-center gap-2 text-[#109387] font-bold text-sm sm:text-base hover:gap-3 transition-all"
           >
             Alle Artikel
             <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -57,49 +42,61 @@ export default function BlogPreviewSection() {
         </div>
 
         {/* Blog Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {blogPosts.map((post, index) => (
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          {relatedPosts.map((post) => (
             <Link
-              key={index}
+              key={post.slug}
               href={`/neuigkeiten/${post.slug}`}
-              className="group bg-white rounded-[6px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500"
+              className="group bg-white rounded-[6px] overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
             >
               {/* Image */}
-              <div className="relative h-48 sm:h-52 overflow-hidden">
+              <div className="relative aspect-[16/10] overflow-hidden">
                 <Image
                   src={post.image}
                   alt={post.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
-                <div className="absolute top-4 left-4">
-                  <span className="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-[6px]">
-                    <Tag className="w-3.5 h-3.5 text-[#109387]" />
-                    <span className="text-xs font-bold text-[#012956]">{post.kategorie}</span>
+                <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
+                  <span
+                    className="px-2 sm:px-3 py-1 sm:py-1.5 rounded-[4px] text-white text-[10px] sm:text-xs font-bold"
+                    style={{ backgroundColor: blogCategories[post.category].color }}
+                  >
+                    {blogCategories[post.category].label}
                   </span>
                 </div>
               </div>
 
               {/* Content */}
-              <div className="p-5 sm:p-6">
-                <h3 className="text-base sm:text-lg font-bold text-[#012956] mb-2 sm:mb-3 line-clamp-2 group-hover:text-[#109387] transition-colors">
+              <div className="p-4 sm:p-5 lg:p-6">
+                <div className="flex items-center gap-3 text-gray-500 text-xs sm:text-sm font-semibold mb-2 sm:mb-3">
+                  <span className="flex items-center gap-1">
+                    <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                    {new Date(post.date).toLocaleDateString('de-DE', {
+                      day: '2-digit',
+                      month: '2-digit',
+                      year: 'numeric',
+                    })}
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                    {post.readTime} Min.
+                  </span>
+                </div>
+
+                <h3 className="text-base sm:text-lg font-bold text-[#012956] group-hover:text-[#109387] transition-colors mb-2 sm:mb-3 leading-snug">
                   {post.title}
                 </h3>
-                <p className="text-gray-600 font-semibold text-sm leading-relaxed mb-4 line-clamp-2">
+
+                <p className="text-gray-600 font-semibold text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4 line-clamp-2">
                   {post.excerpt}
                 </p>
 
-                {/* Meta */}
-                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                  <div className="flex items-center gap-1.5 text-gray-500">
-                    <Clock className="w-4 h-4" />
-                    <span className="text-xs font-semibold">{post.lesezeit}</span>
-                  </div>
-                  <span className="text-[#109387] font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Lesen
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
-                </div>
+                <span className="inline-flex items-center gap-1.5 sm:gap-2 text-[#109387] font-bold text-xs sm:text-sm group-hover:gap-3 transition-all">
+                  Weiterlesen
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                </span>
               </div>
             </Link>
           ))}

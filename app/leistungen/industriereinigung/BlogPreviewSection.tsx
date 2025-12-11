@@ -4,37 +4,19 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, Calendar, Clock } from 'lucide-react'
 import FadeIn from '@/components/FadeIn'
+import { blogPosts, blogCategories } from '@/lib/blog-data'
 
-// Relevante Blogartikel für Industriereinigung
-const blogPosts = [
-  {
-    slug: 'industriereinigung-kosten-preise-ueberblick',
-    titel: 'Industriereinigung Kosten: Was kostet professionelle Hallenreinigung?',
-    auszug: 'Ein transparenter Überblick über Preise, Faktoren und Einsparpotenziale bei der Industriereinigung. So kalkulieren Profis.',
-    bild: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop',
-    datum: '28. November 2024',
-    lesezeit: '8 Min',
-    kategorie: 'Wissen',
-  },
-  {
-    slug: 'hallenreinigung-tipps-fuer-produktionsbetriebe',
-    titel: 'Hallenreinigung: 7 Tipps für saubere Produktionshallen',
-    auszug: 'Praktische Tipps für Betriebsleiter: So halten Sie Ihre Produktionshalle sauber und erfüllen alle Vorschriften.',
-    bild: 'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?q=80&w=800&auto=format&fit=crop',
-    datum: '15. November 2024',
-    lesezeit: '6 Min',
-    kategorie: 'Tipps',
-  },
-  {
-    slug: 'maschinenreinigung-lebensdauer-verlaengern',
-    titel: 'Maschinenreinigung: So verlängern Sie die Lebensdauer Ihrer Anlagen',
-    auszug: 'Regelmäßige Reinigung spart Reparaturkosten und verlängert die Lebensdauer. Was Sie beachten sollten.',
-    bild: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop',
-    datum: '5. November 2024',
-    lesezeit: '5 Min',
-    kategorie: 'Ratgeber',
-  },
+// Thematisch passende Artikel-Slugs für Industriereinigung
+const relatedSlugs = [
+  'industriereinigung-arbeitssicherheit-dguv-gefahrstoffv',
+  'gesundheitsschutz-reinigung-ergonomie-hautschutz-bg-bau',
+  'tariflohn-gebaeudereinigung-2025-2026',
 ]
+
+// Hole die echten Blog-Daten
+const relatedPosts = relatedSlugs
+  .map(slug => blogPosts.find(post => post.slug === slug))
+  .filter((post): post is NonNullable<typeof post> => post !== undefined)
 
 export default function BlogPreviewSection() {
   return (
@@ -47,79 +29,80 @@ export default function BlogPreviewSection() {
             <p className="text-sm text-[#109387] font-semibold uppercase tracking-wide mb-3">
               Wissen & Tipps
             </p>
-            <h2
-              id="blog-heading"
-              className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#012956] leading-[1.1]"
-            >
+            <h2 id="blog-heading" className="text-3xl lg:text-4xl font-bold text-[#012956] mb-4">
               Aktuelles zur Industriereinigung
             </h2>
+            <p className="text-gray-600 font-semibold max-w-xl">
+              Fachbeiträge, Praxistipps und Branchennews rund um die professionelle Industriereinigung.
+            </p>
           </div>
           <Link
             href="/neuigkeiten"
-            className="inline-flex items-center gap-2 text-[#109387] font-bold hover:text-[#012956] transition-colors group"
+            className="inline-flex items-center gap-2 text-[#109387] font-bold hover:gap-3 transition-all"
           >
             Alle Artikel
-            <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={18} />
           </Link>
         </FadeIn>
 
-        {/* Blog Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post, index) => (
+        {/* Blog Cards */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {relatedPosts.map((post, index) => (
             <FadeIn key={post.slug} delay={index * 0.1}>
-              <article className="group bg-white rounded-[6px] overflow-hidden h-full flex flex-col shadow-sm hover:shadow-lg transition-shadow duration-300">
+              <Link
+                href={`/neuigkeiten/${post.slug}`}
+                className="group block bg-white rounded-[6px] overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
+              >
                 {/* Image */}
-                <Link href={`/neuigkeiten/${post.slug}`} className="relative h-48 overflow-hidden">
+                <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
-                    src={post.bild}
-                    alt={post.titel}
+                    src={post.image}
+                    alt={post.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                  {/* Kategorie Badge */}
                   <div className="absolute top-4 left-4">
-                    <span className="bg-[#109387] text-white font-bold text-xs px-3 py-1 rounded-full">
-                      {post.kategorie}
+                    <span
+                      className="px-3 py-1.5 rounded-[4px] text-white text-xs font-bold"
+                      style={{ backgroundColor: blogCategories[post.category].color }}
+                    >
+                      {blogCategories[post.category].label}
                     </span>
                   </div>
-                </Link>
+                </div>
 
                 {/* Content */}
-                <div className="p-6 flex flex-col flex-grow">
-                  {/* Meta */}
-                  <div className="flex items-center gap-4 text-gray-500 text-sm font-semibold mb-3">
-                    <span className="flex items-center gap-1">
+                <div className="p-6">
+                  <div className="flex items-center gap-4 text-sm text-gray-500 font-semibold mb-3">
+                    <span className="flex items-center gap-1.5">
                       <Calendar size={14} />
-                      {post.datum}
+                      {new Date(post.date).toLocaleDateString('de-DE', {
+                        day: '2-digit',
+                        month: '2-digit',
+                        year: 'numeric',
+                      })}
                     </span>
-                    <span className="flex items-center gap-1">
+                    <span className="flex items-center gap-1.5">
                       <Clock size={14} />
-                      {post.lesezeit}
+                      {post.readTime} Min.
                     </span>
                   </div>
 
-                  {/* Title */}
-                  <Link href={`/neuigkeiten/${post.slug}`}>
-                    <h3 className="text-xl font-bold text-[#012956] mb-3 group-hover:text-[#109387] transition-colors line-clamp-2">
-                      {post.titel}
-                    </h3>
-                  </Link>
+                  <h3 className="text-lg font-bold text-[#012956] group-hover:text-[#109387] transition-colors mb-3 leading-snug">
+                    {post.title}
+                  </h3>
 
-                  {/* Excerpt */}
-                  <p className="text-gray-700 font-semibold leading-relaxed mb-4 flex-grow line-clamp-3">
-                    {post.auszug}
+                  <p className="text-gray-600 font-semibold text-sm leading-relaxed mb-4 line-clamp-2">
+                    {post.excerpt}
                   </p>
 
-                  {/* Read More */}
-                  <Link
-                    href={`/neuigkeiten/${post.slug}`}
-                    className="inline-flex items-center gap-2 text-[#109387] font-bold text-sm group-hover:text-[#012956] transition-colors"
-                  >
+                  <span className="inline-flex items-center gap-2 text-[#109387] font-bold text-sm group-hover:gap-3 transition-all">
                     Weiterlesen
-                    <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                    <ArrowRight size={16} />
+                  </span>
                 </div>
-              </article>
+              </Link>
             </FadeIn>
           ))}
         </div>
