@@ -7,10 +7,10 @@ import { ArrowRight, Phone, CheckCircle, Shield, Clock, Leaf } from 'lucide-reac
 export default function HeroSection() {
   return (
     <section id="hero" className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center">
-      {/* Background Image - 4K Unsplash - Moderne Fassade */}
+      {/* Background Image - Saubere Fassade */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=3840&auto=format&fit=crop"
+          src="/images/leistungen/fassadenreinigung/hero.avif"
           alt="Professionelle Fassadenreinigung - Algen und Moos entfernen in Bayern"
           fill
           className="object-cover"

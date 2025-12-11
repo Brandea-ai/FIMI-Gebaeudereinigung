@@ -4,28 +4,28 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { ArrowRight, ChevronLeft, ChevronRight, Check, Sparkles } from 'lucide-react'
 
-// Allgemeine Beispiele ohne konkrete Projekte/Orte
+// Vorher/Nachher Beispiele mit lokalen Bildern
 const beispiele = [
   {
     id: 1,
     typ: 'Mehrfamilienhaus',
     beschreibung: 'WDVS-Fassade mit Algen- und Moosbefall',
-    vorher: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop',
-    nachher: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1200&auto=format&fit=crop',
+    vorher: '/images/leistungen/fassadenreinigung/vorher-1.avif',
+    nachher: '/images/leistungen/fassadenreinigung/nachher-1.avif',
   },
   {
     id: 2,
     typ: 'Bürogebäude',
     beschreibung: 'Putzfassade mit Grünbelag und Verschmutzungen',
-    vorher: 'https://images.unsplash.com/photo-1486718448742-163732cd1544?q=80&w=1200&auto=format&fit=crop',
-    nachher: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop',
+    vorher: '/images/leistungen/fassadenreinigung/vorher-2.avif',
+    nachher: '/images/leistungen/fassadenreinigung/nachher-2.avif',
   },
   {
     id: 3,
     typ: 'Gewerbehalle',
     beschreibung: 'Industriefassade mit Ruß und Umweltverschmutzung',
-    vorher: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop',
-    nachher: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?q=80&w=1200&auto=format&fit=crop',
+    vorher: '/images/leistungen/fassadenreinigung/vorher-3.avif',
+    nachher: '/images/leistungen/fassadenreinigung/nachher-3.avif',
   },
 ]
 
