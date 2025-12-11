@@ -10,7 +10,7 @@ export default function HeroSection() {
       {/* Background Image - 4K Unsplash */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=3840&auto=format&fit=crop"
+          src="/images/leistungen/unterhaltsreinigung/hero.avif"
           alt="Professionelle Unterhaltsreinigung in modernen Geschäftsräumen"
           fill
           className="object-cover"

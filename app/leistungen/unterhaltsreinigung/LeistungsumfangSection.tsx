@@ -112,7 +112,7 @@ export default function LeistungsumfangSection() {
           {/* Image */}
           <div className="relative h-[250px] sm:h-[320px] md:h-[400px] lg:h-[500px] rounded-[6px] lg:rounded-[12px] overflow-hidden">
             <Image
-              src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=2574&auto=format&fit=crop"
+              src="/images/leistungen/unterhaltsreinigung/leistungsumfang-1.avif"
               alt="Professionelle Reinigungskraft bei der Unterhaltsreinigung"
               fill
               className="object-cover"
@@ -230,7 +230,7 @@ export default function LeistungsumfangSection() {
           {/* Image */}
           <div className="relative h-[250px] sm:h-[320px] md:h-[400px] lg:h-[500px] rounded-[6px] lg:rounded-[12px] overflow-hidden order-first lg:order-last">
             <Image
-              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2670&auto=format&fit=crop"
+              src="/images/leistungen/unterhaltsreinigung/leistungsumfang-2.avif"
               alt="Besprechung Reinigungsplan – Team bei der Arbeit"
               fill
               className="object-cover"

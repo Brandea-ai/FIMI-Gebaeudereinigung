@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     siteName: 'FIMI Gebäudereinigung',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200&auto=format&fit=crop',
+        url: 'https://fimi-gebaeudereinigung.de/images/leistungen/unterhaltsreinigung/hero.avif',
         width: 1200,
         height: 630,
         alt: 'Professionelle Unterhaltsreinigung von FIMI',
