@@ -134,30 +134,31 @@ WICHTIG:
         "title": "Spezialreinigung",
         "prompt": """AUTHENTISCHES STOCKFOTO - KEINE PERSONEN
 
-SZENE: Große Glasfassade mit professionellem Fensterreinigungsequipment
-- Moderne Glasfassade eines Bürogebäudes
-- Professionelles Fensterreinigungsequipment: Abzieher, Einwascher, Teleskopstange (grün/UNGER)
-- Kristallklare, frisch gereinigte Glasflächen
-- Spiegelungen in der Glasfassade
-- Wassertropfen oder Reinigungsschaum als Detail
+SZENE: Professionelle Grundreinigung/Teppichreinigung in einem hochwertigen Raum
+- Professionelle Teppichreinigungsmaschine (z.B. Kärcher Puzzi oder Sprühextraktionsgerät) auf einem Teppichboden
+- Alternativ: Professionelle Einscheibenmaschine für Grundreinigung auf Steinboden
+- Hochwertiger Konferenzraum oder Hotellobby als Umgebung
+- Sichtbarer Unterschied: Ein Teil bereits gereinigt (sauber), ein Teil noch schmutzig
+- Professionelle Reinigungschemikalien und Zubehör im Bild
 
 FOTOSTIL:
-- Wie ein echtes Architektur-Stockfoto von Shutterstock
-- Natürliches Tageslicht, klarer Tag
-- Klare, scharfe Aufnahme
-- Architektur-/Produktfotografie-Stil
-- Natürliche Farben, Blau des Himmels in Spiegelungen
+- Wie ein echtes Stockfoto von Getty Images
+- Warmes, natürliches Licht
+- Professionelle Interiorfotografie
+- Fokus auf die Reinigungsmaschine und das Ergebnis
+- Hochwertige, einladende Atmosphäre
 
 TECHNISCH:
 - Querformat 16:9
 - Professionelle Qualität
-- Interessante Perspektive von unten nach oben oder Detailaufnahme
+- Mittlere Brennweite, gute Schärfentiefe
 
 WICHTIG:
 - ABSOLUT KEINE PERSONEN/MENSCHEN im Bild
-- KEINE künstlichen CI-Farben
-- Reinigungsequipment und sauberes Glas als Hauptmotiv
-- Professioneller, hochwertiger Eindruck"""
+- KEINE künstlichen CI-Farben (kein Türkis, kein Navy)
+- Fokus auf Spezialreinigung (Teppich, Polster, Grundreinigung)
+- Professionelles Equipment sichtbar
+- Hochwertiger, luxuriöser Eindruck"""
     },
 ]
 
