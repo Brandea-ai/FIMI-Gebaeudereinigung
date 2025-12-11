@@ -40,10 +40,10 @@ export const metadata: Metadata = {
     siteName: 'FIMI Gebäudereinigung',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop',
-        width: 1200,
-        height: 630,
-        alt: 'Professionelle Hallenreinigung von FIMI - Industriehalle',
+        url: 'https://fimi-gebaeudereinigung.de/images/leistungen/hallenreinigung/hero-halle.avif',
+        width: 1376,
+        height: 768,
+        alt: 'Professionelle Hallenreinigung von FIMI - Saubere Industriehalle',
       },
     ],
   },

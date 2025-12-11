@@ -7,16 +7,28 @@ import { ArrowRight, Phone, CheckCircle, Clock, Factory, Shield } from 'lucide-r
 export default function HeroSection() {
   return (
     <section id="hero" className="relative min-h-[85vh] sm:min-h-[90vh] flex items-center">
-      {/* Background Image - 4K Unsplash Industriehalle */}
+      {/* Background Image - Generiertes Hallenbild */}
       <div className="absolute inset-0">
-        <Image
-          src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1920&auto=format&fit=crop"
-          alt="Professionelle Hallenreinigung in Industriehalle"
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
+        <picture>
+          <source
+            srcSet="/images/leistungen/hallenreinigung/hero-halle-384w.avif 384w, /images/leistungen/hallenreinigung/hero-halle-768w.avif 768w, /images/leistungen/hallenreinigung/hero-halle-1024w.avif 1024w, /images/leistungen/hallenreinigung/hero-halle.avif 1376w"
+            sizes="100vw"
+            type="image/avif"
+          />
+          <source
+            srcSet="/images/leistungen/hallenreinigung/hero-halle-384w.webp 384w, /images/leistungen/hallenreinigung/hero-halle-768w.webp 768w, /images/leistungen/hallenreinigung/hero-halle-1024w.webp 1024w, /images/leistungen/hallenreinigung/hero-halle.avif 1376w"
+            sizes="100vw"
+            type="image/webp"
+          />
+          <Image
+            src="/images/leistungen/hallenreinigung/hero-halle.avif"
+            alt="Professionelle Hallenreinigung - Saubere Industriehalle"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+        </picture>
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#012956]/95 via-[#012956]/85 to-[#012956]/60" />
       </div>
