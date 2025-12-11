@@ -28,214 +28,179 @@ client = genai.Client(
 
 OUTPUT_DIR = Path(__file__).parent.parent / "public" / "images" / "leistungen" / "fassadenreinigung"
 
-# 5 Verfahren mit echten Produkten/Geräten
+# 5 Verfahren - IN ACTION, authentisch, subtil
+# Personen nur angedeutet (Hände, Rücken), Equipment im Einsatz
 VERFAHREN_IMAGES = [
     {
         "filename": "verfahren-niederdruck",
-        "title": "Niederdruck-Reinigung - KÄRCHER",
-        "prompt": """PREMIUM PRODUKTFOTO - FASSADENREINIGUNG EQUIPMENT
+        "title": "Niederdruck-Reinigung - In Action",
+        "prompt": """AUTHENTISCHES ARBEITSFOTO - FASSADENREINIGUNG IN ACTION
 
-PRODUKT: KÄRCHER Hochdruckreiniger für Niederdruck-Fassadenreinigung
+SZENE: Niederdruck-Reinigung an einer Putzfassade
+- KÄRCHER Hochdruckreiniger (GELB/SCHWARZ) im Einsatz
+- Wasserstrahl trifft auf verschmutzte helle Fassade
+- Sichtbarer Reinigungseffekt (sauber vs. schmutzig)
+- Schlauch führt zum Gerät am Boden
 
-EQUIPMENT:
-- KÄRCHER HD/HDS Hochdruckreiniger (professionell)
-- Charakteristisches GELB mit schwarzen Akzenten
-- Niederdruck-Flächenreiniger Aufsatz
-- Professionelle Lanze/Sprühpistole
-- Schlauchsystem sichtbar
+PERSON (SUBTIL):
+- Nur Hände und Unterarme sichtbar, die Lanze halten
+- Arbeitshandschuhe
+- KEIN Gesicht, KEIN voller Körper
+- Von hinten oder seitlich angedeutet
 
-ARRANGEMENT:
-- Equipment arrangiert auf neutralem hellgrauem Hintergrund
-- Produktfoto-Stil wie B2B-Katalog
-- Hauptgerät + Zubehör elegant platziert
-- Nano-Banner-Format (sehr breit, 21:9)
-
-HINTERGRUND:
-- Neutraler hellgrauer Studio-Hintergrund
-- Clean, minimalistisch
-- Dezente Schatten für Tiefe
+UMGEBUNG:
+- Deutsches Wohnhaus oder Mehrfamilienhaus
+- Typisch deutsche Architektur (Putzfassade, WDVS)
+- Bewölkter Himmel oder diffuses Licht
+- Professionelle Arbeitsszene
 
 FOTOSTIL:
-- Premium Produktfotografie
-- Hochwertig wie aus Kärcher-Katalog
-- Professionell, seriös
-- Deutsche Ingenieursqualität
-
-TECHNISCH:
-- ULTRAWIDE 21:9 Format (sehr breit!)
-- Studioqualität
-- Höchste Schärfe
+- Authentische Dokumentarfotografie
+- Wie echtes Arbeitsfoto, nicht gestellt
+- Hochwertig aber natürlich
+- 21:9 Ultrawide Format
 
 ABSOLUT WICHTIG:
-- KEINE PERSONEN
-- KÄRCHER = GELB/SCHWARZ
-- Professionelles Equipment"""
+- KÄRCHER = GELB mit schwarzen Details
+- Person nur angedeutet (Hände/Arme)
+- Authentisch, nicht künstlich"""
     },
     {
         "filename": "verfahren-teleskop",
-        "title": "Teleskop-System - UNGER",
-        "prompt": """PREMIUM PRODUKTFOTO - FASSADENREINIGUNG EQUIPMENT
+        "title": "Teleskop-System - In Action",
+        "prompt": """AUTHENTISCHES ARBEITSFOTO - TELESKOP-REINIGUNG IN ACTION
 
-PRODUKT: UNGER Teleskop-System für Fassadenreinigung bis 18m
+SZENE: Fassadenreinigung mit Teleskopstange bis in große Höhe
+- UNGER nLite Teleskopstange (SILBER mit GRÜNEN Akzenten)
+- Stange reicht hoch an Gebäudefassade (2-3 Stockwerke)
+- Wasserfed-Bürste oben an der Fassade
+- Reinwasser-System/Tank am Boden sichtbar
 
-EQUIPMENT:
-- UNGER nLite Teleskopstange (SILBER/Aluminium, ausziehbar)
-- GRÜNE UNGER-Akzente an Griffen und Verbindungen
-- Wasserfed-Bürste am Ende
-- HydroPower Reinwasser-System (kompakter Tank)
-- Schläuche und Anschlüsse
+PERSON (SUBTIL):
+- Arbeiter von HINTEN gesehen
+- Dunkle Arbeitskleidung
+- Hält Teleskopstange, schaut nach oben
+- Gesicht NICHT sichtbar
+- Silhouette gegen Gebäude
 
-ARRANGEMENT:
-- Teleskopstange diagonal im Bild (zeigt Länge)
-- Reinwasser-System daneben
-- Produktfoto-Stil auf neutralem Hintergrund
-- Nano-Banner-Format (sehr breit, 21:9)
-
-HINTERGRUND:
-- Neutraler hellgrauer Studio-Hintergrund
-- Clean, minimalistisch
-- Dezente Schatten
+UMGEBUNG:
+- Modernes deutsches Bürogebäude oder Mehrfamilienhaus
+- Helle Fassade
+- Professionelle Arbeitsszene
+- Tageslicht
 
 FOTOSTIL:
-- Premium B2B Produktfotografie
-- Wie aus UNGER Professional Katalog
+- Authentische Arbeitsdokumentation
+- Perspektive von unten nach oben (zeigt Höhe)
 - Hochwertig, professionell
-
-TECHNISCH:
-- ULTRAWIDE 21:9 Format (sehr breit!)
-- Studioqualität
-- Scharfe Details
+- 21:9 Ultrawide Format
 
 ABSOLUT WICHTIG:
-- KEINE PERSONEN
-- UNGER = GRÜN/SILBER
-- Professionelles Teleskop-System"""
+- UNGER = SILBER/GRÜN
+- Person von hinten (kein Gesicht!)
+- Höhe der Teleskopstange betonen"""
     },
     {
         "filename": "verfahren-drohne",
-        "title": "Drohnen-Reinigung - DJI",
-        "prompt": """PREMIUM PRODUKTFOTO - FASSADENREINIGUNG EQUIPMENT
+        "title": "Drohnen-Reinigung - In Action",
+        "prompt": """AUTHENTISCHES ARBEITSFOTO - DROHNEN-REINIGUNG IN ACTION
 
-PRODUKT: Professionelle Industrie-Drohne für Fassadenreinigung
+SZENE: Industrie-Drohne im Einsatz an hohem Gebäude
+- Professionelle graue Industrie-Drohne (DJI Agras Stil)
+- Drohne schwebt an hoher Glasfassade/Hochhaus
+- Sprühnebel sichtbar vom Reinigungssystem
+- Dramatische Perspektive von unten
 
-EQUIPMENT:
-- DJI Agras oder ähnliche Industrie-Drohne
-- Grau/Schwarz professionelle Bauweise
-- Sprüh-Tank-System montiert
-- 4-6 Rotoren sichtbar
-- Robuste Bauweise für gewerblichen Einsatz
-- Fernsteuerung daneben
+PERSON (SUBTIL - OPTIONAL):
+- Pilot am Boden nur klein im Hintergrund
+- Oder: Nur Hände mit Controller sichtbar im Vordergrund
+- Fokus auf Drohne am Gebäude
 
-ARRANGEMENT:
-- Drohne als Hauptobjekt
-- Controller/Fernsteuerung daneben
-- Auf neutralem hellgrauem Hintergrund
-- Produktfoto-Stil
-- Nano-Banner-Format (sehr breit, 21:9)
-
-HINTERGRUND:
-- Neutraler hellgrauer Studio-Hintergrund
-- Clean, minimalistisch
-- Professionell
+UMGEBUNG:
+- Modernes Hochhaus oder Industriegebäude
+- Glasfassade oder hohe Betonfassade
+- Blauer Himmel mit Wolken
+- Professionelle High-Tech Atmosphäre
 
 FOTOSTIL:
-- High-Tech Produktfotografie
-- Premium Business-Look
-- Zukunftsorientiert, innovativ
-
-TECHNISCH:
-- ULTRAWIDE 21:9 Format (sehr breit!)
-- Studioqualität
-- Höchste Detailschärfe
+- Spektakuläre Perspektive
+- Drohne als Hauptmotiv am Gebäude
+- Modern, innovativ, zukunftsorientiert
+- 21:9 Ultrawide Format
 
 ABSOLUT WICHTIG:
-- KEINE PERSONEN
-- Professionelle Industrie-Drohne (nicht Consumer!)
-- Seriös und hochwertig"""
+- Professionelle Industrie-Drohne (grau/schwarz)
+- Drohne IN DER LUFT am Gebäude
+- Hochwertig, nicht billig wirkend"""
     },
     {
         "filename": "verfahren-biozid",
-        "title": "Biozid-Behandlung - Sprühsystem",
-        "prompt": """PREMIUM PRODUKTFOTO - FASSADENREINIGUNG EQUIPMENT
+        "title": "Biozid-Behandlung - In Action",
+        "prompt": """AUTHENTISCHES ARBEITSFOTO - BIOZID-BEHANDLUNG IN ACTION
 
-PRODUKT: Professionelles Biozid-Sprühsystem für Fassadenbehandlung
+SZENE: Professionelle Biozid-Behandlung an befallener Fassade
+- Fassade mit sichtbarem Algen-/Moosbefall (grünlich)
+- Sprühnebel wird aufgetragen
+- Rückensprühgerät (GLORIA/MESTO, weiß/blau) sichtbar
 
-EQUIPMENT:
-- GLORIA oder MESTO Rückensprühgerät (professionell)
-- Blau/Weiß oder Gelb professionelle Ausführung
-- Biozid-Kanister (5-10 Liter)
-- Professionelle Sprühlanze
-- Schutzhandschuhe (Chemie-beständig)
-- Dosierbecher
+PERSON (SUBTIL):
+- Arbeiter von HINTEN oder SEITE
+- Trägt Rückensprühgerät
+- Schutzkleidung/Overall
+- Sprüht auf Fassade
+- Gesicht NICHT sichtbar
 
-ARRANGEMENT:
-- Sprühgerät als Hauptobjekt
-- Chemie-Kanister und Zubehör arrangiert
-- Auf neutralem hellgrauem Hintergrund
-- Produktfoto-Stil
-- Nano-Banner-Format (sehr breit, 21:9)
-
-HINTERGRUND:
-- Neutraler hellgrauer Studio-Hintergrund
-- Clean, minimalistisch
-- Professionell
+UMGEBUNG:
+- Deutsches Wohnhaus mit Nordseite
+- Sichtbarer grüner Algenbefall auf Putz
+- Teilweise schon behandelt (Kontrast)
+- Authentische Arbeitsszene
 
 FOTOSTIL:
-- Technische Produktfotografie
-- Wie aus Profi-Equipment-Katalog
-- Seriös, professionell
-
-TECHNISCH:
-- ULTRAWIDE 21:9 Format (sehr breit!)
-- Studioqualität
-- Scharfe Details
+- Dokumentarischer Stil
+- Problem (Befall) und Lösung (Behandlung) sichtbar
+- Professionell, überzeugend
+- 21:9 Ultrawide Format
 
 ABSOLUT WICHTIG:
-- KEINE PERSONEN
-- Professionelles Sprühequipment
-- Chemie-Behandlung erkennbar"""
+- Schutzausrüstung sichtbar
+- Algenbefall erkennbar
+- Person von hinten (kein Gesicht!)"""
     },
     {
         "filename": "verfahren-impraegnierung",
-        "title": "Langzeit-Imprägnierung - Versiegelung",
-        "prompt": """PREMIUM PRODUKTFOTO - FASSADENREINIGUNG EQUIPMENT
+        "title": "Langzeit-Imprägnierung - In Action",
+        "prompt": """AUTHENTISCHES ARBEITSFOTO - IMPRÄGNIERUNG IN ACTION
 
-PRODUKT: Professionelles Imprägnierung-/Versiegelungssystem
+SZENE: Professionelle Fassaden-Imprägnierung wird aufgetragen
+- Frisch gereinigte, helle Fassade
+- Imprägnierung wird aufgesprüht (leichter Glanz)
+- Airless-Sprühgerät oder Farbroller im Einsatz
+- Professionelle Kanister am Boden (SIKA/REMMERS Stil)
 
-EQUIPMENT:
-- Profi-Imprägniermittel Kanister (REMMERS oder SIKA Stil)
-- Airless-Sprühgerät oder HVLP-Sprühpistole
-- Farbroller und Teleskopstiel
-- Pinsel für Details
-- Abdeckfolie/Schutzplane
-- Professionelle Ausführung
+PERSON (SUBTIL):
+- Arbeiter auf Leiter oder Gerüst
+- Von HINTEN oder SEITE fotografiert
+- Trägt Imprägniermittel auf
+- Arbeitskleidung
+- Gesicht NICHT sichtbar
 
-ARRANGEMENT:
-- Imprägnierkanister im Zentrum
-- Auftragswerkzeuge drumherum arrangiert
-- Auf neutralem hellgrauem Hintergrund
-- Produktfoto-Stil
-- Nano-Banner-Format (sehr breit, 21:9)
-
-HINTERGRUND:
-- Neutraler hellgrauer Studio-Hintergrund
-- Clean, minimalistisch
-- Premium-Look
+UMGEBUNG:
+- Saubere, helle deutsche Hausfassade
+- Nach der Reinigung, vor der Versiegelung
+- Abdeckfolie am Boden zum Schutz
+- Professionelle Arbeitsszene
 
 FOTOSTIL:
-- Premium Produktfotografie
-- Wie aus Fachhandel-Katalog
-- Professionell, hochwertig
-
-TECHNISCH:
-- ULTRAWIDE 21:9 Format (sehr breit!)
-- Studioqualität
-- Höchste Qualität
+- Authentische Arbeitsdokumentation
+- Zeigt den Schutzauftrag
+- Hochwertig, vertrauenserweckend
+- 21:9 Ultrawide Format
 
 ABSOLUT WICHTIG:
-- KEINE PERSONEN
-- Professionelle Versiegelungs-Produkte
-- Langzeitschutz erkennbar"""
+- Saubere Fassade (nach Reinigung)
+- Person von hinten (kein Gesicht!)
+- Professionelle Ausrüstung"""
     },
 ]
 
