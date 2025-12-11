@@ -49,7 +49,7 @@ export default function ProblemLoesungSection() {
             {/* Bild */}
             <div className="relative h-[200px] sm:h-[250px] lg:h-[280px] rounded-[6px] overflow-hidden mb-6">
               <Image
-                src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2000&auto=format&fit=crop"
+                src="/images/leistungen/fassadenreinigung/problem-loesung.avif"
                 alt="Saubere, gepflegte Hausfassade eines Mehrfamilienhauses"
                 fill
                 className="object-cover"

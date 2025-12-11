@@ -42,9 +42,9 @@ export const metadata: Metadata = {
     siteName: 'FIMI Gebäudereinigung',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop',
-        width: 1200,
-        height: 630,
+        url: 'https://fimi-gebaeudereinigung.de/images/leistungen/fassadenreinigung/hero.avif',
+        width: 1376,
+        height: 590,
         alt: 'Professionelle Fassadenreinigung von FIMI',
       },
     ],

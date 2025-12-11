@@ -12,7 +12,7 @@ const verfahren = [
     kurz: 'Für empfindliche Fassaden',
     beschreibung: 'Das schonendste Verfahren für WDVS und Putzfassaden. Mit maximal 60 bar Druck und speziellen Reinigungsmitteln werden Algen und Moos entfernt, ohne die Oberfläche zu beschädigen.',
     geeignet: ['WDVS-Fassaden', 'Putzfassaden', 'Gestrichene Flächen', 'Empfindliche Oberflächen'],
-    bild: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop',
+    bild: '/images/leistungen/fassadenreinigung/verfahren-niederdruck.avif',
   },
   {
     id: 'teleskop',
@@ -21,7 +21,7 @@ const verfahren = [
     kurz: 'Bis 18m ohne Gerüst',
     beschreibung: 'Mit unseren Teleskopstangen erreichen wir Höhen bis 18 Meter – ganz ohne teures Gerüst. Das Reinigungsmittel wird aufgesprüht, wirkt ein und wird dann abgespült.',
     geeignet: ['Mehrfamilienhäuser', 'Bürogebäude', 'Gewerbeobjekte', 'Schwer zugängliche Stellen'],
-    bild: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop',
+    bild: '/images/leistungen/fassadenreinigung/verfahren-teleskop.avif',
   },
   {
     id: 'drohne',
@@ -30,7 +30,7 @@ const verfahren = [
     kurz: 'Für extreme Höhen',
     beschreibung: 'Bei besonders hohen oder schwer zugänglichen Gebäuden setzen wir Drohnentechnologie ein. Die Drohne trägt das Reinigungsmittel auf und ermöglicht präzise Reinigung auch in großen Höhen.',
     geeignet: ['Hochhäuser', 'Kirchtürme', 'Industrieanlagen', 'Schwer erreichbare Fassaden'],
-    bild: 'https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=1200&auto=format&fit=crop',
+    bild: '/images/leistungen/fassadenreinigung/verfahren-drohne.avif',
   },
   {
     id: 'chemisch',
@@ -39,7 +39,7 @@ const verfahren = [
     kurz: 'Für hartnäckigen Befall',
     beschreibung: 'Bei starkem Algen- und Pilzbefall setzen wir spezielle Biozide ein, die den Bewuchs abtöten. Nach der Einwirkzeit werden die abgestorbenen Organismen abgewaschen.',
     geeignet: ['Starker Algenbefall', 'Pilzbefall', 'Schattenseiten', 'Dauerhaft feuchte Fassaden'],
-    bild: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1200&auto=format&fit=crop',
+    bild: '/images/leistungen/fassadenreinigung/verfahren-biozid.avif',
   },
   {
     id: 'impraegnierung',
@@ -48,7 +48,7 @@ const verfahren = [
     kurz: '5-10 Jahre Schutz',
     beschreibung: 'Nach der Reinigung versiegeln wir die Fassade mit einer wasserabweisenden Imprägnierung. Sie verhindert, dass sich neue Algen ansiedeln können. Der Schutz hält 5-10 Jahre.',
     geeignet: ['Alle Fassadentypen', 'Nordseiten', 'Feuchte Standorte', 'Präventiver Schutz'],
-    bild: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=1200&auto=format&fit=crop',
+    bild: '/images/leistungen/fassadenreinigung/verfahren-impraegnierung.avif',
   },
 ]
 
