@@ -7,60 +7,49 @@ import { ArrowRight } from 'lucide-react'
 
 const teamBereiche = [
   {
-    titel: 'Vertrieb',
+    titel: 'Vertrieb & Kundenbetreuung',
     beschreibung: 'Persönliche Beratung und maßgeschneiderte Lösungen für Ihren Bedarf.',
     mitglieder: [
       {
-        name: 'Elena Popescu',
-        position: 'Key Account Managerin',
-        bild: '/images/ueber-uns/team-elena-popescu.avif',
-      },
-      {
         name: 'Markus Lehner',
         position: 'Vertriebsleiter',
+        email: 'angebot@fimi-gebaeudereinigung.de',
+        telefon: '0871 430 334 63',
         bild: '/images/ueber-uns/team-markus-lehner.avif',
+      },
+      {
+        name: 'Elena Popescu',
+        position: 'Kundenbetreuung',
+        email: 'kontakt@fimi-gebaeudereinigung.de',
+        telefon: '0871 430 334 63',
+        bild: '/images/ueber-uns/team-elena-popescu.avif',
       },
     ],
   },
   {
     titel: 'Büro & Verwaltung',
-    beschreibung: 'Reibungslose Organisation, Disposition und Kundenservice.',
+    beschreibung: 'Reibungslose Organisation, Buchhaltung und Personalwesen.',
     mitglieder: [
       {
         name: 'Fatima Krasniqi',
-        position: 'Office Managerin',
+        position: 'Office Management',
+        email: 'info@fimi-gebaeudereinigung.de',
+        telefon: '0871 430 334 60',
         bild: '/images/ueber-uns/team-fatima-krasniqi.avif',
-      },
-      {
-        name: 'Svetlana Morozova',
-        position: 'Disposition',
-        bild: '/images/ueber-uns/team-svetlana-morozova.avif',
       },
       {
         name: 'Thomas Berger',
         position: 'Buchhaltung',
+        email: 'buchhaltung@fimi-gebaeudereinigung.de',
+        telefon: '0871 430 334 64',
         bild: '/images/ueber-uns/team-thomas-berger.avif',
       },
-    ],
-  },
-  {
-    titel: 'Objektleitung',
-    beschreibung: 'Verantwortung für Qualität und Kundenzufriedenheit vor Ort.',
-    mitglieder: [
       {
-        name: 'Dragan Petrović',
-        position: 'Objektleiter Gewerbe',
-        bild: '/images/ueber-uns/team-dragan-petrovic.avif',
-      },
-      {
-        name: 'Maria Ionescu',
-        position: 'Objektleiterin Industrie',
-        bild: '/images/ueber-uns/team-maria-ionescu.avif',
-      },
-      {
-        name: 'Blerim Hoxha',
-        position: 'Objektleiter Sonderreinigung',
-        bild: '/images/ueber-uns/team-blerim-hoxha.avif',
+        name: 'Svetlana Morozova',
+        position: 'Personalwesen',
+        email: 'bewerbung@fimi-gebaeudereinigung.de',
+        telefon: '0871 430 334 65',
+        bild: '/images/ueber-uns/team-svetlana-morozova.avif',
       },
     ],
   },
@@ -70,8 +59,37 @@ const teamBereiche = [
     mitglieder: [
       {
         name: 'Claudia Wimmer',
-        position: 'QM-Beauftragte',
+        position: 'Qualitätsmanagement',
+        email: 'datenschutz@fimi-gebaeudereinigung.de',
+        telefon: '0871 430 334 66',
         bild: '/images/ueber-uns/team-claudia-wimmer.avif',
+      },
+    ],
+  },
+  {
+    titel: 'Objektleitung',
+    beschreibung: 'Verantwortung für Qualität und Kundenzufriedenheit vor Ort.',
+    mitglieder: [
+      {
+        name: 'Dragan Petrović',
+        position: 'Objektleiter',
+        email: 'partner@fimi-gebaeudereinigung.de',
+        telefon: '0871 430 334 67',
+        bild: '/images/ueber-uns/team-dragan-petrovic.avif',
+      },
+      {
+        name: 'Maria Ionescu',
+        position: 'Objektleiterin',
+        email: 'partner@fimi-gebaeudereinigung.de',
+        telefon: '0871 430 334 67',
+        bild: '/images/ueber-uns/team-maria-ionescu.avif',
+      },
+      {
+        name: 'Blerim Hoxha',
+        position: 'Objektleiter',
+        email: 'partner@fimi-gebaeudereinigung.de',
+        telefon: '0871 430 334 67',
+        bild: '/images/ueber-uns/team-blerim-hoxha.avif',
       },
     ],
   },

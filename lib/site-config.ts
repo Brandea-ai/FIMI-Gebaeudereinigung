@@ -18,6 +18,7 @@ export const siteConfig = {
 
   // Kontaktdaten (NAP = Name, Address, Phone)
   contact: {
+    // Zentrale
     phone: {
       display: '0871 430 334 60',
       href: 'tel:+4987143033460',
@@ -26,6 +27,20 @@ export const siteConfig = {
     email: {
       display: 'info@fimi-gebaeudereinigung.de',
       href: 'mailto:info@fimi-gebaeudereinigung.de',
+    },
+    // Team-Durchwahlen
+    team: {
+      zentrale: { name: 'Zentrale', email: 'info@fimi-gebaeudereinigung.de', phone: '0871 430 334 60' },
+      geschaeftsfuehrung: [
+        { name: 'Donald Tzoutzis', position: 'Geschäftsführer', email: 'd.tzoutzis@fimi-gebaeudereinigung.de', phone: '0871 430 334 61' },
+        { name: 'Ergkest Qirjaj', position: 'Geschäftsführer', email: 'e.qirjaj@fimi-gebaeudereinigung.de', phone: '0871 430 334 62' },
+      ],
+      vertrieb: { name: 'Markus Lehner', position: 'Vertriebsleiter', email: 'angebot@fimi-gebaeudereinigung.de', phone: '0871 430 334 63' },
+      kundenbetreuung: { name: 'Elena Popescu', position: 'Kundenbetreuung', email: 'kontakt@fimi-gebaeudereinigung.de', phone: '0871 430 334 63' },
+      buchhaltung: { name: 'Thomas Berger', position: 'Buchhaltung', email: 'buchhaltung@fimi-gebaeudereinigung.de', phone: '0871 430 334 64' },
+      personal: { name: 'Svetlana Morozova', position: 'Personalwesen', email: 'bewerbung@fimi-gebaeudereinigung.de', phone: '0871 430 334 65' },
+      qualitaet: { name: 'Claudia Wimmer', position: 'Qualitätsmanagement', email: 'datenschutz@fimi-gebaeudereinigung.de', phone: '0871 430 334 66' },
+      objektleitung: { email: 'partner@fimi-gebaeudereinigung.de', phone: '0871 430 334 67' },
     },
     address: {
       street: 'Kellerstr. 39',

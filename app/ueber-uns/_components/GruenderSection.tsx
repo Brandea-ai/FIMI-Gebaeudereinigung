@@ -12,6 +12,7 @@ const gruender = [
     bild: '/images/ueber-uns/gruender-donald-tzoutzis.avif',
     zitat: 'Für mich bedeutet Erfolg, dass unsere Kunden morgens in ein sauberes Büro kommen und sich auf ihre eigentliche Arbeit konzentrieren können. Wir nehmen ihnen eine Sorge ab.',
     email: 'd.tzoutzis@fimi-gebaeudereinigung.de',
+    telefon: '0871 430 334 61',
   },
   {
     name: 'Ergkest Qirjaj',
@@ -20,6 +21,7 @@ const gruender = [
     bild: '/images/ueber-uns/gruender-ergkest-qirjaj.avif',
     zitat: 'Qualität ist kein Zufall. Sie entsteht durch klare Prozesse, gut geschulte Mitarbeiter und den Anspruch, jeden Tag besser zu werden als am Tag zuvor.',
     email: 'e.qirjaj@fimi-gebaeudereinigung.de',
+    telefon: '0871 430 334 62',
   },
 ]
 
@@ -94,12 +96,18 @@ export default function GruenderSection() {
                   </div>
 
                   {/* Contact */}
-                  <div className="mt-6 pt-6 border-t border-gray-200">
+                  <div className="mt-6 pt-6 border-t border-gray-200 space-y-2">
                     <a
                       href={`mailto:${person.email}`}
-                      className="text-[#109387] font-bold hover:text-[#012956] transition-colors"
+                      className="block text-[#109387] font-bold hover:text-[#012956] transition-colors"
                     >
                       {person.email}
+                    </a>
+                    <a
+                      href={`tel:+49${person.telefon.replace(/^0/, '').replace(/\s/g, '')}`}
+                      className="block text-gray-600 font-semibold hover:text-[#109387] transition-colors"
+                    >
+                      {person.telefon}
                     </a>
                   </div>
                 </div>
