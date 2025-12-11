@@ -85,12 +85,24 @@ export default function ProblemLoesungSection() {
         {/* Image + CTA */}
         <div className="mt-10 sm:mt-12 lg:mt-16 grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
           <div className="relative h-[220px] sm:h-[280px] md:h-[350px] lg:h-[400px] rounded-[6px] overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1565688534245-05d6b5be184a?q=80&w=2000&auto=format&fit=crop"
-              alt="Saubere Produktionshalle nach professioneller Industriereinigung"
-              fill
-              className="object-cover"
-            />
+            <picture>
+              <source
+                srcSet="/images/leistungen/industriereinigung/halle-nach-reinigung-384w.avif 384w, /images/leistungen/industriereinigung/halle-nach-reinigung-768w.avif 768w, /images/leistungen/industriereinigung/halle-nach-reinigung-1024w.avif 1024w, /images/leistungen/industriereinigung/halle-nach-reinigung.avif 1200w"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                type="image/avif"
+              />
+              <source
+                srcSet="/images/leistungen/industriereinigung/halle-nach-reinigung-384w.webp 384w, /images/leistungen/industriereinigung/halle-nach-reinigung-768w.webp 768w, /images/leistungen/industriereinigung/halle-nach-reinigung-1024w.webp 1024w, /images/leistungen/industriereinigung/halle-nach-reinigung.avif 1200w"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                type="image/webp"
+              />
+              <Image
+                src="/images/leistungen/industriereinigung/halle-nach-reinigung.avif"
+                alt="Saubere Produktionshalle nach professioneller Industriereinigung"
+                fill
+                className="object-cover"
+              />
+            </picture>
           </div>
 
           <div className="md:pl-4 lg:pl-8">

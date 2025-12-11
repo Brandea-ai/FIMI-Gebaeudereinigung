@@ -38,10 +38,10 @@ export const metadata: Metadata = {
     siteName: 'FIMI Gebäudereinigung',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?q=80&w=1200&auto=format&fit=crop',
-        width: 1200,
-        height: 630,
-        alt: 'Professionelle Industriereinigung von FIMI - Produktionshalle',
+        url: 'https://fimi-gebaeudereinigung.de/images/leistungen/industriereinigung/hero-industriehalle.avif',
+        width: 1376,
+        height: 768,
+        alt: 'Professionelle Industriereinigung von FIMI - Saubere Produktionshalle',
       },
     ],
   },

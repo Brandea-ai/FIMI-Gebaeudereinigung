@@ -108,12 +108,24 @@ export default function LeistungsumfangSection() {
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 items-center mb-12 sm:mb-16 lg:mb-28">
           {/* Image */}
           <div className="relative h-[250px] sm:h-[320px] md:h-[400px] lg:h-[500px] rounded-[6px] lg:rounded-[12px] overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2574&auto=format&fit=crop"
-              alt="Professionelle Reinigung in der Produktionshalle"
-              fill
-              className="object-cover"
-            />
+            <picture>
+              <source
+                srcSet="/images/leistungen/industriereinigung/scheuersaugmaschine-halle-384w.avif 384w, /images/leistungen/industriereinigung/scheuersaugmaschine-halle-768w.avif 768w, /images/leistungen/industriereinigung/scheuersaugmaschine-halle-1024w.avif 1024w, /images/leistungen/industriereinigung/scheuersaugmaschine-halle.avif 1200w"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                type="image/avif"
+              />
+              <source
+                srcSet="/images/leistungen/industriereinigung/scheuersaugmaschine-halle-384w.webp 384w, /images/leistungen/industriereinigung/scheuersaugmaschine-halle-768w.webp 768w, /images/leistungen/industriereinigung/scheuersaugmaschine-halle-1024w.webp 1024w, /images/leistungen/industriereinigung/scheuersaugmaschine-halle.avif 1200w"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                type="image/webp"
+              />
+              <Image
+                src="/images/leistungen/industriereinigung/scheuersaugmaschine-halle.avif"
+                alt="Professionelle Scheuersaugmaschine in der Produktionshalle"
+                fill
+                className="object-cover"
+              />
+            </picture>
           </div>
 
           {/* Content */}
@@ -218,12 +230,24 @@ export default function LeistungsumfangSection() {
 
           {/* Image */}
           <div className="relative h-[250px] sm:h-[320px] md:h-[400px] lg:h-[500px] rounded-[6px] lg:rounded-[12px] overflow-hidden order-first lg:order-last">
-            <Image
-              src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2670&auto=format&fit=crop"
-              alt="Industriereinigung mit Spezialgeräten"
-              fill
-              className="object-cover"
-            />
+            <picture>
+              <source
+                srcSet="/images/leistungen/industriereinigung/dampfreinigung-maschine-384w.avif 384w, /images/leistungen/industriereinigung/dampfreinigung-maschine-768w.avif 768w, /images/leistungen/industriereinigung/dampfreinigung-maschine-1024w.avif 1024w, /images/leistungen/industriereinigung/dampfreinigung-maschine.avif 1200w"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                type="image/avif"
+              />
+              <source
+                srcSet="/images/leistungen/industriereinigung/dampfreinigung-maschine-384w.webp 384w, /images/leistungen/industriereinigung/dampfreinigung-maschine-768w.webp 768w, /images/leistungen/industriereinigung/dampfreinigung-maschine-1024w.webp 1024w, /images/leistungen/industriereinigung/dampfreinigung-maschine.avif 1200w"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                type="image/webp"
+              />
+              <Image
+                src="/images/leistungen/industriereinigung/dampfreinigung-maschine.avif"
+                alt="Industriereinigung mit Spezialgeräten - Dampfreiniger"
+                fill
+                className="object-cover"
+              />
+            </picture>
           </div>
         </div>
 
