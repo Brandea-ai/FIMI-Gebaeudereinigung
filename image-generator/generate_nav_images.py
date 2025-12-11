@@ -36,122 +36,128 @@ client = genai.Client(
 )
 
 # Die 4 Leistungskategorien für das Dropdown-Menü
+# WICHTIG: KEINE PERSONEN - nur Räume, Equipment und Umgebungen
 NAV_IMAGES = [
     {
         "filename": "gewerbliche-reinigung",
         "title": "Gewerbliche Reinigung",
-        "prompt": """AUTHENTISCHES STOCKFOTO für eine Unternehmenswebsite
+        "prompt": """AUTHENTISCHES STOCKFOTO - KEINE PERSONEN
 
-SZENE: Professionelle Reinigungskraft bei der Arbeit in einem modernen Büro
-- Eine echte Reinigungskraft (Frau oder Mann, ca. 35-50 Jahre) wischt den Boden in einem hellen, modernen Büro
-- Die Person trägt professionelle Arbeitskleidung (Poloshirt, Arbeitshose) - KEINE spezifische Firmenfarbe
-- Natürliche Arbeitsszene, nicht gestellt
-- Modernes, helles Büroumfeld mit Schreibtischen im Hintergrund
+SZENE: Sauberes, modernes Büro nach professioneller Reinigung
+- Helles, modernes Open-Space Büro mit glänzendem Boden
+- Professioneller Reinigungswagen mit Zubehör steht bereit (Eimer, Mopps, Sprühflaschen)
+- Makellos saubere Oberflächen, spiegelnder Boden
+- Schreibtische und Bürostühle im Hintergrund
+- Pflanzen und natürliches Licht durch große Fenster
 
 FOTOSTIL:
 - Wie ein echtes Stockfoto von Getty Images oder Shutterstock
-- Natürliches Tageslicht oder Bürobeleuchtung
-- Authentische, dokumentarische Qualität
-- DSLR-Kamera-Look, leichte Tiefenschärfe
-- Warme, natürliche Farben - KEINE Corporate-Farben
+- Natürliches Tageslicht, warme Atmosphäre
+- DSLR-Kamera-Look, professionelle Tiefenschärfe
+- Architektur-/Interiorfotografie-Stil
+- Warme, einladende Farben
 
 TECHNISCH:
 - Querformat 16:9
 - Hohe Auflösung, professionelle Schärfe
-- Wie ein Foto, das man bei Google Bildersuche "Büroreinigung" findet
+- Leichte Weitwinkel-Perspektive
 
 WICHTIG:
+- ABSOLUT KEINE PERSONEN/MENSCHEN im Bild
 - KEINE künstlichen CI-Farben (kein Türkis, kein Navy)
-- KEINE Logos auf der Kleidung
-- Realistische, alltägliche Arbeitsszene
-- Person soll freundlich und professionell wirken"""
+- Fokus auf Sauberkeit und Professionalität
+- Reinigungsequipment als visuelles Element"""
     },
     {
         "filename": "industriereinigung",
         "title": "Industriereinigung",
-        "prompt": """AUTHENTISCHES STOCKFOTO für eine Unternehmenswebsite
+        "prompt": """AUTHENTISCHES STOCKFOTO - KEINE PERSONEN
 
-SZENE: Industriereinigung in einer großen Produktionshalle
-- Ein Arbeiter mit Scheuersaugmaschine (z.B. Kärcher, GELB) reinigt den Boden einer Industriehalle
-- Die Person trägt Sicherheitskleidung: Warnweste, Sicherheitsschuhe
-- Große, helle Industriehalle mit hohen Decken
-- Maschinen oder Regale im Hintergrund
+SZENE: Große Industriehalle mit professioneller Reinigungsmaschine
+- Weitläufige, saubere Produktions- oder Lagerhalle
+- Gelbe Kärcher Scheuersaugmaschine (Aufsitz-Reinigungsmaschine) steht auf dem glänzenden Industrieboden
+- Hohe Decken mit Stahlträgern und Oberlichtern
+- Industrieregale oder Maschinen im Hintergrund
+- Frisch gereinigter, glänzender Betonboden
 
 FOTOSTIL:
 - Wie ein echtes Industriefoto von Getty Images
 - Authentische Industrieatmosphäre
-- Natürliches Hallenlicht (große Fenster oder Oberlichter)
-- Dokumentarischer Stil, nicht inszeniert
-- Realistische Farben der Umgebung
+- Natürliches Hallenlicht durch große Fenster/Oberlichter
+- Dokumentarischer Architektur-Stil
+- Realistische Industriefarben (grau, gelb, metallisch)
 
 TECHNISCH:
 - Querformat 16:9
 - Professionelle Qualität
-- Weitwinkel-Perspektive zeigt Größe der Halle
+- Weitwinkel zeigt Größe der Halle
 
 WICHTIG:
+- ABSOLUT KEINE PERSONEN/MENSCHEN im Bild
 - KEINE künstlichen CI-Farben
-- Echte Industrieumgebung
-- Authentische Arbeitsszene
-- Professionelle aber alltägliche Situation"""
+- Industriemaschine als Hauptmotiv
+- Sauberkeit und Größe der Halle betonen"""
     },
     {
         "filename": "facility-management",
         "title": "Facility Management",
-        "prompt": """AUTHENTISCHES STOCKFOTO für eine Unternehmenswebsite
+        "prompt": """AUTHENTISCHES STOCKFOTO - KEINE PERSONEN
 
-SZENE: Hausmeister/Facility Manager bei der Außenanlagenpflege
-- Ein Hausmeister (Mann, ca. 40-55 Jahre) bei der Arbeit im Außenbereich
-- Gepflegter Eingangsbereich eines Bürogebäudes oder Wohnanlage
-- Die Person harkt Laub, pflegt Grünanlagen oder reinigt Wege
-- Professionelle Arbeitskleidung, evtl. Handschuhe
+SZENE: Gepflegter Außenbereich eines modernen Gebäudes
+- Eingangsbereich eines Bürogebäudes oder einer Wohnanlage
+- Perfekt gepflegte Grünanlage mit geschnittenem Rasen
+- Saubere Gehwege und Pflastersteine
+- Moderne deutsche Architektur (Backstein oder Glas)
+- Herbstlaub ordentlich zusammengeharkt (optional)
+- Gartengeräte wie Rechen oder Laubbläser im Vordergrund
 
 FOTOSTIL:
-- Wie ein echtes Stockfoto bei der Google-Suche "Hausmeisterservice"
-- Natürliches Tageslicht, leicht bewölkt oder sonnig
-- Authentische Außenaufnahme
-- Dokumentarischer, nicht gestellter Stil
-- Natürliche Farben der Jahreszeit
+- Wie ein echtes Immobilien-/Architektur-Stockfoto
+- Natürliches Tageslicht, goldene Stunde oder leicht bewölkt
+- Professionelle Außenaufnahme
+- Immobilienfotografie-Stil
+- Natürliche, saisonale Farben
 
 TECHNISCH:
 - Querformat 16:9
 - Professionelle Qualität
-- Gute Schärfentiefe
+- Mittlere Brennweite, gute Schärfentiefe
 
 WICHTIG:
+- ABSOLUT KEINE PERSONEN/MENSCHEN im Bild
 - KEINE künstlichen CI-Farben
-- Realistische deutsche Architektur im Hintergrund
-- Authentische Arbeitsszene
-- Freundlicher, kompetenter Eindruck"""
+- Gepflegte, einladende Atmosphäre
+- Deutsche Architektur erkennbar"""
     },
     {
         "filename": "spezialreinigung",
         "title": "Spezialreinigung",
-        "prompt": """AUTHENTISCHES STOCKFOTO für eine Unternehmenswebsite
+        "prompt": """AUTHENTISCHES STOCKFOTO - KEINE PERSONEN
 
-SZENE: Professionelle Fensterreinigung oder Spezialreinigung
-- Ein Fensterputzer bei der Arbeit an großen Glasflächen
-- Professionelle Ausrüstung: Einwascher, Abzieher (z.B. UNGER, GRÜN)
-- Große Fensterfront eines modernen Gebäudes
-- Konzentrierte, professionelle Arbeit
+SZENE: Große Glasfassade mit professionellem Fensterreinigungsequipment
+- Moderne Glasfassade eines Bürogebäudes
+- Professionelles Fensterreinigungsequipment: Abzieher, Einwascher, Teleskopstange (grün/UNGER)
+- Kristallklare, frisch gereinigte Glasflächen
+- Spiegelungen in der Glasfassade
+- Wassertropfen oder Reinigungsschaum als Detail
 
 FOTOSTIL:
-- Wie ein echtes Stockfoto von Shutterstock
-- Natürliches Tageslicht
+- Wie ein echtes Architektur-Stockfoto von Shutterstock
+- Natürliches Tageslicht, klarer Tag
 - Klare, scharfe Aufnahme
-- Authentische Arbeitsszene
-- Natürliche Farben
+- Architektur-/Produktfotografie-Stil
+- Natürliche Farben, Blau des Himmels in Spiegelungen
 
 TECHNISCH:
 - Querformat 16:9
 - Professionelle Qualität
-- Interessante Perspektive (evtl. von innen nach außen oder Seitenperspektive)
+- Interessante Perspektive von unten nach oben oder Detailaufnahme
 
 WICHTIG:
+- ABSOLUT KEINE PERSONEN/MENSCHEN im Bild
 - KEINE künstlichen CI-Farben
-- Authentische Reinigungstechnik sichtbar
-- Professioneller Eindruck
-- Wie ein Foto das man bei "professionelle Fensterreinigung" findet"""
+- Reinigungsequipment und sauberes Glas als Hauptmotiv
+- Professioneller, hochwertiger Eindruck"""
     },
 ]
 
