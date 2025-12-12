@@ -270,19 +270,19 @@ export default function RegionenContainer() {
       {/* Content Area */}
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-12 lg:py-16">
 
-        {/* Two Column Layout: 50/50 */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        {/* Two Column Layout: 50/50 - gleiche Höhe */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
 
           {/* Left: Map + Link */}
           <div className="w-full flex flex-col">
-            {/* Bild Container - zeigt immer das vollständige Bild */}
-            <div className="relative w-full">
+            {/* Bild Container - 9:16 Portrait Format, schwebendes Design */}
+            <div className="relative w-full flex-1 flex items-center justify-center">
               <Image
                 src="/images/home/staedte-fimi.avif"
                 alt="Bayern Karte - FIMI Gebäudereinigung Servicegebiete"
-                width={4800}
-                height={3584}
-                className="w-full h-auto rounded-[6px]"
+                width={768}
+                height={1376}
+                className="w-auto h-full max-h-[600px] lg:max-h-none rounded-[6px] object-contain"
                 priority
               />
               {/* Desktop: Dezenter Link unten links */}
