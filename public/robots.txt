@@ -1,0 +1,13 @@
+# robots.txt für FIMI Gebäudereinigung
+# https://fimi-gebaeudereinigung.de
+
+User-agent: *
+Allow: /
+
+# Favicon explizit erlauben
+Allow: /favicon.ico
+Allow: /apple-touch-icon.png
+Allow: /FIMI-LOGO/
+
+# Sitemap
+Sitemap: https://fimi-gebaeudereinigung.de/sitemap.xml

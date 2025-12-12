@@ -87,16 +87,16 @@ export const metadata: Metadata = {
   category: 'business',
   icons: {
     icon: [
-      { url: '/FIMI-LOGO/Fimi-Favicon.png', sizes: '16x16', type: 'image/png' },
-      { url: '/FIMI-LOGO/Fimi-Favicon.png', sizes: '32x32', type: 'image/png' },
-      { url: '/FIMI-LOGO/Fimi-Favicon.png', sizes: '48x48', type: 'image/png' },
-      { url: '/FIMI-LOGO/Fimi-Favicon.png', sizes: '64x64', type: 'image/png' },
-      { url: '/FIMI-LOGO/Fimi-Favicon.png', sizes: '128x128', type: 'image/png' },
-      { url: '/FIMI-LOGO/Fimi-Favicon.png', sizes: '192x192', type: 'image/png' },
-      { url: '/FIMI-LOGO/Fimi-Favicon.png', sizes: '512x512', type: 'image/png' },
+      { url: '/favicon.ico', sizes: '48x48', type: 'image/x-icon' },
+      { url: '/FIMI-LOGO/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/FIMI-LOGO/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/FIMI-LOGO/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/FIMI-LOGO/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/FIMI-LOGO/favicon-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/FIMI-LOGO/favicon-512x512.png', sizes: '512x512', type: 'image/png' },
     ],
-    apple: { url: '/FIMI-LOGO/Fimi-Favicon.png', sizes: '180x180', type: 'image/png' },
-    shortcut: '/FIMI-LOGO/Fimi-Favicon.png',
+    apple: { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    shortcut: '/favicon.ico',
   },
 }
 
@@ -115,8 +115,8 @@ const organizationSchema = {
   logo: {
     '@type': 'ImageObject',
     '@id': 'https://fimi-gebaeudereinigung.de/#logo',
-    url: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/Fimi-Favicon.png',
-    contentUrl: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/Fimi-Favicon.png',
+    url: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/favicon-512x512.png',
+    contentUrl: 'https://fimi-gebaeudereinigung.de/FIMI-LOGO/favicon-512x512.png',
     caption: 'FIMI Gebäudereinigung Logo',
     width: 512,
     height: 512,
