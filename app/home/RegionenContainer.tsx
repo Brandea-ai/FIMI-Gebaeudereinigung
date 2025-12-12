@@ -270,34 +270,21 @@ export default function RegionenContainer() {
       {/* Content Area */}
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-12 lg:py-16">
 
-        {/* Two Column Layout: 50/50 - gleiche Höhe */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+        {/* Two Column Layout: 50/50 */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
 
           {/* Left: Map + Link */}
           <div className="w-full flex flex-col">
-            {/* Bild Container - Desktop: flex-1 für gleiche Höhe wie rechter Container */}
-            <div className="relative w-full lg:flex-1">
-              {/* Mobile: Normales Bild mit aspect-ratio */}
-              <div className="lg:hidden">
-                <Image
-                  src="/images/home/staedte-fimi.avif"
-                  alt="Bayern Karte - FIMI Gebäudereinigung Servicegebiete"
-                  width={4800}
-                  height={3584}
-                  className="w-full h-auto rounded-[6px]"
-                  priority
-                />
-              </div>
-              {/* Desktop: Fill für gleiche Höhe */}
-              <div className="hidden lg:block absolute inset-0">
-                <Image
-                  src="/images/home/staedte-fimi.avif"
-                  alt="Bayern Karte - FIMI Gebäudereinigung Servicegebiete"
-                  fill
-                  className="object-cover rounded-[6px]"
-                  priority
-                />
-              </div>
+            {/* Bild Container - zeigt immer das vollständige Bild */}
+            <div className="relative w-full">
+              <Image
+                src="/images/home/staedte-fimi.avif"
+                alt="Bayern Karte - FIMI Gebäudereinigung Servicegebiete"
+                width={4800}
+                height={3584}
+                className="w-full h-auto rounded-[6px]"
+                priority
+              />
               {/* Desktop: Dezenter Link unten links */}
               <Link
                 href="/ueber-uns"
