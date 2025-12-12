@@ -274,15 +274,15 @@ export default function RegionenContainer() {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
 
           {/* Left: Map + Link */}
-          <div className="w-full flex flex-col">
-            {/* Bild Container - 9:16 Portrait Format, schwebendes Design */}
-            <div className="relative w-full flex-1 flex items-center justify-center">
+          <div className="w-full flex flex-col items-center justify-center">
+            {/* Bild Container - 9:16 Portrait Format, zentriert */}
+            <div className="relative flex items-center justify-center">
               <Image
                 src="/images/home/staedte-fimi.avif"
                 alt="Bayern Karte - FIMI Gebäudereinigung Servicegebiete"
                 width={768}
                 height={1376}
-                className="w-auto h-full max-h-[600px] lg:max-h-none rounded-[6px] object-contain"
+                className="w-auto h-auto max-h-[500px] lg:max-h-[700px] rounded-[6px] object-contain mx-auto"
                 priority
               />
               {/* Desktop: Dezenter Link unten links */}
