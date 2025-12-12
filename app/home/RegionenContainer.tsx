@@ -271,7 +271,7 @@ export default function RegionenContainer() {
       <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-12 xl:px-20 py-12 lg:py-16">
 
         {/* Two Column Layout: 50/50 */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
           {/* Left: Map + Link */}
           <div className="w-full flex flex-col">
